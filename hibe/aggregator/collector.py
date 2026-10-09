@@ -29,7 +29,9 @@ def run_source(source, config, rel, today, transport=None, sleep=None):
     status = {'id': source['id'], 'organization': source.get('organization'), 'fetched': 0,
               'enriched': 0, 'detail_errors': 0, 'error': None, 'health': 'success'}
     fetcher = Fetcher(source['allowed_hosts'], config.get('tls_relaxed_hosts', []), transport,
-                      delay=0 if transport else config.get('delay_seconds', 1.0), **({'sleep': sleep} if sleep else {}))
+                      delay=0 if transport else config.get('delay_seconds', 1.0),
+                      cache_dir=None if transport else ROOT / 'data/aggregator/http-cache',
+                      access_policy=None if transport else source.get('access_policy'), **({'sleep': sleep} if sleep else {}))
     try:
         items = CONNECTORS[source['type']](source, fetcher, today)
         status['fetched'] = len(items)
@@ -64,6 +66,7 @@ def run_source(source, config, rel, today, transport=None, sleep=None):
     except Exception as exc:
         status['error'] = f'{type(exc).__name__}: {str(exc)[:200]}'
         status['health'] = 'failed'
+        status['error_kind'] = getattr(exc, 'kind', 'parser')
         return [], status
     finally:
         status['requests'] = fetcher.calls
@@ -103,7 +106,7 @@ def run(config=None, rules=None, today=None, only=None, transport=None, sleep=No
     rel = RelevanceFilter(rules)
     all_items, statuses = [], []
     for source in config['sources']:
-        if only and source['id'] not in only:
+        if only is not None and source['id'] not in only:
             continue
         items, status = run_source(source, config, rel, today, transport, sleep)
         all_items.extend(items)
@@ -115,7 +118,7 @@ def run(config=None, rules=None, today=None, only=None, transport=None, sleep=No
     selected_all = len(statuses) == len(config['sources']) and all(
         status['id'] == source['id'] for status, source in zip(statuses, config['sources']))
     health = [status['health'] for status in statuses]
-    if only or not selected_all:
+    if only is not None or not selected_all:
         run_status = 'partial'
     elif health and all(value == 'failed' for value in health):
         run_status = 'failed'
@@ -152,4 +155,14 @@ def write_report(report, path=None):
         except FileNotFoundError:
             pass
         raise
+    return path
+
+
+def write_health(report, path=None):
+    """Her koşunun durumunu geçmişi silmeden yerel JSONL dosyasına ekle."""
+    path = Path(path) if path else ROOT / 'data/aggregator/health.jsonl'
+    path.parent.mkdir(parents=True, exist_ok=True)
+    entry = {k: report.get(k) for k in ('generated_at', 'run_status', 'counts', 'sources')}
+    with path.open('a', encoding='utf-8') as stream:
+        stream.write(json.dumps(entry, ensure_ascii=False) + '\n')
     return path

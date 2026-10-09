@@ -17,6 +17,8 @@ def main(argv=None):
     args = ap.parse_args(argv)
     sys.stdout.reconfigure(encoding='utf-8')
     report = run(only=args.only)
+    from .collector import write_health
+    write_health(report)
     from pathlib import Path
     from .collector import ROOT
     canonical = ROOT / 'data/aggregator/latest.json'

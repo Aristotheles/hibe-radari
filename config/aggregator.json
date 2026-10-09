@@ -1,6 +1,5 @@
 {
   "_not": "Toplayıcı kaynakları. Yalnız kamuya açık duyuru üst verisi (başlık, kurum, son tarih, hedef kitle, kaynak linki) toplanır. allowed_hosts dışına çıkılmaz. Süzgeç kuralları config/relevance.json içindedir.",
-  "tls_relaxed_hosts": [],
   "delay_seconds": 1.0,
   "enrich_limit": 25,
   "sources": [
@@ -23,7 +22,13 @@
           "framework": null,
           "text": "school teacher pupil"
         }
-      ]
+      ],
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "tubitak-4000",
@@ -35,7 +40,13 @@
       ],
       "upgrade_http": true,
       "implied_programme": "tubitak-bilim-toplum",
-      "language": "tr"
+      "language": "tr",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "tubitak-duyuru",
@@ -53,7 +64,13 @@
       "detail": true,
       "max_items": 40,
       "language": "tr",
-      "_not": "4000.tubitak.gov.tr akışı bayat (son çağrı 2024); güncel 4004/4006 çağrıları ana duyuru listesinde."
+      "_not": "4000.tubitak.gov.tr akışı bayat (son çağrı 2024); güncel 4004/4006 çağrıları ana duyuru listesinde.",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "ab-ilan-hibe",
@@ -65,7 +82,13 @@
       ],
       "aggregator": true,
       "detail": true,
-      "language": "tr"
+      "language": "tr",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "ab-ilan-genel",
@@ -77,7 +100,13 @@
       ],
       "aggregator": true,
       "detail": true,
-      "language": "tr"
+      "language": "tr",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "stgm-hibe",
@@ -99,6 +128,12 @@
         "link": ".anasayfa-icerikler-hover a",
         "date": ".hibe-duyurulari-tarih time",
         "category": ".hibe-duyurulari-konu"
+      },
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
       }
     },
     {
@@ -113,7 +148,13 @@
       ],
       "implied_programme": "bilateral-exchange",
       "max_pages": 12,
-      "language": "de"
+      "language": "de",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "etwinning-tr",
@@ -123,7 +164,13 @@
       "allowed_hosts": [
         "etwinning.meb.gov.tr"
       ],
-      "language": "tr"
+      "language": "tr",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "ifturquie",
@@ -133,7 +180,13 @@
       "allowed_hosts": [
         "www.ifturquie.org"
       ],
-      "language": "tr"
+      "language": "tr",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "britishcouncil-tr",
@@ -143,7 +196,13 @@
       "allowed_hosts": [
         "www.britishcouncil.org.tr"
       ],
-      "language": "tr"
+      "language": "tr",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "tusev",
@@ -156,7 +215,13 @@
       ],
       "aggregator": true,
       "detail": true,
-      "language": "tr"
+      "language": "tr",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "sivilsayfalar",
@@ -168,7 +233,13 @@
       ],
       "aggregator": true,
       "detail": true,
-      "language": "tr"
+      "language": "tr",
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     },
     {
       "id": "sabit-izleme",
@@ -229,7 +300,13 @@
           "note": "OeAD (Avusturya Erasmus+ ajansı): Türkiye'ye özel ikili program bulunamadı; Erasmus+/eTwinning ile Avusturya okulu ortaklığı arayın.",
           "no_deadline": true
         }
-      ]
+      ],
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": null,
+        "checked_at": null,
+        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+      }
     }
   ]
 }

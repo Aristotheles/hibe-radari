@@ -158,7 +158,7 @@ class FetcherTests(unittest.TestCase):
         with self.assertRaises(FetchError):
             f.get('https://ab-ilan.com/')
 
-    def test_tls_failure_retries_unverified_only_for_listed_host(self):
+    def test_tls_failure_never_retries_unverified_even_for_listed_host(self):
         calls = []
 
         def handler(request):
@@ -172,8 +172,9 @@ class FetcherTests(unittest.TestCase):
         calls.clear()
         relaxed = Fetcher(['site.gov.tr'], relaxed_tls_hosts=['site.gov.tr'],
                           transport=httpx.MockTransport(handler), delay=0)
-        self.assertEqual(relaxed.get_text('https://site.gov.tr/'), 'ok')
-        self.assertEqual(len(calls), 2)
+        with self.assertRaises(FetchError):
+            relaxed.get_text('https://site.gov.tr/')
+        self.assertEqual(len(calls), 1)
 
     def test_polite_delay_between_requests(self):
         slept = []

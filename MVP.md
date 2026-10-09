@@ -490,3 +490,7 @@ T18: Google girişli normal kullanıcı admin işlemi yapamaz; Pro yetkisi backe
 
 ### 2026-10-10 01:10 — Yerel AŞAMA 1 ilerleme eki
 Yayın kapısı ve veri koruma uygulandı; 94 Python + 11 JS PASS. docs/ASAMA_1_YAYIN_GUVENLIGI.md kanıt ve sınırlardır. Cloud durdu; çalışma yalnız C:/hibe-radari içinde. Kullanıcı aşama başına onay beklemeyi kaldırdı. Sıradaki AŞAMA 2. Deploy onaylı veri olmadığı için yapılmadı.
+
+
+### 2026-10-10 — Yerel AŞAMA 2 tamamlandı
+105 Python + 11 JS PASS; ağ/robots/izin/kalıcı önbellek/sağlık kontrolleri uygulandı. Kaynaklar izin incelemesine kadar unreviewed; canlı başarı iddiası yok. Kanıt docs/ASAMA_2_AG_GUVENLIGI.md. Sıradaki AŞAMA 3; kullanıcı onayı beklenmez.
