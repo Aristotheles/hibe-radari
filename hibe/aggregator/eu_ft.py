@@ -8,6 +8,7 @@ from datetime import date
 
 from .models import GrantOpportunity
 from .textutil import shorten, strip_html
+from .net import FetchError
 
 API = 'https://api.tech.ec.europa.eu/search-api/prod/rest/search'
 PORTAL = 'https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/'
@@ -68,11 +69,36 @@ def parse(payload, source, today):
 
 def collect(source, fetcher, today):
     items = []
+    page_size = source.get('page_size', 50)
+    max_pages = source.get('max_pages', 10)
+    if type(page_size) is not int or not 1 <= page_size <= 100 or type(max_pages) is not int or not 1 <= max_pages <= 50:
+        raise FetchError('API sayfalama sınırı geçersiz', 'parser')
     for query in source['queries']:
         params = {'apiKey': 'SEDIA', 'text': query.get('text', '***'),
-                  'pageSize': source.get('page_size', 50), 'pageNumber': 1}
+                  'pageSize': page_size}
         files = {'query': (None, json.dumps(build_query(query.get('framework'))), 'application/json'),
                  'languages': (None, '["en"]', 'application/json')}
-        response = fetcher.request('POST', API, params=params, files=files)
-        items.extend(parse(response.json(), source, today))
+        fetched = 0; fingerprints = set()
+        for page in range(1, max_pages + 1):
+            response = fetcher.request('POST', API, params=dict(params, pageNumber=page), files=files)
+            payload = response.json()
+            if not isinstance(payload, dict) or not isinstance(payload.get('results'), list):
+                raise FetchError('API sonuç şeması değişti', 'parser')
+            rows = payload['results']; total = payload.get('totalResults')
+            if isinstance(total, str) and total.isdecimal(): total = int(total)
+            if total is not None and (type(total) is not int or total < 0):
+                raise FetchError('API toplam sonuç sayısı geçersiz', 'parser')
+            fingerprint = json.dumps(rows, sort_keys=True)
+            if rows and fingerprint in fingerprints:
+                raise FetchError('API aynı sayfayı tekrar döndürdü; eksik toplama', 'parser')
+            fingerprints.add(fingerprint); fetched += len(rows)
+            if total is not None and fetched > total:
+                raise FetchError('API toplamı sayfalarla çelişiyor', 'parser')
+            items.extend(parse(payload, source, today))
+            if total is not None and fetched >= total or total is None and len(rows) < page_size:
+                break
+            if not rows:
+                raise FetchError('API beklenen sonuçlardan önce boş sayfa döndürdü', 'parser')
+        else:
+            raise FetchError('API sayfa tavanında tamamlanmadı; eksik toplama', 'parser')
     return items

@@ -29,19 +29,21 @@
     ],
     "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/support/apis",
+      "checked_at": "2026-10-09T23:47:12+00:00",
+      "basis": "Official portal publishes REST API for external systems. Metadata only with attribution and manual call verification; EU-owned reuse subject to Commission legal notice, no third-party full text or logos.",
+      "reuse_notice": "https://commission.europa.eu/legal-notice_en"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "api_interface_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
-    "acceptance_checked_at": "2026-10-09T22:58:41.731488+00:00",
+    "acceptance_reason": "Resmî haricî sistem API dokümanı ve yeniden kullanım koşulları incelendi; mevcut iki sorgu canlıda 15 kayıt, kaynak sağlık success. Bu yalnız API üstveri kabulüdür; çağrı ayrıntısı/Türkiye uygunluğu/insan onayı bekler.",
+    "acceptance_checked_at": "2026-10-09T23:47:12+00:00",
     "last_access_observation": {
       "source_id": "source-5",
       "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",

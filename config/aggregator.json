@@ -25,11 +25,15 @@
         }
       ],
       "access_policy": {
-        "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
-      }
+        "terms_status": "allowed",
+        "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/support/apis",
+        "checked_at": "2026-10-09T23:47:12+00:00",
+        "basis": "Official portal publishes REST API for external systems. Metadata only with attribution and manual call verification; EU-owned reuse subject to Commission legal notice, no third-party full text or logos.",
+        "reuse_notice": "https://commission.europa.eu/legal-notice_en"
+      },
+      "max_pages": 10,
+      "interval_hours": 24,
+      "official_source_verified": true
     },
     {
       "id": "tubitak-4000",

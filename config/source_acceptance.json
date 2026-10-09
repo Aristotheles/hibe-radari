@@ -3,22 +3,24 @@
     "source_id": "source-5",
     "name": "EU Funding & Tenders Portal",
     "official_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
-    "status": "manual_pending",
+    "status": "api_interface_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/support/apis",
+      "checked_at": "2026-10-09T23:47:12+00:00",
+      "basis": "Official portal publishes REST API for external systems. Metadata only with attribution and manual call verification; EU-owned reuse subject to Commission legal notice, no third-party full text or logos.",
+      "reuse_notice": "https://commission.europa.eu/legal-notice_en"
     },
-    "method": "manual",
-    "list_fixture": null,
+    "method": "api",
+    "list_fixture": "tests/fixtures/aggregator/eu_search.json",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_identity_safety.py",
+    "empty_error_test": "tests/test_eu_pagination.py",
     "interval_hours": 24,
-    "checked_at": "2026-10-09T22:58:41.731488+00:00",
-    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "checked_at": "2026-10-09T23:47:12+00:00",
+    "reason": "Resmî haricî sistem API dokümanı ve yeniden kullanım koşulları incelendi; mevcut iki sorgu canlıda 15 kayıt, kaynak sağlık success. Bu yalnız API üstveri kabulüdür; çağrı ayrıntısı/Türkiye uygunluğu/insan onayı bekler.",
     "page_observation": {
       "source_id": "source-5",
       "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -39,7 +41,16 @@
       "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "call_evidence_status": "not_verified"
+    "call_evidence_status": "not_verified",
+    "live_api_observation": {
+      "checked_at": "2026-10-09T23:46:34+00:00",
+      "connector_id": "eu-ft",
+      "fetched": 15,
+      "requests": 3,
+      "health": "success",
+      "scope": "two configured queries, metadata only",
+      "publication": "not_published"
+    }
   },
   {
     "source_id": "inventory-358ffa19b0c7",
