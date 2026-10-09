@@ -20,6 +20,9 @@ class MailTests(unittest.TestCase):
   with patch.dict(os.environ,{'NEWSLETTER_ENABLED':'true','SMTP_HOST':'smtp.example.org','SMTP_FROM':'test@example.org'}),patch('hibe.notifications.smtplib.SMTP') as smtp:
    self.assertEqual(send_pending(s),0)
    smtp.return_value.__enter__.return_value.send_message.assert_not_called()
+   context=smtp.return_value.__enter__.return_value.starttls.call_args.kwargs['context']
+   self.assertTrue(context.check_hostname)
+   self.assertEqual(context.verify_mode,ssl.CERT_REQUIRED)
   self.assertEqual(s.store.get('outbox','m')['status'],'cancelled')
  def test_signature_and_expiry(self):
   secret='x'*32;t=unsubscribe_token('uid',secret);self.assertEqual(verify_unsubscribe(t,secret),'uid')

@@ -67,6 +67,8 @@ MVP.md aşamaları ve Codex devam istemini, docs/SECURITY.md canlıya çıkış 
 
 ## 10 Ekim güncel geliştirme durumu
 
-Önceki tarihli doğrulama sayıları tarihsel kayıttır. Yerel temiz .venv: 186 Python + önceki 11 JS testi başarılı. Kaynak envanteri135URL ve korunan19eski kayıt; aggregator29 yapılandırma içerir. 22 gerçek RSS fixture arayüzü offline uçtan uca pilotta doğrulandı; 29 canlı kaynak çalışıyor iddiası yok. Backend ücretsiz/etkin Pro CSV yetkisi uygulandı; gerçek tahsilat kapalı. DEMO onayı üretim yayınına geçmez.
+Önceki tarihli doğrulama sayıları tarihsel kayıttır. Yerel temiz .venv: 196 Python + 11 JS testi başarılı. Kaynak envanteri135URL ve korunan19eski kayıt; aggregator29 yapılandırma içerir. 22 gerçek RSS fixture arayüzü offline uçtan uca pilotta doğrulandı; 29 canlı kaynak çalışıyor iddiası yok. Backend ücretsiz/etkin Pro CSV yetkisi uygulandı; gerçek tahsilat kapalı. DEMO onayı üretim yayınına geçmez.
 
 Backend eksiklerini sır değerlerini göstermeden kontrol et: `.venv/Scripts/python.exe -m hibe.server --check`. Gerçek Auth/ADC/admin UID eksik; canlı giriş/Firestore/SMTP ve üretim backend/deploy doğrulanmadı. Kaynak başına izin/periyot ve gerçek yayın onayı gerekir. Güncel plan MVP.md, ortak durum .agent/HANDOFF.md; pilot kanıt docs/ASAMA_10_PILOT_HAZIRLIK.md.
+
+Üretim kabul durumu: [RELEASE_KABUL_DENETIMI.md](docs/RELEASE_KABUL_DENETIMI.md). `--scheduled` zamanı gelmeyen kaynaklara istek göndermez; alt küme koşusu ana yayını korur. Sürekli üretim zamanlayıcısı henüz kurulmadı. Bülten TLS sertifika/hostname doğrulaması ve açık bool opt-in zorunludur; gerçek gönderim kapalıdır.

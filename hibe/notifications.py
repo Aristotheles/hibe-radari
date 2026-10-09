@@ -1,5 +1,5 @@
 """Haftalık bülten outbox'ı; SMTP gönderimi yalnızca açık --send seçimiyle."""
-import argparse,base64,hashlib,hmac,json,os,smtplib,time
+import argparse,base64,hashlib,hmac,json,os,smtplib,ssl,time
 from datetime import date
 from email.message import EmailMessage
 from urllib.parse import quote
@@ -39,7 +39,7 @@ def send_pending(service):
  host=os.environ['SMTP_HOST'];port=int(os.environ.get('SMTP_PORT','587'));sender=os.environ['SMTP_FROM']
  sent=0
  with smtplib.SMTP(host,port,timeout=30) as smtp:
-  smtp.starttls()
+  smtp.starttls(context=ssl.create_default_context())
   if os.environ.get('SMTP_USER'):smtp.login(os.environ['SMTP_USER'],os.environ['SMTP_PASSWORD'])
   for message in service.store.all('outbox'):
    if message['status']!='prepared':continue
