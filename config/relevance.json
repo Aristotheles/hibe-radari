@@ -1,0 +1,35 @@
+{
+  "_not": "Süzgeç kuralları. Terimler katlanarak (ı→i, ş→s, ö→o...) eşleşir. Sonda '=' tam kelime ister; yoksa ek alabilir (okul → okulda). Puan gerekçeleri rapora yazılır; kuralı buradan ayarla.",
+  "thresholds": {"accept": 5, "review": 2},
+  "max_age_days": 120,
+  "audience": {
+    "school": {"label": "okul/lise", "weight": 3, "terms": ["lise", "okul", "ortaogretim", "ortaokul", "ilkokul", "school", "secondary education", "pupil", "schule", "schulisch", "schueler"]},
+    "teacher": {"label": "öğretmen", "weight": 3, "terms": ["ogretmen", "egitimci", "teacher", "educator", "lehrkraft", "lehrkraefte", "lehrer"]},
+    "youth": {"label": "genç", "weight": 1, "terms": ["genclik", "genc=", "gencler", "youth", "jugend", "ogrenci"]},
+    "education": {"label": "eğitim (genel)", "weight": 1, "generic": true, "terms": ["egitim", "education", "bildung", "ogrenme", "learning"]}
+  },
+  "audience_negative": {
+    "university": {"label": "yükseköğretim/lisansüstü", "penalty": 3, "terms": ["lisansustu", "yuksek lisans", "doktora", "postdoc", "phd", "universite ogrencileri", "akademisyen", "arastirmaci", "researcher", "higher education"]}
+  },
+  "programmes": {
+    "erasmus-school": {"label": "Erasmus+ Okul Eğitimi", "weight": 4, "terms": ["okul egitimi", "school education", "ka120-sch", "ka121-sch", "ka122", "ka210-sch", "ka220-sch", "etwinning", "ogretmen akademisi", "teacher academies"]},
+    "erasmus": {"label": "Erasmus+", "weight": 2, "terms": ["erasmus"]},
+    "tubitak-bilim-toplum": {"label": "TÜBİTAK Bilim ve Toplum (4000)", "weight": 4, "terms": ["4004", "4005", "4006", "4007", "4008", "bilim fuar", "bilim okul", "doga egitimi", "bilim senlik", "bilim toplum", "bilim ve toplum"]},
+    "youth-exchange": {"label": "Gençlik değişimi", "weight": 3, "terms": ["genclik degisim", "youth exchange", "jugendaustausch", "ka152", "ka153", "genclik projesi", "schulaustausch", "schueleraustausch"]},
+    "bilateral-exchange": {"label": "İkili değişim fonu", "weight": 3, "terms": ["ikili degisim", "bilateral exchange", "turk-alman", "alman-turk", "deutsch-turkisch", "jugendbruecke", "genclik koprusu", "matching fund", "sporaustausch"]}
+  },
+  "call_words": {"weight": 1, "terms": ["hibe", "cagri", "basvuru", "destek", "fon=", "fonu", "fonlari", "call for", "grant", "funding", "ausschreibung", "foerder", "application", "teklif"]},
+  "exclude": {
+    "job": {"label": "iş/personel ilanı", "penalty": 10, "terms": ["is ilani", "personel alim", "alacak=", "alinacak", "uzman yardimcisi", "kamu is", "recruitment", "vacancy", "hiring", "stellenausschreibung", "is firsati"]},
+    "scholarship": {"label": "bireysel burs", "penalty": 4, "terms": ["burs", "scholarship", "stipendium", "fellowship", "staj", "internship"]},
+    "business": {"label": "ticari/girişim", "penalty": 4, "terms": ["startup", "girisim", "yatirim", "ihale", "tender", "kobi", "sme=", "ticari", "scaleup"]},
+    "arts-culture": {"label": "sanat/kültür", "penalty": 3, "terms": ["festival", "belgesel", "sinema", "film", "rezidans", "residency", "muzik", "sergi", "kulturel miras", "restorasyon"]},
+    "ngo-humanitarian": {"label": "STK/insani/hak", "penalty": 4, "terms": ["multeci", "goc", "insan haklari", "hukuki", "hayvan", "kadina siddet", "sivil toplum", "stk", "gida", "afet", "deprem", "iklim", "cevre", "tarim", "ciftci"]},
+    "research-consortium": {"label": "araştırma konsorsiyumu (Horizon RIA/IA)", "penalty": 3, "terms": ["research and innovation action", "innovation action", "horizon-ria"]},
+    "exam-commercial": {"label": "sınav/ticari kurs", "penalty": 4, "terms": ["ielts", "sinav", "exam", "toefl", "sertifika programi", "ingilizce kurs"]},
+    "past-news": {"label": "geçmiş etkinlik haberi", "penalty": 3, "terms": ["gerceklestirildi", "gerceklesti", "tamamlandi", "duzenlendi", "sonuclari aciklandi", "sona erdi", "study visit", "calistayi", "konferansi"]},
+    "event-training": {"label": "etkinlik/kurs", "penalty": 2, "terms": ["seminer", "webinar", "kurs", "konferans", "workshop", "atolye", "yaz okulu", "summer school", "anket"]}
+  },
+  "exclude_categories": ["kamu is ilanlari", "burs duyurulari", "yurtdisinda egitim"],
+  "category_penalty": 4
+}

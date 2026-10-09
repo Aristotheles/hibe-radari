@@ -15,3 +15,7 @@ approvals/
 *.db
 *.sqlite*
 node_modules/
+# Üretilen statik site (python -m hibe.aggregator --site public)
+public/
+# Firebase CLI yerel önbelleği
+.firebase/

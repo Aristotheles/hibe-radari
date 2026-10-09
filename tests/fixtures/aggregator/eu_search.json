@@ -1,0 +1,102 @@
+{
+ "totalResults": 4,
+ "results": [
+  {
+   "metadata": {
+    "identifier": [
+     "HORIZON-MSCA-2027-CITIZENS-01-01"
+    ],
+    "title": [
+     "MSCA and Citizens 2027"
+    ],
+    "deadlineDate": [
+     "2027-06-08T00:00:00.000+0000"
+    ],
+    "frameworkProgramme": [
+     "43108390"
+    ],
+    "typesOfAction": [
+     "HORIZON Coordination and Support Actions"
+    ],
+    "descriptionByte": "['<p class=\"topicdescriptionkind\">Expected Outcome:</p><p>Project results are expected to contribute to the following outcomes:</p><p>For researchers</p><ul level=\"0\"><li>Enhanced opportunities to interact with citizens and local, regional and national authorities;</li><li>Improved communication skills and competences to interact with a non-research audience, notably with pupils and students.</li> </ul><p>For organisations</p><ul level=\"0\"><li>Increased reputation and visibility of participating organisations in terms of hosting excellent research projects towards the general public and possib",
+    "status": [
+     "31094501"
+    ]
+   },
+   "summary": "MSCA and Citizens 2027"
+  },
+  {
+   "metadata": {
+    "identifier": [
+     "DIGITAL-2024-ADVANCED-DIGITAL-07-KEYCAPACITY"
+    ],
+    "title": [
+     "Specialised Education Programmes in Key Capacity Areas"
+    ],
+    "deadlineDate": [
+     "2026-12-04T02:00:00.000+0000"
+    ],
+    "frameworkProgramme": [
+     "43152860"
+    ],
+    "status": [
+     "31094502"
+    ],
+    "descriptionByte": ""
+   },
+   "summary": "UPRAISE: Financial Support to Third Parties (FSTP) call for International Mobility, Type of financial support: Students Outgoing, Cycle 1 – Academic Year 2026/2027 – Universidad Rey Juan Carlos (URJC)"
+  },
+  {
+   "metadata": {
+    "identifier": [
+     "ERASMUS-EDU-2022-ECHE-CERT-FP"
+    ],
+    "title": [
+     "Erasmus Charter for Higher Education"
+    ],
+    "deadlineDate": [
+     "2022-05-03T17:00:00.000+0000",
+     "2023-01-26T17:00:00.000+0000",
+     "2024-01-25T17:00:00.000+0000",
+     "2025-01-28T17:00:00.000+0000",
+     "2026-01-27T17:00:00.000+0000",
+     "2027-01-26T17:00:00.000+0000"
+    ],
+    "frameworkProgramme": [
+     "43353764"
+    ],
+    "typesOfAction": [
+     "ERASMUS ECHE Charter"
+    ],
+    "status": [
+     "31094502"
+    ],
+    "descriptionByte": ""
+   },
+   "summary": "Erasmus Charter for Higher Education"
+  },
+  {
+   "metadata": {
+    "identifier": [
+     "ERASMUS-EDU-2023-PEX-COVE"
+    ],
+    "title": [
+     "Partnership for Excellence - Centres of Vocational Excellence"
+    ],
+    "deadlineDate": [
+     "2023-06-08T17:00:00.000+0000"
+    ],
+    "frameworkProgramme": [
+     "43353764"
+    ],
+    "typesOfAction": [
+     "ERASMUS Lump Sum Grants"
+    ],
+    "status": [
+     "31094502"
+    ]
+   },
+   "summary": ""
+  }
+ ]
+}

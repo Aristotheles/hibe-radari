@@ -1,0 +1,235 @@
+{
+  "_not": "Toplayıcı kaynakları. Yalnız kamuya açık duyuru üst verisi (başlık, kurum, son tarih, hedef kitle, kaynak linki) toplanır. allowed_hosts dışına çıkılmaz. Süzgeç kuralları config/relevance.json içindedir.",
+  "tls_relaxed_hosts": [],
+  "delay_seconds": 1.0,
+  "enrich_limit": 25,
+  "sources": [
+    {
+      "id": "eu-ft",
+      "type": "eu_ft",
+      "organization": "Avrupa Komisyonu (Funding & Tenders)",
+      "allowed_hosts": [
+        "api.tech.ec.europa.eu"
+      ],
+      "page_size": 50,
+      "queries": [
+        {
+          "name": "erasmus-plus",
+          "framework": "43353764",
+          "text": "***"
+        },
+        {
+          "name": "okul-anahtar-kelime",
+          "framework": null,
+          "text": "school teacher pupil"
+        }
+      ]
+    },
+    {
+      "id": "tubitak-4000",
+      "type": "feed",
+      "url": "https://4000.tubitak.gov.tr/rss.xml",
+      "organization": "TÜBİTAK Bilim ve Toplum",
+      "allowed_hosts": [
+        "4000.tubitak.gov.tr"
+      ],
+      "upgrade_http": true,
+      "implied_programme": "tubitak-bilim-toplum",
+      "language": "tr"
+    },
+    {
+      "id": "tubitak-duyuru",
+      "type": "html_list",
+      "url": "https://tubitak.gov.tr/tr/duyuru",
+      "urls": [
+        "https://tubitak.gov.tr/tr/duyuru",
+        "https://tubitak.gov.tr/tr/duyuru?page=1"
+      ],
+      "link_pattern": "^/tr/duyuru/[a-z0-9-]{12,}$",
+      "organization": "TÜBİTAK",
+      "allowed_hosts": [
+        "tubitak.gov.tr"
+      ],
+      "detail": true,
+      "max_items": 40,
+      "language": "tr",
+      "_not": "4000.tubitak.gov.tr akışı bayat (son çağrı 2024); güncel 4004/4006 çağrıları ana duyuru listesinde."
+    },
+    {
+      "id": "ab-ilan-hibe",
+      "type": "feed",
+      "url": "https://ab-ilan.com/category/hibe-duyurulari/feed/",
+      "organization": "ab-ilan.com (derleme)",
+      "allowed_hosts": [
+        "ab-ilan.com"
+      ],
+      "aggregator": true,
+      "detail": true,
+      "language": "tr"
+    },
+    {
+      "id": "ab-ilan-genel",
+      "type": "feed",
+      "url": "https://ab-ilan.com/feed/",
+      "organization": "ab-ilan.com (derleme)",
+      "allowed_hosts": [
+        "ab-ilan.com"
+      ],
+      "aggregator": true,
+      "detail": true,
+      "language": "tr"
+    },
+    {
+      "id": "stgm-hibe",
+      "type": "html_cards",
+      "url": "https://www.stgm.org.tr/hibe-duyurulari",
+      "organization": "STGM (derleme)",
+      "allowed_hosts": [
+        "www.stgm.org.tr"
+      ],
+      "aggregator": true,
+      "detail": false,
+      "max_items": 40,
+      "language": "tr",
+      "require_class": "acik",
+      "selectors": {
+        "card": "div.anasayfa-icerikler.hibe-duyurulari",
+        "title": ".anasayfa-icerikler-baslik",
+        "summary": ".anasayfa-icerikler-ozet",
+        "link": ".anasayfa-icerikler-hover a",
+        "date": ".hibe-duyurulari-tarih time",
+        "category": ".hibe-duyurulari-konu"
+      }
+    },
+    {
+      "id": "jugendbruecke",
+      "type": "html_crawl",
+      "url": "https://www.jugendbruecke.de/foerderung/",
+      "follow": "/foerderung/",
+      "call_pattern": "ausschreibung",
+      "organization": "Deutsch-Türkische Jugendbrücke",
+      "allowed_hosts": [
+        "www.jugendbruecke.de"
+      ],
+      "implied_programme": "bilateral-exchange",
+      "max_pages": 12,
+      "language": "de"
+    },
+    {
+      "id": "etwinning-tr",
+      "type": "feed",
+      "url": "https://etwinning.meb.gov.tr/feed/",
+      "organization": "eTwinning Türkiye (MEB)",
+      "allowed_hosts": [
+        "etwinning.meb.gov.tr"
+      ],
+      "language": "tr"
+    },
+    {
+      "id": "ifturquie",
+      "type": "feed",
+      "url": "https://www.ifturquie.org/feed/",
+      "organization": "Institut français de Turquie (Fransa)",
+      "allowed_hosts": [
+        "www.ifturquie.org"
+      ],
+      "language": "tr"
+    },
+    {
+      "id": "britishcouncil-tr",
+      "type": "feed",
+      "url": "https://www.britishcouncil.org.tr/rss.xml",
+      "organization": "British Council Türkiye (İngiltere)",
+      "allowed_hosts": [
+        "www.britishcouncil.org.tr"
+      ],
+      "language": "tr"
+    },
+    {
+      "id": "tusev",
+      "type": "feed",
+      "url": "https://www.tusev.org.tr/feed/",
+      "organization": "TÜSEV (derleme)",
+      "allowed_hosts": [
+        "www.tusev.org.tr",
+        "tusev.org.tr"
+      ],
+      "aggregator": true,
+      "detail": true,
+      "language": "tr"
+    },
+    {
+      "id": "sivilsayfalar",
+      "type": "feed",
+      "url": "https://www.sivilsayfalar.org/feed/",
+      "organization": "Sivil Sayfalar (derleme)",
+      "allowed_hosts": [
+        "www.sivilsayfalar.org"
+      ],
+      "aggregator": true,
+      "detail": true,
+      "language": "tr"
+    },
+    {
+      "id": "sabit-izleme",
+      "type": "page_watch",
+      "pinned": true,
+      "organization": "Büyükelçilik/ülke programları",
+      "allowed_hosts": [
+        "turkey.embassy.gov.au",
+        "www.international.gc.ca",
+        "www.gov.uk",
+        "www.kmk-pad.org",
+        "www.pasch-net.de",
+        "oead.at"
+      ],
+      "pages": [
+        {
+          "title": "Avustralya — Doğrudan Yardım Programı (DAP), Ankara Büyükelçiliği",
+          "url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
+          "country": "Avustralya",
+          "language": "en",
+          "note": "Ankara Büyükelçiliği küçük hibe programı (eğitim, STEM, gençlik ve engelli bireyler gibi alanlar). Uygunluğu ve son saati resmî sayfadan doğrulayın."
+        },
+        {
+          "title": "Kanada — Yerel Girişimler Fonu (CFLI), Türkiye",
+          "url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
+          "country": "Kanada",
+          "language": "en",
+          "note": "Kanada Büyükelçiliği yerel girişimler fonu (kâr amacı gütmeyen yerel ortaklar). Çağrı durumu ve tarihi sayfadan takip edilir."
+        },
+        {
+          "title": "İngiltere — Büyükelçilik Program Fonu (Türkiye)",
+          "url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
+          "country": "İngiltere",
+          "language": "en",
+          "note": "İngiltere Büyükelçiliği program fonu. Sayfaya göre çağrı dönemleri yıllık açılıyor; yeni dönemi izleyin."
+        },
+        {
+          "title": "Almanya — PAD okul ortaklıkları (PASCH okulları)",
+          "url": "https://www.kmk-pad.org/",
+          "country": "Almanya",
+          "language": "de",
+          "note": "PAD (Pädagogischer Austauschdienst): PASCH okullarına yönelik okul ortaklığı ve öğretmen programları; Türkiye'deki PASCH okulu olup olmadığınızı Goethe-Institut'tan doğrulayın.",
+          "no_deadline": true
+        },
+        {
+          "title": "Almanya — PASCH okul girişimi (Goethe-Institut/ZfA/DAAD/PAD)",
+          "url": "https://www.pasch-net.de/en/udi.html",
+          "country": "Almanya",
+          "language": "en",
+          "note": "PASCH okul ağı; Almanca öğretmenlerine hizmet içi eğitim, Almanya'da ders izleme ve burs olanakları.",
+          "no_deadline": true
+        },
+        {
+          "title": "Avusturya — OeAD okul programları ve Erasmus+ ortak arama",
+          "url": "https://oead.at/en/school",
+          "country": "Avusturya",
+          "language": "en",
+          "note": "OeAD (Avusturya Erasmus+ ajansı): Türkiye'ye özel ikili program bulunamadı; Erasmus+/eTwinning ile Avusturya okulu ortaklığı arayın.",
+          "no_deadline": true
+        }
+      ]
+    }
+  ]
+}
