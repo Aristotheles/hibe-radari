@@ -16,6 +16,7 @@ def main(argv=None):
     ap.add_argument('--site', metavar='KLASÖR', help='statik siteyi bu klasöre üret (Firebase Hosting için public/)')
     ap.add_argument('--store-db', help='Mevcut SQLite uygulama kaydı (varsayılan data/demo.db)')
     ap.add_argument('--firebase', action='store_true', help='Mevcut Firestore uygulama kaydını kullan')
+    ap.add_argument('--scheduled', action='store_true', help='Yalnız tarama periyodu dolan kaynakları çalıştır')
     args = ap.parse_args(argv)
     sys.stdout.reconfigure(encoding='utf-8')
     from .collector import write_health
@@ -38,7 +39,20 @@ def main(argv=None):
         store = SQLiteStore(database)
     report = None
     try:
-        report = run(only=args.only,source_settings=store.all('source_settings'))
+        settings = store.all('source_settings')
+        selected = args.only
+        if args.scheduled:
+            from .collector import load_config, due_sources
+            config = load_config()
+            due = due_sources(config, store.all('source_health'), source_settings=settings)
+            if args.only is not None:
+                due = [ident for ident in due if ident in args.only]
+            if not due:
+                print('Tarama zamanı gelen kaynak yok; rapor ve yayın korunuyor')
+                return 0
+            active = due_sources(config, [], source_settings=settings)
+            selected = None if args.only is None and set(due) == set(active) else due
+        report = run(only=selected,source_settings=settings)
         write_health(report)
         persist_report(report, store)
         if args.site:

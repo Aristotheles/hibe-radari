@@ -24,6 +24,36 @@ def load_config(path=None):
     return json.loads((path or ROOT / 'config/aggregator.json').read_text(encoding='utf-8'))
 
 
+def due_sources(config, health, now=None, source_settings=None):
+    """UTC periyot denetimi; belirsiz/gelecek zaman damgası taramayı ertelemez."""
+    from datetime import timedelta
+    import math
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        raise ValueError('Zaman dilimi gerekli')
+    disabled = {ident for setting in (source_settings or []) if setting.get('enabled') is False
+                for ident in setting.get('connector_ids', [])}
+    previous = {row['id']: row for row in health}
+    due = []
+    for source in config['sources']:
+        if not source.get('enabled', True) or source['id'] in disabled:
+            continue
+        hours = source.get('interval_hours', config.get('interval_hours', 24))
+        if isinstance(hours, bool) or not isinstance(hours, (int, float)) or not math.isfinite(hours) or not 1 <= hours <= 168:
+            raise ValueError('Kaynak periyodu 1–168 saat olmalı')
+        row = previous.get(source['id'], {})
+        try:
+            checked = datetime.fromisoformat(row.get('checked_at') or '')
+            if checked.tzinfo is None or checked > now:
+                raise ValueError('Geçersiz kontrol zamanı')
+        except (ValueError, TypeError):
+            due.append(source['id'])
+            continue
+        if now - checked >= timedelta(hours=hours):
+            due.append(source['id'])
+    return due
+
+
 def run_source(source, config, rel, today, transport=None, sleep=None):
     """Tek kaynak: (öğeler, durum). Hata kaynağı düşürür, çalışmayı durdurmaz."""
     status = {'id': source['id'], 'organization': source.get('organization'), 'fetched': 0,

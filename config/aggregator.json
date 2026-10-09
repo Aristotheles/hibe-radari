@@ -1,6 +1,7 @@
 {
   "_not": "Toplayıcı kaynakları. Yalnız kamuya açık duyuru üst verisi (başlık, kurum, son tarih, hedef kitle, kaynak linki) toplanır. allowed_hosts dışına çıkılmaz. Süzgeç kuralları config/relevance.json içindedir.",
   "delay_seconds": 1.0,
+  "interval_hours": 24,
   "enrich_limit": 25,
   "sources": [
     {
