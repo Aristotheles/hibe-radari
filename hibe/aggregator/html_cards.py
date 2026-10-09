@@ -2,7 +2,7 @@
 
 JavaScript çalıştırılmaz; yalnız sunucunun gönderdiği HTML okunur."""
 import re
-from datetime import date
+from datetime import date, datetime, timezone
 from urllib.parse import urljoin, urlsplit
 
 from bs4 import BeautifulSoup
@@ -67,21 +67,33 @@ def collect_cards(source, fetcher, today):
             continue
         seen.add(url)
         deadline, evidence = None, None
+        date_review, date_candidates = False, []
         date_node = card.select_one(sel.get('date', '')) if sel.get('date') else None
         if date_node:
             m = re.search(r'(\d{1,2})\.(\d{1,2})\.(\d{4})', date_node.get_text(' ', strip=True))
             if m:
+                evidence = f'Liste kartı tarihi: {m[0]}'
                 try:
                     deadline = date(int(m[3]), int(m[2]), int(m[1]))
-                    evidence = f'Liste kartı tarihi: {m[0]}'
+                    # Matematiksel olarak geçerli 2926 gibi bir yazım hatası kesin son tarih değildir.
+                    # Uzun vadeli gerçek çağrı da silinmez: özgün değer editör incelemesine kalır.
+                    if deadline.year > today.year + 10:
+                        date_candidates = [{'value':deadline.isoformat(), 'precision':'unknown',
+                            'evidence':evidence, 'reason':'Sıra dışı ileri yıl; resmî çağrıdan doğrulanmalı'}]
+                        deadline = None; date_review = True
                 except ValueError:
-                    pass
+                    date_review = True
+                    date_candidates = [{'value':None,'raw':m[0],'precision':'unknown','evidence':evidence}]
         summary = card.select_one(sel['summary']) if sel.get('summary') else None
         category = card.select_one(sel['category']) if sel.get('category') else None
         items.append(GrantOpportunity(
             title=re.sub(r'\s+', ' ', title_node.get_text(' ', strip=True)), source_id=source['id'],
             source_url=url, organization=source.get('organization'), deadline=deadline,
-            deadline_evidence=evidence, language=source.get('language'),
+            deadline_evidence=evidence, deadline_review_required=date_review,
+            deadline_candidates=date_candidates,
+            deadline_source_url=base if evidence else None,
+            deadline_checked_at=datetime.now(timezone.utc).isoformat() if evidence else None,
+            language=source.get('language'),
             description_short=shorten(summary.get_text(' ', strip=True), 300) if summary else '',
             categories=[category.get_text(' ', strip=True)] if category and category.get_text(strip=True) else []))
         if len(items) >= source.get('max_items', 40):

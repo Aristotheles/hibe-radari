@@ -7000,7 +7000,12 @@
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
-      "checked_at": null
+      "checked_at": "2026-10-09T23:52:53+00:00",
+      "reviewed_urls": [
+        "https://www.stgm.org.tr/hibe-duyurulari",
+        "https://www.stgm.org.tr/cerez-politikasi"
+      ],
+      "note": "İncelenen liste/çerez sayfası açık yeniden kullanım veya otomatik tarama izni vermiyor; izin var sayılmadı. Liste resmî başvuru kaynağında doğrulama istiyor. Manuel rota korunur."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -7009,8 +7014,8 @@
     "change_tracking": "pending",
     "interval_hours": 24,
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
-    "acceptance_checked_at": "2026-10-09T22:59:30.824485+00:00",
+    "acceptance_reason": "Liste/çerez politikası incelendi; açık otomatik tarama/yeniden kullanım izni bu sayfalarda doğrulanmadı, manuel rota. Gerçek listede 07.10.2926 yıl anomalisi gözlendi; özgün fon sayfasında son tarih/Türkiye/hedef kitle ve editör onayı gerekli.",
+    "acceptance_checked_at": "2026-10-09T23:52:53+00:00",
     "last_access_observation": {
       "source_id": "source-17",
       "url": "https://www.stgm.org.tr/hibe-duyurulari",

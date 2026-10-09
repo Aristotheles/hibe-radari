@@ -5507,18 +5507,35 @@
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
-      "checked_at": null
+      "checked_at": "2026-10-09T23:52:53+00:00",
+      "reviewed_urls": [
+        "https://www.stgm.org.tr/hibe-duyurulari",
+        "https://www.stgm.org.tr/cerez-politikasi"
+      ],
+      "note": "İncelenen liste/çerez sayfası açık yeniden kullanım veya otomatik tarama izni vermiyor; izin var sayılmadı. Liste resmî başvuru kaynağında doğrulama istiyor. Manuel rota korunur."
     },
     "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
-    "sample_call": null,
-    "deadline_evidence": null,
+    "sample_call": {
+      "title": "Demokrasi Burs Programı Agora",
+      "url": "https://www.stgm.org.tr/demokrasi-burs-programi-agora-icin-basvurular-basladi",
+      "official_url": "https://tr.boell.org/tr/agora-demokrasi-burs-programi",
+      "publication": "not approved"
+    },
+    "deadline_evidence": {
+      "date": "2026-10-07",
+      "quote": "Son başvuru tarihi 7 Ekim 2026",
+      "source_url": "https://tr.boell.org/tr/agora-demokrasi-burs-programi",
+      "precision": "day",
+      "checked_at": "2026-10-09T23:52:53+00:00",
+      "list_conflict": "07.10.2926"
+    },
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": "2026-10-09T22:59:30.824485+00:00",
-    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "checked_at": "2026-10-09T23:52:53+00:00",
+    "reason": "Liste/çerez politikası incelendi; açık otomatik tarama/yeniden kullanım izni bu sayfalarda doğrulanmadı, manuel rota. Gerçek listede 07.10.2926 yıl anomalisi gözlendi; özgün fon sayfasında son tarih/Türkiye/hedef kitle ve editör onayı gerekli.",
     "page_observation": {
       "source_id": "source-17",
       "url": "https://www.stgm.org.tr/hibe-duyurulari",
@@ -5539,7 +5556,15 @@
       "url": "https://www.stgm.org.tr/hibe-duyurulari",
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "call_evidence_status": "not_verified"
+    "call_evidence_status": "not_verified",
+    "date_anomaly_observation": {
+      "url": "https://www.stgm.org.tr/hibe-duyurulari",
+      "title": "Demokrasi Burs Programı Agora için Başvurular Başladı",
+      "raw_date": "07.10.2926",
+      "checked_at": "2026-10-09T23:52:53+00:00",
+      "interpretation": "Unusual future year; not corrected or accepted as exact deadline."
+    },
+    "evidence_fixture": "tests/fixtures/aggregator/stgm_agora_date_evidence_20261010.json"
   },
   {
     "source_id": "source-18",

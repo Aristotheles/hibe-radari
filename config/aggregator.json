@@ -137,8 +137,12 @@
       "access_policy": {
         "terms_status": "unreviewed",
         "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "checked_at": "2026-10-09T23:52:53+00:00",
+        "reviewed_urls": [
+          "https://www.stgm.org.tr/hibe-duyurulari",
+          "https://www.stgm.org.tr/cerez-politikasi"
+        ],
+        "note": "İncelenen liste/çerez sayfası açık yeniden kullanım veya otomatik tarama izni vermiyor; izin var sayılmadı. Liste resmî başvuru kaynağında doğrulama istiyor. Manuel rota korunur."
       }
     },
     {
