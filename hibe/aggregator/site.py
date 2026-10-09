@@ -601,7 +601,7 @@ def check_publication(report, today=None):
             raise PublicationBlocked(f'Yayın onayı geçersiz: {exc}') from exc
 
 
-def build(report, outdir, today=None):
+def build(report, outdir, today=None, commit_report=None):
     """Onay kapısı, ayrı staging, kontrollü geçiş ve hata halinde geri dönüş."""
     import os
     import shutil
@@ -632,7 +632,11 @@ def build(report, outdir, today=None):
             os.replace(out, backup)
         try:
             os.replace(stage, out)
+            if commit_report is not None:
+                commit_report()
         except BaseException:
+            if out.exists():
+                os.replace(out, stage)
             if backup is not None:
                 os.replace(backup, out)
             raise

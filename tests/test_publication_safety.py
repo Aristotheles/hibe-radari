@@ -62,6 +62,16 @@ class PublicationSafetyTests(unittest.TestCase):
         backups = list(self.root.glob('.public.backup-*'))
         self.assertTrue(backups)
         self.assertEqual(manifest(backups[-1]), self.before)
+    def test_report_commit_failure_rolls_back_public_tree(self):
+        report=copy.deepcopy(self.report);report['generated_at']='2026-10-09T11:00:00Z'
+        with self.assertRaises(OSError):
+            site.build(report,self.out,date(2026,10,9),commit_report=lambda:(_ for _ in ()).throw(OSError('Report disk failure')))
+        self.assertEqual(manifest(self.out),self.before)
+    def test_commit_failure_without_prior_tree_does_not_leave_new_publication(self):
+        out=self.root/'new-public'
+        with self.assertRaises(OSError):
+            site.build(self.report,out,date(2026,10,9),commit_report=lambda:(_ for _ in ()).throw(OSError('Report failure')))
+        self.assertFalse(out.exists())
     def test_demo_record_or_demo_approval_never_replaces_production(self):
         from hibe.domain import version
         for field in ('record','approval'):
@@ -85,6 +95,11 @@ class PublicationSafetyTests(unittest.TestCase):
                 self.assertEqual(cli.main(args), 1)
             self.assertEqual(latest.read_bytes(), b'last good')
             self.assertTrue(latest.with_name('last-attempt.json').is_file())
+    def test_raw_report_cannot_be_written_into_public_directory(self):
+        with patch.object(cli,'run') as collect:
+            self.assertEqual(cli.main(['--site',str(self.out),'--out',str(self.out/'raw.json')]),2)
+        collect.assert_not_called()
+        self.assertEqual(manifest(self.out),self.before)
 
     def test_cli_unapproved_publication_keeps_latest_and_site(self):
         from hibe.aggregator import collector

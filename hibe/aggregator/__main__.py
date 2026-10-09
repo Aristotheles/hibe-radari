@@ -21,6 +21,9 @@ def main(argv=None):
     from .collector import write_health
     from pathlib import Path
     from .collector import ROOT
+    if args.site and args.out and Path(args.out).resolve().is_relative_to(Path(args.site).resolve()):
+        print('Ham keşif raporu public klasörüne yazılamaz')
+        return 2
     from .bridge import persist_report, publication_report
     if args.firebase:
         from hibe.server import App
@@ -64,8 +67,10 @@ def main(argv=None):
             return 1
     if args.site:
         from .site import build
-        print(f'Statik site: {build(publish_report, args.site)}')
-    path = write_report(report, target)
+        print(f'Statik site: {build(publish_report, args.site, commit_report=lambda: write_report(report, target))}')
+        path = target
+    else:
+        path = write_report(report, target)
     c = report['counts']
     print(f"Tarih {report['today']} · kabul {c['accept']} · inceleme {c['review']} · izleme {c['watch']} · "
           f"genel {c['general']} · gürültü {c['reject']}")
