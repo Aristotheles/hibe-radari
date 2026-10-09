@@ -1,0 +1,242 @@
+[
+  {
+    "id": "source-1",
+    "name": "Türkiye Ulusal Ajansı",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-2",
+    "name": "TÜBİTAK 4006",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-3",
+    "name": "Avustralya DAP",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-4",
+    "name": "DOKA",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-5",
+    "name": "EU Funding & Tenders",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-6",
+    "name": "Japonya GGP",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-7",
+    "name": "GSB Gençlik Projeleri",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-8",
+    "name": "Kanada CFLI",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-9",
+    "name": "Interreg NEXT Black Sea Basin",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-10",
+    "name": "Institut français",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-11",
+    "name": "İngiltere Büyükelçiliği",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-12",
+    "name": "UNDP GEF SGP",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-13",
+    "name": "ABD Public Diplomacy Grants",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-14",
+    "name": "Sabancı Vakfı",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-15",
+    "name": "Deutsch-Türkische Jugendbrücke",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-16",
+    "name": "Aile Bakanlığı Proje Geliştirme Destek Masası",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-17",
+    "name": "STGM Hibe Duyuruları",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-18",
+    "name": "ab-ilan.com",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-19",
+    "name": "fundsforNGOs",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-20",
+    "name": "Kaynak 20 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-21",
+    "name": "Kaynak 21 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-22",
+    "name": "Kaynak 22 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-23",
+    "name": "Kaynak 23 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-24",
+    "name": "Kaynak 24 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-25",
+    "name": "Kaynak 25 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-26",
+    "name": "Kaynak 26 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-27",
+    "name": "Kaynak 27 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-28",
+    "name": "Kaynak 28 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-29",
+    "name": "Kaynak 29 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  },
+  {
+    "id": "source-30",
+    "name": "Kaynak 30 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null
+  }
+]

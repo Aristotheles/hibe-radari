@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+data/
+service-account*.json
+
+# Yerel ajan kayıtları ve çalışma verileri
+.agent/
+.serena/
+approvals/
+.env.*
+!.env.example
+*.log
+*.db
+*.sqlite*
+node_modules/

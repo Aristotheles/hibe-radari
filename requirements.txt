@@ -1,0 +1,2 @@
+firebase-admin>=6,<8
+pypdf>=5,<7
