@@ -10,7 +10,7 @@ class CoreTests(unittest.TestCase):
  def setUp(self):
   self.db=MemoryStore();seed(self.db);self.s=Service(self.db,'admin',today=lambda:date(2026,10,9));self.admin={'uid':'admin','email':'senoltemur@gmail.com','email_verified':True};self.user={'uid':'user','email':'u@example.org','email_verified':True};self.c=self.db.get('calls','demo-cevre')
  def test_three_values(self):
-  p={'conditions':[]};self.assertEqual(eligibility(p),'belirsiz');p['conditions']=[{'result':'saglandi','evidence':'s1'}];self.assertEqual(eligibility(p),'uygun');p['conditions'].append({'result':'bilinmiyor'});self.assertEqual(eligibility(p),'belirsiz');p['conditions'].append({'result':'saglanmadi'});self.assertEqual(eligibility(p),'uygun_degil')
+  p={'conditions':[]};self.assertEqual(eligibility(p),'belirsiz');p['conditions']=[{'result':'saglandi','evidence':'s1'}];self.assertEqual(eligibility(p),'uygun');p['conditions'].append({'result':'bilinmiyor'});self.assertEqual(eligibility(p),'belirsiz');p['conditions'].append({'result':'saglanmadi','evidence':'Fixture: başvurucu kurum türü uygun değil'});self.assertEqual(eligibility(p),'uygun_degil')
  def test_stale_approval(self):
   self.s.approve(self.admin,self.c['id'],version(self.c));self.assertEqual(len(self.s.public()),2);self.c['title']='Değişti';self.s.save(self.admin,self.c);self.assertEqual(len(self.s.public()),1)
  def test_stale_screen(self):

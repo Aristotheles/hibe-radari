@@ -7,7 +7,7 @@ def version(c):
 def eligibility(p):
  cs=p.get('conditions',[])
  if not cs:return 'belirsiz'
- if any(c['result']=='saglanmadi' for c in cs):return 'uygun_degil'
+ if any(c['result']=='saglanmadi' and c.get('evidence') for c in cs):return 'uygun_degil'
  if any(c['result']=='bilinmiyor' or not c.get('evidence') for c in cs):return 'belirsiz'
  return 'uygun'
 def validate(c):

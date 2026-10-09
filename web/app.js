@@ -178,6 +178,13 @@ async function admin() {
       const n = el('details');
       const approved = c.approval?.reviewed && c.approval.version === c.version;
       n.append(el('summary', c.title + (approved ? ' · Bu sürüm onaylı' : ' · İnceleme bekliyor')));
+      if (c.eligibility_assessment) {
+        const labels = {school:'Okul / devlet lisesi',teacher:'Öğretmen',student_14_18:'14–18 yaş lise öğrencisi',school_partner:'Okulun proje ortaklığı',ngo_channel:'Dernek üzerinden başvuru'};
+        for (const [target, result] of Object.entries(c.eligibility_assessment.targets || {})) {
+          n.append(el('p', (labels[target] || target) + ': ' + result.status));
+          const proof = el('details'); proof.append(el('summary', 'Uygunluk kanıtları'), el('pre', JSON.stringify(result.checks, null, 2))); n.append(proof);
+        }
+      }
       if (c.from_aggregator) {
         n.append(el('p', 'Toplayıcı keşfi · resmî URL, özgün özet ve başvuru koşullarını inceleyip kaydedin.'));
         const discovery = (data.discoveries || []).find(d => (d.call_id || d.id) === c.id);

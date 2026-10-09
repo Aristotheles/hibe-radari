@@ -16,6 +16,8 @@ class Service:
    c=dict(c,from_aggregator=True,reviewed_discovery_version=old['discovery_version'],discovery_changes_pending=False)
    c['description_short']=c['summary']
    if c.get('official_url_verified'):c['original_url']=c.get('official_url')
+   from .eligibility import assess
+   c['eligibility_assessment']=assess(c,self.today())
   c={k:v for k,v in c.items() if k not in {'approval','version'}};c['version']=version(c);self.store.put('calls',c['id'],c);return c
  def approve(self,u,i,v):
   self.require_admin(u);c=self.store.get('calls',i)

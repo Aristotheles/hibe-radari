@@ -41,6 +41,8 @@ class RelevanceFilter:
 
     def evaluate(self, item, today, implied_programme=None):
         """item.relevance'ı doldurur ve döndürür. Zaman kuralları (süresi dolmuş/eski) dahil."""
+        from hibe.eligibility import assess
+        item.eligibility_assessment = assess(item.to_dict(),today)
         rules = self.rules
         head = fold(' '.join([item.title] + list(item.categories)))
         body = fold(item.description_short)

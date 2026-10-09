@@ -26,7 +26,7 @@ class DiscoveryBridgeTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.service.approve(ADMIN,'abc',version(c))
         c=self.reviewed();self.service.approve(ADMIN,'abc',c['version'])
         self.assertEqual(len(self.service.public()),1)
-        self.assertEqual(len(publication_report(self.report,self.store,TODAY)['accepted']),1)
+        self.assertEqual(len(publication_report(self.report,self.store,TODAY)['review']),1)
     def test_identical_rescan_keeps_approval_but_change_revokes(self):
         persist_report(self.report,self.store);c=self.reviewed();self.service.approve(ADMIN,'abc',c['version'])
         r=copy.deepcopy(self.report);r['accepted'][0]['deadline_checked_at']='new';persist_report(r,self.store)
@@ -59,7 +59,7 @@ class DiscoveryBridgeTests(unittest.TestCase):
         c=self.store.get('calls','abc');c.update(summary='Editörün özgün kısa açıklaması',official_url='https://official.org/call/1',official_url_verified=True,documents=[{'url':'https://official.org/call/1','hash':'reviewed-evidence'}],original_url='https://unverified.org/apply')
         c=self.service.save(ADMIN,c);self.service.approve(ADMIN,'abc',c['version'])
         report=publication_report(self.report,self.store,TODAY)
-        self.assertEqual(report['accepted'][0]['description_short'],c['summary'])
+        self.assertEqual(report['review'][0]['description_short'],c['summary'])
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp)/'public';build(report,out,TODAY)
             html=(out/'ilan/abc.html').read_text(encoding='utf-8')

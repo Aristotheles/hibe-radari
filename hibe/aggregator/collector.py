@@ -41,6 +41,7 @@ def run_source(source, config, rel, today, transport=None, sleep=None):
             return [], status
         for item in items:
             item.aggregator = bool(source.get('aggregator'))
+            item.official_source_verified = source.get('official_source_verified') is True
             item.organization = item.organization or source.get('organization')
             item.language = item.language or source.get('language')
             rel.evaluate(item, today, source.get('implied_programme'))

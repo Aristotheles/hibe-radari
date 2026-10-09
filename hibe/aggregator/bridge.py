@@ -10,7 +10,11 @@ GROUPS = ('accepted', 'review', 'watch', 'general', 'rejected')
 VOLATILE = {'deadline_checked_at', 'deadline_history', 'duplicate_candidates', 'provenance', 'seen_in', 'relevance'}
 
 def discovery_version(row):
-    content = {k:v for k,v in row.items() if k not in VOLATILE}
+    def semantic(value):
+        if isinstance(value,dict): return {k:semantic(v) for k,v in value.items() if k not in ('checked_at','deadline_checked_at')}
+        if isinstance(value,list): return [semantic(v) for v in value]
+        return value
+    content = semantic({k:v for k,v in row.items() if k not in VOLATILE})
     return hashlib.sha256(json.dumps(content,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 
 def persist_report(report, store):
@@ -94,6 +98,9 @@ def publication_report(report, store, today):
     result.update({g:[] for g in GROUPS})
     for call in store.all('calls'):
         if call.get('from_aggregator') and review_ready(call) and publishable(call,today):
-            result['accepted'].append(call)
-    result['counts'] = dict(report.get('counts',{}),accept=len(result['accepted']),review=0,watch=0,general=0,reject=0)
+            targets=call.get('eligibility_assessment',{}).get('targets',{})
+            statuses=[targets.get(k,{}).get('status') for k in ('school','teacher','student_14_18','school_partner')]
+            group='accepted' if 'UYGUN' in statuses else 'review'
+            result[group].append(call)
+    result['counts'] = dict(report.get('counts',{}),accept=len(result['accepted']),review=len(result['review']),watch=0,general=0,reject=0)
     return result

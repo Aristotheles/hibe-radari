@@ -16,7 +16,7 @@ class PipelineTests(unittest.TestCase):
   class Failing:
    def extract(self,*a):raise ValueError('LLM failed')
   scan_source(self.source,self.db,Failing(),{},lambda u,a:('text','hash2' if u.endswith('pdf') else 'hash1'))
-  self.assertNotIn('approval',self.db.get('calls',c['id']))
+  self.assertNotIn('approval',self.db.get('calls',c['id']));self.assertEqual(self.db.get('calls',c['id'])['title'],c['title']);self.assertEqual(self.db.get('calls',c['id'])['ai_status'],'unavailable')
  def test_discovery_no_llm(self):
   self.source['type']='discovery';scan_source(self.source,self.db,FakeExtractor(),{},lambda u,a:('text','hash'));self.assertEqual(self.db.all('calls'),[])
  def test_export_escapes(self):

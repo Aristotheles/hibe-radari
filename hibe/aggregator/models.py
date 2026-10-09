@@ -37,6 +37,8 @@ class GrantOpportunity:
     source_id: str                  # config/aggregator.json kaynak kimliği
     source_url: str                 # duyurunun bulunduğu sayfa (kaynak linki)
     organization: str | None = None
+    official_source_verified: bool = False
+    eligibility_assessment: dict = field(default_factory=dict)
     official_call_id: str | None = None
     identity_authority: str | None = None
     call_period: str | None = None
