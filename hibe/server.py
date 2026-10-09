@@ -50,11 +50,13 @@ def handler(app):
   def do_POST(self):
    try:
     o=self.headers.get('Origin')
-    if o and urlsplit(o).netloc!=self.headers.get('Host'):raise PermissionError('Başka kaynaktan yazma engellendi')
     if self.headers.get('Content-Type','').split(';')[0]!='application/json':raise ValueError('JSON gerekli')
     n=int(self.headers.get('Content-Length','0'))
     if not 0<n<=150000:raise ValueError('İstek boyutu sınırı')
-    d=json.loads(self.rfile.read(n));p=urlsplit(self.path).path
+    # Sınırlı gövdeyi tüket: Windows'ta okunmamış POST verisi 403 yerine soket resetine yol açabilir.
+    body=self.rfile.read(n)
+    if o and urlsplit(o).netloc!=self.headers.get('Host'):raise PermissionError('Başka kaynaktan yazma engellendi')
+    d=json.loads(body);p=urlsplit(self.path).path
     with app.lock:
      if p=='/api/demo-login':
       if not app.demo:raise PermissionError('Demo kapalı')

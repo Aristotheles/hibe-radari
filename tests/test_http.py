@@ -20,7 +20,11 @@ class HTTPTests(unittest.TestCase):
  def test_user_admin_blocked(self):
   _,r=self.req('/api/demo-login',{'role':'user'});self.assertEqual(self.req('/api/admin',t=r['token'])[0],403)
  def test_preferences_login(self):self.assertEqual(self.req('/api/preferences',{'themes':[],'subscribed':True})[0],403)
- def test_cross_origin(self):self.assertEqual(self.req('/api/demo-login',{'role':'admin'},origin='https://evil.org')[0],403)
+ def test_cross_origin(self):
+  for _ in range(3):
+   code,response=self.req('/api/demo-login',{'role':'admin'},origin='https://evil.org')
+   self.assertEqual(code,403);self.assertEqual(response['error'],'Başka kaynaktan yazma engellendi')
+  self.assertEqual(self.app.sessions,{})
  def test_demo_disabled(self):self.app.demo=False;self.assertEqual(self.req('/api/demo-login',{'role':'admin'})[0],403)
  def test_frontend_module_served_as_javascript(self):
   with urllib.request.urlopen(self.base+'/radar.mjs') as r:
