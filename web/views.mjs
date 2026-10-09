@@ -51,6 +51,9 @@ export function renderDetail(call, selected = 0) {
   banner.append(answer, badge(path)); target.append(back, banner);
   const layout = node('div', undefined, 'detail-layout'), article = node('article'), heading = node('div', undefined, 'detail-heading'), h1 = node('h1', call.title); h1.id = 'detail-title'; h1.tabIndex = -1;
   heading.append(h1, node('p', call.demo ? 'DEMO · Kurgusal örnek; gerçek başvuruya dayanak değildir.' : call.summary), node('p', 'Son kontrol: ' + checked(call), 'verification')); article.append(heading);
+  article.append(node('p', 'Kaynak: ' + (call.organization || call.source_id || 'Bilgi kaydı yok')));
+  if (call.deadline_evidence) article.append(node('p', 'Son tarih kanıtı: ' + call.deadline_evidence, 'evidence'));
+  if (call.deadline_precision && call.deadline_precision !== 'day') article.append(node('p', 'Son tarih kesin değil; doğrulama gerekli.', 'verification'));
   const facts = node('div', undefined, 'facts-grid');
   const support = call.budget_max != null ? new Intl.NumberFormat('tr-TR').format(call.budget_max) + (call.currency ? ' ' + call.currency : ' · para birimi bilinmiyor') : 'Bilgi kaydı yok';
   for (const [label, value, note] of [['Son başvuru', call.deadline ? fullDate(call.deadline) : 'Tarihi açıklanmadı', 'Kapanış saati bilinmiyor'], ['Destek', support, 'Yalnız mevcut veri gösterilir'], ['Eş finansman', 'Bilgi kaydı yok', 'Resmî metinden doğrulayın'], ['Ortak bilgisi', 'Bilgi kaydı yok', 'Başvuru rolü ortak gerekliliğini tek başına kanıtlamaz']]) {

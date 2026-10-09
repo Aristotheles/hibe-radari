@@ -35,7 +35,7 @@ function friendlyError(error) {
   return 'İşlem tamamlanamadı. Yeniden deneyin.';
 }
 
-async function api(path, data) {
+async function api(path, data, responseType = 'json') {
   if (auth?.currentUser) token = await auth.currentUser.getIdToken();
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15000);
@@ -45,7 +45,7 @@ async function api(path, data) {
       headers: { ...(token ? { Authorization: 'Bearer ' + token } : {}), ...(data === undefined ? {} : { 'Content-Type': 'application/json' }) },
       body: data === undefined ? undefined : JSON.stringify(data)
     });
-    const result = await response.json();
+    const result = response.ok && responseType === 'text' ? await response.text() : await response.json();
     if (!response.ok) {
       const error = new Error(result.error || 'İşlem tamamlanamadı');
       error.status = response.status;
@@ -109,6 +109,9 @@ function syncSessionUI() {
   $('#logout').hidden = !me;
   $('#prefs').hidden = !me;
   $('#preferences-login').hidden = !!me;
+  $('#membership').hidden = !me;
+  $('#membership-status').textContent = me?.membership?.tier === 'pro' ? 'Pro üyelik · CSV dışa aktarımı açık.' : 'Ücretsiz üyelik · Arama, takvim ve bülten tercihleri açık.';
+  $('#export-csv').disabled = me?.membership?.features?.csv_export !== true;
   $('#subscribe').checked = me?.preferences?.subscribed === true;
   for (const i of document.querySelectorAll('[name="theme"]')) i.checked = me?.preferences?.themes?.includes(i.value) || false;
   if (!me) {
@@ -264,6 +267,12 @@ $('#prefs').onsubmit = e => {
     await session(); message('Tercihleriniz kaydedildi. E-posta gönderimi bağlı değil.', 'success', '#prefs-status');
   }, '#prefs-status');
 };
+$('#export-csv').onclick = () => action($('#export-csv'), async () => {
+  const csv = await api('pro/export', undefined, 'text');
+  const url = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'}));
+  const link = el('a'); link.href = url; link.download = 'hibe-radari.csv'; document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}, '#prefs-status');
 $('#import-button').onclick = () => action($('#import-button'), async () => {
   let draft;
   try { draft = JSON.parse($('#import').value); } catch { message('Taslak kaydedilemedi. JSON biçimini kontrol edin.', 'error', '#import-status'); return; }

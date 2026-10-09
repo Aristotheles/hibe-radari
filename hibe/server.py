@@ -15,7 +15,7 @@ class App:
    import firebase_admin
    firebase_admin.initialize_app(options={'projectId':os.environ['FIREBASE_PROJECT_ID']});s=FirestoreStore();uid=os.environ.get('ADMIN_UID')
    if not uid:raise ValueError('ADMIN_UID gerekli')
-  self.service=Service(s,uid,approvals=ROOT/'approvals' if demo else None)
+  self.service=Service(s,uid,approvals=ROOT/'approvals' if demo else None,demo=demo)
  def user(self,t):
   if self.demo:
    if t not in self.sessions:raise PermissionError('Giriş gerekli')
@@ -40,7 +40,9 @@ def handler(app):
     if p=='/api/calls':self.send(200,app.service.public());return
     if p=='/api/sources':self.send(200,app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))));return
     if p=='/api/me':
-     u=self.user();self.send(200,{'email':u['email'],'admin':app.service.is_admin(u),'preferences':app.service.store.get('users',u['uid'])});return
+     u=self.user();self.send(200,{'email':u['email'],'admin':app.service.is_admin(u),'preferences':app.service.store.get('users',u['uid']),'membership':app.service.entitlements(u)});return
+    if p=='/api/pro/export':
+     u=self.user();self.send(200,app.service.export_csv(u).encode('utf-8'),'text/csv; charset=utf-8');return
     if p=='/api/admin':
      u=self.user();app.service.require_admin(u);self.send(200,{'calls':app.service.store.all('calls'),'sources':app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))),'acceptance_cards':json.loads((ROOT/'config/source_acceptance.json').read_text(encoding='utf-8')),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
     if p in {'/','/takvim','/nasil-calisir','/aboneligim','/yonetim'} or p.startswith('/ilan/'):

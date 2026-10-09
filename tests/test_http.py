@@ -5,7 +5,7 @@ from hibe.store import MemoryStore
 from hibe.service import Service
 class HTTPTests(unittest.TestCase):
  def setUp(self):
-  self.app=object.__new__(App);self.app.demo=True;self.app.sessions={};self.app.lock=threading.Lock();self.app.service=Service(MemoryStore(),'demo-admin');self.server=ThreadingHTTPServer(('127.0.0.1',0),handler(self.app));self.t=threading.Thread(target=self.server.serve_forever,daemon=True);self.t.start();self.base='http://127.0.0.1:'+str(self.server.server_port)
+  self.app=object.__new__(App);self.app.demo=True;self.app.sessions={};self.app.lock=threading.Lock();self.app.service=Service(MemoryStore(),'demo-admin',demo=True);self.server=ThreadingHTTPServer(('127.0.0.1',0),handler(self.app));self.t=threading.Thread(target=self.server.serve_forever,daemon=True);self.t.start();self.base='http://127.0.0.1:'+str(self.server.server_port)
  def tearDown(self):self.server.shutdown();self.server.server_close();self.t.join()
  def req(self,p,d=None,t='',origin=None):
   h={'Content-Type':'application/json'}
@@ -71,3 +71,13 @@ class HTTPTests(unittest.TestCase):
   code,data=self.req('/api/sources');self.assertEqual(code,200);self.assertEqual(len(data),154)
   for path in ['/views.mjs','/decision.mjs']:
    with urllib.request.urlopen(self.base+path) as response:self.assertEqual(response.headers.get_content_type(),'text/javascript')
+ def test_pro_export_checked_at_http_boundary(self):
+  self.assertEqual(self.req('/api/pro/export')[0],403)
+  _,login=self.req('/api/demo-login',{'role':'user'});token=login['token']
+  self.assertEqual(self.req('/api/pro/export',t=token)[0],403)
+  self.req('/api/preferences',{'themes':[],'subscribed':False,'tier':'pro','membership_status':'active'},t=token)
+  self.assertEqual(self.req('/api/pro/export',t=token)[0],403)
+  self.app.service.store.put('users','demo-user',{'tier':'pro','membership_status':'active'})
+  request=urllib.request.Request(self.base+'/api/pro/export',headers={'Authorization':'Bearer '+token})
+  with urllib.request.urlopen(request) as response:
+   self.assertEqual(response.status,200);self.assertEqual(response.headers.get_content_type(),'text/csv');self.assertIn('Başlık',response.read().decode('utf-8'))

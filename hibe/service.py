@@ -4,13 +4,16 @@ import json
 from .domain import *
 def now():return datetime.now(timezone.utc).isoformat()
 class Service:
- def __init__(self,store,admin_uid,today=date.today,approvals=None):self.store=store;self.admin_uid=admin_uid;self.today=today;self.approvals=approvals
+ def __init__(self,store,admin_uid,today=date.today,approvals=None,demo=False):self.store=store;self.admin_uid=admin_uid;self.today=today;self.approvals=approvals;self.demo=demo
  def is_admin(self,u):return bool(self.admin_uid and u.get('uid')==self.admin_uid and u.get('email_verified') is True)
  def require_admin(self,u):
   if not self.is_admin(u):raise PermissionError('Yönetici yetkisi gerekli')
  def save(self,u,c):
-  self.require_admin(u);validate(c)
+  self.require_admin(u);c=dict(c)
+  if self.demo:c['demo']=True
+  validate(c)
   old=self.store.get('calls',c['id'])
+  if old and old.get('demo'):c['demo']=True
   if old and old.get('from_aggregator'):
    if c.get('discovery_version')!=old['discovery_version']:raise ValueError('Keşif değişti; güncel kaydı yeniden inceleyin')
    c=dict(c,from_aggregator=True,reviewed_discovery_version=old['discovery_version'],discovery_changes_pending=False)
@@ -24,7 +27,8 @@ class Service:
   if not c or version(c)!=v:raise ValueError('İçerik değişti; yeniden inceleyin')
   from .aggregator.bridge import review_ready
   if not review_ready(c):raise ValueError('Güncel keşif, özgün özet ve resmî URL incelemesi tamamlanmalı')
-  c['approval']={'reviewed':True,'version':v,'uid':u['uid'],'at':now()};self.store.put('calls',i,c)
+  if self.demo and not c.get('demo'):raise ValueError('Demo incelemesi için kaydı DEMO olarak yeniden kaydedin')
+  c['approval']={'reviewed':True,'version':v,'uid':u['uid'],'at':now(),'demo':self.demo};self.store.put('calls',i,c)
   if self.approvals:
    p=Path(self.approvals);p.mkdir(exist_ok=True);(p/(i+'.json')).write_text(json.dumps(c['approval'],indent=2))
   return c
@@ -58,7 +62,28 @@ class Service:
   if not isinstance(d.get('subscribed'),bool) or not isinstance(d.get('themes'),list) or any(t not in THEMES for t in d['themes']):raise ValueError('Tercihler geçersiz')
   old=self.store.get('users',u['uid']) or {}
   r={'uid':u['uid'],'email':u['email'],'themes':list(set(d['themes'])),'subscribed':d['subscribed'],'tier':old.get('tier','free'),'created_at':old.get('created_at',now()),'updated_at':now(),'notice_version':'draft-1'}
+  for key in ('membership_status','pro_expires_at'):
+   if key in old:r[key]=old[key]
   self.store.put('users',u['uid'],r);return r
- def public(self):return public_calls(self.store.all('calls'),self.today())
+ def entitlements(self,u):
+  if not u.get('uid') or u.get('email_verified') is not True:raise PermissionError('Doğrulanmış giriş gerekli')
+  record=self.store.get('users',u['uid']) or {};pro=record.get('tier')=='pro' and record.get('membership_status')=='active'
+  expires=record.get('pro_expires_at')
+  if expires:
+   try:
+    expiry=datetime.fromisoformat(expires.replace('Z','+00:00'))
+    pro=pro and expiry.tzinfo is not None and expiry>datetime.now(timezone.utc)
+   except (ValueError,TypeError,AttributeError):pro=False
+  return {'tier':'pro' if pro else 'free','features':{'browse':True,'calendar':True,'newsletter_preferences':True,'csv_export':pro},'payments_enabled':False}
+ def export_csv(self,u):
+  if not self.entitlements(u)['features']['csv_export']:raise PermissionError('Bu özellik için etkin Pro üyeliği gerekli')
+  import csv,io
+  stream=io.StringIO(newline='');writer=csv.writer(stream);writer.writerow(['Başlık','Son başvuru','Durum','Kaynak','DEMO'])
+  def safe(value):
+   value=str(value or '')
+   return "'"+value if value.lstrip().startswith(('=','+','-','@')) or value.startswith(('\t','\r','\n')) else value
+  for c in self.public():writer.writerow([safe(c['title']),c['deadline'] or 'Bilinmiyor',c['official_status'],safe(' | '.join(c['urls'])),'DEMO' if c.get('demo') else ''])
+  return '\ufeff'+stream.getvalue()
+ def public(self):return public_calls([c for c in self.store.all('calls') if self.demo or not (c.get('demo') or c.get('approval',{}).get('demo'))],self.today())
  def metrics(self,u):
-  self.require_admin(u);us=self.store.all('users');return {'registered':len(us),'subscribed':sum(x['subscribed'] for x in us),'calls':len(self.store.all('calls')),'published':len(self.public())}
+  self.require_admin(u);us=self.store.all('users');return {'registered':len(us),'subscribed':sum(x.get('subscribed',False) is True for x in us),'calls':len(self.store.all('calls')),'published':len(self.public())}

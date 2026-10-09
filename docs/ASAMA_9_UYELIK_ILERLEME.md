@@ -1,0 +1,10 @@
+# AŞAMA 9 — Üyelik, yetki ve kullanıcı deneyimi
+
+FEATURE doğrulaması; aşama henüz tamamlanmadı.
+
+
+## 2026-10-10 02:17 — AŞAMA 9 üyelik/yetki ilk dilimi
+Service.entitlements/export_csv mevcut store üzerindedir: doğrulanmış kullanıcı + sunucuda etkin Pro; ücretsiz/iptal/süresi geçmiş/bozuk tarih reddedilir. Kullanıcı preferences isteğiyle tier veya üyelik durumunu yükseltemez; tercihler var olan hakları silemez. GET /api/pro/export sunucuda kontrol edilir, yalnız onaylı public çağrıları CSV yapar, formül hücreleri metne çevrilir. Gerçek ödeme etkin değil; sahte tahsilat sonucu yok.
+DEMO Service.save/approve kayıt/onay etiketini korur; üretim Service.public ve publication_report DEMO kayıt/onayları dışlar. Böylece yerel demo-admin gerçek keşfi üretime onaylayamaz. App üretim kimliğini Google provider, verified email ve revoked token denetiminden geçirir; admin UID şartı korunur. Mock sınır testleri canlı Google kanıtı değildir.
+public_calls kaynak/tarih kanıtı/kesinlik ve onay kontrol zamanını verir; ayrıntı ve HTML fallback son kontrol/kaynak/son tarih kanıtını gösterir. Üyelik görünümü mevcut Lovable tasarımında; gerçek tarayıcı testinde Pro test hesabı CSV dosyasını indirdi. Masaüstü ve 390x844 mobil ekran kaydedildi; mobil scrollWidth375 <= viewport390. Test yalnız MemoryStore'da, gerçek DB'ye Pro üyelik yazılmadı. Test sunucusu ve sekmesi kapatıldı. Ekranlar .agent/a9-membership-desktop.png ve .agent/a9-membership-mobile.png; test CSV Downloads/hibe-radari.csv.
+176 Python PASS (16.545 s), 11 JS PASS; app/views syntax ve diff-check PASS; 127 public/latest hash aynı. Firebase CLI configured hibe-radari-tr ACTIVE projesini okuyabiliyor, apps:list success fakat []: mevcut web uygulaması yok. İşlem ortamında Firebase web/Admin UID/Gemini değişkenleri yok. Firebase/Auth/Firestore canlı işlemi veya deploy başarılı denmez. AŞAMA 9 aktif; sıradaki tek işlem mevcut Firebase proje/Auth/web uygulama yapılandırmasını ve gerçek backend erişim koşullarını doğrulamak. Main/push/deploy bu dilimde yok.

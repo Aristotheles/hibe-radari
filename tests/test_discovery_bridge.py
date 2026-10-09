@@ -84,3 +84,11 @@ class DiscoveryBridgeTests(unittest.TestCase):
         persist_report(r,self.store);after=self.store.get('source_health','s')
         self.assertEqual(after['last_success'],before['last_success']);self.assertEqual(after['last_found_count'],1)
         self.assertEqual(after['last_error'],'Fixture parser failure')
+    def test_demo_approval_never_enters_production_publication(self):
+        self.service.demo=True
+        persist_report(self.report,self.store)
+        c=self.reviewed();self.service.approve(ADMIN,'abc',c['version'])
+        self.assertTrue(self.store.get('calls','abc')['demo'])
+        self.assertTrue(self.store.get('calls','abc')['approval']['demo'])
+        result=publication_report(self.report,self.store,TODAY)
+        self.assertEqual(result['accepted'],[]);self.assertEqual(result['review'],[])

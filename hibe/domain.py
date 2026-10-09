@@ -48,7 +48,8 @@ def public_calls(calls,today):
  out=[]
  for c in calls:
   if publishable(c,today):
-   d={k:c.get(k) for k in ('id','title','summary','themes','deadline','official_status','budget_max','currency','demo')}
+   d={k:c.get(k) for k in ('id','title','summary','themes','deadline','official_status','budget_max','currency','demo','source_id','source_url','organization','deadline_precision','deadline_evidence','deadline_checked_at','eligibility_assessment')}
+   d['last_checked']=c.get('last_verified_at') or c.get('approval',{}).get('at')
    d['paths']=[dict(p,eligibility=eligibility(p),ranking=rank(c,p,today)) for p in c['paths']]
    d['urls']=[d['url'] for d in c['documents']];out.append(d)
  return out

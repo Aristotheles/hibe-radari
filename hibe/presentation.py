@@ -30,7 +30,7 @@ def listing(calls):
         content += f'<article><h2><a href="{text(call_link(call))}">{text(call["title"])}</a></h2><p>{text(call["summary"])}</p><p>{"DEMO · Kurgusal örnek" if call.get("demo") else "Yayımlanmış kayıt"}</p><p>Son başvuru: {text(date_label(call.get("deadline")))}</p>'
         for path in call.get('paths', []):
             content += f'<p>{text(ROLES.get(path["role"], "Rol belirsiz"))} · {text(RESULTS.get(path.get("eligibility"), "Uygunluk belirsiz"))}</p>'
-        content += '<p>Son kontrol: Bilinmiyor</p></article>'
+        content += f'<p>Son kontrol: {text(date_label(str(call.get("last_checked") or "")[:10]))}</p></article>'
     return content + ('<p>Henüz yayımlanmış fırsat yok.</p>' if not calls else '') + '</div>'
 
 def detail(call):
@@ -39,6 +39,9 @@ def detail(call):
     if call.get('demo'):
         out += '<p class="demo-notice">DEMO · Kurgusal örnek; gerçek başvuruya dayanak değildir.</p>'
     out += f'<p>Son başvuru: {text(date_label(call.get("deadline")))} · Kapanış saati bilinmiyor</p>'
+    out += f'<p>Kaynak: {text(call.get("organization") or call.get("source_id") or "Bilgi kaydı yok")}</p><p>Son kontrol: {text(date_label(str(call.get("last_checked") or "")[:10]))}</p>'
+    if call.get('deadline_evidence'):
+        out += f'<p>Son tarih kanıtı: {text(call["deadline_evidence"])}</p>'
     for path in call.get('paths', []):
         out += f'<section class="how-section"><h2>{text(ROLES.get(path["role"], "Rol belirsiz"))} · {text(RESULTS.get(path.get("eligibility"), "Uygunluk belirsiz"))}</h2>'
         for c in path.get('conditions', []):
