@@ -15,4 +15,6 @@ jobs:
         with:
           node-version: '24'
       - run: node --check web/app.js
+      - run: node --check web/views.mjs
+      - run: node --check web/decision.mjs
       - run: node --test tests/test_radar.mjs

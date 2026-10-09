@@ -42,3 +42,22 @@ class HTTPTests(unittest.TestCase):
   self.assertEqual(code,200);self.assertEqual(data['sources'][0]['name'],'Türkiye Ulusal Ajansı')
   self.assertEqual(len(data['sources']),30)
   self.assertEqual(sum('özgün liste bekleniyor' in s['name'] for s in data['sources']),11)
+ def test_public_routes_are_readable_without_javascript(self):
+  from hibe.demo import seed
+  seed(self.app.service.store)
+  for path in ['/','/ilan/demo-bilim','/takvim','/nasil-calisir','/aboneligim','/yonetim']:
+   with urllib.request.urlopen(self.base+path) as response:
+    body=response.read().decode('utf-8');self.assertEqual(response.status,200)
+    self.assertIn('id="server-content"',body);self.assertIn('id="page-title"',body)
+    self.assertNotIn('<!--SERVER_CONTENT-->',body)
+  with urllib.request.urlopen(self.base+'/ilan/demo-bilim') as response:
+   self.assertIn('Uygunluk belirsiz',response.read().decode('utf-8'))
+ def test_unpublished_call_is_not_a_public_detail(self):
+  from hibe.demo import seed
+  seed(self.app.service.store)
+  with self.assertRaises(urllib.error.HTTPError) as error:urllib.request.urlopen(self.base+'/ilan/demo-cevre')
+  with error.exception as response:self.assertEqual(response.code,404);self.assertIn('İlan bulunamadı',response.read().decode('utf-8'))
+ def test_sources_public_and_frontend_modules_mime(self):
+  code,data=self.req('/api/sources');self.assertEqual(code,200);self.assertEqual(len(data),30)
+  for path in ['/views.mjs','/decision.mjs']:
+   with urllib.request.urlopen(self.base+path) as response:self.assertEqual(response.headers.get_content_type(),'text/javascript')

@@ -1,6 +1,14 @@
-import { themes, roles, eligibilityLabels, conditionLabels, safeHttps, deadlineLabel, filterCalls, sourceSummary } from '/radar.mjs';
+import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs';
+
+import { renderListing, renderDetail, renderCalendar } from '/views.mjs';
+import { todayISO } from '/decision.mjs';
 
 const $ = s => document.querySelector(s);
+let audience = 'school', calendarAudience = 'school', currentView = 'radar';
+const today = todayISO();
+if(new URLSearchParams(location.search).get('audience')==='me') audience='me'; let calendarYear = Number(today.slice(0,4)), calendarMonth = Number(today.slice(5,7))-1;
+const managementRoute = location.pathname === '/yonetim';
+let publicSources = null;
 let token = '', auth = null, fb = null, calls = [], me = null, config = null, listState = 'loading';
 
 function el(tag, text, className) {
@@ -55,24 +63,50 @@ async function action(button, task, target = '#notice') {
 }
 
 function showView(view, focus = true) {
-  if (view === 'admin' && !me?.admin) { message('Bu panel yöneticiye özeldir.', 'error'); return; }
-  if (view === 'preferences' && !me) { message('Tercihlerinizi kaydetmek için giriş yapın.', 'error'); return; }
-  for (const id of ['radar', 'preferences', 'admin']) $('#' + id).hidden = id !== view;
+  currentView = view;
+  for (const id of ['radar', 'detail', 'calendar', 'how', 'preferences', 'admin']) $('#'+id).hidden = id !== view;
   $('.skip-link').href = '#' + view + '-title';
-  for (const b of document.querySelectorAll('[data-view]')) {
-    const active = b.dataset.view === view;
-    b.classList.toggle('active', active);
-    if (active) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+  for (const a of document.querySelectorAll('[data-route]')) {
+    const active = a.dataset.route === view || view === 'detail' && a.dataset.route === 'radar';
+    a.classList.toggle('active', active); if (active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
   }
-  if (focus) $('#' + view + '-title').focus();
+  const heading=$('#'+view+'-title');
+  if(heading) document.title=heading.textContent+' | Hibe Radarı';
+  if (focus) heading?.focus();
+}
+
+async function route(focus = true) {
+  const path = location.pathname;
+  if (path.startsWith('/ilan/')) {
+    const c = calls.find(c => '/ilan/'+encodeURIComponent(c.id) === path);
+    const want = new URLSearchParams(location.search).get('audience') || audience;
+    const index = c ? Math.max(0, (c.paths || []).findIndex(p => want === 'me' ? p.role === 'ogretmen_birey' : p.role !== 'ogretmen_birey')) : 0;
+    renderDetail(c,index); showView('detail',focus);
+  } else if (path === '/takvim') {
+    renderCalendar(calls,calendarAudience,calendarYear,calendarMonth);showView('calendar',focus);
+  } else if (path === '/nasil-calisir') {
+    showView('how',focus);
+    try {
+      publicSources ||= await api('sources');
+      const stats=sourceSummary(publicSources);
+      $('#public-source-summary').textContent=`${stats.total} kayıt yeri · ${stats.unverified} doğrulanmamış aday · ${stats.missing} eksik kimlik.`;
+      $('#public-sources').replaceChildren();
+      for (const s of publicSources) {
+        const n=el('div',undefined,'source-row'), body=el('div'); body.append(el('strong',s.name),el('span','Son kontrol: '+(s.last_checked || 'Bilinmiyor')));n.append(body,el('span',s.identity_status==='missing'?'Kimlik bekleniyor':s.status==='ready'?'Kontrol yolu tanımlı':'Doğrulama bekleniyor'));$('#public-sources').append(n);
+      }
+    } catch { $('#public-source-summary').textContent='Kaynak listesi yüklenemedi. Sayfayı yeniden yükleyin.'; }
+  } else if (path === '/aboneligim') showView('preferences',focus);
+  else if (path === '/yonetim') {
+    showView('admin',focus);
+    if (me?.admin) await admin(); else message('Yönetici oturumu gerekli. Demo modunda yukarıdaki giriş alanını kullanın.','info','#admin-status');
+  } else { draw(); showView('radar',focus); }
 }
 
 function syncSessionUI() {
+  $('#admin-content').hidden = !me?.admin;
   $('#identity').textContent = me ? (config.demo ? (me.admin ? 'Yönetici demosu' : 'Kullanıcı demosu') : me.email) : '';
   $('#login').hidden = !!me;
   $('#logout').hidden = !me;
-  $('[data-view="preferences"]').hidden = !me;
-  $('[data-view="admin"]').hidden = !me?.admin;
   $('#prefs').hidden = !me;
   $('#preferences-login').hidden = !!me;
   $('#subscribe').checked = me?.preferences?.subscribed === true;
@@ -80,7 +114,7 @@ function syncSessionUI() {
   if (!me) {
     $('#review').replaceChildren(); $('#sources').replaceChildren(); $('#metrics').replaceChildren();
     $('#import').value = ''; message('', 'info', '#prefs-status'); message('', 'info', '#admin-status'); message('', 'info', '#import-status');
-    showView('radar', false);
+    if (currentView === 'admin') message('Yönetici oturumu gerekli.','info','#admin-status');
   }
 }
 
@@ -88,14 +122,6 @@ async function session() {
   try { me = token ? await api('me') : null; }
   catch (error) { token = ''; me = null; syncSessionUI(); throw error; }
   syncSessionUI();
-}
-
-function pathLine(p) {
-  const line = el('div', undefined, 'path-line');
-  const badge = el('span', eligibilityLabels[p.eligibility] || 'Uygunluk belirsiz', 'status');
-  badge.dataset.result = p.eligibility || 'belirsiz';
-  line.append(el('strong', roles[p.role] || 'Rol belirsiz'), badge);
-  return line;
 }
 
 function conditions(p, target) {
@@ -115,42 +141,9 @@ function sourceLink(url, text) {
   return a;
 }
 
-function callDetails(c) {
-  const d = el('details');
-  d.append(el('summary', 'Koşulları ve kanıtı incele'));
-  if (c.demo) d.append(el('p', 'DEMO · Kurgusal örnektir; gerçek başvuruya dayanak değildir.', 'tag'));
-  for (const p of c.paths || []) {
-    d.append(pathLine(p));
-    if (p.eligibility === 'belirsiz') d.append(el('p', 'Bu yolun uygunluğu mevcut kanıtla doğrulanamadı.', 'muted'));
-    conditions(p, d);
-    if (p.ranking?.total !== undefined && p.ranking?.total !== null) {
-      d.append(el('p', 'Öncelik: ' + p.ranking.total + '/100' + (p.ranking.urgent ? ' · Son tarih yakın' : '') + '. Başvuru hakkını göstermez.', 'priority'));
-    }
-  }
-  const links = el('div', undefined, 'actions');
-  (c.urls || []).forEach((url, index) => { const a = sourceLink(url, (c.demo ? 'Demo bağlantısı' : 'Kaynak / belge') + ' ' + (index + 1)); if (a) links.append(a); });
-  d.append(links);
-  return d;
-}
-
 function draw() {
   if (listState !== 'ready') return;
-  const list = filterCalls(calls, { query: $('#search').value, role: $('#role').value, theme: $('#theme').value, sort: $('#sort').value });
-  $('#cards').replaceChildren();
-  $('#result-count').textContent = list.length + ' / ' + calls.length + ' yayımlanmış fırsat' + (config?.demo ? ' · DEMO' : '');
-  for (const c of list) {
-    const n = el('article', undefined, 'card');
-    n.append(el('span', c.demo ? 'DEMO · KURGUSAL KAYIT' : (c.themes || []).map(t => themes[t] || t).join(' · '), 'tag'), el('h2', c.title), el('p', c.summary, 'muted'));
-    for (const p of c.paths || []) n.append(pathLine(p));
-    const footer = el('footer'); footer.append(el('span', deadlineLabel(c.deadline)));
-    const a = sourceLink(c.urls?.[0], c.demo ? 'Demo bağlantısı' : 'Kaynağa git'); if (a) footer.append(a);
-    n.append(footer, callDetails(c)); $('#cards').append(n);
-  }
-  if (!list.length) {
-    const empty = el('div', undefined, 'empty-state');
-    empty.append(el('p', calls.length ? 'Aramanıza uyan fırsat bulunamadı. Filtreleri temizleyerek yeniden deneyin.' : 'Henüz yayımlanmış fırsat yok.'));
-    $('#cards').append(empty);
-  }
+  renderListing(calls, {query:$('#search').value,role:$('#role').value,theme:$('#theme').value,sort:$('#sort').value},audience);
 }
 
 async function loadCalls() {
@@ -188,7 +181,7 @@ async function admin() {
       if (c.demo) n.append(el('p', 'DEMO · Kurgusal kayıt', 'tag'));
       n.append(el('p', c.summary), el('p', deadlineLabel(c.deadline)));
       for (const p of c.paths || []) { n.append(el('h3', roles[p.role] || 'Rol belirsiz')); conditions(p, n); }
-      for (const [index, doc] of (c.documents || []).entries()) { const a = sourceLink(doc.url, 'Kaynak / belge ' + (index + 1)); if (a) n.append(a); }
+      for (const [index, doc] of (c.documents || []).entries()) { const a = c.demo ? null : sourceLink(doc.url, 'Kaynak / belge ' + (index + 1)); if (a) n.append(a); }
       n.append(el('p', 'İncelenen sürüm: ' + c.version, 'version'));
       const b = el('button', approved ? 'Bu sürüm onaylı' : 'İnceledim — bu sürümü onayla'); b.disabled = !!approved;
       const status = el('p', undefined, 'message'); status.setAttribute('role', 'status');
@@ -212,7 +205,6 @@ async function admin() {
   } finally { $('#review').setAttribute('aria-busy', 'false'); }
 }
 
-for (const b of document.querySelectorAll('[data-view]')) b.onclick = async () => { showView(b.dataset.view); if (b.dataset.view === 'admin' && me?.admin) await admin(); };
 
 function closeRoles() { $('#demo-roles').hidden = true; $('#login').setAttribute('aria-expanded', 'false'); }
 $('#close-roles').onclick = () => { closeRoles(); $('#login').focus(); };
@@ -228,12 +220,12 @@ for (const b of document.querySelectorAll('[data-demo-role]')) b.onclick = () =>
   choices.forEach(choice => { choice.disabled = true; });
   try {
     token = (await api('demo-login', { role: b.dataset.demoRole })).token;
-    await session(); closeRoles(); message('Yerel demo oturumu açıldı.', 'success'); showView('radar');
+    await session(); closeRoles(); message('Yerel demo oturumu açıldı.', 'success'); await route();
   } finally { choices.forEach(choice => { choice.disabled = false; }); }
 });
 $('#logout').onclick = () => action($('#logout'), async () => {
   if (auth) await fb.signOut(auth);
-  token = ''; me = null; syncSessionUI(); closeRoles(); showView('radar'); message('Oturum kapatıldı.');
+  token = ''; me = null; syncSessionUI(); closeRoles(); await route(); message('Oturum kapatıldı.');
 });
 $('#prefs').onsubmit = e => {
   e.preventDefault();
@@ -251,7 +243,7 @@ $('#import-button').onclick = () => action($('#import-button'), async () => {
 }, '#import-status');
 $('#search').oninput = draw;
 for (const id of ['role', 'theme', 'sort']) $('#' + id).onchange = draw;
-$('#clear-filters').onclick = () => { $('#search').value = ''; $('#role').value = ''; $('#theme').value = ''; $('#sort').value = 'default'; draw(); $('#search').focus(); };
+$('#clear-filters').onclick = () => { $('#search').value = ''; $('#role').value = ''; $('#theme').value = ''; $('#sort').value = 'deadline'; draw(); $('#search').focus(); };
 $('#retry-calls').onclick = () => action($('#retry-calls'), loadCalls);
 $('#retry-admin').onclick = () => action($('#retry-admin'), admin, '#admin-status');
 
@@ -284,8 +276,24 @@ try {
     fb.onAuthStateChanged(auth, async user => { try { token = user ? await user.getIdToken() : ''; await session(); } catch (error) { message(friendlyError(error), 'error'); } });
     $('#login').textContent = 'Google ile giriş';
   }
-  $('#login').disabled = false; syncSessionUI(); await loadCalls();
+  $('#login').disabled = false; syncSessionUI(); await loadCalls(); $('#server-content').hidden = listState === 'ready'; $('#app-shell').hidden = listState !== 'ready'; if(listState==='ready') await route(false); else message('Etkileşimli liste yüklenemedi. Aşağıdaki ilanları okuyabilir veya sayfayı yeniden yükleyebilirsiniz.','error');
 } catch (error) {
   $('#mode').textContent = 'Uygulama bilgisi yüklenemedi'; $('#result-count').textContent = 'Liste yüklenemedi';
   message('Uygulama başlatılamadı. Sayfayı yeniden yükleyin.', 'error'); $('#cards').setAttribute('aria-busy', 'false');
 }
+
+function updateRoles() {
+  const role=$('#role'),all=el('option','Tüm yollar');all.value='';role.replaceChildren(all);
+  for(const [key,label] of Object.entries(roles)) if(audience==='me'?key==='ogretmen_birey':key!=='ogretmen_birey') {const o=el('option',label);o.value=key;role.append(o);}
+}
+for(const b of document.querySelectorAll('[data-audience]')) b.onclick=()=>{audience=b.dataset.audience;for(const other of document.querySelectorAll('[data-audience]')){other.classList.toggle('selected',other===b);other.setAttribute('aria-pressed',String(other===b));}updateRoles();draw();};
+for(const b of document.querySelectorAll('[data-calendar-audience]')) b.onclick=()=>{calendarAudience=b.dataset.calendarAudience;for(const other of document.querySelectorAll('[data-calendar-audience]')){other.classList.toggle('selected',other===b);other.setAttribute('aria-pressed',String(other===b));}renderCalendar(calls,calendarAudience,calendarYear,calendarMonth);};
+function moveMonth(delta) {const date=new Date(Date.UTC(calendarYear,calendarMonth+delta,1));calendarYear=date.getUTCFullYear();calendarMonth=date.getUTCMonth();renderCalendar(calls,calendarAudience,calendarYear,calendarMonth);}
+$('#calendar-prev').onclick=()=>moveMonth(-1);$('#calendar-next').onclick=()=>moveMonth(1);$('#calendar-today').onclick=()=>{const d=todayISO();calendarYear=Number(d.slice(0,4));calendarMonth=Number(d.slice(5,7))-1;moveMonth(0);};
+document.addEventListener('click',e=>{const a=e.target.closest('a');if($('#app-shell').hidden||!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target||a.hasAttribute('download'))return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.hash)return;if(!['/','/takvim','/nasil-calisir','/aboneligim','/yonetim'].includes(u.pathname)&&!u.pathname.startsWith('/ilan/'))return;e.preventDefault();history.pushState(null,'',u.pathname+u.search);route();window.scrollTo(0,0);});
+window.addEventListener('popstate',()=>route());
+function setTheme(dark){document.documentElement.classList.toggle('dark',dark);$('#theme-toggle').textContent=dark?'Açık':'Karanlık';$('#theme-toggle').setAttribute('aria-label',dark?'Açık görünüm':'Karanlık görünüm');}
+let dark=matchMedia('(prefers-color-scheme: dark)').matches;try{const saved=localStorage.getItem('hibe-theme');if(saved)dark=saved==='dark';}catch{}
+setTheme(dark);$('#theme-toggle').onclick=()=>{dark=!dark;setTheme(dark);try{localStorage.setItem('hibe-theme',dark?'dark':'light');}catch{}};
+$('#admin-demo').hidden=!managementRoute;updateRoles();
+for(const b of document.querySelectorAll('[data-audience]')){b.classList.toggle('selected',b.dataset.audience===audience);b.setAttribute('aria-pressed',String(b.dataset.audience===audience));}

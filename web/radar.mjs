@@ -21,9 +21,13 @@ export function deadlineLabel(value) {
   return timestamp === null ? 'Son tarih bilinmiyor' : 'Son tarih: ' + new Intl.DateTimeFormat('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(timestamp);
 }
 
+export function normalizeSearch(value) {
+  return String(value || '').trim().toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replaceAll('ı', 'i');
+}
+
 export function filterCalls(calls, { query = '', role = '', theme = '', sort = 'default' } = {}) {
-  const q = query.trim().toLocaleLowerCase('tr');
-  const list = calls.filter(c => [c.title, c.summary, ...(c.themes || []).map(t => themes[t] || t)].join(' ').toLocaleLowerCase('tr').includes(q)
+  const q = normalizeSearch(query);
+  const list = calls.filter(c => normalizeSearch([c.title, c.summary, ...(c.themes || []).map(t => themes[t] || t)].join(' ')).includes(q)
     && (!role || (c.paths || []).some(p => p.role === role))
     && (!theme || (c.themes || []).includes(theme)));
   if (sort === 'deadline') list.sort((a, b) => (dateValue(a.deadline) ?? Infinity) - (dateValue(b.deadline) ?? Infinity));

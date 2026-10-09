@@ -12,7 +12,9 @@ node --test tests/test_radar.mjs
 python -m hibe.server --demo
 ```
 
-http://127.0.0.1:8000 adresini aç. “Demoyu dene” açık kullanıcı/yönetici seçeneklerini gösterir. Radar Türkçe tema araması, tema/başvuru yolu filtresi, tarih sıralaması ve koşul/kanıt ayrıntısı içerir. Uygunluk ile öncelik ayrı gösterilir. Yönetim bağlantısı yalnız yönetici rolünde görünür; backend yetki kontrolü korunur. Yönetici olarak kurgusal kaydı inceleyip onaylayabilirsin. Abonelik ekranında tema/opt-in seçebilirsin. Demo göstergesi işlem mesajlarından bağımsızdır. Demo veriler yalnızca yerel SQLite data/demo.db'de tutulur; örnekler gerçek ilan değildir. Windows'ta run_demo.bat kullanılabilir. JavaScript testleri için Node.js 24 kullanılır; demo sunucusu için Node.js gerekmez.
+http://127.0.0.1:8000 adresini aç. Lovable karar aracı tasarımı mevcut hafif web yapısına uygulandı: “Okulum / Ben”, Türkçe/aksansız arama, tema/yol filtresi ve tarih grupları. İlanlar `/ilan/<id>` adresinde; `/takvim` son tarihleri, `/nasil-calisir` kaynak envanterini gösterir. JavaScript olmadan kamu içeriği HTML içinde okunabilir. Karanlık görünüm düğmesi ve mobil yerleşim vardır.
+
+“Demoyu dene” kamu sitesinde kullanıcı demosunu açar. Abonelik tercihlerine `/aboneligim` adresinden erişilir. Yönetici demosu için ayrı http://127.0.0.1:8000/yonetim adresini açıp giriş alanını kullan; kamu gezinmesinde yönetici bağlantısı yoktur. Backend yetki ve sürüm onayı korunur. Demo veriler yerel SQLite data/demo.db'de tutulur; gerçek hizmet veya e-posta bağlı değildir. Örnekler DEMO etiketlidir. Tarih/koşul/kanıt bilinmiyorsa uydurulmaz. Windows'ta run_demo.bat kullanılabilir. Node.js 24 yalnız JS testleri içindir. Uygulama kanıtı: [docs/LOVABLE_APPLIED.md](docs/LOVABLE_APPLIED.md).
 
 ## Firebase ve Google giriş
 
