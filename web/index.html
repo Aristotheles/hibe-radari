@@ -1,1 +1,72 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hibe Radarı | Okulunuz için fırsatlar</title><meta name="description" content="Okullar ve öğretmenler için kanıta dayalı hibe fırsatları"><link rel="stylesheet" href="/style.css"></head><body><aside><a class="brand" href="/">◉ Hibe Radarı</a><small>EĞİTİM İÇİN FIRSATLAR</small><nav><button data-view="radar" class="active">Fırsat radarı</button><button data-view="preferences">Aboneliğim</button><button data-view="admin">Yönetim paneli</button></nav><div class="bottom">30 kaynak hedefi<br><small>Kanıt → inceleme → yayın</small></div></aside><main><header><span id="mode">Yerel uygulama</span><div><span id="identity"></span><button id="login">Google ile giriş</button><button id="logout" hidden>Çıkış</button></div></header><div id="notice" role="status"></div><section id="radar"><div class="eyebrow">OKULUNUZUN BİR SONRAKİ ADIMI</div><h1>İyi fikirler,<br><em>doğru fırsatlarla.</em></h1><p class="lead">Başvuru hakkı ve öncelik ayrı değerlendirilir.<br>Her fırsatta rolünüzü ve belirsizlikleri görün.</p><div class="toolbar"><input id="search" placeholder="Başlık veya tema ara…" aria-label="İlan ara"><select id="role" aria-label="Başvuru yolu"><option value="">Tüm yollar</option><option value="dogrudan">Doğrudan başvuru</option><option value="ortak">Ortaklık</option><option value="ogretmen_birey">Öğretmen bireysel</option><option value="uygulama_yeri">Uygulama yeri</option></select></div><div id="cards" class="grid"></div></section><section id="preferences" hidden><div class="eyebrow">SİZE GÖRE BİR RADAR</div><h1>Abonelik tercihlerim</h1><p>Google ile giriş bülten aboneliği oluşturmaz.</p><form id="prefs"><fieldset><legend>İlgilendiğiniz temalar</legend><div id="themes"></div></fieldset><label class="check"><input type="checkbox" id="subscribe"> Haftalık e-posta bültenine abone olmak istiyorum.</label><p class="muted">Bu geliştirme sürümünde tercihler kaydedilir, e-posta gönderimi henüz bağlı değildir. Canlı abonelikten önce aydınlatma ve saklama metinleri tamamlanacak.</p><button type="submit">Tercihlerimi kaydet</button></form></section><section id="admin" hidden><div class="eyebrow">KANITA DAYALI YAYIN</div><h1>Yönetim paneli</h1><div id="metrics" class="metrics"></div><h2>İnceleme kuyruğu</h2><div id="review"></div><details><summary>Yeni çağrı / JSON içe aktar</summary><textarea id="import" rows="12" aria-label="Çağrı JSON"></textarea><button id="import-button">Taslak kaydet</button></details><h2>Kaynak sağlığı · 30 kayıt yeri</h2><p class="muted">Özgün liste tamamlanmadı. Eksik kayıtlar çalışan kaynak sayılmaz.</p><div id="sources"></div></section></main><script type="module" src="/app.js"></script></body></html>
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hibe Radarı | Okulunuz için fırsatlar</title>
+  <meta name="description" content="Okullar ve öğretmenler için kanıta dayalı hibe fırsatları">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#radar-title">İçeriğe geç</a>
+  <aside>
+    <a class="brand" href="/">Hibe Radarı</a>
+    <p class="brand-note">Eğitim için fırsatlar</p>
+    <nav aria-label="Ana gezinme">
+      <button data-view="radar" class="active" aria-current="page">Fırsat radarı</button>
+      <button data-view="preferences" hidden>Aboneliğim</button>
+      <button data-view="admin" hidden>Yönetim paneli</button>
+    </nav>
+    <p class="sidebar-note">30 kaynak hedefi<br><span>Kanıt → inceleme → yayın</span></p>
+  </aside>
+  <main>
+    <header>
+      <span id="mode">Uygulama bilgisi yükleniyor…</span>
+      <div class="account"><span id="identity"></span><button id="login" disabled>Giriş</button><button id="logout" class="secondary" hidden>Çıkış</button></div>
+    </header>
+    <p id="environment" class="environment" hidden></p>
+    <section id="demo-roles" class="role-picker" aria-label="Demo rolü seçimi" hidden>
+      <h2>Demoyu hangi rolde incelemek istersiniz?</h2>
+      <p>Yalnız yerel örnek veriler kullanılır.</p>
+      <div class="actions"><button data-demo-role="user">Kullanıcı demosu</button><button data-demo-role="admin" class="secondary">Yönetici demosu</button><button id="close-roles" class="quiet">Vazgeç</button></div>
+    </section>
+    <div id="notice" class="message" role="status" aria-live="polite"></div>
+    <section id="unsubscribe-panel" hidden aria-label="Abonelikten çıkış">
+      <p>Bülten aboneliğinden çıkmak için onaylayın.</p><button id="unsubscribe-button">Abonelikten çık</button><p id="unsubscribe-status" class="message" role="status"></p>
+    </section>
+    <section id="radar" aria-labelledby="radar-title">
+      <div class="section-heading"><h1 id="radar-title" tabindex="-1">Fırsat radarı</h1><p>Başvuru yolunu bulun, koşulları ve kanıtı inceleyin.</p></div>
+      <p class="muted">Uygunluk başvuru hakkını, öncelik ise inceleme sırasını anlatır. Yüksek öncelik uygunluk garantisi değildir.</p>
+      <div class="toolbar">
+        <label class="search-field" for="search">İlan ara<input id="search" type="search" placeholder="Başlık veya tema…"></label>
+        <label for="role">Başvuru yolu<select id="role"><option value="">Tüm yollar</option><option value="dogrudan">Doğrudan başvuru</option><option value="ortak">Ortaklık</option><option value="ogretmen_birey">Öğretmen bireysel</option><option value="uygulama_yeri">Uygulama yeri</option></select></label>
+        <label for="theme">Tema<select id="theme"><option value="">Tüm temalar</option></select></label>
+        <label for="sort">Sıralama<select id="sort"><option value="default">Mevcut sıra</option><option value="deadline">Son tarih: en yakın</option></select></label>
+      </div>
+      <div class="list-heading"><p id="result-count" role="status">Fırsatlar yükleniyor…</p><button id="clear-filters" class="quiet">Filtreleri temizle</button></div>
+      <div id="cards" class="grid" aria-busy="true"></div>
+      <div id="list-error" class="empty-state" hidden><p>Fırsatlar yüklenemedi. Bağlantınızı kontrol edip yeniden deneyin.</p><button id="retry-calls">Yeniden dene</button></div>
+    </section>
+    <section id="preferences" aria-labelledby="preferences-title" hidden>
+      <div class="section-heading"><h1 id="preferences-title" tabindex="-1">Abonelik tercihlerim</h1><p>Google ile giriş bülten aboneliği oluşturmaz.</p></div>
+      <p id="preferences-login" hidden>Tercihlerinizi kaydetmek için giriş yapın.</p>
+      <form id="prefs">
+        <fieldset><legend>İlgilendiğiniz temalar</legend><div id="themes" class="theme-options"></div></fieldset>
+        <label class="check"><input type="checkbox" id="subscribe"> Haftalık e-posta bültenine abone olmak istiyorum.</label>
+        <p class="muted">Bu sürümde tercih kaydedilir; e-posta gönderim servisi bağlı değildir. Canlı abonelikten önce aydınlatma ve saklama metinleri tamamlanacak.</p>
+        <button type="submit" id="save-prefs">Tercihlerimi kaydet</button><p id="prefs-status" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section id="admin" aria-labelledby="admin-title" hidden>
+      <div class="section-heading"><h1 id="admin-title" tabindex="-1">Yönetim paneli</h1><p>Kanıtı inceleyin ve yalnız gördüğünüz sürümü onaylayın.</p></div>
+      <p id="admin-status" class="message" role="status"></p><button id="retry-admin" class="secondary" hidden>Paneli yeniden yükle</button>
+      <h2>İnceleme kuyruğu</h2><div id="review"></div>
+      <details class="import-panel"><summary>Yeni çağrı / JSON içe aktar</summary><label for="import">Çağrı JSON<textarea id="import" rows="10" spellcheck="false"></textarea></label><button id="import-button">Taslak kaydet</button><p id="import-status" class="message" role="status"></p></details>
+      <h2>Kaynak kayıt durumu</h2><p id="source-summary" class="muted">30 kaynak hedefi. Kayıt durumu, taramanın çalıştığını göstermez.</p><div id="sources"></div>
+      <h2>Kullanım ve yayın sayıları</h2><dl id="metrics" class="metrics"></dl>
+    </section>
+    <noscript>Hibe Radarı'nın etkileşimli ekranları için JavaScript'i etkinleştirin.</noscript>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

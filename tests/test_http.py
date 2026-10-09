@@ -14,10 +14,27 @@ class HTTPTests(unittest.TestCase):
   r=urllib.request.Request(self.base+p,data=json.dumps(d).encode() if d is not None else None,headers=h)
   try:
    with urllib.request.urlopen(r) as x:return x.status,json.load(x)
-  except urllib.error.HTTPError as e:return e.code,json.load(e)
+  except urllib.error.HTTPError as e:
+   with e:return e.code,json.load(e)
  def test_unauthorized_admin(self):self.assertEqual(self.req('/api/admin')[0],403)
  def test_user_admin_blocked(self):
   _,r=self.req('/api/demo-login',{'role':'user'});self.assertEqual(self.req('/api/admin',t=r['token'])[0],403)
  def test_preferences_login(self):self.assertEqual(self.req('/api/preferences',{'themes':[],'subscribed':True})[0],403)
  def test_cross_origin(self):self.assertEqual(self.req('/api/demo-login',{'role':'admin'},origin='https://evil.org')[0],403)
  def test_demo_disabled(self):self.app.demo=False;self.assertEqual(self.req('/api/demo-login',{'role':'admin'})[0],403)
+ def test_frontend_module_served_as_javascript(self):
+  with urllib.request.urlopen(self.base+'/radar.mjs') as r:
+   self.assertEqual(r.status,200);self.assertEqual(r.headers.get_content_type(),'text/javascript');self.assertIn(b'filterCalls',r.read())
+ def test_admin_registry_turkish_names_and_placeholders(self):
+  from pathlib import Path
+  from unittest.mock import patch
+  original=Path.read_text
+  def explicit_encoding(path,*args,**kwargs):
+   self.assertEqual(kwargs.get('encoding'),'utf-8')
+   return original(path,*args,**kwargs)
+  _,login=self.req('/api/demo-login',{'role':'admin'})
+  with patch.object(Path,'read_text',explicit_encoding):
+   code,data=self.req('/api/admin',t=login['token'])
+  self.assertEqual(code,200);self.assertEqual(data['sources'][0]['name'],'Türkiye Ulusal Ajansı')
+  self.assertEqual(len(data['sources']),30)
+  self.assertEqual(sum('özgün liste bekleniyor' in s['name'] for s in data['sources']),11)

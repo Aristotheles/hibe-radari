@@ -8,10 +8,11 @@ Python 3.11+ kurulu bilgisayarda proje klasörünü Codex Desktop'ta aç:
 
 ```bash
 python -m unittest discover -s tests -v
+node --test tests/test_radar.mjs
 python -m hibe.server --demo
 ```
 
-http://127.0.0.1:8000 adresini aç. “Demoyu dene” ile yönetici veya kullanıcı rolünü seç. Yönetici olarak panelden kurgusal kaydı inceleyip onaylayabilirsin. Abonelik ekranında tema/opt-in seçebilirsin. Demo veriler yalnızca yerel SQLite data/demo.db'de tutulur; örnekler gerçek ilan değildir. Windows'ta run_demo.bat kullanılabilir.
+http://127.0.0.1:8000 adresini aç. “Demoyu dene” açık kullanıcı/yönetici seçeneklerini gösterir. Radar Türkçe tema araması, tema/başvuru yolu filtresi, tarih sıralaması ve koşul/kanıt ayrıntısı içerir. Uygunluk ile öncelik ayrı gösterilir. Yönetim bağlantısı yalnız yönetici rolünde görünür; backend yetki kontrolü korunur. Yönetici olarak kurgusal kaydı inceleyip onaylayabilirsin. Abonelik ekranında tema/opt-in seçebilirsin. Demo göstergesi işlem mesajlarından bağımsızdır. Demo veriler yalnızca yerel SQLite data/demo.db'de tutulur; örnekler gerçek ilan değildir. Windows'ta run_demo.bat kullanılabilir. JavaScript testleri için Node.js 24 kullanılır; demo sunucusu için Node.js gerekmez.
 
 ## Firebase ve Google giriş
 
@@ -55,6 +56,6 @@ Hazırlama aynı hafta/kullanıcı için tek outbox kaydı üretir. Çıkış ba
 
 ## Bugünkü durum
 
-26 anlamlı unit/HTTP test geçti; JavaScript sözdizimi kontrol edildi. Gerçek model/auth/SMTP testi ve görsel tarayıcı testi yapılmadı. 30 kaynak henüz taranmıyor. Pro tier alanı var; ödeme ve premium erişim yok. Büyüme sayıları kayıtlı kullanıcı ve aktif abone sayısıdır; günlük aktif kullanıcı grafiği henüz yok.
+9 Ekim arayüz doğrulaması: 28 unit/HTTP ve 5 JavaScript testi geçti; JS sözdizimi ve Python derleme kontrolü geçti. Yerel tarayıcıda ziyaretçi/kullanıcı/yönetici, arama, kanıt, tercih kalıcılığı/opt-out, demo onayı ve JSON hata akışları incelendi. 390 ve 1280 piksel görünümünde yatay taşma yok; bu kontrol gerçek telefon testi değildir. Ayrıntılı kanıt: docs/UI_VERIFICATION.md. Gerçek model/auth/SMTP testi yapılmadı. 30 kaynak henüz taranmıyor. Pro tier alanı var; ödeme ve premium erişim yok. Büyüme sayıları kayıtlı kullanıcı ve bülten tercihi açık kullanıcı sayısıdır; günlük aktif kullanıcı grafiği henüz yok.
 
 MVP.md aşamaları ve Codex devam istemini, docs/SECURITY.md canlıya çıkış sınırlarını içerir.

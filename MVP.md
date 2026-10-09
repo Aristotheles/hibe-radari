@@ -29,7 +29,7 @@ Alt puanlar başlangıç uygulama önerisidir; kullanıcı ayarlayabilir. Uygun 
 | Aşama | İş | Durum / kabul |
 |---|---|---|
 | 1 | Saf domain, düz koşullar, hash, bellek/yerel depo | Kodlandı; internetsiz testler geçti |
-| 2 | Yerel ilan/admin/abonelik dikey akışı | Kodlandı; HTTP erişim testleri geçti; görsel test bekliyor |
+| 2 | Yerel ilan/admin/abonelik dikey akışı | Yerel demo arayüzü geliştirildi; 28 Python + 5 JS testi ve ziyaretçi/kullanıcı/yönetici tarayıcı akışları geçti; canlı giriş/gönderim kapsam dışı |
 | 3 | Tam 30 kaynak | 19 doğrulanmamış isim + 11 eksik yer; özgün doküman ve gerçek URL/parser gerekli |
 | 4 | Tarama ve Gemini | Güvenli fetch, bağlı belge hash'i, sıralı pipeline ve gerçek/fake çıkarıcı kodlandı; canlı test bekliyor |
 | 5 | Google/Firebase | SDK/token doğrulama ve Firestore adaptörü kodlandı; gerçek proje/UID ve emulator testi bekliyor |
@@ -65,3 +65,5 @@ kapsamındaki gerçek yetki ve ortam yapılandırması gerekir.
 Statik export üretildi. Playwright kurulu fakat Chromium executable yok;
 görsel ekran ve tarayıcı etkileşim doğrulaması yapılamadı.
 Firebase, Gemini ve SMTP canlı denenmedi. Ürün henüz canlı MVP kabulünde değil.
+
+9 Ekim 2026, sonraki arayüz oturumu: Lovable danışmanlık önerileri mevcut HTML/CSS/JS uygulamasına uyarlandı. Kalıcı DEMO, rol bazlı gezinme, açık rol seçimi, Türkçe tema araması, filtre/sıralama, kanıt ayrıntısı, uygunluk/öncelik ayrımı, abonelik ve onay mesajları eklendi. Kaynak dosyasının Windows UTF-8 okuma hatası düzeltildi. 28 Python ve 5 JS testi geçti; yerel kullanıcı/yönetici etkileşimleri ile masaüstü ve emüle mobil görünüm incelendi. Önceki “görsel test yapılmadı” kaydı bu yerel kapsam için güncellendi. Kanıt: docs/UI_VERIFICATION.md. Sıradaki aşama 3: tam 30 kaynak; özgün liste henüz mevcut değil.
