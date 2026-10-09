@@ -307,6 +307,59 @@
         "checked_at": null,
         "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
       }
+    },
+    {
+      "id": "meb-abdigm",
+      "type": "feed",
+      "url": "https://abdigm.meb.gov.tr/meb_iys_dosyalar/xml/rss_duyurular.xml",
+      "organization": "MEB AB ve Dış İlişkiler GM",
+      "allowed_hosts": [
+        "abdigm.meb.gov.tr"
+      ],
+      "language": "tr",
+      "detail": false,
+      "allow_empty": false,
+      "official_source_verified": true,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://abdigm.meb.gov.tr/",
+        "checked_at": "2026-10-09T22:49:24.586996+00:00",
+        "basis": "Ana sayfanın yayımladığı RSS arayüzü; yalnız üstveri keşfi, özgün editör özeti/atıf; tam metin dağıtımı yok."
+      }
+    },
+    {
+      "id": "meb-yegitek",
+      "type": "feed",
+      "url": "https://yegitek.meb.gov.tr/meb_iys_dosyalar/xml/rss_duyurular.xml",
+      "organization": "MEB YEĞİTEK",
+      "allowed_hosts": [
+        "yegitek.meb.gov.tr"
+      ],
+      "language": "tr",
+      "detail": false,
+      "allow_empty": false,
+      "official_source_verified": true,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://yegitek.meb.gov.tr/",
+        "checked_at": "2026-10-09T22:49:24.586996+00:00",
+        "basis": "Ana sayfanın yayımladığı RSS arayüzü; yalnız üstveri keşfi, özgün editör özeti/atıf; tam metin dağıtımı yok."
+      }
     }
+  ],
+  "baseline_source_ids": [
+    "eu-ft",
+    "tubitak-4000",
+    "tubitak-duyuru",
+    "ab-ilan-hibe",
+    "ab-ilan-genel",
+    "stgm-hibe",
+    "jugendbruecke",
+    "etwinning-tr",
+    "ifturquie",
+    "britishcouncil-tr",
+    "tusev",
+    "sivilsayfalar",
+    "sabit-izleme"
   ]
 }

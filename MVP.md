@@ -514,3 +514,7 @@ Yayın kapısı ve veri koruma uygulandı; 94 Python + 11 JS PASS. docs/ASAMA_1_
 
 ### 2026-10-10 — AŞAMA 7 kayıt/sağlık özellikleri doğrulandı
 152 Python + 11 JS PASS. 135 envanter URL'si + 19 korunan eski kayıt = 154 kayıt; eski 30 ID ve 13 çekici korundu. Sabit 30 denetimi yenilendi; yetkili kaynak açma-kapama/sağlık alarmı mevcut store'a bağlı. 131 host grubu kurum sayısı değildir; bilinmeyen kurum/ülke alanları açık. Raporlar docs/ASAMA_7_KAYNAK_KAYDI.md ve docs/KAYNAK_SAYIM_UZLASTIRMA.md. AŞAMA 8 canlı kabul kartlarıyla devam; onay beklenmez.
+
+
+### 2026-10-10 — AŞAMA 8 aktif, ilk iki RSS dilimi doğrulandı
+MEB abdigm/yegitek resmî RSS akışları strict gerçek istemciyle 200/rss20/50 kayıt; iki kısa gözlem fixture'ı ve hata/tekilleştirme regresyonları. 157 Python OK (11.509 s) + 11 JS PASS; syntax/diff-check temiz; 127 public/latest dosyası aynı. Mevcut 13 ID korunuyor, toplam 15 çekici. Kabul kartı 135; gözlemli 10, detay/tarih ve devam paketleri açık. SALTO ticari dağıtım izni gerektiriyor; Eurodesk robots 200 HTML hata sayfası. net.py robots HTML/wildcard/encoded-query regresyonları düzeltildi. AŞAMA 8 bitmedi, AŞAMA 9'a geçilmedi; yerelde devam. Kanıt docs/ASAMA_8_CANLI_KABUL_ILERLEME.md / config/source_acceptance.json.

@@ -105,3 +105,33 @@ class NetworkSafetyTests(unittest.TestCase):
         import gzip
         f=self.client(lambda r:httpx.Response(200,content=gzip.compress(b'hello'),headers={'Content-Encoding':'gzip'}))
         self.assertEqual(f.get_text('https://safe.org/'),'hello')
+
+
+class RobotsLiveRegressionTests(unittest.TestCase):
+    def client(self,body,mime='text/plain'):
+        import httpx
+        from hibe.aggregator.net import Fetcher
+        transport=httpx.MockTransport(lambda r:httpx.Response(200,text=body if r.url.path=='/robots.txt' else 'ok',headers={'content-type':mime}))
+        return Fetcher(['x.org'],transport=transport,delay=0,access_policy={'terms_status':'allowed','evidence_url':'https://x.org/terms','checked_at':'2026-10-10'})
+    def test_html_200_robots_is_not_permission(self):
+        from hibe.aggregator.net import FetchError
+        client=self.client('<html>404</html>','text/html')
+        try:
+            with self.assertRaises(FetchError):client.get('https://x.org/call')
+            self.assertEqual(client.calls,1)
+        finally:client.close()
+    def test_wildcard_query_disallow_blocks_before_fetch(self):
+        from hibe.aggregator.net import FetchError
+        client=self.client('User-agent: *\nDisallow: /*?*b_offset*')
+        try:
+            with self.assertRaises(FetchError):client.get('https://x.org/browse?b_offset=10')
+            self.assertEqual(client.calls,1)
+        finally:client.close()
+
+    def test_percent_encoded_query_cannot_bypass_robots(self):
+        from hibe.aggregator.net import FetchError
+        client=self.client('User-agent: *\nDisallow: /*?*b_offset*')
+        try:
+            with self.assertRaises(FetchError):client.get('https://x.org/browse?%62_offset=10')
+            self.assertEqual(client.calls,1)
+        finally:client.close()

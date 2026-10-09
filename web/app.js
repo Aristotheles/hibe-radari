@@ -171,6 +171,7 @@ async function admin() {
       const missing = s.identity_status === 'missing' || /özgün liste bekleniyor/i.test(s.name || '');
       n.append(el('strong', s.name), el('span', s.status === 'registry_pending' ? (missing ? 'Özgün kaynak kimliği bekleniyor' : 'Kimlik ve URL doğrulaması bekleniyor') : (s.status === 'ready' ? 'Kayıt taramaya hazır' : 'Durum: ' + s.status)));
       n.append(el('small', 'Son kontrol: ' + (s.last_checked || 'Bilinmiyor')));
+      if (s.acceptance_reason) n.append(el('p', 'Kaynak kabulü: ' + s.operational_status + ' · ' + s.acceptance_reason));
       if (s.alert) n.append(el('p', 'Tarama uyarısı: kaynağın son denemesi başarısız veya şüpheli.'));
       for (const health of s.health || []) n.append(el('p', health.id + ': ' + health.health + ' · bulunan ' + (health.fetched ?? 'bilinmiyor') + ' · ' + (health.error || '')));
       n.append(el('small', 'Tarama izni: ' + (s.access_policy?.terms_status || 'bilinmiyor') + ' · yöntem: ' + s.method));

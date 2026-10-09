@@ -24,10 +24,10 @@ class RegistryTests(unittest.TestCase):
         self.assertEqual(report['scope_count'],135)
         self.assertEqual(report['count'],154)
         self.assertEqual(report['legacy_count'],19)
-        self.assertEqual(report['candidate_names'],143)
+        self.assertEqual(report['candidate_names'],141)
         self.assertEqual(report['missing_identities'], 11)
         self.assertEqual(report['ready_controls'], 0)
-        self.assertEqual(report['verified_identities'], 0)
+        self.assertEqual(report['verified_identities'], 2)
         self.assertFalse(report['complete'])
         self.assertFalse(report['errors'])
         self.assertIn('Türkiye Ulusal Ajansı', markdown_report(report))
@@ -113,7 +113,9 @@ class InventoryPreservationTests(unittest.TestCase):
         old=json.loads((root/'config/sources.legacy-stage0.json').read_text(encoding='utf-8'))
         self.assertEqual({r['url'] for r in inventory_rows()},{r['url'] for r in sources if r.get('record_kind')=='inventory'})
         self.assertTrue({r['id'] for r in old}.issubset({r['id'] for r in sources}))
-        self.assertEqual(len(json.loads((root/'config/aggregator.json').read_text(encoding='utf-8'))['sources']),13)
+        config=json.loads((root/'config/aggregator.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(config['baseline_source_ids']),13)
+        self.assertTrue(set(config['baseline_source_ids']).issubset({c['id'] for c in config['sources']}))
         self.assertFalse(any(r.get('operational_status')=='connected' for r in sources))
 
 

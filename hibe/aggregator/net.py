@@ -3,6 +3,7 @@ import base64
 import hashlib
 import json
 import math
+import re
 import os
 import tempfile
 from pathlib import Path
@@ -113,13 +114,48 @@ class Fetcher:
             parser = RobotFileParser(origin + '/robots.txt')
             try:
                 response = self.request('GET', origin + '/robots.txt', _robots=True)
+                if 'html' in response.headers.get('content-type','').lower() or response.text.lstrip().startswith('<'):
+                    raise FetchError('robots.txt yerine HTML alındı; manuel inceleme gerekli','permission')
                 parser.parse(response.text.splitlines())
+                parser.raw_rules = response.text
             except FetchError as exc:
                 if str(exc) == 'HTTP 404': parser.parse([])
                 else: raise FetchError('robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli', 'permission') from exc
             self.robots[origin] = parser
         parser = self.robots[origin]
-        if not parser.can_fetch(USER_AGENT, url):
+        wildcard_blocked = False
+        # RFC 9309 * ve $ desenlerini standart kütüphanenin sessizce atlamasına izin verme.
+        current_agents, rules, has_rules = [], [], False
+        groups = []
+        for line in getattr(parser,'raw_rules','').splitlines()+['User-agent: __end__']:
+            line=line.split('#',1)[0].strip()
+            if ':' not in line: continue
+            name,value=line.split(':',1);name=name.strip().lower();value=value.strip()
+            if name=='user-agent':
+                if has_rules:groups.append((current_agents,rules));current_agents=[];rules=[];has_rules=False
+                current_agents.append(value.lower())
+            elif name in ('allow','disallow'):
+                rules.append((name,value));has_rules=True
+        specific=[g for g in groups if any(a!='*' and a in USER_AGENT.lower() for a in g[0])]
+        selected=specific or [g for g in groups if '*' in g[0]]
+        target=urlsplit(url).path or '/'
+        if urlsplit(url).query:target+='?'+urlsplit(url).query
+        def normalize_unreserved(value):
+            def decode(match):
+                char=chr(int(match.group(1),16))
+                return char if char in 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~' else '%'+match.group(1).upper()
+            return re.sub(r'%([0-9a-fA-F]{2})',decode,value)
+        target=normalize_unreserved(target)
+        matched=[]
+        for agents, group_rules in selected:
+            for name,value in group_rules:
+                if not value:continue
+                value=normalize_unreserved(value)
+                pattern='^'+re.escape(value).replace(r'\*','.*')
+                if value.endswith('$'):pattern=pattern[:-2]+'$'
+                if re.search(pattern,target):matched.append((len(value.replace('*','').rstrip('$')),name=='allow'))
+        if matched:wildcard_blocked=not max(matched)[1]
+        if not parser.can_fetch(USER_AGENT, url) or wildcard_blocked:
             raise FetchError('robots.txt taramayÄ± engelliyor', 'permission')
         crawl_delay = parser.crawl_delay(USER_AGENT) or parser.crawl_delay('*')
         if crawl_delay: self.delay = max(self.delay, crawl_delay)
