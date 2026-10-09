@@ -63,3 +63,10 @@ Hazırlama aynı hafta/kullanıcı için tek outbox kaydı üretir. Çıkış ba
 9 Ekim son doğrulaması: 37 unit/HTTP/envanter ve 5 JavaScript testi geçti; JS sözdizimi ve Python derleme kontrolü geçti. Yerel tarayıcıda ziyaretçi/kullanıcı/yönetici, arama, kanıt, tercih kalıcılığı/opt-out, demo onayı ve JSON hata akışları incelendi. 390 ve 1280 piksel görünümünde yatay taşma yok; bu kontrol gerçek telefon testi değildir. Ayrıntılı kanıt: docs/UI_VERIFICATION.md ve docs/VERIFICATION.md. Gerçek model/auth/SMTP testi yapılmadı. 30 kaynak henüz taranmıyor. Pro tier alanı var; ödeme ve premium erişim yok. Büyüme sayıları kayıtlı kullanıcı ve bülten tercihi açık kullanıcı sayısıdır; günlük aktif kullanıcı grafiği henüz yok.
 
 MVP.md aşamaları ve Codex devam istemini, docs/SECURITY.md canlıya çıkış sınırlarını içerir.
+
+
+## 10 Ekim güncel geliştirme durumu
+
+Önceki tarihli doğrulama sayıları tarihsel kayıttır. Yerel temiz .venv: 186 Python + önceki 11 JS testi başarılı. Kaynak envanteri135URL ve korunan19eski kayıt; aggregator29 yapılandırma içerir. 22 gerçek RSS fixture arayüzü offline uçtan uca pilotta doğrulandı; 29 canlı kaynak çalışıyor iddiası yok. Backend ücretsiz/etkin Pro CSV yetkisi uygulandı; gerçek tahsilat kapalı. DEMO onayı üretim yayınına geçmez.
+
+Backend eksiklerini sır değerlerini göstermeden kontrol et: `.venv/Scripts/python.exe -m hibe.server --check`. Gerçek Auth/ADC/admin UID eksik; canlı giriş/Firestore/SMTP ve üretim backend/deploy doğrulanmadı. Kaynak başına izin/periyot ve gerçek yayın onayı gerekir. Güncel plan MVP.md, ortak durum .agent/HANDOFF.md; pilot kanıt docs/ASAMA_10_PILOT_HAZIRLIK.md.
