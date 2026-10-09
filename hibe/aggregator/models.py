@@ -102,8 +102,10 @@ class GrantOpportunity:
         from .textutil import fold
         import re
         url = canonical_url(self.source_url)
-        context = '|'.join((self.source_entry_id or '', self.official_call_id or '', self.identity_authority or '', self.programme or '',
+        context = '|'.join((self.official_call_id or '', self.identity_authority or '', self.programme or '',
                             self.call_period or '', self.application_path or ''))
+        if self.source_entry_id:
+            context += '|entry:' + self.source_entry_id
         generic = urlsplit(url).path.rstrip('/') in ('', '/apply', '/grants', '/funding', '/calls') and not urlsplit(url).query
         title_context = fold(self.title) if generic else '|'.join(re.findall(r'\b20\d{2}\b', self.title))
         return hashlib.sha256((url + '|' + context + '|' + title_context).encode()).hexdigest()[:20]

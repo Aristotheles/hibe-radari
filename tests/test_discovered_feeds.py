@@ -9,6 +9,13 @@ from hibe.aggregator.relevance import RelevanceFilter
 ROOT = Path(__file__).resolve().parents[1]
 
 class DiscoveredFeedTests(unittest.TestCase):
+    def test_existing_identity_without_feed_guid_is_preserved(self):
+        import hashlib
+        from hibe.aggregator.models import GrantOpportunity, canonical_url
+        item = GrantOpportunity('Existing 2026 call', 'baseline', 'https://example.org/call?id=1')
+        expected = hashlib.sha256((canonical_url(item.source_url) + '|' + '||||' + '|2026').encode()).hexdigest()[:20]
+        self.assertEqual(item.id, expected)
+
     def test_real_feed_identity_and_unknown_publication_date(self):
         cfg = json.loads((ROOT/'config/aggregator.json').read_text(encoding='utf-8'))
         for ident in ('eurodesk-finder', 'interreg-next-med', 'mercator', 'iki-small-grants', 'gef-sgp', 'regeneron-isef', 't4-education', 'global-schools', 'roots-shoots', 'opportunity-desk', 'opportunities-youth', 'eu-calls'):

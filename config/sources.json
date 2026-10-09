@@ -9,7 +9,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -27,7 +27,7 @@
     "connector_ids": [
       "eu-ft"
     ],
-    "connector_mapping": "inventory_explicit_id",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -39,7 +39,24 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:41.731488+00:00",
+    "last_access_observation": {
+      "source_id": "source-5",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+      "checked_at": "2026-10-09T22:58:41.731488+00:00",
+      "status": 200,
+      "title": "EU Funding & Tenders Portal",
+      "bytes": 59961,
+      "links": 1,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Erasmus+ (Komisyon)",
@@ -75,9 +92,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://erasmus-plus.ec.europa.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:41.731726+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-358ffa19b0c7",
+      "url": "https://erasmus-plus.ec.europa.eu/",
+      "checked_at": "2026-10-09T22:58:41.731726+00:00",
+      "status": 200,
+      "title": "Home - Erasmus+",
+      "bytes": 201240,
+      "links": 60,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 2,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Erasmus+ Proje Sonuçları Platformu",
@@ -113,9 +156,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://erasmus-plus.ec.europa.eu/projects",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:43.017236+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-a97600d2a707",
+      "url": "https://erasmus-plus.ec.europa.eu/projects",
+      "checked_at": "2026-10-09T22:58:43.017236+00:00",
+      "status": 200,
+      "title": "Projects - Erasmus+",
+      "bytes": 175224,
+      "links": 37,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 2,
+        "structured_data": 0
+      }
+    }
   },
   {
     "id": "source-1",
@@ -127,7 +196,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://www.ua.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -156,8 +225,32 @@
     "change_tracking": "pending",
     "interval_hours": 24,
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "robots HTTP 404; web okuyucu ana sayfada timeout verdi. Liste şeması/izin henüz doğrulanmadı.",
-    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00"
+    "acceptance_reason": "Homepage and /haber/ listing schema verified; footer privacy link has no usable policy URL. Automatic reuse terms not verified; manual review retained.",
+    "acceptance_checked_at": "2026-10-10",
+    "last_access_observation": {
+      "source_id": "source-1",
+      "url": "https://www.ua.gov.tr/",
+      "checked_at": "2026-10-09T22:58:41.731659+00:00",
+      "status": 200,
+      "title": "Ulusal Ajans",
+      "bytes": 70649,
+      "links": 137,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Yaygınlaştırma, Sonuçların Kullanımı ve Görünürlük",
+          "url": "https://www.ua.gov.tr/anasayfa/icerikler/yayginlastirma-ve-gorunurluk/"
+        },
+        {
+          "label": "",
+          "url": "https://www.ua.gov.tr/anasayfa/icerikler/yayginlastirma-sonuclarin-kullanimi-ve-gorunurluk/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Eurodesk Türkiye",
@@ -193,11 +286,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://eurodesk.ua.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Ana sayfa ve /news/ web okuyucuda açıldı. robots.txt 200 HTML 404 sayfası döndürüyor; otomatik tarama koşulları doğrulanamadı.",
-    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00"
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-ec9ada7f2c10",
+      "url": "https://eurodesk.ua.gov.tr/",
+      "checked_at": "2026-10-09T22:58:41.731091+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Eurodesk Opportunity Finder",
@@ -215,19 +315,20 @@
     "institution_name": null,
     "program_label": "Eurodesk Opportunity Finder",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "eurodesk-finder"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://programmes.eurodesk.eu/rss",
+      "checked_at": "2026-10-10",
+      "basis": "Published public RSS metadata interface; attribution and manual verification required; no full text redistribution."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -238,8 +339,25 @@
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Web okuyucu timeout; kaynak çalışıyor denmez.",
-    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00"
+    "acceptance_reason": "Distinct RSS GUID retained; link is common feed URL, detail identity not verified; generated pubDate ignored; manual review required.",
+    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-fa1a84f63647",
+      "url": "https://programmes.eurodesk.eu/",
+      "checked_at": "2026-10-09T22:58:41.891549+00:00",
+      "status": 200,
+      "title": "Eurodesk Opportunity Finder",
+      "bytes": 118396,
+      "links": 26,
+      "rss_links": [
+        "https://programmes.eurodesk.eu/rss"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "European School Education Platform",
@@ -275,9 +393,39 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://school-education.ec.europa.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:42.997042+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-970a009e204e",
+      "url": "https://school-education.ec.europa.eu/",
+      "checked_at": "2026-10-09T22:58:42.997042+00:00",
+      "status": 200,
+      "title": "European School Education Platform | European School Education Platform",
+      "bytes": 105195,
+      "links": 151,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and conditions of use",
+          "url": "https://school-education.ec.europa.eu/en/terms_conditions_of_use"
+        },
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "eTwinning Türkiye",
@@ -301,7 +449,7 @@
     "connector_ids": [
       "etwinning-tr"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://etwinning.meb.gov.tr/feed/",
@@ -319,7 +467,27 @@
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
     "institution_identity_status": "unverified_host_group",
-    "last_checked": "2026-10-09T22:56:23.145219+00:00"
+    "last_checked": "2026-10-09T22:56:23.145219+00:00",
+    "acceptance_reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-0319cfded960",
+      "url": "https://etwinning.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:43.095847+00:00",
+      "status": 200,
+      "title": "eTwinning Türkiye – Yenilik ve Eğitim Teknolojileri Genel Müdürlüğü",
+      "bytes": 71797,
+      "links": 95,
+      "rss_links": [
+        "https://etwinning.meb.gov.tr/feed/",
+        "https://etwinning.meb.gov.tr/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Avrupa Gençlik Portalı",
@@ -355,9 +523,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://youth.europa.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:44.079464+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-d51ce6460b94",
+      "url": "https://youth.europa.eu/",
+      "checked_at": "2026-10-09T22:58:44.079464+00:00",
+      "status": 200,
+      "title": "European Youth Portal",
+      "bytes": 40831,
+      "links": 71,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and Conditions",
+          "url": "https://youth.europa.eu/terms-conditions_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://european-union.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Avrupa Dayanışma Programı (ESC)",
@@ -393,9 +587,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://youth.europa.eu/solidarity_en",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:46.388883+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-c8d5b4d3a652",
+      "url": "https://youth.europa.eu/solidarity_en",
+      "checked_at": "2026-10-09T22:58:46.388883+00:00",
+      "status": 200,
+      "title": "About | European Youth Portal",
+      "bytes": 46268,
+      "links": 99,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and Conditions",
+          "url": "https://youth.europa.eu/terms-conditions_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://european-union.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "SALTO Avrupa Eğitim Takvimi",
@@ -419,10 +639,9 @@
     "connector_ids": [],
     "connector_mapping": "none",
     "access_policy": {
-      "terms_status": "restricted",
-      "evidence_url": "https://www.salto-youth.net/about/legal-notice/",
-      "checked_at": "2026-10-09T22:47:20.187990+00:00",
-      "note": "Ticari dağıtım önceden yazılı izin gerektiriyor."
+      "terms_status": "unreviewed",
+      "evidence_url": null,
+      "checked_at": null
     },
     "operational_status": "permission_required",
     "last_success": null,
@@ -436,7 +655,27 @@
     },
     "institution_identity_status": "unverified_host_group",
     "acceptance_reason": "Liste web okuyucuda açıldı. Legal Notice eğitim için atıflı dağıtımı destekliyor; ticari dağıtım önceden yazılı izne bağlı. Ücretsiz/Pro ürün için otomatik yayın kapalı.",
-    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00"
+    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-1268ef989142",
+      "url": "https://www.salto-youth.net/tools/european-training-calendar/",
+      "checked_at": "2026-10-09T22:58:44.531622+00:00",
+      "status": 200,
+      "title": "SALTO-YOUTH - European Training Calendar - Training for youth work and projects - or recruit participants",
+      "bytes": 33017,
+      "links": 145,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal Notice",
+          "url": "https://www.salto-youth.net/about/legal-notice/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "SALTO Otlas ortak bulma",
@@ -460,10 +699,9 @@
     "connector_ids": [],
     "connector_mapping": "none",
     "access_policy": {
-      "terms_status": "restricted",
-      "evidence_url": "https://www.salto-youth.net/about/legal-notice/",
-      "checked_at": "2026-10-09T22:47:20.187990+00:00",
-      "note": "Ticari dağıtım önceden yazılı izin gerektiriyor."
+      "terms_status": "unreviewed",
+      "evidence_url": null,
+      "checked_at": null
     },
     "operational_status": "permission_required",
     "last_success": null,
@@ -477,7 +715,27 @@
     },
     "institution_identity_status": "unverified_host_group",
     "acceptance_reason": "Aynı SALTO kullanım şartları ticari dağıtımı izne bağlıyor; otomatik yayın kapalı.",
-    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00"
+    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-cc457d795387",
+      "url": "https://www.salto-youth.net/tools/otlas-partner-finding/",
+      "checked_at": "2026-10-09T22:58:45.800062+00:00",
+      "status": 200,
+      "title": "SALTO-YOUTH - Otlas - The Partner-Finding Tool",
+      "bytes": 29505,
+      "links": 141,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal Notice",
+          "url": "https://www.salto-youth.net/about/legal-notice/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "EACEA",
@@ -513,9 +771,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.eacea.ec.europa.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:45.381883+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-ec67d9d00e5a",
+      "url": "https://www.eacea.ec.europa.eu/",
+      "checked_at": "2026-10-09T22:58:45.381883+00:00",
+      "status": 200,
+      "title": "Language selection | European Education and Culture Executive Agency",
+      "bytes": 16916,
+      "links": 26,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Yaratıcı Avrupa",
@@ -551,9 +826,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://culture.ec.europa.eu/creative-europe",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:46.759536+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-728f98e8dd06",
+      "url": "https://culture.ec.europa.eu/creative-europe",
+      "checked_at": "2026-10-09T22:58:46.759536+00:00",
+      "status": 200,
+      "title": "Creative Europe - Culture and Creativity",
+      "bytes": 180354,
+      "links": 45,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 2,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "LIFE (çevre/iklim)",
@@ -589,9 +890,39 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://cinea.ec.europa.eu/programmes/life_en",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:47.405056+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-348dfa02beef",
+      "url": "https://cinea.ec.europa.eu/programmes/life_en",
+      "checked_at": "2026-10-09T22:58:47.405056+00:00",
+      "status": 200,
+      "title": "LIFE - European Climate, Infrastructure and Environment Executive Agency",
+      "bytes": 140154,
+      "links": 142,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal basis",
+          "url": "https://cinea.ec.europa.eu/programmes/life/life-legal-basis_en"
+        },
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 47,
+        "structured_data": 2
+      }
+    }
   },
   {
     "name": "Marie Skłodowska-Curie",
@@ -627,9 +958,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:47.492719+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-2a24e7254ece",
+      "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
+      "checked_at": "2026-10-09T22:58:47.492719+00:00",
+      "status": 200,
+      "title": "Home - Marie Skłodowska-Curie Actions",
+      "bytes": 133423,
+      "links": 40,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Ufuk Avrupa Türkiye (TÜBİTAK)",
@@ -665,9 +1022,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://ufukavrupa.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:47.763376+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-7b39a27994dc",
+      "url": "https://ufukavrupa.org.tr/",
+      "checked_at": "2026-10-09T22:58:47.763376+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "EIT",
@@ -703,9 +1069,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://eit.europa.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:48.015412+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-642be4969640",
+      "url": "https://eit.europa.eu/",
+      "checked_at": "2026-10-09T22:58:48.015412+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Yeni Avrupa Bauhausu",
@@ -741,9 +1116,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://new-european-bauhaus.europa.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:48.110348+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-0c8ed2427e23",
+      "url": "https://new-european-bauhaus.europa.eu/",
+      "checked_at": "2026-10-09T22:58:48.110348+00:00",
+      "status": 200,
+      "title": "Language selection | New European Bauhaus",
+      "bytes": 17667,
+      "links": 26,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Avrupa İklim Paktı",
@@ -779,9 +1171,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://climate-pact.europa.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:48.418657+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-d01437ed7b93",
+      "url": "https://climate-pact.europa.eu/",
+      "checked_at": "2026-10-09T22:58:48.418657+00:00",
+      "status": 200,
+      "title": "Language selection | European Climate Pact",
+      "bytes": 17131,
+      "links": 26,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "EU Code Week",
@@ -817,9 +1226,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://codeweek.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:48.748739+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-db8cfddfd511",
+      "url": "https://codeweek.eu/",
+      "checked_at": "2026-10-09T22:58:48.748739+00:00",
+      "status": 200,
+      "title": "Join EU Code Week – Learn, Create, & Have Fun with Coding",
+      "bytes": 153419,
+      "links": 166,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Scientix",
@@ -855,9 +1281,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.scientix.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:48.843422+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-0744f161b9a2",
+      "url": "https://www.scientix.eu/",
+      "checked_at": "2026-10-09T22:58:48.843422+00:00",
+      "status": 200,
+      "title": "Home",
+      "bytes": 126855,
+      "links": 75,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of Use",
+          "url": "https://www.scientix.eu/terms-of-use"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "European Schoolnet",
@@ -893,9 +1341,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.eun.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:50.168977+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-a0175b64eb77",
+      "url": "https://www.eun.org/",
+      "checked_at": "2026-10-09T22:58:50.168977+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Avrupa Konseyi Avrupa Gençlik Vakfı",
@@ -923,7 +1380,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "operational_status": "blocked",
+    "operational_status": "manual_pending",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -931,9 +1388,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.coe.int/en/web/european-youth-foundation",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:50.514182+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-d78789826d99",
+      "url": "https://www.coe.int/en/web/european-youth-foundation",
+      "checked_at": "2026-10-09T22:58:50.514182+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Anna Lindh Vakfı",
@@ -969,9 +1435,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.annalindhfoundation.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:50.694125+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-e01390fbc19d",
+      "url": "https://www.annalindhfoundation.org/",
+      "checked_at": "2026-10-09T22:58:50.694125+00:00",
+      "error_kind": "http",
+      "error": "HTTP 503"
+    }
   },
   {
     "name": "AB Türkiye Delegasyonu",
@@ -1007,9 +1482,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.avrupa.info.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (blocked); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:50.929436+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-1f285b60f26b",
+      "url": "https://www.avrupa.info.tr/",
+      "checked_at": "2026-10-09T22:58:50.929436+00:00",
+      "error_kind": "blocked",
+      "error": "Ä°zin verilmeyen URL"
+    }
   },
   {
     "name": "AB Başkanlığı",
@@ -1045,9 +1529,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.ab.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:50.929807+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-7a14f9f45685",
+      "url": "https://www.ab.gov.tr/",
+      "checked_at": "2026-10-09T22:58:50.929807+00:00",
+      "status": 200,
+      "title": "AB Başkanlığı | T.C. Dışişleri Bakanlığı Avrupa Birliği Başkanlığı",
+      "bytes": 84683,
+      "links": 253,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Jean Monnet Burs Programı",
@@ -1083,9 +1584,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.jeanmonnet.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:51.315581+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-ed4755f4ec05",
+      "url": "https://www.jeanmonnet.org.tr/",
+      "checked_at": "2026-10-09T22:58:51.315581+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Merkezi Finans ve İhale Birimi",
@@ -1121,9 +1631,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.cfcu.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:52.057807+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-2502923489c0",
+      "url": "https://www.cfcu.gov.tr/",
+      "checked_at": "2026-10-09T22:58:52.057807+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Sivil Düşün",
@@ -1159,9 +1678,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.sivildusun.net/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:52.133629+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-7e7271e11aee",
+      "url": "https://www.sivildusun.net/",
+      "checked_at": "2026-10-09T22:58:52.133629+00:00",
+      "status": 200,
+      "title": "Sivil Düşün – Avrupa Birliği Sivil Düşün Programı Proje Ofisi",
+      "bytes": 205901,
+      "links": 94,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 3,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Etkiniz AB",
@@ -1197,9 +1733,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://etkiniz.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:52.326537+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-757117f503c7",
+      "url": "https://etkiniz.eu/",
+      "checked_at": "2026-10-09T22:58:52.326537+00:00",
+      "status": 200,
+      "title": "Ana Sayfa - Etkiniz AB Programı",
+      "bytes": 93082,
+      "links": 57,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "id": "source-9",
@@ -1211,7 +1764,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://blacksea-cbc.net/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -1239,7 +1792,33 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:52.310257+00:00",
+    "last_access_observation": {
+      "source_id": "source-9",
+      "url": "https://blacksea-cbc.net/",
+      "checked_at": "2026-10-09T22:58:52.310257+00:00",
+      "status": 200,
+      "title": "Home",
+      "bytes": 164445,
+      "links": 112,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Privacy Policy & Legal Notice",
+          "url": "https://blacksea-cbc.net/privacy-policy-legal-notice"
+        },
+        {
+          "label": "Privacy Policy & Legal Notice",
+          "url": "https://blacksea-cbc.net/privacy-policy-legal-notice"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Interreg NEXT MED",
@@ -1257,19 +1836,20 @@
     "institution_name": null,
     "program_label": "Interreg NEXT MED",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "interreg-next-med"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.interregnextmed.eu/feed/",
+      "checked_at": "2026-10-10",
+      "basis": "Published public RSS metadata interface; attribution and manual verification required; no full text redistribution."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -1279,7 +1859,31 @@
       "url": "https://www.interregnextmed.eu/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS news metadata verified; this is not evidence of an open call.",
+    "acceptance_checked_at": "2026-10-09T22:58:53.038497+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-f2b21514f159",
+      "url": "https://www.interregnextmed.eu/",
+      "checked_at": "2026-10-09T22:58:53.038497+00:00",
+      "status": 200,
+      "title": "Homepage - Interreg NEXT MED",
+      "bytes": 263208,
+      "links": 134,
+      "rss_links": [
+        "https://www.interregnextmed.eu/feed/"
+      ],
+      "policy_links": [
+        {
+          "label": "Legal notice",
+          "url": "https://www.regione.sardegna.it/note-legali"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "TÜBİTAK duyurular",
@@ -1303,7 +1907,7 @@
     "connector_ids": [
       "tubitak-duyuru"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1317,9 +1921,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://tubitak.gov.tr/tr/duyuru",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:53.465194+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-af9c9a521d74",
+      "url": "https://tubitak.gov.tr/tr/duyuru",
+      "checked_at": "2026-10-09T22:58:53.465194+00:00",
+      "status": 200,
+      "title": "Duyurular | TÜBİTAK | Türkiye Bilimsel ve Teknolojik Araştırma Kurumu",
+      "bytes": 96759,
+      "links": 214,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "TÜBİTAK Bilim ve Toplum (4000)",
@@ -1343,7 +1964,7 @@
     "connector_ids": [
       "tubitak-4000"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1357,11 +1978,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://4000.tubitak.gov.tr/rss.xml",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
-    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00"
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-8837684bd3a6",
+      "url": "https://4000.tubitak.gov.tr/rss.xml",
+      "checked_at": "2026-10-09T22:58:53.897560+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "TÜBİTAK BİLİMİZ",
@@ -1397,9 +2025,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://bilimiz.tubitak.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:54.092348+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-f50d22800fe4",
+      "url": "https://bilimiz.tubitak.gov.tr/",
+      "checked_at": "2026-10-09T22:58:54.092348+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "MEB AB ve Dış İlişkiler GM",
@@ -1423,7 +2060,7 @@
     "connector_ids": [
       "meb-abdigm"
     ],
-    "connector_mapping": "official_rss_link",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://abdigm.meb.gov.tr/",
@@ -1442,7 +2079,22 @@
     },
     "institution_identity_status": "official_page_verified",
     "acceptance_reason": "Gerçek RSS geçerli, 50 kayıt; meta veri fixture testi gerekir. Detay/son tarih eksikliği görünür; ilan yayın onayı verilmedi.",
-    "acceptance_checked_at": "2026-10-09T22:49:24.586996+00:00"
+    "acceptance_checked_at": "2026-10-09T22:49:24.586996+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-b448ed253834",
+      "url": "https://abdigm.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:54.403919+00:00",
+      "status": 200,
+      "title": "MEB AVRUPA BİRLİĞİ VE DIŞ İLİŞKİLER GENEL MÜDÜRLÜĞÜ",
+      "bytes": 57113,
+      "links": 91,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "MEB YEĞİTEK",
@@ -1466,7 +2118,7 @@
     "connector_ids": [
       "meb-yegitek"
     ],
-    "connector_mapping": "official_rss_link",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://yegitek.meb.gov.tr/",
@@ -1485,7 +2137,27 @@
     },
     "institution_identity_status": "official_page_verified",
     "acceptance_reason": "Gerçek RSS geçerli, 50 kayıt; meta veri fixture testi gerekir. Detay/son tarih eksikliği görünür; ilan yayın onayı verilmedi.",
-    "acceptance_checked_at": "2026-10-09T22:49:24.586996+00:00"
+    "acceptance_checked_at": "2026-10-09T22:49:24.586996+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-a209c49726df",
+      "url": "https://yegitek.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:54.571324+00:00",
+      "status": 200,
+      "title": "MEB YENİLİK VE EĞİTİM TEKNOLOJİLERİ GENEL MÜDÜRLÜĞÜ",
+      "bytes": 63385,
+      "links": 109,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "06 Eki 2026 09:46 SINIFLARDA KAPSAYICI, ERİŞİLEBİLİR VE EŞİTLİKÇİ DİJİTAL İÇERİK",
+          "url": "https://yegitek.meb.gov.tr/www/siniflarda-kapsayici-erisilebilir-ve-esitlikci-dijital-iceriklerin-kullanimi-icin-50000-etkilesimli-tahta-temini-ihale-ilani/icerik/4050/tr"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "MEB Ortaöğretim GM",
@@ -1509,7 +2181,7 @@
     "connector_ids": [
       "meb-ogm"
     ],
-    "connector_mapping": "official_rss_link",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://ogm.meb.gov.tr/",
@@ -1526,7 +2198,24 @@
       "url": "https://ogm.meb.gov.tr/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "official_page_verified"
+    "institution_identity_status": "official_page_verified",
+    "acceptance_reason": "Resmî RSS gerçek istemcide 50 kayıt; fixture ve hata testleri. Kaynak haberlerinin tamamı çağrı veya uygun fırsat değildir.",
+    "acceptance_checked_at": "2026-10-09T22:52:36.178673+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-7bd9bb436dbe",
+      "url": "https://ogm.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:54.709605+00:00",
+      "status": 200,
+      "title": "MEB ORTAÖĞRETİM GENEL MÜDÜRLÜĞÜ",
+      "bytes": 44794,
+      "links": 77,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "MEB Mesleki ve Teknik Eğitim GM",
@@ -1550,7 +2239,7 @@
     "connector_ids": [
       "meb-mtegm"
     ],
-    "connector_mapping": "official_rss_link",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://mtegm.meb.gov.tr/",
@@ -1567,7 +2256,24 @@
       "url": "https://mtegm.meb.gov.tr/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "official_page_verified"
+    "institution_identity_status": "official_page_verified",
+    "acceptance_reason": "Resmî RSS gerçek istemcide 50 kayıt; fixture ve hata testleri. Kaynak haberlerinin tamamı çağrı veya uygun fırsat değildir.",
+    "acceptance_checked_at": "2026-10-09T22:52:36.178673+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-01c199abb971",
+      "url": "https://mtegm.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:55.378959+00:00",
+      "status": 200,
+      "title": "MEB MESLEKÎ VE TEKNİK EĞİTİM GENEL MÜDÜRLÜĞÜ",
+      "bytes": 47793,
+      "links": 73,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Kalkınma Ajansları GM",
@@ -1603,9 +2309,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://ka.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:55.590191+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-e6396fa94d62",
+      "url": "https://ka.gov.tr/",
+      "checked_at": "2026-10-09T22:58:55.590191+00:00",
+      "status": 200,
+      "title": "Kalkınma Ajansları",
+      "bytes": 612149,
+      "links": 44,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "KAYS",
@@ -1641,9 +2364,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://kaysuygulama.sanayi.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:55.770770+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-44ab1023b21f",
+      "url": "https://kaysuygulama.sanayi.gov.tr/",
+      "checked_at": "2026-10-09T22:58:55.770770+00:00",
+      "status": 200,
+      "title": null,
+      "bytes": 168,
+      "links": 0,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "DOKA",
@@ -1679,9 +2419,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.doka.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:55.880491+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-f338c92110f5",
+      "url": "https://www.doka.org.tr/",
+      "checked_at": "2026-10-09T22:58:55.880491+00:00",
+      "status": 200,
+      "title": "DOKA - Doğu Karadeniz Kalkınma Ajansı",
+      "bytes": 178825,
+      "links": 130,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "DOKAP",
@@ -1717,9 +2474,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.dokap.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:56.546276+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-0a59a2a3ce9f",
+      "url": "https://www.dokap.gov.tr/",
+      "checked_at": "2026-10-09T22:58:56.546276+00:00",
+      "status": 200,
+      "title": "DOKAP - Doğu Karadeniz Projesi Bölge Kalkınma İdaresi Başkanlığı",
+      "bytes": 45389,
+      "links": 183,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Gençlik ve Spor Bakanlığı",
@@ -1755,9 +2529,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.gsb.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:58:57.070694+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-0d8ed5351ba2",
+      "url": "https://www.gsb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:57.070694+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "İçişleri Sivil Toplumla İlişkiler GM",
@@ -1793,9 +2576,47 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.siviltoplum.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:57.170365+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-d98546e4217e",
+      "url": "https://www.siviltoplum.gov.tr/",
+      "checked_at": "2026-10-09T22:58:57.170365+00:00",
+      "status": 200,
+      "title": "Sivil Toplumla İlişkiler Genel Müdürlüğü",
+      "bytes": 204457,
+      "links": 391,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "İzne Tabi Kelime Kullanımı",
+          "url": "https://www.siviltoplum.gov.tr/izne-tabi-kelime-kullanimi"
+        },
+        {
+          "label": "E-Alındı Mobil Uygulaması Gizlilik Politikası",
+          "url": "https://www.siviltoplum.gov.tr/e-alindi-mobil-uygulamasi-gizlilik-politikasi-ve-kullanim-kosullari"
+        },
+        {
+          "label": "İzne Tabi Kelime Kullanımı",
+          "url": "https://www.siviltoplum.gov.tr/izne-tabi-kelime-kullanimi"
+        },
+        {
+          "label": "E-Alındı Mobil Uygulaması Gizlilik Politikası",
+          "url": "https://www.siviltoplum.gov.tr/e-alindi-mobil-uygulamasi-gizlilik-politikasi-ve-kullanim-kosullari"
+        },
+        {
+          "label": "e-Devlet Hizmetlerimizin Kullanım İstatistikleri",
+          "url": "javascript:;"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Sıfır Atık",
@@ -1831,9 +2652,43 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://sifiratik.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:57.962639+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-dc277d9c791c",
+      "url": "https://sifiratik.gov.tr/",
+      "checked_at": "2026-10-09T22:58:57.962639+00:00",
+      "status": 200,
+      "title": "Ana Sayfa - Sıfır Atık",
+      "bytes": 425230,
+      "links": 552,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "TEK KULLANIMLIK PLASTİKLER VE DENİZ ÇÖPLERİYLE MÜCADELE YOL HARİTASI HAZIR",
+          "url": "https://sifiratik.gov.tr/kutuphane/haberler/tek-kullanimlik-plastikler-ve-deniz-copleriyle-mucadele-yol-haritasi-hazir"
+        },
+        {
+          "label": "TEK KULLANIMLIK PLASTİKLER VE DENİZ ÇÖPLERİYLE MÜCADELE YOL HARİTASI HAZIR Çevre",
+          "url": "https://sifiratik.gov.tr/kutuphane/haberler/tek-kullanimlik-plastikler-ve-deniz-copleriyle-mucadele-yol-haritasi-hazir"
+        },
+        {
+          "label": "Türk Öğrenciler Atıksız Bir Gelecek İnşa Ediyor! Türkiye Diyanet Vakfı (TDV) Bor",
+          "url": "https://sifiratik.gov.tr/kutuphane/haberler/turk-ogrenciler-atiksiz-bir-gelecek-insa-ediyor"
+        },
+        {
+          "label": "Sıfır Atık Projesinde Kamikatsu Kasabası Çöplerini 34 ayrı kategoriye ayıran Kam",
+          "url": "https://sifiratik.gov.tr/kutuphane/haberler/sifir-atik-projesinde-kamikatsu-kasabasi"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "TEKNOFEST",
@@ -1869,9 +2724,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.teknofest.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:58.057321+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-d392158787f3",
+      "url": "https://www.teknofest.org/",
+      "checked_at": "2026-10-09T22:58:58.057321+00:00",
+      "status": 200,
+      "title": "TEKNOFEST: Havacılık, Uzay ve Teknoloji Festivali",
+      "bytes": 1168882,
+      "links": 555,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 111,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "T3 Vakfı",
@@ -1907,9 +2779,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://t3vakfi.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:58.596969+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-5dea9e03d34f",
+      "url": "https://t3vakfi.org/",
+      "checked_at": "2026-10-09T22:58:58.596969+00:00",
+      "status": 200,
+      "title": "T3 Vakfı",
+      "bytes": 989127,
+      "links": 1090,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 497,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "UNESCO Türkiye Millî Komisyonu",
@@ -1945,9 +2834,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.unesco.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:58:59.769060+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-1ecf1fc3b80a",
+      "url": "https://www.unesco.org.tr/",
+      "checked_at": "2026-10-09T22:58:59.769060+00:00",
+      "status": 200,
+      "title": "UNESCO Türkiye Millî Komisyonu",
+      "bytes": 742269,
+      "links": 122,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Logo Kullanımı",
+          "url": "https://www.unesco.org.tr/Pages/175/26/Logo-Kullan%C4%B1m%C4%B1"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "TÜRÇEV",
@@ -1983,9 +2894,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.turcev.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:01.162178+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-602698fdbdb0",
+      "url": "https://www.turcev.org.tr/",
+      "checked_at": "2026-10-09T22:59:01.162178+00:00",
+      "status": 200,
+      "title": "TÜRÇEV | Türkiye Çevre Eğitim Vakfı",
+      "bytes": 70240,
+      "links": 162,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Eko-Okullar Türkiye",
@@ -2021,9 +2949,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.ekookullar.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (blocked); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:01.565521+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-49c0550bfaa3",
+      "url": "https://www.ekookullar.org.tr/",
+      "checked_at": "2026-10-09T22:59:01.565521+00:00",
+      "error_kind": "blocked",
+      "error": "Ä°zin verilmeyen URL"
+    }
   },
   {
     "id": "source-3",
@@ -2035,7 +2972,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -2053,7 +2990,7 @@
     "connector_ids": [
       "sabit-izleme"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2065,7 +3002,29 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:01.710113+00:00",
+    "last_access_observation": {
+      "source_id": "source-3",
+      "url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
+      "checked_at": "2026-10-09T22:59:01.710113+00:00",
+      "status": 200,
+      "title": "Direct Aid Program",
+      "bytes": 41029,
+      "links": 118,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Copyright",
+          "url": "https://www.dfat.gov.au/about-us/about-this-website/copyright"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "id": "source-8",
@@ -2077,7 +3036,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -2095,7 +3054,7 @@
     "connector_ids": [
       "sabit-izleme"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2107,7 +3066,29 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:02.819972+00:00",
+    "last_access_observation": {
+      "source_id": "source-8",
+      "url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
+      "checked_at": "2026-10-09T22:59:02.819972+00:00",
+      "status": 200,
+      "title": "The Canada Fund for Local Initiatives – Türkiye (2026)",
+      "bytes": 31771,
+      "links": 55,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and conditions",
+          "url": "https://www.canada.ca/en/transparency/terms.html"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Japonya Büyükelçiliği (GGP)",
@@ -2135,7 +3116,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "operational_status": "blocked",
+    "operational_status": "manual_pending",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -2143,9 +3124,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.tr.emb-japan.go.jp/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:03.847700+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-79d89ed336a6",
+      "url": "https://www.tr.emb-japan.go.jp/",
+      "checked_at": "2026-10-09T22:59:03.847700+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Japan Foundation",
@@ -2181,9 +3171,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.jpf.go.jp/e/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:04.388384+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-49342dc9dfeb",
+      "url": "https://www.jpf.go.jp/e/",
+      "checked_at": "2026-10-09T22:59:04.388384+00:00",
+      "status": 200,
+      "title": "The Japan Foundation",
+      "bytes": 58096,
+      "links": 177,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "ABD Büyükelçiliği",
@@ -2219,9 +3226,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://tr.usembassy.gov/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:04.423210+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-032019933999",
+      "url": "https://tr.usembassy.gov/",
+      "checked_at": "2026-10-09T22:59:04.423210+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Grants.gov",
@@ -2257,9 +3273,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.grants.gov/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:05.107910+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-04a66d923635",
+      "url": "https://www.grants.gov/",
+      "checked_at": "2026-10-09T22:59:05.107910+00:00",
+      "status": 200,
+      "title": "Home | Grants.gov",
+      "bytes": 63967,
+      "links": 53,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Fulbright Türkiye",
@@ -2295,9 +3328,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://fulbright.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:05.279076+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-a34a92b01947",
+      "url": "https://fulbright.org.tr/",
+      "checked_at": "2026-10-09T22:59:05.279076+00:00",
+      "status": 200,
+      "title": "Türkiye Fulbright Eğitim Komisyonu",
+      "bytes": 97776,
+      "links": 139,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "YES Programı",
@@ -2333,9 +3383,39 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.yesprograms.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:06.224746+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-b10d69b21c44",
+      "url": "https://www.yesprograms.org/",
+      "checked_at": "2026-10-09T22:59:06.224746+00:00",
+      "status": 200,
+      "title": "YES Programs (en-US)",
+      "bytes": 30156,
+      "links": 52,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Privacy & Terms",
+          "url": "https://www.yesprograms.org/privacy-terms"
+        },
+        {
+          "label": "Privacy & Terms",
+          "url": "https://www.yesprograms.org/privacy-terms"
+        },
+        {
+          "label": "Privacy & Terms",
+          "url": "https://www.yesprograms.org/privacy-terms"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "British Council Türkiye",
@@ -2359,7 +3439,7 @@
     "connector_ids": [
       "britishcouncil-tr"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2373,11 +3453,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.britishcouncil.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
-    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00"
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-4c3bd64dcec7",
+      "url": "https://www.britishcouncil.org.tr/",
+      "checked_at": "2026-10-09T22:59:06.496311+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "id": "source-11",
@@ -2389,7 +3476,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -2407,7 +3494,7 @@
     "connector_ids": [
       "sabit-izleme"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2419,7 +3506,33 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:06.508370+00:00",
+    "last_access_observation": {
+      "source_id": "source-11",
+      "url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
+      "checked_at": "2026-10-09T22:59:06.508370+00:00",
+      "status": 200,
+      "title": "Turkey: British Embassy International Programme Fund - GOV.UK",
+      "bytes": 70179,
+      "links": 75,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and conditions",
+          "url": "https://www.gov.uk/help/terms-conditions"
+        },
+        {
+          "label": "© Crown copyright",
+          "url": "https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 2
+      }
+    }
   },
   {
     "id": "source-15",
@@ -2431,7 +3544,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://www.jugendbruecke.de/foerderung/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -2449,7 +3562,7 @@
     "connector_ids": [
       "jugendbruecke"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2461,7 +3574,24 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:06.965443+00:00",
+    "last_access_observation": {
+      "source_id": "source-15",
+      "url": "https://www.jugendbruecke.de/foerderung/",
+      "checked_at": "2026-10-09T22:59:06.965443+00:00",
+      "status": 200,
+      "title": "Förderung",
+      "bytes": 148150,
+      "links": 53,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Almanya PAD (KMK)",
@@ -2485,7 +3615,7 @@
     "connector_ids": [
       "sabit-izleme"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2499,9 +3629,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.kmk-pad.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:07.191259+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-33e8e4378143",
+      "url": "https://www.kmk-pad.org/",
+      "checked_at": "2026-10-09T22:59:07.191259+00:00",
+      "status": 200,
+      "title": "Pädagogischer Austauschdienst (PAD): Austausch bildet: PAD",
+      "bytes": 202254,
+      "links": 107,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "PASCH",
@@ -2525,7 +3672,7 @@
     "connector_ids": [
       "sabit-izleme"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2539,9 +3686,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.pasch-net.de/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (blocked); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:07.628392+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-e177402080e7",
+      "url": "https://www.pasch-net.de/",
+      "checked_at": "2026-10-09T22:59:07.628392+00:00",
+      "error_kind": "blocked",
+      "error": "Ä°zin verilmeyen URL"
+    }
   },
   {
     "name": "Goethe-Institut Türkiye",
@@ -2569,7 +3725,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "operational_status": "blocked",
+    "operational_status": "manual_pending",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -2577,9 +3733,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.goethe.de/ins/tr/tr/index.html",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:08.078554+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-b1ec1a073e91",
+      "url": "https://www.goethe.de/ins/tr/tr/index.html",
+      "checked_at": "2026-10-09T22:59:08.078554+00:00",
+      "error_kind": "http",
+      "error": "HTTP 403"
+    }
   },
   {
     "name": "DAAD Türkiye",
@@ -2615,9 +3780,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.daad-turkiye.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:08.766049+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-12777f0725ff",
+      "url": "https://www.daad-turkiye.org/",
+      "checked_at": "2026-10-09T22:59:08.766049+00:00",
+      "status": 200,
+      "title": "Anasayfa - DAAD Türkiye",
+      "bytes": 232965,
+      "links": 405,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Almanya Büyükelçiliği",
@@ -2653,9 +3835,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://tuerkei.diplo.de/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:08.953933+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-7bf1682c81e4",
+      "url": "https://tuerkei.diplo.de/",
+      "checked_at": "2026-10-09T22:59:08.953933+00:00",
+      "status": 200,
+      "title": "Deutsche Vertretungen in der Türkei - Auswärtiges Amt",
+      "bytes": 74620,
+      "links": 76,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Stiftung Mercator",
@@ -2673,19 +3872,20 @@
     "institution_name": null,
     "program_label": "Stiftung Mercator",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "mercator"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.stiftung-mercator.de/de/feed/",
+      "checked_at": "2026-10-09T23:06:02.014418+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -2695,7 +3895,26 @@
       "url": "https://www.stiftung-mercator.de/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:09.399512+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-72395a0eea77",
+      "url": "https://www.stiftung-mercator.de/",
+      "checked_at": "2026-10-09T22:59:09.399512+00:00",
+      "status": 200,
+      "title": "Startseite – Stiftung Mercator",
+      "bytes": 114872,
+      "links": 57,
+      "rss_links": [
+        "https://www.stiftung-mercator.de/de/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Robert Bosch Stiftung",
@@ -2731,9 +3950,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.bosch-stiftung.de/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:09.437468+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-1f0ea5031aab",
+      "url": "https://www.bosch-stiftung.de/",
+      "checked_at": "2026-10-09T22:59:09.437468+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Heinrich Böll Stiftung Türkiye",
@@ -2769,9 +3997,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://tr.boell.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:09.910141+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-00de13b22d83",
+      "url": "https://tr.boell.org/",
+      "checked_at": "2026-10-09T22:59:09.910141+00:00",
+      "status": 200,
+      "title": "Heinrich Böll Stiftung Istanbul",
+      "bytes": 154371,
+      "links": 144,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 53,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Friedrich Ebert Stiftung Türkiye",
@@ -2807,9 +4052,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://turkey.fes.de/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:10.537268+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-408881bcf8a4",
+      "url": "https://turkey.fes.de/",
+      "checked_at": "2026-10-09T22:59:10.537268+00:00",
+      "status": 200,
+      "title": "Anasayfa",
+      "bytes": 142339,
+      "links": 162,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "IKI Small Grants (Almanya)",
@@ -2827,19 +4089,20 @@
     "institution_name": null,
     "program_label": "IKI Small Grants (Almanya)",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "iki-small-grants"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://iki-small-grants.de/feed/",
+      "checked_at": "2026-10-09T23:06:02.014702+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -2849,7 +4112,32 @@
       "url": "https://iki-small-grants.de/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:11.424027+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-a94bf80d23a0",
+      "url": "https://iki-small-grants.de/",
+      "checked_at": "2026-10-09T22:59:11.424027+00:00",
+      "status": 200,
+      "title": "Home - IKI Small Grants",
+      "bytes": 109695,
+      "links": 77,
+      "rss_links": [
+        "https://iki-small-grants.de/feed/",
+        "https://iki-small-grants.de/comments/feed/"
+      ],
+      "policy_links": [
+        {
+          "label": "Legal disclaimer",
+          "url": "https://iki-small-grants.de/legal-disclaimer/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Institut français Türkiye",
@@ -2873,7 +4161,7 @@
     "connector_ids": [
       "ifturquie"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://www.ifturquie.org/feed/",
@@ -2891,7 +4179,24 @@
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
     "institution_identity_status": "unverified_host_group",
-    "last_checked": "2026-10-09T22:56:23.145219+00:00"
+    "last_checked": "2026-10-09T22:56:23.145219+00:00",
+    "acceptance_reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-f4e01ac2c714",
+      "url": "https://www.ifturquie.org/",
+      "checked_at": "2026-10-09T22:59:12.334401+00:00",
+      "status": 200,
+      "title": "Institut Français de Turquie",
+      "bytes": 110596,
+      "links": 153,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Fransa Büyükelçiliği",
@@ -2927,9 +4232,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://tr.ambafrance.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:12.480318+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-50f09a187f5d",
+      "url": "https://tr.ambafrance.org/",
+      "checked_at": "2026-10-09T22:59:12.480318+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Hollanda (MATRA / İnsan Hakları Fonu)",
@@ -2965,9 +4279,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.netherlandsandyou.nl/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:12.818719+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-0bfcf8e1052f",
+      "url": "https://www.netherlandsandyou.nl/",
+      "checked_at": "2026-10-09T22:59:12.818719+00:00",
+      "status": 200,
+      "title": "Netherlandsandyou.nl - Netherlands and you | The Netherlands and you",
+      "bytes": 208961,
+      "links": 577,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "İsveç Enstitüsü",
@@ -3003,9 +4334,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://si.se/en/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:13.018510+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-270ab3509ec0",
+      "url": "https://si.se/en/",
+      "checked_at": "2026-10-09T22:59:13.018510+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Finlandiya Büyükelçiliği (Yerel İşbirliği Fonu)",
@@ -3041,9 +4381,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://finlandabroad.fi/web/tur",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:13.457823+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-6e80b76da752",
+      "url": "https://finlandabroad.fi/web/tur",
+      "checked_at": "2026-10-09T22:59:13.457823+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "name": "İsviçre Büyükelçiliği",
@@ -3071,7 +4420,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "operational_status": "blocked",
+    "operational_status": "manual_pending",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -3079,9 +4428,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.eda.admin.ch/ankara",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:13.790566+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-d4d8d1fe0954",
+      "url": "https://www.eda.admin.ch/ankara",
+      "checked_at": "2026-10-09T22:59:13.790566+00:00",
+      "status": 200,
+      "title": "Embassy of Switzerland in Turkey",
+      "bytes": 196453,
+      "links": 414,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legalisations",
+          "url": "https://www.eda.admin.ch/countries/turkey/en/home/services/legalisations.html"
+        }
+      ],
+      "schema": {
+        "article_count": 23,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Avusturya OeAD",
@@ -3105,7 +4476,7 @@
     "connector_ids": [
       "sabit-izleme"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -3119,9 +4490,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://oead.at/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:13.979281+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-523f7256dc29",
+      "url": "https://oead.at/",
+      "checked_at": "2026-10-09T22:59:13.979281+00:00",
+      "status": 200,
+      "title": "OeAD, Agency for Education and Internationalisation",
+      "bytes": 606199,
+      "links": 442,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of use",
+          "url": "https://presse.oead.at/en/terms-of-use"
+        }
+      ],
+      "schema": {
+        "article_count": 13,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "KEİ (BSEC)",
@@ -3157,9 +4550,47 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.bsec-organization.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:14.412971+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-bff92cd13068",
+      "url": "https://www.bsec-organization.org/",
+      "checked_at": "2026-10-09T22:59:14.412971+00:00",
+      "status": 200,
+      "title": "BSEC - Black Sea Economic Cooperation",
+      "bytes": 273617,
+      "links": 313,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/agriculture/terms-of-reference"
+        },
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/banking-_and_-finance/terms-of-reference"
+        },
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/combating-crime/terms-of-reference"
+        },
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/culture/terms-of-reference"
+        },
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/customs-matters/terms-of-reference"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "GMF / Black Sea Trust",
@@ -3195,9 +4626,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.gmfus.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:14.571170+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-1c417588822b",
+      "url": "https://www.gmfus.org/",
+      "checked_at": "2026-10-09T22:59:14.571170+00:00",
+      "status": 200,
+      "title": "German Marshall Fund of the United States",
+      "bytes": 64035,
+      "links": 99,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 21,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Dışişleri Bakanlığı",
@@ -3233,9 +4681,33 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.mfa.gov.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:15.856028+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-1123e39c4e2a",
+      "url": "https://www.mfa.gov.tr/",
+      "checked_at": "2026-10-09T22:59:15.856028+00:00",
+      "status": 200,
+      "title": "T.C. Dışişleri Bakanlığı",
+      "bytes": 73724,
+      "links": 189,
+      "rss_links": [
+        "https://www.mfa.gov.tr/tr.rss.mfa?259fca5b-ebee-47d1-b850-ec53936ab32e",
+        "https://www.mfa.gov.tr/tr.rss.mfa?8a5e254e-533a-4b3d-84db-9f95be1207ff",
+        "https://www.mfa.gov.tr/tr.rss.mfa?978045a8-225a-487d-8fd8-8d371874e8ec",
+        "https://www.mfa.gov.tr/tr.rss.mfa?3fc6582e-a37b-40d1-847a-6914dc12fb60",
+        "https://www.mfa.gov.tr/tr.rss.mfa?a2aa6dde-f503-4a54-ba92-d960969a9a84",
+        "https://www.mfa.gov.tr/tr.rss.mfa?a2bb6dde-f503-4a54-ba92-d960969a9984"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "UNDP Türkiye",
@@ -3263,7 +4735,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "operational_status": "blocked",
+    "operational_status": "manual_pending",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -3271,16 +4743,25 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.undp.org/tr/turkiye",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:16.114429+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-955c945bb1e3",
+      "url": "https://www.undp.org/tr/turkiye",
+      "checked_at": "2026-10-09T22:59:16.114429+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "id": "source-12",
     "name": "UNDP GEF Küçük Destek Programı",
     "url": "https://sgp.undp.org/",
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "last_checked": "2026-10-09",
     "identity_status": "candidate",
     "manual_check": {
@@ -3303,19 +4784,40 @@
     "connector_ids": [
       "gef-sgp"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://sgp.undp.org/?format=feed&type=rss",
+      "checked_at": "2026-10-09T23:06:02.014852+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:16.114111+00:00",
+    "last_access_observation": {
+      "source_id": "source-12",
+      "url": "https://sgp.undp.org/",
+      "checked_at": "2026-10-09T22:59:16.114111+00:00",
+      "status": 200,
+      "title": "Welcome to The GEF Small Grants Programme",
+      "bytes": 104775,
+      "links": 208,
+      "rss_links": [
+        "https://sgp.undp.org/?format=feed&type=rss",
+        "https://sgp.undp.org/?format=feed&type=atom"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "UNDP ihale/çağrı ilanları",
@@ -3351,9 +4853,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://procurement-notices.undp.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:16.463904+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-c905328504bf",
+      "url": "https://procurement-notices.undp.org/",
+      "checked_at": "2026-10-09T22:59:16.463904+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt taramayÄ± engelliyor"
+    }
   },
   {
     "name": "UNESCO Associated Schools",
@@ -3389,9 +4900,47 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.unesco.org/en/aspnet",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:16.870105+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-083b401a02f5",
+      "url": "https://www.unesco.org/en/aspnet",
+      "checked_at": "2026-10-09T22:59:16.870105+00:00",
+      "status": 200,
+      "title": "UNESCO Associated Schools Network | UNESCO",
+      "bytes": 305446,
+      "links": 149,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal texts",
+          "url": "https://www.unesco.org/en/legal-affairs"
+        },
+        {
+          "label": "Legal texts",
+          "url": "https://www.unesco.org/en/legal-affairs"
+        },
+        {
+          "label": "Terms & Policies",
+          "url": "https://www.unesco.org/en"
+        },
+        {
+          "label": "Terms of Use",
+          "url": "https://www.unesco.org/en/terms-use"
+        },
+        {
+          "label": "Protection of human rights (Procedure 104)",
+          "url": "https://www.unesco.org/en/legal-affairs/cr-committee/104-procedure"
+        }
+      ],
+      "schema": {
+        "article_count": 9,
+        "structured_data": 2
+      }
+    }
   },
   {
     "name": "UNESCO ödülleri",
@@ -3427,9 +4976,47 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.unesco.org/en/prizes",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:18.092265+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-34a30a5aec70",
+      "url": "https://www.unesco.org/en/prizes",
+      "checked_at": "2026-10-09T22:59:18.092265+00:00",
+      "status": 200,
+      "title": "UNESCO Prizes | UNESCO",
+      "bytes": 112967,
+      "links": 139,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal texts",
+          "url": "https://www.unesco.org/en/legal-affairs"
+        },
+        {
+          "label": "Legal texts",
+          "url": "https://www.unesco.org/en/legal-affairs"
+        },
+        {
+          "label": "Terms & Policies",
+          "url": "https://www.unesco.org/en"
+        },
+        {
+          "label": "Terms of Use",
+          "url": "https://www.unesco.org/en/terms-use"
+        },
+        {
+          "label": "Protection of human rights (Procedure 104)",
+          "url": "https://www.unesco.org/en/legal-affairs/cr-committee/104-procedure"
+        }
+      ],
+      "schema": {
+        "article_count": 32,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "UNICEF Türkiye",
@@ -3465,9 +5052,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.unicef.org/turkiye/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:17.144669+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-c83064769bec",
+      "url": "https://www.unicef.org/turkiye/",
+      "checked_at": "2026-10-09T22:59:17.144669+00:00",
+      "status": 200,
+      "title": "UNICEF Türkiye",
+      "bytes": 223077,
+      "links": 55,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Yasal",
+          "url": "https://www.unicef.org/legal"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "BM Demokrasi Fonu",
@@ -3503,9 +5112,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.un.org/democracyfund/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:17.920697+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-4ea947f59252",
+      "url": "https://www.un.org/democracyfund/",
+      "checked_at": "2026-10-09T22:59:17.920697+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "name": "UNEP Young Champions of the Earth",
@@ -3541,9 +5159,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.unep.org/youngchampions/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:18.309474+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-3658dc075bb1",
+      "url": "https://www.unep.org/youngchampions/",
+      "checked_at": "2026-10-09T22:59:18.309474+00:00",
+      "status": 200,
+      "title": "Young Champions of the Earth - UN Environment Programme",
+      "bytes": 38474,
+      "links": 57,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of Use",
+          "url": "https://www.unenvironment.org/terms-use"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "id": "source-14",
@@ -3555,7 +5195,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://sabancivakfi.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -3583,7 +5223,16 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:18.499544+00:00",
+    "last_access_observation": {
+      "source_id": "source-14",
+      "url": "https://sabancivakfi.org/",
+      "checked_at": "2026-10-09T22:59:18.499544+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Vehbi Koç Vakfı",
@@ -3619,9 +5268,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.vkv.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:18.512196+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-80e6ed168eea",
+      "url": "https://www.vkv.org.tr/",
+      "checked_at": "2026-10-09T22:59:18.512196+00:00",
+      "status": 200,
+      "title": "VKV Vehbi Koç Vakfı",
+      "bytes": 95338,
+      "links": 127,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Öğretmen Akademisi Vakfı",
@@ -3657,9 +5323,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.orav.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:18.754498+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-63048c76e181",
+      "url": "https://www.orav.org.tr/",
+      "checked_at": "2026-10-09T22:59:18.754498+00:00",
+      "status": 200,
+      "title": "Ana sayfa",
+      "bytes": 110843,
+      "links": 125,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Öğretmen Ağı",
@@ -3695,9 +5378,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.ogretmenagi.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:19.089534+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-99ee9ae4d55b",
+      "url": "https://www.ogretmenagi.org/",
+      "checked_at": "2026-10-09T22:59:19.089534+00:00",
+      "status": 200,
+      "title": "Öğretmen Ağı | Öğretmen Ağı",
+      "bytes": 98017,
+      "links": 104,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Eğitim Reformu Girişimi",
@@ -3733,9 +5433,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.egitimreformugirisimi.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:19.825360+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-06481c97e944",
+      "url": "https://www.egitimreformugirisimi.org/",
+      "checked_at": "2026-10-09T22:59:19.825360+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "TEGV",
@@ -3771,9 +5480,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.tegv.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:19.999709+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-e0c8fa83df52",
+      "url": "https://www.tegv.org/",
+      "checked_at": "2026-10-09T22:59:19.999709+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "TEMA Vakfı",
@@ -3809,9 +5527,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.tema.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:20.320176+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-8aa06734dc34",
+      "url": "https://www.tema.org.tr/",
+      "checked_at": "2026-10-09T22:59:20.320176+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "name": "WWF-Türkiye",
@@ -3847,9 +5574,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.wwf.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:20.556878+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-5b52d481537d",
+      "url": "https://www.wwf.org.tr/",
+      "checked_at": "2026-10-09T22:59:20.556878+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "TÜSEV",
@@ -3873,7 +5609,7 @@
     "connector_ids": [
       "tusev"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://www.tusev.org.tr/feed/",
@@ -3891,7 +5627,16 @@
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
     "institution_identity_status": "unverified_host_group",
-    "last_checked": "2026-10-09T22:56:23.145219+00:00"
+    "last_checked": "2026-10-09T22:56:23.145219+00:00",
+    "acceptance_reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-0d572620f3b2",
+      "url": "https://www.tusev.org.tr/",
+      "checked_at": "2026-10-09T22:59:20.693483+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Sivil Toplum için Destek Vakfı",
@@ -3927,9 +5672,29 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://siviltoplumdestek.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:20.663127+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-1b7909fab843",
+      "url": "https://siviltoplumdestek.org/",
+      "checked_at": "2026-10-09T22:59:20.663127+00:00",
+      "status": 200,
+      "title": "Sivil Toplum için Destek Vakfı",
+      "bytes": 204090,
+      "links": 140,
+      "rss_links": [
+        "https://siviltoplumdestek.org/feed/",
+        "https://siviltoplumdestek.org/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Turkey Mozaik Foundation",
@@ -3965,9 +5730,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.turkeymozaik.org.uk/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:20.770107+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-7ff6770d8d9e",
+      "url": "https://www.turkeymozaik.org.uk/",
+      "checked_at": "2026-10-09T22:59:20.770107+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "İhtiyaç Haritası",
@@ -4003,9 +5777,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.ihtiyacharitasi.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:20.981690+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-9599be4922ce",
+      "url": "https://www.ihtiyacharitasi.org/",
+      "checked_at": "2026-10-09T22:59:20.981690+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "AFS Türkiye (Türk Kültür Vakfı)",
@@ -4041,9 +5824,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.turkkulturvakfi.org.tr/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:21.365368+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-5f24ee4171a5",
+      "url": "https://www.turkkulturvakfi.org.tr/",
+      "checked_at": "2026-10-09T22:59:21.365368+00:00",
+      "status": 200,
+      "title": "Türkiye",
+      "bytes": 107265,
+      "links": 53,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Kullanım Koşulları ve Politikaları",
+          "url": "https://www.turkkulturvakfi.org.tr/kullanim-kosullari-ve-politikalari/"
+        }
+      ],
+      "schema": {
+        "article_count": 4,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "The Earth Prize",
@@ -4079,9 +5884,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.theearthprize.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:21.388162+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-ea64d35ac8e8",
+      "url": "https://www.theearthprize.org/",
+      "checked_at": "2026-10-09T22:59:21.388162+00:00",
+      "status": 200,
+      "title": "The Earth Prize | The Global Youth Sustainability Competition",
+      "bytes": 138751,
+      "links": 80,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms & Conditions",
+          "url": "https://www.theearthprize.org/terms-and-conditions"
+        },
+        {
+          "label": "Copyright Policy",
+          "url": "https://www.theearthprize.org/copyright-policy"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Zayed Sustainability Prize",
@@ -4117,9 +5948,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://zayedsustainabilityprize.com/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:21.618084+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-bba083a53105",
+      "url": "https://zayedsustainabilityprize.com/",
+      "checked_at": "2026-10-09T22:59:21.618084+00:00",
+      "status": 200,
+      "title": "Zayed Sustainability Prize",
+      "bytes": 75567,
+      "links": 62,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "T&Cs",
+          "url": "https://zayedsustainabilityprize.com/en/terms"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Stockholm Junior Water Prize (SIWI)",
@@ -4155,9 +6008,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.siwi.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:22.922619+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-4c7b13e6f21b",
+      "url": "https://www.siwi.org/",
+      "checked_at": "2026-10-09T22:59:22.922619+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Regeneron ISEF",
@@ -4175,19 +6037,20 @@
     "institution_name": null,
     "program_label": "Regeneron ISEF",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "regeneron-isef"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.societyforscience.org/isef/feed/",
+      "checked_at": "2026-10-09T23:06:03.688355+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -4197,7 +6060,26 @@
       "url": "https://www.societyforscience.org/isef/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:22.938655+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-3048897cc152",
+      "url": "https://www.societyforscience.org/isef/",
+      "checked_at": "2026-10-09T22:59:22.938655+00:00",
+      "status": 200,
+      "title": "Regeneron International Science and Engineering Fair - Society for Science",
+      "bytes": 194122,
+      "links": 150,
+      "rss_links": [
+        "https://www.societyforscience.org/isef/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Global Teacher Prize",
@@ -4233,9 +6115,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.globalteacherprize.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:23.333064+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-c74800326885",
+      "url": "https://www.globalteacherprize.org/",
+      "checked_at": "2026-10-09T22:59:23.333064+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "T4 Education",
@@ -4253,19 +6144,20 @@
     "institution_name": null,
     "program_label": "T4 Education",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "t4-education"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://t4.education/feed/",
+      "checked_at": "2026-10-09T23:06:03.863932+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -4275,7 +6167,27 @@
       "url": "https://t4.education/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:23.385264+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-ce716ee6bf49",
+      "url": "https://t4.education/",
+      "checked_at": "2026-10-09T22:59:23.385264+00:00",
+      "status": 200,
+      "title": "Home - T4 Education",
+      "bytes": 183790,
+      "links": 75,
+      "rss_links": [
+        "https://t4.education/feed/",
+        "https://t4.education/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "National Geographic Society hibeleri",
@@ -4311,9 +6223,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.nationalgeographic.org/society/grants-and-investments/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:23.818174+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-a08149e86076",
+      "url": "https://www.nationalgeographic.org/society/grants-and-investments/",
+      "checked_at": "2026-10-09T22:59:23.818174+00:00",
+      "status": 200,
+      "title": "Grants and Investments - National Geographic Society",
+      "bytes": 307011,
+      "links": 112,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of Service",
+          "url": "https://www.nationalgeographic.org/terms-of-service/"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "The Pollination Project",
@@ -4349,9 +6283,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://thepollinationproject.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:24.107993+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-5b5b6d9572a8",
+      "url": "https://thepollinationproject.org/",
+      "checked_at": "2026-10-09T22:59:24.107993+00:00",
+      "error_kind": "http",
+      "error": "HTTP 403"
+    }
   },
   {
     "name": "Rufford Foundation",
@@ -4387,9 +6330,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.rufford.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:24.905487+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-e2ba93e5bd65",
+      "url": "https://www.rufford.org/",
+      "checked_at": "2026-10-09T22:59:24.905487+00:00",
+      "status": 200,
+      "title": "The Rufford Foundation - Providing grant funding for nature conservation\n    and pilot projects around the world\n\n            - The Rufford Foundation",
+      "bytes": 35853,
+      "links": 36,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Global Greengrants Fund",
@@ -4425,9 +6385,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.greengrants.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:25.378217+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-90686db6a269",
+      "url": "https://www.greengrants.org/",
+      "checked_at": "2026-10-09T22:59:25.378217+00:00",
+      "status": 200,
+      "title": null,
+      "bytes": 212,
+      "links": 0,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Mohamed bin Zayed Tür Koruma Fonu",
@@ -4463,9 +6440,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.speciesconservation.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:25.982586+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-6fdcf036901c",
+      "url": "https://www.speciesconservation.org/",
+      "checked_at": "2026-10-09T22:59:25.982586+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Young Reporters for the Environment",
@@ -4501,9 +6487,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.yre.global/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:26.245939+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-7e5654adb2c2",
+      "url": "https://www.yre.global/",
+      "checked_at": "2026-10-09T22:59:26.245939+00:00",
+      "status": 200,
+      "title": "YRE - Young Reporters for the Environment",
+      "bytes": 460680,
+      "links": 174,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Eco-Schools (küresel)",
@@ -4539,9 +6542,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.ecoschools.global/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:26.647123+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-83d83cda1ee9",
+      "url": "https://www.ecoschools.global/",
+      "checked_at": "2026-10-09T22:59:26.647123+00:00",
+      "status": 200,
+      "title": "Eco-Schools",
+      "bytes": 371642,
+      "links": 170,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Global Schools Program (SDSN)",
@@ -4559,19 +6579,20 @@
     "institution_name": null,
     "program_label": "Global Schools Program (SDSN)",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "global-schools"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.globalschoolsprogram.org/blog-feed.xml",
+      "checked_at": "2026-10-09T23:06:03.963187+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -4581,7 +6602,26 @@
       "url": "https://www.globalschoolsprogram.org/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:27.165371+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-5bdfa0077d6e",
+      "url": "https://www.globalschoolsprogram.org/",
+      "checked_at": "2026-10-09T22:59:27.165371+00:00",
+      "status": 200,
+      "title": "Global Schools",
+      "bytes": 1324035,
+      "links": 35,
+      "rss_links": [
+        "https://www.globalschoolsprogram.org/blog-feed.xml"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Roots & Shoots",
@@ -4599,19 +6639,20 @@
     "institution_name": null,
     "program_label": "Roots & Shoots",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "roots-shoots"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://rootsandshoots.global/feed/",
+      "checked_at": "2026-10-09T23:06:04.088926+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -4621,7 +6662,27 @@
       "url": "https://rootsandshoots.global/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:27.849012+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-155435a6d1a0",
+      "url": "https://rootsandshoots.global/",
+      "checked_at": "2026-10-09T22:59:27.849012+00:00",
+      "status": 200,
+      "title": "Roots and Shoots Global - Roots & Shoots Global",
+      "bytes": 329223,
+      "links": 82,
+      "rss_links": [
+        "https://rootsandshoots.global/feed/",
+        "https://rootsandshoots.global/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "GLOBE Program",
@@ -4657,9 +6718,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.globe.gov/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:28.170720+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-d4b3d841372b",
+      "url": "https://www.globe.gov/",
+      "checked_at": "2026-10-09T22:59:28.170720+00:00",
+      "status": 200,
+      "title": "GLOBE Home Page - GLOBE.gov",
+      "bytes": 425862,
+      "links": 387,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of Use",
+          "url": "https://www.globe.gov/about/privacy/terms-of-use"
+        },
+        {
+          "label": "Terms of Use",
+          "url": "https://www.globe.gov/about/privacy/terms-of-use"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "European Cultural Foundation",
@@ -4695,9 +6782,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://culturalfoundation.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:28.803813+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-069393007b65",
+      "url": "https://culturalfoundation.eu/",
+      "checked_at": "2026-10-09T22:59:28.803813+00:00",
+      "status": 200,
+      "title": "Home – European Cultural Foundation",
+      "bytes": 80557,
+      "links": 102,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms & Conditions",
+          "url": "https://culturalfoundation.eu/terms-conditions/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Allianz Foundation",
@@ -4733,9 +6842,35 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://allianzfoundation.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:29.376745+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-98b1ee25c562",
+      "url": "https://allianzfoundation.org/",
+      "checked_at": "2026-10-09T22:59:29.376745+00:00",
+      "status": 200,
+      "title": "Home — Allianz Foundation",
+      "bytes": 253516,
+      "links": 56,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal notice",
+          "url": "https://allianzfoundation.org/legal-notice/"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://allianzfoundation.org/legal-notice/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "National Endowment for Democracy",
@@ -4771,9 +6906,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.ned.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:30.130642+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-b23b5b28fe89",
+      "url": "https://www.ned.org/",
+      "checked_at": "2026-10-09T22:59:30.130642+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Rotary Gençlik Değişimi",
@@ -4801,7 +6945,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "operational_status": "blocked",
+    "operational_status": "manual_pending",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -4809,9 +6953,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.rotary.org/en/our-programs/youth-exchanges",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:30.516170+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-137b708b697f",
+      "url": "https://www.rotary.org/en/our-programs/youth-exchanges",
+      "checked_at": "2026-10-09T22:59:30.516170+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "id": "source-17",
@@ -4823,7 +6976,7 @@
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://www.stgm.org.tr/hibe-duyurulari",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)",
     "measured_access": "200",
@@ -4841,7 +6994,7 @@
     "connector_ids": [
       "stgm-hibe"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -4853,7 +7006,24 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:30.824485+00:00",
+    "last_access_observation": {
+      "source_id": "source-17",
+      "url": "https://www.stgm.org.tr/hibe-duyurulari",
+      "checked_at": "2026-10-09T22:59:30.824485+00:00",
+      "status": 200,
+      "title": "Hibe Duyuruları | STGM",
+      "bytes": 84338,
+      "links": 83,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "id": "source-18",
@@ -4884,7 +7054,7 @@
       "ab-ilan-hibe",
       "ab-ilan-genel"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://ab-ilan.com/feed/",
@@ -4897,7 +7067,33 @@
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "last_access_observation": {
+      "source_id": "source-18",
+      "url": "https://ab-ilan.com/category/hibe-duyurulari/",
+      "checked_at": "2026-10-09T22:59:30.934427+00:00",
+      "status": 200,
+      "title": "Proje, Hibe ve Fonlar Kategorisi",
+      "bytes": 568936,
+      "links": 399,
+      "rss_links": [
+        "https://ab-ilan.com/feed/",
+        "https://ab-ilan.com/comments/feed/",
+        "https://ab-ilan.com/category/hibe-duyurulari/feed/"
+      ],
+      "policy_links": [
+        {
+          "label": "Gizlilik ve Kullanım",
+          "url": "https://ab-ilan.com/yasal-uyari/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 2
+      }
+    }
   },
   {
     "name": "Sivil Sayfalar",
@@ -4921,7 +7117,7 @@
     "connector_ids": [
       "sivilsayfalar"
     ],
-    "connector_mapping": "host_candidate",
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "allowed",
       "evidence_url": "https://www.sivilsayfalar.org/feed/",
@@ -4939,7 +7135,24 @@
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
     "institution_identity_status": "unverified_host_group",
-    "last_checked": "2026-10-09T22:56:23.145219+00:00"
+    "last_checked": "2026-10-09T22:56:23.145219+00:00",
+    "acceptance_reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-4eeaf3fc627f",
+      "url": "https://www.sivilsayfalar.org/",
+      "checked_at": "2026-10-09T22:59:31.052296+00:00",
+      "status": 200,
+      "title": "Sivil Sayfalar",
+      "bytes": 107043,
+      "links": 312,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 42,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "fundsforNGOs",
@@ -4967,7 +7180,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "operational_status": "blocked",
+    "operational_status": "manual_pending",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -4975,9 +7188,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www2.fundsforngos.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:32.125612+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-a6673335d9b4",
+      "url": "https://www2.fundsforngos.org/",
+      "checked_at": "2026-10-09T22:59:32.125612+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Terra Viva Grants",
@@ -5013,11 +7235,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://terravivagrants.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Web okuyucu sayfayı alamadı; robots isteği izinli host dışına yönlendi ve mevcut istemci engelledi. Hedefi/politikayı doğrulamadan host izni genişletilmedi.",
-    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00"
+    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-cfa03fdcd36b",
+      "url": "https://terravivagrants.org/",
+      "checked_at": "2026-10-09T22:59:32.386370+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "name": "Mladiinfo",
@@ -5053,9 +7282,18 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.mladiinfo.eu/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_checked_at": "2026-10-09T22:59:32.514389+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-1f5433d7d5c3",
+      "url": "https://www.mladiinfo.eu/",
+      "checked_at": "2026-10-09T22:59:32.514389+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "name": "Opportunity Desk",
@@ -5073,19 +7311,20 @@
     "institution_name": null,
     "program_label": "Opportunity Desk",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "opportunity-desk"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://opportunitydesk.org/feed/",
+      "checked_at": "2026-10-09T23:06:05.244231+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -5095,7 +7334,26 @@
       "url": "https://opportunitydesk.org/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:32.669481+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-74820ed03b82",
+      "url": "https://opportunitydesk.org/",
+      "checked_at": "2026-10-09T22:59:32.669481+00:00",
+      "status": 200,
+      "title": "Opportunity Desk – The one stop place for global opportunities!",
+      "bytes": 216285,
+      "links": 254,
+      "rss_links": [
+        "https://opportunitydesk.org/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 43,
+        "structured_data": 0
+      }
+    }
   },
   {
     "name": "Opportunities for Youth",
@@ -5113,19 +7371,20 @@
     "institution_name": null,
     "program_label": "Opportunities for Youth",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "opportunities-youth"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://opportunitiesforyouth.org/feed/",
+      "checked_at": "2026-10-09T23:06:05.325463+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -5135,7 +7394,27 @@
       "url": "https://opportunitiesforyouth.org/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:32.986943+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-f5ea432b4724",
+      "url": "https://opportunitiesforyouth.org/",
+      "checked_at": "2026-10-09T22:59:32.986943+00:00",
+      "status": 200,
+      "title": "Opportunities for Youth | Empowering Youth through Access to Information and Opportunities",
+      "bytes": 444157,
+      "links": 689,
+      "rss_links": [
+        "https://opportunitiesforyouth.org/feed/",
+        "https://opportunitiesforyouth.org/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 92,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "Youth Opportunities",
@@ -5171,9 +7450,31 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://www.youthop.com/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:33.192663+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-79a0d26178e2",
+      "url": "https://www.youthop.com/",
+      "checked_at": "2026-10-09T22:59:33.192663+00:00",
+      "status": 200,
+      "title": "Youth Opportunities - Competitions, Conferences, Fellowships, Scholarships, Internships, Workshops, Exchange Programs",
+      "bytes": 101965,
+      "links": 127,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms & Policies",
+          "url": "https://www.youthop.com/policies"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "EU Calls",
@@ -5191,19 +7492,20 @@
     "institution_name": null,
     "program_label": "EU Calls",
     "country": null,
-    "method": "feed",
-    "status": "metadata_fixture_verified",
+    "method": "manual",
+    "status": "registry_pending",
     "enabled": true,
     "connector_ids": [
       "eu-calls"
     ],
-    "connector_mapping": "none",
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://eucalls.net/feed",
+      "checked_at": "2026-10-09T23:06:05.630831+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -5213,7 +7515,39 @@
       "url": "https://eucalls.net/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "acceptance_checked_at": "2026-10-09T22:59:34.058185+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-51daf7bb40ce",
+      "url": "https://eucalls.net/",
+      "checked_at": "2026-10-09T22:59:34.058185+00:00",
+      "status": 200,
+      "title": "EUcalls | Your Getaway to EU Funding & Partnerships",
+      "bytes": 172065,
+      "links": 79,
+      "rss_links": [
+        "https://eucalls.net/feed"
+      ],
+      "policy_links": [
+        {
+          "label": "Terms of Service",
+          "url": "https://eucalls.net/terms-of-service/"
+        },
+        {
+          "label": "Terms",
+          "url": "https://eucalls.net/terms-of-service"
+        },
+        {
+          "label": "Terms",
+          "url": "https://eucalls.net/terms-of-service"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "name": "On the Move",
@@ -5249,9 +7583,26 @@
     "interval_hours": 24,
     "manual_check": {
       "url": "https://on-the-move.org/",
-      "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_checked_at": "2026-10-09T22:59:34.637958+00:00",
+    "last_access_observation": {
+      "source_id": "inventory-323361ddbff4",
+      "url": "https://on-the-move.org/",
+      "checked_at": "2026-10-09T22:59:34.637958+00:00",
+      "status": 200,
+      "title": "On the Move",
+      "bytes": 106239,
+      "links": 129,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "id": "source-2",

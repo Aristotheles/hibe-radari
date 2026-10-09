@@ -9,7 +9,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -18,7 +18,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:41.731488+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "source-5",
       "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -33,7 +33,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-358ffa19b0c7",
@@ -45,7 +51,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -54,7 +60,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:41.731726+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-358ffa19b0c7",
       "url": "https://erasmus-plus.ec.europa.eu/",
@@ -78,7 +84,13 @@
         "article_count": 2,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://erasmus-plus.ec.europa.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-a97600d2a707",
@@ -90,7 +102,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -99,7 +111,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:43.017236+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-a97600d2a707",
       "url": "https://erasmus-plus.ec.europa.eu/projects",
@@ -123,7 +135,13 @@
         "article_count": 2,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://erasmus-plus.ec.europa.eu/projects",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-1",
@@ -135,16 +153,25 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
-    "list_fixture": null,
-    "detail_fixture": null,
-    "sample_call": null,
-    "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "method": "manual_html_list",
+    "list_fixture": "tests/fixtures/aggregator/ua_list_manual_20261010.html",
+    "detail_fixture": "tests/fixtures/aggregator/ua_detail_manual_20261010.html",
+    "sample_call": {
+      "title": "2026 Yılı Ülke Merkezli Projeler Çevrim İçi Bilgilendirme Toplantısı",
+      "url": "https://www.ua.gov.tr/haber/2026-yili-ulke-merkezli-projeler-cevrim-ici-bilgilendirme-toplantisi/",
+      "kind": "closed_training_registration"
+    },
+    "deadline_evidence": {
+      "date": "2026-10-07",
+      "precision": "day",
+      "quote": "Son başvuru tarihi 7 Ekim 2026, saat 17.00’dir.",
+      "checked_at": "2026-10-10"
+    },
+    "duplicate_test": "tests/test_priority_manual.py",
+    "empty_error_test": "tests/test_priority_manual.py",
     "interval_hours": 24,
-    "checked_at": "2026-10-09T22:47:20.187990+00:00",
-    "reason": "robots HTTP 404; web okuyucu ana sayfada timeout verdi. Liste şeması/izin henüz doğrulanmadı.",
+    "checked_at": "2026-10-10",
+    "reason": "Homepage and /haber/ listing schema verified; footer privacy link has no usable policy URL. Automatic reuse terms not verified; manual review retained.",
     "evidence_urls": [
       "https://www.ua.gov.tr/"
     ],
@@ -171,7 +198,17 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "list_schema": {
+      "link_pattern": "^/haber/[^/]+/?$",
+      "title_contains_list_date": true
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.ua.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "verified_closed_sample"
   },
   {
     "source_id": "inventory-ec9ada7f2c10",
@@ -183,7 +220,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -192,7 +229,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:47:20.187990+00:00",
-    "reason": "Ana sayfa ve /news/ web okuyucuda açıldı. robots.txt 200 HTML 404 sayfası döndürüyor; otomatik tarama koşulları doğrulanamadı.",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "evidence_urls": [
       "https://eurodesk.ua.gov.tr/"
     ],
@@ -202,7 +239,13 @@
       "checked_at": "2026-10-09T22:58:41.731091+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://eurodesk.ua.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-fa1a84f63647",
@@ -244,7 +287,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-970a009e204e",
@@ -256,7 +301,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -265,7 +310,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:42.997042+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-970a009e204e",
       "url": "https://school-education.ec.europa.eu/",
@@ -293,7 +338,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://school-education.ec.europa.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-0319cfded960",
@@ -356,7 +407,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-d51ce6460b94",
@@ -368,7 +421,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -377,7 +430,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:44.079464+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-d51ce6460b94",
       "url": "https://youth.europa.eu/",
@@ -401,7 +454,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://youth.europa.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-c8d5b4d3a652",
@@ -413,7 +472,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -422,7 +481,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:46.388883+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-c8d5b4d3a652",
       "url": "https://youth.europa.eu/solidarity_en",
@@ -446,7 +505,13 @@
         "article_count": 1,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://youth.europa.eu/solidarity_en",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-1268ef989142",
@@ -458,7 +523,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -491,7 +556,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-cc457d795387",
@@ -503,7 +570,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -536,7 +603,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-ec67d9d00e5a",
@@ -548,7 +617,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -557,7 +626,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:45.381883+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-ec67d9d00e5a",
       "url": "https://www.eacea.ec.europa.eu/",
@@ -572,7 +641,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.eacea.ec.europa.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-728f98e8dd06",
@@ -584,7 +659,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -593,7 +668,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:46.759536+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-728f98e8dd06",
       "url": "https://culture.ec.europa.eu/creative-europe",
@@ -617,7 +692,13 @@
         "article_count": 2,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://culture.ec.europa.eu/creative-europe",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-348dfa02beef",
@@ -629,7 +710,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -638,7 +719,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:47.405056+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-348dfa02beef",
       "url": "https://cinea.ec.europa.eu/programmes/life_en",
@@ -666,7 +747,13 @@
         "article_count": 47,
         "structured_data": 2
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://cinea.ec.europa.eu/programmes/life_en",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-2a24e7254ece",
@@ -678,7 +765,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -687,7 +774,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:47.492719+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-2a24e7254ece",
       "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
@@ -711,7 +798,13 @@
         "article_count": 1,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-7b39a27994dc",
@@ -723,7 +816,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -732,14 +825,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:47.763376+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-7b39a27994dc",
       "url": "https://ufukavrupa.org.tr/",
       "checked_at": "2026-10-09T22:58:47.763376+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://ufukavrupa.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-642be4969640",
@@ -751,7 +850,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -760,14 +859,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:48.015412+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-642be4969640",
       "url": "https://eit.europa.eu/",
       "checked_at": "2026-10-09T22:58:48.015412+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://eit.europa.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-0c8ed2427e23",
@@ -779,7 +884,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -788,7 +893,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:48.110348+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-0c8ed2427e23",
       "url": "https://new-european-bauhaus.europa.eu/",
@@ -803,7 +908,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://new-european-bauhaus.europa.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-d01437ed7b93",
@@ -815,7 +926,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -824,7 +935,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:48.418657+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-d01437ed7b93",
       "url": "https://climate-pact.europa.eu/",
@@ -839,7 +950,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://climate-pact.europa.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-db8cfddfd511",
@@ -851,7 +968,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -860,7 +977,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:48.748739+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-db8cfddfd511",
       "url": "https://codeweek.eu/",
@@ -875,7 +992,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://codeweek.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-0744f161b9a2",
@@ -887,7 +1010,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -896,7 +1019,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:48.843422+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-0744f161b9a2",
       "url": "https://www.scientix.eu/",
@@ -916,7 +1039,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.scientix.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-a0175b64eb77",
@@ -928,7 +1057,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -937,14 +1066,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:50.168977+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-a0175b64eb77",
       "url": "https://www.eun.org/",
       "checked_at": "2026-10-09T22:58:50.168977+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.eun.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-d78789826d99",
@@ -956,7 +1091,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -965,14 +1100,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:50.514182+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-d78789826d99",
       "url": "https://www.coe.int/en/web/european-youth-foundation",
       "checked_at": "2026-10-09T22:58:50.514182+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.coe.int/en/web/european-youth-foundation",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-e01390fbc19d",
@@ -984,7 +1125,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -993,14 +1134,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:50.694125+00:00",
-    "reason": "Live access unsuccessful: HTTP 503",
+    "reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-e01390fbc19d",
       "url": "https://www.annalindhfoundation.org/",
       "checked_at": "2026-10-09T22:58:50.694125+00:00",
       "error_kind": "http",
       "error": "HTTP 503"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.annalindhfoundation.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-1f285b60f26b",
@@ -1012,7 +1159,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1021,14 +1168,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:50.929436+00:00",
-    "reason": "Live access unsuccessful: Ä°zin verilmeyen URL",
+    "reason": "Canlı erişim doğrulanamadı (blocked); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-1f285b60f26b",
       "url": "https://www.avrupa.info.tr/",
       "checked_at": "2026-10-09T22:58:50.929436+00:00",
       "error_kind": "blocked",
       "error": "Ä°zin verilmeyen URL"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.avrupa.info.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-7a14f9f45685",
@@ -1040,7 +1193,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1049,7 +1202,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:50.929807+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-7a14f9f45685",
       "url": "https://www.ab.gov.tr/",
@@ -1064,7 +1217,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.ab.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-ed4755f4ec05",
@@ -1076,7 +1235,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1085,14 +1244,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:51.315581+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-ed4755f4ec05",
       "url": "https://www.jeanmonnet.org.tr/",
       "checked_at": "2026-10-09T22:58:51.315581+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.jeanmonnet.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-2502923489c0",
@@ -1104,7 +1269,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1113,14 +1278,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:52.057807+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-2502923489c0",
       "url": "https://www.cfcu.gov.tr/",
       "checked_at": "2026-10-09T22:58:52.057807+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.cfcu.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-7e7271e11aee",
@@ -1132,7 +1303,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1141,7 +1312,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:52.133629+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-7e7271e11aee",
       "url": "https://www.sivildusun.net/",
@@ -1156,7 +1327,13 @@
         "article_count": 3,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.sivildusun.net/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-757117f503c7",
@@ -1168,7 +1345,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1177,7 +1354,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:52.326537+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-757117f503c7",
       "url": "https://etkiniz.eu/",
@@ -1192,7 +1369,13 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://etkiniz.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-9",
@@ -1204,7 +1387,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1213,7 +1396,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:52.310257+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "source-9",
       "url": "https://blacksea-cbc.net/",
@@ -1237,7 +1420,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://blacksea-cbc.net/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-f2b21514f159",
@@ -1281,7 +1470,9 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-af9c9a521d74",
@@ -1293,7 +1484,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1302,7 +1493,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:53.465194+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-af9c9a521d74",
       "url": "https://tubitak.gov.tr/tr/duyuru",
@@ -1317,7 +1508,13 @@
         "article_count": 1,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://tubitak.gov.tr/tr/duyuru",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-8837684bd3a6",
@@ -1329,7 +1526,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1338,7 +1535,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:56:23.145219+00:00",
-    "reason": "Mevcut RSS otomatik erişim kapısında başarısız: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "access_observation": {
       "source_id": "tubitak-4000",
       "url": "https://4000.tubitak.gov.tr/rss.xml",
@@ -1351,7 +1548,13 @@
       "checked_at": "2026-10-09T22:58:53.897560+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://4000.tubitak.gov.tr/rss.xml",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-f50d22800fe4",
@@ -1363,7 +1566,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1372,14 +1575,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:54.092348+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-f50d22800fe4",
       "url": "https://bilimiz.tubitak.gov.tr/",
       "checked_at": "2026-10-09T22:58:54.092348+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://bilimiz.tubitak.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-b448ed253834",
@@ -1428,7 +1637,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-a209c49726df",
@@ -1482,7 +1693,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-7bd9bb436dbe",
@@ -1527,7 +1740,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-01c199abb971",
@@ -1572,7 +1787,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-e6396fa94d62",
@@ -1584,7 +1801,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1593,7 +1810,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:55.590191+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-e6396fa94d62",
       "url": "https://ka.gov.tr/",
@@ -1608,7 +1825,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://ka.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-44ab1023b21f",
@@ -1620,7 +1843,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1629,7 +1852,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:55.770770+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-44ab1023b21f",
       "url": "https://kaysuygulama.sanayi.gov.tr/",
@@ -1644,7 +1867,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://kaysuygulama.sanayi.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-f338c92110f5",
@@ -1656,7 +1885,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1665,7 +1894,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:55.880491+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-f338c92110f5",
       "url": "https://www.doka.org.tr/",
@@ -1680,7 +1909,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.doka.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-0a59a2a3ce9f",
@@ -1692,7 +1927,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1701,7 +1936,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:56.546276+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-0a59a2a3ce9f",
       "url": "https://www.dokap.gov.tr/",
@@ -1716,7 +1951,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.dokap.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-0d8ed5351ba2",
@@ -1728,7 +1969,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1737,14 +1978,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:57.070694+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-0d8ed5351ba2",
       "url": "https://www.gsb.gov.tr/",
       "checked_at": "2026-10-09T22:58:57.070694+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.gsb.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-d98546e4217e",
@@ -1756,7 +2003,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1765,7 +2012,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:57.170365+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-d98546e4217e",
       "url": "https://www.siviltoplum.gov.tr/",
@@ -1801,7 +2048,13 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.siviltoplum.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-dc277d9c791c",
@@ -1813,7 +2066,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1822,7 +2075,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:57.962639+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-dc277d9c791c",
       "url": "https://sifiratik.gov.tr/",
@@ -1854,7 +2107,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://sifiratik.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-d392158787f3",
@@ -1866,7 +2125,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1875,7 +2134,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:58.057321+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-d392158787f3",
       "url": "https://www.teknofest.org/",
@@ -1890,7 +2149,13 @@
         "article_count": 111,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.teknofest.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-5dea9e03d34f",
@@ -1902,7 +2167,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1911,7 +2176,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:58.596969+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-5dea9e03d34f",
       "url": "https://t3vakfi.org/",
@@ -1926,7 +2191,13 @@
         "article_count": 497,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://t3vakfi.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-1ecf1fc3b80a",
@@ -1938,7 +2209,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1947,7 +2218,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:59.769060+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-1ecf1fc3b80a",
       "url": "https://www.unesco.org.tr/",
@@ -1967,7 +2238,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.unesco.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-602698fdbdb0",
@@ -1979,7 +2256,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -1988,7 +2265,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:01.162178+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-602698fdbdb0",
       "url": "https://www.turcev.org.tr/",
@@ -2003,7 +2280,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.turcev.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-49c0550bfaa3",
@@ -2015,7 +2298,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2024,14 +2307,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:01.565521+00:00",
-    "reason": "Live access unsuccessful: Ä°zin verilmeyen URL",
+    "reason": "Canlı erişim doğrulanamadı (blocked); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-49c0550bfaa3",
       "url": "https://www.ekookullar.org.tr/",
       "checked_at": "2026-10-09T22:59:01.565521+00:00",
       "error_kind": "blocked",
       "error": "Ä°zin verilmeyen URL"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.ekookullar.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-3",
@@ -2043,7 +2332,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2052,7 +2341,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:01.710113+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "source-3",
       "url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
@@ -2072,7 +2361,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-8",
@@ -2084,7 +2379,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2093,7 +2388,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:02.819972+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "source-8",
       "url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
@@ -2113,7 +2408,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-79d89ed336a6",
@@ -2125,7 +2426,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2134,14 +2435,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:03.847700+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-79d89ed336a6",
       "url": "https://www.tr.emb-japan.go.jp/",
       "checked_at": "2026-10-09T22:59:03.847700+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.tr.emb-japan.go.jp/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-49342dc9dfeb",
@@ -2153,7 +2460,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2162,7 +2469,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:04.388384+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-49342dc9dfeb",
       "url": "https://www.jpf.go.jp/e/",
@@ -2177,7 +2484,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.jpf.go.jp/e/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-032019933999",
@@ -2189,7 +2502,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2198,14 +2511,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:04.423210+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-032019933999",
       "url": "https://tr.usembassy.gov/",
       "checked_at": "2026-10-09T22:59:04.423210+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://tr.usembassy.gov/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-04a66d923635",
@@ -2217,7 +2536,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2226,7 +2545,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:05.107910+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-04a66d923635",
       "url": "https://www.grants.gov/",
@@ -2241,7 +2560,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.grants.gov/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-a34a92b01947",
@@ -2253,7 +2578,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2262,7 +2587,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:05.279076+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-a34a92b01947",
       "url": "https://fulbright.org.tr/",
@@ -2277,7 +2602,13 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://fulbright.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-b10d69b21c44",
@@ -2289,7 +2620,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2298,7 +2629,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:06.224746+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-b10d69b21c44",
       "url": "https://www.yesprograms.org/",
@@ -2326,7 +2657,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.yesprograms.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-4c3bd64dcec7",
@@ -2338,7 +2675,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2347,7 +2684,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:56:23.145219+00:00",
-    "reason": "Mevcut RSS otomatik erişim kapısında başarısız: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "access_observation": {
       "source_id": "britishcouncil-tr",
       "url": "https://www.britishcouncil.org.tr/rss.xml",
@@ -2360,7 +2697,13 @@
       "checked_at": "2026-10-09T22:59:06.496311+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.britishcouncil.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-11",
@@ -2372,7 +2715,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2381,7 +2724,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:06.508370+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "source-11",
       "url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
@@ -2405,7 +2748,13 @@
         "article_count": 0,
         "structured_data": 2
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-15",
@@ -2417,7 +2766,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2426,7 +2775,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:06.965443+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "source-15",
       "url": "https://www.jugendbruecke.de/foerderung/",
@@ -2441,7 +2790,13 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.jugendbruecke.de/foerderung/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-33e8e4378143",
@@ -2453,7 +2808,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2462,7 +2817,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:07.191259+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-33e8e4378143",
       "url": "https://www.kmk-pad.org/",
@@ -2477,7 +2832,13 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.kmk-pad.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-e177402080e7",
@@ -2489,7 +2850,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2498,14 +2859,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:07.628392+00:00",
-    "reason": "Live access unsuccessful: Ä°zin verilmeyen URL",
+    "reason": "Canlı erişim doğrulanamadı (blocked); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-e177402080e7",
       "url": "https://www.pasch-net.de/",
       "checked_at": "2026-10-09T22:59:07.628392+00:00",
       "error_kind": "blocked",
       "error": "Ä°zin verilmeyen URL"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.pasch-net.de/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-b1ec1a073e91",
@@ -2517,7 +2884,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2526,14 +2893,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:08.078554+00:00",
-    "reason": "Live access unsuccessful: HTTP 403",
+    "reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-b1ec1a073e91",
       "url": "https://www.goethe.de/ins/tr/tr/index.html",
       "checked_at": "2026-10-09T22:59:08.078554+00:00",
       "error_kind": "http",
       "error": "HTTP 403"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.goethe.de/ins/tr/tr/index.html",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-12777f0725ff",
@@ -2545,7 +2918,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2554,7 +2927,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:08.766049+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-12777f0725ff",
       "url": "https://www.daad-turkiye.org/",
@@ -2569,7 +2942,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.daad-turkiye.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-7bf1682c81e4",
@@ -2581,7 +2960,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2590,7 +2969,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:08.953933+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-7bf1682c81e4",
       "url": "https://tuerkei.diplo.de/",
@@ -2605,7 +2984,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://tuerkei.diplo.de/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-72395a0eea77",
@@ -2665,7 +3050,9 @@
           "id": "https://www.stiftung-mercator.de/de/pressemitteilungen/30-jahre-stiftung-mercator-100-000-euro-fuer-30-zusaetzliche-stadtteilprojekte-im-ruhrgebiet/"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-1f0ea5031aab",
@@ -2677,7 +3064,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2686,14 +3073,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:09.437468+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-1f0ea5031aab",
       "url": "https://www.bosch-stiftung.de/",
       "checked_at": "2026-10-09T22:59:09.437468+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.bosch-stiftung.de/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-00de13b22d83",
@@ -2705,7 +3098,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2714,7 +3107,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:09.910141+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-00de13b22d83",
       "url": "https://tr.boell.org/",
@@ -2729,7 +3122,13 @@
         "article_count": 53,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://tr.boell.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-408881bcf8a4",
@@ -2741,7 +3140,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2750,7 +3149,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:10.537268+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-408881bcf8a4",
       "url": "https://turkey.fes.de/",
@@ -2765,7 +3164,13 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://turkey.fes.de/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-a94bf80d23a0",
@@ -2831,7 +3236,9 @@
           "id": "https://iki-small-grants.de/?p=10160"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-f4e01ac2c714",
@@ -2891,7 +3298,9 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-50f09a187f5d",
@@ -2903,7 +3312,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2912,14 +3321,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:12.480318+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-50f09a187f5d",
       "url": "https://tr.ambafrance.org/",
       "checked_at": "2026-10-09T22:59:12.480318+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://tr.ambafrance.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-0bfcf8e1052f",
@@ -2931,7 +3346,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2940,7 +3355,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:12.818719+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-0bfcf8e1052f",
       "url": "https://www.netherlandsandyou.nl/",
@@ -2955,7 +3370,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.netherlandsandyou.nl/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-270ab3509ec0",
@@ -2967,7 +3388,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -2976,14 +3397,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:13.018510+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-270ab3509ec0",
       "url": "https://si.se/en/",
       "checked_at": "2026-10-09T22:59:13.018510+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://si.se/en/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-6e80b76da752",
@@ -2995,7 +3422,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3004,14 +3431,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:13.457823+00:00",
-    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-6e80b76da752",
       "url": "https://finlandabroad.fi/web/tur",
       "checked_at": "2026-10-09T22:59:13.457823+00:00",
       "error_kind": "rate_limit",
       "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://finlandabroad.fi/web/tur",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-d4d8d1fe0954",
@@ -3023,7 +3456,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3032,7 +3465,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:13.790566+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-d4d8d1fe0954",
       "url": "https://www.eda.admin.ch/ankara",
@@ -3052,7 +3485,13 @@
         "article_count": 23,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.eda.admin.ch/ankara",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-523f7256dc29",
@@ -3064,7 +3503,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3073,7 +3512,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:13.979281+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-523f7256dc29",
       "url": "https://oead.at/",
@@ -3093,7 +3532,13 @@
         "article_count": 13,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://oead.at/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-bff92cd13068",
@@ -3105,7 +3550,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3114,7 +3559,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:14.412971+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-bff92cd13068",
       "url": "https://www.bsec-organization.org/",
@@ -3150,7 +3595,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.bsec-organization.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-1c417588822b",
@@ -3162,7 +3613,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3171,7 +3622,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:14.571170+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-1c417588822b",
       "url": "https://www.gmfus.org/",
@@ -3186,7 +3637,13 @@
         "article_count": 21,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.gmfus.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-1123e39c4e2a",
@@ -3198,7 +3655,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3207,7 +3664,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:15.856028+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-1123e39c4e2a",
       "url": "https://www.mfa.gov.tr/",
@@ -3229,7 +3686,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.mfa.gov.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-955c945bb1e3",
@@ -3241,7 +3704,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3250,14 +3713,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:16.114429+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-955c945bb1e3",
       "url": "https://www.undp.org/tr/turkiye",
       "checked_at": "2026-10-09T22:59:16.114429+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.undp.org/tr/turkiye",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-12",
@@ -3307,7 +3776,9 @@
       "bozo": false,
       "entries": 0,
       "sample": []
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-c905328504bf",
@@ -3319,7 +3790,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3328,14 +3799,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:16.463904+00:00",
-    "reason": "Live access unsuccessful: robots.txt taramayÄ± engelliyor",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-c905328504bf",
       "url": "https://procurement-notices.undp.org/",
       "checked_at": "2026-10-09T22:59:16.463904+00:00",
       "error_kind": "permission",
       "error": "robots.txt taramayÄ± engelliyor"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://procurement-notices.undp.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-083b401a02f5",
@@ -3347,7 +3824,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3356,7 +3833,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:16.870105+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-083b401a02f5",
       "url": "https://www.unesco.org/en/aspnet",
@@ -3392,7 +3869,13 @@
         "article_count": 9,
         "structured_data": 2
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.unesco.org/en/aspnet",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-34a30a5aec70",
@@ -3404,7 +3887,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3413,7 +3896,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:18.092265+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-34a30a5aec70",
       "url": "https://www.unesco.org/en/prizes",
@@ -3449,7 +3932,13 @@
         "article_count": 32,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.unesco.org/en/prizes",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-c83064769bec",
@@ -3461,7 +3950,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3470,7 +3959,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:17.144669+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-c83064769bec",
       "url": "https://www.unicef.org/turkiye/",
@@ -3490,7 +3979,13 @@
         "article_count": 1,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.unicef.org/turkiye/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-4ea947f59252",
@@ -3502,7 +3997,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3511,14 +4006,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:17.920697+00:00",
-    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-4ea947f59252",
       "url": "https://www.un.org/democracyfund/",
       "checked_at": "2026-10-09T22:59:17.920697+00:00",
       "error_kind": "rate_limit",
       "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.un.org/democracyfund/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-3658dc075bb1",
@@ -3530,7 +4031,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3539,7 +4040,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:18.309474+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-3658dc075bb1",
       "url": "https://www.unep.org/youngchampions/",
@@ -3559,7 +4060,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.unep.org/youngchampions/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-14",
@@ -3571,7 +4078,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3580,14 +4087,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:18.499544+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "source-14",
       "url": "https://sabancivakfi.org/",
       "checked_at": "2026-10-09T22:59:18.499544+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://sabancivakfi.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-80e6ed168eea",
@@ -3599,7 +4112,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3608,7 +4121,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:18.512196+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-80e6ed168eea",
       "url": "https://www.vkv.org.tr/",
@@ -3623,7 +4136,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.vkv.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-63048c76e181",
@@ -3635,7 +4154,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3644,7 +4163,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:18.754498+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-63048c76e181",
       "url": "https://www.orav.org.tr/",
@@ -3659,7 +4178,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.orav.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-99ee9ae4d55b",
@@ -3671,7 +4196,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3680,7 +4205,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:19.089534+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-99ee9ae4d55b",
       "url": "https://www.ogretmenagi.org/",
@@ -3695,7 +4220,13 @@
         "article_count": 1,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.ogretmenagi.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-06481c97e944",
@@ -3707,7 +4238,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3716,14 +4247,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:19.825360+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-06481c97e944",
       "url": "https://www.egitimreformugirisimi.org/",
       "checked_at": "2026-10-09T22:59:19.825360+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.egitimreformugirisimi.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-e0c8fa83df52",
@@ -3735,7 +4272,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3744,14 +4281,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:19.999709+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-e0c8fa83df52",
       "url": "https://www.tegv.org/",
       "checked_at": "2026-10-09T22:59:19.999709+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.tegv.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-8aa06734dc34",
@@ -3763,7 +4306,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3772,14 +4315,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:20.320176+00:00",
-    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-8aa06734dc34",
       "url": "https://www.tema.org.tr/",
       "checked_at": "2026-10-09T22:59:20.320176+00:00",
       "error_kind": "rate_limit",
       "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.tema.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-5b52d481537d",
@@ -3791,7 +4340,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3800,14 +4349,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:20.556878+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-5b52d481537d",
       "url": "https://www.wwf.org.tr/",
       "checked_at": "2026-10-09T22:59:20.556878+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.wwf.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-0d572620f3b2",
@@ -3849,7 +4404,9 @@
       "checked_at": "2026-10-09T22:59:20.693483+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-1b7909fab843",
@@ -3861,7 +4418,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3870,7 +4427,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:20.663127+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-1b7909fab843",
       "url": "https://siviltoplumdestek.org/",
@@ -3897,7 +4454,13 @@
       "version": "rss20",
       "bozo": true,
       "entries": 10
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://siviltoplumdestek.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-7ff6770d8d9e",
@@ -3909,7 +4472,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3918,14 +4481,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:20.770107+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-7ff6770d8d9e",
       "url": "https://www.turkeymozaik.org.uk/",
       "checked_at": "2026-10-09T22:59:20.770107+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.turkeymozaik.org.uk/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-9599be4922ce",
@@ -3937,7 +4506,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3946,14 +4515,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:20.981690+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-9599be4922ce",
       "url": "https://www.ihtiyacharitasi.org/",
       "checked_at": "2026-10-09T22:59:20.981690+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.ihtiyacharitasi.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-5f24ee4171a5",
@@ -3965,7 +4540,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -3974,7 +4549,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:21.365368+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-5f24ee4171a5",
       "url": "https://www.turkkulturvakfi.org.tr/",
@@ -3994,7 +4569,13 @@
         "article_count": 4,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.turkkulturvakfi.org.tr/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-ea64d35ac8e8",
@@ -4006,7 +4587,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4015,7 +4596,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:21.388162+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-ea64d35ac8e8",
       "url": "https://www.theearthprize.org/",
@@ -4039,7 +4620,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.theearthprize.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-bba083a53105",
@@ -4051,7 +4638,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4060,7 +4647,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:21.618084+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-bba083a53105",
       "url": "https://zayedsustainabilityprize.com/",
@@ -4080,7 +4667,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://zayedsustainabilityprize.com/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-4c7b13e6f21b",
@@ -4092,7 +4685,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4101,14 +4694,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:22.922619+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-4c7b13e6f21b",
       "url": "https://www.siwi.org/",
       "checked_at": "2026-10-09T22:59:22.922619+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.siwi.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-3048897cc152",
@@ -4163,7 +4762,9 @@
           "id": "https://www.societyforscience.org/?post_type=isef&p=53"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-c74800326885",
@@ -4175,7 +4776,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4184,14 +4785,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:23.333064+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-c74800326885",
       "url": "https://www.globalteacherprize.org/",
       "checked_at": "2026-10-09T22:59:23.333064+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.globalteacherprize.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-ce716ee6bf49",
@@ -4252,7 +4859,9 @@
           "id": "https://t4.education/?p=22690"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-a08149e86076",
@@ -4264,7 +4873,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4273,7 +4882,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:23.818174+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-a08149e86076",
       "url": "https://www.nationalgeographic.org/society/grants-and-investments/",
@@ -4293,7 +4902,13 @@
         "article_count": 1,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.nationalgeographic.org/society/grants-and-investments/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-5b5b6d9572a8",
@@ -4305,7 +4920,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4314,14 +4929,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:24.107993+00:00",
-    "reason": "Live access unsuccessful: HTTP 403",
+    "reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-5b5b6d9572a8",
       "url": "https://thepollinationproject.org/",
       "checked_at": "2026-10-09T22:59:24.107993+00:00",
       "error_kind": "http",
       "error": "HTTP 403"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://thepollinationproject.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-e2ba93e5bd65",
@@ -4333,7 +4954,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4342,7 +4963,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:24.905487+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-e2ba93e5bd65",
       "url": "https://www.rufford.org/",
@@ -4357,7 +4978,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.rufford.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-90686db6a269",
@@ -4369,7 +4996,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4378,7 +5005,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:25.378217+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-90686db6a269",
       "url": "https://www.greengrants.org/",
@@ -4393,7 +5020,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.greengrants.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-6fdcf036901c",
@@ -4405,7 +5038,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4414,14 +5047,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:25.982586+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-6fdcf036901c",
       "url": "https://www.speciesconservation.org/",
       "checked_at": "2026-10-09T22:59:25.982586+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.speciesconservation.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-7e5654adb2c2",
@@ -4433,7 +5072,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4442,7 +5081,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:26.245939+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-7e5654adb2c2",
       "url": "https://www.yre.global/",
@@ -4457,7 +5096,13 @@
         "article_count": 1,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.yre.global/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-83d83cda1ee9",
@@ -4469,7 +5114,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4478,7 +5123,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:26.647123+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-83d83cda1ee9",
       "url": "https://www.ecoschools.global/",
@@ -4493,7 +5138,13 @@
         "article_count": 1,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.ecoschools.global/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-5bdfa0077d6e",
@@ -4553,7 +5204,9 @@
           "id": "6a95acfc21ca4b8be96ac8fb"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-155435a6d1a0",
@@ -4614,7 +5267,9 @@
           "id": "https://rootsandshoots.global/?p=8948"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-d4b3d841372b",
@@ -4626,7 +5281,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4635,7 +5290,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:28.170720+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-d4b3d841372b",
       "url": "https://www.globe.gov/",
@@ -4659,7 +5314,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.globe.gov/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-069393007b65",
@@ -4671,7 +5332,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4680,7 +5341,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:28.803813+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-069393007b65",
       "url": "https://culturalfoundation.eu/",
@@ -4700,7 +5361,13 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://culturalfoundation.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-98b1ee25c562",
@@ -4712,7 +5379,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4721,7 +5388,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:29.376745+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-98b1ee25c562",
       "url": "https://allianzfoundation.org/",
@@ -4745,7 +5412,13 @@
         "article_count": 0,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://allianzfoundation.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-b23b5b28fe89",
@@ -4757,7 +5430,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4766,14 +5439,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:30.130642+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-b23b5b28fe89",
       "url": "https://www.ned.org/",
       "checked_at": "2026-10-09T22:59:30.130642+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.ned.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-137b708b697f",
@@ -4785,7 +5464,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4794,14 +5473,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:30.516170+00:00",
-    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-137b708b697f",
       "url": "https://www.rotary.org/en/our-programs/youth-exchanges",
       "checked_at": "2026-10-09T22:59:30.516170+00:00",
       "error_kind": "rate_limit",
       "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.rotary.org/en/our-programs/youth-exchanges",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-17",
@@ -4813,7 +5498,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -4822,7 +5507,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:30.824485+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "source-17",
       "url": "https://www.stgm.org.tr/hibe-duyurulari",
@@ -4837,7 +5522,13 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.stgm.org.tr/hibe-duyurulari",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "source-18",
@@ -4922,7 +5613,9 @@
         "article_count": 0,
         "structured_data": 2
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-4eeaf3fc627f",
@@ -4982,7 +5675,9 @@
         "article_count": 42,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-a6673335d9b4",
@@ -4994,7 +5689,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -5003,14 +5698,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:32.125612+00:00",
-    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-a6673335d9b4",
       "url": "https://www2.fundsforngos.org/",
       "checked_at": "2026-10-09T22:59:32.125612+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www2.fundsforngos.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-cfa03fdcd36b",
@@ -5022,7 +5723,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -5031,7 +5732,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:47:20.187990+00:00",
-    "reason": "Web okuyucu sayfayı alamadı; robots isteği izinli host dışına yönlendi ve mevcut istemci engelledi. Hedefi/politikayı doğrulamadan host izni genişletilmedi.",
+    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
     "evidence_urls": [
       "https://terravivagrants.org/"
     ],
@@ -5041,7 +5742,13 @@
       "checked_at": "2026-10-09T22:59:32.386370+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://terravivagrants.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-1f5433d7d5c3",
@@ -5053,7 +5760,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -5062,14 +5769,20 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:32.514389+00:00",
-    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
     "page_observation": {
       "source_id": "inventory-1f5433d7d5c3",
       "url": "https://www.mladiinfo.eu/",
       "checked_at": "2026-10-09T22:59:32.514389+00:00",
       "error_kind": "rate_limit",
       "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.mladiinfo.eu/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-74820ed03b82",
@@ -5129,7 +5842,9 @@
           "id": "https://opportunitydesk.org/?p=179190"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-f5ea432b4724",
@@ -5190,7 +5905,9 @@
           "id": "https://opportunitiesforyouth.org/?p=94286"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-79a0d26178e2",
@@ -5202,7 +5919,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -5211,7 +5928,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:33.192663+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-79a0d26178e2",
       "url": "https://www.youthop.com/",
@@ -5231,7 +5948,13 @@
         "article_count": 1,
         "structured_data": 1
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://www.youthop.com/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-51daf7bb40ce",
@@ -5304,7 +6027,9 @@
           "id": "https://eucalls.net/?p=6286"
         }
       ]
-    }
+    },
+    "detail_review_reason": "Gerçek RSS üstverisi testli; haber/program kaydı açık çağrı veya uygunluk kanıtı değildir. Ayrıntı ve resmî kaynak incelemesi gerekir.",
+    "call_evidence_status": "not_verified"
   },
   {
     "source_id": "inventory-323361ddbff4",
@@ -5316,7 +6041,7 @@
       "evidence_url": null,
       "checked_at": null
     },
-    "method": null,
+    "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": null,
@@ -5325,7 +6050,7 @@
     "empty_error_test": null,
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:59:34.637958+00:00",
-    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
     "page_observation": {
       "source_id": "inventory-323361ddbff4",
       "url": "https://on-the-move.org/",
@@ -5340,6 +6065,12 @@
         "article_count": 0,
         "structured_data": 0
       }
-    }
+    },
+    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "manual_check": {
+      "url": "https://on-the-move.org/",
+      "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
+    },
+    "call_evidence_status": "not_verified"
   }
 ]
