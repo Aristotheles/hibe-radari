@@ -24,6 +24,9 @@ def main(argv=None):
     if args.site and args.out and Path(args.out).resolve().is_relative_to(Path(args.site).resolve()):
         print('Ham keşif raporu public klasörüne yazılamaz')
         return 2
+    if args.site:
+        from .site import recover_publication
+        recover_publication(args.site,Path(args.out) if args.out else ROOT/'data/aggregator/latest.json')
     from .bridge import persist_report, publication_report
     if args.firebase:
         from hibe.server import App
@@ -67,7 +70,7 @@ def main(argv=None):
             return 1
     if args.site:
         from .site import build
-        print(f'Statik site: {build(publish_report, args.site, commit_report=lambda: write_report(report, target))}')
+        print(f'Statik site: {build(publish_report, args.site, commit_report=lambda: write_report(report, target), report_target=target)}')
         path = target
     else:
         path = write_report(report, target)

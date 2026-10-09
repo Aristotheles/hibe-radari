@@ -72,6 +72,41 @@ class PublicationSafetyTests(unittest.TestCase):
         with self.assertRaises(OSError):
             site.build(self.report,out,date(2026,10,9),commit_report=lambda:(_ for _ in ()).throw(OSError('Report failure')))
         self.assertFalse(out.exists())
+    def test_process_exit_after_report_write_recovers_both_previous_artifacts(self):
+        import subprocess,sys
+        report=copy.deepcopy(self.report);report['generated_at']='2026-10-09T11:00:00Z'
+        input_path=self.root/'input.json';input_path.write_text(json.dumps(report),encoding='utf-8')
+        latest=self.root/'latest.json';latest.write_bytes(b'previous durable report')
+        program="""import sys,json,os
+from pathlib import Path
+from datetime import date
+from hibe.aggregator.site import build
+from hibe.aggregator.collector import write_report
+report=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
+def commit():
+ write_report({'new':True},Path(sys.argv[3]))
+ os._exit(42)
+build(report,sys.argv[2],date(2026,10,9),commit_report=commit,report_target=sys.argv[3])
+"""
+        result=subprocess.run([sys.executable,'-B','-c',program,str(input_path),str(self.out),str(latest)],cwd=Path(__file__).resolve().parents[1],capture_output=True,timeout=30)
+        self.assertEqual(result.returncode,42,result.stderr.decode(errors='replace'))
+        self.assertNotEqual(latest.read_bytes(),b'previous durable report')
+        self.assertNotEqual(manifest(self.out),self.before)
+        with self.assertRaises(site.PublicationBlocked):site.recover_publication(self.out,self.root/'wrong-target.json')
+        self.assertTrue(site.recover_publication(self.out,latest))
+        self.assertEqual(latest.read_bytes(),b'previous durable report')
+        self.assertEqual(manifest(self.out),self.before)
+        self.assertFalse(site.recover_publication(self.out,latest))
+    def test_final_journal_write_failure_restores_site_and_report(self):
+        from hibe.aggregator import collector
+        latest=self.root/'latest.json';latest.write_bytes(b'old report')
+        original=collector.write_report
+        def write(value,path=None):
+            if value.get('phase')=='committed':raise OSError('Final journal disk failure')
+            return original(value,path)
+        with patch.object(collector,'write_report',side_effect=write):
+            with self.assertRaises(OSError):site.build(self.report,self.out,date(2026,10,9),commit_report=lambda:write({'new':True},latest),report_target=latest)
+        self.assertEqual(latest.read_bytes(),b'old report');self.assertEqual(manifest(self.out),self.before)
     def test_demo_record_or_demo_approval_never_replaces_production(self):
         from hibe.domain import version
         for field in ('record','approval'):

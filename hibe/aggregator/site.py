@@ -601,11 +601,60 @@ def check_publication(report, today=None):
             raise PublicationBlocked(f'Yayın onayı geçersiz: {exc}') from exc
 
 
-def build(report, outdir, today=None, commit_report=None):
+def recover_publication(outdir, report_target=None):
+    """Yarım kalmış klasör geçişini yalnız kayıtlı komşu yedekten geri al."""
+    import os
+    import tempfile
+    import base64
+    out=Path(outdir).absolute()
+    if any(p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()) for p in (out,*out.parents)):
+        raise PublicationBlocked('Bağlantılı yayın klasörü kullanılamaz')
+    out=out.resolve();journal=out.parent/f'.{out.name}.transaction.json'
+    if out==Path(out.anchor):raise PublicationBlocked('Güvensiz çıktı klasörü')
+    if not journal.exists():return False
+    if journal.is_symlink() or journal.stat().st_size>50_000_000:raise PublicationBlocked('Güvensiz kurtarma kaydı')
+    try:
+        record=json.loads(journal.read_text(encoding='utf-8'))
+        if record['out']!=str(out) or record['phase'] not in ('prepared','committed') or not isinstance(record['had_out'],bool):raise ValueError()
+        backup=Path(record['backup']) if record['backup'] else None
+        if backup and (backup.parent!=out.parent or not backup.name.startswith(f'.{out.name}.backup-') or backup.is_symlink() or (backup.exists() and not backup.is_dir()) or (hasattr(backup,'is_junction') and backup.is_junction())):raise ValueError()
+        target=None;previous=None
+        if record.get('report_target'):
+            if report_target is None:raise ValueError()
+            target=Path(report_target).absolute()
+            if any(p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()) for p in (target,*target.parents)):raise ValueError()
+            target=target.resolve()
+            if str(target)!=record['report_target'] or target.is_relative_to(out):raise ValueError()
+            previous=base64.b64decode(record['previous_report'],validate=True) if record.get('previous_report') is not None else None
+    except (ValueError,KeyError,TypeError):raise PublicationBlocked('Kurtarma kaydı doğrulanamadı') from None
+    if record['phase']=='committed':
+        if not (out/'data.json').is_file():raise PublicationBlocked('Tamamlanan yayın bulunamadı; elle inceleme gerekli')
+    elif backup and backup.exists():
+        if out.exists():
+            quarantine=Path(tempfile.mkdtemp(prefix=f'.{out.name}.interrupted-',dir=out.parent));quarantine.rmdir();os.replace(out,quarantine)
+        os.replace(backup,out)
+    elif not record['had_out'] and out.exists():
+        quarantine=Path(tempfile.mkdtemp(prefix=f'.{out.name}.interrupted-',dir=out.parent));quarantine.rmdir();os.replace(out,quarantine)
+    elif record['had_out'] and not out.exists():
+        raise PublicationBlocked('Önceki yayın/yedek bulunamadı; elle inceleme gerekli')
+    if record['phase']!='committed' and target:
+        if previous is None:target.unlink(missing_ok=True)
+        else:
+            fd,name=tempfile.mkstemp(prefix=f'.{target.name}.recovery-',dir=target.parent)
+            try:
+                with os.fdopen(fd,'wb') as stream:stream.write(previous);stream.flush();os.fsync(stream.fileno())
+                os.replace(name,target)
+            finally:
+                Path(name).unlink(missing_ok=True)
+    journal.unlink();return True
+
+
+def build(report, outdir, today=None, commit_report=None, report_target=None):
     """Onay kapısı, ayrı staging, kontrollü geçiş ve hata halinde geri dönüş."""
     import os
     import shutil
     import tempfile
+    import base64
     check_publication(report, today)
     requested = Path(outdir).absolute()
     if any(p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()) for p in (requested,*requested.parents)):
@@ -614,6 +663,8 @@ def build(report, outdir, today=None, commit_report=None):
     if out == Path(out.anchor):
         raise PublicationBlocked('Güvensiz çıktı klasörü')
     out.parent.mkdir(parents=True, exist_ok=True)
+    recover_publication(out,report_target)
+    journal=out.parent/f'.{out.name}.transaction.json'
     stage = Path(tempfile.mkdtemp(prefix=f'.{out.name}.stage-', dir=out.parent))
     backup = None
     try:
@@ -626,21 +677,31 @@ def build(report, outdir, today=None, commit_report=None):
                 raise PublicationBlocked('Eksik ilan çıktısı')
             if item.get('deadline') and not (stage / 'ics' / f"{item['id']}.ics").is_file():
                 raise PublicationBlocked('Eksik ICS çıktısı')
-        if out.exists():
+        had_out=out.exists()
+        if had_out:
             backup = Path(tempfile.mkdtemp(prefix=f'.{out.name}.backup-', dir=out.parent))
             backup.rmdir()
+        from .collector import write_report
+        record={'out':str(out),'backup':str(backup) if backup else None,'had_out':had_out,'phase':'prepared'}
+        if report_target is not None:
+            target=Path(report_target).absolute()
+            if target.is_relative_to(out) or any(p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()) for p in (target,*target.parents)):
+                raise PublicationBlocked('Güvensiz rapor hedefi')
+            target=target.resolve()
+            record.update(report_target=str(target),previous_report=base64.b64encode(target.read_bytes()).decode('ascii') if target.exists() else None)
+        write_report(record,journal)
+        if had_out:
             os.replace(out, backup)
         try:
             os.replace(stage, out)
             if commit_report is not None:
                 commit_report()
+            write_report(dict(record,phase='committed'),journal)
         except BaseException:
-            if out.exists():
-                os.replace(out, stage)
-            if backup is not None:
-                os.replace(backup, out)
+            recover_publication(out,report_target)
             raise
         # Başarılı geçişin önceki yayını da geri dönüş için tutulur.
+        journal.unlink()
         return out
     finally:
         if stage.exists():
