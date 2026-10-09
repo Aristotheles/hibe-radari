@@ -1487,25 +1487,28 @@
     "note": "Lise proje ve yarışma duyuruları",
     "group": "3. Türkiye — kamu",
     "inventory_line": 61,
-    "identity_evidence": "docs/KAYNAK_ENVANTERI.md:61",
+    "identity_evidence": "https://ogm.meb.gov.tr/",
     "id": "inventory-7bd9bb436dbe",
     "record_kind": "inventory",
-    "identity_status": "candidate",
+    "identity_status": "verified",
     "institution_id": "host-ogm.meb.gov.tr",
-    "institution_name": null,
+    "institution_name": "MEB Ortaöğretim GM",
     "program_label": "MEB Ortaöğretim GM",
-    "country": null,
-    "method": "manual",
+    "country": "TR",
+    "method": "auto",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "meb-ogm"
+    ],
+    "connector_mapping": "official_rss_link",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://ogm.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:52:36.178673+00:00",
+      "basis": "Resmî ana sayfanın sunduğu RSS duyuru arayüzü; keşif üstverisi."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "connector_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -1515,7 +1518,7 @@
       "url": "https://ogm.meb.gov.tr/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "official_page_verified"
   },
   {
     "name": "MEB Mesleki ve Teknik Eğitim GM",
@@ -1525,25 +1528,28 @@
     "note": "Meslek liseleri",
     "group": "3. Türkiye — kamu",
     "inventory_line": 62,
-    "identity_evidence": "docs/KAYNAK_ENVANTERI.md:62",
+    "identity_evidence": "https://mtegm.meb.gov.tr/",
     "id": "inventory-01c199abb971",
     "record_kind": "inventory",
-    "identity_status": "candidate",
+    "identity_status": "verified",
     "institution_id": "host-mtegm.meb.gov.tr",
-    "institution_name": null,
+    "institution_name": "MEB Mesleki ve Teknik Eğitim GM",
     "program_label": "MEB Mesleki ve Teknik Eğitim GM",
-    "country": null,
-    "method": "manual",
+    "country": "TR",
+    "method": "auto",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "meb-mtegm"
+    ],
+    "connector_mapping": "official_rss_link",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://mtegm.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:52:36.178673+00:00",
+      "basis": "Resmî ana sayfanın sunduğu RSS duyuru arayüzü; keşif üstverisi."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "connector_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -1553,7 +1559,7 @@
       "url": "https://mtegm.meb.gov.tr/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "official_page_verified"
   },
   {
     "name": "Kalkınma Ajansları GM",

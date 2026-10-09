@@ -518,3 +518,8 @@ Yayın kapısı ve veri koruma uygulandı; 94 Python + 11 JS PASS. docs/ASAMA_1_
 
 ### 2026-10-10 — AŞAMA 8 aktif, ilk iki RSS dilimi doğrulandı
 MEB abdigm/yegitek resmî RSS akışları strict gerçek istemciyle 200/rss20/50 kayıt; iki kısa gözlem fixture'ı ve hata/tekilleştirme regresyonları. 157 Python OK (11.509 s) + 11 JS PASS; syntax/diff-check temiz; 127 public/latest dosyası aynı. Mevcut 13 ID korunuyor, toplam 15 çekici. Kabul kartı 135; gözlemli 10, detay/tarih ve devam paketleri açık. SALTO ticari dağıtım izni gerektiriyor; Eurodesk robots 200 HTML hata sayfası. net.py robots HTML/wildcard/encoded-query regresyonları düzeltildi. AŞAMA 8 bitmedi, AŞAMA 9'a geçilmedi; yerelde devam. Kanıt docs/ASAMA_8_CANLI_KABUL_ILERLEME.md / config/source_acceptance.json.
+
+
+## 2026-10-10 — AŞAMA 8 dört MEB kaynağı
+OGM ve Meslekî Teknik Eğitim RSS'leri gerçek istemcide 200/rss20/50 kayıt; mevcut feed çekicisine meb-ogm/meb-mtegm olarak eklendi. Toplam 17 yapılandırma, başlangıçtaki 13 ID korunur. OGM GençBizz gerçek ayrıntı URL'sinden 2026-10-16 son tarihi çıkarıldı ve kısa alıntılı fixture/regresyonla doğrulandı. AB/Dış İlişkiler ve YEĞİTEK ayrıntıları 200; kesin tarih çıkarılamadığı için unknown ve review_required korunur, kısa başlık fixture'ları tam metin kopyası değildir. Kaynak fixture'larındaki duyurular otomatik yayımlanmadı; haber ile açık çağrı ayrımı editör kontrolünde.
+159 Python OK (11.977 s) + 11 JS PASS; diff-check temiz. 127 public/latest dosyası SHA-256 aynı. AŞAMA 8 açık: MTEGM detay, ilk paket diğer kaynakları, mevcut 13 çekici canlı kabulü ve devam paketleri. AŞAMA 9'a geçilmedi; sıradaki tek adım kaynak kabul kartlarını testli paketler halinde sürdürmek.

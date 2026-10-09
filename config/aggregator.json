@@ -317,7 +317,7 @@
         "abdigm.meb.gov.tr"
       ],
       "language": "tr",
-      "detail": false,
+      "detail": true,
       "allow_empty": false,
       "official_source_verified": true,
       "access_policy": {
@@ -336,7 +336,7 @@
         "yegitek.meb.gov.tr"
       ],
       "language": "tr",
-      "detail": false,
+      "detail": true,
       "allow_empty": false,
       "official_source_verified": true,
       "access_policy": {
@@ -344,6 +344,44 @@
         "evidence_url": "https://yegitek.meb.gov.tr/",
         "checked_at": "2026-10-09T22:49:24.586996+00:00",
         "basis": "Ana sayfanın yayımladığı RSS arayüzü; yalnız üstveri keşfi, özgün editör özeti/atıf; tam metin dağıtımı yok."
+      }
+    },
+    {
+      "id": "meb-ogm",
+      "type": "feed",
+      "url": "https://ogm.meb.gov.tr/meb_iys_dosyalar/xml/rss_duyurular.xml",
+      "organization": "MEB Ortaöğretim GM",
+      "allowed_hosts": [
+        "ogm.meb.gov.tr"
+      ],
+      "language": "tr",
+      "detail": true,
+      "allow_empty": false,
+      "official_source_verified": true,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://ogm.meb.gov.tr/",
+        "checked_at": "2026-10-09T22:52:36.178673+00:00",
+        "basis": "Resmî ana sayfanın sunduğu RSS duyuru arayüzü; keşif üstverisi."
+      }
+    },
+    {
+      "id": "meb-mtegm",
+      "type": "feed",
+      "url": "https://mtegm.meb.gov.tr/meb_iys_dosyalar/xml/rss_duyurular.xml",
+      "organization": "MEB Mesleki ve Teknik Eğitim GM",
+      "allowed_hosts": [
+        "mtegm.meb.gov.tr"
+      ],
+      "language": "tr",
+      "detail": false,
+      "allow_empty": false,
+      "official_source_verified": true,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://mtegm.meb.gov.tr/",
+        "checked_at": "2026-10-09T22:52:36.178673+00:00",
+        "basis": "Resmî ana sayfanın sunduğu RSS duyuru arayüzü; keşif üstverisi."
       }
     }
   ],
