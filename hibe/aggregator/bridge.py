@@ -98,9 +98,13 @@ def review_ready(call):
     if not re.fullmatch(r'[a-f0-9]{64}',call.get('discovery_version') or ''): return False
     if call.get('discovery_version') != call.get('reviewed_discovery_version'): return False
     if not call.get('official_url_verified') or not call.get('summary','').strip(): return False
-    url = call.get('official_url',''); parts=urlsplit(url)
-    return bool(parts.scheme == 'https' and parts.hostname and not parts.username and
-                any(doc.get('url') == url for doc in call.get('documents',[])))
+    url = call.get('official_url','')
+    try:
+        parts=urlsplit(url)
+        return bool(parts.scheme == 'https' and parts.hostname and not parts.username and not parts.password and parts.port in (None,443) and
+                    any(doc.get('url') == url for doc in call.get('documents',[])))
+    except ValueError:
+        return False
 
 def publication_report(report, store, today):
     result = {k:copy.deepcopy(v) for k,v in report.items() if k not in GROUPS}

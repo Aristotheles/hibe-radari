@@ -58,3 +58,18 @@ class MembershipTests(unittest.TestCase):
                 with self.assertRaises(PermissionError):app.user('invalid')
             verify.side_effect=ValueError('revoked')
             with self.assertRaises(PermissionError):app.user('revoked')
+    def test_backend_configuration_check_does_not_reveal_values(self):
+        import os,sys,types,json
+        from unittest.mock import Mock,patch
+        from hibe.server import configuration_status,App
+        google=types.ModuleType('google');auth=types.ModuleType('google.auth');google.auth=auth
+        auth.default=Mock(side_effect=ValueError('credential-secret-must-not-appear'))
+        with patch.dict(sys.modules,{'google':google,'google.auth':auth}),patch.dict(os.environ,{},clear=True):
+            result=configuration_status()
+            self.assertFalse(result['ready']);self.assertIn('ADMIN_UID',result['missing'])
+            self.assertNotIn('credential-secret',json.dumps(result))
+            with self.assertRaises(ValueError):App(demo=False)
+        auth.default=Mock(return_value=(object(),'hibe-radari-tr'))
+        values={key:'private-value' for key in ('FIREBASE_PROJECT_ID','FIREBASE_WEB_API_KEY','FIREBASE_AUTH_DOMAIN','FIREBASE_APP_ID','ADMIN_UID')}
+        with patch.dict(sys.modules,{'google':google,'google.auth':auth}),patch.dict(os.environ,values,clear=True):
+            result=configuration_status();self.assertTrue(result['ready']);self.assertNotIn('private-value',json.dumps(result))

@@ -62,6 +62,18 @@ class PublicationSafetyTests(unittest.TestCase):
         backups = list(self.root.glob('.public.backup-*'))
         self.assertTrue(backups)
         self.assertEqual(manifest(backups[-1]), self.before)
+    def test_demo_record_or_demo_approval_never_replaces_production(self):
+        from hibe.domain import version
+        for field in ('record','approval'):
+            report=copy.deepcopy(self.report);row=report['accepted'][0]
+            if field=='record':row['demo']=True;row['approval']['version']=version(row)
+            else:row['approval']['demo']=True
+            with self.assertRaises(site.PublicationBlocked):site.build(report,self.out,date(2026,10,9))
+            self.assertEqual(manifest(self.out),self.before)
+    def test_symlink_is_checked_before_resolution(self):
+        with patch.object(Path,'is_symlink',return_value=True),patch.object(Path,'resolve',side_effect=AssertionError('Must reject before resolve')):
+            with self.assertRaises(site.PublicationBlocked):site.build(self.report,self.out,date(2026,10,9))
+        self.assertEqual(manifest(self.out),self.before)
 
     def test_partial_and_only_cli_keep_latest(self):
         from hibe.aggregator import collector

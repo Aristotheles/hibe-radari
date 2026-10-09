@@ -6,12 +6,24 @@ from .store import SQLiteStore,FirestoreStore
 from .service import Service
 from .demo import seed
 ROOT=Path(__file__).resolve().parent.parent
+def configuration_status():
+ required=('FIREBASE_PROJECT_ID','FIREBASE_WEB_API_KEY','FIREBASE_AUTH_DOMAIN','FIREBASE_APP_ID','ADMIN_UID')
+ result={'missing':[key for key in required if not os.environ.get(key)],'backend_credentials':False,'ready':False}
+ try:
+  import google.auth
+  google.auth.default(scopes=['https://www.googleapis.com/auth/cloud-platform']);result['backend_credentials']=True
+ except ImportError:result['credential_error']='backend_package_missing'
+ except Exception as exc:result['credential_error']=type(exc).__name__
+ result['ready']=not result['missing'] and result['backend_credentials']
+ return result
 class App:
  def __init__(self,demo=False):
   self.demo=demo;self.sessions={};self.lock=threading.Lock()
   if demo:
    (ROOT/'data').mkdir(exist_ok=True);s=SQLiteStore(ROOT/'data/demo.db');seed(s);uid='demo-admin'
   else:
+   state=configuration_status()
+   if not state['ready']:raise ValueError('Backend yapılandırması eksik: '+', '.join(state['missing'])+(' · ADC kimlik bilgisi gerekli' if not state['backend_credentials'] else ''))
    import firebase_admin
    firebase_admin.initialize_app(options={'projectId':os.environ['FIREBASE_PROJECT_ID']});s=FirestoreStore();uid=os.environ.get('ADMIN_UID')
    if not uid:raise ValueError('ADMIN_UID gerekli')
@@ -86,5 +98,8 @@ def handler(app):
  return H
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--demo',action='store_true');p.add_argument('--port',type=int,default=8000);a=p.parse_args();s=ThreadingHTTPServer(('127.0.0.1',a.port),handler(App(a.demo)));print(f'http://127.0.0.1:{a.port} — '+('YEREL DEMO' if a.demo else 'Firebase'));s.serve_forever()
-if __name__=='__main__':main()
+ p=argparse.ArgumentParser();p.add_argument('--demo',action='store_true');p.add_argument('--port',type=int,default=8000);p.add_argument('--check',action='store_true',help='Sır değerlerini göstermeden backend yapılandırmasını kontrol et');a=p.parse_args()
+ if a.check:
+  state=configuration_status();print(json.dumps(state,ensure_ascii=False));return 0 if state['ready'] else 1
+ s=ThreadingHTTPServer(('127.0.0.1',a.port),handler(App(a.demo)));print(f'http://127.0.0.1:{a.port} — '+('YEREL DEMO' if a.demo else 'Firebase'));s.serve_forever();return 0
+if __name__=='__main__':raise SystemExit(main())

@@ -401,7 +401,7 @@ def how_body(report):
     return ('<main class="page-container how-page">'
             '<div class="page-eyebrow"><span class="tiny-line"></span> ŞEFFAFLIK & GÜVEN</div>'
             f'<div class="page-heading"><div><h1 id="page-title" tabindex="-1">Kaynaklar açık. Karar senin.</h1><p>HibeRadarı bir başvuru kaynağı değil, doğru kaynağa giden kısa yol.</p></div>{icon("radar", None, "how-radar", 1)}</div>'
-            f'<div class="demo-notice">{icon("shield-check", 20)}<div><strong>Beta sürüm: duyurular otomatik toplanıyor.</strong><p>İçerik insan onayından geçmemiştir. Tarihleri, tutarları ve koşulları her zaman resmî sayfadan doğrulayın.</p></div></div>'
+            f'<div class="demo-notice">{icon("shield-check", 20)}<div><strong>Yayımlanan içerik sürümü yönetici tarafından incelenmiştir.</strong><p>Onay, başvuru garantisi değildir. Tarihleri, tutarları ve koşulları resmî sayfadan doğrulayın.</p></div></div>'
             f'<section class="how-section"><h2>Bir ilan, listeye nasıl gelir?</h2><div class="process-grid">{proc}</div></section>'
             f'<div class="how-columns"><section class="how-section"><h2>İzlenen kaynaklar</h2><p class="section-intro">Şu an {len(report["sources"])} kaynak taranıyor.</p>{rows}</section>'
             f'<section class="how-section"><h2>Renk değil, durum.</h2><p class="section-intro">Süzgecin her kayda verdiği karar:</p>{roles}'
@@ -593,6 +593,8 @@ def check_publication(report, today=None):
     for row in rows:
         try:
             validate(row)
+            if row.get('demo') or row.get('approval',{}).get('demo'):
+                raise ValueError('DEMO kayıt/onayı üretim yayınına alınamaz')
             if not publishable(row, today):
                 raise ValueError('Güncel içerik sürümü için yönetici onayı yok')
         except (ValueError, TypeError, KeyError) as exc:
@@ -605,8 +607,11 @@ def build(report, outdir, today=None):
     import shutil
     import tempfile
     check_publication(report, today)
-    out = Path(outdir).resolve()
-    if out.is_symlink() or out == Path(out.anchor):
+    requested = Path(outdir).absolute()
+    if any(p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()) for p in (requested,*requested.parents)):
+        raise PublicationBlocked('Bağlantılı yayın klasörü kullanılamaz')
+    out = requested.resolve()
+    if out == Path(out.anchor):
         raise PublicationBlocked('Güvensiz çıktı klasörü')
     out.parent.mkdir(parents=True, exist_ok=True)
     stage = Path(tempfile.mkdtemp(prefix=f'.{out.name}.stage-', dir=out.parent))

@@ -92,3 +92,9 @@ class DiscoveryBridgeTests(unittest.TestCase):
         self.assertTrue(self.store.get('calls','abc')['approval']['demo'])
         result=publication_report(self.report,self.store,TODAY)
         self.assertEqual(result['accepted'],[]);self.assertEqual(result['review'],[])
+    def test_review_rejects_credentials_and_nonstandard_ports(self):
+        from hibe.aggregator.bridge import review_ready
+        persist_report(self.report,self.store);c=self.reviewed()
+        for url in ('https://:secret@x.org/call','https://x.org:9443/call','https://x.org:bad/call'):
+            unsafe=dict(c,official_url=url,documents=[{'url':url,'hash':'hash'}])
+            self.assertFalse(review_ready(unsafe))
