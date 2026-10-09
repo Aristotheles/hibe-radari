@@ -25,7 +25,7 @@ def prepare(service,base_url,secret):
  if not base_url.startswith('https://'):raise ValueError('PUBLIC_BASE_URL HTTPS olmalı')
  week=date.today().strftime('%G-W%V');count=0;calls=service.public()
  for u in service.store.all('users'):
-  if not u['subscribed']:continue
+  if u.get('subscribed') is not True:continue
   key=hashlib.sha256((week+u['uid']).encode()).hexdigest();old=service.store.get('outbox',key)
   if old:continue
   selected=[c for c in calls if not u['themes'] or set(c['themes'])&set(u['themes'])]
@@ -44,7 +44,7 @@ def send_pending(service):
   for message in service.store.all('outbox'):
    if message['status']!='prepared':continue
    u=service.store.get('users',message['uid'])
-   if not u or not u['subscribed']:message['status']='cancelled';service.store.put('outbox',message['id'],message);continue
+   if not u or u.get('subscribed') is not True:message['status']='cancelled';service.store.put('outbox',message['id'],message);continue
    mail=EmailMessage();mail['From']=sender;mail['To']=u['email'];mail['Subject']=message['subject'];mail['Message-ID']='<'+message['id']+'@'+sender.split('@')[-1]+'>';mail.set_content(message['text']);mail.add_alternative(message['html'],'html')
    # Gönderim öncesi işaretle: crash sonrası belirsiz kayıt otomatik tekrar gönderilmez.
    message['status']='sending';service.store.put('outbox',message['id'],message)

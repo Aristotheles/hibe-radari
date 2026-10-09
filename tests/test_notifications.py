@@ -3,6 +3,24 @@ from hibe.notifications import *
 from hibe.service import Service
 from hibe.store import MemoryStore
 class MailTests(unittest.TestCase):
+ def test_membership_without_explicit_optin_is_skipped(self):
+  s=Service(MemoryStore(),'admin')
+  for index,subscribed in enumerate((None,'true',1,False)):
+   user={'uid':str(index),'tier':'pro','membership_status':'active'}
+   if subscribed is not None:user['subscribed']=subscribed
+   s.store.put('users',user['uid'],user)
+  s.store.put('users','yes',{'uid':'yes','email':'test@example.org','themes':[],'subscribed':True})
+  self.assertEqual(prepare(s,'https://example.org','x'*32),1)
+  self.assertEqual([m['uid'] for m in s.store.all('outbox')],['yes'])
+ def test_missing_optin_cancels_prepared_message_without_sending(self):
+  from unittest.mock import patch
+  s=Service(MemoryStore(),'admin')
+  s.store.put('users','u',{'uid':'u','tier':'pro'})
+  s.store.put('outbox','m',{'id':'m','uid':'u','status':'prepared'})
+  with patch.dict(os.environ,{'NEWSLETTER_ENABLED':'true','SMTP_HOST':'smtp.example.org','SMTP_FROM':'test@example.org'}),patch('hibe.notifications.smtplib.SMTP') as smtp:
+   self.assertEqual(send_pending(s),0)
+   smtp.return_value.__enter__.return_value.send_message.assert_not_called()
+  self.assertEqual(s.store.get('outbox','m')['status'],'cancelled')
  def test_signature_and_expiry(self):
   secret='x'*32;t=unsubscribe_token('uid',secret);self.assertEqual(verify_unsubscribe(t,secret),'uid')
   with self.assertRaises(ValueError):verify_unsubscribe(t+'a',secret)
