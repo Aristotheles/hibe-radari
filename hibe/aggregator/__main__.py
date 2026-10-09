@@ -17,10 +17,29 @@ def main(argv=None):
     args = ap.parse_args(argv)
     sys.stdout.reconfigure(encoding='utf-8')
     report = run(only=args.only)
-    path = write_report(report, args.out)
+    from pathlib import Path
+    from .collector import ROOT
+    canonical = ROOT / 'data/aggregator/latest.json'
+    target = Path(args.out).resolve() if args.out else canonical
+    unsafe = report.get('run_status') != 'success' or args.only is not None
+    if unsafe:
+        if target == canonical.resolve():
+            target = canonical.with_name('last-attempt.json')
+        write_report(report, target)
+        print('Eksik/şüpheli koşu: son sağlam rapor ve site korunuyor')
+        return 1
+    if args.site:
+        from .site import check_publication, PublicationBlocked
+        try:
+            check_publication(report)
+        except PublicationBlocked as exc:
+            write_report(report, canonical.with_name('last-attempt.json'))
+            print(f'Yayın engellendi: {exc}')
+            return 1
     if args.site:
         from .site import build
         print(f'Statik site: {build(report, args.site)}')
+    path = write_report(report, target)
     c = report['counts']
     print(f"Tarih {report['today']} · kabul {c['accept']} · inceleme {c['review']} · izleme {c['watch']} · "
           f"genel {c['general']} · gürültü {c['reject']}")

@@ -486,3 +486,7 @@ T18: Google girişli normal kullanıcı admin işlemi yapamaz; Pro yetkisi backe
 ```
 
 **Bitiş ölçütü:** Kod, API ve paneldeki durumlar gerçeği söyleyene; çalışan tüm çekiciler testle doğrulanana; son sağlam veri korunan, onaylı çağrı yayını sağlanana kadar projeyi 'tamamlandı' diye işaretleme.
+
+
+### 2026-10-10 01:10 — Yerel AŞAMA 1 ilerleme eki
+Yayın kapısı ve veri koruma uygulandı; 94 Python + 11 JS PASS. docs/ASAMA_1_YAYIN_GUVENLIGI.md kanıt ve sınırlardır. Cloud durdu; çalışma yalnız C:/hibe-radari içinde. Kullanıcı aşama başına onay beklemeyi kaldırdı. Sıradaki AŞAMA 2. Deploy onaylı veri olmadığı için yapılmadı.

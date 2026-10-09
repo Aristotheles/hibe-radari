@@ -391,9 +391,14 @@ class SiteTests(unittest.TestCase):
                 'relevance': {'verdict': 'accept', 'score': 9, 'reasons': ['+3 <b>gerekçe</b>', '-2 hariç: x', 'not: tarih'], 'audience': ['school']}}
         good = dict(evil, id='b' * 20, title='Güvenli kayıt', source_url='https://tubitak.gov.tr/x', original_url=None, deadline=None,
                     deadline_evidence=None, audience=['teacher'], relevance={'verdict': 'accept', 'score': 5, 'reasons': ['+3 ok'], 'audience': ['teacher']})
+        from hibe.domain import version
+        for row in (evil, good):
+            row.update(summary=row['description_short'], documents=[{'url': 'https://tubitak.gov.tr/x', 'hash': 'test'}],
+                       paths=[{'role': 'dogrudan', 'conditions': []}], themes=['bilim'], official_status='acik')
+            row['approval'] = {'reviewed': True, 'version': version(row)}
         return {'generated_at': '2026-10-09T17:00:00', 'today': '2026-10-09',
                 'counts': {'accept': 2, 'review': 0, 'watch': 0, 'general': 0, 'reject': 0},
-                'sources': [{'id': 's', 'organization': 'Kurum', 'fetched': 2, 'error': None}], 'accepted': [evil, good], 'review': [],
+                'run_status': 'success', 'sources': [{'id': 's', 'health': 'success', 'organization': 'Kurum', 'fetched': 2, 'error': None}], 'accepted': [evil, good], 'review': [],
                 'watch': [], 'general': [], 'rejected': [{'title': 'GİZLİ-GÜRÜLTÜ'}]}
 
     def build(self):

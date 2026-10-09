@@ -331,7 +331,7 @@ def detail_page(o, report, today, stamp):
         + (f'<p class="muted">Tarih kanıtı: {esc(evidence)}</p>' if evidence else '') + '</section>'
         '<section class="detail-section"><div class="section-heading"><h2>Süzgeç gerekçeleri</h2><span>Her puan değişimi açıklanır.</span></div>'
         f'{reason_rows(o)}</section>'
-        f'<div class="source-note">{icon("info", 16)}<span>Otomatik toplanmıştır; insan onayından geçmemiştir. Tarihleri, tutarları ve koşulları resmî sayfadan doğrulayın.</span></div>'
+        f'<div class="source-note">{icon("info", 16)}<span>Yönetici tarafından içerik sürümü onaylanmıştır. Tarihleri, tutarları ve koşulları resmî sayfadan doğrulayın.</span></div>'
         '</article><aside class="decision-sidebar"><div class="decision-box">'
         f'<span class="page-eyebrow">BİR SONRAKİ ADIM</span><h2>{"Planını hazırlamaya başla." if left is None else (f"{left} günün var." if left >= 0 else "Bu dönemin süresi geçti.")}</h2>'
         '<p>Şimdi güncel bilgiyi asıl kaynağından doğrula.</p>'
@@ -525,7 +525,7 @@ def lovable_css():
     return '\n'.join(keep) + '\n'
 
 
-def build(report, outdir, today=None):
+def _render(report, outdir, today=None):
     today = today or datetime.now().date()
     out = Path(outdir)
     (out / 'ilan').mkdir(parents=True, exist_ok=True)
@@ -542,7 +542,7 @@ def build(report, outdir, today=None):
             (out / 'ics' / f'{o["id"]}.ics').write_text(calendar, encoding='utf-8', newline='')
     published = [{k: v for k, v in o.items() if k not in ('group',)} for o in items]
     data = {'generated_at': report['generated_at'], 'counts': report['counts'], 'disclaimer':
-            'Otomatik toplanmıştır; insan onayından geçmemiştir. Son tarih ve uygunluğu resmî sayfadan doğrulayın.', 'items': published}
+            'Yönetici tarafından içerik sürümü onaylanmıştır. Son tarih ve uygunluğu resmî sayfadan doğrulayın.', 'items': published}
     files = {
         'index.html': page('Okulun için bir sonraki fırsat', 'Öğretmenler için hibe, eğitim ve proje fırsatları; her kayıt resmî kaynağına bağlanır. Türkiye, AB, TÜBİTAK, büyükelçilik ve vakıf duyuruları.', index_body(items, report, today), 'list', report, '/'),
         'takvim.html': page('Son başvuru takvimi', 'Okul ve öğretmen fırsatlarının son başvuru tarihlerini aylık takvimde görün.', calendar_body(items, today), 'calendar', report, '/takvim'),
@@ -558,3 +558,65 @@ def build(report, outdir, today=None):
     for name, content in files.items():
         (out / name).write_text(content, encoding='utf-8')
     return out
+
+
+class PublicationBlocked(ValueError):
+    """Güvenlik kapısı geçilmedi; mevcut yayın korunur."""
+
+
+def check_publication(report, today=None):
+    from hibe.domain import validate, publishable
+    today = today or datetime.now().date()
+    if report.get('run_status') != 'success' or not report.get('sources'):
+        raise PublicationBlocked('Tam ve başarılı kaynak koşusu gerekli')
+    if any(s.get('health') != 'success' or s.get('error') for s in report['sources']):
+        raise PublicationBlocked('Kaynak hatası veya kısmi sonuç var')
+    rows = [row for group in KIND for row in report.get(group, [])]
+    if not rows:
+        raise PublicationBlocked('Boş yayın ayrıca incelenmeli')
+    for row in rows:
+        try:
+            validate(row)
+            if not publishable(row, today):
+                raise ValueError('Güncel içerik sürümü için yönetici onayı yok')
+        except (ValueError, TypeError, KeyError) as exc:
+            raise PublicationBlocked(f'Yayın onayı geçersiz: {exc}') from exc
+
+
+def build(report, outdir, today=None):
+    """Onay kapısı, ayrı staging, kontrollü geçiş ve hata halinde geri dönüş."""
+    import os
+    import shutil
+    import tempfile
+    check_publication(report, today)
+    out = Path(outdir).resolve()
+    if out.is_symlink() or out == Path(out.anchor):
+        raise PublicationBlocked('Güvensiz çıktı klasörü')
+    out.parent.mkdir(parents=True, exist_ok=True)
+    stage = Path(tempfile.mkdtemp(prefix=f'.{out.name}.stage-', dir=out.parent))
+    backup = None
+    try:
+        _render(report, stage, today)
+        data = json.loads((stage / 'data.json').read_text(encoding='utf-8'))
+        if not data.get('items') or not (stage / 'index.html').is_file():
+            raise PublicationBlocked('Eksik staging çıktısı')
+        for item in data['items']:
+            if not (stage / 'ilan' / f"{item['id']}.html").is_file():
+                raise PublicationBlocked('Eksik ilan çıktısı')
+            if item.get('deadline') and not (stage / 'ics' / f"{item['id']}.ics").is_file():
+                raise PublicationBlocked('Eksik ICS çıktısı')
+        if out.exists():
+            backup = Path(tempfile.mkdtemp(prefix=f'.{out.name}.backup-', dir=out.parent))
+            backup.rmdir()
+            os.replace(out, backup)
+        try:
+            os.replace(stage, out)
+        except BaseException:
+            if backup is not None:
+                os.replace(backup, out)
+            raise
+        # Başarılı geçişin önceki yayını da geri dönüş için tutulur.
+        return out
+    finally:
+        if stage.exists():
+            shutil.rmtree(stage)
