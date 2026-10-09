@@ -9,6 +9,10 @@ from .textutil import find_deadline, shorten, strip_html
 
 def collect(source, fetcher, today):
     parsed = feedparser.parse(fetcher.get(source['url']).content)
+    if parsed.bozo:
+        raise ValueError(f'Bozuk RSS/Atom: {type(parsed.bozo_exception).__name__}')
+    if not parsed.version:
+        raise ValueError('RSS/Atom biçimi tanınmadı')
     items = []
     for entry in parsed.entries:
         link = (entry.get('link') or '').strip()

@@ -26,12 +26,17 @@ def load_config(path=None):
 
 def run_source(source, config, rel, today, transport=None, sleep=None):
     """Tek kaynak: (öğeler, durum). Hata kaynağı düşürür, çalışmayı durdurmaz."""
-    status = {'id': source['id'], 'organization': source.get('organization'), 'fetched': 0, 'enriched': 0, 'error': None}
+    status = {'id': source['id'], 'organization': source.get('organization'), 'fetched': 0,
+              'enriched': 0, 'detail_errors': 0, 'error': None, 'health': 'success'}
     fetcher = Fetcher(source['allowed_hosts'], config.get('tls_relaxed_hosts', []), transport,
                       delay=0 if transport else config.get('delay_seconds', 1.0), **({'sleep': sleep} if sleep else {}))
     try:
         items = CONNECTORS[source['type']](source, fetcher, today)
         status['fetched'] = len(items)
+        if not items and not source.get('allow_empty', False):
+            status['health'] = 'suspicious_empty'
+            status['error'] = 'Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı'
+            return [], status
         for item in items:
             item.aggregator = bool(source.get('aggregator'))
             item.organization = item.organization or source.get('organization')
@@ -52,15 +57,19 @@ def run_source(source, config, rel, today, transport=None, sleep=None):
                     status['enriched'] += 1
                 except Exception as exc:                 # ayrıntı alınamazsa öğe listedeki haliyle kalır
                     item.relevance.reasons.append(f'not: ayrıntı sayfası alınamadı ({type(exc).__name__})')
+                    status['detail_errors'] += 1
                     continue
                 rel.evaluate(item, today, source.get('implied_programme'))
         return items, status
     except Exception as exc:
         status['error'] = f'{type(exc).__name__}: {str(exc)[:200]}'
+        status['health'] = 'failed'
         return [], status
     finally:
         status['requests'] = fetcher.calls
         fetcher.close()
+        if status['health'] == 'success' and status['detail_errors']:
+            status['health'] = 'partial'
 
 
 def pin(item, today):
@@ -103,13 +112,44 @@ def run(config=None, rules=None, today=None, only=None, transport=None, sleep=No
     far = datetime(9999, 1, 1).date()
     items.sort(key=lambda i: (ORDER[i.relevance.verdict], i.deadline or far, i.title))
     groups = {v: [i.to_dict() for i in items if i.relevance.verdict == v] for v in ORDER}
+    selected_all = len(statuses) == len(config['sources']) and all(
+        status['id'] == source['id'] for status, source in zip(statuses, config['sources']))
+    health = [status['health'] for status in statuses]
+    if only or not selected_all:
+        run_status = 'partial'
+    elif health and all(value == 'failed' for value in health):
+        run_status = 'failed'
+    elif 'suspicious_empty' in health and all(value in ('success', 'suspicious_empty') for value in health):
+        run_status = 'suspicious_empty'
+    elif any(value != 'success' for value in health):
+        run_status = 'partial'
+    else:
+        run_status = 'success'
     return {'generated_at': datetime.now().isoformat(timespec='seconds'), 'today': today.isoformat(),
+            'run_status': run_status,
             'counts': {v: len(groups[v]) for v in ORDER}, 'sources': statuses,
             **{GROUPS[v]: groups[v] for v in ORDER}}
 
 
 def write_report(report, path=None):
+    """Raporu aynı dosya sistemindeki geçici dosyadan atomik olarak değiştir."""
+    import os
+    import tempfile
+
     path = Path(path) if path else ROOT / 'data/aggregator/latest.json'
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+    payload = json.dumps(report, ensure_ascii=False, indent=2).encode('utf-8')
+    fd, temp_name = tempfile.mkstemp(prefix=f'.{path.name}.', suffix='.tmp', dir=path.parent)
+    try:
+        with os.fdopen(fd, 'wb') as stream:
+            stream.write(payload)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temp_name, path)
+    except BaseException:
+        try:
+            os.unlink(temp_name)
+        except FileNotFoundError:
+            pass
+        raise
     return path

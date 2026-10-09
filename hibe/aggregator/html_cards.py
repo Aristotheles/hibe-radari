@@ -134,10 +134,7 @@ def collect_crawl(source, fetcher, today):
     pages = [u for u in dict.fromkeys(links(start_html, start)) if u.rstrip('/') != start.rstrip('/')]
     calls = {u for u in pages if call_pattern in u}
     for page in [u for u in pages if call_pattern not in u][:max_pages]:
-        try:
-            calls.update(u for u in links(fetcher.get_text(page), page) if call_pattern in u)
-        except Exception:
-            continue                           # tek sayfa hatası taramayı durdurmaz
+        calls.update(u for u in links(fetcher.get_text(page), page) if call_pattern in u)
     items = []
     for url in sorted(calls)[:max_pages]:
         soup = _soup(fetcher.get_text(url))
