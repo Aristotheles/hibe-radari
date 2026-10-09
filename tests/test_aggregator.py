@@ -71,6 +71,7 @@ class RelevanceTests(unittest.TestCase):
         self.filter = RelevanceFilter()
 
     def judge(self, title, categories=(), implied=None, **kw):
+        if kw.get('deadline'): kw.setdefault('deadline_evidence', 'Fixture: kesin son başvuru tarihi')
         item = GrantOpportunity(title, 's', 'https://x.org/a', categories=list(categories), **kw)
         return self.filter.evaluate(item, TODAY, implied), item
 
@@ -132,10 +133,10 @@ class RelevanceTests(unittest.TestCase):
         rel, _ = self.judge('TÜBİTAK Bilim ve Toplum Destek Programları Proje Teşvik Ödülleri Başvuruları Açıldı')
         self.assertIn(rel.verdict, ('accept', 'review'))
 
-    def test_old_announcement_without_deadline_goes_to_watch_but_recent_is_kept(self):
+    def test_old_announcement_without_deadline_requires_review_but_recent_is_kept(self):
         old, _ = self.judge('Okul öğretmenlerine hibe çağrısı', published_at=date(2026, 3, 1))
         new, item = self.judge('Okul öğretmenlerine hibe çağrısı', published_at=date(2026, 10, 1))
-        self.assertEqual(old.verdict, 'watch')
+        self.assertEqual(old.verdict, 'review')
         self.assertEqual(new.verdict, 'accept')
         self.assertTrue(any('son tarih bulunamadı' in r for r in new.reasons))
 

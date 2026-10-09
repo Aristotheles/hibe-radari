@@ -10,7 +10,7 @@ _FOLD = str.maketrans({'ı': 'i', 'ş': 's', 'ğ': 'g', 'ç': 'c', 'ö': 'o', '�
 
 
 def fold(text):
-    return (text or '').replace('İ', 'i').replace('I', 'ı').lower().translate(_FOLD)
+    return (text or '').replace('İ', 'i').replace('I', 'ı').lower().replace('i\u0307', 'i').translate(_FOLD)
 
 
 def strip_html(html):
@@ -43,6 +43,7 @@ _DATE_PATTERNS = [
     (re.compile(rf'(?<!\d)(\d{{1,2}})(?:st|nd|rd|th)?\.?\s+({_MONTH_RE})[a-z]*\.?,?\s+(\d{{4}})'), 'dmy'),
     # November 15, 2026
     (re.compile(rf'({_MONTH_RE})[a-z]*\.?\s+(\d{{1,2}})(?:st|nd|rd|th)?,?\s+(\d{{4}})'), 'mdy'),
+    (re.compile(r'(?<!\d)(\d{4})-(\d{2})-(\d{2})(?!\d)'), 'iso'),
     # 15.11.2026 · 15/11/2026
     (re.compile(r'(?<!\d)(\d{1,2})[./](\d{1,2})[./](\d{4})(?!\d)'), 'num'),
 ]
@@ -54,6 +55,7 @@ CUES = ('son basvuru', 'son tarih', 'son gun', 'son teslim', 'kadar', 'basvurula
 
 def _make_date(order, groups):
     try:
+        if order == 'iso': return date(int(groups[0]), int(groups[1]), int(groups[2]))
         if order == 'dmy':
             return date(int(groups[2]), MONTHS[groups[1]], int(groups[0]))
         if order == 'mdy':
@@ -63,23 +65,62 @@ def _make_date(order, groups):
         return None
 
 
-def find_deadline(text, today_date):
-    """(tarih, kanıt) döndürür. İpucu kelimesi olmayan tarih yok sayılır; hiçbiri yoksa (None, None).
+END_CUES = ('son basvuru', 'son tarih', 'son gun', 'son teslim', 'deadline', 'closing date',
+            'apply by', 'applications close', 'due', 'until', 'bis zum', 'frist',
+            'bewerbungsschluss', 'anmeldeschluss', 'kadar', 'kapan', 'sona er')
+START_CUES = ('baslar', 'baslangic', 'acilis', 'opens', 'start', 'begin')
 
-    Gelecekteki ipuçlu tarihlerden en yakını seçilir; hepsi geçmişse en geç olan döner
-    (süzgeç bunu 'süresi dolmuş' diye eler)."""
-    folded = fold(text)
+
+def deadline_details(text, today_date):
+    """Son tarih adayları ve day/month/unknown kesinliği; başlangıç günü son tarih değildir."""
+    text = text or ''
+    # Katlama uzunluğu değişebilir; kanıt dilimini özgün karakter konumlarına eşleriz.
+    folded_parts, offsets = [], []
+    for index, char in enumerate(text):
+        part = fold(char) if char != '\u0307' else ''
+        folded_parts.append(part)
+        offsets.extend([index] * len(part))
+    folded = ''.join(folded_parts)
+    def evidence_slice(start, end):
+        if not offsets: return ''
+        return text[offsets[max(0, start)]:offsets[min(len(offsets)-1, end-1)]+1]
     found = []
-    for pattern, order in _DATE_PATTERNS:
+    patterns = list(_DATE_PATTERNS) + [(re.compile(rf'(?<!\d)(\d{{1,2}})\s+({_MONTH_RE})(?![a-z])(?!\s+\d{{4}})'), 'no_year')]
+    for pattern, order in patterns:
         for m in pattern.finditer(folded):
-            value = _make_date(order, m.groups())
-            if not value or not (2000 <= value.year <= 2100):
-                continue
-            window = folded[max(0, m.start() - 90):m.end() + 40]
-            if any(cue in window for cue in CUES):
-                snippet = re.sub(r'\s+', ' ', text[max(0, m.start() - 60):m.end() + 20]).strip()
-                found.append((value, snippet))
-    if not found:
-        return None, None
-    future = [f for f in found if f[0] >= today_date]
-    return min(future) if future else max(found)
+            if order == 'no_year':
+                try: value = date(today_date.year, MONTHS[m.group(2)], int(m.group(1)))
+                except ValueError: continue
+            else: value = _make_date(order, m.groups())
+            if not value or not 2000 <= value.year <= 2100: continue
+            before = folded[max(0,m.start()-90):m.start()]
+            after = folded[m.end():m.end()+45]
+            # Sonraki tarihin ipucunu önceki başlangıca taşımayız.
+            next_date = re.search(r'\d{1,4}[./-]|\d{1,2}\s+(?:'+_MONTH_RE+')', after)
+            if next_date: after = after[:next_date.start()]
+            if any(cue in after[:24] for cue in START_CUES): continue
+            latest_end = max((before.rfind(c) for c in END_CUES), default=-1)
+            latest_start = max((before.rfind(c) for c in START_CUES), default=-1)
+            tail_end = any(cue in after[:35] for cue in ('kadar','kapan','sona er','deadline'))
+            if latest_end < 0 and not tail_end: continue
+            if latest_start > latest_end and not tail_end: continue
+            evidence = re.sub(r'\s+', ' ', evidence_slice(m.start()-60,m.end()+35)).strip()
+            found.append({'value':value,'precision':'day','evidence':evidence,
+                          'year_inferred': order=='no_year'})
+    # Aynı gün ikinci desenle/yıl eksik desenle yinelenmez.
+    found = list({x['value']: x for x in reversed(found)}.values())
+    if found:
+        future = [x for x in found if x['value'] >= today_date]
+        chosen = min(future,key=lambda x:x['value']) if future else max(found,key=lambda x:x['value'])
+        return dict(chosen, candidates=[dict(x,value=x['value'].isoformat()) for x in sorted(found,key=lambda x:x['value'])])
+    for m in re.finditer(rf'({_MONTH_RE})\s+(\d{{4}})',folded):
+        window=folded[max(0,m.start()-60):m.end()+20]
+        if any(cue in window for cue in END_CUES):
+            return {'value':None,'precision':'month','month':f'{m.group(2)}-{MONTHS[m.group(1)]:02d}',
+                    'evidence':evidence_slice(m.start()-60,m.end()+20).strip(),'year_inferred':False,'candidates':[]}
+    return {'value':None,'precision':'unknown','evidence':None,'year_inferred':False,'candidates':[]}
+
+
+def find_deadline(text, today_date):
+    details = deadline_details(text,today_date)
+    return details['value'], details['evidence']

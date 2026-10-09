@@ -4,7 +4,7 @@ Aşama 1: liste bilgisiyle (başlık, kategori, kısa açıklama) puanla.
 Aşama 2: elenmeyenlerden son tarihi olmayanların ayrıntı sayfasını çek (sınırlı), yeniden puanla.
 Reddedilenler silinmez; gerekçeleriyle rapora yazılır ki süzgeç kuralı gözle ayarlanabilsin."""
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from . import eu_ft, feeds, html_cards
@@ -78,7 +78,7 @@ def run_source(source, config, rel, today, transport=None, sleep=None):
 def pin(item, today):
     """Kullanıcının adıyla istediği program: puandan bağımsız listede tutulur.
     Kapalı/süresi dolmuş → watch (yeni dönemi bekle); aksi halde review (insan bakar)."""
-    expired = bool(item.deadline and item.deadline < today)
+    expired = bool(item.deadline and item.deadline_precision == 'day' and not item.deadline_year_inferred and item.deadline < today)
     item.relevance.verdict = 'watch' if (expired or item.status_hint == 'kapalı') else 'review'
     item.relevance.reasons.append(f'sabit izleme: kullanıcı isteği (durum: {item.status_hint or "belirsiz"})')
 
@@ -128,7 +128,7 @@ def run(config=None, rules=None, today=None, only=None, transport=None, sleep=No
         run_status = 'partial'
     else:
         run_status = 'success'
-    return {'generated_at': datetime.now().isoformat(timespec='seconds'), 'today': today.isoformat(),
+    return {'generated_at': datetime.now(timezone.utc).isoformat(timespec='seconds'), 'today': today.isoformat(),
             'run_status': run_status,
             'counts': {v: len(groups[v]) for v in ORDER}, 'sources': statuses,
             **{GROUPS[v]: groups[v] for v in ORDER}}

@@ -120,6 +120,8 @@ def prepare(report, today):
     for key in ('accepted', 'review', 'watch', 'general'):
         for o in report.get(key, []):
             o = dict(o)
+            if o.get('deadline_precision') in ('unknown', 'month') or o.get('deadline_year_inferred'):
+                o['deadline'] = None
             o['key'] = key
             o['kind'] = KIND[key][2]
             o['topic'] = topic_of(o)
@@ -140,6 +142,10 @@ def badge(o, size=14):
 def when_html(o, today):
     d = parse_date(o.get('deadline'))
     if not d:
+        if o.get('deadline_precision') == 'month' and re.fullmatch(r'\d{4}-\d{2}', o.get('deadline_month') or ''):
+            year, month = map(int, o['deadline_month'].split('-'))
+            if 1 <= month <= 12:
+                return f'<span class="deadline-normal">{MONTHS[month-1]} {year} · gün bilinmiyor</span>'
         return f'<span class="deadline-normal">{icon("circle-help", 14)}Tarih bekleniyor</span>'
     left = (d - today).days
     count = f'{left} gün kaldı' if left >= 0 else 'Süresi geçti'
@@ -274,7 +280,10 @@ def reason_rows(o):
 
 
 def ics(o, stamp):
+    if o.get('deadline_precision') in ('unknown', 'month') or o.get('deadline_year_inferred'):
+        raise ValueError('Belirsiz tarih için takvim etkinliği üretilemez')
     d = parse_date(o['deadline'])
+    if d is None: raise ValueError('Takvim için kesin gün gerekli')
     end = d + timedelta(days=1)
     esc_ics = lambda s: s.replace('\\', '\\\\').replace('\n', '\\n').replace(',', '\\,').replace(';', '\\;')
     url = safe_link(o.get('original_url')) or safe_link(o.get('source_url')) or ''
@@ -525,14 +534,21 @@ def lovable_css():
     return '\n'.join(keep) + '\n'
 
 
+def utc_stamp(value):
+    from datetime import timezone
+    from zoneinfo import ZoneInfo
+    generated = datetime.fromisoformat(value.replace('Z', '+00:00'))
+    if generated.tzinfo is None: generated = generated.replace(tzinfo=ZoneInfo('Europe/Istanbul'))
+    return generated.astimezone(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+
+
 def _render(report, outdir, today=None):
     today = today or datetime.now().date()
     out = Path(outdir)
     (out / 'ilan').mkdir(parents=True, exist_ok=True)
     (out / 'ics').mkdir(parents=True, exist_ok=True)
     items = prepare(report, today)
-    stamp = re.sub(r'\D', '', report['generated_at'])[:14]
-    stamp = f'{stamp[:8]}T{stamp[8:14]}Z'
+    stamp = utc_stamp(report['generated_at'])
     for old in list((out / 'ilan').glob('*.html')) + list((out / 'ics').glob('*.ics')):
         old.unlink()                                       # eski kayıtların sayfaları kalmasın
     for o in items:

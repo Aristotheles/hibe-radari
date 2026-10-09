@@ -22,12 +22,12 @@ def collect(source, fetcher, today):
         if source.get('upgrade_http') and link.startswith('http://'):
             link = 'https://' + link[len('http://'):]
         text = strip_html(entry.get('summary') or entry.get('description') or '')
-        deadline, evidence = find_deadline(f'{title}. {text}', today)
         published = entry.get('published_parsed') or entry.get('updated_parsed')
         items.append(GrantOpportunity(
             title=title, source_id=source['id'], source_url=link,
-            organization=source.get('organization'), deadline=deadline, deadline_evidence=evidence,
+            organization=source.get('organization'),
             description_short=shorten(text, 300), language=source.get('language'),
             published_at=date(*published[:3]) if published else None,
             categories=[t.term for t in entry.get('tags', []) if t.get('term')]))
+        items[-1].apply_deadline(f'{title}. {text}', today)
     return items

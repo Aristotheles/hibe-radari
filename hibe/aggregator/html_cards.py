@@ -106,14 +106,14 @@ def collect_pages(source, fetcher, today):
         text = re.sub(r'\s+', ' ', main.get_text(' ', strip=True))
         folded = fold(text)
         status = 'kapalı' if CLOSED.search(folded) else ('açık' if OPEN.search(folded) else 'belirsiz')
-        deadline, evidence = (None, None) if page.get('no_deadline') else find_deadline(text, today)
         items.append(GrantOpportunity(
             title=page['title'], source_id=source['id'], source_url=page['url'],
             organization=page.get('organization') or source.get('organization'),
-            deadline=deadline, deadline_evidence=evidence, status_hint=status,
+            status_hint=status,
             programme=page.get('programme'), language=page.get('language') or source.get('language'),
             description_short=shorten(f"Sayfa metnine göre durum: {status}. " + (page.get('note') or text[:400]), 300),
             categories=[page['country']] if page.get('country') else []))
+        if not page.get('no_deadline'): items[-1].apply_deadline(text, today)
     return items
 
 
@@ -139,11 +139,11 @@ def collect_crawl(source, fetcher, today):
     for url in sorted(calls)[:max_pages]:
         soup = _soup(fetcher.get_text(url))
         text = re.sub(r'\s+', ' ', soup.get_text(' ', strip=True))
-        deadline, evidence = find_deadline(text, today)
         items.append(GrantOpportunity(
             title=_page_title(soup), source_id=source['id'], source_url=url,
-            organization=source.get('organization'), deadline=deadline, deadline_evidence=evidence,
+            organization=source.get('organization'),
             description_short=shorten(text[:600], 300), language=source.get('language')))
+        items[-1].apply_deadline(text, today)
     return items
 
 
@@ -153,8 +153,7 @@ def enrich(item, fetcher, today, content_selector=None):
     main = soup.select_one(content_selector) if content_selector else None
     main = main or soup.select_one('article') or soup.select_one('main') or soup.body or soup
     text = re.sub(r'\s+', ' ', main.get_text(' ', strip=True))
-    if not item.deadline:
-        item.deadline, item.deadline_evidence = find_deadline(text[:8000], today)
+    item.apply_deadline(text[:8000], today)
     if len(item.description_short) < 60:
         item.description_short = shorten(text, 300)
     own = urlsplit(item.source_url).hostname

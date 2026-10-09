@@ -121,14 +121,14 @@ class RelevanceFilter:
 
         # Zaman kuralları puandan bağımsız; ama elenen güçlü eşleşme çöpe gitmez, 'watch' olur.
         base = verdict
-        expired = bool(item.deadline and item.deadline < today)
+        expired = bool(item.deadline and item.deadline_precision == 'day' and not item.deadline_year_inferred and item.deadline < today)
         stale = bool(not item.deadline and item.published_at
                      and today - item.published_at > timedelta(days=rules['max_age_days']))
         if expired:
             reasons.append(f'son tarih geçmiş ({item.deadline.isoformat()})')
         elif stale and base != 'reject':
             reasons.append(f"{rules['max_age_days']} günden eski ve son tarih yok")
-        if (expired or stale) and base in ('accept', 'review'):
+        if expired and base in ('accept', 'review'):
             verdict = 'watch'
             reasons.append('izleme: geçmiş dönem/örnek; program yinelenirse yeni dönemi bekle')
         elif expired:
@@ -137,9 +137,15 @@ class RelevanceFilter:
         elif base == 'reject' and score >= 0 and (positive or hit(self.call_words)):
             verdict = 'general'
             reasons.append('genel hibe: okul eşleşmesi belirsiz, uygunluğu elle bak')
+        if stale and base in ('accept', 'review'):
+            verdict = 'review'
+            reasons.append('doğrulama gerekli: eski kayıt kapanış kanıtı değildir')
         if verdict in ('accept', 'review') and not item.deadline:
             reasons.append('not: son tarih bulunamadı (resmî sayfada doğrulayın)')
 
+        if item.deadline_review_required and verdict == 'accept':
+            verdict = 'review'
+            reasons.append('doğrulama gerekli: son başvuru tarihi belirsiz veya çok aşamalı')
         item.audience = [a for a in audiences if not a.startswith('-')]
         if not item.programme and programmes:
             item.programme = self.programmes[programmes[0]][0]['label']

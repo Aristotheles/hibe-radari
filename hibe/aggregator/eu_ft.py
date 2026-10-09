@@ -59,6 +59,7 @@ def parse(payload, source, today):
             organization=source.get('organization', 'Avrupa Komisyonu'),
             deadline=deadline,
             deadline_evidence=f"API deadlineDate: {', '.join(d.isoformat() for d in deadlines)}" if deadlines else None,
+            deadline_candidates=[{'value': d.isoformat(), 'precision': 'day', 'evidence': 'API deadlineDate'} for d in deadlines],
             programme=FRAMEWORKS.get(framework), description_short=shorten(desc, 300),
             language='en', categories=[_first(meta, 'typesOfAction') or ''] if _first(meta, 'typesOfAction') else []))
     return items
