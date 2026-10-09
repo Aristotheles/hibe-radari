@@ -162,8 +162,10 @@ def dedupe(items):
     return kept
 
 
-def run(config=None, rules=None, today=None, only=None, transport=None, sleep=None):
+def run(config=None, rules=None, today=None, only=None, transport=None, sleep=None, source_settings=None):
     config = config or load_config()
+    disabled={ident for setting in (source_settings or []) if setting.get('enabled') is False for ident in setting.get('connector_ids',[])}
+    config=dict(config,sources=[s for s in config['sources'] if s.get('enabled',True) and s['id'] not in disabled])
     today = today or today_fn()
     rel = RelevanceFilter(rules)
     all_items, statuses = [], []
@@ -180,7 +182,9 @@ def run(config=None, rules=None, today=None, only=None, transport=None, sleep=No
     selected_all = len(statuses) == len(config['sources']) and all(
         status['id'] == source['id'] for status, source in zip(statuses, config['sources']))
     health = [status['health'] for status in statuses]
-    if only is not None or not selected_all:
+    if not config['sources']:
+        run_status = 'suspicious_empty'
+    elif only is not None or not selected_all:
         run_status = 'partial'
     elif health and all(value == 'failed' for value in health):
         run_status = 'failed'

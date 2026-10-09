@@ -510,3 +510,7 @@ Yayın kapısı ve veri koruma uygulandı; 94 Python + 11 JS PASS. docs/ASAMA_1_
 
 ### 2026-10-10 — AŞAMA 6 özellikleri doğrulandı
 147 Python + 11 JS PASS; hedef bazlı üç değerli uygunluk ve AI kanıt/fallback denetimi uygulandı. Canlı Gemini anahtarı yok; model erişim başarısı iddia edilmez. 127 public/latest dosyası aynı. Rapor docs/ASAMA_6_UYGUNLUK_GUVENLIGI.md. AŞAMA 7 yerelde devam.
+
+
+### 2026-10-10 — AŞAMA 7 kayıt/sağlık özellikleri doğrulandı
+152 Python + 11 JS PASS. 135 envanter URL'si + 19 korunan eski kayıt = 154 kayıt; eski 30 ID ve 13 çekici korundu. Sabit 30 denetimi yenilendi; yetkili kaynak açma-kapama/sağlık alarmı mevcut store'a bağlı. 131 host grubu kurum sayısı değildir; bilinmeyen kurum/ülke alanları açık. Raporlar docs/ASAMA_7_KAYNAK_KAYDI.md ve docs/KAYNAK_SAYIM_UZLASTIRMA.md. AŞAMA 8 canlı kabul kartlarıyla devam; onay beklenmez.

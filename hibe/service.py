@@ -28,6 +28,27 @@ class Service:
   if self.approvals:
    p=Path(self.approvals);p.mkdir(exist_ok=True);(p/(i+'.json')).write_text(json.dumps(c['approval'],indent=2))
   return c
+ def sources(self,config):
+  result=[]
+  for raw in config:
+   row=dict(raw);settings=self.store.get('source_settings',row['id']) or {}
+   row['enabled']=settings.get('enabled',row.get('enabled',True))
+   row['health']=[self.store.get('source_health',i) for i in row.get('connector_ids',[]) if self.store.get('source_health',i)]
+   row['alert']=any(h.get('health') not in ('success','disabled') for h in row['health'])
+   if row['health']:
+    row['last_success']=max((h.get('last_success') or '' for h in row['health']),default='') or None
+    row['last_error']=[h.get('last_error') for h in row['health'] if h.get('last_error')]
+    row['last_found_count']=sum(h.get('last_found_count') or 0 for h in row['health'])
+    row['change_tracking']={'changed_count':sum(h.get('changed_count') or 0 for h in row['health'])}
+   result.append(row)
+  return result
+ def set_source(self,u,ident,enabled,config):
+  self.require_admin(u)
+  source=next((s for s in config if s['id']==ident),None)
+  if source is None or not isinstance(enabled,bool):raise ValueError('Kaynak veya açık/kapalı değeri geçersiz')
+  if enabled and source.get('identity_status')=='missing':raise ValueError('Eksik kaynak kimliği açılamaz')
+  value={'id':ident,'enabled':enabled,'connector_ids':source.get('connector_ids',[]),'updated_at':now(),'updated_by':u['uid']}
+  self.store.put('source_settings',ident,value);return value
  def revoke(self,u,i):
   self.require_admin(u);c=self.store.get('calls',i)
   if not c:raise ValueError('Çağrı bulunamadı')

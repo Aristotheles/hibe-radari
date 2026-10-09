@@ -55,7 +55,7 @@ def detail(call):
     return out + '<p class="final-warning">Başvurmadan önce resmî metni okuyun.</p>'
 
 def how(sources):
-    out = '<h1 id="page-title">Kaynaklar açık. Karar senin.</h1><p>Kaynak metni → insan incelemesi → sürüme bağlı onay. Değişen metin yeniden inceleme gerektirir.</p><p>30 kaynak hedefi. Kayıt durumu tarama başarısı değildir. Son tarama: bilinmiyor.</p><div class="server-list">'
+    out = '<h1 id="page-title">Kaynaklar açık. Karar senin.</h1><p>Kaynak metni → insan incelemesi → sürüme bağlı onay. Değişen metin yeniden inceleme gerektirir.</p><p>Kaynak envanteri. Kayıt durumu tarama başarısı değildir. Son tarama: bilinmiyor.</p><div class="server-list">'
     for source in sources:
         out += f'<article><h2>{text(source["name"])}</h2><p>{"Kimlik bekleniyor" if source.get("identity_status") == "missing" else "Doğrulama bekleniyor"}</p><p>Son kontrol: {text(source.get("last_checked") or "Bilinmiyor")}</p></article>'
     return out + '</div>'

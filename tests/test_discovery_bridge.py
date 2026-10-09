@@ -76,3 +76,11 @@ class DiscoveryBridgeTests(unittest.TestCase):
         self.assertEqual(len(self.store.all('calls')),1)
         call=self.store.get('calls','old-call');self.assertEqual(call['summary'],'Eski editör özeti')
         self.assertEqual(self.store.get('discoveries','abc')['call_id'],'old-call')
+
+    def test_source_health_preserves_last_success_during_parser_failure(self):
+        persist_report(self.report,self.store)
+        before=self.store.get('source_health','s');self.assertEqual(before['last_found_count'],1)
+        r=dict(self.report,accepted=[],sources=[{'id':'s','health':'failed','error':'Fixture parser failure','fetched':0}],generated_at='2026-10-11T00:00:00Z')
+        persist_report(r,self.store);after=self.store.get('source_health','s')
+        self.assertEqual(after['last_success'],before['last_success']);self.assertEqual(after['last_found_count'],1)
+        self.assertEqual(after['last_error'],'Fixture parser failure')

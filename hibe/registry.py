@@ -7,8 +7,23 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGET = 30
+REQUESTED_TARGET = 127
 
+
+
+def inventory_rows(path=None):
+    """Araştırma tablosunu kayıpsız okur; erişim ölçümünü çalışma izni saymaz."""
+    rows=[];group=None
+    for line_number,line in enumerate((path or ROOT/'docs/KAYNAK_ENVANTERI.md').read_text(encoding='utf-8').splitlines(),1):
+        if line.startswith('## '): group=line[3:]
+        if not line.startswith('| '): continue
+        parts=[cell.strip() for cell in line.strip().strip('|').split('|')]
+        if len(parts)!=5 or not parts[1].startswith('https://'): continue
+        rows.append({'name':parts[0],'url':parts[1],'measured_access':parts[2],
+                     'suggested_method':parts[3],'note':parts[4],'group':group,
+                     'inventory_line':line_number,'identity_evidence':f'docs/KAYNAK_ENVANTERI.md:{line_number}'})
+    if len({r['url'] for r in rows}) != len(rows):raise ValueError('Envanterde tekrarlanan URL')
+    return rows
 
 def valid_url(value, allowed_hosts=None):
     if not isinstance(value, str):
@@ -23,16 +38,22 @@ def valid_url(value, allowed_hosts=None):
 
 
 def audit_sources(sources):
+    inventory = inventory_rows()
+    target = len(inventory)
     errors = []
     rows = []
     ids = set()
     if not isinstance(sources, list):
-        return {'target': TARGET, 'count': 0, 'candidate_names': 0,
+        return {'target': target, 'count': 0, 'candidate_names': 0,
                 'missing_identities': 0, 'verified_identities': 0,
                 'ready_controls': 0, 'complete': False,
                 'errors': ['Envanter bir liste olmalı'], 'rows': []}
-    if len(sources) != TARGET:
-        errors.append(f'Tam {TARGET} kayıt gerekli; mevcut: {len(sources)}')
+    scope = [s for s in sources if isinstance(s,dict) and s.get('record_kind') not in ('legacy_placeholder','legacy_source')]
+    if len(scope) != target:
+        errors.append(f'Tam {target} envanter URL kaydı gerekli; mevcut: {len(scope)}')
+    if any(s.get('record_kind')=='inventory' for s in scope):
+        missing={r['url'] for r in inventory}-{s.get('url') for s in scope}
+        if missing:errors.append(f'Envanterde olup kayıtta olmayan URL: {len(missing)}')
     for index, source in enumerate(sources, 1):
         if not isinstance(source, dict):
             errors.append(f'{index}. kayıt nesne olmalı')
@@ -84,24 +105,24 @@ def audit_sources(sources):
             gaps.append('Gerçek kontrol kanıtı/tarihi yok')
         if source.get('status') != 'ready':
             gaps.append('Kaynak hazır durumda değil')
-        rows.append({'id': key, 'name': name or 'Kimlik eksik',
+        rows.append({'in_scope':source.get('record_kind') not in ('legacy_placeholder','legacy_source'),'id': key, 'name': name or 'Kimlik eksik',
                      'identity_status': 'missing' if missing else identity,
                      'identity_verified': identity_ok, 'method': method,
                      'control_ready': not gaps, 'gaps': gaps})
-    return {'target': TARGET, 'count': len(sources),
+    return {'target': target, 'requested_target':REQUESTED_TARGET,'scope_count':len(scope),'legacy_count':len(sources)-len(scope),'count': len(sources),
             'candidate_names': sum(r['identity_status'] == 'candidate' for r in rows),
             'missing_identities': sum(r['identity_status'] == 'missing' for r in rows),
             'verified_identities': sum(r['identity_verified'] for r in rows),
             'ready_controls': sum(r['control_ready'] for r in rows),
-            'complete': not errors and len(rows) == TARGET and all(r['control_ready'] for r in rows),
+            'complete': not errors and len(scope) == target and all(r['control_ready'] for r in rows if r['in_scope']),
             'errors': errors, 'rows': rows}
 
 
 def markdown_report(report):
-    lines = ['# 30 kaynak — eksik ve kabul kontrol listesi', '',
+    lines = [f"# {report['target']} envanter URL'si — eksik ve kabul kontrol listesi", '',
              'Bu rapor internetsiz olarak config/sources.json üzerinden üretilir. URL doğrulaması yalnız biçim/host denetimidir; canlı erişim, parser fixture veya belge doğruluğu testi değildir.', '',
              f"Hedef: {report['target']} · Kayıt yeri: {report['count']} · Doğrulanmamış isim: {report['candidate_names']} · Eksik kimlik: {report['missing_identities']} · Kontrol bilgisi tam: {report['ready_controls']}", '',
-             'Özgün kaynak belgesi eşleşmesi, gerçek kontrol ve otomatik kaynaklara özgü fixture testleri olmadan MVP aşama 3 tamamlandı sayılamaz.', '',
+             'Özgün kaynak belgesi eşleşmesi, gerçek kontrol ve otomatik kaynaklara özgü fixture testleri olmadan canlı kaynak kabulü tamamlandı sayılamaz.', '',
              '| ID | Mevcut isim / yer | Eksikler |', '|---|---|---|']
     for row in report['rows']:
         clean = lambda s: str(s).replace('|', '\\|').replace('\n', ' ')

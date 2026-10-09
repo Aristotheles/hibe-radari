@@ -5,7 +5,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from hibe.registry import audit_sources, valid_url, markdown_report
+from hibe.registry import audit_sources, valid_url, markdown_report, inventory_rows
 
 
 class RegistryTests(unittest.TestCase):
@@ -19,10 +19,12 @@ class RegistryTests(unittest.TestCase):
                 'method': 'manual', 'manual_check': {'url': 'https://example.org/calls', 'steps': 'DEMO manuel kontrol adımı'},
                 'last_checked': '2026-10-09', 'status': 'ready'}
 
-    def test_current_inventory_keeps_thirty_and_explicit_gaps(self):
+    def test_current_inventory_keeps_all_urls_and_legacy_ids(self):
         report = audit_sources(self.sources)
-        self.assertEqual(report['count'], 30)
-        self.assertEqual(report['candidate_names'], 19)
+        self.assertEqual(report['scope_count'],135)
+        self.assertEqual(report['count'],154)
+        self.assertEqual(report['legacy_count'],19)
+        self.assertEqual(report['candidate_names'],143)
         self.assertEqual(report['missing_identities'], 11)
         self.assertEqual(report['ready_controls'], 0)
         self.assertEqual(report['verified_identities'], 0)
@@ -33,7 +35,7 @@ class RegistryTests(unittest.TestCase):
     def test_three_sources_cannot_satisfy_scope(self):
         report = audit_sources(self.sources[:3])
         self.assertFalse(report['complete'])
-        self.assertIn('Tam 30 kayıt gerekli', report['errors'][0])
+        self.assertIn('Tam 135 envanter URL kaydı gerekli', report['errors'][0])
 
     def test_duplicate_identity_and_invalid_shape_are_errors(self):
         values = copy.deepcopy(self.sources)
@@ -73,7 +75,7 @@ class RegistryTests(unittest.TestCase):
                                 capture_output=True, encoding='utf-8')
         self.assertEqual(result.returncode, 1)
         report = json.loads(result.stdout)
-        self.assertEqual(report['rows'][0]['name'], 'Türkiye Ulusal Ajansı')
+        self.assertEqual(report['rows'][0]['name'],self.sources[0]['name'])
         self.assertFalse(report['complete'])
 
     def test_pipeline_reads_registry_and_profile_in_utf8_without_services(self):
@@ -96,9 +98,35 @@ class RegistryTests(unittest.TestCase):
                 redirect_stdout(StringIO()):
             main()
         self.assertEqual(read_files, ['sources.json', 'profile.json'])
-        self.assertEqual(scan.call_count, 30)
-        self.assertEqual(scan.call_args_list[0].args[0]['name'], 'Türkiye Ulusal Ajansı')
+        self.assertEqual(scan.call_count,len(self.sources))
+        self.assertEqual(scan.call_args_list[0].args[0]['name'],self.sources[0]['name'])
 
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class InventoryPreservationTests(unittest.TestCase):
+    def test_every_url_and_old_identity_is_preserved(self):
+        root=Path(__file__).resolve().parents[1]
+        sources=json.loads((root/'config/sources.json').read_text(encoding='utf-8'))
+        old=json.loads((root/'config/sources.legacy-stage0.json').read_text(encoding='utf-8'))
+        self.assertEqual({r['url'] for r in inventory_rows()},{r['url'] for r in sources if r.get('record_kind')=='inventory'})
+        self.assertTrue({r['id'] for r in old}.issubset({r['id'] for r in sources}))
+        self.assertEqual(len(json.loads((root/'config/aggregator.json').read_text(encoding='utf-8'))['sources']),13)
+        self.assertFalse(any(r.get('operational_status')=='connected' for r in sources))
+
+
+class SourceControlTests(unittest.TestCase):
+    def test_disabled_connector_never_fetches_and_empty_scope_is_unsafe(self):
+        from hibe.aggregator.collector import run
+        from unittest.mock import patch
+        config={'sources':[{'id':'s','type':'feed','url':'https://x.org','allowed_hosts':['x.org']}]}
+        with patch('hibe.aggregator.collector.run_source') as fetch:
+            report=run(config=config,source_settings=[{'id':'registry-s','enabled':False,'connector_ids':['s']}])
+        fetch.assert_not_called();self.assertEqual(report['run_status'],'suspicious_empty')
+    def test_all_connectors_have_visible_registry_mapping(self):
+        root=Path(__file__).resolve().parents[1]
+        rows=json.loads((root/'config/sources.json').read_text(encoding='utf-8'))
+        connectors=json.loads((root/'config/aggregator.json').read_text(encoding='utf-8'))['sources']
+        self.assertTrue({c['id'] for c in connectors}.issubset({i for r in rows for i in r.get('connector_ids',[])}))

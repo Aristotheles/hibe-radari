@@ -164,13 +164,19 @@ async function admin() {
       const n = el('div', undefined, 'metric'); n.dataset.metric = key; n.append(el('dt', label), el('dd', String(data.metrics[key]))); $('#metrics').append(n);
     }
     const stats = sourceSummary(data.sources);
-    $('#source-summary').textContent = '30 kaynak hedefi · ' + stats.total + ' kayıt yeri · ' + stats.unverified + ' doğrulanmamış isim · ' + stats.missing + ' eksik kimlik. Kayıt durumu, taramanın çalıştığını göstermez.';
+    $('#source-summary').textContent = 'Kaynak envanteri · ' + stats.total + ' kayıt yeri · ' + stats.unverified + ' doğrulanmamış isim · ' + stats.missing + ' eksik kimlik. Kayıt durumu, taramanın çalıştığını göstermez.';
     $('#sources').replaceChildren();
     for (const s of data.sources) {
       const n = el('div', undefined, 'source-row');
       const missing = s.identity_status === 'missing' || /özgün liste bekleniyor/i.test(s.name || '');
       n.append(el('strong', s.name), el('span', s.status === 'registry_pending' ? (missing ? 'Özgün kaynak kimliği bekleniyor' : 'Kimlik ve URL doğrulaması bekleniyor') : (s.status === 'ready' ? 'Kayıt taramaya hazır' : 'Durum: ' + s.status)));
-      n.append(el('small', 'Son kontrol: ' + (s.last_checked || 'Bilinmiyor'))); $('#sources').append(n);
+      n.append(el('small', 'Son kontrol: ' + (s.last_checked || 'Bilinmiyor')));
+      if (s.alert) n.append(el('p', 'Tarama uyarısı: kaynağın son denemesi başarısız veya şüpheli.'));
+      for (const health of s.health || []) n.append(el('p', health.id + ': ' + health.health + ' · bulunan ' + (health.fetched ?? 'bilinmiyor') + ' · ' + (health.error || '')));
+      n.append(el('small', 'Tarama izni: ' + (s.access_policy?.terms_status || 'bilinmiyor') + ' · yöntem: ' + s.method));
+      const toggle = el('button', s.enabled ? 'Takibi durdur' : 'Takibi aç');
+      toggle.onclick = () => action(toggle, async () => { await api('source-settings', {id:s.id,enabled:!s.enabled}); await admin(); }, '#admin-status');
+      n.append(toggle); $('#sources').append(n);
     }
     $('#review').replaceChildren();
     if (!data.calls.length) $('#review').append(el('p', 'İncelenecek kayıt yok.'));

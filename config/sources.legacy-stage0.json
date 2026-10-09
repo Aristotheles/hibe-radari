@@ -1,0 +1,351 @@
+[
+  {
+    "id": "source-1",
+    "name": "Türkiye Ulusal Ajansı",
+    "url": "https://www.ua.gov.tr/",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://www.ua.gov.tr/",
+      "steps": "Ana sayfada Erasmus+ Okul Eğitimi / Çağrılar bölümünü aç; yeni çağrı ve son başvuru tarihini kaydet."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-2",
+    "name": "TÜBİTAK 4006",
+    "url": "https://tubitak.gov.tr/tr/duyuru/4006-tubitak-bilim-fuarlari-destekleme-programi-13-donem-4006-ve-4006-b-cagrilari-yayinlandi",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://tubitak.gov.tr/tr/duyuru/4006-tubitak-bilim-fuarlari-destekleme-programi-13-donem-4006-ve-4006-b-cagrilari-yayinlandi",
+      "steps": "13. dönem 4006-A/B duyurusunu aç; çağrı metni PDF'indeki başvuru ve son tarihleri kaydet. Yeni dönem için tubitak.gov.tr/tr/duyuru listesine bak."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-3",
+    "name": "Avustralya DAP",
+    "url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
+      "steps": "Direct Aid Program sayfasında güncel tur (açık/kapalı), tavan tutar ve SmartyGrants bağlantısını kontrol et."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-4",
+    "name": "DOKA",
+    "url": "https://www.doka.org.tr/destekler.php?tab=acik",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://www.doka.org.tr/destekler.php?tab=acik",
+      "steps": "Açık mali destek programlarını listele; program yoksa duyurular.php sayfasına bak. Yalnız Artvin, Giresun, Gümüşhane, Ordu, Rize, Trabzon başvurabilir."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-5",
+    "name": "EU Funding & Tenders",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+      "steps": "Portalda Erasmus+ ve okul/eğitim konulu açık çağrıları ara; çağrı kimliği ve son tarihi kaydet. Portal dinamik olduğundan otomatik taramaya uygun değildir."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-6",
+    "name": "Japonya GGP",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "candidate",
+    "research_note": "Japonya Büyükelçiliği: tr.emb-japan.go.jp çözülemedi, www.tr.emb-japan.go.jp 403 (bot engeli). Doğrulanmış URL yok."
+  },
+  {
+    "id": "source-7",
+    "name": "GSB Gençlik Projeleri",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "candidate",
+    "research_note": "GSB: gsb.gov.tr ve gpdp.gsb.gov.tr bağlantıyı sıfırladı (bu ağdan erişilemedi). Doğrulanmış URL yok."
+  },
+  {
+    "id": "source-8",
+    "name": "Kanada CFLI",
+    "url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
+      "steps": "Sayfadaki \"Current status of the call for proposals\" satırını (Open/Closed) ve son tarihi kaydet."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-9",
+    "name": "Interreg NEXT Black Sea Basin",
+    "url": "https://blacksea-cbc.net/",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://blacksea-cbc.net/",
+      "steps": "Calls bölümünde yeni çağrı olup olmadığına bak; son tarih ve bütçeyi kaydet."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-10",
+    "name": "Institut français",
+    "url": "https://www.ifturquie.org/biz-kimiz/haberler/",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://www.ifturquie.org/biz-kimiz/haberler/",
+      "steps": "Haberler listesinde \"Proje çağrısı\" başlıklı yeni girişleri aç; son tarihleri kaydet (liste tarih göstermiyor, yazıyı aç)."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-11",
+    "name": "İngiltere Büyükelçiliği",
+    "url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
+      "steps": "Sayfada çağrı durumu (open/closed) ve son güncelleme tarihini kaydet."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-12",
+    "name": "UNDP GEF SGP",
+    "url": "https://sgp.undp.org/",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://sgp.undp.org/",
+      "steps": "Küresel GEF SGP sitesinde Türkiye ülke programına git; güncel hibe çağrısı için ayrıca stgm.org.tr/hibe-duyurulari sayfasına bak. Türkiye'ye özgü resmî adres doğrulanmadı."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-13",
+    "name": "ABD Public Diplomacy Grants",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "candidate",
+    "research_note": "ABD Misyonu: tr.usembassy.gov 403 (bot engeli); arama sonucundaki grants.gov bağlantısı 404. Doğrulanmış URL yok."
+  },
+  {
+    "id": "source-14",
+    "name": "Sabancı Vakfı",
+    "url": "https://sabancivakfi.org/",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://sabancivakfi.org/",
+      "steps": "Hibe / Açık Çağrılı Hibe Programı bölümünü aç; başvuru penceresi ve tema (Nitelikli ve Kapsayıcı Eğitim) durumunu kaydet."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-15",
+    "name": "Deutsch-Türkische Jugendbrücke",
+    "url": "https://www.jugendbruecke.de/foerderung/",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://www.jugendbruecke.de/foerderung/",
+      "steps": "Okul değişimi (Schulaustausch) çağrısı ve Küçük Proje Desteği (KPF) bölümlerini aç; son tarihi kaydet."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-16",
+    "name": "Aile Bakanlığı Proje Geliştirme Destek Masası",
+    "url": "https://www.aile.gov.tr/abdidb/faaliyetler/projeler/proje-gelistirme-destek-masasi/",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://www.aile.gov.tr/abdidb/faaliyetler/projeler/proje-gelistirme-destek-masasi/",
+      "steps": "Sayfa destek masası eğitim/rehber hizmetini anlatır; hibe değildir (SSS). Güncel hizmet için iletişim sayfasına bak."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-17",
+    "name": "STGM Hibe Duyuruları",
+    "url": "https://www.stgm.org.tr/hibe-duyurulari",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://www.stgm.org.tr/hibe-duyurulari",
+      "steps": "Duyuru listesinde yeni fonları aç; son başvuru tarihi ve uygunluk koşullarını kaydet."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-18",
+    "name": "ab-ilan.com",
+    "url": "https://ab-ilan.com/category/hibe-duyurulari/",
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": "2026-10-09",
+    "identity_status": "candidate",
+    "manual_check": {
+      "url": "https://ab-ilan.com/category/hibe-duyurulari/",
+      "steps": "Hibe duyuruları kategorisinde yeni ilanları aç; asıl kaynak bağlantısına gidip doğrula (ab-ilan.com derleme sitesidir)."
+    },
+    "url_check": "HTTP 200, TLS doğrulandı (curl, Claude Code, 2026-10-09)"
+  },
+  {
+    "id": "source-19",
+    "name": "fundsforNGOs",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "candidate",
+    "research_note": "fundsforNGOs: www.fundsforngos.org ve www2.fundsforngos.org 403 (bot engeli). Doğrulanmış URL yok."
+  },
+  {
+    "id": "source-20",
+    "name": "Kaynak 20 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-21",
+    "name": "Kaynak 21 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-22",
+    "name": "Kaynak 22 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-23",
+    "name": "Kaynak 23 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-24",
+    "name": "Kaynak 24 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-25",
+    "name": "Kaynak 25 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-26",
+    "name": "Kaynak 26 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-27",
+    "name": "Kaynak 27 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-28",
+    "name": "Kaynak 28 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-29",
+    "name": "Kaynak 29 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  },
+  {
+    "id": "source-30",
+    "name": "Kaynak 30 — özgün liste bekleniyor",
+    "url": null,
+    "method": "manual",
+    "status": "registry_pending",
+    "last_checked": null,
+    "identity_status": "missing"
+  }
+]

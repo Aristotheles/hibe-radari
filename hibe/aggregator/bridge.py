@@ -28,6 +28,7 @@ def persist_report(report, store):
             if not row.get('title') or not row.get('source_id') or not row.get('source_url'):
                 raise ValueError('Keşif başlık/kaynak/URL alanı eksik')
     changed = 0
+    source_changes = {}
     for group in GROUPS:
         for raw in report.get(group, []):
             row = copy.deepcopy(raw); ident = row['id']; digest = discovery_version(row)
@@ -41,6 +42,8 @@ def persist_report(report, store):
                     row['deadline_precision'] = prior.get('deadline_precision','day')
                     row['deadline_year_inferred'] = prior.get('deadline_year_inferred',False)
                 digest = discovery_version(row)
+            if not old or old['version'] != digest:
+                source_changes[row['source_id']] = source_changes.get(row['source_id'],0) + 1
             history = (old or {}).get('history', [])
             if old and old['version'] != digest:
                 history = history + [{'version':old['version'],'observation':old['observation'],'at':old['last_seen_at']}]
@@ -80,7 +83,13 @@ def persist_report(report, store):
             call['version'] = version(call)
             store.put('calls',call['id'],call); changed += 1
     for health in report.get('sources',[]):
-        store.put('source_health',health['id'],dict(health,checked_at=report.get('generated_at')))
+        prior=store.get('source_health',health['id']) or {}
+        successful=health.get('health')=='success'
+        store.put('source_health',health['id'],dict(health,checked_at=report.get('generated_at'),
+            last_success=report.get('generated_at') if successful else prior.get('last_success'),
+            last_error=health.get('error') or prior.get('last_error'),
+            last_found_count=health.get('fetched') if successful else prior.get('last_found_count'),
+            changed_count=source_changes.get(health['id'],0)))
     return changed
 
 def review_ready(call):

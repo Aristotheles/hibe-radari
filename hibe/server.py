@@ -38,11 +38,11 @@ def handler(app):
     p=urlsplit(self.path).path
     if p=='/api/config':self.send(200,{'demo':app.demo,'firebase':{k:os.environ.get(v,'') for k,v in {'apiKey':'FIREBASE_WEB_API_KEY','authDomain':'FIREBASE_AUTH_DOMAIN','projectId':'FIREBASE_PROJECT_ID','appId':'FIREBASE_APP_ID'}.items()}});return
     if p=='/api/calls':self.send(200,app.service.public());return
-    if p=='/api/sources':self.send(200,json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8')));return
+    if p=='/api/sources':self.send(200,app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))));return
     if p=='/api/me':
      u=self.user();self.send(200,{'email':u['email'],'admin':app.service.is_admin(u),'preferences':app.service.store.get('users',u['uid'])});return
     if p=='/api/admin':
-     u=self.user();app.service.require_admin(u);self.send(200,{'calls':app.service.store.all('calls'),'sources':json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8')),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
+     u=self.user();app.service.require_admin(u);self.send(200,{'calls':app.service.store.all('calls'),'sources':app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
     if p in {'/','/takvim','/nasil-calisir','/aboneligim','/yonetim'} or p.startswith('/ilan/'):
      from .presentation import page
      result=page((ROOT/'web/index.html').read_text(encoding='utf-8'),p,urlsplit(self.path).query,app.service.public(),json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8')),app.demo)
@@ -74,6 +74,7 @@ def handler(app):
      u=self.user()
      if p=='/api/preferences':self.send(200,app.service.preferences(u,d));return
      if p=='/api/call':self.send(200,app.service.save(u,d));return
+     if p=='/api/source-settings':self.send(200,app.service.set_source(u,d['id'],d['enabled'],json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))));return
      if p=='/api/revoke':self.send(200,app.service.revoke(u,d['id']));return
      if p=='/api/approve':self.send(200,app.service.approve(u,d['id'],d['version']));return
      self.send(404,{'error':'Bulunamadı'})

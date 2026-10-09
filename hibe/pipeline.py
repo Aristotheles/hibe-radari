@@ -8,7 +8,7 @@ from .service import now
 
 def scan_source(source,store,extractor,profile,fetcher=fetch):
  run={'id':hashlib.sha256((source['id']+now()).encode()).hexdigest()[:20],'source_id':source['id'],'at':now(),'status':'pending','changed':0,'errors':[]}
- if source.get('status')=='registry_pending' or not source.get('allowed_hosts') or not source.get('call_urls'):
+ if source.get('enabled') is False or source.get('status')=='registry_pending' or not source.get('allowed_hosts') or not source.get('call_urls'):
   run['status']='manual_pending';store.put('runs',run['id'],run);return run
  for item in source['call_urls']:
   try:
@@ -37,5 +37,8 @@ def main():
  if extractor is None:
   try:extractor=GeminiExtractor()
   except ValueError:extractor=UnavailableExtractor()
- for s in sources:print(json.dumps(scan_source(s,app.service.store,extractor,profile),ensure_ascii=False))
+ settings={r['id']:r for r in app.service.store.all('source_settings')}
+ for s in sources:
+  current=dict(s,enabled=settings.get(s['id'],{}).get('enabled',s.get('enabled',True)))
+  print(json.dumps(scan_source(current,app.service.store,extractor,profile),ensure_ascii=False))
 if __name__=='__main__':main()
