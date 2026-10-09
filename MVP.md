@@ -602,3 +602,15 @@ html_cards.collect_cards bugün+10yıl ötesini tahminle düzeltmez: deadlineNon
 İncelenen liste ve [çerez politikası](https://www.stgm.org.tr/cerez-politikasi) otomatik tarama/yeniden kullanım iznini açıkça doğrulamıyor; bütün sitede izin yok iddiası yapılmadı. STGM unreviewed/manual_pending korunur, politika/kabul/registry kanıtı eşlendi. Hiçbir eski connector silinmedi veya gizlenmedi.
 FEATURE: tam202Python PASS (66.341s); ardından yeni gerçek kanıt testi dahil hedefli3PASS ve güncellenmiş config kabul2PASS, eski aggregator40PASS; JS değişmedi önceki11PASS. Son test eklenmesinden sonra tam203koşusu henüz yok. Kanıt .agent/stgm-date-tests.txt/.agent/stgm-aggregator-tests.txt; diff-check PASS, public/latest127SHA aynı. AŞAMA9 Auth/ADC/admin UID sorusu bekler; RELEASE NOT VERIFIED, deploy yok.
 Sonraki tek adım kalan eski kaynak politika/erişim kabulü; rutin onay beklemeden bağımsız çalışma sürer.
+
+
+## 2026-10-10 02:58 — Kullanıcı kota kuralıyla checkpoint/duruş
+Kaydı hazırlayan: Codex. Proje: [[Projeler/Hibe Radarı/Hibe Radarı|Hibe Radarı]].
+### Yapılanlar
+Yerel tam203Python PASS66.727s +11JS PASS. Eski13connector/30registryID korunur; mevcut29aggregator/154registry/135URL.127public/latestSHAaynı.94değişen dosyada sınırlı secret-biçim taraması eşleşmesiz; yerel .agent/.env/DB/data/public/approvals dahil değil. Kod checkpoint ef89d9cb80d3b872a40048684aa37b7f96381e5a gerçek GitHub push ve ls-remote ile doğrulandı; main b32d6d02e1e424885d860684fb11d565b1ab061d aynı. [Uzak Tests38006766526](https://github.com/Aristotheles/hibe-radari/actions/runs/38006766526) terminal success; Ubuntu/Windows ayrısuccess. Son belge commit'inin yeniCI'si ayrıca kontrol edilecek.
+### Alınan kararlar
+Yeni karar yok; kullanıcı onaylı kesin devam/kota kuralı uygulanıyor. Kısaused95%=kalan5%,haftalıkused50%=kalan50%; yeni geliştirme başlatılmadı. 15dkheartbeatACTIVE güncel devam planıyla yeniden okunarak doğrulandı. Kullanıcı koşullu kota duruşu; proje tamamlandı değildir. Kota uygunken aynı yerel klasör ve dalda rutin aşama onayı beklemeden devam.
+### Açık sorular ve sorunlar
+AŞAMA9 gerçek Auth/ADC/admin UID/backend erişimi açık; kullanıcı sorusu zaten iletildi. AŞAMA10 gerçek29tamcanlıpilot, kaynak koşulları, üretimzamanlayıcı/SMTP/onay/deploy/hostingrollback açık. RELEASE NOT VERIFIED; mevcut canlı site korundu, deploy yapılmadı. Gerçek kimlik/onay/tahsilat uydurulmaz.
+### Sonraki adım
+- [ ] Kota yeniden uygunken docs/CONTINUATION_PLAN.md ve güncel devirden devam; önce uzak sonCI/Git/kota/süreçler, sonra AŞAMA9gerçekerişim. Erişim beklerken yetkili bağımsız eski kaynak kabulü. Mainmerge/Cloudgeliştirme yok.

@@ -26,3 +26,9 @@ Kullanıcı kesin kuralı: yerelde, aşamaları test ederek sırayla ilerle; rut
 Sıradaki tek ana adım AŞAMA9 gerçek Firebase giriş erişimi. Bu kullanıcı erişimi beklerken bağımsız kalan eski kaynak politika/erişim kontrolleri sürdürülebilir. Güncel devir `.agent/HANDOFF.md`, kalıcı kayıt Obsidian Hibe Radarı ana notu ve 10Ekim günlüğüdür.
 
 GitHub push ve uzak CI sonucu bu belgede peşinen başarılı sayılmıyor; işlem sonrası ölçülen sonuç aşağıya eklenecek.
+
+## Ölçülen push ve CI sonucu
+
+`ef89d9cb80d3b872a40048684aa37b7f96381e5a` geliştirme dalına push edildi; git ls-remote aynı SHA ve değişmeyen main'i doğruladı. [Tests run38006766526](https://github.com/Aristotheles/hibe-radari/actions/runs/38006766526): tamamlandı, **success**; Ubuntu ve Windows job'ları ayrı ayrı success. Bu sonuç kod checkpoint'inin uzak platform kanıtıdır. Sonraki yalnız belge/ilerleme commit'inin yeni CI koşusu ayrı izlenir; peşinen başarılı sayılmaz.
+
+Kota ölçümü kısa pencere used95% (kalan5%), haftalık used50% (kalan50%); yeni geliştirme kullanıcı kuralıyla durur. Aktif15dkheartbeat güncel devam planıyla doğrulandı. [CONTINUATION_PLAN.md](CONTINUATION_PLAN.md) kota yenilendiğinde gerçek erişim/kaynak/pilot/üretim adımlarını sırayla sürdürür. Bu duruşta deploy yapılmadı; RELEASE hâlâ NOT VERIFIED ve gerçek Auth/ADC/admin UID engeli açık.
