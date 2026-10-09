@@ -39,6 +39,7 @@ class GrantOpportunity:
     organization: str | None = None
     official_source_verified: bool = False
     eligibility_assessment: dict = field(default_factory=dict)
+    source_entry_id: str | None = None
     official_call_id: str | None = None
     identity_authority: str | None = None
     call_period: str | None = None
@@ -101,7 +102,7 @@ class GrantOpportunity:
         from .textutil import fold
         import re
         url = canonical_url(self.source_url)
-        context = '|'.join((self.official_call_id or '', self.identity_authority or '', self.programme or '',
+        context = '|'.join((self.source_entry_id or '', self.official_call_id or '', self.identity_authority or '', self.programme or '',
                             self.call_period or '', self.application_path or ''))
         generic = urlsplit(url).path.rstrip('/') in ('', '/apply', '/grants', '/funding', '/calls') and not urlsplit(url).query
         title_context = fold(self.title) if generic else '|'.join(re.findall(r'\b20\d{2}\b', self.title))

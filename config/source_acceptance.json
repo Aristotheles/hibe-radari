@@ -3,7 +3,7 @@
     "source_id": "source-5",
     "name": "EU Funding & Tenders Portal",
     "official_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -17,14 +17,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:41.731488+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "source-5",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+      "checked_at": "2026-10-09T22:58:41.731488+00:00",
+      "status": 200,
+      "title": "EU Funding & Tenders Portal",
+      "bytes": 59961,
+      "links": 1,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-358ffa19b0c7",
     "name": "Erasmus+ (Komisyon)",
     "official_url": "https://erasmus-plus.ec.europa.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -38,14 +53,38 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:41.731726+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-358ffa19b0c7",
+      "url": "https://erasmus-plus.ec.europa.eu/",
+      "checked_at": "2026-10-09T22:58:41.731726+00:00",
+      "status": 200,
+      "title": "Home - Erasmus+",
+      "bytes": 201240,
+      "links": 60,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 2,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-a97600d2a707",
     "name": "Erasmus+ Proje Sonuçları Platformu",
     "official_url": "https://erasmus-plus.ec.europa.eu/projects",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -59,8 +98,32 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:43.017236+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-a97600d2a707",
+      "url": "https://erasmus-plus.ec.europa.eu/projects",
+      "checked_at": "2026-10-09T22:58:43.017236+00:00",
+      "status": 200,
+      "title": "Projects - Erasmus+",
+      "bytes": 175224,
+      "links": 37,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 2,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "source-1",
@@ -84,7 +147,31 @@
     "reason": "robots HTTP 404; web okuyucu ana sayfada timeout verdi. Liste şeması/izin henüz doğrulanmadı.",
     "evidence_urls": [
       "https://www.ua.gov.tr/"
-    ]
+    ],
+    "page_observation": {
+      "source_id": "source-1",
+      "url": "https://www.ua.gov.tr/",
+      "checked_at": "2026-10-09T22:58:41.731659+00:00",
+      "status": 200,
+      "title": "Ulusal Ajans",
+      "bytes": 70649,
+      "links": 137,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Yaygınlaştırma, Sonuçların Kullanımı ve Görünürlük",
+          "url": "https://www.ua.gov.tr/anasayfa/icerikler/yayginlastirma-ve-gorunurluk/"
+        },
+        {
+          "label": "",
+          "url": "https://www.ua.gov.tr/anasayfa/icerikler/yayginlastirma-sonuclarin-kullanimi-ve-gorunurluk/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-ec9ada7f2c10",
@@ -108,12 +195,61 @@
     "reason": "Ana sayfa ve /news/ web okuyucuda açıldı. robots.txt 200 HTML 404 sayfası döndürüyor; otomatik tarama koşulları doğrulanamadı.",
     "evidence_urls": [
       "https://eurodesk.ua.gov.tr/"
-    ]
+    ],
+    "page_observation": {
+      "source_id": "inventory-ec9ada7f2c10",
+      "url": "https://eurodesk.ua.gov.tr/",
+      "checked_at": "2026-10-09T22:58:41.731091+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-fa1a84f63647",
     "name": "Eurodesk Opportunity Finder",
     "official_url": "https://programmes.eurodesk.eu/",
+    "status": "metadata_fixture_verified",
+    "access_policy": {
+      "terms_status": "allowed",
+      "evidence_url": "https://programmes.eurodesk.eu/rss",
+      "checked_at": "2026-10-10",
+      "basis": "Published public RSS metadata interface; attribution and manual verification required; no full text redistribution."
+    },
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/eurodesk-finder_rss_20261010.xml",
+    "detail_fixture": null,
+    "sample_call": null,
+    "deadline_evidence": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
+    "interval_hours": 24,
+    "checked_at": "2026-10-09T22:47:20.187990+00:00",
+    "reason": "Distinct RSS GUID retained; link is common feed URL, detail identity not verified; generated pubDate ignored; manual review required.",
+    "evidence_urls": [
+      "https://programmes.eurodesk.eu/"
+    ],
+    "page_observation": {
+      "source_id": "inventory-fa1a84f63647",
+      "url": "https://programmes.eurodesk.eu/",
+      "checked_at": "2026-10-09T22:58:41.891549+00:00",
+      "status": 200,
+      "title": "Eurodesk Opportunity Finder",
+      "bytes": 118396,
+      "links": 26,
+      "rss_links": [
+        "https://programmes.eurodesk.eu/rss"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
+  },
+  {
+    "source_id": "inventory-970a009e204e",
+    "name": "European School Education Platform",
+    "official_url": "https://school-education.ec.europa.eu/",
     "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -128,59 +264,105 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": "2026-10-09T22:47:20.187990+00:00",
-    "reason": "Web okuyucu timeout; kaynak çalışıyor denmez.",
-    "evidence_urls": [
-      "https://programmes.eurodesk.eu/"
-    ]
-  },
-  {
-    "source_id": "inventory-970a009e204e",
-    "name": "European School Education Platform",
-    "official_url": "https://school-education.ec.europa.eu/",
-    "status": "pending_review",
-    "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
-    },
-    "method": null,
-    "list_fixture": null,
-    "detail_fixture": null,
-    "sample_call": null,
-    "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
-    "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:42.997042+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-970a009e204e",
+      "url": "https://school-education.ec.europa.eu/",
+      "checked_at": "2026-10-09T22:58:42.997042+00:00",
+      "status": 200,
+      "title": "European School Education Platform | European School Education Platform",
+      "bytes": 105195,
+      "links": 151,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and conditions of use",
+          "url": "https://school-education.ec.europa.eu/en/terms_conditions_of_use"
+        },
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-0319cfded960",
     "name": "eTwinning Türkiye",
     "official_url": "https://etwinning.meb.gov.tr/",
-    "status": "pending_review",
+    "status": "rss_interface_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://etwinning.meb.gov.tr/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/etwinning-tr_rss_20261010.xml",
     "detail_fixture": null,
-    "sample_call": null,
+    "sample_call": {
+      "title": "Geleceğe Hazır Okullar: 2026 eTwinning Yıllık Konferansı Brüksel’de Gerçekleştirildi",
+      "url": "https://etwinning.meb.gov.tr/bruksel2026k/",
+      "kind": "source_announcement",
+      "opportunity_status": "review_required"
+    },
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_baseline_feeds.py",
+    "empty_error_test": "tests/test_baseline_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "connector_observations": [
+      {
+        "source_id": "etwinning-tr",
+        "url": "https://etwinning.meb.gov.tr/feed/",
+        "status": 200,
+        "feed_version": "rss20",
+        "bozo": false,
+        "entries": 10,
+        "sample": [
+          {
+            "title": "Geleceğe Hazır Okullar: 2026 eTwinning Yıllık Konferansı Brüksel’de Gerçekleştirildi",
+            "url": "https://etwinning.meb.gov.tr/bruksel2026k/"
+          }
+        ],
+        "fixture": "tests/fixtures/aggregator/etwinning-tr_rss_20261010.xml",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00"
+      }
+    ],
+    "page_observation": {
+      "source_id": "inventory-0319cfded960",
+      "url": "https://etwinning.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:43.095847+00:00",
+      "status": 200,
+      "title": "eTwinning Türkiye – Yenilik ve Eğitim Teknolojileri Genel Müdürlüğü",
+      "bytes": 71797,
+      "links": 95,
+      "rss_links": [
+        "https://etwinning.meb.gov.tr/feed/",
+        "https://etwinning.meb.gov.tr/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-d51ce6460b94",
     "name": "Avrupa Gençlik Portalı",
     "official_url": "https://youth.europa.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -194,14 +376,38 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:44.079464+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-d51ce6460b94",
+      "url": "https://youth.europa.eu/",
+      "checked_at": "2026-10-09T22:58:44.079464+00:00",
+      "status": 200,
+      "title": "European Youth Portal",
+      "bytes": 40831,
+      "links": 71,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and Conditions",
+          "url": "https://youth.europa.eu/terms-conditions_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://european-union.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-c8d5b4d3a652",
     "name": "Avrupa Dayanışma Programı (ESC)",
     "official_url": "https://youth.europa.eu/solidarity_en",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -215,8 +421,32 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:46.388883+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-c8d5b4d3a652",
+      "url": "https://youth.europa.eu/solidarity_en",
+      "checked_at": "2026-10-09T22:58:46.388883+00:00",
+      "status": 200,
+      "title": "About | European Youth Portal",
+      "bytes": 46268,
+      "links": 99,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and Conditions",
+          "url": "https://youth.europa.eu/terms-conditions_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://european-union.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-1268ef989142",
@@ -241,7 +471,27 @@
     "evidence_urls": [
       "https://www.salto-youth.net/tools/european-training-calendar/",
       "https://www.salto-youth.net/about/legal-notice/"
-    ]
+    ],
+    "page_observation": {
+      "source_id": "inventory-1268ef989142",
+      "url": "https://www.salto-youth.net/tools/european-training-calendar/",
+      "checked_at": "2026-10-09T22:58:44.531622+00:00",
+      "status": 200,
+      "title": "SALTO-YOUTH - European Training Calendar - Training for youth work and projects - or recruit participants",
+      "bytes": 33017,
+      "links": 145,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal Notice",
+          "url": "https://www.salto-youth.net/about/legal-notice/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-cc457d795387",
@@ -266,13 +516,33 @@
     "evidence_urls": [
       "https://www.salto-youth.net/tools/otlas-partner-finding/",
       "https://www.salto-youth.net/about/legal-notice/"
-    ]
+    ],
+    "page_observation": {
+      "source_id": "inventory-cc457d795387",
+      "url": "https://www.salto-youth.net/tools/otlas-partner-finding/",
+      "checked_at": "2026-10-09T22:58:45.800062+00:00",
+      "status": 200,
+      "title": "SALTO-YOUTH - Otlas - The Partner-Finding Tool",
+      "bytes": 29505,
+      "links": 141,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal Notice",
+          "url": "https://www.salto-youth.net/about/legal-notice/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-ec67d9d00e5a",
     "name": "EACEA",
     "official_url": "https://www.eacea.ec.europa.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -286,14 +556,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:45.381883+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-ec67d9d00e5a",
+      "url": "https://www.eacea.ec.europa.eu/",
+      "checked_at": "2026-10-09T22:58:45.381883+00:00",
+      "status": 200,
+      "title": "Language selection | European Education and Culture Executive Agency",
+      "bytes": 16916,
+      "links": 26,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-728f98e8dd06",
     "name": "Yaratıcı Avrupa",
     "official_url": "https://culture.ec.europa.eu/creative-europe",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -307,14 +592,38 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:46.759536+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-728f98e8dd06",
+      "url": "https://culture.ec.europa.eu/creative-europe",
+      "checked_at": "2026-10-09T22:58:46.759536+00:00",
+      "status": 200,
+      "title": "Creative Europe - Culture and Creativity",
+      "bytes": 180354,
+      "links": 45,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 2,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-348dfa02beef",
     "name": "LIFE (çevre/iklim)",
     "official_url": "https://cinea.ec.europa.eu/programmes/life_en",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -328,14 +637,42 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:47.405056+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-348dfa02beef",
+      "url": "https://cinea.ec.europa.eu/programmes/life_en",
+      "checked_at": "2026-10-09T22:58:47.405056+00:00",
+      "status": 200,
+      "title": "LIFE - European Climate, Infrastructure and Environment Executive Agency",
+      "bytes": 140154,
+      "links": 142,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal basis",
+          "url": "https://cinea.ec.europa.eu/programmes/life/life-legal-basis_en"
+        },
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 47,
+        "structured_data": 2
+      }
+    }
   },
   {
     "source_id": "inventory-2a24e7254ece",
     "name": "Marie Skłodowska-Curie",
     "official_url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -349,14 +686,38 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:47.492719+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-2a24e7254ece",
+      "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
+      "checked_at": "2026-10-09T22:58:47.492719+00:00",
+      "status": 200,
+      "title": "Home - Marie Skłodowska-Curie Actions",
+      "bytes": 133423,
+      "links": 40,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Report an IT vulnerability",
+          "url": "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://commission.europa.eu/legal-notice_en"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-7b39a27994dc",
     "name": "Ufuk Avrupa Türkiye (TÜBİTAK)",
     "official_url": "https://ufukavrupa.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -370,14 +731,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:47.763376+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-7b39a27994dc",
+      "url": "https://ufukavrupa.org.tr/",
+      "checked_at": "2026-10-09T22:58:47.763376+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-642be4969640",
     "name": "EIT",
     "official_url": "https://eit.europa.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -391,14 +759,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:48.015412+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-642be4969640",
+      "url": "https://eit.europa.eu/",
+      "checked_at": "2026-10-09T22:58:48.015412+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-0c8ed2427e23",
     "name": "Yeni Avrupa Bauhausu",
     "official_url": "https://new-european-bauhaus.europa.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -412,14 +787,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:48.110348+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-0c8ed2427e23",
+      "url": "https://new-european-bauhaus.europa.eu/",
+      "checked_at": "2026-10-09T22:58:48.110348+00:00",
+      "status": 200,
+      "title": "Language selection | New European Bauhaus",
+      "bytes": 17667,
+      "links": 26,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-d01437ed7b93",
     "name": "Avrupa İklim Paktı",
     "official_url": "https://climate-pact.europa.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -433,14 +823,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:48.418657+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-d01437ed7b93",
+      "url": "https://climate-pact.europa.eu/",
+      "checked_at": "2026-10-09T22:58:48.418657+00:00",
+      "status": 200,
+      "title": "Language selection | European Climate Pact",
+      "bytes": 17131,
+      "links": 26,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-db8cfddfd511",
     "name": "EU Code Week",
     "official_url": "https://codeweek.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -454,14 +859,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:48.748739+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-db8cfddfd511",
+      "url": "https://codeweek.eu/",
+      "checked_at": "2026-10-09T22:58:48.748739+00:00",
+      "status": 200,
+      "title": "Join EU Code Week – Learn, Create, & Have Fun with Coding",
+      "bytes": 153419,
+      "links": 166,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-0744f161b9a2",
     "name": "Scientix",
     "official_url": "https://www.scientix.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -475,14 +895,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:48.843422+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-0744f161b9a2",
+      "url": "https://www.scientix.eu/",
+      "checked_at": "2026-10-09T22:58:48.843422+00:00",
+      "status": 200,
+      "title": "Home",
+      "bytes": 126855,
+      "links": 75,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of Use",
+          "url": "https://www.scientix.eu/terms-of-use"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-a0175b64eb77",
     "name": "European Schoolnet",
     "official_url": "https://www.eun.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -496,14 +936,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:50.168977+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-a0175b64eb77",
+      "url": "https://www.eun.org/",
+      "checked_at": "2026-10-09T22:58:50.168977+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-d78789826d99",
     "name": "Avrupa Konseyi Avrupa Gençlik Vakfı",
     "official_url": "https://www.coe.int/en/web/european-youth-foundation",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -517,14 +964,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:50.514182+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-d78789826d99",
+      "url": "https://www.coe.int/en/web/european-youth-foundation",
+      "checked_at": "2026-10-09T22:58:50.514182+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-e01390fbc19d",
     "name": "Anna Lindh Vakfı",
     "official_url": "https://www.annalindhfoundation.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -538,14 +992,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:50.694125+00:00",
+    "reason": "Live access unsuccessful: HTTP 503",
+    "page_observation": {
+      "source_id": "inventory-e01390fbc19d",
+      "url": "https://www.annalindhfoundation.org/",
+      "checked_at": "2026-10-09T22:58:50.694125+00:00",
+      "error_kind": "http",
+      "error": "HTTP 503"
+    }
   },
   {
     "source_id": "inventory-1f285b60f26b",
     "name": "AB Türkiye Delegasyonu",
     "official_url": "https://www.avrupa.info.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -559,14 +1020,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:50.929436+00:00",
+    "reason": "Live access unsuccessful: Ä°zin verilmeyen URL",
+    "page_observation": {
+      "source_id": "inventory-1f285b60f26b",
+      "url": "https://www.avrupa.info.tr/",
+      "checked_at": "2026-10-09T22:58:50.929436+00:00",
+      "error_kind": "blocked",
+      "error": "Ä°zin verilmeyen URL"
+    }
   },
   {
     "source_id": "inventory-7a14f9f45685",
     "name": "AB Başkanlığı",
     "official_url": "https://www.ab.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -580,14 +1048,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:50.929807+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-7a14f9f45685",
+      "url": "https://www.ab.gov.tr/",
+      "checked_at": "2026-10-09T22:58:50.929807+00:00",
+      "status": 200,
+      "title": "AB Başkanlığı | T.C. Dışişleri Bakanlığı Avrupa Birliği Başkanlığı",
+      "bytes": 84683,
+      "links": 253,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-ed4755f4ec05",
     "name": "Jean Monnet Burs Programı",
     "official_url": "https://www.jeanmonnet.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -601,14 +1084,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:51.315581+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-ed4755f4ec05",
+      "url": "https://www.jeanmonnet.org.tr/",
+      "checked_at": "2026-10-09T22:58:51.315581+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-2502923489c0",
     "name": "Merkezi Finans ve İhale Birimi",
     "official_url": "https://www.cfcu.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -622,14 +1112,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:52.057807+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-2502923489c0",
+      "url": "https://www.cfcu.gov.tr/",
+      "checked_at": "2026-10-09T22:58:52.057807+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-7e7271e11aee",
     "name": "Sivil Düşün",
     "official_url": "https://www.sivildusun.net/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -643,14 +1140,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:52.133629+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-7e7271e11aee",
+      "url": "https://www.sivildusun.net/",
+      "checked_at": "2026-10-09T22:58:52.133629+00:00",
+      "status": 200,
+      "title": "Sivil Düşün – Avrupa Birliği Sivil Düşün Programı Proje Ofisi",
+      "bytes": 205901,
+      "links": 94,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 3,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-757117f503c7",
     "name": "Etkiniz AB",
     "official_url": "https://etkiniz.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -664,14 +1176,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:52.326537+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-757117f503c7",
+      "url": "https://etkiniz.eu/",
+      "checked_at": "2026-10-09T22:58:52.326537+00:00",
+      "status": 200,
+      "title": "Ana Sayfa - Etkiniz AB Programı",
+      "bytes": 93082,
+      "links": 57,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "source-9",
     "name": "Interreg NEXT Karadeniz Havzası",
     "official_url": "https://blacksea-cbc.net/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -685,35 +1212,82 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:52.310257+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "source-9",
+      "url": "https://blacksea-cbc.net/",
+      "checked_at": "2026-10-09T22:58:52.310257+00:00",
+      "status": 200,
+      "title": "Home",
+      "bytes": 164445,
+      "links": 112,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Privacy Policy & Legal Notice",
+          "url": "https://blacksea-cbc.net/privacy-policy-legal-notice"
+        },
+        {
+          "label": "Privacy Policy & Legal Notice",
+          "url": "https://blacksea-cbc.net/privacy-policy-legal-notice"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-f2b21514f159",
     "name": "Interreg NEXT MED",
     "official_url": "https://www.interregnextmed.eu/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.interregnextmed.eu/feed/",
+      "checked_at": "2026-10-10",
+      "basis": "Published public RSS metadata interface; attribution and manual verification required; no full text redistribution."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/interreg-next-med_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:53.038497+00:00",
+    "reason": "Real public RSS news metadata verified; this is not evidence of an open call.",
+    "page_observation": {
+      "source_id": "inventory-f2b21514f159",
+      "url": "https://www.interregnextmed.eu/",
+      "checked_at": "2026-10-09T22:58:53.038497+00:00",
+      "status": 200,
+      "title": "Homepage - Interreg NEXT MED",
+      "bytes": 263208,
+      "links": 134,
+      "rss_links": [
+        "https://www.interregnextmed.eu/feed/"
+      ],
+      "policy_links": [
+        {
+          "label": "Legal notice",
+          "url": "https://www.regione.sardegna.it/note-legali"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-af9c9a521d74",
     "name": "TÜBİTAK duyurular",
     "official_url": "https://tubitak.gov.tr/tr/duyuru",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -727,14 +1301,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:53.465194+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-af9c9a521d74",
+      "url": "https://tubitak.gov.tr/tr/duyuru",
+      "checked_at": "2026-10-09T22:58:53.465194+00:00",
+      "status": 200,
+      "title": "Duyurular | TÜBİTAK | Türkiye Bilimsel ve Teknolojik Araştırma Kurumu",
+      "bytes": 96759,
+      "links": 214,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-8837684bd3a6",
     "name": "TÜBİTAK Bilim ve Toplum (4000)",
     "official_url": "https://4000.tubitak.gov.tr/rss.xml",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -748,14 +1337,27 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "reason": "Mevcut RSS otomatik erişim kapısında başarısız: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "access_observation": {
+      "source_id": "tubitak-4000",
+      "url": "https://4000.tubitak.gov.tr/rss.xml",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    },
+    "page_observation": {
+      "source_id": "inventory-8837684bd3a6",
+      "url": "https://4000.tubitak.gov.tr/rss.xml",
+      "checked_at": "2026-10-09T22:58:53.897560+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-f50d22800fe4",
     "name": "TÜBİTAK BİLİMİZ",
     "official_url": "https://bilimiz.tubitak.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -769,8 +1371,15 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:54.092348+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-f50d22800fe4",
+      "url": "https://bilimiz.tubitak.gov.tr/",
+      "checked_at": "2026-10-09T22:58:54.092348+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-b448ed253834",
@@ -804,6 +1413,21 @@
       "deadline": null,
       "precision": "unknown",
       "note": "Gerçek ayrıntı metninde kesin son başvuru tarihi çıkarılamadı; PDF/ek belge incelemesi ve çağrı uygunluğu elle doğrulanmalı."
+    },
+    "page_observation": {
+      "source_id": "inventory-b448ed253834",
+      "url": "https://abdigm.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:54.403919+00:00",
+      "status": 200,
+      "title": "MEB AVRUPA BİRLİĞİ VE DIŞ İLİŞKİLER GENEL MÜDÜRLÜĞÜ",
+      "bytes": 57113,
+      "links": 91,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
     }
   },
   {
@@ -838,6 +1462,26 @@
       "deadline": null,
       "precision": "unknown",
       "note": "Gerçek ayrıntı metninde kesin son başvuru tarihi çıkarılamadı; PDF/ek belge incelemesi ve çağrı uygunluğu elle doğrulanmalı."
+    },
+    "page_observation": {
+      "source_id": "inventory-a209c49726df",
+      "url": "https://yegitek.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:54.571324+00:00",
+      "status": 200,
+      "title": "MEB YENİLİK VE EĞİTİM TEKNOLOJİLERİ GENEL MÜDÜRLÜĞÜ",
+      "bytes": 63385,
+      "links": 109,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "06 Eki 2026 09:46 SINIFLARDA KAPSAYICI, ERİŞİLEBİLİR VE EŞİTLİKÇİ DİJİTAL İÇERİK",
+          "url": "https://yegitek.meb.gov.tr/www/siniflarda-kapsayici-erisilebilir-ve-esitlikci-dijital-iceriklerin-kullanimi-icin-50000-etkilesimli-tahta-temini-ihale-ilani/icerik/4050/tr"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
     }
   },
   {
@@ -868,7 +1512,22 @@
     "reason": "Resmî RSS gerçek istemcide 50 kayıt; fixture ve hata testleri. Kaynak haberlerinin tamamı çağrı veya uygun fırsat değildir.",
     "evidence_urls": [
       "https://ogm.meb.gov.tr/"
-    ]
+    ],
+    "page_observation": {
+      "source_id": "inventory-7bd9bb436dbe",
+      "url": "https://ogm.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:54.709605+00:00",
+      "status": 200,
+      "title": "MEB ORTAÖĞRETİM GENEL MÜDÜRLÜĞÜ",
+      "bytes": 44794,
+      "links": 77,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-01c199abb971",
@@ -898,13 +1557,28 @@
     "reason": "Resmî RSS gerçek istemcide 50 kayıt; fixture ve hata testleri. Kaynak haberlerinin tamamı çağrı veya uygun fırsat değildir.",
     "evidence_urls": [
       "https://mtegm.meb.gov.tr/"
-    ]
+    ],
+    "page_observation": {
+      "source_id": "inventory-01c199abb971",
+      "url": "https://mtegm.meb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:55.378959+00:00",
+      "status": 200,
+      "title": "MEB MESLEKÎ VE TEKNİK EĞİTİM GENEL MÜDÜRLÜĞÜ",
+      "bytes": 47793,
+      "links": 73,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-e6396fa94d62",
     "name": "Kalkınma Ajansları GM",
     "official_url": "https://ka.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -918,14 +1592,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:55.590191+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-e6396fa94d62",
+      "url": "https://ka.gov.tr/",
+      "checked_at": "2026-10-09T22:58:55.590191+00:00",
+      "status": 200,
+      "title": "Kalkınma Ajansları",
+      "bytes": 612149,
+      "links": 44,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-44ab1023b21f",
     "name": "KAYS",
     "official_url": "https://kaysuygulama.sanayi.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -939,14 +1628,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:55.770770+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-44ab1023b21f",
+      "url": "https://kaysuygulama.sanayi.gov.tr/",
+      "checked_at": "2026-10-09T22:58:55.770770+00:00",
+      "status": 200,
+      "title": null,
+      "bytes": 168,
+      "links": 0,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-f338c92110f5",
     "name": "DOKA",
     "official_url": "https://www.doka.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -960,14 +1664,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:55.880491+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-f338c92110f5",
+      "url": "https://www.doka.org.tr/",
+      "checked_at": "2026-10-09T22:58:55.880491+00:00",
+      "status": 200,
+      "title": "DOKA - Doğu Karadeniz Kalkınma Ajansı",
+      "bytes": 178825,
+      "links": 130,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-0a59a2a3ce9f",
     "name": "DOKAP",
     "official_url": "https://www.dokap.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -981,14 +1700,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:56.546276+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-0a59a2a3ce9f",
+      "url": "https://www.dokap.gov.tr/",
+      "checked_at": "2026-10-09T22:58:56.546276+00:00",
+      "status": 200,
+      "title": "DOKAP - Doğu Karadeniz Projesi Bölge Kalkınma İdaresi Başkanlığı",
+      "bytes": 45389,
+      "links": 183,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-0d8ed5351ba2",
     "name": "Gençlik ve Spor Bakanlığı",
     "official_url": "https://www.gsb.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1002,14 +1736,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:57.070694+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-0d8ed5351ba2",
+      "url": "https://www.gsb.gov.tr/",
+      "checked_at": "2026-10-09T22:58:57.070694+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-d98546e4217e",
     "name": "İçişleri Sivil Toplumla İlişkiler GM",
     "official_url": "https://www.siviltoplum.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1023,14 +1764,50 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:57.170365+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-d98546e4217e",
+      "url": "https://www.siviltoplum.gov.tr/",
+      "checked_at": "2026-10-09T22:58:57.170365+00:00",
+      "status": 200,
+      "title": "Sivil Toplumla İlişkiler Genel Müdürlüğü",
+      "bytes": 204457,
+      "links": 391,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "İzne Tabi Kelime Kullanımı",
+          "url": "https://www.siviltoplum.gov.tr/izne-tabi-kelime-kullanimi"
+        },
+        {
+          "label": "E-Alındı Mobil Uygulaması Gizlilik Politikası",
+          "url": "https://www.siviltoplum.gov.tr/e-alindi-mobil-uygulamasi-gizlilik-politikasi-ve-kullanim-kosullari"
+        },
+        {
+          "label": "İzne Tabi Kelime Kullanımı",
+          "url": "https://www.siviltoplum.gov.tr/izne-tabi-kelime-kullanimi"
+        },
+        {
+          "label": "E-Alındı Mobil Uygulaması Gizlilik Politikası",
+          "url": "https://www.siviltoplum.gov.tr/e-alindi-mobil-uygulamasi-gizlilik-politikasi-ve-kullanim-kosullari"
+        },
+        {
+          "label": "e-Devlet Hizmetlerimizin Kullanım İstatistikleri",
+          "url": "javascript:;"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-dc277d9c791c",
     "name": "Sıfır Atık",
     "official_url": "https://sifiratik.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1044,14 +1821,46 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:57.962639+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-dc277d9c791c",
+      "url": "https://sifiratik.gov.tr/",
+      "checked_at": "2026-10-09T22:58:57.962639+00:00",
+      "status": 200,
+      "title": "Ana Sayfa - Sıfır Atık",
+      "bytes": 425230,
+      "links": 552,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "TEK KULLANIMLIK PLASTİKLER VE DENİZ ÇÖPLERİYLE MÜCADELE YOL HARİTASI HAZIR",
+          "url": "https://sifiratik.gov.tr/kutuphane/haberler/tek-kullanimlik-plastikler-ve-deniz-copleriyle-mucadele-yol-haritasi-hazir"
+        },
+        {
+          "label": "TEK KULLANIMLIK PLASTİKLER VE DENİZ ÇÖPLERİYLE MÜCADELE YOL HARİTASI HAZIR Çevre",
+          "url": "https://sifiratik.gov.tr/kutuphane/haberler/tek-kullanimlik-plastikler-ve-deniz-copleriyle-mucadele-yol-haritasi-hazir"
+        },
+        {
+          "label": "Türk Öğrenciler Atıksız Bir Gelecek İnşa Ediyor! Türkiye Diyanet Vakfı (TDV) Bor",
+          "url": "https://sifiratik.gov.tr/kutuphane/haberler/turk-ogrenciler-atiksiz-bir-gelecek-insa-ediyor"
+        },
+        {
+          "label": "Sıfır Atık Projesinde Kamikatsu Kasabası Çöplerini 34 ayrı kategoriye ayıran Kam",
+          "url": "https://sifiratik.gov.tr/kutuphane/haberler/sifir-atik-projesinde-kamikatsu-kasabasi"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-d392158787f3",
     "name": "TEKNOFEST",
     "official_url": "https://www.teknofest.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1065,14 +1874,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:58.057321+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-d392158787f3",
+      "url": "https://www.teknofest.org/",
+      "checked_at": "2026-10-09T22:58:58.057321+00:00",
+      "status": 200,
+      "title": "TEKNOFEST: Havacılık, Uzay ve Teknoloji Festivali",
+      "bytes": 1168882,
+      "links": 555,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 111,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-5dea9e03d34f",
     "name": "T3 Vakfı",
     "official_url": "https://t3vakfi.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1086,14 +1910,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:58.596969+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-5dea9e03d34f",
+      "url": "https://t3vakfi.org/",
+      "checked_at": "2026-10-09T22:58:58.596969+00:00",
+      "status": 200,
+      "title": "T3 Vakfı",
+      "bytes": 989127,
+      "links": 1090,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 497,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-1ecf1fc3b80a",
     "name": "UNESCO Türkiye Millî Komisyonu",
     "official_url": "https://www.unesco.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1107,14 +1946,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:58:59.769060+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-1ecf1fc3b80a",
+      "url": "https://www.unesco.org.tr/",
+      "checked_at": "2026-10-09T22:58:59.769060+00:00",
+      "status": 200,
+      "title": "UNESCO Türkiye Millî Komisyonu",
+      "bytes": 742269,
+      "links": 122,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Logo Kullanımı",
+          "url": "https://www.unesco.org.tr/Pages/175/26/Logo-Kullan%C4%B1m%C4%B1"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-602698fdbdb0",
     "name": "TÜRÇEV",
     "official_url": "https://www.turcev.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1128,14 +1987,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:01.162178+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-602698fdbdb0",
+      "url": "https://www.turcev.org.tr/",
+      "checked_at": "2026-10-09T22:59:01.162178+00:00",
+      "status": 200,
+      "title": "TÜRÇEV | Türkiye Çevre Eğitim Vakfı",
+      "bytes": 70240,
+      "links": 162,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-49c0550bfaa3",
     "name": "Eko-Okullar Türkiye",
     "official_url": "https://www.ekookullar.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1149,14 +2023,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:01.565521+00:00",
+    "reason": "Live access unsuccessful: Ä°zin verilmeyen URL",
+    "page_observation": {
+      "source_id": "inventory-49c0550bfaa3",
+      "url": "https://www.ekookullar.org.tr/",
+      "checked_at": "2026-10-09T22:59:01.565521+00:00",
+      "error_kind": "blocked",
+      "error": "Ä°zin verilmeyen URL"
+    }
   },
   {
     "source_id": "source-3",
     "name": "Avustralya DAP",
     "official_url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1170,14 +2051,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:01.710113+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "source-3",
+      "url": "https://turkey.embassy.gov.au/anka/Development_cooperat.html",
+      "checked_at": "2026-10-09T22:59:01.710113+00:00",
+      "status": 200,
+      "title": "Direct Aid Program",
+      "bytes": 41029,
+      "links": 118,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Copyright",
+          "url": "https://www.dfat.gov.au/about-us/about-this-website/copyright"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "source-8",
     "name": "Kanada CFLI",
     "official_url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1191,14 +2092,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:02.819972+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "source-8",
+      "url": "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/turkiye.aspx?lang=eng",
+      "checked_at": "2026-10-09T22:59:02.819972+00:00",
+      "status": 200,
+      "title": "The Canada Fund for Local Initiatives – Türkiye (2026)",
+      "bytes": 31771,
+      "links": 55,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and conditions",
+          "url": "https://www.canada.ca/en/transparency/terms.html"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-79d89ed336a6",
     "name": "Japonya Büyükelçiliği (GGP)",
     "official_url": "https://www.tr.emb-japan.go.jp/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1212,14 +2133,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:03.847700+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-79d89ed336a6",
+      "url": "https://www.tr.emb-japan.go.jp/",
+      "checked_at": "2026-10-09T22:59:03.847700+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-49342dc9dfeb",
     "name": "Japan Foundation",
     "official_url": "https://www.jpf.go.jp/e/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1233,14 +2161,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:04.388384+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-49342dc9dfeb",
+      "url": "https://www.jpf.go.jp/e/",
+      "checked_at": "2026-10-09T22:59:04.388384+00:00",
+      "status": 200,
+      "title": "The Japan Foundation",
+      "bytes": 58096,
+      "links": 177,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-032019933999",
     "name": "ABD Büyükelçiliği",
     "official_url": "https://tr.usembassy.gov/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1254,14 +2197,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:04.423210+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-032019933999",
+      "url": "https://tr.usembassy.gov/",
+      "checked_at": "2026-10-09T22:59:04.423210+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-04a66d923635",
     "name": "Grants.gov",
     "official_url": "https://www.grants.gov/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1275,14 +2225,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:05.107910+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-04a66d923635",
+      "url": "https://www.grants.gov/",
+      "checked_at": "2026-10-09T22:59:05.107910+00:00",
+      "status": 200,
+      "title": "Home | Grants.gov",
+      "bytes": 63967,
+      "links": 53,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-a34a92b01947",
     "name": "Fulbright Türkiye",
     "official_url": "https://fulbright.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1296,14 +2261,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:05.279076+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-a34a92b01947",
+      "url": "https://fulbright.org.tr/",
+      "checked_at": "2026-10-09T22:59:05.279076+00:00",
+      "status": 200,
+      "title": "Türkiye Fulbright Eğitim Komisyonu",
+      "bytes": 97776,
+      "links": 139,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-b10d69b21c44",
     "name": "YES Programı",
     "official_url": "https://www.yesprograms.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1317,14 +2297,42 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:06.224746+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-b10d69b21c44",
+      "url": "https://www.yesprograms.org/",
+      "checked_at": "2026-10-09T22:59:06.224746+00:00",
+      "status": 200,
+      "title": "YES Programs (en-US)",
+      "bytes": 30156,
+      "links": 52,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Privacy & Terms",
+          "url": "https://www.yesprograms.org/privacy-terms"
+        },
+        {
+          "label": "Privacy & Terms",
+          "url": "https://www.yesprograms.org/privacy-terms"
+        },
+        {
+          "label": "Privacy & Terms",
+          "url": "https://www.yesprograms.org/privacy-terms"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-4c3bd64dcec7",
     "name": "British Council Türkiye",
     "official_url": "https://www.britishcouncil.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1338,14 +2346,27 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "reason": "Mevcut RSS otomatik erişim kapısında başarısız: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "access_observation": {
+      "source_id": "britishcouncil-tr",
+      "url": "https://www.britishcouncil.org.tr/rss.xml",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    },
+    "page_observation": {
+      "source_id": "inventory-4c3bd64dcec7",
+      "url": "https://www.britishcouncil.org.tr/",
+      "checked_at": "2026-10-09T22:59:06.496311+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "source-11",
     "name": "İngiltere Büyükelçilik Fonu",
     "official_url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1359,14 +2380,38 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:06.508370+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "source-11",
+      "url": "https://www.gov.uk/guidance/british-embassy-programme-fund-turkey",
+      "checked_at": "2026-10-09T22:59:06.508370+00:00",
+      "status": 200,
+      "title": "Turkey: British Embassy International Programme Fund - GOV.UK",
+      "bytes": 70179,
+      "links": 75,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms and conditions",
+          "url": "https://www.gov.uk/help/terms-conditions"
+        },
+        {
+          "label": "© Crown copyright",
+          "url": "https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 2
+      }
+    }
   },
   {
     "source_id": "source-15",
     "name": "Türk-Alman Gençlik Köprüsü",
     "official_url": "https://www.jugendbruecke.de/foerderung/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1380,14 +2425,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:06.965443+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "source-15",
+      "url": "https://www.jugendbruecke.de/foerderung/",
+      "checked_at": "2026-10-09T22:59:06.965443+00:00",
+      "status": 200,
+      "title": "Förderung",
+      "bytes": 148150,
+      "links": 53,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-33e8e4378143",
     "name": "Almanya PAD (KMK)",
     "official_url": "https://www.kmk-pad.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1401,14 +2461,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:07.191259+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-33e8e4378143",
+      "url": "https://www.kmk-pad.org/",
+      "checked_at": "2026-10-09T22:59:07.191259+00:00",
+      "status": 200,
+      "title": "Pädagogischer Austauschdienst (PAD): Austausch bildet: PAD",
+      "bytes": 202254,
+      "links": 107,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-e177402080e7",
     "name": "PASCH",
     "official_url": "https://www.pasch-net.de/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1422,14 +2497,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:07.628392+00:00",
+    "reason": "Live access unsuccessful: Ä°zin verilmeyen URL",
+    "page_observation": {
+      "source_id": "inventory-e177402080e7",
+      "url": "https://www.pasch-net.de/",
+      "checked_at": "2026-10-09T22:59:07.628392+00:00",
+      "error_kind": "blocked",
+      "error": "Ä°zin verilmeyen URL"
+    }
   },
   {
     "source_id": "inventory-b1ec1a073e91",
     "name": "Goethe-Institut Türkiye",
     "official_url": "https://www.goethe.de/ins/tr/tr/index.html",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1443,14 +2525,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:08.078554+00:00",
+    "reason": "Live access unsuccessful: HTTP 403",
+    "page_observation": {
+      "source_id": "inventory-b1ec1a073e91",
+      "url": "https://www.goethe.de/ins/tr/tr/index.html",
+      "checked_at": "2026-10-09T22:59:08.078554+00:00",
+      "error_kind": "http",
+      "error": "HTTP 403"
+    }
   },
   {
     "source_id": "inventory-12777f0725ff",
     "name": "DAAD Türkiye",
     "official_url": "https://www.daad-turkiye.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1464,14 +2553,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:08.766049+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-12777f0725ff",
+      "url": "https://www.daad-turkiye.org/",
+      "checked_at": "2026-10-09T22:59:08.766049+00:00",
+      "status": 200,
+      "title": "Anasayfa - DAAD Türkiye",
+      "bytes": 232965,
+      "links": 405,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-7bf1682c81e4",
     "name": "Almanya Büyükelçiliği",
     "official_url": "https://tuerkei.diplo.de/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1485,35 +2589,89 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:08.953933+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-7bf1682c81e4",
+      "url": "https://tuerkei.diplo.de/",
+      "checked_at": "2026-10-09T22:59:08.953933+00:00",
+      "status": 200,
+      "title": "Deutsche Vertretungen in der Türkei - Auswärtiges Amt",
+      "bytes": 74620,
+      "links": 76,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-72395a0eea77",
     "name": "Stiftung Mercator",
     "official_url": "https://www.stiftung-mercator.de/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.stiftung-mercator.de/de/feed/",
+      "checked_at": "2026-10-09T23:06:02.014418+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/mercator_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:09.399512+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-72395a0eea77",
+      "url": "https://www.stiftung-mercator.de/",
+      "checked_at": "2026-10-09T22:59:09.399512+00:00",
+      "status": 200,
+      "title": "Startseite – Stiftung Mercator",
+      "bytes": 114872,
+      "links": 57,
+      "rss_links": [
+        "https://www.stiftung-mercator.de/de/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-72395a0eea77",
+      "url": "https://www.stiftung-mercator.de/de/feed/",
+      "checked_at": "2026-10-09T23:06:02.014418+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 10,
+      "sample": [
+        {
+          "title": "Neue Studie: Trotz wachsendem Druck erweist sich die Zivilgesellschaft in Deutschland als resilient",
+          "link": "https://www.stiftung-mercator.de/de/pressemitteilungen/pm-maecenata-stiftung/",
+          "id": "https://www.stiftung-mercator.de/de/pressemitteilungen/pm-maecenata-stiftung/"
+        },
+        {
+          "title": "30 Jahre Stiftung Mercator: 100.000 Euro für 30 zusätzliche Stadtteilprojekte im Ruhrgebiet",
+          "link": "https://www.stiftung-mercator.de/de/pressemitteilungen/30-jahre-stiftung-mercator-100-000-euro-fuer-30-zusaetzliche-stadtteilprojekte-im-ruhrgebiet/",
+          "id": "https://www.stiftung-mercator.de/de/pressemitteilungen/30-jahre-stiftung-mercator-100-000-euro-fuer-30-zusaetzliche-stadtteilprojekte-im-ruhrgebiet/"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-1f0ea5031aab",
     "name": "Robert Bosch Stiftung",
     "official_url": "https://www.bosch-stiftung.de/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1527,14 +2685,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:09.437468+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-1f0ea5031aab",
+      "url": "https://www.bosch-stiftung.de/",
+      "checked_at": "2026-10-09T22:59:09.437468+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-00de13b22d83",
     "name": "Heinrich Böll Stiftung Türkiye",
     "official_url": "https://tr.boell.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1548,14 +2713,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:09.910141+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-00de13b22d83",
+      "url": "https://tr.boell.org/",
+      "checked_at": "2026-10-09T22:59:09.910141+00:00",
+      "status": 200,
+      "title": "Heinrich Böll Stiftung Istanbul",
+      "bytes": 154371,
+      "links": 144,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 53,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-408881bcf8a4",
     "name": "Friedrich Ebert Stiftung Türkiye",
     "official_url": "https://turkey.fes.de/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1569,56 +2749,155 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:10.537268+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-408881bcf8a4",
+      "url": "https://turkey.fes.de/",
+      "checked_at": "2026-10-09T22:59:10.537268+00:00",
+      "status": 200,
+      "title": "Anasayfa",
+      "bytes": 142339,
+      "links": 162,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-a94bf80d23a0",
     "name": "IKI Small Grants (Almanya)",
     "official_url": "https://iki-small-grants.de/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://iki-small-grants.de/feed/",
+      "checked_at": "2026-10-09T23:06:02.014702+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/iki-small-grants_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:11.424027+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-a94bf80d23a0",
+      "url": "https://iki-small-grants.de/",
+      "checked_at": "2026-10-09T22:59:11.424027+00:00",
+      "status": 200,
+      "title": "Home - IKI Small Grants",
+      "bytes": 109695,
+      "links": 77,
+      "rss_links": [
+        "https://iki-small-grants.de/feed/",
+        "https://iki-small-grants.de/comments/feed/"
+      ],
+      "policy_links": [
+        {
+          "label": "Legal disclaimer",
+          "url": "https://iki-small-grants.de/legal-disclaimer/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-a94bf80d23a0",
+      "url": "https://iki-small-grants.de/feed/",
+      "checked_at": "2026-10-09T23:06:02.014702+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 20,
+      "sample": [
+        {
+          "title": "Local projects, global impact: How Germany promotes biodiversity",
+          "link": "https://iki-small-grants.de/local-projects-global-impact-how-germany-promotes-biodiversity/",
+          "id": "https://iki-small-grants.de/?p=10173"
+        },
+        {
+          "title": "South Africa: Conserving Nature and Heritage for Livelihoods",
+          "link": "https://iki-small-grants.de/south-africa-conserving-nature-and-heritage-for-livelihoods/",
+          "id": "https://iki-small-grants.de/?p=10160"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-f4e01ac2c714",
     "name": "Institut français Türkiye",
     "official_url": "https://www.ifturquie.org/",
-    "status": "pending_review",
+    "status": "rss_interface_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.ifturquie.org/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/ifturquie_rss_20261010.xml",
     "detail_fixture": null,
-    "sample_call": null,
+    "sample_call": {
+      "title": "GENEL FRANSIZCA",
+      "url": "https://www.ifturquie.org/genel-fransizca/",
+      "kind": "source_announcement",
+      "opportunity_status": "review_required"
+    },
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_baseline_feeds.py",
+    "empty_error_test": "tests/test_baseline_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "connector_observations": [
+      {
+        "source_id": "ifturquie",
+        "url": "https://www.ifturquie.org/feed/",
+        "status": 200,
+        "feed_version": "rss20",
+        "bozo": false,
+        "entries": 11,
+        "sample": [
+          {
+            "title": "GENEL FRANSIZCA",
+            "url": "https://www.ifturquie.org/genel-fransizca/"
+          }
+        ],
+        "fixture": "tests/fixtures/aggregator/ifturquie_rss_20261010.xml",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00"
+      }
+    ],
+    "page_observation": {
+      "source_id": "inventory-f4e01ac2c714",
+      "url": "https://www.ifturquie.org/",
+      "checked_at": "2026-10-09T22:59:12.334401+00:00",
+      "status": 200,
+      "title": "Institut Français de Turquie",
+      "bytes": 110596,
+      "links": 153,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-50f09a187f5d",
     "name": "Fransa Büyükelçiliği",
     "official_url": "https://tr.ambafrance.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1632,14 +2911,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:12.480318+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-50f09a187f5d",
+      "url": "https://tr.ambafrance.org/",
+      "checked_at": "2026-10-09T22:59:12.480318+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-0bfcf8e1052f",
     "name": "Hollanda (MATRA / İnsan Hakları Fonu)",
     "official_url": "https://www.netherlandsandyou.nl/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1653,14 +2939,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:12.818719+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-0bfcf8e1052f",
+      "url": "https://www.netherlandsandyou.nl/",
+      "checked_at": "2026-10-09T22:59:12.818719+00:00",
+      "status": 200,
+      "title": "Netherlandsandyou.nl - Netherlands and you | The Netherlands and you",
+      "bytes": 208961,
+      "links": 577,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-270ab3509ec0",
     "name": "İsveç Enstitüsü",
     "official_url": "https://si.se/en/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1674,14 +2975,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:13.018510+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-270ab3509ec0",
+      "url": "https://si.se/en/",
+      "checked_at": "2026-10-09T22:59:13.018510+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-6e80b76da752",
     "name": "Finlandiya Büyükelçiliği (Yerel İşbirliği Fonu)",
     "official_url": "https://finlandabroad.fi/web/tur",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1695,14 +3003,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:13.457823+00:00",
+    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "page_observation": {
+      "source_id": "inventory-6e80b76da752",
+      "url": "https://finlandabroad.fi/web/tur",
+      "checked_at": "2026-10-09T22:59:13.457823+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "source_id": "inventory-d4d8d1fe0954",
     "name": "İsviçre Büyükelçiliği",
     "official_url": "https://www.eda.admin.ch/ankara",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1716,14 +3031,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:13.790566+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-d4d8d1fe0954",
+      "url": "https://www.eda.admin.ch/ankara",
+      "checked_at": "2026-10-09T22:59:13.790566+00:00",
+      "status": 200,
+      "title": "Embassy of Switzerland in Turkey",
+      "bytes": 196453,
+      "links": 414,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legalisations",
+          "url": "https://www.eda.admin.ch/countries/turkey/en/home/services/legalisations.html"
+        }
+      ],
+      "schema": {
+        "article_count": 23,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-523f7256dc29",
     "name": "Avusturya OeAD",
     "official_url": "https://oead.at/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1737,14 +3072,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:13.979281+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-523f7256dc29",
+      "url": "https://oead.at/",
+      "checked_at": "2026-10-09T22:59:13.979281+00:00",
+      "status": 200,
+      "title": "OeAD, Agency for Education and Internationalisation",
+      "bytes": 606199,
+      "links": 442,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of use",
+          "url": "https://presse.oead.at/en/terms-of-use"
+        }
+      ],
+      "schema": {
+        "article_count": 13,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-bff92cd13068",
     "name": "KEİ (BSEC)",
     "official_url": "https://www.bsec-organization.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1758,14 +3113,50 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:14.412971+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-bff92cd13068",
+      "url": "https://www.bsec-organization.org/",
+      "checked_at": "2026-10-09T22:59:14.412971+00:00",
+      "status": 200,
+      "title": "BSEC - Black Sea Economic Cooperation",
+      "bytes": 273617,
+      "links": 313,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/agriculture/terms-of-reference"
+        },
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/banking-_and_-finance/terms-of-reference"
+        },
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/combating-crime/terms-of-reference"
+        },
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/culture/terms-of-reference"
+        },
+        {
+          "label": "Terms Of Reference",
+          "url": "https://www.bsec-organization.org/areas-of-cooperation/customs-matters/terms-of-reference"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-1c417588822b",
     "name": "GMF / Black Sea Trust",
     "official_url": "https://www.gmfus.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1779,14 +3170,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:14.571170+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-1c417588822b",
+      "url": "https://www.gmfus.org/",
+      "checked_at": "2026-10-09T22:59:14.571170+00:00",
+      "status": 200,
+      "title": "German Marshall Fund of the United States",
+      "bytes": 64035,
+      "links": 99,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 21,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-1123e39c4e2a",
     "name": "Dışişleri Bakanlığı",
     "official_url": "https://www.mfa.gov.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1800,14 +3206,36 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:15.856028+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-1123e39c4e2a",
+      "url": "https://www.mfa.gov.tr/",
+      "checked_at": "2026-10-09T22:59:15.856028+00:00",
+      "status": 200,
+      "title": "T.C. Dışişleri Bakanlığı",
+      "bytes": 73724,
+      "links": 189,
+      "rss_links": [
+        "https://www.mfa.gov.tr/tr.rss.mfa?259fca5b-ebee-47d1-b850-ec53936ab32e",
+        "https://www.mfa.gov.tr/tr.rss.mfa?8a5e254e-533a-4b3d-84db-9f95be1207ff",
+        "https://www.mfa.gov.tr/tr.rss.mfa?978045a8-225a-487d-8fd8-8d371874e8ec",
+        "https://www.mfa.gov.tr/tr.rss.mfa?3fc6582e-a37b-40d1-847a-6914dc12fb60",
+        "https://www.mfa.gov.tr/tr.rss.mfa?a2aa6dde-f503-4a54-ba92-d960969a9a84",
+        "https://www.mfa.gov.tr/tr.rss.mfa?a2bb6dde-f503-4a54-ba92-d960969a9984"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-955c945bb1e3",
     "name": "UNDP Türkiye",
     "official_url": "https://www.undp.org/tr/turkiye",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1821,35 +3249,71 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:16.114429+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-955c945bb1e3",
+      "url": "https://www.undp.org/tr/turkiye",
+      "checked_at": "2026-10-09T22:59:16.114429+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "source-12",
     "name": "UNDP GEF Küçük Destek Programı",
     "official_url": "https://sgp.undp.org/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://sgp.undp.org/?format=feed&type=rss",
+      "checked_at": "2026-10-09T23:06:02.014852+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/gef-sgp_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:16.114111+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "source-12",
+      "url": "https://sgp.undp.org/",
+      "checked_at": "2026-10-09T22:59:16.114111+00:00",
+      "status": 200,
+      "title": "Welcome to The GEF Small Grants Programme",
+      "bytes": 104775,
+      "links": 208,
+      "rss_links": [
+        "https://sgp.undp.org/?format=feed&type=rss",
+        "https://sgp.undp.org/?format=feed&type=atom"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    },
+    "feed_observation": {
+      "source_id": "source-12",
+      "url": "https://sgp.undp.org/?format=feed&type=rss",
+      "checked_at": "2026-10-09T23:06:02.014852+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 0,
+      "sample": []
+    }
   },
   {
     "source_id": "inventory-c905328504bf",
     "name": "UNDP ihale/çağrı ilanları",
     "official_url": "https://procurement-notices.undp.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1863,14 +3327,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:16.463904+00:00",
+    "reason": "Live access unsuccessful: robots.txt taramayÄ± engelliyor",
+    "page_observation": {
+      "source_id": "inventory-c905328504bf",
+      "url": "https://procurement-notices.undp.org/",
+      "checked_at": "2026-10-09T22:59:16.463904+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt taramayÄ± engelliyor"
+    }
   },
   {
     "source_id": "inventory-083b401a02f5",
     "name": "UNESCO Associated Schools",
     "official_url": "https://www.unesco.org/en/aspnet",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1884,14 +3355,50 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:16.870105+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-083b401a02f5",
+      "url": "https://www.unesco.org/en/aspnet",
+      "checked_at": "2026-10-09T22:59:16.870105+00:00",
+      "status": 200,
+      "title": "UNESCO Associated Schools Network | UNESCO",
+      "bytes": 305446,
+      "links": 149,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal texts",
+          "url": "https://www.unesco.org/en/legal-affairs"
+        },
+        {
+          "label": "Legal texts",
+          "url": "https://www.unesco.org/en/legal-affairs"
+        },
+        {
+          "label": "Terms & Policies",
+          "url": "https://www.unesco.org/en"
+        },
+        {
+          "label": "Terms of Use",
+          "url": "https://www.unesco.org/en/terms-use"
+        },
+        {
+          "label": "Protection of human rights (Procedure 104)",
+          "url": "https://www.unesco.org/en/legal-affairs/cr-committee/104-procedure"
+        }
+      ],
+      "schema": {
+        "article_count": 9,
+        "structured_data": 2
+      }
+    }
   },
   {
     "source_id": "inventory-34a30a5aec70",
     "name": "UNESCO ödülleri",
     "official_url": "https://www.unesco.org/en/prizes",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1905,14 +3412,50 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:18.092265+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-34a30a5aec70",
+      "url": "https://www.unesco.org/en/prizes",
+      "checked_at": "2026-10-09T22:59:18.092265+00:00",
+      "status": 200,
+      "title": "UNESCO Prizes | UNESCO",
+      "bytes": 112967,
+      "links": 139,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal texts",
+          "url": "https://www.unesco.org/en/legal-affairs"
+        },
+        {
+          "label": "Legal texts",
+          "url": "https://www.unesco.org/en/legal-affairs"
+        },
+        {
+          "label": "Terms & Policies",
+          "url": "https://www.unesco.org/en"
+        },
+        {
+          "label": "Terms of Use",
+          "url": "https://www.unesco.org/en/terms-use"
+        },
+        {
+          "label": "Protection of human rights (Procedure 104)",
+          "url": "https://www.unesco.org/en/legal-affairs/cr-committee/104-procedure"
+        }
+      ],
+      "schema": {
+        "article_count": 32,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-c83064769bec",
     "name": "UNICEF Türkiye",
     "official_url": "https://www.unicef.org/turkiye/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1926,14 +3469,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:17.144669+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-c83064769bec",
+      "url": "https://www.unicef.org/turkiye/",
+      "checked_at": "2026-10-09T22:59:17.144669+00:00",
+      "status": 200,
+      "title": "UNICEF Türkiye",
+      "bytes": 223077,
+      "links": 55,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Yasal",
+          "url": "https://www.unicef.org/legal"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-4ea947f59252",
     "name": "BM Demokrasi Fonu",
     "official_url": "https://www.un.org/democracyfund/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1947,14 +3510,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:17.920697+00:00",
+    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "page_observation": {
+      "source_id": "inventory-4ea947f59252",
+      "url": "https://www.un.org/democracyfund/",
+      "checked_at": "2026-10-09T22:59:17.920697+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "source_id": "inventory-3658dc075bb1",
     "name": "UNEP Young Champions of the Earth",
     "official_url": "https://www.unep.org/youngchampions/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1968,14 +3538,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:18.309474+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-3658dc075bb1",
+      "url": "https://www.unep.org/youngchampions/",
+      "checked_at": "2026-10-09T22:59:18.309474+00:00",
+      "status": 200,
+      "title": "Young Champions of the Earth - UN Environment Programme",
+      "bytes": 38474,
+      "links": 57,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of Use",
+          "url": "https://www.unenvironment.org/terms-use"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "source-14",
     "name": "Sabancı Vakfı",
     "official_url": "https://sabancivakfi.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -1989,14 +3579,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:18.499544+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "source-14",
+      "url": "https://sabancivakfi.org/",
+      "checked_at": "2026-10-09T22:59:18.499544+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-80e6ed168eea",
     "name": "Vehbi Koç Vakfı",
     "official_url": "https://www.vkv.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2010,14 +3607,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:18.512196+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-80e6ed168eea",
+      "url": "https://www.vkv.org.tr/",
+      "checked_at": "2026-10-09T22:59:18.512196+00:00",
+      "status": 200,
+      "title": "VKV Vehbi Koç Vakfı",
+      "bytes": 95338,
+      "links": 127,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-63048c76e181",
     "name": "Öğretmen Akademisi Vakfı",
     "official_url": "https://www.orav.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2031,14 +3643,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:18.754498+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-63048c76e181",
+      "url": "https://www.orav.org.tr/",
+      "checked_at": "2026-10-09T22:59:18.754498+00:00",
+      "status": 200,
+      "title": "Ana sayfa",
+      "bytes": 110843,
+      "links": 125,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-99ee9ae4d55b",
     "name": "Öğretmen Ağı",
     "official_url": "https://www.ogretmenagi.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2052,14 +3679,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:19.089534+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-99ee9ae4d55b",
+      "url": "https://www.ogretmenagi.org/",
+      "checked_at": "2026-10-09T22:59:19.089534+00:00",
+      "status": 200,
+      "title": "Öğretmen Ağı | Öğretmen Ağı",
+      "bytes": 98017,
+      "links": 104,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-06481c97e944",
     "name": "Eğitim Reformu Girişimi",
     "official_url": "https://www.egitimreformugirisimi.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2073,14 +3715,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:19.825360+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-06481c97e944",
+      "url": "https://www.egitimreformugirisimi.org/",
+      "checked_at": "2026-10-09T22:59:19.825360+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-e0c8fa83df52",
     "name": "TEGV",
     "official_url": "https://www.tegv.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2094,14 +3743,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:19.999709+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-e0c8fa83df52",
+      "url": "https://www.tegv.org/",
+      "checked_at": "2026-10-09T22:59:19.999709+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-8aa06734dc34",
     "name": "TEMA Vakfı",
     "official_url": "https://www.tema.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2115,14 +3771,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:20.320176+00:00",
+    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "page_observation": {
+      "source_id": "inventory-8aa06734dc34",
+      "url": "https://www.tema.org.tr/",
+      "checked_at": "2026-10-09T22:59:20.320176+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "source_id": "inventory-5b52d481537d",
     "name": "WWF-Türkiye",
     "official_url": "https://www.wwf.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2136,35 +3799,63 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:20.556878+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-5b52d481537d",
+      "url": "https://www.wwf.org.tr/",
+      "checked_at": "2026-10-09T22:59:20.556878+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-0d572620f3b2",
     "name": "TÜSEV",
     "official_url": "https://www.tusev.org.tr/",
-    "status": "pending_review",
+    "status": "verified_empty_feed",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.tusev.org.tr/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/tusev_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_baseline_feeds.py",
+    "empty_error_test": "tests/test_baseline_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "connector_observations": [
+      {
+        "source_id": "tusev",
+        "url": "https://www.tusev.org.tr/feed/",
+        "status": 200,
+        "feed_version": "rss20",
+        "bozo": false,
+        "entries": 0,
+        "sample": [],
+        "fixture": "tests/fixtures/aggregator/tusev_rss_20261010.xml",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00"
+      }
+    ],
+    "page_observation": {
+      "source_id": "inventory-0d572620f3b2",
+      "url": "https://www.tusev.org.tr/",
+      "checked_at": "2026-10-09T22:59:20.693483+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-1b7909fab843",
     "name": "Sivil Toplum için Destek Vakfı",
     "official_url": "https://siviltoplumdestek.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2178,14 +3869,41 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:20.663127+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-1b7909fab843",
+      "url": "https://siviltoplumdestek.org/",
+      "checked_at": "2026-10-09T22:59:20.663127+00:00",
+      "status": 200,
+      "title": "Sivil Toplum için Destek Vakfı",
+      "bytes": 204090,
+      "links": 140,
+      "rss_links": [
+        "https://siviltoplumdestek.org/feed/",
+        "https://siviltoplumdestek.org/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-1b7909fab843",
+      "url": "https://siviltoplumdestek.org/feed/",
+      "checked_at": "2026-10-09T23:06:02.014965+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": true,
+      "entries": 10
+    }
   },
   {
     "source_id": "inventory-7ff6770d8d9e",
     "name": "Turkey Mozaik Foundation",
     "official_url": "https://www.turkeymozaik.org.uk/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2199,14 +3917,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:20.770107+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-7ff6770d8d9e",
+      "url": "https://www.turkeymozaik.org.uk/",
+      "checked_at": "2026-10-09T22:59:20.770107+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-9599be4922ce",
     "name": "İhtiyaç Haritası",
     "official_url": "https://www.ihtiyacharitasi.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2220,14 +3945,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:20.981690+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-9599be4922ce",
+      "url": "https://www.ihtiyacharitasi.org/",
+      "checked_at": "2026-10-09T22:59:20.981690+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-5f24ee4171a5",
     "name": "AFS Türkiye (Türk Kültür Vakfı)",
     "official_url": "https://www.turkkulturvakfi.org.tr/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2241,14 +3973,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:21.365368+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-5f24ee4171a5",
+      "url": "https://www.turkkulturvakfi.org.tr/",
+      "checked_at": "2026-10-09T22:59:21.365368+00:00",
+      "status": 200,
+      "title": "Türkiye",
+      "bytes": 107265,
+      "links": 53,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Kullanım Koşulları ve Politikaları",
+          "url": "https://www.turkkulturvakfi.org.tr/kullanim-kosullari-ve-politikalari/"
+        }
+      ],
+      "schema": {
+        "article_count": 4,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-ea64d35ac8e8",
     "name": "The Earth Prize",
     "official_url": "https://www.theearthprize.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2262,14 +4014,38 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:21.388162+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-ea64d35ac8e8",
+      "url": "https://www.theearthprize.org/",
+      "checked_at": "2026-10-09T22:59:21.388162+00:00",
+      "status": 200,
+      "title": "The Earth Prize | The Global Youth Sustainability Competition",
+      "bytes": 138751,
+      "links": 80,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms & Conditions",
+          "url": "https://www.theearthprize.org/terms-and-conditions"
+        },
+        {
+          "label": "Copyright Policy",
+          "url": "https://www.theearthprize.org/copyright-policy"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-bba083a53105",
     "name": "Zayed Sustainability Prize",
     "official_url": "https://zayedsustainabilityprize.com/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2283,14 +4059,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:21.618084+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-bba083a53105",
+      "url": "https://zayedsustainabilityprize.com/",
+      "checked_at": "2026-10-09T22:59:21.618084+00:00",
+      "status": 200,
+      "title": "Zayed Sustainability Prize",
+      "bytes": 75567,
+      "links": 62,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "T&Cs",
+          "url": "https://zayedsustainabilityprize.com/en/terms"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-4c7b13e6f21b",
     "name": "Stockholm Junior Water Prize (SIWI)",
     "official_url": "https://www.siwi.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2304,35 +4100,76 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:22.922619+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-4c7b13e6f21b",
+      "url": "https://www.siwi.org/",
+      "checked_at": "2026-10-09T22:59:22.922619+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-3048897cc152",
     "name": "Regeneron ISEF",
     "official_url": "https://www.societyforscience.org/isef/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.societyforscience.org/isef/feed/",
+      "checked_at": "2026-10-09T23:06:03.688355+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/regeneron-isef_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:22.938655+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-3048897cc152",
+      "url": "https://www.societyforscience.org/isef/",
+      "checked_at": "2026-10-09T22:59:22.938655+00:00",
+      "status": 200,
+      "title": "Regeneron International Science and Engineering Fair - Society for Science",
+      "bytes": 194122,
+      "links": 150,
+      "rss_links": [
+        "https://www.societyforscience.org/isef/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-3048897cc152",
+      "url": "https://www.societyforscience.org/isef/feed/",
+      "checked_at": "2026-10-09T23:06:03.688355+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 1,
+      "sample": [
+        {
+          "title": "Regeneron International Science and Engineering Fair",
+          "link": "https://www.societyforscience.org/isef/index/",
+          "id": "https://www.societyforscience.org/?post_type=isef&p=53"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-c74800326885",
     "name": "Global Teacher Prize",
     "official_url": "https://www.globalteacherprize.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2346,35 +4183,82 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:23.333064+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-c74800326885",
+      "url": "https://www.globalteacherprize.org/",
+      "checked_at": "2026-10-09T22:59:23.333064+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-ce716ee6bf49",
     "name": "T4 Education",
     "official_url": "https://t4.education/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://t4.education/feed/",
+      "checked_at": "2026-10-09T23:06:03.863932+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/t4-education_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:23.385264+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-ce716ee6bf49",
+      "url": "https://t4.education/",
+      "checked_at": "2026-10-09T22:59:23.385264+00:00",
+      "status": 200,
+      "title": "Home - T4 Education",
+      "bytes": 183790,
+      "links": 75,
+      "rss_links": [
+        "https://t4.education/feed/",
+        "https://t4.education/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-ce716ee6bf49",
+      "url": "https://t4.education/feed/",
+      "checked_at": "2026-10-09T23:06:03.863932+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 10,
+      "sample": [
+        {
+          "title": "Meet the Top 10 Finalists for the Global EdTech Prize’s Second Edition",
+          "link": "https://t4.education/blog/meet-the-top-10-finalists-for-the-global-edtech-prizes-second-edition/",
+          "id": "https://t4.education/?p=22806"
+        },
+        {
+          "title": "Oxford Digital",
+          "link": "https://t4.education/edtech-finalists-winners/oxford-university-press-australia-and-new-zealand/",
+          "id": "https://t4.education/?p=22690"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-a08149e86076",
     "name": "National Geographic Society hibeleri",
     "official_url": "https://www.nationalgeographic.org/society/grants-and-investments/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2388,14 +4272,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:23.818174+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-a08149e86076",
+      "url": "https://www.nationalgeographic.org/society/grants-and-investments/",
+      "checked_at": "2026-10-09T22:59:23.818174+00:00",
+      "status": 200,
+      "title": "Grants and Investments - National Geographic Society",
+      "bytes": 307011,
+      "links": 112,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of Service",
+          "url": "https://www.nationalgeographic.org/terms-of-service/"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-5b5b6d9572a8",
     "name": "The Pollination Project",
     "official_url": "https://thepollinationproject.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2409,14 +4313,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:24.107993+00:00",
+    "reason": "Live access unsuccessful: HTTP 403",
+    "page_observation": {
+      "source_id": "inventory-5b5b6d9572a8",
+      "url": "https://thepollinationproject.org/",
+      "checked_at": "2026-10-09T22:59:24.107993+00:00",
+      "error_kind": "http",
+      "error": "HTTP 403"
+    }
   },
   {
     "source_id": "inventory-e2ba93e5bd65",
     "name": "Rufford Foundation",
     "official_url": "https://www.rufford.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2430,14 +4341,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:24.905487+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-e2ba93e5bd65",
+      "url": "https://www.rufford.org/",
+      "checked_at": "2026-10-09T22:59:24.905487+00:00",
+      "status": 200,
+      "title": "The Rufford Foundation - Providing grant funding for nature conservation\n    and pilot projects around the world\n\n            - The Rufford Foundation",
+      "bytes": 35853,
+      "links": 36,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-90686db6a269",
     "name": "Global Greengrants Fund",
     "official_url": "https://www.greengrants.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2451,14 +4377,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:25.378217+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-90686db6a269",
+      "url": "https://www.greengrants.org/",
+      "checked_at": "2026-10-09T22:59:25.378217+00:00",
+      "status": 200,
+      "title": null,
+      "bytes": 212,
+      "links": 0,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-6fdcf036901c",
     "name": "Mohamed bin Zayed Tür Koruma Fonu",
     "official_url": "https://www.speciesconservation.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2472,14 +4413,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:25.982586+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-6fdcf036901c",
+      "url": "https://www.speciesconservation.org/",
+      "checked_at": "2026-10-09T22:59:25.982586+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-7e5654adb2c2",
     "name": "Young Reporters for the Environment",
     "official_url": "https://www.yre.global/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2493,14 +4441,29 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:26.245939+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-7e5654adb2c2",
+      "url": "https://www.yre.global/",
+      "checked_at": "2026-10-09T22:59:26.245939+00:00",
+      "status": 200,
+      "title": "YRE - Young Reporters for the Environment",
+      "bytes": 460680,
+      "links": 174,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-83d83cda1ee9",
     "name": "Eco-Schools (küresel)",
     "official_url": "https://www.ecoschools.global/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2514,56 +4477,150 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:26.647123+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-83d83cda1ee9",
+      "url": "https://www.ecoschools.global/",
+      "checked_at": "2026-10-09T22:59:26.647123+00:00",
+      "status": 200,
+      "title": "Eco-Schools",
+      "bytes": 371642,
+      "links": 170,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-5bdfa0077d6e",
     "name": "Global Schools Program (SDSN)",
     "official_url": "https://www.globalschoolsprogram.org/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.globalschoolsprogram.org/blog-feed.xml",
+      "checked_at": "2026-10-09T23:06:03.963187+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/global-schools_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:27.165371+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-5bdfa0077d6e",
+      "url": "https://www.globalschoolsprogram.org/",
+      "checked_at": "2026-10-09T22:59:27.165371+00:00",
+      "status": 200,
+      "title": "Global Schools",
+      "bytes": 1324035,
+      "links": 35,
+      "rss_links": [
+        "https://www.globalschoolsprogram.org/blog-feed.xml"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-5bdfa0077d6e",
+      "url": "https://www.globalschoolsprogram.org/blog-feed.xml",
+      "checked_at": "2026-10-09T23:06:03.963187+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 20,
+      "sample": [
+        {
+          "title": "The SDSN and UNCCD Launch \"Land Action Labs\" Pilot to Empower Schools to Protect and Restore Land",
+          "link": "https://www.globalschoolsprogram.org/post/the-sdsn-and-unccd-launch-land-action-labs-pilot-to-empower-schools-to-protect-and-restore-land",
+          "id": "6aa41122b1078f37a91928ef"
+        },
+        {
+          "title": "Global Schools at UNCCD COP17 in Mongolia: Bringing Education into the Land Restoration Conversation",
+          "link": "https://www.globalschoolsprogram.org/post/global-schools-at-unccd-cop17-in-mongolia-bringing-education-into-the-land-restoration-conversation",
+          "id": "6a95acfc21ca4b8be96ac8fb"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-155435a6d1a0",
     "name": "Roots & Shoots",
     "official_url": "https://rootsandshoots.global/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://rootsandshoots.global/feed/",
+      "checked_at": "2026-10-09T23:06:04.088926+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/roots-shoots_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:27.849012+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-155435a6d1a0",
+      "url": "https://rootsandshoots.global/",
+      "checked_at": "2026-10-09T22:59:27.849012+00:00",
+      "status": 200,
+      "title": "Roots and Shoots Global - Roots & Shoots Global",
+      "bytes": 329223,
+      "links": 82,
+      "rss_links": [
+        "https://rootsandshoots.global/feed/",
+        "https://rootsandshoots.global/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-155435a6d1a0",
+      "url": "https://rootsandshoots.global/feed/",
+      "checked_at": "2026-10-09T23:06:04.088926+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 10,
+      "sample": [
+        {
+          "title": "Toads, Taps, and Rivers: Three Roots & Shoots Stories Connected by Water",
+          "link": "https://rootsandshoots.global/roots-and-shoots-hungary-austria-spain-water/",
+          "id": "https://rootsandshoots.global/?p=8935"
+        },
+        {
+          "title": "Has Social Media Become a Digital Circus for Wildlife?",
+          "link": "https://rootsandshoots.global/chimpanzees-social-media-digital-circus/",
+          "id": "https://rootsandshoots.global/?p=8948"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-d4b3d841372b",
     "name": "GLOBE Program",
     "official_url": "https://www.globe.gov/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2577,14 +4634,38 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:28.170720+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-d4b3d841372b",
+      "url": "https://www.globe.gov/",
+      "checked_at": "2026-10-09T22:59:28.170720+00:00",
+      "status": 200,
+      "title": "GLOBE Home Page - GLOBE.gov",
+      "bytes": 425862,
+      "links": 387,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms of Use",
+          "url": "https://www.globe.gov/about/privacy/terms-of-use"
+        },
+        {
+          "label": "Terms of Use",
+          "url": "https://www.globe.gov/about/privacy/terms-of-use"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "inventory-069393007b65",
     "name": "European Cultural Foundation",
     "official_url": "https://culturalfoundation.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2598,14 +4679,34 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:28.803813+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-069393007b65",
+      "url": "https://culturalfoundation.eu/",
+      "checked_at": "2026-10-09T22:59:28.803813+00:00",
+      "status": 200,
+      "title": "Home – European Cultural Foundation",
+      "bytes": 80557,
+      "links": 102,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms & Conditions",
+          "url": "https://culturalfoundation.eu/terms-conditions/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-98b1ee25c562",
     "name": "Allianz Foundation",
     "official_url": "https://allianzfoundation.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2619,14 +4720,38 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:29.376745+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-98b1ee25c562",
+      "url": "https://allianzfoundation.org/",
+      "checked_at": "2026-10-09T22:59:29.376745+00:00",
+      "status": 200,
+      "title": "Home — Allianz Foundation",
+      "bytes": 253516,
+      "links": 56,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Legal notice",
+          "url": "https://allianzfoundation.org/legal-notice/"
+        },
+        {
+          "label": "Legal notice",
+          "url": "https://allianzfoundation.org/legal-notice/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-b23b5b28fe89",
     "name": "National Endowment for Democracy",
     "official_url": "https://www.ned.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2640,14 +4765,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:30.130642+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-b23b5b28fe89",
+      "url": "https://www.ned.org/",
+      "checked_at": "2026-10-09T22:59:30.130642+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-137b708b697f",
     "name": "Rotary Gençlik Değişimi",
     "official_url": "https://www.rotary.org/en/our-programs/youth-exchanges",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2661,14 +4793,21 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:30.516170+00:00",
+    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "page_observation": {
+      "source_id": "inventory-137b708b697f",
+      "url": "https://www.rotary.org/en/our-programs/youth-exchanges",
+      "checked_at": "2026-10-09T22:59:30.516170+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "source_id": "source-17",
     "name": "STGM Hibe Duyuruları",
     "official_url": "https://www.stgm.org.tr/hibe-duyurulari",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2682,56 +4821,174 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:30.824485+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "source-17",
+      "url": "https://www.stgm.org.tr/hibe-duyurulari",
+      "checked_at": "2026-10-09T22:59:30.824485+00:00",
+      "status": 200,
+      "title": "Hibe Duyuruları | STGM",
+      "bytes": 84338,
+      "links": 83,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   },
   {
     "source_id": "source-18",
     "name": "ab-ilan.com",
     "official_url": "https://ab-ilan.com/category/hibe-duyurulari/",
-    "status": "pending_review",
+    "status": "rss_interface_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://ab-ilan.com/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/ab-ilan-genel_rss_20261010.xml",
     "detail_fixture": null,
-    "sample_call": null,
+    "sample_call": {
+      "title": "Estonya’da “Fly-Facilitating Learning for Youth” Eğitim Kursu Katılımcı Çağrısı",
+      "url": "https://ab-ilan.com/estonyada-fly-facilitating-learning-for-youth-egitim-kursu-katilimci-cagrisi/",
+      "kind": "source_announcement",
+      "opportunity_status": "review_required"
+    },
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_baseline_feeds.py",
+    "empty_error_test": "tests/test_baseline_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "connector_observations": [
+      {
+        "source_id": "ab-ilan-hibe",
+        "url": "https://ab-ilan.com/category/hibe-duyurulari/feed/",
+        "status": 200,
+        "feed_version": "rss20",
+        "bozo": false,
+        "entries": 10,
+        "sample": [
+          {
+            "title": "TAP Vakfı 1 Aralık Gençlik Fonu Başvuruları Açıldı: Proje Başına 25 Bin TL’ye Kadar Destek",
+            "url": "https://ab-ilan.com/tap-vakfi-1-aralik-genclik-fonu-basvurulari-acildi-proje-basina-25-bin-tlye-kadar-destek/"
+          }
+        ],
+        "fixture": "tests/fixtures/aggregator/ab-ilan-hibe_rss_20261010.xml",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00"
+      },
+      {
+        "source_id": "ab-ilan-genel",
+        "url": "https://ab-ilan.com/feed/",
+        "status": 200,
+        "feed_version": "rss20",
+        "bozo": false,
+        "entries": 10,
+        "sample": [
+          {
+            "title": "Estonya’da “Fly-Facilitating Learning for Youth” Eğitim Kursu Katılımcı Çağrısı",
+            "url": "https://ab-ilan.com/estonyada-fly-facilitating-learning-for-youth-egitim-kursu-katilimci-cagrisi/"
+          }
+        ],
+        "fixture": "tests/fixtures/aggregator/ab-ilan-genel_rss_20261010.xml",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00"
+      }
+    ],
+    "page_observation": {
+      "source_id": "source-18",
+      "url": "https://ab-ilan.com/category/hibe-duyurulari/",
+      "checked_at": "2026-10-09T22:59:30.934427+00:00",
+      "status": 200,
+      "title": "Proje, Hibe ve Fonlar Kategorisi",
+      "bytes": 568936,
+      "links": 399,
+      "rss_links": [
+        "https://ab-ilan.com/feed/",
+        "https://ab-ilan.com/comments/feed/",
+        "https://ab-ilan.com/category/hibe-duyurulari/feed/"
+      ],
+      "policy_links": [
+        {
+          "label": "Gizlilik ve Kullanım",
+          "url": "https://ab-ilan.com/yasal-uyari/"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 2
+      }
+    }
   },
   {
     "source_id": "inventory-4eeaf3fc627f",
     "name": "Sivil Sayfalar",
     "official_url": "https://www.sivilsayfalar.org/",
-    "status": "pending_review",
+    "status": "rss_interface_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.sivilsayfalar.org/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/sivilsayfalar_rss_20261010.xml",
     "detail_fixture": null,
-    "sample_call": null,
+    "sample_call": {
+      "title": "Afet Platformu’ndan STK’lara Çağrı: “Afet ve Acil Durumlara Hazırlık Durumu ve İhtiyaçları Anketi” Başladı",
+      "url": "https://www.sivilsayfalar.org/2026/09/17/afet-platformundan-stklara-cagri-afet-ve-acil-durumlara-hazirlik-durumu-ve-ihtiyaclari-anketi-basladi/",
+      "kind": "source_announcement",
+      "opportunity_status": "review_required"
+    },
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_baseline_feeds.py",
+    "empty_error_test": "tests/test_baseline_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "reason": "Mevcut RSS canlı doğrulandı; detay/uygunluk/onay ve yayın kanıtı ayrı.",
+    "connector_observations": [
+      {
+        "source_id": "sivilsayfalar",
+        "url": "https://www.sivilsayfalar.org/feed/",
+        "status": 200,
+        "feed_version": "rss20",
+        "bozo": false,
+        "entries": 9,
+        "sample": [
+          {
+            "title": "Afet Platformu’ndan STK’lara Çağrı: “Afet ve Acil Durumlara Hazırlık Durumu ve İhtiyaçları Anketi” Başladı",
+            "url": "https://www.sivilsayfalar.org/2026/09/17/afet-platformundan-stklara-cagri-afet-ve-acil-durumlara-hazirlik-durumu-ve-ihtiyaclari-anketi-basladi/"
+          }
+        ],
+        "fixture": "tests/fixtures/aggregator/sivilsayfalar_rss_20261010.xml",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00"
+      }
+    ],
+    "page_observation": {
+      "source_id": "inventory-4eeaf3fc627f",
+      "url": "https://www.sivilsayfalar.org/",
+      "checked_at": "2026-10-09T22:59:31.052296+00:00",
+      "status": 200,
+      "title": "Sivil Sayfalar",
+      "bytes": 107043,
+      "links": 312,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 42,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-a6673335d9b4",
     "name": "fundsforNGOs",
     "official_url": "https://www2.fundsforngos.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2745,8 +5002,15 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:32.125612+00:00",
+    "reason": "Live access unsuccessful: robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "page_observation": {
+      "source_id": "inventory-a6673335d9b4",
+      "url": "https://www2.fundsforngos.org/",
+      "checked_at": "2026-10-09T22:59:32.125612+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-cfa03fdcd36b",
@@ -2770,13 +5034,20 @@
     "reason": "Web okuyucu sayfayı alamadı; robots isteği izinli host dışına yönlendi ve mevcut istemci engelledi. Hedefi/politikayı doğrulamadan host izni genişletilmedi.",
     "evidence_urls": [
       "https://terravivagrants.org/"
-    ]
+    ],
+    "page_observation": {
+      "source_id": "inventory-cfa03fdcd36b",
+      "url": "https://terravivagrants.org/",
+      "checked_at": "2026-10-09T22:59:32.386370+00:00",
+      "error_kind": "permission",
+      "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
+    }
   },
   {
     "source_id": "inventory-1f5433d7d5c3",
     "name": "Mladiinfo",
     "official_url": "https://www.mladiinfo.eu/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2790,56 +5061,142 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:32.514389+00:00",
+    "reason": "Live access unsuccessful: Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı",
+    "page_observation": {
+      "source_id": "inventory-1f5433d7d5c3",
+      "url": "https://www.mladiinfo.eu/",
+      "checked_at": "2026-10-09T22:59:32.514389+00:00",
+      "error_kind": "rate_limit",
+      "error": "Tarama gecikmesi bu inceleme penceresini aşıyor; tekrar istek yapılmadı"
+    }
   },
   {
     "source_id": "inventory-74820ed03b82",
     "name": "Opportunity Desk",
     "official_url": "https://opportunitydesk.org/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://opportunitydesk.org/feed/",
+      "checked_at": "2026-10-09T23:06:05.244231+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/opportunity-desk_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:32.669481+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-74820ed03b82",
+      "url": "https://opportunitydesk.org/",
+      "checked_at": "2026-10-09T22:59:32.669481+00:00",
+      "status": 200,
+      "title": "Opportunity Desk – The one stop place for global opportunities!",
+      "bytes": 216285,
+      "links": 254,
+      "rss_links": [
+        "https://opportunitydesk.org/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 43,
+        "structured_data": 0
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-74820ed03b82",
+      "url": "https://opportunitydesk.org/feed/",
+      "checked_at": "2026-10-09T23:06:05.244231+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 10,
+      "sample": [
+        {
+          "title": "MENA Regenerative Agriculture Venture Programme 2026/2027",
+          "link": "https://opportunitydesk.org/2026/10/09/mena-regenerative-agriculture-venture-programme-2026-2027/",
+          "id": "https://opportunitydesk.org/?p=179191"
+        },
+        {
+          "title": "Harvard LEAD Fellowship for Promoting Women in Global Health 2027-2028 (Funded)",
+          "link": "https://opportunitydesk.org/2026/10/09/harvard-lead-fellowship-for-promoting-women-in-global-health-2027-2028/",
+          "id": "https://opportunitydesk.org/?p=179190"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-f5ea432b4724",
     "name": "Opportunities for Youth",
     "official_url": "https://opportunitiesforyouth.org/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://opportunitiesforyouth.org/feed/",
+      "checked_at": "2026-10-09T23:06:05.325463+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/opportunities-youth_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:32.986943+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-f5ea432b4724",
+      "url": "https://opportunitiesforyouth.org/",
+      "checked_at": "2026-10-09T22:59:32.986943+00:00",
+      "status": 200,
+      "title": "Opportunities for Youth | Empowering Youth through Access to Information and Opportunities",
+      "bytes": 444157,
+      "links": 689,
+      "rss_links": [
+        "https://opportunitiesforyouth.org/feed/",
+        "https://opportunitiesforyouth.org/comments/feed/"
+      ],
+      "policy_links": [],
+      "schema": {
+        "article_count": 92,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-f5ea432b4724",
+      "url": "https://opportunitiesforyouth.org/feed/",
+      "checked_at": "2026-10-09T23:06:05.325463+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 10,
+      "sample": [
+        {
+          "title": "180 Degrees Consulting Opportunities 2026: Join the Global Leadership Team or Launch a Student-Led Social Impact Consulting Branch",
+          "link": "https://opportunitiesforyouth.org/2026/10/09/180-degrees-consulting-opportunities-2026-join-the-global-leadership-team-or-launch-a-student-led-social-impact-consulting-branch/",
+          "id": "https://opportunitiesforyouth.org/?p=94291"
+        },
+        {
+          "title": "TWAS Visiting Expert Programme 2026: International Research Collaboration, Expert Visits and Opportunities for Scientific Institutions in Developing Countries",
+          "link": "https://opportunitiesforyouth.org/2026/10/09/twas-visiting-expert-programme-2026-international-research-collaboration-expert-visits-and-opportunities-for-scientific-institutions-in-developing-countries/",
+          "id": "https://opportunitiesforyouth.org/?p=94286"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-79a0d26178e2",
     "name": "Youth Opportunities",
     "official_url": "https://www.youthop.com/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2853,35 +5210,107 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:33.192663+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-79a0d26178e2",
+      "url": "https://www.youthop.com/",
+      "checked_at": "2026-10-09T22:59:33.192663+00:00",
+      "status": 200,
+      "title": "Youth Opportunities - Competitions, Conferences, Fellowships, Scholarships, Internships, Workshops, Exchange Programs",
+      "bytes": 101965,
+      "links": 127,
+      "rss_links": [],
+      "policy_links": [
+        {
+          "label": "Terms & Policies",
+          "url": "https://www.youthop.com/policies"
+        }
+      ],
+      "schema": {
+        "article_count": 1,
+        "structured_data": 1
+      }
+    }
   },
   {
     "source_id": "inventory-51daf7bb40ce",
     "name": "EU Calls",
     "official_url": "https://eucalls.net/",
-    "status": "pending_review",
+    "status": "metadata_fixture_verified",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://eucalls.net/feed",
+      "checked_at": "2026-10-09T23:06:05.630831+00:00",
+      "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
     },
-    "method": null,
-    "list_fixture": null,
+    "method": "feed",
+    "list_fixture": "tests/fixtures/aggregator/eu-calls_rss_20261010.xml",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_discovered_feeds.py",
+    "empty_error_test": "tests/test_discovered_feeds.py",
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:34.058185+00:00",
+    "reason": "Real public RSS metadata only; news/program page is not evidence of open call, Turkey eligibility or approved publication.",
+    "page_observation": {
+      "source_id": "inventory-51daf7bb40ce",
+      "url": "https://eucalls.net/",
+      "checked_at": "2026-10-09T22:59:34.058185+00:00",
+      "status": 200,
+      "title": "EUcalls | Your Getaway to EU Funding & Partnerships",
+      "bytes": 172065,
+      "links": 79,
+      "rss_links": [
+        "https://eucalls.net/feed"
+      ],
+      "policy_links": [
+        {
+          "label": "Terms of Service",
+          "url": "https://eucalls.net/terms-of-service/"
+        },
+        {
+          "label": "Terms",
+          "url": "https://eucalls.net/terms-of-service"
+        },
+        {
+          "label": "Terms",
+          "url": "https://eucalls.net/terms-of-service"
+        }
+      ],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 1
+      }
+    },
+    "feed_observation": {
+      "source_id": "inventory-51daf7bb40ce",
+      "url": "https://eucalls.net/feed",
+      "checked_at": "2026-10-09T23:06:05.630831+00:00",
+      "status": 200,
+      "version": "rss20",
+      "bozo": false,
+      "entries": 9,
+      "sample": [
+        {
+          "title": "How can emerging technologies in Europe move from research and experimentation to real industrial impact?",
+          "link": "https://eucalls.net/blog/how-can-emerging-technologies-in-europe-move-from-research-to-real-industrial-impact",
+          "id": "https://eucalls.net/?p=6336"
+        },
+        {
+          "title": "Horizon Europe for Startups: Is Your Business Ready?",
+          "link": "https://eucalls.net/blog/horizon-europe-for-startups-is-your-business-ready",
+          "id": "https://eucalls.net/?p=6286"
+        }
+      ]
+    }
   },
   {
     "source_id": "inventory-323361ddbff4",
     "name": "On the Move",
     "official_url": "https://on-the-move.org/",
-    "status": "pending_review",
+    "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
@@ -2895,7 +5324,22 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": null,
-    "reason": "AŞAMA 8 canlı kabul incelemesi bekleniyor; connected iddiası yok."
+    "checked_at": "2026-10-09T22:59:34.637958+00:00",
+    "reason": "Public page readable; automated policy, list/detail parser and call eligibility still require verification.",
+    "page_observation": {
+      "source_id": "inventory-323361ddbff4",
+      "url": "https://on-the-move.org/",
+      "checked_at": "2026-10-09T22:59:34.637958+00:00",
+      "status": 200,
+      "title": "On the Move",
+      "bytes": 106239,
+      "links": 129,
+      "rss_links": [],
+      "policy_links": [],
+      "schema": {
+        "article_count": 0,
+        "structured_data": 0
+      }
+    }
   }
 ]

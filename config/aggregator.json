@@ -84,10 +84,10 @@
       "detail": true,
       "language": "tr",
       "access_policy": {
-        "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "terms_status": "allowed",
+        "evidence_url": "https://ab-ilan.com/category/hibe-duyurulari/feed/",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00",
+        "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
       }
     },
     {
@@ -102,10 +102,10 @@
       "detail": true,
       "language": "tr",
       "access_policy": {
-        "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "terms_status": "allowed",
+        "evidence_url": "https://ab-ilan.com/feed/",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00",
+        "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
       }
     },
     {
@@ -166,10 +166,10 @@
       ],
       "language": "tr",
       "access_policy": {
-        "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "terms_status": "allowed",
+        "evidence_url": "https://etwinning.meb.gov.tr/feed/",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00",
+        "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
       }
     },
     {
@@ -182,10 +182,10 @@
       ],
       "language": "tr",
       "access_policy": {
-        "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "terms_status": "allowed",
+        "evidence_url": "https://www.ifturquie.org/feed/",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00",
+        "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
       }
     },
     {
@@ -217,10 +217,17 @@
       "detail": true,
       "language": "tr",
       "access_policy": {
-        "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "terms_status": "allowed",
+        "evidence_url": "https://www.tusev.org.tr/feed/",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00",
+        "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
+      },
+      "allow_empty": true,
+      "empty_evidence": {
+        "url": "https://www.tusev.org.tr/feed/",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00",
+        "feed_version": "rss20",
+        "note": "Geçerli RSS, bu kontrolde sıfır kayıt; bütün kurum duyurularının sıfır olduğu iddia edilmez."
       }
     },
     {
@@ -235,10 +242,10 @@
       "detail": true,
       "language": "tr",
       "access_policy": {
-        "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "terms_status": "allowed",
+        "evidence_url": "https://www.sivilsayfalar.org/feed/",
+        "checked_at": "2026-10-09T22:56:23.145219+00:00",
+        "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
       }
     },
     {
@@ -383,6 +390,212 @@
         "checked_at": "2026-10-09T22:52:36.178673+00:00",
         "basis": "Resmî ana sayfanın sunduğu RSS duyuru arayüzü; keşif üstverisi."
       }
+    },
+    {
+      "id": "eurodesk-finder",
+      "type": "feed",
+      "url": "https://programmes.eurodesk.eu/rss",
+      "organization": "Eurodesk Opportunity Finder",
+      "allowed_hosts": [
+        "programmes.eurodesk.eu"
+      ],
+      "detail": false,
+      "language": "en",
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://programmes.eurodesk.eu/rss",
+        "checked_at": "2026-10-10",
+        "basis": "Published public RSS metadata interface; attribution and manual verification required; no full text redistribution."
+      },
+      "entry_identity": "guid",
+      "ignore_published": true,
+      "aggregator": true
+    },
+    {
+      "id": "interreg-next-med",
+      "type": "feed",
+      "url": "https://www.interregnextmed.eu/feed/",
+      "organization": "Interreg NEXT MED",
+      "allowed_hosts": [
+        "www.interregnextmed.eu"
+      ],
+      "detail": false,
+      "language": "en",
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.interregnextmed.eu/feed/",
+        "checked_at": "2026-10-10",
+        "basis": "Published public RSS metadata interface; attribution and manual verification required; no full text redistribution."
+      }
+    },
+    {
+      "id": "mercator",
+      "type": "feed",
+      "url": "https://www.stiftung-mercator.de/de/feed/",
+      "organization": "Stiftung Mercator",
+      "allowed_hosts": [
+        "www.stiftung-mercator.de"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.stiftung-mercator.de/de/feed/",
+        "checked_at": "2026-10-09T23:06:02.014418+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      }
+    },
+    {
+      "id": "iki-small-grants",
+      "type": "feed",
+      "url": "https://iki-small-grants.de/feed/",
+      "organization": "IKI Small Grants (Almanya)",
+      "allowed_hosts": [
+        "iki-small-grants.de"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://iki-small-grants.de/feed/",
+        "checked_at": "2026-10-09T23:06:02.014702+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      }
+    },
+    {
+      "id": "gef-sgp",
+      "type": "feed",
+      "url": "https://sgp.undp.org/?format=feed&type=rss",
+      "organization": "UNDP GEF Küçük Destek Programı",
+      "allowed_hosts": [
+        "sgp.undp.org"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://sgp.undp.org/?format=feed&type=rss",
+        "checked_at": "2026-10-09T23:06:02.014852+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      },
+      "allow_empty": true,
+      "empty_evidence": {
+        "url": "https://sgp.undp.org/?format=feed&type=rss",
+        "checked_at": "2026-10-09T23:06:02.014852+00:00",
+        "reason": "Live valid RSS has zero entries; not institution-wide absence of opportunities."
+      }
+    },
+    {
+      "id": "regeneron-isef",
+      "type": "feed",
+      "url": "https://www.societyforscience.org/isef/feed/",
+      "organization": "Regeneron ISEF",
+      "allowed_hosts": [
+        "www.societyforscience.org"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.societyforscience.org/isef/feed/",
+        "checked_at": "2026-10-09T23:06:03.688355+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      }
+    },
+    {
+      "id": "t4-education",
+      "type": "feed",
+      "url": "https://t4.education/feed/",
+      "organization": "T4 Education",
+      "allowed_hosts": [
+        "t4.education"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://t4.education/feed/",
+        "checked_at": "2026-10-09T23:06:03.863932+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      }
+    },
+    {
+      "id": "global-schools",
+      "type": "feed",
+      "url": "https://www.globalschoolsprogram.org/blog-feed.xml",
+      "organization": "Global Schools Program (SDSN)",
+      "allowed_hosts": [
+        "www.globalschoolsprogram.org"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.globalschoolsprogram.org/blog-feed.xml",
+        "checked_at": "2026-10-09T23:06:03.963187+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      }
+    },
+    {
+      "id": "roots-shoots",
+      "type": "feed",
+      "url": "https://rootsandshoots.global/feed/",
+      "organization": "Roots & Shoots",
+      "allowed_hosts": [
+        "rootsandshoots.global"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://rootsandshoots.global/feed/",
+        "checked_at": "2026-10-09T23:06:04.088926+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      }
+    },
+    {
+      "id": "opportunity-desk",
+      "type": "feed",
+      "url": "https://opportunitydesk.org/feed/",
+      "organization": "Opportunity Desk",
+      "allowed_hosts": [
+        "opportunitydesk.org"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://opportunitydesk.org/feed/",
+        "checked_at": "2026-10-09T23:06:05.244231+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      },
+      "aggregator": true
+    },
+    {
+      "id": "opportunities-youth",
+      "type": "feed",
+      "url": "https://opportunitiesforyouth.org/feed/",
+      "organization": "Opportunities for Youth",
+      "allowed_hosts": [
+        "opportunitiesforyouth.org"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://opportunitiesforyouth.org/feed/",
+        "checked_at": "2026-10-09T23:06:05.325463+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      },
+      "aggregator": true
+    },
+    {
+      "id": "eu-calls",
+      "type": "feed",
+      "url": "https://eucalls.net/feed",
+      "organization": "EU Calls",
+      "allowed_hosts": [
+        "eucalls.net"
+      ],
+      "detail": false,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://eucalls.net/feed",
+        "checked_at": "2026-10-09T23:06:05.630831+00:00",
+        "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
+      },
+      "aggregator": true
     }
   ],
   "baseline_source_ids": [

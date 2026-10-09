@@ -94,6 +94,7 @@ def dedupe(items):
     def periods(item):
         return item.call_period or tuple(re.findall(r'\b20\d{2}\b', item.title))
     def compatible(a, b):
+        if a.source_entry_id and b.source_entry_id and a.identity_authority == b.identity_authority and a.source_entry_id != b.source_entry_id: return False
         for field in ('official_call_id', 'identity_authority', 'programme', 'application_path'):
             x, y = getattr(a, field), getattr(b, field)
             if x and y and x != y: return False

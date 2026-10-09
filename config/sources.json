@@ -215,10 +215,12 @@
     "institution_name": null,
     "program_label": "Eurodesk Opportunity Finder",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "eurodesk-finder"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -301,11 +303,12 @@
     ],
     "connector_mapping": "host_candidate",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://etwinning.meb.gov.tr/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "rss_interface_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -315,7 +318,8 @@
       "url": "https://etwinning.meb.gov.tr/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "last_checked": "2026-10-09T22:56:23.145219+00:00"
   },
   {
     "name": "Avrupa Gençlik Portalı",
@@ -1253,10 +1257,12 @@
     "institution_name": null,
     "program_label": "Interreg NEXT MED",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "interreg-next-med"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -1353,7 +1359,9 @@
       "url": "https://4000.tubitak.gov.tr/rss.xml",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00"
   },
   {
     "name": "TÜBİTAK BİLİMİZ",
@@ -2367,7 +2375,9 @@
       "url": "https://www.britishcouncil.org.tr/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "acceptance_reason": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli",
+    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00"
   },
   {
     "id": "source-11",
@@ -2663,10 +2673,12 @@
     "institution_name": null,
     "program_label": "Stiftung Mercator",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "mercator"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -2815,10 +2827,12 @@
     "institution_name": null,
     "program_label": "IKI Small Grants (Almanya)",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "iki-small-grants"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -2861,11 +2875,12 @@
     ],
     "connector_mapping": "host_candidate",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.ifturquie.org/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "rss_interface_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -2875,7 +2890,8 @@
       "url": "https://www.ifturquie.org/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "last_checked": "2026-10-09T22:56:23.145219+00:00"
   },
   {
     "name": "Fransa Büyükelçiliği",
@@ -3263,8 +3279,8 @@
     "id": "source-12",
     "name": "UNDP GEF Küçük Destek Programı",
     "url": "https://sgp.undp.org/",
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "last_checked": "2026-10-09",
     "identity_status": "candidate",
     "manual_check": {
@@ -3284,7 +3300,9 @@
     "program_label": "UNDP GEF Küçük Destek Programı",
     "country": null,
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "gef-sgp"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -3857,11 +3875,12 @@
     ],
     "connector_mapping": "host_candidate",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.tusev.org.tr/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "verified_empty_feed",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -3871,7 +3890,8 @@
       "url": "https://www.tusev.org.tr/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "last_checked": "2026-10-09T22:56:23.145219+00:00"
   },
   {
     "name": "Sivil Toplum için Destek Vakfı",
@@ -4155,10 +4175,12 @@
     "institution_name": null,
     "program_label": "Regeneron ISEF",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "regeneron-isef"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -4231,10 +4253,12 @@
     "institution_name": null,
     "program_label": "T4 Education",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "t4-education"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -4535,10 +4559,12 @@
     "institution_name": null,
     "program_label": "Global Schools Program (SDSN)",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "global-schools"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -4573,10 +4599,12 @@
     "institution_name": null,
     "program_label": "Roots & Shoots",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "roots-shoots"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -4833,7 +4861,7 @@
     "url": "https://ab-ilan.com/category/hibe-duyurulari/",
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": "2026-10-09",
+    "last_checked": "2026-10-09T22:56:23.145219+00:00",
     "identity_status": "candidate",
     "manual_check": {
       "url": "https://ab-ilan.com/category/hibe-duyurulari/",
@@ -4858,11 +4886,12 @@
     ],
     "connector_mapping": "host_candidate",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://ab-ilan.com/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "rss_interface_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -4894,11 +4923,12 @@
     ],
     "connector_mapping": "host_candidate",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.sivilsayfalar.org/feed/",
+      "checked_at": "2026-10-09T22:56:23.145219+00:00",
+      "basis": "Canlı, kamuya açık RSS arayüzü doğrulandı; yalnız başlık/URL/tarih üstverisi, atıflı editör özeti. Bu kanıt tam metin dağıtım lisansı değildir."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "rss_interface_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -4908,7 +4938,8 @@
       "url": "https://www.sivilsayfalar.org/",
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
-    "institution_identity_status": "unverified_host_group"
+    "institution_identity_status": "unverified_host_group",
+    "last_checked": "2026-10-09T22:56:23.145219+00:00"
   },
   {
     "name": "fundsforNGOs",
@@ -5042,10 +5073,12 @@
     "institution_name": null,
     "program_label": "Opportunity Desk",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "opportunity-desk"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -5080,10 +5113,12 @@
     "institution_name": null,
     "program_label": "Opportunities for Youth",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "opportunities-youth"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",
@@ -5156,10 +5191,12 @@
     "institution_name": null,
     "program_label": "EU Calls",
     "country": null,
-    "method": "manual",
-    "status": "registry_pending",
+    "method": "feed",
+    "status": "metadata_fixture_verified",
     "enabled": true,
-    "connector_ids": [],
+    "connector_ids": [
+      "eu-calls"
+    ],
     "connector_mapping": "none",
     "access_policy": {
       "terms_status": "unreviewed",

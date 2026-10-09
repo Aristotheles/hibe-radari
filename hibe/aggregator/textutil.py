@@ -1,6 +1,7 @@
 """Türkçe/İngilizce/Almanca metin katlama, HTML temizleme ve son tarih çıkarma."""
 import re
 from datetime import date
+from html import unescape
 from bs4 import BeautifulSoup
 
 # Uzunluğu koruyan 1:1 katlama; eşleşme konumları özgün metinle aynı kalır.
@@ -16,6 +17,8 @@ def fold(text):
 def strip_html(html):
     if not html:
         return ''
+    if '<' not in html:
+        return re.sub(r'\s+', ' ', unescape(html)).strip()
     soup = BeautifulSoup(html, 'html.parser')
     for tag in soup(['script', 'style']):
         tag.decompose()
