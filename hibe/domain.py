@@ -32,6 +32,9 @@ def validate(c):
 def calendar_status(c,today):
  return 'kapandi' if c['deadline'] and date.fromisoformat(c['deadline'])<today else 'acik' if c['deadline'] else 'bilinmiyor'
 def publishable(c,today):
+ if c.get('from_aggregator'):
+  from .aggregator.bridge import review_ready
+  if not review_ready(c):return False
  a=c.get('approval',{})
  return a.get('version')==version(c) and a.get('reviewed') is True and c['official_status'] not in {'kapandi','askida'} and calendar_status(c,today)!='kapandi'
 def rank(c,p,today):

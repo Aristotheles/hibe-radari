@@ -14,6 +14,8 @@ def main(argv=None):
     ap.add_argument('--out', help='çıktı JSON yolu (varsayılan data/aggregator/latest.json)')
     ap.add_argument('--rejected', action='store_true', help='gürültü olarak elenenleri gerekçeleriyle yazdır')
     ap.add_argument('--site', metavar='KLASÖR', help='statik siteyi bu klasöre üret (Firebase Hosting için public/)')
+    ap.add_argument('--store-db', help='Mevcut SQLite uygulama kaydı (varsayılan data/demo.db)')
+    ap.add_argument('--firebase', action='store_true', help='Mevcut Firestore uygulama kaydını kullan')
     args = ap.parse_args(argv)
     sys.stdout.reconfigure(encoding='utf-8')
     report = run(only=args.only)
@@ -21,6 +23,27 @@ def main(argv=None):
     write_health(report)
     from pathlib import Path
     from .collector import ROOT
+    from .bridge import persist_report, publication_report
+    if args.firebase:
+        from hibe.server import App
+        store = App(demo=False).service.store
+    else:
+        from hibe.store import SQLiteStore
+        database = Path(args.store_db) if args.store_db else ROOT / 'data/demo.db'
+        database.parent.mkdir(parents=True, exist_ok=True)
+        store = SQLiteStore(database)
+    try:
+        persist_report(report, store)
+        if args.site:
+            from datetime import date
+            publish_report = publication_report(report, store, date.fromisoformat(report['today']))
+    except (ValueError, KeyError, TypeError) as exc:
+        failure = dict(report, run_status='failed', persistence_error=type(exc).__name__)
+        write_report(failure, ROOT / 'data/aggregator/last-attempt.json')
+        print('Keşif kaydı geçersiz; son sağlam rapor ve yayın korunuyor')
+        return 1
+    finally:
+        if not args.firebase: store.db.close()
     canonical = ROOT / 'data/aggregator/latest.json'
     target = Path(args.out).resolve() if args.out else canonical
     unsafe = report.get('run_status') != 'success' or args.only is not None
@@ -33,14 +56,14 @@ def main(argv=None):
     if args.site:
         from .site import check_publication, PublicationBlocked
         try:
-            check_publication(report)
+            check_publication(publish_report)
         except PublicationBlocked as exc:
             write_report(report, canonical.with_name('last-attempt.json'))
             print(f'Yayın engellendi: {exc}')
             return 1
     if args.site:
         from .site import build
-        print(f'Statik site: {build(report, args.site)}')
+        print(f'Statik site: {build(publish_report, args.site)}')
     path = write_report(report, target)
     c = report['counts']
     print(f"Tarih {report['today']} · kabul {c['accept']} · inceleme {c['review']} · izleme {c['watch']} · "

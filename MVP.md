@@ -502,3 +502,7 @@ Yayın kapısı ve veri koruma uygulandı; 94 Python + 11 JS PASS. docs/ASAMA_1_
 
 ### 2026-10-10 — Yerel AŞAMA 4 tamamlandı
 128 Python + 11 JS PASS; query/çağrı kimliği, güvenli alias zinciri, dönem ayrımı, kanıt koruma ve çelişki incelemesi uygulandı. 127 public/latest dosyası aynı. Rapor docs/ASAMA_4_KIMLIK_GUVENLIGI.md. AŞAMA 5 yerelde devam; onay beklenmez.
+
+
+### 2026-10-10 — AŞAMA 5 tamamlandı
+136 Python + 11 JS PASS; kalıcı keşif, eski kayıt koruma, sürüme bağlı Service onayı/geri çekme, gerçek statik yayın köprüsü ve yönetici kuyruğu uygulandı. 127 public/latest dosyası değişmedi. Kanıt docs/ASAMA_5_KESIF_ONAY_KOPRUSU.md. AŞAMA 6 yerelde devam; aşama onayı beklenmez.

@@ -9,14 +9,27 @@ class Service:
  def require_admin(self,u):
   if not self.is_admin(u):raise PermissionError('Yönetici yetkisi gerekli')
  def save(self,u,c):
-  self.require_admin(u);validate(c);c={k:v for k,v in c.items() if k not in {'approval','version'}};c['version']=version(c);self.store.put('calls',c['id'],c);return c
+  self.require_admin(u);validate(c)
+  old=self.store.get('calls',c['id'])
+  if old and old.get('from_aggregator'):
+   if c.get('discovery_version')!=old['discovery_version']:raise ValueError('Keşif değişti; güncel kaydı yeniden inceleyin')
+   c=dict(c,from_aggregator=True,reviewed_discovery_version=old['discovery_version'],discovery_changes_pending=False)
+   c['description_short']=c['summary']
+   if c.get('official_url_verified'):c['original_url']=c.get('official_url')
+  c={k:v for k,v in c.items() if k not in {'approval','version'}};c['version']=version(c);self.store.put('calls',c['id'],c);return c
  def approve(self,u,i,v):
   self.require_admin(u);c=self.store.get('calls',i)
   if not c or version(c)!=v:raise ValueError('İçerik değişti; yeniden inceleyin')
+  from .aggregator.bridge import review_ready
+  if not review_ready(c):raise ValueError('Güncel keşif, özgün özet ve resmî URL incelemesi tamamlanmalı')
   c['approval']={'reviewed':True,'version':v,'uid':u['uid'],'at':now()};self.store.put('calls',i,c)
   if self.approvals:
    p=Path(self.approvals);p.mkdir(exist_ok=True);(p/(i+'.json')).write_text(json.dumps(c['approval'],indent=2))
   return c
+ def revoke(self,u,i):
+  self.require_admin(u);c=self.store.get('calls',i)
+  if not c:raise ValueError('Çağrı bulunamadı')
+  c.pop('approval',None);self.store.put('calls',i,c);return c
  def preferences(self,u,d):
   if not u.get('uid') or u.get('email_verified') is not True:raise PermissionError('Doğrulanmış giriş gerekli')
   if not isinstance(d.get('subscribed'),bool) or not isinstance(d.get('themes'),list) or any(t not in THEMES for t in d['themes']):raise ValueError('Tercihler geçersiz')

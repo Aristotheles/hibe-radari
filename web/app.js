@@ -178,6 +178,16 @@ async function admin() {
       const n = el('details');
       const approved = c.approval?.reviewed && c.approval.version === c.version;
       n.append(el('summary', c.title + (approved ? ' · Bu sürüm onaylı' : ' · İnceleme bekliyor')));
+      if (c.from_aggregator) {
+        n.append(el('p', 'Toplayıcı keşfi · resmî URL, özgün özet ve başvuru koşullarını inceleyip kaydedin.'));
+        const discovery = (data.discoveries || []).find(d => (d.call_id || d.id) === c.id);
+        if (discovery) {
+          const evidence = el('pre', JSON.stringify(discovery.observation, null, 2)); n.append(evidence);
+        }
+        const edit = el('button', 'Kaydı düzenlemeye al');
+        edit.onclick = () => { $('#import').value = JSON.stringify(c, null, 2); $('#import').focus(); };
+        n.append(edit);
+      }
       if (c.demo) n.append(el('p', 'DEMO · Kurgusal kayıt', 'tag'));
       n.append(el('p', c.summary), el('p', deadlineLabel(c.deadline)));
       for (const p of c.paths || []) { n.append(el('h3', roles[p.role] || 'Rol belirsiz')); conditions(p, n); }
@@ -196,6 +206,11 @@ async function admin() {
           if (listState === 'ready') $('[data-metric="published"] dd').textContent = String(calls.length);
         } catch (error) { status.textContent = friendlyError(error); status.dataset.tone = 'error'; $('#retry-admin').hidden = false; b.disabled = false; }
       };
+      if (approved) {
+        const revoke = el('button', 'Yayın onayını geri çek');
+        revoke.onclick = () => action(revoke, async () => { await api('revoke', {id:c.id}); await loadCalls(); await admin(); }, '#admin-status');
+        n.append(revoke);
+      }
       n.append(b, status); $('#review').append(n);
     }
     message('', 'info', '#admin-status');
