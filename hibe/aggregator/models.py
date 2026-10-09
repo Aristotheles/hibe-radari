@@ -8,11 +8,14 @@ TRACKING = ('utm_', 'fbclid', 'gclid')
 
 
 def canonical_url(url):
-    """Aynı sayfanın http/https, #parça ve izleme parametresi farklarını eşitler."""
+    """Çağrı query/port bilgisini korur; yalnız bilinen izleme alanlarını temizler."""
     u = urlsplit(url.strip())
-    query = urlencode([(k, v) for k, v in parse_qsl(u.query) if not k.startswith(TRACKING)])
-    path = u.path.rstrip('/') or '/'
-    return urlunsplit(('https', (u.hostname or '').lower(), path, query, ''))
+    query = urlencode(sorted((k, v) for k, v in parse_qsl(u.query, keep_blank_values=True)
+                             if not k.lower().startswith('utm_') and k.lower() not in ('fbclid', 'gclid')))
+    host = (u.hostname or '').lower()
+    if ':' in host: host = '[' + host + ']'
+    if u.port and u.port not in (80, 443): host += ':' + str(u.port)
+    return urlunsplit(('https', host, u.path.rstrip('/') or '/', query, ''))
 
 
 def opportunity_id(url):
@@ -34,6 +37,14 @@ class GrantOpportunity:
     source_id: str                  # config/aggregator.json kaynak kimliği
     source_url: str                 # duyurunun bulunduğu sayfa (kaynak linki)
     organization: str | None = None
+    official_call_id: str | None = None
+    identity_authority: str | None = None
+    call_period: str | None = None
+    application_path: str | None = None
+    original_url_evidence: str | None = None
+    original_url_confirmed: bool = False
+    provenance: list = field(default_factory=list)
+    duplicate_candidates: list = field(default_factory=list)
     deadline: date | None = None
     deadline_evidence: str | None = None   # son tarihin çıkarıldığı metin parçası
     deadline_precision: str = 'unknown'
@@ -85,7 +96,14 @@ class GrantOpportunity:
 
     @property
     def id(self):
-        return opportunity_id(self.source_url)
+        from .textutil import fold
+        import re
+        url = canonical_url(self.source_url)
+        context = '|'.join((self.official_call_id or '', self.identity_authority or '', self.programme or '',
+                            self.call_period or '', self.application_path or ''))
+        generic = urlsplit(url).path.rstrip('/') in ('', '/apply', '/grants', '/funding', '/calls') and not urlsplit(url).query
+        title_context = fold(self.title) if generic else '|'.join(re.findall(r'\b20\d{2}\b', self.title))
+        return hashlib.sha256((url + '|' + context + '|' + title_context).encode()).hexdigest()[:20]
 
     def to_dict(self):
         data = asdict(self)

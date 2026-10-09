@@ -7,7 +7,7 @@ from urllib.parse import urljoin, urlsplit
 
 from bs4 import BeautifulSoup
 
-from .models import GrantOpportunity
+from .models import GrantOpportunity, canonical_url
 from .textutil import find_deadline, shorten
 
 NOISE_HOSTS = ('facebook.com', 'twitter.com', 'x.com', 'instagram.com', 'linkedin.com', 'youtube.com',
@@ -35,11 +35,12 @@ def collect_list(source, fetcher, today):
         for a in _soup(fetcher.get_text(base)).find_all('a', href=True):
             parts = urlsplit(urljoin(base, a['href']))
             title = re.sub(r'\s+', ' ', a.get_text(' ', strip=True))
-            if not pattern.search(parts.path) or len(title) < 15 or parts.path in seen:
+            identity = canonical_url(urljoin(base, a['href']))
+            if not pattern.search(parts.path) or len(title) < 15 or identity in seen:
                 continue
-            seen.add(parts.path)
+            seen.add(identity)
             items.append(GrantOpportunity(
-                title=title, source_id=source['id'], source_url=f'https://{parts.hostname}{parts.path}',
+                title=title, source_id=source['id'], source_url=urljoin(base, a['href']),
                 organization=source.get('organization'), language=source.get('language')))
             if len(items) >= source.get('max_items', 40):
                 return items
@@ -61,7 +62,7 @@ def collect_cards(source, fetcher, today):
         if not title_node or not link_node or not link_node.get('href'):
             continue
         parts = urlsplit(urljoin(base, link_node['href']))
-        url = f'https://{parts.hostname}{parts.path}'
+        url = urljoin(base, link_node['href'])
         if url in seen:
             continue
         seen.add(url)
@@ -128,7 +129,7 @@ def collect_crawl(source, fetcher, today):
         for a in _soup(html).find_all('a', href=True):
             parts = urlsplit(urljoin(base, a['href']))
             if parts.hostname == host and parts.scheme == 'https' and parts.path.startswith(follow):
-                yield f'https://{host}{parts.path}'
+                yield urljoin(base, a['href'])
 
     start_html = fetcher.get_text(start)
     pages = [u for u in dict.fromkeys(links(start_html, start)) if u.rstrip('/') != start.rstrip('/')]
@@ -166,6 +167,7 @@ def enrich(item, fetcher, today, content_selector=None):
         candidate = f'https://{parts.hostname}{parts.path}' + (f'?{parts.query}' if parts.query else '')
         if HINT.search(a.get_text(' ', strip=True)):
             best = candidate
+            item.original_url_evidence = a.get_text(' ', strip=True)
             break
         best = best or candidate
     item.original_url = best

@@ -498,3 +498,7 @@ Yayın kapısı ve veri koruma uygulandı; 94 Python + 11 JS PASS. docs/ASAMA_1_
 
 ### 2026-10-10 — Yerel AŞAMA 3 tamamlandı
 119 Python + 11 JS PASS; tarih kesinliği/kanıt/revizyon, başlangıç-bitiriş, belirsiz tarih takvim engeli ve UTC uygulandı. 127 public/latest dosyası değişmedi. Rapor docs/ASAMA_3_TARIH_GUVENLIGI.md. Sıradaki AŞAMA 4; kullanıcı onayı beklenmez.
+
+
+### 2026-10-10 — Yerel AŞAMA 4 tamamlandı
+128 Python + 11 JS PASS; query/çağrı kimliği, güvenli alias zinciri, dönem ayrımı, kanıt koruma ve çelişki incelemesi uygulandı. 127 public/latest dosyası aynı. Rapor docs/ASAMA_4_KIMLIK_GUVENLIGI.md. AŞAMA 5 yerelde devam; onay beklenmez.

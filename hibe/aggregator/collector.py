@@ -84,19 +84,80 @@ def pin(item, today):
 
 
 def dedupe(items):
-    """Aynı canonical URL'yi (ve derleme sitesinin işaret ettiği resmî sayfayı) tek kayda indirir.
-    Resmî kaynak, derleme sitesinden önce gelir; diğer kaynak kimlikleri seen_in'e yazılır."""
+    """Kanıtlı kimlik/ayrıntı alias eşleşmesi; benzer başlık yalnız inceleme sinyalidir."""
+    import re
+    from urllib.parse import urlsplit
+    from difflib import SequenceMatcher
+    from .textutil import fold
     items = sorted(items, key=lambda i: (i.aggregator, ORDER[i.relevance.verdict]))
-    kept, index = [], {}
+    def periods(item):
+        return item.call_period or tuple(re.findall(r'\b20\d{2}\b', item.title))
+    def compatible(a, b):
+        for field in ('official_call_id', 'identity_authority', 'programme', 'application_path'):
+            x, y = getattr(a, field), getattr(b, field)
+            if x and y and x != y: return False
+        return not (periods(a) and periods(b) and periods(a) != periods(b))
+    def generic(url):
+        u = urlsplit(url)
+        return u.path.rstrip('/') in ('', '/apply', '/grants', '/funding', '/calls') and not u.query
+    def keys(item):
+        out = [canonical_url(item.source_url)]
+        if item.original_url and (item.original_url_confirmed or item.original_url_evidence):
+            alias = canonical_url(item.original_url)
+            if not generic(alias): out.append(alias)
+        return out
+    def same(a, b):
+        if not compatible(a, b): return False
+        if a.official_call_id and b.official_call_id:
+            return bool(a.identity_authority and a.identity_authority == b.identity_authority and a.official_call_id == b.official_call_id)
+        common = set(keys(a)) & set(keys(b))
+        if not common: return False
+        if canonical_url(a.source_url) == canonical_url(b.source_url):
+            return not generic(canonical_url(a.source_url)) or fold(a.title) == fold(b.title)
+        return fold(a.title) == fold(b.title) or (a.original_url_confirmed and b.original_url_confirmed)
+    groups = []
     for item in items:
-        keys = [canonical_url(item.source_url)] + ([canonical_url(item.original_url)] if item.original_url else [])
-        twin = next((index[k] for k in keys if k in index), None)
-        if twin:
-            twin.seen_in.append(item.source_id)
-            continue
-        kept.append(item)
-        for key in keys:
-            index[key] = item
+        matches = [g for g in groups if all(compatible(item, member) for member in g) and any(same(item, member) for member in g)]
+        if matches:
+            group = matches[0]
+            group.append(item)
+            for other in matches[1:]:
+                if all(compatible(a, b) for a in group for b in other):
+                    group.extend(other); groups.remove(other)
+        else: groups.append([item])
+    kept = []
+    for group in groups:
+        target = group[0]
+        for other in group:
+            observation = {'source_id': other.source_id, 'source_url': other.source_url,
+                'original_url': other.original_url, 'deadline': other.deadline.isoformat() if other.deadline else None,
+                'deadline_evidence': other.deadline_evidence, 'deadline_source_url': other.deadline_source_url,
+                'deadline_precision': other.deadline_precision, 'deadline_checked_at': other.deadline_checked_at}
+            if observation not in target.provenance: target.provenance.append(observation)
+            if other is target: continue
+            target.seen_in = list(dict.fromkeys(target.seen_in + [other.source_id] + other.seen_in))
+            for field in ('organization','programme','official_call_id','identity_authority','call_period','application_path','description_short'):
+                if not getattr(target, field) and getattr(other, field): setattr(target, field, getattr(other, field))
+            if not target.deadline and other.deadline and other.deadline_precision == 'day':
+                for field in ('deadline','deadline_evidence','deadline_precision','deadline_month','deadline_source_url','deadline_checked_at','deadline_year_inferred'):
+                    setattr(target, field, getattr(other, field))
+            elif target.deadline and other.deadline and target.deadline != other.deadline:
+                target.deadline_review_required = True
+                target.relevance.verdict = 'review'
+                target.relevance.reasons.append('doğrulama gerekli: kaynak son tarihleri çelişiyor')
+            for candidate in other.deadline_candidates:
+                if candidate not in target.deadline_candidates: target.deadline_candidates.append(candidate)
+            for historic in other.deadline_history:
+                if historic not in target.deadline_history: target.deadline_history.append(historic)
+            target.deadline_review_required |= other.deadline_review_required
+        target.seen_in = [x for x in target.seen_in if x != target.source_id]
+        kept.append(target)
+    for pos, a in enumerate(kept):
+        for b in kept[pos+1:]:
+            if SequenceMatcher(None, fold(a.title), fold(b.title)).ratio() >= .9:
+                for x, y in ((a,b),(b,a)):
+                    candidate = {'id':y.id,'reason':'Benzer başlık; otomatik birleştirilmedi'}
+                    if candidate not in x.duplicate_candidates: x.duplicate_candidates.append(candidate)
     return kept
 
 

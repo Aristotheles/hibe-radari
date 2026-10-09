@@ -56,6 +56,7 @@ def parse(payload, source, today):
         items.append(GrantOpportunity(
             title=_first(meta, 'title') or result.get('title') or ident,
             source_id=source['id'], source_url=PORTAL + ident,
+            official_call_id=ident, identity_authority='eu-ft',
             organization=source.get('organization', 'Avrupa Komisyonu'),
             deadline=deadline,
             deadline_evidence=f"API deadlineDate: {', '.join(d.isoformat() for d in deadlines)}" if deadlines else None,
