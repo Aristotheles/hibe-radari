@@ -31,6 +31,6 @@ def scan_source(source,store,extractor,profile,fetcher=fetch):
 def main():
  p=argparse.ArgumentParser();p.add_argument('--fake',action='store_true');p.add_argument('--firebase',action='store_true');a=p.parse_args()
  from .server import ROOT,App
- app=App(demo=not a.firebase);sources=json.loads((ROOT/'config/sources.json').read_text());profile=json.loads((ROOT/'config/profile.json').read_text());extractor=FakeExtractor() if a.fake else GeminiExtractor()
+ app=App(demo=not a.firebase);sources=json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'));profile=json.loads((ROOT/'config/profile.json').read_text(encoding='utf-8'));extractor=FakeExtractor() if a.fake else GeminiExtractor()
  for s in sources:print(json.dumps(scan_source(s,app.service.store,extractor,profile),ensure_ascii=False))
 if __name__=='__main__':main()

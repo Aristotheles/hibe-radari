@@ -5,7 +5,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-2",
@@ -13,7 +14,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-3",
@@ -21,7 +23,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-4",
@@ -29,7 +32,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-5",
@@ -37,7 +41,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-6",
@@ -45,7 +50,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-7",
@@ -53,7 +59,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-8",
@@ -61,7 +68,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-9",
@@ -69,7 +77,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-10",
@@ -77,7 +86,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-11",
@@ -85,7 +95,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-12",
@@ -93,7 +104,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-13",
@@ -101,7 +113,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-14",
@@ -109,7 +122,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-15",
@@ -117,7 +131,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-16",
@@ -125,7 +140,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-17",
@@ -133,7 +149,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-18",
@@ -141,7 +158,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-19",
@@ -149,7 +167,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "candidate"
   },
   {
     "id": "source-20",
@@ -157,7 +176,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-21",
@@ -165,7 +185,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-22",
@@ -173,7 +194,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-23",
@@ -181,7 +203,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-24",
@@ -189,7 +212,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-25",
@@ -197,7 +221,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-26",
@@ -205,7 +230,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-27",
@@ -213,7 +239,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-28",
@@ -221,7 +248,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-29",
@@ -229,7 +257,8 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   },
   {
     "id": "source-30",
@@ -237,6 +266,7 @@
     "url": null,
     "method": "manual",
     "status": "registry_pending",
-    "last_checked": null
+    "last_checked": null,
+    "identity_status": "missing"
   }
 ]

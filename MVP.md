@@ -30,7 +30,7 @@ Alt puanlar başlangıç uygulama önerisidir; kullanıcı ayarlayabilir. Uygun 
 |---|---|---|
 | 1 | Saf domain, düz koşullar, hash, bellek/yerel depo | Kodlandı; internetsiz testler geçti |
 | 2 | Yerel ilan/admin/abonelik dikey akışı | Yerel demo arayüzü geliştirildi; 28 Python + 5 JS testi ve ziyaretçi/kullanıcı/yönetici tarayıcı akışları geçti; canlı giriş/gönderim kapsam dışı |
-| 3 | Tam 30 kaynak | 19 doğrulanmamış isim + 11 eksik yer; özgün doküman ve gerçek URL/parser gerekli |
+| 3 | Tam 30 kaynak | Başlandı: internetsiz 30 kayıt denetimi ve eksik kontrol listesi hazır; 19 aday + 11 eksik kimlik, doğrulanmış kontrol 0. Özgün doküman ve kaynak fixture'ları bekleniyor |
 | 4 | Tarama ve Gemini | Güvenli fetch, bağlı belge hash'i, sıralı pipeline ve gerçek/fake çıkarıcı kodlandı; canlı test bekliyor |
 | 5 | Google/Firebase | SDK/token doğrulama ve Firestore adaptörü kodlandı; gerçek proje/UID ve emulator testi bekliyor |
 | 6 | Haftalık bülten | Outbox, SMTP kodu ve imzalı çıkış kodlandı; gerçek gönderim/teslimat testi bekliyor |
@@ -67,3 +67,7 @@ görsel ekran ve tarayıcı etkileşim doğrulaması yapılamadı.
 Firebase, Gemini ve SMTP canlı denenmedi. Ürün henüz canlı MVP kabulünde değil.
 
 9 Ekim 2026, sonraki arayüz oturumu: Lovable danışmanlık önerileri mevcut HTML/CSS/JS uygulamasına uyarlandı. Kalıcı DEMO, rol bazlı gezinme, açık rol seçimi, Türkçe tema araması, filtre/sıralama, kanıt ayrıntısı, uygunluk/öncelik ayrımı, abonelik ve onay mesajları eklendi. Kaynak dosyasının Windows UTF-8 okuma hatası düzeltildi. 28 Python ve 5 JS testi geçti; yerel kullanıcı/yönetici etkileşimleri ile masaüstü ve emüle mobil görünüm incelendi. Önceki “görsel test yapılmadı” kaydı bu yerel kapsam için güncellendi. Kanıt: docs/UI_VERIFICATION.md. Sıradaki aşama 3: tam 30 kaynak; özgün liste henüz mevcut değil.
+
+9 Ekim 2026, aşama 3 başlangıcı: 30 kayıt korunarak aday/eksik kimlik ayrımı eklendi. `hibe.registry` internetsiz kayıt/URL/kontrol denetimi ve `docs/SOURCE_CHECKLIST.md` hazırlandı. `--strict` mevcut 30 eksik kayıt için bilerek başarısız olur; bu canlı kaynak başarısı değildir. Kaynak isimleri/URL'leri uydurulmadı. Otomatik kaynaklara özgü gerçek fixture ve kontrol yolları, özgün 30 kaynak belgesini bekliyor; aşama 3 tamamlanmadı.
+
+Bu adımın son kontrolü: 37 Python + 5 JavaScript testi geçti. Windows'ta yabancı Origin POST reddinin okunmamış gövde nedeniyle soket resetine dönüşmesi düzeltildi; boyut sınırı ve yetki kontrolü korunarak tekrarlı 403 yanıtı test edildi. Pipeline kaynak/profil okuması da UTF-8 oldu; testler gerçek hizmetleri taklitlerle dışarıda tuttu. Son kanıt ve açık engel: docs/VERIFICATION.md.

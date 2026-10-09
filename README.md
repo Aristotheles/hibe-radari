@@ -32,6 +32,8 @@ Model: gemini-3.8-flash; GEMINI_API_KEY yalnızca backend ortamına girilir. Mod
 
 `config/sources.json`: Hedef 30 kayıt. Konuşmada adı görülen 19 isim doğrulanmamış; 11 özgün kaynak eksik. Tam listenin yerine uydurma kaynak kullanılmaz. Gerçek kaynak için `status: ready`, `type: official`, `allowed_hosts` ve `call_urls` gerekir. Her call_urls girdisi `{ "url": "https://...", "documents": ["https://...pdf"] }` biçimindedir. Liste sayfasından otomatik yeni çağrı keşfi henüz kaynak adaptörleriyle tamamlanmadı.
 
+İnternetsiz envanter kontrolü: `python -m hibe.registry`. `--strict` eksik kimlik/URL/kontrol yolu varsa çıkış kodu 1 verir (mevcut envanterde beklenir). 30 kaydın eksikleri `docs/SOURCE_CHECKLIST.md` içindedir. Bu denetim gerçek kaynak taraması veya canlı doğrulama yapmaz.
+
 ```bash
 python -m hibe.pipeline --fake
 python -m hibe.pipeline --firebase
@@ -56,6 +58,6 @@ Hazırlama aynı hafta/kullanıcı için tek outbox kaydı üretir. Çıkış ba
 
 ## Bugünkü durum
 
-9 Ekim arayüz doğrulaması: 28 unit/HTTP ve 5 JavaScript testi geçti; JS sözdizimi ve Python derleme kontrolü geçti. Yerel tarayıcıda ziyaretçi/kullanıcı/yönetici, arama, kanıt, tercih kalıcılığı/opt-out, demo onayı ve JSON hata akışları incelendi. 390 ve 1280 piksel görünümünde yatay taşma yok; bu kontrol gerçek telefon testi değildir. Ayrıntılı kanıt: docs/UI_VERIFICATION.md. Gerçek model/auth/SMTP testi yapılmadı. 30 kaynak henüz taranmıyor. Pro tier alanı var; ödeme ve premium erişim yok. Büyüme sayıları kayıtlı kullanıcı ve bülten tercihi açık kullanıcı sayısıdır; günlük aktif kullanıcı grafiği henüz yok.
+9 Ekim son doğrulaması: 37 unit/HTTP/envanter ve 5 JavaScript testi geçti; JS sözdizimi ve Python derleme kontrolü geçti. Yerel tarayıcıda ziyaretçi/kullanıcı/yönetici, arama, kanıt, tercih kalıcılığı/opt-out, demo onayı ve JSON hata akışları incelendi. 390 ve 1280 piksel görünümünde yatay taşma yok; bu kontrol gerçek telefon testi değildir. Ayrıntılı kanıt: docs/UI_VERIFICATION.md ve docs/VERIFICATION.md. Gerçek model/auth/SMTP testi yapılmadı. 30 kaynak henüz taranmıyor. Pro tier alanı var; ödeme ve premium erişim yok. Büyüme sayıları kayıtlı kullanıcı ve bülten tercihi açık kullanıcı sayısıdır; günlük aktif kullanıcı grafiği henüz yok.
 
 MVP.md aşamaları ve Codex devam istemini, docs/SECURITY.md canlıya çıkış sınırlarını içerir.
