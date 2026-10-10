@@ -817,3 +817,12 @@ Kaydı hazırlayan: Codex.
 Kullanıcının isteğiyle her sayfa açılışında açık tema başlar; sistemin koyu tercihi ve önceki localStorage teması başlangıcı değiştirmez. Tema düğmesi oturum içinde çalışır. JS syntax/diff check PASS; gerçek yönetici sayfası yenilemesinde dark=false ve düğme Karanlık ölçüldü.
 ### Sonraki adım
 Otomatik ilan incelemesinin açık işlerine devam et. Hosting dağıtımı yapılmadı.
+
+## 2026-10-10 — Kanıtlı otomatik inceleme önerisi çekirdeği
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kota kalan kısa53/haftalık36, geliştirmeye uygun. 6e92b59 origin SHA eşliği ve terminal CI success ölçüldü. Backend8021PID13376; zamanlanmış görev son0/sonraki16.15. hibe/document_review.py mevcut extractor/validate_evidence ile ayrı review_proposals hazırlama adımı: izinli HTTPS host, gerçek metin/hash, başarısız modelde önceki öneri/çağrı korunur, sürüm yarışında stale öneri saklanmaz, uydurulmuş alıntı bilinmiyor, approval çıkarılır. 230Python PASS31.376s; yeni4regresyon PASS0.137s; diff check PASS.
+### Açık sorular ve sorunlar
+Yeni modül henüz zamanlanmış taramaya bağlı değil; gerçek Gemini ve canlı belge incelemesi yapılmadı. Kullanıcı anahtarı backend ortamına ekleyeceğini bildirdi; eklendiği varsayılmadı ve soru tekrarlanmaz. Hosting/onay değişmedi.
+### Sonraki adım
+İzinli resmî belgeleri mevcut güvenli Fetcher üzerinden bu öneri akışına bağla; anahtar gerçekten mevcutsa sınırlandırılmış gerçek çağrıyla doğrula. Yeni commit CI ayrıca ölçülecek.
