@@ -826,3 +826,12 @@ Kota kalan kısa53/haftalık36, geliştirmeye uygun. 6e92b59 origin SHA eşliği
 Yeni modül henüz zamanlanmış taramaya bağlı değil; gerçek Gemini ve canlı belge incelemesi yapılmadı. Kullanıcı anahtarı backend ortamına ekleyeceğini bildirdi; eklendiği varsayılmadı ve soru tekrarlanmaz. Hosting/onay değişmedi.
 ### Sonraki adım
 İzinli resmî belgeleri mevcut güvenli Fetcher üzerinden bu öneri akışına bağla; anahtar gerçekten mevcutsa sınırlandırılmış gerçek çağrıyla doğrula. Yeni commit CI ayrıca ölçülecek.
+
+## 2026-10-10 — Kullanıcı ücretsiz Gemini katmanına geçiyor
+Kaydı hazırlayan: Codex.
+### Alınan kararlar
+Kullanıcı ücretli kullanım istemiyor; anahtarı/projeyi ücretsiz katmana değiştireceğini söyledi. Hazır bildirimi ve gerçek ücretsiz proje durumu doğrulanmadan Gemini isteği gönderme. Kullanıcının önceki ekledim bildirimi bu yeni geçişin tamamlandığı anlamına gelmez. Anahtar değişimi tek başına faturalandırma kanıtı değildir. Model/faturalandırma değiştirme veya ücretli yola otomatik geçiş yapma.
+### Yapılanlar
+Kota kalan kısa48/haftalık35. ca5fd2e terminal GitHub CI success ölçüldü. Kaynak zamanlayıcı son sonuç0, sonraki16.15; mevcut görev Gemini çağırmaz. Bu kontrolde Gemini veya yeni kaynak taraması yapılmadı. Yayın/deploy yok.
+### Sonraki adım
+Ücretsiz geçiş hazır olana kadar API çağrısı başlatma; bağımsız yerel entegrasyon işleri yetki kapsamında. Gerçek inceleme, ücretsiz katman doğrulaması sonrası sınırlandırılmış test gerektirir.
