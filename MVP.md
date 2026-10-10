@@ -792,3 +792,12 @@ Kaydı hazırlayan: Codex.
 Öğrenci rolünün mevcut kullanıcı görünümünde doğru temsil edilmesi ve resmî proje rehberi incelemesi açık. Bilim Söyleşileri şartları henüz tamamlanmadı. Son kod checkpoint c8e1a8f origin SHA eşliği doğrulandı; CI38049996782 halen çalışıyordu, başarı uydurulmadı. Backend exec29481.
 ### Sonraki adım
 Öğrenci rolünü MVP kapsamıyla karşılaştır; resmî rehber incelemesini ve güncel fırsatları tamamla, sonra gerçek insan yayın onayıyla RELEASE değerlendirmesini yürüt.
+
+## 2026-10-10 — Tarih/uygunluk filtresi ve yerel otomatik güncelleme
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Mevcut siteye Son başvuru ve Uygunluk filtreleri eklendi; seçili başvuru yolunda aynı koşul/rol aranır. Gerçek browser seçim/temizleme ve ekran taşma kontrolü geçti. 221 Python testi39.277s,13JS testi PASS; syntax/diff PASS. Windows HibeRadari-KaynakGuncelleme görevi6günlük tetikle kuruldu. Mevcut collector/periyot/Firestore bridge; yalnız23allowed, kapalılar atlanır, genel/rejected kuyruk dışı, onay/deploy yok. İlk gerçek görev sonucu0,statusnot_due,0tarama/0değişiklik,finished2026-10-10T11:59:57.950999Z; yeniden tarandı denmez. Sonraki tetik16.15. docs/OTOMATIK_GUNCELLEME.md.
+### Açık sorular ve sorunlar
+Görev yalnız bilgisayar açık ve Windows oturumu mevcutken çalışır; sürekli sunucu otomasyonu değil. 160kuyruk kaydı0onay; bütün154registry çalışıyor sayılmaz. Türkiye koşulları kanıtı ve güncel fırsat incelemesi açık. Hosting aynı.
+### Sonraki adım
+Periyodu dolan ilk gerçek tarama sonucunu ölç; güncel lise/öğretmen fırsatlarını kanıtlarıyla tamamla ve insan onayı sonrası RELEASE değerlendir.

@@ -146,7 +146,7 @@ function sourceLink(url, text) {
 
 function draw() {
   if (listState !== 'ready') return;
-  renderListing(calls, {query:$('#search').value,role:$('#role').value,theme:$('#theme').value,sort:$('#sort').value},audience);
+  renderListing(calls, {query:$('#search').value,role:$('#role').value,theme:$('#theme').value,sort:$('#sort').value,deadline:$('#deadline-filter').value,eligibility:$('#eligibility-filter').value},audience);
 }
 
 async function loadCalls() {
@@ -280,8 +280,8 @@ $('#import-button').onclick = () => action($('#import-button'), async () => {
   await api('call', draft); message('Taslak kaydedildi; onay bekliyor.', 'success', '#import-status'); await admin();
 }, '#import-status');
 $('#search').oninput = draw;
-for (const id of ['role', 'theme', 'sort']) $('#' + id).onchange = draw;
-$('#clear-filters').onclick = () => { $('#search').value = ''; $('#role').value = ''; $('#theme').value = ''; $('#sort').value = 'deadline'; draw(); $('#search').focus(); };
+for (const id of ['role', 'theme', 'sort', 'deadline-filter', 'eligibility-filter']) $('#' + id).onchange = draw;
+$('#clear-filters').onclick = () => { $('#search').value = ''; $('#role').value = ''; $('#theme').value = ''; $('#deadline-filter').value = ''; $('#eligibility-filter').value = ''; $('#sort').value = 'deadline'; draw(); $('#search').focus(); };
 $('#retry-calls').onclick = () => action($('#retry-calls'), loadCalls);
 $('#retry-admin').onclick = () => action($('#retry-admin'), admin, '#admin-status');
 

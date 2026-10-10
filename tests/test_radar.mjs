@@ -9,6 +9,25 @@ const records = [
   { id: 'early', title: 'Su araştırması', summary: '', themes: ['cevre_su'], paths: [{ role: 'ortak' }], deadline: '2026-11-02' }
 ];
 
+test('tarih filtresi kapanmış ve belirsiz ilanı açık gibi göstermez; son gün dahildir', () => {
+  const list = [
+    {id:'today',deadline:'2026-10-10',paths:[{role:'ortak',eligibility:'uygun'}]},
+    {id:'past',deadline:'2026-10-09',paths:[{role:'ortak'}]},
+    {id:'unknown',deadline:null,paths:[{role:'ortak'}]},
+    {id:'closed',deadline:'2026-12-01',official_status:'kapandi',paths:[{role:'ortak'}]},
+    {id:'boundary',deadline:'2026-10-24',paths:[{role:'ortak'}]}
+  ];
+  assert.deepEqual(filterCalls(list,{deadline:'open',today:'2026-10-10'}).map(x=>x.id),['today','boundary']);
+  assert.deepEqual(filterCalls(list,{deadline:'urgent',today:'2026-10-10'}).map(x=>x.id),['today']);
+  assert.deepEqual(filterCalls(list,{deadline:'unknown'}).map(x=>x.id),['unknown']);
+});
+
+test('uygunluk ve rol aynı başvuru yolunda sağlanır; eksik koşul uygun sayılmaz', () => {
+  const list=[{id:'mixed',paths:[{role:'ortak',eligibility:'belirsiz'},{role:'dogrudan',eligibility:'uygun'}]}, {id:'missing',paths:[{role:'ortak'}]}];
+  assert.equal(filterCalls(list,{role:'ortak',eligibility:'uygun'}).length,0);
+  assert.deepEqual(filterCalls(list,{role:'ortak',eligibility:'belirsiz'}).map(x=>x.id),['mixed','missing']);
+});
+
 test('görünen Türkçe tema adı ve harfler aramada bulunur', () => {
   assert.deepEqual(filterCalls(records, { query: 'KAPSAYICILIK' }).map(c => c.id), ['unknown']);
   assert.deepEqual(filterCalls(records, { query: '  çevre ve su  ' }).map(c => c.id), ['early']);

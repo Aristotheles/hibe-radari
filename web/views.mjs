@@ -17,7 +17,7 @@ function link(href, text, cls) { const a = node('a', text, cls); a.href = href; 
 function countText(call) { const days = daysLeft(call.deadline); return days === null ? 'Tarih bekleniyor' : days < 0 ? 'Süresi geçti' : days === 0 ? 'Son başvuru günü' : days + ' gün kaldı'; }
 
 export function renderListing(calls, filters, audience) {
-  const items = filterCalls(audienceCalls(calls, audience), filters);
+  const items = filterCalls(audienceCalls(calls, audience).map(c => ({...c, paths: pathsFor(c, audience)})), filters);
   $('cards').replaceChildren(); $('result-count').textContent = `${items.length} fırsat ${audience === 'school' ? 'okul yollarında' : 'bireysel yollarda'} listeleniyor`;
   $('radar-title').textContent = audience === 'school' ? 'Okulun için bir sonraki fırsat.' : 'Senin için bir sonraki fırsat.';
   for (const group of ['Acil (14 günden az)', 'Bu ay', 'Daha ileri', 'Tarihi açıklanmadı', 'Süresi geçti']) {

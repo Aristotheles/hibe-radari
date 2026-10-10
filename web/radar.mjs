@@ -25,10 +25,19 @@ export function normalizeSearch(value) {
   return String(value || '').trim().toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replaceAll('ı', 'i');
 }
 
-export function filterCalls(calls, { query = '', role = '', theme = '', sort = 'default' } = {}) {
+export function filterCalls(calls, { query = '', role = '', theme = '', sort = 'default', deadline = '', eligibility = '', today = new Intl.DateTimeFormat('sv-SE', {timeZone:'Europe/Istanbul'}).format(new Date()) } = {}) {
   const q = normalizeSearch(query);
+  const start = dateValue(today);
+  const matchesDeadline = c => {
+    const end = dateValue(c.deadline);
+    if (deadline === 'unknown') return end === null;
+    if (deadline === 'open') return end !== null && start !== null && end >= start && !['kapandi','askida'].includes(c.official_status);
+    if (deadline === 'urgent') return end !== null && start !== null && end >= start && end < start + 14 * 86400000 && !['kapandi','askida'].includes(c.official_status);
+    return true;
+  };
   const list = calls.filter(c => normalizeSearch([c.title, c.summary, ...(c.themes || []).map(t => themes[t] || t)].join(' ')).includes(q)
-    && (!role || (c.paths || []).some(p => p.role === role))
+    && (c.paths || []).some(p => (!role || p.role === role) && (!eligibility || (p.eligibility || 'belirsiz') === eligibility))
+    && matchesDeadline(c)
     && (!theme || (c.themes || []).includes(theme)));
   if (sort === 'deadline') list.sort((a, b) => (dateValue(a.deadline) ?? Infinity) - (dateValue(b.deadline) ?? Infinity));
   return list;
