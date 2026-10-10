@@ -48,9 +48,9 @@
       "language": "tr",
       "access_policy": {
         "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "evidence_url": "https://4000.tubitak.gov.tr/rss.xml",
+        "checked_at": "2026-10-10T03:17:04.678496+00:00",
+        "note": "Manuel erişim gözlemi/kısa resmî tarih kanıtı mevcut; otomatik tarama ve yeniden kullanım izni doğrulanmadı. İncelenmemiş politika korunur."
       }
     },
     {
@@ -69,12 +69,12 @@
       "detail": true,
       "max_items": 40,
       "language": "tr",
-      "_not": "4000.tubitak.gov.tr akışı bayat (son çağrı 2024); güncel 4004/4006 çağrıları ana duyuru listesinde.",
+      "_not": "4000 RSS erişimi 10 Ekim 2026 manuel okumada HTML bot doğrulaması döndürdü; güncel duyurular ana listede gözlendi. Akışın son çağrı yılı bu ölçümde doğrulanmadı.",
       "access_policy": {
         "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "evidence_url": "https://tubitak.gov.tr/tr/duyuru",
+        "checked_at": "2026-10-10T03:17:04.678496+00:00",
+        "note": "Manuel erişim gözlemi/kısa resmî tarih kanıtı mevcut; otomatik tarama ve yeniden kullanım izni doğrulanmadı. İncelenmemiş politika korunur."
       }
     },
     {

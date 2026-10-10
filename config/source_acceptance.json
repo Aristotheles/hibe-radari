@@ -1492,19 +1492,24 @@
     "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://tubitak.gov.tr/tr/duyuru",
+      "checked_at": "2026-10-10T03:17:04.678496+00:00"
     },
     "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
-    "sample_call": null,
-    "deadline_evidence": null,
+    "sample_call": "https://tubitak.gov.tr/tr/duyuru/tubitak-bilim-soylesileri-2026-yili-basvurulari-basladi",
+    "deadline_evidence": {
+      "date": "2026-11-05",
+      "quote": "Son başvuru tarihi: 5 Kasım 2026, Saat 17.30",
+      "source_url": "https://tubitak.gov.tr/tr/duyuru/tubitak-bilim-soylesileri-2026-yili-basvurulari-basladi",
+      "checked_at": "2026-10-10T03:17:04.678496+00:00"
+    },
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": "2026-10-09T22:58:53.465194+00:00",
-    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "checked_at": "2026-10-10T03:17:04.678496+00:00",
+    "reason": "Resmî liste ve iki güncel okul/öğrenci duyurusunun kısa tarih kanıtı doğrulandı; tarama/yeniden kullanım izni ve tam başvuru şartları henüz doğrulanmadı. Manuel inceleme, otomatik yayın yok.",
     "page_observation": {
       "source_id": "inventory-af9c9a521d74",
       "url": "https://tubitak.gov.tr/tr/duyuru",
@@ -1520,12 +1525,13 @@
         "structured_data": 0
       }
     },
-    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "detail_review_reason": "Kısa resmî metin kanıtı mevcut; tam başvuru şartları, insan onayı ve otomatik erişim izni doğrulanmadı.",
     "manual_check": {
       "url": "https://tubitak.gov.tr/tr/duyuru",
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "call_evidence_status": "not_verified"
+    "call_evidence_status": "not_verified",
+    "manual_evidence_fixture": "tests/fixtures/aggregator/tubitak_manual_evidence_20261010.json"
   },
   {
     "source_id": "inventory-8837684bd3a6",
@@ -1534,8 +1540,8 @@
     "status": "manual_pending",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://4000.tubitak.gov.tr/rss.xml",
+      "checked_at": "2026-10-10T03:17:04.678496+00:00"
     },
     "method": "manual",
     "list_fixture": null,
@@ -1545,8 +1551,8 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": "2026-10-09T22:56:23.145219+00:00",
-    "reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "checked_at": "2026-10-10T03:17:04.678496+00:00",
+    "reason": "Manuel web okumasında RSS adresi HTML bağlantı doğrulama sayfası döndürdü; robots ve geçerli RSS doğrulanmadı. Bot koruması aşılmadan manuel inceleme gerekir.",
     "access_observation": {
       "source_id": "tubitak-4000",
       "url": "https://4000.tubitak.gov.tr/rss.xml",
@@ -1565,7 +1571,18 @@
       "url": "https://4000.tubitak.gov.tr/rss.xml",
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "call_evidence_status": "not_verified"
+    "call_evidence_status": "not_verified",
+    "manual_evidence_fixture": "tests/fixtures/aggregator/tubitak_manual_evidence_20261010.json",
+    "manual_access_observation": {
+      "url": "https://4000.tubitak.gov.tr/rss.xml",
+      "observed_title": "Verifying your connection...",
+      "content_type": "text/html",
+      "verified_feed": false,
+      "observation_method": "manual_web_read",
+      "robots_status": "not_verified",
+      "restriction_bypass": false,
+      "checked_at": "2026-10-10T03:17:04.678496+00:00"
+    }
   },
   {
     "source_id": "inventory-f50d22800fe4",

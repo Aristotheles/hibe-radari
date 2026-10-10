@@ -614,3 +614,19 @@ Yeni karar yok; kullanıcı onaylı kesin devam/kota kuralı uygulanıyor. Kısa
 AŞAMA9 gerçek Auth/ADC/admin UID/backend erişimi açık; kullanıcı sorusu zaten iletildi. AŞAMA10 gerçek29tamcanlıpilot, kaynak koşulları, üretimzamanlayıcı/SMTP/onay/deploy/hostingrollback açık. RELEASE NOT VERIFIED; mevcut canlı site korundu, deploy yapılmadı. Gerçek kimlik/onay/tahsilat uydurulmaz.
 ### Sonraki adım
 - [ ] Kota yeniden uygunken docs/CONTINUATION_PLAN.md ve güncel devirden devam; önce uzak sonCI/Git/kota/süreçler, sonra AŞAMA9gerçekerişim. Erişim beklerken yetkili bağımsız eski kaynak kabulü. Mainmerge/Cloudgeliştirme yok.
+
+
+## 2026-10-10 06:18 — Kota sonrası yerel devam ve TÜBİTAK manuel kanıtları
+Kaydı hazırlayan: Codex. Proje: [[Projeler/Hibe Radarı/Hibe Radarı|Hibe Radarı]].
+### Yapılanlar
+Kota yenilendi: başlangıç kısa kalan99%, haftalık49%; koşullu duruştan aynı yerel klasör/dalda çalışma devam etti. 46b8260891f0c6125a01ebb7d61f2c754219e5a2 yerel/uzak SHA eş, GitHub38006983401 success, başlangıç ağacı temiz. Projeye ait başka Python/Claude/Antigravity süreci gözlenmedi; diğer projelerin süreçlerine dokunulmadı.
+TÜBİTAK ana duyuru listesi ve resmî program/duyuru sayfaları manuel okundu. Bilim Söyleşileri son tarih5Kasım2026 saat17.30; 2204-A son tarih4Ocak2027 saat17:30. Kısa alıntı JSON fixture, HTML yanıt fixture değildir. İki regresyon gerçek son tarihi yayın/başlangıç tarihinden ayırır; eksik şartlarla öğrenci uygunluğu bilinmiyor kalır; bot doğrulama HTML'i geçerli boş RSS sayılmaz.
+4000 RSS adresi manuel web okumasında Verifying your connection HTML'i döndürdü; robots/RSS güncelliği doğrulanmadı, koruma aşılmadı. Eski “son çağrı2024” notu bu yeni ölçümün sınırlarıyla düzeltildi. TÜBİTAK iki connector kimliği ve unreviewed/manual politikaları korunur; yeni izin/insan onayı/canlı DB başarısı yok.
+### Doğrulama
+Tam205Python PASS; hedefli29PASS; diff-check PASS. Bu dilimde JS değişmedi, son11JS/uzak Windows+Ubuntu checkpoint kanıtı korunur. Log .agent/resume-tubitak-tests.txt.127public/latestSHA aynı. Kaynak sayıları29aggregator/154registry/135URL değişmedi.
+### Alınan kararlar
+Yeni karar yok; kullanıcı onaylı kota sonrası devam ve tek aktif yerel ajan kuralı uygulandı.
+### Açık sorular ve sorunlar
+AŞAMA9 gerçek FirebaseAuth/ADC/admin UID/backend erişimi bekliyor; hesap/UID sorusu tekrar sorulmadı. AŞAMA10 gerçek tam canlı pilot/zamanlayıcı/SMTP/onay/RELEASE/deploy açık. Deploy yapılmadı.
+### Sonraki adım
+- [ ] Bağımsız kaynak kabulü ve kaynak sağlık iletilerinin Türkçe okunabilirliği; erişim sağlanınca AŞAMA9 gerçek giriş. Rutin aşama onayı/duruş yok.

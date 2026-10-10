@@ -1,0 +1,35 @@
+{
+  "evidence_kind": "short_verified_text_excerpts_not_html_response",
+  "checked_at": "2026-10-10T03:17:04.678496+00:00",
+  "list_url": "https://tubitak.gov.tr/tr/duyuru",
+  "calls": [
+    {
+      "title": "TÜBİTAK Bilim Söyleşileri 2026 Yılı Başvuruları Başladı",
+      "official_url": "https://tubitak.gov.tr/tr/duyuru/tubitak-bilim-soylesileri-2026-yili-basvurulari-basladi",
+      "deadline_quote": "Son başvuru tarihi: 5 Kasım 2026, Saat 17.30",
+      "expected_deadline": "2026-11-05",
+      "publication_date": "2026-10-07",
+      "eligibility_status": "requires_complete_application_terms"
+    },
+    {
+      "title": "2204-A Lise Öğrencileri Araştırma Projeleri Yarışması",
+      "official_url": "https://tubitak.gov.tr/tr/yarismalar/2204-lise-ogrencileri-arastirma-projeleri-yarismasi",
+      "deadline_quote": "son başvuru tarihi (4 Ocak 2027) saat 17:30",
+      "expected_deadline": "2027-01-04",
+      "eligibility_quote": "Türkiye ve KKTC’de öğrenim gören tüm lise öğrencileri katılabilir.",
+      "application_start": "2026-09-23",
+      "eligibility_status": "requires_complete_application_terms"
+    }
+  ],
+  "rss_observation": {
+    "url": "https://4000.tubitak.gov.tr/rss.xml",
+    "observed_title": "Verifying your connection...",
+    "content_type": "text/html",
+    "verified_feed": false,
+    "observation_method": "manual_web_read",
+    "robots_status": "not_verified",
+    "restriction_bypass": false
+  },
+  "policy_status": "unreviewed",
+  "publication_approved": false
+}

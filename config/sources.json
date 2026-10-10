@@ -1912,8 +1912,8 @@
     "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://tubitak.gov.tr/tr/duyuru",
+      "checked_at": "2026-10-10T03:17:04.678496+00:00"
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -1926,8 +1926,8 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
-    "acceptance_checked_at": "2026-10-09T22:58:53.465194+00:00",
+    "acceptance_reason": "Resmî liste ve iki güncel okul/öğrenci duyurusunun kısa tarih kanıtı doğrulandı; tarama/yeniden kullanım izni ve tam başvuru şartları henüz doğrulanmadı. Manuel inceleme, otomatik yayın yok.",
+    "acceptance_checked_at": "2026-10-10T03:17:04.678496+00:00",
     "last_access_observation": {
       "source_id": "inventory-af9c9a521d74",
       "url": "https://tubitak.gov.tr/tr/duyuru",
@@ -1942,7 +1942,8 @@
         "article_count": 1,
         "structured_data": 0
       }
-    }
+    },
+    "manual_evidence_fixture": "tests/fixtures/aggregator/tubitak_manual_evidence_20261010.json"
   },
   {
     "name": "TÜBİTAK Bilim ve Toplum (4000)",
@@ -1969,8 +1970,8 @@
     "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://4000.tubitak.gov.tr/rss.xml",
+      "checked_at": "2026-10-10T03:17:04.678496+00:00"
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -1983,15 +1984,16 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
-    "acceptance_checked_at": "2026-10-09T22:56:23.145219+00:00",
+    "acceptance_reason": "Manuel web okumasında RSS adresi HTML bağlantı doğrulama sayfası döndürdü; robots ve geçerli RSS doğrulanmadı. Bot koruması aşılmadan manuel inceleme gerekir.",
+    "acceptance_checked_at": "2026-10-10T03:17:04.678496+00:00",
     "last_access_observation": {
       "source_id": "inventory-8837684bd3a6",
       "url": "https://4000.tubitak.gov.tr/rss.xml",
       "checked_at": "2026-10-09T22:58:53.897560+00:00",
       "error_kind": "permission",
       "error": "robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli"
-    }
+    },
+    "manual_evidence_fixture": "tests/fixtures/aggregator/tubitak_manual_evidence_20261010.json"
   },
   {
     "name": "TÜBİTAK BİLİMİZ",
