@@ -853,3 +853,12 @@ Kullanıcı diğer projesinden Tier1 anahtarını kaydettiğini bildirerek bağl
 Tier1 ücretli olabilir; kullanıcı yalnız bu bağlantı testini istedi. Önceki ücretsiz kullanım tercihi için toplu ücretli inceleme açılmadı. Kesin ücret/usageMetadata ölçülmedi. Zamanlayıcıya Gemini bağlanmadı; yayın/deploy yok.
 ### Sonraki adım
 Toplu otomatik inceleme öncesi ücretsiz katman tercihini ve günlük bütçe korumasını çöz; bağlantı çalışıyor diye ücretli toplu kullanımı başlatma.
+
+## 2026-10-10 — Kullanıcı haftada iki çalışma istedi
+Kaydı hazırlayan: Codex.
+### Alınan kararlar
+Önceki dört saatlik otomatik kontrol kaldırıldı. Kaynak tarama, yapay zekâ inceleme/filtreleme, temizlik ve site güncelleme için ortak hedef periyot haftada iki: salı/cuma08.15 Europe/Istanbul. HibeRadari-KaynakGuncelleme gerçek Windows tetikleri Weekly Tuesday/Friday08.15 olarak değiştirildi; sonraki13Ekim2026 08.15 ölçüldü. Kaynakların kapalı/izin koşulları korunur. İleride bağlanacak inceleme/yayın ayrı sık görev oluşturmayacak; aynı akışa bağlanacak.
+### Mevcut sınır
+Şu an görev kaynak keşif kuyruğunu günceller; yapay zekâ/publish/deploy henüz bağlı değil. Filtreler kullanıcı seçiminde anlık çalışmaya devam eder. Yerel bilgisayar/oturum gereksinimi sürer. Bu ayar değişiminde tarama/API/deploy başlatılmadı.
+### Sonraki adım
+Yetkilendirilmiş Tier1 kullanımını bütçe kontrollü şekilde bağla ve doğrula; tüm otomatik işlerin haftadaiki periyodunu koru.

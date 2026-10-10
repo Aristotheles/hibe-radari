@@ -13,3 +13,12 @@ Yeni kayıtlar onaysızdır. Kaynak içeriği değişince mevcut sürüm/incelem
 Kullanıcı listesindeki yeni filtreler: süresi dolmamış / 14 günden az kalan / tarihi belirsiz ve koşulları uygun / inceleme gerekli. Uygunluk seçili başvuru yoluna uygulanır; bilinmeyen koşullar uygun kabul edilmez. Son başvuru günü dahil; 14 günlük sınır acil gruba dahil değildir. Süresi geçmiş ilanlar backend yayın filtresinde elenir. Türkiye uygunluğu kaynak ve çağrı kanıtı gerektirir; filtre, eksik kanıtı tamamlamaz. İnsan onayı bekleyen 160 kayıt kullanıcı listesinde yayımlanmaz.
 
 Doğrulama: 221 Python testi, 13 JavaScript testi, JS syntax ve diff check geçti. Gerçek tarayıcıda filtre seçimi, temizleme ve dar/masaüstü ekran taşma kontrolü yapıldı. İlan listesi onay yokken boş kaldı; filtre testi için sahte kayıt yayımlanmadı.
+
+## 2026-10-10 — Kullanıcı haftada iki çalışma istedi
+Kaydı hazırlayan: Codex.
+### Alınan kararlar
+Önceki dört saatlik otomatik kontrol kaldırıldı. Kaynak tarama, yapay zekâ inceleme/filtreleme, temizlik ve site güncelleme için ortak hedef periyot haftada iki: salı/cuma08.15 Europe/Istanbul. HibeRadari-KaynakGuncelleme gerçek Windows tetikleri Weekly Tuesday/Friday08.15 olarak değiştirildi; sonraki13Ekim2026 08.15 ölçüldü. Kaynakların kapalı/izin koşulları korunur. İleride bağlanacak inceleme/yayın ayrı sık görev oluşturmayacak; aynı akışa bağlanacak.
+### Mevcut sınır
+Şu an görev kaynak keşif kuyruğunu günceller; yapay zekâ/publish/deploy henüz bağlı değil. Filtreler kullanıcı seçiminde anlık çalışmaya devam eder. Yerel bilgisayar/oturum gereksinimi sürer. Bu ayar değişiminde tarama/API/deploy başlatılmadı.
+### Sonraki adım
+Yetkilendirilmiş Tier1 kullanımını bütçe kontrollü şekilde bağla ve doğrula; tüm otomatik işlerin haftadaiki periyodunu koru.
