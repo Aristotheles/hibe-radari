@@ -30,7 +30,7 @@ Varsayılan liste doğrulanmış fırsatlardır. Ayrı “Doğrulama bekleyen f�
 - Tarayıcı: varsayılan39, ayrı bekleyen3; açıklık çelişkili TEKNOFEST ve 2024 tarihli FEE duyurusu bekleyen listesine girmiyor. Detayda takvim düğmesi kapalı. Lise filtresi çalışıyor; mobil375px içerik375px, yatay taşma yok. Masaüstü ve açık tema kontrol edildi.
 - Yeni HTML/eski JS önbellek uyumsuzluğu Hosting-önce-yayın ve kabuk dahil dosya sürümüyle giderildi. Mobil dört başvuran seçeneği iki satırda; stil dosyası sürümlü.
 - Haftalık kaynak taraması Salı/Cuma08.15 Europe/Istanbul; saat05/35 yalnız mevcut AI sonuçlarını toplama. İki Scheduler ENABLED, yeni geliştirme heartbeat yok.
-- GitHub CI commit/push sonrası ayrıca ölçülecek; bu rapordaki yerel ve canlı kanıt CI yerine geçmez.
+- Uygulama commit/push: 416a18c73a6759975739058bb3c95bca37a4619a, aynı geliştirme dalında yerel/uzak SHA eşit. [CI38087728711](https://github.com/Aristotheles/hibe-radari/actions/runs/38087728711): Linux ve Windows SUCCESS. Main merge yapılmadı. Sonuç kayıtları için ayrı belge checkpoint’i bırakılır; bunun son SHA/CI makbuzu yerel devir ve Obsidian kaydında tutulur.
 
 Gerçek yönetici Google oturumu yeniden sınanmadı; yeni kimlik/onay üretilmedi. Kaynak kapsamı hâlâ 154 yönetim kaydı/131 çekici/135 gerçek envanter URL’sidir. 170 ayrı URL depoda bulunmadı; erişimi yasak veya belirsiz kaynaklar çalışıyor gösterilmedi.
 

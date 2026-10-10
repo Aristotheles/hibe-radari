@@ -1,6 +1,6 @@
 # Uygunluk ve yayın kuralları düzeltme planı
 
-Tarih: 10 Ekim 2026 · Codex. Durum: kullanıcının başla talimatıyla uygulandı; yerel ve canlı kabul geçti; Git checkpoint/CI son adımı. Sonuç: [UYGUNLUK_DUZELTME_SONUCU.md](UYGUNLUK_DUZELTME_SONUCU.md).
+Tarih: 10 Ekim 2026 · Codex. Durum: kullanıcının başla talimatıyla uygulandı; altı adımın yerel/canlı kabulü ve uygulama commit/push Linux–Windows CI doğrulaması geçti. Kaynak erişim kapsamı ayrı açık iştir. Sonuç: [UYGUNLUK_DUZELTME_SONUCU.md](UYGUNLUK_DUZELTME_SONUCU.md).
 
 ## Amaç ve sınır
 
