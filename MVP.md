@@ -763,3 +763,14 @@ Yeni karar yok; kullanıcı tüm aşamalara kadar yereldevam/koşullukota/commit
 GerçekAŞAMA9Auth/ADC/adminUID/backend erişimi hâlâ yok; sonservercheckbeşeksikenv+DefaultCredentialsError. Kullanıcıya hesap/UIDsorusu zaten gönderilmiş, rutin tekrar yok. AŞAMA10gerçekyayınonayı/üretimSMTP/zamanlayıcı/tamcanlıpilot/RELEASE/hostingrollback açık. Tamamlandı veya canlıçalışıyor denmez.
 ### Sonraki adım
 - [ ] Uzakcheckpoint/UbuntuWindowsCI gerçekkabulü; ardından AŞAMA9 gerçekerişim değişimini mevcut15dktakiple kontrol etmek. Erişim yokken yeni kimlik/onay/ücretlialtyapı uydurma; anlamlı bağımsız iş varsa sürdür, aynı engelde sessizkal.
+
+
+## 2026-10-10 — Boş ilan akışının gerçek nedeni ve aktarım
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Registry154 kayıt, aggregator29 bağlantı:23allowed/5unreviewed/1permission_required. 170 dosyalardan doğrulanmadı. Önceki canlı üstveri gözleminden155inceleme+4izleme gerçek mevcut FirestoreStore/persist_report ile aktarıldı; exec90359 exit0,159calls/159discoveries/23source_health/0approval,public ve latest hashleri aynı. Sonuç .agent/source-audit/firestore-import-result.json. Veritabanının boş olması geçici MemoryStore taramalarının aktarılmamasından kaynaklanıyordu. Onaylı liste hâlâ boş; bu veri yok demek değil, koşulların editör incelemesi açık.
+Resmî MEB3787 fotoğrafyarışması sayfası2025-10-27sonbaşvuru gösteriyor; güncel2026fırsatı diye sunulamaz. TÜBİTAK BilimSöyleşileri resmî güncelduyuru2026-11-05/17.30 tarihini yeniden doğruladı; tam şartlar hâlâ incelenecek. Kaynak/ilan durum raporu docs/KAYNAK_VE_ILAN_DURUMU.md.
+### Açık sorular ve sorunlar
+Gerçek yönetici giriş ekranda Çıkış gösteriyor; admin uçları/token kabulü ayrıca ölçülmeli. Tüm envanter otomatikçalışıyor denmez. Hosting deploy yok.
+### Sonraki adım
+159aday kuyruğunu yönetici ekranında doğrula; eskihaberleri ayır, güncelokul/öğretmen/öğrenci fırsatlarını resmî tamşartlarıyla hazırlayıp insanonayına sun.
