@@ -6,6 +6,26 @@ from hibe.domain import version
 from hibe.scan import normalized_hash
 from hibe.batch_pipeline import submit_candidates
 class BatchPipelineTests(unittest.TestCase):
+ def test_recovered_document_retires_error_with_history_without_new_model_charge(self):
+  from hibe.gemini_batch import POLICY
+  store=MemoryStore();body='Teacher conditions.'
+  call={'id':'c','title':'Teacher grant','source_id':'s','source_url':'https://example.org/call'}
+  docs=[{'url':call['source_url'],'hash':normalized_hash(body)}]
+  store.put('calls','c',call)
+  store.put('review_document_errors','c',{'id':'c','documents':[{'url':'https://example.org/sidebar.pdf','role':'unknown'}]})
+  store.put('ai_batches','b',{'id':'b','policy':POLICY,'status':'completed'})
+  store.put('ai_batch_inputs','b-c',{'id':'c','batch_id':'b','baseline':version(call),'documents':docs})
+  store.put('review_proposals','c',{'id':'c','batch_id':'b','base_version':version(call),'draft':{'documents':docs}})
+  source={'id':'s','type':'source_discovery','review_body_selector':'section.article','allowed_hosts':['example.org'],'access_policy':{'terms_status':'allowed'}}
+  response=httpx.Response(200,headers={'content-type':'text/html'},text='<aside><a href="/sidebar.pdf">old</a></aside><section class="article">'+body+'</section>',request=httpx.Request('GET',call['source_url']))
+  api=Mock()
+  with patch('hibe.batch_pipeline.Fetcher') as fetcher,patch('hibe.batch_pipeline.publish_batch') as publish:
+   fetcher.return_value.get.return_value=response
+   result=submit_candidates(store,{'sources':[source]},api)
+  self.assertEqual(result['status'],'no_new_documents');api.submit.assert_not_called();publish.assert_called_once()
+  record=store.get('review_document_errors','c')
+  self.assertEqual(record['status'],'resolved');self.assertEqual(record['documents'],[])
+  self.assertEqual(len(record['previous_errors']),1)
  def test_new_policy_rechecks_same_document_once(self):
   from hibe.gemini_batch import POLICY
   for policy,expected in [(POLICY-1,True),(POLICY,False)]:

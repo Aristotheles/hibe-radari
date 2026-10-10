@@ -2790,13 +2790,16 @@
     "source_id": "inventory-af9c9a521d74",
     "name": "TÜBİTAK duyurular",
     "official_url": "https://tubitak.gov.tr/tr/duyuru",
-    "status": "manual_pending",
+    "status": "adapter_configured",
     "access_policy": {
-      "terms_status": "unreviewed",
+      "terms_status": "allowed",
       "evidence_url": "https://tubitak.gov.tr/tr/duyuru",
-      "checked_at": "2026-10-10T03:17:04.678496+00:00"
+      "checked_at": "2026-10-10T21:54:58.089486+00:00",
+      "note": "Manuel erişim gözlemi/kısa resmî tarih kanıtı mevcut; otomatik tarama ve yeniden kullanım izni doğrulanmadı. İncelenmemiş politika korunur.",
+      "basis": "Official public announcement index and linked application documents rechecked; robots permits these paths. No restrictive terms link observed. Factual metadata and internal verification only; no full article republication.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "method": "manual",
+    "method": "html_list",
     "list_fixture": null,
     "detail_fixture": null,
     "sample_call": "https://tubitak.gov.tr/tr/duyuru/tubitak-bilim-soylesileri-2026-yili-basvurulari-basladi",
@@ -2809,8 +2812,8 @@
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": "2026-10-10T03:17:04.678496+00:00",
-    "reason": "Resmî liste ve iki güncel okul/öğrenci duyurusunun kısa tarih kanıtı doğrulandı; tarama/yeniden kullanım izni ve tam başvuru şartları henüz doğrulanmadı. Manuel inceleme, otomatik yayın yok.",
+    "checked_at": "2026-10-10T21:54:58.089486+00:00",
+    "reason": "Official public announcement index and linked application documents rechecked; robots permits these paths. No restrictive terms link observed. Factual metadata and internal verification only; no full article republication.",
     "page_observation": {
       "source_id": "inventory-af9c9a521d74",
       "url": "https://tubitak.gov.tr/tr/duyuru",
@@ -2826,7 +2829,7 @@
         "structured_data": 0
       }
     },
-    "detail_review_reason": "Kısa resmî metin kanıtı mevcut; tam başvuru şartları, insan onayı ve otomatik erişim izni doğrulanmadı.",
+    "detail_review_reason": "36 actual public announcements collected without parser errors. Each application remains subject to grounded document and date review; 4006 current call PDFs sent to Gemini Batch.",
     "manual_check": {
       "url": "https://tubitak.gov.tr/tr/duyuru",
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."

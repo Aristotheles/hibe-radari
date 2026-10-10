@@ -1082,3 +1082,33 @@ Kullanıcının başla talimatıyla mevcut mimaride düzeltme planı uygulandı.
 
 ### Sonraki adım
 Kaynak erişimlerini ve eksik adres kapsamını gerçek URL/izin kanıtıyla çözmek; rutin ürün taraması Salı/Cuma08.15 bulutta sürer. Eski geliştirme heartbeat kapalı.
+
+
+## 2026-10-11 00:56 — Sayfa düzeni ve gerçek duyuru kapsamı (Codex)
+
+### Yapılanlar
+Filtre arama/konu ve açılır diğer filtrelere indirildi; eğitimler ayrı kapalı kompakt bölüm. İlk HTML aynı kart düzenini ve yalnız public çağrı JSON verisini içeriyor; Google giriş SDK beklemesi public okumayı bloke etmiyor. 312Python PASS46.201s/17JS PASS93.5764ms, son SSR başlık düzeltmesi sonrası final kontrol bekliyor. MEB section.article seçicisi yan menüdeki ilgisiz eski PDFyi dışarıda bırakır; YRE resmî CDN yönlendirmesi ve çağrıya özel ulusal koşul sayfaları gerçek erişimle doğrulandı. 12 yeni belge gerçek Gemini Batch aafdfb83 işine gönderildi; sonuç henüz bekliyor. TÜBİTAK duyuru HTML ve robots yeniden erişildi; kamuya açık olgusal metadata/iç doğrulama kapsamıyla toplayıcı etkinleşti, 4006 13.dönem gerçek koşullarının toplama/Batch işi sürüyor. UI henüz canlıya alınmadı; commit/push yok. Sonraki tek adım gerçek belge sonuçları ve tarayıcı kabulü, ardından güvenli yayın.
+
+### Alınan kararlar
+Kullanıcı talebi: kısa filtre, ilk yüklemede kararlı düzen, eğitimlerin ayrı bölümde gösterilmesi ve gerçek ilan kapsamının artırılması. Kurslar hibe sayısını artırmak için kullanılmaz.
+
+### Açık sorular ve sorunlar
+İzin/erişim engelli kaynaklar ve eksik belge kayıtları kanıtla çözülür; sayı veya başvuru hakkı uydurulmaz.
+
+### Sonraki adım
+Kayıtta belirtilen sıradaki doğrulama; aynı geliştirme dalında tek yazan Codex.
+
+
+## 2026-10-11 01:16 — Sayfa düzeni ve gerçek duyuru kapsamı (Codex)
+
+### Yapılanlar
+Canlı sayfa düzeltmesi doğrulandı: kısa filtre (masaüstü75,6px), ilk HTML8kart/public40JSON ve kapalı32eğitim; SDK beklemesi ve ikinci redraw kaldırıldı. Canlı8doğrulanmış duyuru+32eğitim ve3ayrı bekleyen; içerik kapsamı hâlâ yeterli kabul edilmedi. TÜBİTAK36gerçek kayıt/21ayrıntı/0ayrıntıhatası;4006-A/B13.dönem güncel ikiPDF ve program koşulları gerçek GeminiBatch ile doğrulandı ve yayımlandı. MEB yan menü eskiPDF, YRE CDN ve eski teknik hata kapısı düzeltildi; YRE Twinning404açık. 12+1MEB/YRE,1adet4006 ve13diğerTÜBİTAK gerçekBatchgirdileri completed;13son adayda5ülke/başvuru kanıtı,8geçersiz model kanıtı kalmış olup uygunsuz ilan edilmedi. RELEASE316Python49,078s/17JS148,3135ms PASS; syntax/diff PASS; ikiCloudBuild r15SUCCESS. Backend hibe-backend-00013-phh yüzde100; ikiürünişiui-content-r15-20261011; Hostingyayınıbaşarılı; bulutsonuçişi4v69nSUCCESS. Canlıadminanonim403;375pxmobiltaşmayok,aramaveaçılırfiltrePASS. YeniGoogleyöneticioturumuvefaturaölçülmedi. Yedekhashdeğişmedi; geçici8022sunucudukapatıldı, kullanıcı8021sürecine dokunulmadı. Kaynak taramasıSalı/Cuma08.15bulutta; eski geliştirmeheartbeatkapalı. Rapor docs/SAYFA_VE_DUYURU_DUZELTMESI.md. Commit/pushveCIsonrakiadımdır; mevcut170kaynak/geneliçeriktamamlandıdenmez.
+
+### Alınan kararlar
+Kullanıcı talebi: kısa filtre, ilk yüklemede kararlı düzen, eğitimlerin ayrı bölümde gösterilmesi ve gerçek ilan kapsamının artırılması. Kurslar hibe sayısını artırmak için kullanılmaz.
+
+### Açık sorular ve sorunlar
+İzin/erişim engelli kaynaklar ve eksik belge kayıtları kanıtla çözülür; sayı veya başvuru hakkı uydurulmaz.
+
+### Sonraki adım
+Kayıtta belirtilen sıradaki doğrulama; aynı geliştirme dalında tek yazan Codex.

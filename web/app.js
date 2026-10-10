@@ -1,7 +1,7 @@
-import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs?v=20261011-r11';
+import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs?v=20261011-r14';
 
-import { renderListing, renderDetail, renderCalendar } from '/views.mjs?v=20261011-r11';
-import { todayISO } from '/decision.mjs?v=20261011-r11';
+import { renderListing, renderDetail, renderCalendar } from '/views.mjs?v=20261011-r14';
+import { todayISO } from '/decision.mjs?v=20261011-r14';
 
 const $ = s => document.querySelector(s);
 let audience = 'all', calendarAudience = 'all', currentView = 'radar';
@@ -159,9 +159,9 @@ async function loadCalls() {
   listState = 'loading'; $('#cards').setAttribute('aria-busy', 'true'); $('#cards').replaceChildren();
   $('#result-count').textContent = 'Fırsatlar yükleniyor…'; $('#list-error').hidden = true;
   try {
-    calls = await api('calls'); listState = 'ready'; draw();
-    try { pendingCalls = await api('opportunities/pending'); } catch { pendingCalls = []; }
-    draw();
+    const initial=document.getElementById('public-data');
+    if(initial){calls=JSON.parse(initial.textContent);initial.remove();}else calls = await api('calls'); listState = 'ready'; draw();
+    api('opportunities/pending').then(data=>{pendingCalls=data;if($('#publication-filter').value==='pending')draw();}).catch(()=>{pendingCalls=[];});
     const stamps = calls.map(c => c.last_checked).filter(value => value && Number.isFinite(Date.parse(value)));
     const stamp = stamps.sort((a,b) => Date.parse(b)-Date.parse(a))[0];
     let freshness = $('#site-freshness');
@@ -346,7 +346,9 @@ if (unsub) {
   }, '#unsubscribe-status');
 }
 
-try {
+// Public reading must not wait for Google sign-in scripts or another calls request.
+await loadCalls(); $('#server-content').hidden = listState === 'ready'; $('#app-shell').hidden = listState !== 'ready'; if(listState==='ready') await route(false);
+(async () => { try {
   config = await api('config');
   $('#mode').textContent = config.demo ? 'YEREL DEMO' : 'Google / Firebase';
   if (config.demo) {
@@ -360,11 +362,11 @@ try {
     fb.onAuthStateChanged(auth, async user => { try { token = user ? await user.getIdToken() : ''; await session(); if (!$('#app-shell').hidden) await route(false); } catch (error) { message(friendlyError(error), 'error'); } });
     $('#login').textContent = 'Google ile giriş';
   }
-  $('#login').disabled = false; syncSessionUI(); await loadCalls(); $('#server-content').hidden = listState === 'ready'; $('#app-shell').hidden = listState !== 'ready'; if(listState==='ready') await route(false); else message('Etkileşimli liste yüklenemedi. Aşağıdaki ilanları okuyabilir veya sayfayı yeniden yükleyebilirsiniz.','error');
+  $('#login').disabled = false; syncSessionUI(); if(listState!=='ready') message('Etkileşimli liste yüklenemedi. Sayfayı yeniden yükleyebilirsiniz.','error');
 } catch (error) {
-  $('#mode').textContent = 'Uygulama bilgisi yüklenemedi'; $('#result-count').textContent = 'Liste yüklenemedi';
-  message('Uygulama başlatılamadı. Sayfayı yeniden yükleyin.', 'error'); $('#cards').setAttribute('aria-busy', 'false');
-}
+  $('#mode').textContent = 'Giriş bağlantısı yüklenemedi';
+  message('Google giriş bağlantısı yüklenemedi. İlanları incelemeye devam edebilirsiniz.', 'error');
+} })();
 
 function updateRoles() {
   const role=$('#role'),all=el('option','Tüm yollar');all.value='';role.replaceChildren(all);

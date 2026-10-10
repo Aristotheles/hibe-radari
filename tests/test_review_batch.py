@@ -6,6 +6,14 @@ from hibe.store import MemoryStore
 
 
 class ReviewBatchTests(unittest.TestCase):
+    def test_observed_article_selector_excludes_unrelated_sidebar_pdf(self):
+        response=httpx.Response(200,headers={'content-type':'text/html'},
+            text='<aside><a href="/old.pdf">Old project</a></aside><section class="article"><h1>Student call</h1><a href="/rules.pdf">Application guidelines</a></section>',
+            request=httpx.Request('GET','https://example.org/call'))
+        self.assertEqual(linked_pdf_urls(response,['example.org'],'section.article'),['https://example.org/rules.pdf'])
+        self.assertNotIn('Old project',document_text(response,selector='section.article'))
+        with self.assertRaises(ValueError):document_text(response,selector='section.missing')
+
     def test_pdf_links_are_observed_body_links_on_permitted_hosts_only(self):
         response=httpx.Response(200,headers={'content-type':'text/html'},
             text='<nav><a href="/old.pdf">old</a></nav><main><a href="conditions.pdf">Rules</a><a href="conditions.pdf">Duplicate</a><a href="https://evil.org/x.pdf">External</a><a href="https://user@example.org/y.pdf">Credentials</a></main>',

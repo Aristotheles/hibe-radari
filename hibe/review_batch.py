@@ -40,7 +40,18 @@ class DailyExtractor:
         return result
 
 
-def document_text(response, max_chars=48000):
+def document_body(response, selector=None):
+    soup = BeautifulSoup(response.content, 'html.parser')
+    for tag in soup(['script','style','nav','header','footer']):
+        tag.decompose()
+    if selector:
+        body=soup.select_one(selector)
+        if body is None:raise ValueError('Kaynağın başvuru metni bölümü bulunamadı')
+        return body
+    return soup.find('main') or soup.find('article') or soup
+
+
+def document_text(response, max_chars=48000, selector=None):
     if response.content.startswith(b'%PDF'):
         from pypdf import PdfReader
         pdf = PdfReader(BytesIO(response.content))
@@ -48,10 +59,7 @@ def document_text(response, max_chars=48000):
             raise ValueError('PDF sayfa sınırı')
         text = '\n'.join(p.extract_text() or '' for p in pdf.pages)
     elif 'html' in response.headers.get('content-type', ''):
-        soup = BeautifulSoup(response.content, 'html.parser')
-        for tag in soup(['script','style','nav','header','footer']):
-            tag.decompose()
-        text = (soup.find('main') or soup.find('article') or soup).get_text(' ', strip=True)
+        text = document_body(response,selector).get_text(' ', strip=True)
     else:
         raise ValueError('Çağrı belgesi HTML/PDF olmalı; liste akışı yeterli değil')
     if not text.strip() or len(text) > max_chars:
@@ -67,12 +75,10 @@ def document_sections(text):
     return sections
 
 
-def linked_pdf_urls(response, allowed_hosts):
+def linked_pdf_urls(response, allowed_hosts, selector=None):
     """Only PDFs actually linked in the call body, on permitted source hosts."""
     if 'html' not in response.headers.get('content-type',''):return []
-    soup=BeautifulSoup(response.content,'html.parser')
-    for tag in soup(['script','style','nav','header','footer']):tag.decompose()
-    body=soup.find('main') or soup.find('article') or soup
+    body=document_body(response,selector)
     found=[]
     for anchor in body.find_all('a',href=True):
         url=urldefrag(urljoin(str(response.request.url),anchor['href']))[0]
@@ -84,12 +90,12 @@ def linked_pdf_urls(response, allowed_hosts):
     return found
 
 
-def linked_document_roles(response, allowed_hosts):
+def linked_document_roles(response, allowed_hosts, selector=None):
     """Classify only real, already validated links; unknown attachments stay essential."""
     from .aggregator.textutil import fold
     import re
-    urls=linked_pdf_urls(response,allowed_hosts)
-    soup=BeautifulSoup(response.content,'html.parser')
+    urls=linked_pdf_urls(response,allowed_hosts,selector)
+    soup=document_body(response,selector)
     roles={}
     for anchor in soup.find_all('a',href=True):
         url=urldefrag(urljoin(str(response.request.url),anchor['href']))[0]

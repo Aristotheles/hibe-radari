@@ -12,9 +12,9 @@ def classify(call, today):
     audience = [label for label, pattern in (
         ('lise', r'lise|high school|secondary school'),
         ('ogretmen', r'ogretmen|teacher|teaching'),
-        ('okul', r'okul|school|education|egitim|erasmus')) if re.search(pattern, text)]
+        ('okul', r'okul|school|education|egitim|erasmus|bilim fuar')) if re.search(pattern, text)]
     kind = opportunity_type(text)
-    if kind == 'unknown' and re.search(r'\b(?:hibe|grant|funding|fon|fund)\b', text):
+    if kind == 'unknown' and re.search(r'\b(?:hibe|grant|funding|fon|fund|destekleme program\w*)\b', text):
         kind = 'grant'
     assessment = call.get('eligibility_assessment') or {}
     country_results = {v.get('checks', {}).get('country', {}).get('result')

@@ -34,3 +34,16 @@ class PresentationTests(unittest.TestCase):
     def test_management_html_has_no_call_data(self):
         _, body = page('<!--SERVER_CONTENT-->', '/yonetim', '', [self.call()], [], True)
         self.assertNotIn(b'demo-test', body); self.assertIn('Yönetici oturumu gerekli'.encode(), body)
+
+    def test_first_paint_separates_courses_and_bootstrap_cannot_close_script(self):
+        from pathlib import Path
+        import json,re
+        call=self.call();call['title']='</script><script>alert(1)</script>'
+        course=dict(call,id='course',opportunity_type='training',application_schedule={'kind':'self_paced'})
+        _,body=page(Path('web/index.html').read_text('utf-8'),'/', '',[call,course],[],False)
+        html=body.decode('utf-8')
+        self.assertIn('1 duyuru · 1 eğitim',html)
+        self.assertIn('<details class="training-section">',html)
+        self.assertNotIn('<div id="app-shell" hidden>',html)
+        raw=re.search(r'<script id="public-data" type="application/json">(.*?)</script>',html).group(1)
+        self.assertNotIn('<',raw);self.assertEqual(json.loads(raw)[0]['title'],call['title'])

@@ -1,5 +1,5 @@
-import { themes, roles, eligibilityLabels, conditionLabels, safeHttps, deadlineLabel, filterCalls } from './radar.mjs?v=20261011-r11';
-import { todayISO, daysLeft, groupOf, audienceCalls, pathsFor, fullDate, calendarCells, calendarICS } from './decision.mjs?v=20261011-r11';
+import { themes, roles, eligibilityLabels, conditionLabels, safeHttps, deadlineLabel, filterCalls } from './radar.mjs?v=20261011-r14';
+import { todayISO, daysLeft, groupOf, audienceCalls, pathsFor, fullDate, calendarCells, calendarICS } from './decision.mjs?v=20261011-r14';
 
 export function node(tag, text, cls) { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (cls) n.className = cls; return n; }
 const $ = id => document.getElementById(id);
@@ -18,10 +18,12 @@ function countText(call) { if(call.publication_status==='verification_pending') 
 
 export function renderListing(calls, filters, audience) {
   const items = filterCalls(audienceCalls(calls, audience).map(c => ({...c, paths: pathsFor(c, audience)})), filters);
-  $('cards').replaceChildren(); $('result-count').textContent = `${items.length} fırsat listeleniyor`;
+  const isTraining = c => ['training','teacher_training'].includes(c.opportunity_type);
+  const announcements = items.filter(c => !isTraining(c)), training = items.filter(isTraining);
+  $('cards').replaceChildren(); $('result-count').textContent = `${announcements.length} duyuru · ${training.length} eğitim`;
   $('radar-title').textContent = audience === 'all' ? 'Türkiye için proje ve eğitim fırsatları.' : audience === 'school' ? 'Okulun için bir sonraki fırsat.' : audience === 'student' ? 'Lise öğrencileri için fırsatlar.' : 'Öğretmenler için fırsatlar.';
   for (const group of ['Acil (14 günden az)', 'Bu ay', 'Daha ileri', 'Sürekli açık fırsatlar', 'Tarihi açıklanmadı', 'Süresi geçti']) {
-    const list = items.filter(c => groupOf(c) === group); if (!list.length) continue;
+    const list = announcements.filter(c => groupOf(c) === group); if (!list.length) continue;
     const section = node('section', undefined, 'opportunity-section'), heading = node('div', undefined, 'section-heading'), title = node('h2', group);
     title.append(node('span', String(list.length), 'group-count')); heading.append(title, node('span', group === 'Tarihi açıklanmadı' ? 'Son tarih kaydı yok.' : 'Son tarihe göre değerlendirin.')); section.append(heading);
     const grid = node('div', undefined, 'opportunity-grid');
@@ -40,6 +42,17 @@ export function renderListing(calls, filters, audience) {
       a.append(top, row, date, why, bottom); grid.append(a);
     }
     section.append(grid); $('cards').append(section);
+  }
+  if (training.length) {
+    const section = node('details', undefined, 'training-section'), summary = node('summary', `Öğretmen eğitimleri · ${training.length}`);
+    section.append(summary, node('p', 'Çevrimiçi kurslar ve mesleki gelişim fırsatları. Başvuru koşulları her eğitimde ayrıdır.', 'muted'));
+    const list = node('div', undefined, 'training-list');
+    for (const c of training) {
+      const row = link('/ilan/' + encodeURIComponent(c.id) + '?audience=' + audience, undefined, 'training-row');
+      const body = node('div'); body.append(node('h3', c.title), node('p', c.publication_status==='verification_pending' ? c.verification_reason : countText(c)));
+      row.append(body, icon()); list.append(row);
+    }
+    section.append(list); $('cards').append(section);
   }
   if (!items.length) { const empty = node('div', undefined, 'empty-state'); empty.append(node('h2', 'Bu filtrelere uyan fırsat yok.'), node('p', 'Başka bir tema veya başvuru yolu seçin.')); $('cards').append(empty); }
 }

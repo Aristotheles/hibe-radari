@@ -13,6 +13,24 @@ from .evidence_context import literal_quote, country_list_entry, country_applica
 def quote_present(quote,text):
     return literal_quote(quote,text)
 
+
+def national_school_scope(current, item):
+    """A required local MEB signature is jurisdiction evidence, not a topic hint."""
+    host=urlsplit(current.get('source_url') or '').hostname or ''
+    if not current.get('official_source_verified') or host not in ('tubitak.gov.tr','meb.gov.tr') and not host.endswith('.meb.gov.tr'):
+        return None
+    for doc in item.get('document_texts',[]):
+        if urlsplit(doc['url']).hostname!=host or not urlsplit(doc['url']).path.lower().endswith('.pdf'):continue
+        body=fold(doc['text'])
+        if not all(re.search(p,body) for p in (r'basvuru kosullar',r'resmi okullar',r'sozlesme',r'imzalan')):continue
+        for match in re.finditer(r'(?:İl/İlçe|İlçe|İl) Milli Eğitim Müdür',doc['text']):
+            quote=doc['text'][max(0,match.start()-140):match.end()+180]
+            if not re.search(r'imzalan',fold(quote)):continue
+            return {'result':'eligible','evidence':quote,
+                'source_url':doc['url'],'authority':'national_application_requirements',
+                'explanation':'Resmî okul başvurusu ve İl/İlçe Milli Eğitim sözleşme imza şartı birlikte doğrulandı.'}
+    return None
+
 def schedule_is_open(schedule,text):
     quote=schedule.get('evidence') or ''
     if not quote_present(quote,text):return False
@@ -55,8 +73,10 @@ def publication_decision(current, draft, item, today):
             or ('okullara gonderilen' in fold(text) and 'resmi yazi' in fold(text)
                 and bool(re.search(r'katilmak isteyen ogretmen',fold(text)))
                 and 'is birligi kapsaminda' in fold(text))))
+    domestic=national_school_scope(current,item)
+    national_school=domestic and country_quote==domestic['evidence']
     if (country.get('result')!='eligible' or not quote_present(country_quote,text)
-            or not (universal_course or national_teacher or country_list_entry(country_quote,text) or
+            or not (universal_course or national_teacher or national_school or country_list_entry(country_quote,text) or
                 (country_application_clause(country_quote) and re.search(r'\b(?:turkey|turkiye|all countries|any country|every country|worldwide|anywhere in the world|around the world|tum ulkeler|her ulke|turkish participants|turkish applicants|turkish citizens|turk katilimci\w*|turk vatandas\w*)\b',fold(country_quote))))):
         return 'country_evidence_required'
     target_quote=target.get('evidence') or ''
@@ -81,7 +101,14 @@ def publication_decision(current, draft, item, today):
         return 'deadline_evidence_required'
     parsed=deadline_details(evidence,today)
     if parsed['year_inferred'] or not any(c['value']==deadline for c in parsed['candidates']):
-        return 'deadline_evidence_required'
+        # A short date cell is valid only in its actual closing-date context.
+        normalized=' '.join(fold(text).split());needle=' '.join(fold(evidence).split())
+        contextual=False
+        for match in re.finditer(re.escape(needle),normalized):
+            context=normalized[max(0,match.start()-200):match.end()+80]
+            scoped=deadline_details(context,today)
+            if not scoped['year_inferred'] and any(c['value']==deadline for c in scoped['candidates']):contextual=True;break
+        if not contextual:return 'deadline_evidence_required'
     return 'eligible'
 
 
@@ -100,7 +127,10 @@ def publish_batch(store, job, today=None):
             existing=current.get('approval',{})
             results.append({'id':ident,'status':'already_published' if existing.get('batch_id')==job['id'] and existing.get('version')==version(current) else 'stale'})
             continue
-        draft=proposal['draft']
+        draft=deepcopy(proposal['draft'])
+        if (draft.get('country_scope') or {}).get('result')=='unknown':
+            domestic=national_school_scope(current,item)
+            if domestic:draft['country_scope']=domestic
         decision=publication_decision(current,draft,item,today)
         missing=store.get('review_document_errors',ident) or {}
         reviewed_urls={d['url'] for d in item['documents']}

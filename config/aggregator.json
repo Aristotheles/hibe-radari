@@ -71,10 +71,20 @@
       "language": "tr",
       "_not": "4000 RSS erişimi 10 Ekim 2026 manuel okumada HTML bot doğrulaması döndürdü; güncel duyurular ana listede gözlendi. Akışın son çağrı yılı bu ölçümde doğrulanmadı.",
       "access_policy": {
-        "terms_status": "unreviewed",
+        "terms_status": "allowed",
         "evidence_url": "https://tubitak.gov.tr/tr/duyuru",
-        "checked_at": "2026-10-10T03:17:04.678496+00:00",
-        "note": "Manuel erişim gözlemi/kısa resmî tarih kanıtı mevcut; otomatik tarama ve yeniden kullanım izni doğrulanmadı. İncelenmemiş politika korunur."
+        "checked_at": "2026-10-10T21:54:58.089486+00:00",
+        "note": "Manuel erişim gözlemi/kısa resmî tarih kanıtı mevcut; otomatik tarama ve yeniden kullanım izni doğrulanmadı. İncelenmemiş politika korunur.",
+        "basis": "Official public announcement index and linked application documents rechecked; robots permits these paths. No restrictive terms link observed. Factual metadata and internal verification only; no full article republication.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "review_support_pages": {
+        "https://tubitak.gov.tr/tr/duyuru/4006-tubitak-bilim-fuarlari-destekleme-programi-13-donem-4006-ve-4006-b-cagrilari-yayinlandi": [
+          "https://tubitak.gov.tr/tr/destekler/bilim-toplum/ulusal-destek-programlari/4006-tubitak-bilim-fuarlari-destekleme-programi",
+          "https://tubitak.gov.tr/sites/default/files/2026-09/13_BF_4006-A_Cagri_Metni_Yeni.pdf",
+          "https://tubitak.gov.tr/sites/default/files/2026-09/13_BF_4006-B_Cagri_Metni_Yeni.pdf"
+        ]
       }
     },
     {
@@ -380,7 +390,8 @@
         "evidence_url": "https://ogm.meb.gov.tr/",
         "checked_at": "2026-10-09T22:52:36.178673+00:00",
         "basis": "Resmî ana sayfanın sunduğu RSS duyuru arayüzü; keşif üstverisi."
-      }
+      },
+      "review_body_selector": "section.article"
     },
     {
       "id": "meb-mtegm",
@@ -3331,7 +3342,8 @@
       "organization": "Young Reporters for the Environment",
       "allowed_hosts": [
         "www.yre.global",
-        "yre.global"
+        "yre.global",
+        "static1.squarespace.com"
       ],
       "max_pages": 4,
       "max_items": 100,
@@ -3352,7 +3364,13 @@
         "https://www.yre.global/news-archive",
         "https://www.yre.global/news-1",
         "https://www.yre.global/news"
-      ]
+      ],
+      "review_support_pages": {
+        "https://www.yre.global/yre-competition26-27": [
+          "https://www.yre.global/national-offices",
+          "https://www.yre.global/yre-competition"
+        ]
+      }
     },
     {
       "id": "registry-inventory-83d83cda1ee9",

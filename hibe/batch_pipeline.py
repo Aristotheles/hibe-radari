@@ -79,12 +79,14 @@ def submit_candidates(store, config, api=None):
                     text=detail_text(source,clients[call['source_id']],call['source_entry_id'])
                 else:
                     response=clients[call['source_id']].get(url)
-                    text=document_text(response,max_chars=144000)
-                    pdf_urls=linked_pdf_urls(response,source['allowed_hosts'])
-                    document_roles=linked_document_roles(response,source['allowed_hosts'])
+                    selector=source.get('review_body_selector')
+                    text=document_text(response,max_chars=144000,selector=selector)
+                    pdf_urls=linked_pdf_urls(response,source['allowed_hosts'],selector=selector)
+                    document_roles=linked_document_roles(response,source['allowed_hosts'],selector=selector)
             documents=[{'url':url,'hash':normalized_hash(text)}]
             document_texts=[{'url':url,'text':text}]
-            for support_url in dict.fromkeys(pdf_urls+source.get('review_support_urls',[])):
+            support_urls=source.get('review_support_urls',[])+source.get('review_support_pages',{}).get(url,[])
+            for support_url in dict.fromkeys(pdf_urls+support_urls):
                 if support_url==url:continue
                 try:
                     with locks[call['source_id']]:support=document_text(clients[call['source_id']].get(support_url),max_chars=144000)
@@ -101,6 +103,14 @@ def submit_candidates(store, config, api=None):
                 document_texts.append({'url':support_url,'text':support})
             text='\n'.join(d['text'] for d in document_texts)
             sections=document_sections(text)
+            previous_error=store.get('review_document_errors',call['id'])
+            if previous_error:
+                # Keep the audit trail, but a sidebar attachment removed from the
+                # observed article is not an outstanding application requirement.
+                store.put('review_document_errors',call['id'],{
+                    'id':call['id'],'status':'resolved','checked_on':today.isoformat(),
+                    'base_version':version(call),'documents':document_errors,
+                    'resolved_documents':documents,'previous_errors':previous_error.get('previous_errors',[])+previous_error.get('documents',[])})
             if approved and call.get('documents')==documents:
                 from .verified_review import commit_verified_review
                 approval=call['approval']
@@ -125,7 +135,11 @@ def submit_candidates(store, config, api=None):
                     if job.get('policy',0)>=POLICY or any(r['status'] in ('published','closed','out_of_scope') for r in decisions):return None
             pending=pending_inputs.get(call['id'])
             if pending and pending.get('baseline')==version(call) and pending.get('documents')==documents:return None
-            if any(i.get('baseline')==version(call) and i.get('documents')==documents for i in reviewed_inputs.get(call['id'],[])):return None
+            if any(i.get('baseline')==version(call) and i.get('documents')==documents for i in reviewed_inputs.get(call['id'],[])):
+                if previous_error and previous and previous.get('base_version')==version(call):
+                    job=store.get('ai_batches',previous.get('batch_id'))
+                    if job:publish_batch(store,dict(job,results=[{'id':call['id'],'status':'evidence_review_required'}]),today)
+                return None
             if (previous and previous.get('batch_id') and previous.get('base_version')==version(call)
                     and previous['draft'].get('documents')==documents):
                 decision=store.get('publication_decisions',call['id']) or {}

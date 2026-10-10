@@ -48,7 +48,8 @@ class HTTPTests(unittest.TestCase):
   for path in ['/','/ilan/demo-bilim','/takvim','/nasil-calisir','/aboneligim','/yonetim']:
    with urllib.request.urlopen(self.base+path) as response:
     body=response.read().decode('utf-8');self.assertEqual(response.status,200)
-    self.assertIn('id="server-content"',body);self.assertIn('id="page-title"',body)
+    self.assertIn('id="server-content"',body);self.assertIn('id="radar-title"' if path=='/' else 'id="page-title"',body)
+    if path=='/':self.assertIn('id="public-data"',body);self.assertIn('class="opportunity-card"',body);self.assertNotIn('<div id="app-shell" hidden>',body)
     self.assertNotIn('<!--SERVER_CONTENT-->',body)
   with urllib.request.urlopen(self.base+'/ilan/demo-bilim') as response:
    self.assertIn('Uygunluk belirsiz',response.read().decode('utf-8'))

@@ -7,6 +7,18 @@ from hibe.store import MemoryStore
 
 
 class BatchPublicationTests(unittest.TestCase):
+    def test_national_school_scope_needs_application_and_local_approval_not_domain_alone(self):
+        from hibe.batch_publication import national_school_scope
+        current=dict(self.current,source_url='https://tubitak.gov.tr/call')
+        body='Başvuru Koşulları: resmi okullar başvurabilir. Proje sözleşmesi İl/İlçe Milli Eğitim Müdürlüğü tarafından imzalanır.'
+        item={'document_texts':[{'url':'https://tubitak.gov.tr/rules.pdf','text':body}]}
+        scope=national_school_scope(current,item)
+        self.assertEqual(scope['result'],'eligible')
+        self.assertIn(scope['evidence'],body)
+        for text in ['Türkiye genelinde bilim eğitimi önemlidir.','Başvuru Koşulları: schools worldwide may apply.']:
+            self.assertIsNone(national_school_scope(current,{'document_texts':[{'url':'https://tubitak.gov.tr/rules.pdf','text':text}]}))
+        self.assertIsNone(national_school_scope(dict(current,official_source_verified=False),item))
+        self.assertIsNone(national_school_scope(dict(current,source_url='https://foreign.org/call'),item))
     def test_missing_essential_attachment_cannot_be_overridden_by_cached_html(self):
         store=MemoryStore();store.put('calls','c',self.current)
         store.put('review_proposals','c',{'id':'c','batch_id':'b','base_version':version(self.current),'draft':self.draft})
@@ -15,6 +27,12 @@ class BatchPublicationTests(unittest.TestCase):
         results=publish_batch(store,{'id':'b','model':'gemini-3.8-flash','results':[{'id':'c','status':'evidence_review_required'}]},self.today)
         self.assertEqual(results[0]['status'],'essential_document_required')
         self.assertNotIn('approval',store.get('calls','c'))
+
+    def test_short_deadline_quote_needs_real_application_closing_context(self):
+        draft=dict(self.draft,deadline_evidence='30 November 2026')
+        self.assertEqual(publication_decision(self.current,draft,self.item,self.today),'eligible')
+        text='Teachers in Turkey may apply. Secondary school teachers are eligible. Award ceremony: 30 November 2026.'
+        self.assertEqual(publication_decision(self.current,draft,dict(self.item,text=text),self.today),'deadline_evidence_required')
     def setUp(self):
         self.today=date(2026,10,10)
         self.text='Teachers in Turkey may apply. Secondary school teachers are eligible. Application deadline: 30 November 2026.'

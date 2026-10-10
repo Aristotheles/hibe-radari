@@ -5,6 +5,12 @@ from hibe.auto_review import classify, review_queue
 
 
 class AutoReviewTests(unittest.TestCase):
+    def test_science_fair_support_call_is_an_ai_candidate_not_an_approval(self):
+        r=classify({'title':'4006-TÜBİTAK Bilim Fuarları Destekleme Programı 13. Dönem Çağrıları'},date(2026,10,11))
+        self.assertEqual(r['group'],'candidate')
+        self.assertIn('okul',r['audience_hints'])
+        self.assertFalse(r['publication_approved'])
+        self.assertEqual(r['turkey'],'belirsiz')
     def test_batch_decision_only_sorts_the_reviewed_version(self):
         from hibe.domain import version
         call={'id':'c','title':'Lise yarışması','deadline':None}
