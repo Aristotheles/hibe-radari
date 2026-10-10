@@ -1112,3 +1112,22 @@ Kullanıcı talebi: kısa filtre, ilk yüklemede kararlı düzen, eğitimlerin a
 
 ### Sonraki adım
 Kayıtta belirtilen sıradaki doğrulama; aynı geliştirme dalında tek yazan Codex.
+
+
+## 2026-10-11 01:18 — Akşam kapanışı ve API değişikliği planı (Codex)
+
+### Yapılanlar
+Kullanıcı bu akşam çalışmayı durdurdu. Sonraki çalışma için proje API değişikliği plana alındı; şimdi uygulama veya canlı yapılandırma değiştirilmeyecek.
+
+Sıradaki tek adım: değişecek API'nin kapsamını ve yeni sağlayıcı/endpoint/sözleşmesini belirlemek. Bunlar henüz belirtilmedi; Gemini veya belirli bir kaynak API'si olduğu varsayılmayacak. Sonrasında mevcut entegrasyonu, kimlik doğrulamasını, yanıt alanlarını, kota/maliyet sınırlarını ve zamanlanmış tarama bağlantılarını inceleyip mevcut mimaride geçiş yapılacak. Yerelde anlamlı testler ve veri/ilan koruması doğrulandıktan sonra güvenli canlı geçiş değerlendirilecek. Anahtarlar yalnız backend ortamında kalacak.
+
+Mevcut açık işler korunuyor: gerçek duyuru kapsamı ve eksik başvuru belgeleri. Son doğrulanmış uygulama commit'i 8270d313754e1fb563dd5fd5a5f231b1da813769; Linux/Windows CI 38090793492 başarılı. Canlıda 8 duyuru ve ayrı 32 eğitim var. Bu kapanışta yeni tarama, AI isteği veya deploy yapılmadı. Eski geliştirme heartbeat kapalı; ürünün haftada iki bulut taraması çalışmayı durdurma isteğiyle kapatılmadı.
+
+### Alınan kararlar
+Kullanıcı API değişikliğini sonraki çalışmaya bıraktı ve bu akşam çalışmayı durdurdu.
+
+### Açık sorular ve sorunlar
+Değişecek API ve yeni API bilgileri henüz belirtilmedi.
+
+### Sonraki adım
+API kapsamı ve yeni bağlantı sözleşmesini belirlemek; kullanıcı devam edene kadar geliştirme durdu.
