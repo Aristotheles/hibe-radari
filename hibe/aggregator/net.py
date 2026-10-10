@@ -1,4 +1,4 @@
-"""Ä°zinli HTTPS, IP sabitleme, sÄ±nÄ±rlÄ± streaming ve koÅŸullu kaynak istemcisi."""
+"""İzinli HTTPS, IP sabitleme, sınırlı streaming ve koşullu kaynak istemcisi."""
 import base64
 import hashlib
 import json
@@ -51,7 +51,7 @@ class Fetcher:
         except ValueError:
             valid = False
         if not valid:
-            raise FetchError('Ä°zin verilmeyen URL', 'blocked')
+            raise FetchError('İzin verilmeyen URL', 'blocked')
         return u
 
     def _target(self, url):
@@ -61,16 +61,16 @@ class Fetcher:
         except ValueError:
             literal = None
         if literal is not None and not literal.is_global:
-            raise FetchError('Ã–zel IP engellendi', 'blocked')
+            raise FetchError('Özel IP engellendi', 'blocked')
         if self.resolver is None:
             return url, {}
         try:
             addresses = self.resolver(u.hostname, 443, type=socket.SOCK_STREAM)
             ips = [ipaddress.ip_address(a[4][0]) for a in addresses]
         except (OSError, ValueError) as exc:
-            raise FetchError('DNS Ã§Ã¶zÃ¼lemedi', 'dns') from exc
+            raise FetchError('DNS çözülemedi', 'dns') from exc
         if not ips or any(not ip.is_global for ip in ips):
-            raise FetchError('Ã–zel IP engellendi', 'blocked')
+            raise FetchError('Özel IP engellendi', 'blocked')
         host = str(ips[0]); host = f'[{host}]' if ':' in host else host
         return urljoin(url, 'https://' + host + (u.path or '/') + ('?' + u.query if u.query else '')), {'sni_hostname': u.hostname}
 
@@ -108,7 +108,7 @@ class Fetcher:
         if not self.enforce_policy: return
         policy = self.access_policy or {}
         if policy.get('terms_status') != 'allowed' or not policy.get('evidence_url') or not policy.get('checked_at'):
-            raise FetchError('Kaynak kullanÄ±m izni incelenmemiÅŸ; manuel inceleme gerekli', 'permission')
+            raise FetchError('Kaynak kullanım izni incelenmemiş; manuel inceleme gerekli', 'permission')
         origin = 'https://' + urlsplit(url).netloc
         if origin not in self.robots:
             parser = RobotFileParser(origin + '/robots.txt')
@@ -120,7 +120,7 @@ class Fetcher:
                 parser.raw_rules = response.text
             except FetchError as exc:
                 if str(exc) == 'HTTP 404': parser.parse([])
-                else: raise FetchError('robots.txt doÄŸrulanamadÄ±; manuel inceleme gerekli', 'permission') from exc
+                else: raise FetchError('robots.txt doğrulanamadı; manuel inceleme gerekli', 'permission') from exc
             self.robots[origin] = parser
         parser = self.robots[origin]
         wildcard_blocked = False
@@ -156,7 +156,7 @@ class Fetcher:
                 if re.search(pattern,target):matched.append((len(value.replace('*','').rstrip('$')),name=='allow'))
         if matched:wildcard_blocked=not max(matched)[1]
         if not parser.can_fetch(USER_AGENT, url) or wildcard_blocked:
-            raise FetchError('robots.txt taramayÄ± engelliyor', 'permission')
+            raise FetchError('robots.txt taramayı engelliyor', 'permission')
         crawl_delay = parser.crawl_delay(USER_AGENT) or parser.crawl_delay('*')
         if crawl_delay: self.delay = max(self.delay, crawl_delay)
 
@@ -189,10 +189,10 @@ class Fetcher:
                     if status in (301, 302, 303, 307, 308):
                         redirects += 1
                         if redirects > 3 or not response.headers.get('location'):
-                            raise FetchError('YÃ¶nlendirme sÄ±nÄ±rÄ±/geÃ§ersiz yÃ¶nlendirme', 'redirect')
+                            raise FetchError('Yönlendirme sınırı/geçersiz yönlendirme', 'redirect')
                         next_url = urljoin(url, response.headers['location'])
                         self.check(next_url)
-                        # BaÅŸka izinli host'a bile hassas baÅŸlÄ±k taÅŸÄ±nmaz.
+                        # Başka izinli host'a bile hassas başlık taşınmaz.
                         if urlsplit(next_url).hostname != urlsplit(url).hostname:
                             headers = {k:v for k,v in headers.items() if k.lower() not in ('authorization','cookie','if-none-match','if-modified-since')}
                         if status == 303 or (status in (301, 302) and method == 'POST'):
@@ -205,22 +205,22 @@ class Fetcher:
                         except ValueError:
                             try: wait = (parsedate_to_datetime(value) - datetime.now(timezone.utc)).total_seconds()
                             except (ValueError, TypeError): wait = 1
-                        if not math.isfinite(wait) or wait > 60: raise FetchError('Retry-After uzun; sonraki koÅŸuyu bekle', 'rate_limit')
+                        if not math.isfinite(wait) or wait > 60: raise FetchError('Retry-After uzun; sonraki koşuyu bekle', 'rate_limit')
                         self.sleep(max(0, wait)); retries += 1
                         continue
                     if status == 304:
-                        if cached is None: raise FetchError('304 iÃ§in Ã¶nceki veri yok', 'cache')
+                        if cached is None: raise FetchError('304 için önceki veri yok', 'cache')
                         return httpx.Response(200, headers=cached.headers, content=cached.content,
                             request=httpx.Request(method, url), extensions={'not_modified': True})
                     if status != 200:
                         raise FetchError(f'HTTP {status}', 'rate_limit' if status == 429 else 'http')
                     try: length = int(response.headers.get('content-length', '0'))
-                    except ValueError: raise FetchError('GeÃ§ersiz Content-Length', 'format')
-                    if length > self.max_bytes: raise FetchError('Boyut sÄ±nÄ±rÄ± aÅŸÄ±ldÄ±', 'size')
+                    except ValueError: raise FetchError('Geçersiz Content-Length', 'format')
+                    if length > self.max_bytes: raise FetchError('Boyut sınırı aşıldı', 'size')
                     data = bytearray()
                     for chunk in response.iter_bytes(chunk_size=16384):
                         data.extend(chunk)
-                        if len(data) > self.max_bytes: raise FetchError('Boyut sÄ±nÄ±rÄ± aÅŸÄ±ldÄ±', 'size')
+                        if len(data) > self.max_bytes: raise FetchError('Boyut sınırı aşıldı', 'size')
                     decoded_headers = dict(response.headers)
                     decoded_headers.pop('content-encoding', None)
                     decoded_headers['content-length'] = str(len(data))

@@ -630,3 +630,17 @@ Yeni karar yok; kullanıcı onaylı kota sonrası devam ve tek aktif yerel ajan 
 AŞAMA9 gerçek FirebaseAuth/ADC/admin UID/backend erişimi bekliyor; hesap/UID sorusu tekrar sorulmadı. AŞAMA10 gerçek tam canlı pilot/zamanlayıcı/SMTP/onay/RELEASE/deploy açık. Deploy yapılmadı.
 ### Sonraki adım
 - [ ] Bağımsız kaynak kabulü ve kaynak sağlık iletilerinin Türkçe okunabilirliği; erişim sağlanınca AŞAMA9 gerçek giriş. Rutin aşama onayı/duruş yok.
+
+
+## 2026-10-10 06:19 — Kaynak sağlık iletilerinde Türkçe düzeltmesi
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+hibe/aggregator/net.py içindeki15bozuk UTF-8/Windows-1252 metin satırı düzeltildi; URL/DNS/robots/boyut/yönlendirme hata mesajları artık doğru Türkçe. Aynı dosyanın ASCII kod/güvenlik koşulları değişmedi; geçmiş ham gözlem kayıtları yeniden yazılmadı.
+### Doğrulama
+FAST: ağ güvenliği+aggregator54test PASS5.168s, diff-check PASS. Önceki tam205Python PASS66.425s; bu yalnız mesaj değişikliğinden sonra tam koşu tekrarlanmadı. JS değişmedi. TÜBİTAK dilimi752b2cdyerelcommit; push henüz yapılmadı.
+### Alınan kararlar
+Yeni karar yok; yetkili yerel devam sürüyor.
+### Açık sorular ve sorunlar
+AŞAMA9Auth/ADC/adminUID sorusu bekler; AŞAMA10/RELEASE/deploy açık. Canlı site değiştirilmedi.
+### Sonraki adım
+- [ ] Gençlik Köprüsü mevcut connector için resmî erişim/yeniden kullanım koşullarını incele.
