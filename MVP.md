@@ -835,3 +835,12 @@ Kullanıcı ücretli kullanım istemiyor; anahtarı/projeyi ücretsiz katmana de
 Kota kalan kısa48/haftalık35. ca5fd2e terminal GitHub CI success ölçüldü. Kaynak zamanlayıcı son sonuç0, sonraki16.15; mevcut görev Gemini çağırmaz. Bu kontrolde Gemini veya yeni kaynak taraması yapılmadı. Yayın/deploy yok.
 ### Sonraki adım
 Ücretsiz geçiş hazır olana kadar API çağrısı başlatma; bağımsız yerel entegrasyon işleri yetki kapsamında. Gerçek inceleme, ücretsiz katman doğrulaması sonrası sınırlandırılmış test gerektirir.
+
+## 2026-10-10 — İzin verilen tek Gemini bağlantı denemesi
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kullanıcı deneyebilirsin dedi; yalnız kısa fixture metniyle max_calls1 bağlantı kontrolü denendi. İlk terminal alıntılama hatası API çalıştırmadan düzeltildi. Gerçek extractor ValueError ile daha istek kurulmadan durdu. Windows User/Machine/Process GEMINI_API_KEY varlık kontrolleri false; User model gemini-3.8-flash. .env/.env.local yok. Anahtar içeriği okunup gösterilmedi. API çağrısı/ücret/yayın oluşmadı. Sonuç ignored .agent/gemini-connection-result.json.
+### Açık sorular ve sorunlar
+Anahtar ekledim bildirimine rağmen backend tarafından erişilebilir anahtar yok. Ücretsiz katman doğrulanmış sayılmaz. Mevcut kod/Gemini modeli değiştirilmedi.
+### Sonraki adım
+Kullanıcı anahtarı User ortamına boş olmayan değer olarak kaydettikten sonra tek çağrıyı tekrar doğrula; toplu inceleme veya ücretli fallback başlatma.
