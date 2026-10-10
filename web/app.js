@@ -183,11 +183,29 @@ async function admin() {
       n.append(toggle); $('#sources').append(n);
     }
     $('#review').replaceChildren();
+    $('#auto-review-filters')?.remove();
+    const triageFilters=el('div',undefined,'filter-bar');triageFilters.id='auto-review-filters';
+    const selectors={};
+    for(const [key,label,options] of [
+      ['group','Otomatik ayıklama',[['candidate','Fırsat adayları'],['','Tüm kayıtlar'],['news','Haberler'],['expired','Süresi geçmiş'],['out_of_scope','Türkiye uygun değil'],['uncertain','Bilgi eksik']]],
+      ['audience','Hedef kitle adayı',[['','Tümü'],['lise','Lise öğrencisi'],['ogretmen','Öğretmen'],['okul','Okul']]],
+      ['type','Fırsat türü',[['','Tümü'],['grant','Hibe / fon'],['competition','Yarışma'],['scholarship','Burs'],['teacher_training','Öğretmen eğitimi'],['eu_project','AB projesi'],['partner_search','Ortak arama'],['unknown','Türü belirsiz']]],
+      ['turkey','Türkiye uygunluğu',[['','Tümü'],['uygun','Kanıtla uygun'],['belirsiz','Kanıt eksik'],['uygun_degil','Uygun değil']]]]) {
+      const field=el('label',label,'select-field'),select=el('select');
+      for(const [value,name] of options){const option=el('option',name);option.value=value;select.append(option);}
+      selectors[key]=select;field.append(select);triageFilters.append(field);
+    }
+    $('#review').before(triageFilters);
+    const triageCount=el('p',undefined,'muted');triageFilters.append(triageCount);
+    const applyTriage=()=>{let visible=0;for(const row of $('#review').children){const r=row._review;const show=r&&(!selectors.group.value||r.group===selectors.group.value)&&(!selectors.audience.value||r.audience_hints.includes(selectors.audience.value))&&(!selectors.type.value||r.type===selectors.type.value)&&(!selectors.turkey.value||r.turkey===selectors.turkey.value);row.hidden=!show;if(show)visible++;}triageCount.textContent=visible+' / '+data.calls.length+' kayıt · Hedef kitle adaylığı kesin başvuru hakkı değildir.';};
+    for(const select of Object.values(selectors))select.onchange=applyTriage;
     if (!data.calls.length) $('#review').append(el('p', 'İncelenecek kayıt yok.'));
     for (const c of data.calls) {
       const n = el('details');
+      n._review=c.auto_review||{group:'uncertain',audience_hints:[],type:'unknown',turkey:'belirsiz',reasons:[]};
       const approved = c.approval?.reviewed && c.approval.version === c.version;
       n.append(el('summary', c.title + (approved ? ' · Bu sürüm onaylı' : ' · İnceleme bekliyor')));
+      n.append(el('p','Otomatik ayıklama: '+n._review.reasons.join(' ')));
       if (c.eligibility_assessment) {
         const labels = {school:'Okul / devlet lisesi',teacher:'Öğretmen',student_14_18:'14–18 yaş lise öğrencisi',school_partner:'Okulun proje ortaklığı',ngo_channel:'Dernek üzerinden başvuru'};
         for (const [target, result] of Object.entries(c.eligibility_assessment.targets || {})) {
@@ -230,6 +248,7 @@ async function admin() {
       }
       n.append(b, status); $('#review').append(n);
     }
+    applyTriage();
     message('', 'info', '#admin-status');
   } catch (error) {
     message(friendlyError(error), 'error', '#admin-status'); $('#retry-admin').hidden = false;

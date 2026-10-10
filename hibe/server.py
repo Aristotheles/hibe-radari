@@ -57,7 +57,8 @@ def handler(app):
     if p=='/api/pro/export':
      u=self.user();self.send(200,app.service.export_csv(u).encode('utf-8'),'text/csv; charset=utf-8');return
     if p=='/api/admin':
-     u=self.user();app.service.require_admin(u);self.send(200,{'calls':app.service.store.all('calls'),'sources':app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))),'acceptance_cards':json.loads((ROOT/'config/source_acceptance.json').read_text(encoding='utf-8')),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
+     from .auto_review import review_queue
+     u=self.user();app.service.require_admin(u);self.send(200,{'calls':review_queue(app.service.store.all('calls'),app.service.today()),'sources':app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))),'acceptance_cards':json.loads((ROOT/'config/source_acceptance.json').read_text(encoding='utf-8')),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
     if p in {'/','/takvim','/nasil-calisir','/aboneligim','/yonetim'} or p.startswith('/ilan/'):
      from .presentation import page
      result=page((ROOT/'web/index.html').read_text(encoding='utf-8'),p,urlsplit(self.path).query,app.service.public(),json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8')),app.demo)

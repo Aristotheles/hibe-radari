@@ -801,3 +801,12 @@ Mevcut siteye Son başvuru ve Uygunluk filtreleri eklendi; seçili başvuru yolu
 Görev yalnız bilgisayar açık ve Windows oturumu mevcutken çalışır; sürekli sunucu otomasyonu değil. 160kuyruk kaydı0onay; bütün154registry çalışıyor sayılmaz. Türkiye koşulları kanıtı ve güncel fırsat incelemesi açık. Hosting aynı.
 ### Sonraki adım
 Periyodu dolan ilk gerçek tarama sonucunu ölç; güncel lise/öğretmen fırsatlarını kanıtlarıyla tamamla ve insan onayı sonrası RELEASE değerlendir.
+
+## 2026-10-10 — Otomatik kuyruk ön elemesi
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+hibe/auto_review.py mevcut160 çağrıya panel yüklemesinde sürüme bağlı otomatik sınıflandırma uygular. Lise/öğretmen/okul, fırsat türü ve Türkiye kanıt durumuna göre filtreler; haber/kapalı/bilgi eksik ayrı gruplar. Gerçek admin ekranı106/160fırsat adayı, lise filtresi15/160 ölçüldü. Aday kesin uygun fırsat değildir; kayıt/onay silinmez. auto_review kullanıcı taslağında gönderilse saklanmaz. 226Python testi41.239s PASS,13JS PASS,syntax/diff/detector PASS. Backend96132,8021aktif. docs/OTOMATIK_INCELEME.md.
+### Açık sorular ve sorunlar
+Tam metin/PDF otomatik incelemesi tamamlanmadı: ortamda Gemini anahtarı yok. Mevcut extractor/gemini-3.8-flash korundu; gerçek model çağrısı yapılmadı. Kullanıcıdan anahtarı sohbet yerine backend ortamına eklemesi asyncsoruldu. Keşiften güvenilir resmi belgeye mevcut pipeline sürüm kontrollü bağlanması açık. Yayın onayı/Hosting değişmedi.
+### Sonraki adım
+Mevcut extractor ile güvenilir resmi çağrı şartlarını otomatik çıkaran, kanıtı doğrulayan ve eski doğru bilgiyi koruyan keşif entegrasyonunu tamamla; Gemini yokken belirsiz sonucu uygun sayma.

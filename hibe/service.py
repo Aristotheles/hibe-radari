@@ -10,6 +10,7 @@ class Service:
   if not self.is_admin(u):raise PermissionError('Yönetici yetkisi gerekli')
  def save(self,u,c):
   self.require_admin(u);c=dict(c)
+  c.pop('auto_review',None)  # Derived queue hints are not editable call evidence.
   if self.demo:c['demo']=True
   validate(c)
   old=self.store.get('calls',c['id'])
