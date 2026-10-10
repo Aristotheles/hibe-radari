@@ -1,0 +1,11 @@
+*
+!hibe/
+!hibe/**
+!config/
+!config/**
+!requirements.txt
+!Dockerfile.refresh
+!.dockerignore
+!cloudbuild.refresh.yaml
+**/__pycache__/
+**/*.pyc

@@ -1,0 +1,40 @@
+import os
+import unittest
+from unittest.mock import patch
+from hibe.cloud_refresh import main
+from hibe.store import MemoryStore
+
+
+class CloudRefreshTests(unittest.TestCase):
+    def execute(self, result=None, error=None):
+        store = MemoryStore()
+        with patch.dict(os.environ, {'FIREBASE_PROJECT_ID': 'test-project'}), \
+             patch('firebase_admin.initialize_app') as initialize, \
+             patch('hibe.cloud_refresh.FirestoreStore', return_value=store), \
+             patch('hibe.cloud_refresh.refresh', return_value=result, side_effect=error), \
+             patch('builtins.print') as output:
+            code = main()
+        initialize.assert_called_once_with(options={'projectId': 'test-project'})
+        return code, store.get('automation_runs', 'source_refresh_latest'), output
+
+    def test_uses_service_identity_without_admin_or_web_configuration(self):
+        code, receipt, _ = self.execute({'status': 'not_due', 'sources': 0, 'changed': 0})
+        self.assertEqual(code, 0)
+        self.assertEqual(receipt['status'], 'not_due')
+        self.assertIn('finished_at', receipt)
+
+    def test_source_failure_sets_nonzero_exit(self):
+        code, _, _ = self.execute({'status': 'partial', 'unhealthy': ['source']})
+        self.assertEqual(code, 1)
+
+    def test_exception_does_not_expose_message_and_records_failure(self):
+        code, receipt, output = self.execute(error=RuntimeError('secret-credential'))
+        self.assertEqual(code, 1)
+        self.assertEqual(receipt['error_kind'], 'RuntimeError')
+        self.assertNotIn('secret-credential', str(output.call_args))
+
+    def test_missing_project_does_not_initialize(self):
+        with patch.dict(os.environ, {}, clear=True), patch('firebase_admin.initialize_app') as initialize:
+            with self.assertRaises(ValueError):
+                main()
+        initialize.assert_not_called()

@@ -873,3 +873,22 @@ Git temiz; mevcut workflow yalnız test çalıştırıyor, üretim cron yok. gcl
 Bulut otomasyonu henüz kurulmadı. Önerilen tek rota mevcut Python toplayıcısını Cloud Run Job olarak, Cloud Scheduler salı/cuma08.15 tetikleriyle çalıştırmaktır. Bu servisler için projenin faturalandırması etkin olmalı. Gemini anahtarının başka projeden olması Hibe Radarı faturalandırmasını etkinleştirmez. Tam belge inceleme, temizlik ve güvenli yayın bağlantıları hâlâ açık; kurulmuş gibi gösterilmez.
 ### Sonraki adım
 Kullanıcı Hibe Radarı projesine faturalandırma hesabı bağladıktan sonra mevcut kodun sunucu yürütme paketini ve dar yetkili servis kimliğini kur; gerçek ilk bulut koşusunu ve yayın kapılarını doğrula. Anahtar/şifre sohbetten istenmez.
+
+## 2026-10-10 — Faturalandırma bağlantısı doğrulandı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kullanıcı ikinci açık ödeme hesabını denemeyi yetkilendirdi. SonuB334A0 hesabına gerçek billing projects link başarılı; owner hesabıyla bağımsız describe billingEnabled=true ve seçilen hesap eşliğini doğruladı. 97AE58 kota engeli geçmiş kayıttır; proje artık faturalandırmaya bağlı. Bu işlemde tarama/Gemini isteği veya Hosting deploy yapılmadı.
+### Alınan kararlar
+Kullanıcı tarafından onaylandı: Hibe Radarı faturalandırması B334A0 hesabına bağlı. Mevcut proje ve owner korunur; sunucu otomasyonu hâlâ kurulmuş sayılmaz.
+### Sonraki adım
+Mevcut Cloud Run Job hazırlığını tamamla, dar yetkili servis kimliği ve salı/cuma08.15 Europe/Istanbul tetikleriyle ilk gerçek sunucu koşusunu doğrula. Yerel tarama görevi kapalı kalır; yayın kapıları korunur.
+
+## 2026-10-10 — Sunucu görevi kuruldu; tetikleyici testi sürüyor
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kullanıcı kur ve test et yetkisiyle Cloud Run/Scheduler/Build/Artifact Registry etkinleştirildi. Mevcut Python refresh için ayrı cloud_refresh giriş noktası, sır içermeyen Docker ve upload allowlist oluşturuldu. Tarama hesabı hibe-refresh yalnız datastore.user; Scheduler hibe-scheduler yalnız ilgili job run.invoker; derleme hibe-build kaynak bucket objectViewer, ilgili repository writer, logWriter. İlk varsayılan build permission hatası ve Google-managed hesap seçimi hatası ayrı user-managed build hesabıyla çözüldü; geçici legacy logWriter kaldırıldı.
+234 Python testi PASS30.647s. Cloud Build b5771469-35a4-45f9-8dae-51529eefee98 SUCCESS. hibe-source-refresh europe-west1 Ready; 1task/parallelism1/maxRetries0/timeout3600s/512Mi. Gerçek execution hibe-source-refresh-pcxdm 12:51:49UTC successful,exit0; Firestore automation_runs sonucu statusnot_due,sources0,changed0. Bu koşu yeni ağ taraması değildir. Hosting/onay/Gemini değişmedi.
+### Açık sorular ve sorunlar
+hibe-weekly-refresh ENABLED; salı/cuma08.15 Europe/Istanbul; next2026-10-13T05:15Z. Manuel Scheduler run isteği kabul edildi fakat execution/log/lastAttempt henüz görünmedi; uçtan uca tetikleyici kabulü bekliyor. Gemini tam belge incelemesi, temizlik ve site güncelleme bağlantısı hâlâ açık. Son temiz checkpoint e470e3e SHA remote eşliği ve CI success ölçüldü.
+### Sonraki adım
+Scheduler gerçek HTTP çağrısını ve oluşturduğu başarılı executionı doğrula; ilk periyodu dolan kaynak ağ taramasını ayrıca ölç. Yerel görev kapalı; mevcut site korunur.

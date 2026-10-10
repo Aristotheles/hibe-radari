@@ -1,0 +1,9 @@
+*
+!requirements.txt
+!hibe/
+!hibe/**
+!config/
+!config/**
+!Dockerfile.refresh
+**/__pycache__
+**/*.pyc
