@@ -862,3 +862,14 @@ Kaydı hazırlayan: Codex.
 Şu an görev kaynak keşif kuyruğunu günceller; yapay zekâ/publish/deploy henüz bağlı değil. Filtreler kullanıcı seçiminde anlık çalışmaya devam eder. Yerel bilgisayar/oturum gereksinimi sürer. Bu ayar değişiminde tarama/API/deploy başlatılmadı.
 ### Sonraki adım
 Yetkilendirilmiş Tier1 kullanımını bütçe kontrollü şekilde bağla ve doğrula; tüm otomatik işlerin haftadaiki periyodunu koru.
+
+## 2026-10-10 — Bilgisayardan bağımsız otomasyon düzeltmesi
+Kaydı hazırlayan: Codex.
+### Alınan kararlar
+Kullanıcı yerel zamanlayıcıyı reddetti: tarama, kontrol, filtreleme, temizlik ve site güncellemesi bilgisayar kapalıyken de haftada iki çalışmalı. Geliştirme C:/hibe-radari içinde kalır; bulut yürütmesi bulutta geliştirme başlatmak değildir. Salı/cuma08.15 Europe/Istanbul korunur. Kullanıcı Tier1 Gemini kullanımını ve güvenli deploy/push işlemlerini ayrıca yetkilendirdi; eski ücretsiz kullanım bekleme kaydı artık geçerli değil.
+### Yapılanlar
+Git temiz; mevcut workflow yalnız test çalıştırıyor, üretim cron yok. gcloud billing projects describe hibe-radari-tr çıktısı billingEnabled=False. Cloud Run/Scheduler API etkin listede yok. Yerel HibeRadari-KaynakGuncelleme kapatıldı; yeniden tarama veya deploy yapılmadı.
+### Açık sorular ve sorunlar
+Bulut otomasyonu henüz kurulmadı. Önerilen tek rota mevcut Python toplayıcısını Cloud Run Job olarak, Cloud Scheduler salı/cuma08.15 tetikleriyle çalıştırmaktır. Bu servisler için projenin faturalandırması etkin olmalı. Gemini anahtarının başka projeden olması Hibe Radarı faturalandırmasını etkinleştirmez. Tam belge inceleme, temizlik ve güvenli yayın bağlantıları hâlâ açık; kurulmuş gibi gösterilmez.
+### Sonraki adım
+Kullanıcı Hibe Radarı projesine faturalandırma hesabı bağladıktan sonra mevcut kodun sunucu yürütme paketini ve dar yetkili servis kimliğini kur; gerçek ilk bulut koşusunu ve yayın kapılarını doğrula. Anahtar/şifre sohbetten istenmez.
