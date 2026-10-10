@@ -810,3 +810,10 @@ hibe/auto_review.py mevcut160 çağrıya panel yüklemesinde sürüme bağlı ot
 Tam metin/PDF otomatik incelemesi tamamlanmadı: ortamda Gemini anahtarı yok. Mevcut extractor/gemini-3.8-flash korundu; gerçek model çağrısı yapılmadı. Kullanıcıdan anahtarı sohbet yerine backend ortamına eklemesi asyncsoruldu. Keşiften güvenilir resmi belgeye mevcut pipeline sürüm kontrollü bağlanması açık. Yayın onayı/Hosting değişmedi.
 ### Sonraki adım
 Mevcut extractor ile güvenilir resmi çağrı şartlarını otomatik çıkaran, kanıtı doğrulayan ve eski doğru bilgiyi koruyan keşif entegrasyonunu tamamla; Gemini yokken belirsiz sonucu uygun sayma.
+
+## 2026-10-10 — Varsayılan açık tema
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kullanıcının isteğiyle her sayfa açılışında açık tema başlar; sistemin koyu tercihi ve önceki localStorage teması başlangıcı değiştirmez. Tema düğmesi oturum içinde çalışır. JS syntax/diff check PASS; gerçek yönetici sayfası yenilemesinde dark=false ve düğme Karanlık ölçüldü.
+### Sonraki adım
+Otomatik ilan incelemesinin açık işlerine devam et. Hosting dağıtımı yapılmadı.

@@ -350,7 +350,7 @@ $('#calendar-prev').onclick=()=>moveMonth(-1);$('#calendar-next').onclick=()=>mo
 document.addEventListener('click',e=>{const a=e.target.closest('a');if($('#app-shell').hidden||!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target||a.hasAttribute('download'))return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.hash)return;if(!['/','/takvim','/nasil-calisir','/aboneligim','/yonetim'].includes(u.pathname)&&!u.pathname.startsWith('/ilan/'))return;e.preventDefault();history.pushState(null,'',u.pathname+u.search);route();window.scrollTo(0,0);});
 window.addEventListener('popstate',()=>route());
 function setTheme(dark){document.documentElement.classList.toggle('dark',dark);$('#theme-toggle').textContent=dark?'Açık':'Karanlık';$('#theme-toggle').setAttribute('aria-label',dark?'Açık görünüm':'Karanlık görünüm');}
-let dark=matchMedia('(prefers-color-scheme: dark)').matches;try{const saved=localStorage.getItem('hibe-theme');if(saved)dark=saved==='dark';}catch{}
+let dark=false;
 setTheme(dark);$('#theme-toggle').onclick=()=>{dark=!dark;setTheme(dark);try{localStorage.setItem('hibe-theme',dark?'dark':'light');}catch{}};
 $('#admin-demo').hidden=!managementRoute;updateRoles();
 for(const b of document.querySelectorAll('[data-audience]')){b.classList.toggle('selected',b.dataset.audience===audience);b.setAttribute('aria-pressed',String(b.dataset.audience===audience));}
