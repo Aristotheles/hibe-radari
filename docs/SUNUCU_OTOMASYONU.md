@@ -37,3 +37,12 @@ Kullanıcı kur ve test et yetkisiyle Cloud Run/Scheduler/Build/Artifact Registr
 hibe-weekly-refresh ENABLED; salı/cuma08.15 Europe/Istanbul; next2026-10-13T05:15Z. Manuel Scheduler run isteği kabul edildi fakat execution/log/lastAttempt henüz görünmedi; uçtan uca tetikleyici kabulü bekliyor. Gemini tam belge incelemesi, temizlik ve site güncelleme bağlantısı hâlâ açık. Son temiz checkpoint e470e3e SHA remote eşliği ve CI success ölçüldü.
 ### Sonraki adım
 Scheduler gerçek HTTP çağrısını ve oluşturduğu başarılı executionı doğrula; ilk periyodu dolan kaynak ağ taramasını ayrıca ölç. Yerel görev kapalı; mevcut site korunur.
+
+## 2026-10-10 — Sunucu tetikleyicisi uçtan uca doğrulandı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Cloud Scheduler gerçek attempt12:52:40UTC HTTP200; oluşturduğu hibe-source-refresh-j9sdp execution12:53:21UTC CompletedTrue/succeededCount1/exit0. Log sonucu not_due,sources0,changed0; mevcut Firestore'a erişim ve sonuç yazımı doğrulandı, yeni ağ taraması olmadı. Başlangıçtaki lastAttempt gecikmesi geçti; önceki tetikleyici bekliyor kaydı bu ölçümle kapanır. Sonraki13Ekim2026 08.15Europe/Istanbul; haftadaiki salı/cuma. Yerel görev Disabled, bilgisayar gereksinimi yok.
+### Doğrulama kanıtları
+FEATURE: 234Python PASS, ilgili6test PASS, gerçek Cloud Build SUCCESS, Cloud Run doğrudan ve Scheduler üzerinden exit0, diff check PASS. Tarayıcı N/A (UI değişmedi); Hosting RELEASE N/A (site dağıtılmadı). Yeni gerçek kaynak ağ taraması NOT RUN (periyot dolmadı). 0b3ff73 kod/checkpoint origin'e push edildi; yeni CI ayrıca ölçülecek.
+### Açık işler ve sonraki adım
+Yapay zekâ tam belge incelemesi, temizlik ve site yayını bu görevde hâlâ yok. Aynı haftadaiki akışa bağlanacak; yayın kapıları korunacak. Kaynakların ilk gerçek periyodik ağ taraması kaynak sağlıkları üzerinden ayrıca doğrulanacak. Kullanıcı rutin onayı gerekmiyor.
