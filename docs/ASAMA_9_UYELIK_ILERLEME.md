@@ -37,3 +37,19 @@ Tam .venv koşusu 186 Python PASS (60.384s); bu dilimde JS kodu değişmedi, ön
 Kaydı hazırlayan: Codex. notifications.send_pending starttls artık ssl.create_default_context kullanır; test hostname ve CERT_REQUIRED doğrular. Tam196Python PASS (62.583s),11JS PASS; app/radar/decision/views syntax, compileall ve diff-check PASS. Kanıt .agent/release-local-tests.txt. Gerçek public/latest127SHA aynı. Gerçek SMTP gönderilmedi.
 docs/RELEASE_KABUL_DENETIMI.md MVP0–10 gereksinimlerini kanıt/eksik matrisiyle denetler; RELEASE NOT VERIFIED. hibe.server --check aynı beş eksik env +ADC DefaultCredentialsError döndürdü. WEB uygulaması mevcut olsa da Auth önceki404CONFIGURATION_NOT_FOUND; bu dilimde gerçek API tekrar sorgulanmadı. firebase.json yalnız Hosting, backend rewrite yok: statik deploy Google giriş/API sunucusu çalıştırmaz. Gerçek admin/onay/Gemini/SMTP ve29canlıtamkoşu/zamanlayıcı/deploy açık. Ücretli altyapı veya gerçek UID uydurulmadı.
 Kullanıcıya gerçek hesap/UID sorusu zaten gönderilmiş; tekrar rutin onay sorulmadı. Yerel somut ilerleme sürüyor, goal active. Sonraki tek ana adım AŞAMA9 canlı erişimi; beklerken kalan bağımsız yerel kabul eksikleri kontrol edilir.
+
+
+## 2026-10-10 06:24 — HTTP eksik/yavaş gövde sınırı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+hibe/server.py POST gövdesine10sokuma zaman aşımı koyar, eksik Content-Length gövdesini400 ve süre aşımını408 ile reddeder; JSONarray/scalar/null nesne olmayan istekleri400 yapar. Önceden eksik gövde süresiz bekleyebilir, JSONlistesi500 oluşturabilirdi. Kimlik/izin/yayın kuralları gevşetilmedi.
+Gerçek loopback socket testinde gövdesiz istek0.1stest eşiğinde408, yarım gönderim400, dört nesne olmayan JSON400; oturum oluşturulmadı. Sonraki normal giriş200. Bu canlı Google/Firebase veya üretim yük testi değildir; toplam slow-client/iş parçacığı kotası ayrıca doğrulanmadı.
+### Doğrulama
+FEATURE: tam208Python PASS, hedefliHTTP+üyelik22PASS8.444s, diff-check PASS. JS değişmedi, önceki11PASS.127public/latestSHAaynı. Log .agent/http-body-tests.txt.
+BritishCouncil iki resmî URLye tekil manuel yerel TLSkontrolü403 döndürdü; tekrar/koruma aşma yok. Webaracı RSSi unsupported-content-type olarak okuyamadı; tam kullanım şartları sonraki okumalarda timeout, otomatik izin verilmedi. Kanıt .agent/source-audit/british-manual.json. İnternet sitesinin herkes için kapalı olduğu iddiası yok.
+### Alınan kararlar
+Yeni karar yok; tüm aşamalara kadar yetkili yerel çalışma sürer.
+### Açık sorular ve sorunlar
+AŞAMA9 gerçek Auth/ADC/adminUID/backend erişimi; AŞAMA10 üretim SMTP/zamanlayıcı/tam canlı pilot/onay/RELEASE/deploy bekler. Kullanıcı sorusu tekrar sorulmadı.
+### Sonraki adım
+- [ ] Kalıcı keşif ön doğrulamasında sonraki satır hatasının önceki kayda etkisini sınamak; mevcut mimari ve tek aktif ajan korunur.

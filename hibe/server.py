@@ -6,6 +6,7 @@ from .store import SQLiteStore,FirestoreStore
 from .service import Service
 from .demo import seed
 ROOT=Path(__file__).resolve().parent.parent
+POST_BODY_TIMEOUT=10.0
 def configuration_status():
  required=('FIREBASE_PROJECT_ID','FIREBASE_WEB_API_KEY','FIREBASE_AUTH_DOMAIN','FIREBASE_APP_ID','ADMIN_UID')
  result={'missing':[key for key in required if not os.environ.get(key)],'backend_credentials':False,'ready':False}
@@ -73,9 +74,12 @@ def handler(app):
     n=int(self.headers.get('Content-Length','0'))
     if not 0<n<=150000:raise ValueError('İstek boyutu sınırı')
     # Sınırlı gövdeyi tüket: Windows'ta okunmamış POST verisi 403 yerine soket resetine yol açabilir.
+    self.connection.settimeout(POST_BODY_TIMEOUT)
     body=self.rfile.read(n)
+    if len(body)!=n:raise ValueError('İstek gövdesi eksik')
     if o and urlsplit(o).netloc!=self.headers.get('Host'):raise PermissionError('Başka kaynaktan yazma engellendi')
     d=json.loads(body);p=urlsplit(self.path).path
+    if not isinstance(d,dict):raise ValueError('JSON nesnesi gerekli')
     with app.lock:
      if p=='/api/demo-login':
       if not app.demo:raise PermissionError('Demo kapalı')
@@ -93,6 +97,8 @@ def handler(app):
      if p=='/api/approve':self.send(200,app.service.approve(u,d['id'],d['version']));return
      self.send(404,{'error':'Bulunamadı'})
    except PermissionError as e:self.send(403,{'error':str(e)})
+   except TimeoutError:
+    self.close_connection=True;self.send(408,{'error':'İstek gövdesi zamanında alınamadı'})
    except (ValueError,KeyError,TypeError) as e:self.send(400,{'error':str(e)})
    except Exception:self.send(500,{'error':'İşlem tamamlanamadı'})
  return H

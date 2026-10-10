@@ -659,3 +659,19 @@ Yeni kullanıcı kararı yok; mevcut tarama koşullarına uyum kuralının resm�
 AŞAMA9 gerçek hesap/UID/ADC/backend sorusu bekler. AŞAMA10/RELEASE açık; deploy yok. British Council şartlarının sonraki bölüm okuması zaman aşımına uğradı, tam politika kabulü yapılmadı.
 ### Sonraki adım
 - [ ] British Council kullanım şartlarının kalan bölümünü ve mevcut RSS erişimini doğrula; kaynak engelleri tam koşu başarısı sayılmaz.
+
+
+## 2026-10-10 06:24 — HTTP eksik/yavaş gövde sınırı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+hibe/server.py POST gövdesine10sokuma zaman aşımı koyar, eksik Content-Length gövdesini400 ve süre aşımını408 ile reddeder; JSONarray/scalar/null nesne olmayan istekleri400 yapar. Önceden eksik gövde süresiz bekleyebilir, JSONlistesi500 oluşturabilirdi. Kimlik/izin/yayın kuralları gevşetilmedi.
+Gerçek loopback socket testinde gövdesiz istek0.1stest eşiğinde408, yarım gönderim400, dört nesne olmayan JSON400; oturum oluşturulmadı. Sonraki normal giriş200. Bu canlı Google/Firebase veya üretim yük testi değildir; toplam slow-client/iş parçacığı kotası ayrıca doğrulanmadı.
+### Doğrulama
+FEATURE: tam208Python PASS, hedefliHTTP+üyelik22PASS8.444s, diff-check PASS. JS değişmedi, önceki11PASS.127public/latestSHAaynı. Log .agent/http-body-tests.txt.
+BritishCouncil iki resmî URLye tekil manuel yerel TLSkontrolü403 döndürdü; tekrar/koruma aşma yok. Webaracı RSSi unsupported-content-type olarak okuyamadı; tam kullanım şartları sonraki okumalarda timeout, otomatik izin verilmedi. Kanıt .agent/source-audit/british-manual.json. İnternet sitesinin herkes için kapalı olduğu iddiası yok.
+### Alınan kararlar
+Yeni karar yok; tüm aşamalara kadar yetkili yerel çalışma sürer.
+### Açık sorular ve sorunlar
+AŞAMA9 gerçek Auth/ADC/adminUID/backend erişimi; AŞAMA10 üretim SMTP/zamanlayıcı/tam canlı pilot/onay/RELEASE/deploy bekler. Kullanıcı sorusu tekrar sorulmadı.
+### Sonraki adım
+- [ ] Kalıcı keşif ön doğrulamasında sonraki satır hatasının önceki kayda etkisini sınamak; mevcut mimari ve tek aktif ajan korunur.

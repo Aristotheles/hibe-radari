@@ -83,3 +83,19 @@ Yeni karar yok; kullanıcı onaylı kesin devam/kota kuralı uygulanıyor. Kısa
 AŞAMA9 gerçek Auth/ADC/admin UID/backend erişimi açık; kullanıcı sorusu zaten iletildi. AŞAMA10 gerçek29tamcanlıpilot, kaynak koşulları, üretimzamanlayıcı/SMTP/onay/deploy/hostingrollback açık. RELEASE NOT VERIFIED; mevcut canlı site korundu, deploy yapılmadı. Gerçek kimlik/onay/tahsilat uydurulmaz.
 ### Sonraki adım
 - [ ] Kota yeniden uygunken docs/CONTINUATION_PLAN.md ve güncel devirden devam; önce uzak sonCI/Git/kota/süreçler, sonra AŞAMA9gerçekerişim. Erişim beklerken yetkili bağımsız eski kaynak kabulü. Mainmerge/Cloudgeliştirme yok.
+
+
+## 2026-10-10 06:24 — HTTP eksik/yavaş gövde sınırı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+hibe/server.py POST gövdesine10sokuma zaman aşımı koyar, eksik Content-Length gövdesini400 ve süre aşımını408 ile reddeder; JSONarray/scalar/null nesne olmayan istekleri400 yapar. Önceden eksik gövde süresiz bekleyebilir, JSONlistesi500 oluşturabilirdi. Kimlik/izin/yayın kuralları gevşetilmedi.
+Gerçek loopback socket testinde gövdesiz istek0.1stest eşiğinde408, yarım gönderim400, dört nesne olmayan JSON400; oturum oluşturulmadı. Sonraki normal giriş200. Bu canlı Google/Firebase veya üretim yük testi değildir; toplam slow-client/iş parçacığı kotası ayrıca doğrulanmadı.
+### Doğrulama
+FEATURE: tam208Python PASS, hedefliHTTP+üyelik22PASS8.444s, diff-check PASS. JS değişmedi, önceki11PASS.127public/latestSHAaynı. Log .agent/http-body-tests.txt.
+BritishCouncil iki resmî URLye tekil manuel yerel TLSkontrolü403 döndürdü; tekrar/koruma aşma yok. Webaracı RSSi unsupported-content-type olarak okuyamadı; tam kullanım şartları sonraki okumalarda timeout, otomatik izin verilmedi. Kanıt .agent/source-audit/british-manual.json. İnternet sitesinin herkes için kapalı olduğu iddiası yok.
+### Alınan kararlar
+Yeni karar yok; tüm aşamalara kadar yetkili yerel çalışma sürer.
+### Açık sorular ve sorunlar
+AŞAMA9 gerçek Auth/ADC/adminUID/backend erişimi; AŞAMA10 üretim SMTP/zamanlayıcı/tam canlı pilot/onay/RELEASE/deploy bekler. Kullanıcı sorusu tekrar sorulmadı.
+### Sonraki adım
+- [ ] Kalıcı keşif ön doğrulamasında sonraki satır hatasının önceki kayda etkisini sınamak; mevcut mimari ve tek aktif ajan korunur.
