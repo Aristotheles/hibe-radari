@@ -34,6 +34,18 @@ class MailTests(unittest.TestCase):
   s.store.put('users','v',{'uid':'v','email':'v@example.org','themes':[],'subscribed':False});self.assertEqual(prepare(s,'https://example.org','x'*32),0)
  def test_sending_disabled(self):
   with self.assertRaises(ValueError):send_pending(Service(MemoryStore(),'admin'))
+ def test_html_newsletter_contains_same_signed_optout_as_text(self):
+  from bs4 import BeautifulSoup
+  from urllib.parse import urlsplit,parse_qs
+  s=Service(MemoryStore(),'admin');s.store.put('users','u',{'uid':'u','email':'u@example.org','themes':[],'subscribed':True})
+  prepare(s,'https://example.org','x'*32);message=s.store.all('outbox')[0]
+  link=BeautifulSoup(message['html'],'html.parser').select_one('footer a')
+  self.assertEqual(link['href'],message['unsubscribe_url']);self.assertIn(link['href'],message['text'])
+  token=parse_qs(urlsplit(link['href']).query)['unsubscribe'][0]
+  self.assertEqual(verify_unsubscribe(token,'x'*32),'u')
+  unsafe=render([],unsubscribe_url='https://example.org/?x="<script>')
+  self.assertNotIn('<script>',unsafe)
+  self.assertNotIn('<footer>',render([],unsubscribe_url='javascript:alert(1)'))
  def test_demo_send_fails_before_smtp_connection(self):
   from unittest.mock import patch
   s=Service(MemoryStore(),'admin',demo=True)

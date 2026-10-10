@@ -705,3 +705,17 @@ Yeni karar yok; kullanıcı gerçek yayın/onay/DEMO ayrımı kuralı bültene u
 AŞAMA9 gerçekAuth/ADC/adminUID/backend engeli sürer; AŞAMA10/RELEASE tamamlanmadı, deploy yapılmadı.
 ### Sonraki adım
 - [ ] HTML bültenin abonelikten çıkış bağlantısını içerdiğini doğrula; eksikse aynı bülten hattında düzelt.
+
+
+## 2026-10-10 06:33 — HTML bülten abonelikten çıkış bağlantısı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Önceden prepare abonelikten çıkış bağlantısını yalnız plain-text e-postaya ekliyordu; HTMLalternatifinde yoktu. hibe/export.py render isteğe bağlı HTTPSunsubscribe_url ile kaçışlanmış footerlink üretir; notifications.prepare aynı imzalı URLyi HTML ve metne geçirir. Genel statik önizleme kişisel token üretmez.
+### Doğrulama
+FEATURE: tam213Python PASS67.977s; notifications8PASS0.571s. HTMLparsehref=metin=outboxURL; token doğrulaması doğruUID, HTMLenjeksiyon/scriptURL reddi testli. Önceki11JS PASS/diff-check PASS. Log .agent/newsletter-footer-tests.txt. Gerçek SMTP/mailclient NOT VERIFIED; e-posta gönderilmedi.
+### Alınan kararlar
+Yeni karar yok; mevcut opt-out kullanıcı akışı her iki bülten biçiminde korunur.
+### Açık sorular ve sorunlar
+AŞAMA9Auth/ADC/adminUID/backend hâlâ eksik; AŞAMA10/RELEASE/deploy açık. Üretim site/DB/onay değiştirilmedi.
+### Sonraki adım
+- [ ] Mevcut29connector içindeki izinli23API/RSS arayüzünün canlı metadata gözlemini mevcut run(only=...) ile yap; kalan6kaynağı saklama/silme, kapsamı partial olarak raporla. Bu29tamcanlıpilot veya insan onayı değildir.

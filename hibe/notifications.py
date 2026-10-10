@@ -33,7 +33,7 @@ def prepare(service,base_url,secret):
   link=base_url.rstrip('/')+'/?unsubscribe='+quote(unsubscribe_token(u['uid'],secret))
   text='Hibe Radarı · '+week+'\n\n'+'\n\n'.join(c['title']+'\n'+c['summary'] for c in selected)+'\n\nAbonelikten çık: '+link
   snapshots={c['id']:c['version'] for c in selected}
-  service.store.put('outbox',key,{'id':key,'uid':u['uid'],'week':week,'status':'prepared','subject':'Hibe Radarı · '+week,'text':text,'html':render(selected),'unsubscribe_url':link,'created_at':now(),'call_versions':snapshots,'demo':service.demo});count+=1
+  service.store.put('outbox',key,{'id':key,'uid':u['uid'],'week':week,'status':'prepared','subject':'Hibe Radarı · '+week,'text':text,'html':render(selected,unsubscribe_url=link),'unsubscribe_url':link,'created_at':now(),'call_versions':snapshots,'demo':service.demo});count+=1
  return count
 
 def send_pending(service):
