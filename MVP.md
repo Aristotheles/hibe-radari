@@ -783,3 +783,12 @@ Gerçek Google yönetici oturumuyla localhost8021/yonetim ekranında 159 kuyruk 
 159 keşif kaydı güncel ve uygun 159 fırsat anlamına gelmez. İnsan yayın onayı ve RELEASE kabulü açık; Hosting değişmedi. 2204-A resmî2027 çağrı şartları incelendi; Bilim Söyleşileri ayrıntılı şartlar sitesi içerik vermedi. docs/GUNCEL_ILAN_INCELEMESI.md gerçek tarihler/uygunluk sınırlarını kaydeder.
 ### Sonraki adım
 Güncel başvuru fırsatlarını mevcut taslak akışında resmî kanıtlarıyla hazırla; eski haberleri ayır. Önceki Auth engeli artık açık engel değildir.
+
+## 2026-10-10 — İlk güncel lise çağrısı gerçek taslak akışında
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+2204-A 2027 çağrı PDF'si normal HTTPS erişiminde HTTP200, PDF879028byte; SHA256 1fd939ea30869d11972e64f85fdc472379e6d423e83ca2a60598ec2f5032654d. Gerçek yönetici ekranındaki JSON taslak formuyla tubitak-2204a-2027 kaydedildi. Ekran Taslak kaydedildi; onay bekliyor, kuyruk160, toplam160, yayımlanan0 ölçüldü. Öğrenciye özel yaş/proje/izin koşulları bilinmiyor bırakıldı; mevcut rol modeli öğrenci doğrudan rolü taşımadığından belirsiz yol kullanıldı, okulun kurumsal hibe başvurusu gibi gösterilmedi. Otomatik onay yok.
+### Açık sorular ve sorunlar
+Öğrenci rolünün mevcut kullanıcı görünümünde doğru temsil edilmesi ve resmî proje rehberi incelemesi açık. Bilim Söyleşileri şartları henüz tamamlanmadı. Son kod checkpoint c8e1a8f origin SHA eşliği doğrulandı; CI38049996782 halen çalışıyordu, başarı uydurulmadı. Backend exec29481.
+### Sonraki adım
+Öğrenci rolünü MVP kapsamıyla karşılaştır; resmî rehber incelemesini ve güncel fırsatları tamamla, sonra gerçek insan yayın onayıyla RELEASE değerlendirmesini yürüt.
