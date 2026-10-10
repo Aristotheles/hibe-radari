@@ -96,6 +96,8 @@ class RelevanceFilter:
                 reasons.append(f"-{spec['penalty']} hedef kitle dışı: {spec['label']} ('{found[1]}')")
 
         for key, (spec, patterns) in self.exclude.items():
+            if spec.get('only_without_target') and {'school', 'teacher'} & set(audiences):
+                continue
             found = hit(patterns)
             if found:
                 points = max(1, round(spec['penalty'] * found[0]))
@@ -104,6 +106,8 @@ class RelevanceFilter:
 
         category_text = ' | '.join(fold(c) for c in item.categories)
         for bad in self.exclude_categories:
+            if bad in rules.get('target_allowed_categories', []) and {'school', 'teacher'} & set(audiences):
+                continue
             if bad in category_text:
                 score -= rules['category_penalty']
                 reasons.append(f"-{rules['category_penalty']} hariç kategori: {bad}")

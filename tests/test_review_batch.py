@@ -6,6 +6,24 @@ from hibe.store import MemoryStore
 
 
 class ReviewBatchTests(unittest.TestCase):
+    def test_existing_feed_record_reviews_detail_without_mutating_identity(self):
+        from unittest.mock import patch
+        store = MemoryStore()
+        call = {'id':'existing', 'title':'Teacher opportunity', 'source_id':'eurodesk',
+                'source_url':'https://programmes.eurodesk.eu/rss',
+                'source_entry_id':'https://programmes.eurodesk.eu/19776'}
+        store.put('calls', 'existing', call)
+        source = {'id':'eurodesk', 'allowed_hosts':['programmes.eurodesk.eu'],
+                  'entry_url_template':'https://programmes.eurodesk.eu/en/programme/{entry_id}/eu',
+                  'access_policy':{'terms_status':'allowed'}}
+        client = Mock()
+        client.get.return_value = httpx.Response(200, headers={'content-type':'text/html'}, text='<main>Teacher conditions</main>')
+        with patch('hibe.review_batch.classify', return_value={'group':'candidate'}), patch('hibe.review_batch.prepare_proposal', return_value={'status':'evidence_review_required'}) as prepare:
+            review_batch(store, {'sources':[source]}, Mock(model='model'), {}, fetcher_factory=Mock(return_value=client))
+        client.get.assert_called_once_with('https://programmes.eurodesk.eu/en/programme/19776/eu')
+        self.assertEqual(prepare.call_args.args[2][0]['url'], client.get.call_args.args[0])
+        self.assertEqual(store.get('calls','existing'), call)
+
     def test_daily_limit_survives_new_wrapper_and_failure(self):
         store = MemoryStore()
         model = Mock(model='model', extract=Mock(side_effect=RuntimeError('failed')))

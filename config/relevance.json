@@ -21,15 +21,16 @@
   "call_words": {"weight": 1, "terms": ["hibe", "cagri", "basvuru", "destek", "fon=", "fonu", "fonlari", "call for", "grant", "funding", "ausschreibung", "foerder", "application", "teklif"]},
   "exclude": {
     "job": {"label": "iş/personel ilanı", "penalty": 10, "terms": ["is ilani", "personel alim", "alacak=", "alinacak", "uzman yardimcisi", "kamu is", "recruitment", "vacancy", "hiring", "stellenausschreibung", "is firsati"]},
-    "scholarship": {"label": "bireysel burs", "penalty": 4, "terms": ["burs", "scholarship", "stipendium", "fellowship", "staj", "internship"]},
+    "scholarship": {"label": "bireysel burs", "penalty": 4, "only_without_target": true, "terms": ["burs", "scholarship", "stipendium", "fellowship", "staj", "internship"]},
     "business": {"label": "ticari/girişim", "penalty": 4, "terms": ["startup", "girisim", "yatirim", "ihale", "tender", "kobi", "sme=", "ticari", "scaleup"]},
-    "arts-culture": {"label": "sanat/kültür", "penalty": 3, "terms": ["festival", "belgesel", "sinema", "film", "rezidans", "residency", "muzik", "sergi", "kulturel miras", "restorasyon"]},
-    "ngo-humanitarian": {"label": "STK/insani/hak", "penalty": 4, "terms": ["multeci", "goc", "insan haklari", "hukuki", "hayvan", "kadina siddet", "sivil toplum", "stk", "gida", "afet", "deprem", "iklim", "cevre", "tarim", "ciftci"]},
+    "arts-culture": {"label": "sanat/kültür", "penalty": 3, "only_without_target": true, "terms": ["festival", "belgesel", "sinema", "film", "rezidans", "residency", "muzik", "sergi", "kulturel miras", "restorasyon"]},
+    "ngo-humanitarian": {"label": "STK/insani/hak", "penalty": 4, "only_without_target": true, "terms": ["multeci", "goc", "insan haklari", "hukuki", "hayvan", "kadina siddet", "sivil toplum", "stk", "gida", "afet", "deprem", "iklim", "cevre", "tarim", "ciftci"]},
     "research-consortium": {"label": "araştırma konsorsiyumu (Horizon RIA/IA)", "penalty": 3, "terms": ["research and innovation action", "innovation action", "horizon-ria"]},
     "exam-commercial": {"label": "sınav/ticari kurs", "penalty": 4, "terms": ["ielts", "sinav", "exam", "toefl", "sertifika programi", "ingilizce kurs"]},
     "past-news": {"label": "geçmiş etkinlik haberi", "penalty": 3, "terms": ["gerceklestirildi", "gerceklesti", "tamamlandi", "duzenlendi", "sonuclari aciklandi", "sona erdi", "study visit", "calistayi", "konferansi"]},
-    "event-training": {"label": "etkinlik/kurs", "penalty": 2, "terms": ["seminer", "webinar", "kurs", "konferans", "workshop", "atolye", "yaz okulu", "summer school", "anket"]}
+    "event-training": {"label": "etkinlik/kurs", "penalty": 2, "only_without_target": true, "terms": ["seminer", "webinar", "kurs", "konferans", "workshop", "atolye", "yaz okulu", "summer school", "anket"]}
   },
   "exclude_categories": ["kamu is ilanlari", "burs duyurulari", "yurtdisinda egitim"],
+  "target_allowed_categories": ["burs duyurulari", "yurtdisinda egitim"],
   "category_penalty": 4
 }

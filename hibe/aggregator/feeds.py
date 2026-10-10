@@ -8,6 +8,22 @@ from .models import GrantOpportunity
 from .textutil import find_deadline, shorten, strip_html
 
 
+def entry_detail_url(source, guid):
+    """Resolve a verified source route without accepting foreign or malformed IDs."""
+    import re
+    parts = urlsplit(guid)
+    if (parts.scheme != 'https' or parts.hostname not in source['allowed_hosts']
+            or parts.username or parts.password or parts.port not in (None, 443)
+            or not re.fullmatch(r'/[0-9]+', parts.path) or parts.query or parts.fragment):
+        raise ValueError('RSS program kimliği izinli sayısal URL olmalı')
+    link = source['entry_url_template'].format(entry_id=parts.path[1:])
+    target = urlsplit(link)
+    if (target.scheme != 'https' or target.hostname not in source['allowed_hosts']
+            or target.username or target.password or target.port not in (None, 443)):
+        raise ValueError('RSS ayrıntı URL şablonu izinli host olmalı')
+    return link
+
+
 def collect(source, fetcher, today):
     parsed = feedparser.parse(fetcher.get(source['url']).content)
     if parsed.bozo:
@@ -18,6 +34,8 @@ def collect(source, fetcher, today):
     for entry in parsed.entries:
         link = (entry.get('link') or '').strip()
         guid = (entry.get('id') or '').strip()
+        if source.get('entry_url_template'):
+            link = entry_detail_url(source, guid)
         if source.get('entry_identity') == 'guid_url':
             parts = urlsplit(guid)
             if parts.scheme != 'https' or parts.hostname not in source['allowed_hosts'] or parts.username or parts.password or parts.port not in (None, 443):

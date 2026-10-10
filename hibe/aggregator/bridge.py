@@ -82,7 +82,12 @@ def persist_report(report, store):
                     if fold(candidate.get('title','')) != fold(row['title']): continue
                     if row.get('source_entry_id') and candidate.get('source_entry_id') and row.get('identity_authority') == candidate.get('identity_authority') and row['source_entry_id'] != candidate['source_entry_id']: continue
                     if any(row.get(k) and candidate.get(k) and row[k]!=candidate[k] for k in ('official_call_id','identity_authority','programme','call_period','application_path')): continue
-                    if any(url and canonical_url(url)==canonical_url(row['source_url']) for url in urls): matches.append(candidate)
+                    same_entry = bool(row.get('source_entry_id')
+                        and row.get('identity_authority')
+                        and row.get('identity_authority') == candidate.get('identity_authority')
+                        and row.get('source_id') == candidate.get('source_id')
+                        and row['source_entry_id'] == candidate.get('source_entry_id'))
+                    if same_entry or any(url and canonical_url(url)==canonical_url(row['source_url']) for url in urls): matches.append(candidate)
                 if len(matches)==1: call=matches[0]
             record = {'id':ident,'version':digest,'observation':row,'group':group,
                 'first_seen_at':(old or {}).get('first_seen_at',now()),'last_seen_at':now(),'history':history,'call_id':call['id'] if call else ident}

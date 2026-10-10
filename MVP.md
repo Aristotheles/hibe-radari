@@ -930,3 +930,20 @@ Kullanıcı hedefi sabit100/200/300 değil, bütün kaynaklardan maksimum uygun 
 Maksimum uygun içerik hedefi karşılanmadı; yalnız1yayın var. Kaynakların büyük bölümü manual_pending ve29çekici dışındadır.21AIönerisi onaylı uygun ilan değildir. Bütün154/170kaynak çalışıyor veya tümMVPbitti denmez. Googlegiriş gerçek tarayıcı kabulü, belgetarama/haberayrımı, daha genişkaynakentegrasyonu ve kanıtlıyayın açık.
 ### Sonraki adım
 Kaynak entegrasyon boşluklarını mevcut çekicilerle sırayla kapat; resmî açık çağrıları hedefkitle/ülke/fırsattürü/son tarih kanıtıyla incele. Salt kişiselkoşulbilinmiyor diye uygun hedefkitleyi eleme.
+
+
+## 2026-10-10 17:00 — Maksimum uygun fırsat ve Eurodesk bağlantıları
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kullanıcı hedefi maksimum uygun fırsat; sayısal yayın kotası değildir. Açık okul/öğretmen eşleşmelerinde burs, sanat, çevre ve eğitim türleri tek başına eleme nedeni olmaktan çıkarıldı; genel gençlik ifadesi bu istisna için yeterli değildir. İş ve yükseköğretim elemesi korunur. Bunlar keşif kurallarıdır; yayın onayı değildir.
+Eurodesk gerçek uygulama rotası ile GUID ayrıntı URL çözümü düzeltildi. Eski çağrılar aynı kimlikle ayrıntı belgesinden incelenir; aynı kaynak/program kimliği ve aynı başlık, çatışmayan dönem/program bilgisi ile URL değişimi mükerrer çağrı üretmez. Farklı kimlikler ayrı tutulur.
+Gerçek Eurodesk taraması:576 kayıt/576 farklı ayrıntı URL,25 ayrıntı başarılı,0 hata,27istek;82 inceleme adayı,5 izleme,116 genel,373 ret. Firestore ön denemesi mevcut çağrıları ve onaylı TÜBİTAK kaydını korudu. Gerçek kayıt:166→171 çağrı,87 keşif güncellemesi; yeni yayın/onay yok.
+### Doğrulama kanıtları
+42 ilgili test PASS3.552s; tam proje ortamında250Python PASS42.083s; diff check PASS. İlk sistem Python koşusu firebase_admin bulunmadığından4error verdi; proje .venv ortamıyla tekrar doğrulandı. Önceki00a5877 uzak CI success ölçüldü. Bu dilimde yeni AI çağrısı, imaj build veya deploy yapılmadı.
+Önceki cloud AI sonuç kaydının düzeltmesi: gerçek s7gkw sonucu3 evidence_review_required,6 unavailable,21failed; önceki3/7/20 metni yanlıştır. Başarılı iş çıkışı bütün belge incelemelerinin başarısı sayılmaz.
+### Alınan kararlar
+Maksimum uygun fırsat hedefi kullanıcı tarafından açıkça teyit edildi. Lise öğrencisi/öğretmen/okul için Türkiye'den başvuru kanıtı; fırsat türü, güncellik ve kişisel koşullar ayrı değerlendirilir. Yalnız kişisel koşulun bilinmemesi bilinen hedef kitleyi belirsiz yapmaz.
+### Açık sorular ve sorunlar
+82 aday uygun ve onaylı82ilan anlamına gelmez. Resmî koşul ve güncel dönem incelemesi sürüyor; canlı sitede yeni yayın doğrulanmadı. Kaynak envanteri entegrasyon değildir; bütün170kaynak çalışıyor denemez.
+### Sonraki adım
+Doğru ayrıntı URL'leri üzerinden adayların resmî koşullarını incele; Türkiye/lise/öğretmen/okul uygunluğu ve güncel açık çağrı kanıtıyla yayın kapsamını artır. Eski geliştirme heartbeat silinmiş kalır.

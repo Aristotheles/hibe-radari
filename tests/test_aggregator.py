@@ -67,6 +67,20 @@ class TextUtilTests(unittest.TestCase):
 
 
 class RelevanceTests(unittest.TestCase):
+    def test_targeted_opportunity_types_are_not_excluded_as_noise(self):
+        for title, categories in (
+            ('Lise öğrencileri için burs başvuruları', ['Burs Duyuruları']),
+            ('Öğretmenler için yaz okulu başvuruları', ['Yurtdışında Eğitim']),
+            ('Lise öğrencileri çevre yarışması başvuru çağrısı', []),
+            ('Okullar için film festivali başvuruları', []),
+        ):
+            relevance, _ = self.judge(title, categories)
+            self.assertIn(relevance.verdict, ('accept', 'review'), title)
+        relevance, _ = self.judge('Okul personel alım ilanı: hiring teachers')
+        self.assertEqual(relevance.verdict, 'reject')
+        relevance, _ = self.judge('Gençlere doktora bursu başvuruları', ['Burs Duyuruları'])
+        self.assertNotIn(relevance.verdict, ('accept', 'review'))
+
     def setUp(self):
         self.filter = RelevanceFilter()
 

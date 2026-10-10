@@ -409,7 +409,7 @@
       "allowed_hosts": [
         "programmes.eurodesk.eu"
       ],
-      "detail": false,
+      "detail": true,
       "language": "en",
       "access_policy": {
         "terms_status": "allowed",
@@ -419,7 +419,9 @@
       },
       "entry_identity": "guid",
       "ignore_published": true,
-      "aggregator": true
+      "aggregator": true,
+      "entry_url_template": "https://programmes.eurodesk.eu/en/programme/{entry_id}/eu",
+      "_not": "Gerçek web arayüzünün openSharedProgram rotası ve /en/programme/19776/eu detay metni 10 Ekim 2026 doğrulandı. Eski RSS /rss linki çağrı belgesi değildir. GUID yalnız aynı host sayısal program kimliğiyle ayrıntıya çevrilir; kaynak resmi organizatör sayfası yerine geçmez."
     },
     {
       "id": "interreg-next-med",

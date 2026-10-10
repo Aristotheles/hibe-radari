@@ -84,6 +84,9 @@ def review_batch(store, config, extractor, profile, limit=30, fetcher_factory=Fe
         hosts = source.get('allowed_hosts') or [urlsplit(source.get('url') or url).hostname]
         client = fetcher_factory(hosts, access_policy=source['access_policy'])
         try:
+            if source.get('entry_url_template') and call.get('source_entry_id') and not call.get('official_url'):
+                from .aggregator.feeds import entry_detail_url
+                url = entry_detail_url(source, call['source_entry_id'])
             text = document_text(client.get(url))
             result = prepare_proposal(store,call['id'],[{'url':url,'text':text}],bounded,profile,hosts)
             results.append({'id':call['id'], 'status':result['status'], 'cached':result.get('cached',False)})

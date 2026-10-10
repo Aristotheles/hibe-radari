@@ -9,6 +9,13 @@ from hibe.aggregator.relevance import RelevanceFilter
 ROOT = Path(__file__).resolve().parents[1]
 
 class DiscoveredFeedTests(unittest.TestCase):
+    def test_detail_route_rejects_foreign_and_malformed_identity(self):
+        from hibe.aggregator.feeds import entry_detail_url
+        source = {'allowed_hosts':['programmes.eurodesk.eu'], 'entry_url_template':'https://programmes.eurodesk.eu/en/programme/{entry_id}/eu'}
+        for guid in ('https://evil.example/19776', 'https://programmes.eurodesk.eu/../19776', 'https://programmes.eurodesk.eu/19776?url=x', 'https://user@programmes.eurodesk.eu/19776'):
+            with self.assertRaises(ValueError):
+                entry_detail_url(source, guid)
+
     def test_existing_identity_without_feed_guid_is_preserved(self):
         import hashlib
         from hibe.aggregator.models import GrantOpportunity, canonical_url
@@ -20,12 +27,14 @@ class DiscoveredFeedTests(unittest.TestCase):
         cfg = json.loads((ROOT/'config/aggregator.json').read_text(encoding='utf-8'))
         for ident in ('eurodesk-finder', 'interreg-next-med', 'mercator', 'iki-small-grants', 'gef-sgp', 'regeneron-isef', 't4-education', 'global-schools', 'roots-shoots', 'opportunity-desk', 'opportunities-youth', 'eu-calls'):
             source = next(s for s in cfg['sources'] if s['id'] == ident)
+            source = dict(source, detail=False)  # This fixture tests feed identity, not detail extraction.
             fixture = ROOT/'tests/fixtures/aggregator'/f'{ident}_rss_20261010.xml'
             rows, health = run_source(source, cfg, RelevanceFilter(), date(2026,10,10), transport=httpx.MockTransport(lambda r: httpx.Response(200, content=fixture.read_bytes())))
             self.assertEqual(health['health'], 'success')
             self.assertEqual(len(dedupe(rows+rows)), 0 if ident == 'gef-sgp' else 1 if ident == 'regeneron-isef' else 2)
             if ident == 'eurodesk-finder':
-                self.assertEqual(len({r.source_url for r in rows}), 1)
+                self.assertEqual(len({r.source_url for r in rows}), 2)
+                self.assertTrue(all('/en/programme/' in r.source_url for r in rows))
                 self.assertEqual(len({r.id for r in rows}), 2)
                 self.assertTrue(all(r.published_at is None for r in rows))
                 self.assertTrue(all(r.official_call_id is None for r in rows))

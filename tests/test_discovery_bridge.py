@@ -12,6 +12,19 @@ ADMIN={'uid':'admin','email_verified':True}
 TODAY=date(2026,10,10)
 
 class DiscoveryBridgeTests(unittest.TestCase):
+    def test_corrected_detail_route_keeps_same_entry_without_duplicate_call(self):
+        self.row.update(source_entry_id='https://x.org/123', identity_authority='s')
+        persist_report(self.report, self.store)
+        updated = copy.deepcopy(self.report)
+        updated['accepted'][0].update(id='new-route', source_url='https://x.org/en/programme/123/eu')
+        persist_report(updated, self.store)
+        self.assertEqual(len(self.store.all('calls')), 1)
+        self.assertEqual(self.store.get('discoveries','new-route')['call_id'], 'abc')
+        different = copy.deepcopy(updated)
+        different['accepted'][0].update(id='different-entry', source_entry_id='https://x.org/456')
+        persist_report(different, self.store)
+        self.assertEqual(len(self.store.all('calls')), 2)
+
     def setUp(self):
         self.store=MemoryStore();self.service=Service(self.store,'admin',today=lambda:TODAY)
         self.row={'id':'abc','title':'Okul çevre yarışması','source_id':'s','source_url':'https://x.org/call/1','organization':'Kurum','description_short':'Kaynak açıklaması','deadline':'2026-11-30','deadline_precision':'day','deadline_evidence':'Son başvuru 30 Kasım 2026','relevance':{'verdict':'accept','reasons':[],'audience':['school']}}
