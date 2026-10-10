@@ -1,5 +1,7 @@
 """Grounded extraction proposals for existing calls, without approval or overwrite."""
 from urllib.parse import urlsplit
+import hashlib
+import json
 from .domain import version, validate
 from .llm import extract_with_fallback
 from .scan import normalized_hash
@@ -23,6 +25,17 @@ def prepare_proposal(store, ident, document_texts, extractor, profile, allowed_h
         documents.append({'url': doc['url'], 'hash': normalized_hash(text)})
     if not documents:
         raise ValueError('Belge gerekli')
+    inputs = {'documents': documents, 'profile': profile,
+              'model': getattr(extractor, 'model', type(extractor).__name__),
+              'evidence_policy': 1}
+    fingerprint = hashlib.sha256(json.dumps(inputs, sort_keys=True,
+        ensure_ascii=False, separators=(',', ':')).encode('utf-8')).hexdigest()
+    previous = store.get('review_proposals', ident)
+    if (previous and previous.get('input_fingerprint') == fingerprint
+            and previous.get('base_version') == baseline
+            and previous.get('status') == 'evidence_review_required'):
+        validate(previous['draft'])
+        return dict(previous, cached=True)
     source = {'id': current['source_id'], 'call_id': ident, 'title': current['title'],
               'documents': documents, 'document_texts': document_texts}
     draft = extract_with_fallback(extractor, '\n\n'.join(texts), source, profile)
@@ -36,6 +49,7 @@ def prepare_proposal(store, ident, document_texts, extractor, profile, allowed_h
     if not latest or version(latest) != baseline:
         return {'status': 'stale'}
     proposal = {'id': ident, 'base_version': baseline, 'draft': draft,
-                'status': 'evidence_review_required', 'publication_approved': False}
+                'status': 'evidence_review_required', 'publication_approved': False,
+                'input_fingerprint': fingerprint}
     store.put('review_proposals', ident, proposal)
     return proposal

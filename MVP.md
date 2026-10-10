@@ -901,3 +901,10 @@ Cloud Scheduler gerçek attempt12:52:40UTC HTTP200; oluşturduğu hibe-source-re
 FEATURE: 234Python PASS, ilgili6test PASS, gerçek Cloud Build SUCCESS, Cloud Run doğrudan ve Scheduler üzerinden exit0, diff check PASS. Tarayıcı N/A (UI değişmedi); Hosting RELEASE N/A (site dağıtılmadı). Yeni gerçek kaynak ağ taraması NOT RUN (periyot dolmadı). 0b3ff73 kod/checkpoint origin'e push edildi; yeni CI ayrıca ölçülecek.
 ### Açık işler ve sonraki adım
 Yapay zekâ tam belge incelemesi, temizlik ve site yayını bu görevde hâlâ yok. Aynı haftadaiki akışa bağlanacak; yayın kapıları korunacak. Kaynakların ilk gerçek periyodik ağ taraması kaynak sağlıkları üzerinden ayrıca doğrulanacak. Kullanıcı rutin onayı gerekmiyor.
+
+## 2026-10-10 — Değişmeyen AI incelemelerini yeniden kullanma
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kota kalan kısa34/haftalık33. 7ee5b2e origin eşliği ölçüldü; CI henüz in_progress, önceki0b3ff73 success. hibe/document_review.py belge URL/metin hashleri, profil, model ve kanıt politikası fingerprinti ile mevcut başarılı öneriyi yeniden kullanır. Çağrı sürümü değişirse, model/profil/belge değişirse cache kullanılmaz. Başarısız çıkarım cache değildir; mevcut kayıt ve yayın onayı korunur. İlgili7test PASS0.137s, diff check PASS. Gerçek Gemini çağrısı/deploy yapılmadı; bu çekirdek henüz haftalık sunucu akışına bağlı değil.
+### Sonraki adım
+Kalıcı çağrı/token tavanını ve izinli resmî belge getirme adımını bu çekirdeğe bağla, sınırlandırılmış gerçek inceleme yap. Yeni kod imajda henüz yok; sunucu kaynak görevi önceki doğrulanmış imajda çalışır.
