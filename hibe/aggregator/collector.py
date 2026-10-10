@@ -121,8 +121,12 @@ def dedupe(items):
     from difflib import SequenceMatcher
     from .textutil import fold
     items = sorted(items, key=lambda i: (i.aggregator, ORDER[i.relevance.verdict]))
+    # Kimlik karşılaştırması bitene kadar bu alanlar değişmez; her çiftte yeniden ayrıştırılmaz.
+    source_urls = {id(item): canonical_url(item.source_url) for item in items}
+    titles = {id(item): fold(item.title) for item in items}
+    period_values = {id(item): item.call_period or tuple(re.findall(r'\b20\d{2}\b', item.title)) for item in items}
     def periods(item):
-        return item.call_period or tuple(re.findall(r'\b20\d{2}\b', item.title))
+        return period_values[id(item)]
     def compatible(a, b):
         if a.source_entry_id and b.source_entry_id and a.identity_authority == b.identity_authority and a.source_entry_id != b.source_entry_id: return False
         for field in ('official_call_id', 'identity_authority', 'programme', 'application_path'):
@@ -133,20 +137,22 @@ def dedupe(items):
         u = urlsplit(url)
         return u.path.rstrip('/') in ('', '/apply', '/grants', '/funding', '/calls') and not u.query
     def keys(item):
-        out = [canonical_url(item.source_url)]
+        out = [source_urls[id(item)]]
         if item.original_url and (item.original_url_confirmed or item.original_url_evidence):
             alias = canonical_url(item.original_url)
             if not generic(alias): out.append(alias)
         return out
+    url_keys = {id(item): set(keys(item)) for item in items}
+    generic_sources = {id(item): generic(source_urls[id(item)]) for item in items}
     def same(a, b):
         if not compatible(a, b): return False
         if a.official_call_id and b.official_call_id:
             return bool(a.identity_authority and a.identity_authority == b.identity_authority and a.official_call_id == b.official_call_id)
-        common = set(keys(a)) & set(keys(b))
+        common = url_keys[id(a)] & url_keys[id(b)]
         if not common: return False
-        if canonical_url(a.source_url) == canonical_url(b.source_url):
-            return not generic(canonical_url(a.source_url)) or fold(a.title) == fold(b.title)
-        return fold(a.title) == fold(b.title) or (a.original_url_confirmed and b.original_url_confirmed)
+        if source_urls[id(a)] == source_urls[id(b)]:
+            return not generic_sources[id(a)] or titles[id(a)] == titles[id(b)]
+        return titles[id(a)] == titles[id(b)] or (a.original_url_confirmed and b.original_url_confirmed)
     groups = []
     for item in items:
         matches = [g for g in groups if all(compatible(item, member) for member in g) and any(same(item, member) for member in g)]
@@ -186,7 +192,9 @@ def dedupe(items):
         kept.append(target)
     for pos, a in enumerate(kept):
         for b in kept[pos+1:]:
-            if SequenceMatcher(None, fold(a.title), fold(b.title)).ratio() >= .9:
+            matcher = SequenceMatcher(None, titles[id(a)], titles[id(b)])
+            # Üst sınır elemesi .9 üzerindeki gerçek eşleşmeyi atamaz.
+            if matcher.real_quick_ratio() >= .9 and matcher.quick_ratio() >= .9 and matcher.ratio() >= .9:
                 for x, y in ((a,b),(b,a)):
                     candidate = {'id':y.id,'reason':'Benzer başlık; otomatik birleştirilmedi'}
                     if candidate not in x.duplicate_candidates: x.duplicate_candidates.append(candidate)

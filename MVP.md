@@ -719,3 +719,18 @@ Yeni karar yok; mevcut opt-out kullanıcı akışı her iki bülten biçiminde k
 AŞAMA9Auth/ADC/adminUID/backend hâlâ eksik; AŞAMA10/RELEASE/deploy açık. Üretim site/DB/onay değiştirilmedi.
 ### Sonraki adım
 - [ ] Mevcut29connector içindeki izinli23API/RSS arayüzünün canlı metadata gözlemini mevcut run(only=...) ile yap; kalan6kaynağı saklama/silme, kapsamı partial olarak raporla. Bu29tamcanlıpilot veya insan onayı değildir.
+
+
+## 2026-10-10 06:45 — Canlı23arayüz üstverisi ve tekilleştirme süre kontrolü
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Mevcut29connector içinde allowed23API/RSS arayüzü gerçek Fetcher/robots/TLS yoluyla50HTTPisteği ve951kayıt verdi; tüm23healthsuccess, raporonlynedeniylepartial. Ayrıntı enrichment0, altı diğer connector silinmedi/başarılı sayılmadı. Yalnız geçiciMemoryStore951keşif;127public/latestSHAaynı. İlk helperimportyolu hatası düzeltildi; kaynak erişim hatası değildi.
+collector.dedupe sabitURL/başlık/dönemleri koşu içinde önbellekler ve difflib matematiksel üst sınırlarıyla gereksizratiohesabını atlar. Aynı180canlıkayıtta1.631s→0.142s, bütünçıktıSHAaynı. Optimize951kayıt8.094s; tüm eski951 için ayrıkdedupesüresi ölçülmedi, ilk koşunun ağ+dbye toplamıyla kıyaslanmaz. Kimlik/0.9eşiği/yalnızinceleme kuralları korunur.
+### Doğrulama
+FEATURE:214Python PASS67.456s, hedefli41PASS2.804s, önceki11JS PASS, diff-checkPASS. Eşik/Unicode/uzunbaşlık adayları referansratioile eşit. Rapor docs/LIVE_METADATA_PILOT_20261010.md; gerçek gözlemler ignored.agent içinde.
+### Alınan kararlar
+Yeni karar yok; envanterin her kaynağına otomatik bağlantı sözü verilmez, kapsam dürüstçe partial kalır.
+### Açık sorular ve sorunlar
+AŞAMA9Auth/ADC/adminUID/backend sorusu bekler; AŞAMA10iki29tamcanlıpilot/SMTP/zamanlayıcı/onay/RELEASE/deploy açık. Bu tek üstveri gözlemi insanonayı veya tam canlı kabul değildir.
+### Sonraki adım
+- [ ] Aynı veri hacminde kalıcı kayıt yolunun her yeni çağrıda bütüncalls koleksiyonunu yeniden okuma maliyetini ölçmek; gerçek üretim erişimi uydurulmaz.
