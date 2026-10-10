@@ -311,7 +311,7 @@ try {
     const sdk = await import('https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js');
     fb = await import('https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js');
     auth = fb.getAuth(sdk.initializeApp(config.firebase));
-    fb.onAuthStateChanged(auth, async user => { try { token = user ? await user.getIdToken() : ''; await session(); } catch (error) { message(friendlyError(error), 'error'); } });
+    fb.onAuthStateChanged(auth, async user => { try { token = user ? await user.getIdToken() : ''; await session(); if (!$('#app-shell').hidden) await route(false); } catch (error) { message(friendlyError(error), 'error'); } });
     $('#login').textContent = 'Google ile giriş';
   }
   $('#login').disabled = false; syncSessionUI(); await loadCalls(); $('#server-content').hidden = listState === 'ready'; $('#app-shell').hidden = listState !== 'ready'; if(listState==='ready') await route(false); else message('Etkileşimli liste yüklenemedi. Aşağıdaki ilanları okuyabilir veya sayfayı yeniden yükleyebilirsiniz.','error');

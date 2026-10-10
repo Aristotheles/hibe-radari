@@ -774,3 +774,12 @@ Resmî MEB3787 fotoğrafyarışması sayfası2025-10-27sonbaşvuru gösteriyor; 
 Gerçek yönetici giriş ekranda Çıkış gösteriyor; admin uçları/token kabulü ayrıca ölçülmeli. Tüm envanter otomatikçalışıyor denmez. Hosting deploy yok.
 ### Sonraki adım
 159aday kuyruğunu yönetici ekranında doğrula; eskihaberleri ayır, güncelokul/öğretmen/öğrenci fırsatlarını resmî tamşartlarıyla hazırlayıp insanonayına sun.
+
+## 2026-10-10 — Gerçek yönetici kuyruğu ve yavaşlık düzeltildi
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Gerçek Google yönetici oturumuyla localhost8021/yonetim ekranında 159 kuyruk kaydı, 159 toplam çağrı ve 0 yayımlanan ilan ölçüldü. Hesap yetkisi doğru; ilk açılışta oturum yüklenmeden route çalışıyordu. web/app.js oturum sonrasında mevcut ekranı yeniler. hibe/service.py kaynak panelindeki kaynak başına uzak okumaları iki koleksiyon okumasına indirir; kapalı kaynak ayarı ve eksik/ortak sağlık kayıtları korunur. 170 satırlı sentetik regresyon testi gerçek kaynak sayısı iddiası değildir. 219 Python testi 55.472s PASS, 11 JS testi PASS, JS syntax ve diff check PASS. Önceki 3ec1da9 CI38049580523 Ubuntu/Windows başarı ölçüldü; bu yeni değişikliklerin CI sonucu değildir. Backend yeni exec29481 üzerinde8021 aktif.
+### Açık sorular ve sorunlar
+159 keşif kaydı güncel ve uygun 159 fırsat anlamına gelmez. İnsan yayın onayı ve RELEASE kabulü açık; Hosting değişmedi. 2204-A resmî2027 çağrı şartları incelendi; Bilim Söyleşileri ayrıntılı şartlar sitesi içerik vermedi. docs/GUNCEL_ILAN_INCELEMESI.md gerçek tarihler/uygunluk sınırlarını kaydeder.
+### Sonraki adım
+Güncel başvuru fırsatlarını mevcut taslak akışında resmî kanıtlarıyla hazırla; eski haberleri ayır. Önceki Auth engeli artık açık engel değildir.

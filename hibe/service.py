@@ -33,11 +33,13 @@ class Service:
    p=Path(self.approvals);p.mkdir(exist_ok=True);(p/(i+'.json')).write_text(json.dumps(c['approval'],indent=2))
   return c
  def sources(self,config):
+  settings_by_id={x['id']:x for x in self.store.all('source_settings')}
+  health_by_id={x['id']:x for x in self.store.all('source_health')}
   result=[]
   for raw in config:
-   row=dict(raw);settings=self.store.get('source_settings',row['id']) or {}
+   row=dict(raw);settings=settings_by_id.get(row['id'],{})
    row['enabled']=settings.get('enabled',row.get('enabled',True))
-   row['health']=[self.store.get('source_health',i) for i in row.get('connector_ids',[]) if self.store.get('source_health',i)]
+   row['health']=[health_by_id[i] for i in row.get('connector_ids',[]) if i in health_by_id]
    row['alert']=any(h.get('health') not in ('success','disabled') for h in row['health'])
    if row['health']:
     row['last_success']=max((h.get('last_success') or '' for h in row['health']),default='') or None
