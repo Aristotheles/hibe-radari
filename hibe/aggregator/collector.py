@@ -4,10 +4,13 @@ Aşama 1: liste bilgisiyle (başlık, kategori, kısa açıklama) puanla.
 Aşama 2: elenmeyenlerden son tarihi olmayanların ayrıntı sayfasını çek (sınırlı), yeniden puanla.
 Reddedilenler silinmez; gerekçeleriyle rapora yazılır ki süzgeç kuralı gözle ayarlanabilsin."""
 import json
+import threading
+from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urlsplit
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import eu_ft, feeds, html_cards
+from . import eu_ft, feeds, html_cards, discovery, grants_gov
 from .models import canonical_url, today as today_fn
 from .net import Fetcher
 from .relevance import RelevanceFilter
@@ -15,7 +18,8 @@ from .relevance import RelevanceFilter
 ROOT = Path(__file__).resolve().parents[2]
 CONNECTORS = {'eu_ft': eu_ft.collect, 'feed': feeds.collect,
               'html_list': html_cards.collect_list, 'html_cards': html_cards.collect_cards,
-              'html_crawl': html_cards.collect_crawl, 'page_watch': html_cards.collect_pages}
+              'html_crawl': html_cards.collect_crawl, 'page_watch': html_cards.collect_pages,
+              'source_discovery': discovery.collect,'grants_gov':grants_gov.collect}
 ORDER = {'accept': 0, 'review': 1, 'watch': 2, 'general': 3, 'reject': 4}
 GROUPS = {'accept': 'accepted', 'review': 'review', 'watch': 'watch', 'general': 'general', 'reject': 'rejected'}
 
@@ -65,6 +69,9 @@ def run_source(source, config, rel, today, transport=None, sleep=None):
     try:
         items = CONNECTORS[source['type']](source, fetcher, today)
         status['fetched'] = len(items)
+        if getattr(fetcher,'discovery_errors',None):
+            status['discovery_errors']=fetcher.discovery_errors
+            status['health']='partial'
         if not items and not source.get('allow_empty', False):
             status['health'] = 'suspicious_empty'
             status['error'] = 'Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı'
@@ -208,10 +215,20 @@ def run(config=None, rules=None, today=None, only=None, transport=None, sleep=No
     today = today or today_fn()
     rel = RelevanceFilter(rules)
     all_items, statuses = [], []
-    for source in config['sources']:
-        if only is not None and source['id'] not in only:
-            continue
-        items, status = run_source(source, config, rel, today, transport, sleep)
+    selected=[s for s in config['sources'] if only is None or s['id'] in only]
+    workers=config.get('source_workers',1)
+    if isinstance(workers,bool) or not isinstance(workers,int) or not 1<=workers<=4:
+        raise ValueError('Kaynak paralelliği 1–4 olmalı')
+    locks={}
+    for source in selected:
+        key=urlsplit(source.get('url') or '').hostname or source['allowed_hosts'][0]
+        locks.setdefault(key,threading.Lock())
+    def collect_one(source):
+        key=urlsplit(source.get('url') or '').hostname or source['allowed_hosts'][0]
+        with locks[key]:return run_source(source,config,rel,today,transport,sleep)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        results=list(pool.map(collect_one,selected))
+    for items,status in results:
         all_items.extend(items)
         statuses.append(status)
     items = dedupe(all_items)

@@ -1,4 +1,4 @@
-import unittest,json
+import unittest,json,httpx
 from unittest.mock import patch,Mock
 from datetime import date
 from hibe.store import MemoryStore
@@ -6,6 +6,28 @@ from hibe.domain import version
 from hibe.scan import normalized_hash
 from hibe.batch_pipeline import submit_candidates
 class BatchPipelineTests(unittest.TestCase):
+ def test_documented_grants_api_uses_numeric_detail_and_public_url(self):
+  store=MemoryStore();url='https://www.grants.gov/search-results-detail/363913'
+  store.put('calls','c',{'id':'c','source_id':'s','source_entry_id':'363913','title':'Teacher grant','source_url':url})
+  source={'id':'s','type':'grants_gov','allowed_hosts':['api.grants.gov','www.grants.gov'],
+   'entry_url_template':'https://www.grants.gov/search-results-detail/{entry_id}',
+   'access_policy':{'terms_status':'allowed'}}
+  api=Mock();api.submit.return_value={'id':'batch'}
+  with patch('hibe.batch_pipeline.Fetcher'),patch('hibe.aggregator.grants_gov.detail_text',return_value='Actual public API evidence.') as detail:
+   result=submit_candidates(store,{'sources':[source]},api)
+  self.assertEqual(result['submitted'],1);self.assertEqual(result['errors'],[])
+  self.assertEqual(detail.call_args.args[2],'363913')
+  self.assertEqual(api.submit.call_args.args[1][0]['documents'][0]['url'],url)
+
+ def test_disabled_registry_mapping_does_not_fetch_or_charge(self):
+  store=MemoryStore();store.put('source_settings','registry',{'id':'registry','enabled':False,'connector_ids':['s']})
+  store.put('calls','c',{'id':'c','source_id':'s','title':'Teacher grant','source_url':'https://example.org/call'})
+  api=Mock()
+  config={'sources':[{'id':'s','type':'source_discovery','allowed_hosts':['example.org'],'access_policy':{'terms_status':'allowed'}}]}
+  with patch('hibe.batch_pipeline.Fetcher') as fetcher:
+   result=submit_candidates(store,config,api)
+  fetcher.assert_not_called();api.submit.assert_not_called()
+  self.assertEqual(result['status'],'no_new_documents')
  def test_metadata_rediscovery_reuses_identical_grounded_proposal_without_model(self):
   s=MemoryStore();body='Teachers in Turkey may apply. Secondary school teachers are eligible. Application deadline: 30 November 2026.'
   docs=[{'url':'https://example.org/call','hash':normalized_hash(body)}]
@@ -17,7 +39,8 @@ class BatchPipelineTests(unittest.TestCase):
   s.put('ai_batch_inputs','b-c',{'id':'c','batch_id':'b','text':body,'documents':docs,'document_texts':[{'url':docs[0]['url'],'text':body}]})
   config={'sources':[{'id':'s','allowed_hosts':['example.org'],'access_policy':{'terms_status':'allowed'}}]}
   api=Mock()
-  with patch('hibe.batch_pipeline.Fetcher'),patch('hibe.batch_pipeline.document_text',return_value=body):
+  with patch('hibe.batch_pipeline.Fetcher') as fetcher,patch('hibe.batch_pipeline.document_text',return_value=body):
+   fetcher.return_value.get.return_value=httpx.Response(200,headers={'content-type':'text/html'},text='<main>Evidence</main>',request=httpx.Request('GET','https://example.org/call'))
    result=submit_candidates(s,config,api)
   api.submit.assert_not_called()
   self.assertEqual(result['status'],'no_new_documents')

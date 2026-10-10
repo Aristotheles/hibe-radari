@@ -640,6 +640,3048 @@
       "review_support_urls": [
         "https://school-education.ec.europa.eu/en/about/about-us"
       ]
+    },
+    {
+      "id": "registry-inventory-358ffa19b0c7",
+      "registry_id": "inventory-358ffa19b0c7",
+      "type": "source_discovery",
+      "url": "https://erasmus-plus.ec.europa.eu/",
+      "organization": "Erasmus+ (Komisyon)",
+      "allowed_hosts": [
+        "erasmus-plus.ec.europa.eu",
+        "www.erasmus-plus.ec.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://erasmus-plus.ec.europa.eu/",
+        "checked_at": "2026-10-10T18:31:54.801212+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://erasmus-plus.ec.europa.eu/",
+        "https://erasmus-plus.ec.europa.eu/opportunities",
+        "https://erasmus-plus.ec.europa.eu/resources-and-tools/how-to-apply"
+      ]
+    },
+    {
+      "id": "registry-inventory-a97600d2a707",
+      "registry_id": "inventory-a97600d2a707",
+      "type": "source_discovery",
+      "url": "https://erasmus-plus.ec.europa.eu/projects",
+      "organization": "Erasmus+ Proje Sonuçları Platformu",
+      "allowed_hosts": [
+        "erasmus-plus.ec.europa.eu",
+        "www.erasmus-plus.ec.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://erasmus-plus.ec.europa.eu/projects",
+        "checked_at": "2026-10-10T18:31:54.801491+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://erasmus-plus.ec.europa.eu/projects",
+        "https://erasmus-plus.ec.europa.eu/opportunities",
+        "https://erasmus-plus.ec.europa.eu/resources-and-tools/how-to-apply"
+      ]
+    },
+    {
+      "id": "registry-source-1",
+      "registry_id": "source-1",
+      "type": "source_discovery",
+      "url": "https://www.ua.gov.tr/",
+      "organization": "Türkiye Ulusal Ajansı",
+      "allowed_hosts": [
+        "ua.gov.tr",
+        "www.ua.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.ua.gov.tr/",
+        "checked_at": "2026-10-10T18:31:54.801681+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.ua.gov.tr/",
+        "https://www.ua.gov.tr/haber",
+        "https://www.ua.gov.tr/haberler",
+        "https://www.ua.gov.tr/programlar/gruplar/egitim-alanlar-icin"
+      ]
+    },
+    {
+      "id": "registry-inventory-ec9ada7f2c10",
+      "registry_id": "inventory-ec9ada7f2c10",
+      "type": "source_discovery",
+      "url": "https://eurodesk.ua.gov.tr/",
+      "organization": "Eurodesk Türkiye",
+      "allowed_hosts": [
+        "eurodesk.ua.gov.tr",
+        "www.eurodesk.ua.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://eurodesk.ua.gov.tr/",
+        "checked_at": "2026-10-10T18:31:54.801823+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://eurodesk.ua.gov.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-d51ce6460b94",
+      "registry_id": "inventory-d51ce6460b94",
+      "type": "source_discovery",
+      "url": "https://youth.europa.eu/",
+      "organization": "Avrupa Gençlik Portalı",
+      "allowed_hosts": [
+        "www.youth.europa.eu",
+        "youth.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://youth.europa.eu/",
+        "checked_at": "2026-10-10T18:31:54.801975+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://youth.europa.eu/",
+        "https://youth.europa.eu/news_en",
+        "https://youth.europa.eu/go-abroad_en"
+      ]
+    },
+    {
+      "id": "registry-inventory-c8d5b4d3a652",
+      "registry_id": "inventory-c8d5b4d3a652",
+      "type": "source_discovery",
+      "url": "https://youth.europa.eu/solidarity_en",
+      "organization": "Avrupa Dayanışma Programı (ESC)",
+      "allowed_hosts": [
+        "www.youth.europa.eu",
+        "youth.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://youth.europa.eu/solidarity_en",
+        "checked_at": "2026-10-10T18:31:54.802267+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://youth.europa.eu/solidarity_en",
+        "https://youth.europa.eu/news_en",
+        "https://youth.europa.eu/go-abroad/volunteering/opportunities_en"
+      ]
+    },
+    {
+      "id": "registry-inventory-1268ef989142",
+      "registry_id": "inventory-1268ef989142",
+      "type": "source_discovery",
+      "url": "https://www.salto-youth.net/tools/european-training-calendar/",
+      "organization": "SALTO Avrupa Eğitim Takvimi",
+      "allowed_hosts": [
+        "salto-youth.net",
+        "www.salto-youth.net"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "permission_required",
+        "evidence_url": "https://www.salto-youth.net/about/legal-notice/",
+        "checked_at": "2026-10-10T18:31:55.463990+00:00",
+        "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.salto-youth.net/tools/european-training-calendar/",
+        "https://www.salto-youth.net/rc/euromed/tceuromed",
+        "https://www.salto-youth.net/tools/call-for-trainers/help",
+        "https://www.salto-youth.net/tools/european-training-calendar/help"
+      ]
+    },
+    {
+      "id": "registry-inventory-cc457d795387",
+      "registry_id": "inventory-cc457d795387",
+      "type": "source_discovery",
+      "url": "https://www.salto-youth.net/tools/otlas-partner-finding/",
+      "organization": "SALTO Otlas ortak bulma",
+      "allowed_hosts": [
+        "salto-youth.net",
+        "www.salto-youth.net"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "permission_required",
+        "evidence_url": "https://www.salto-youth.net/about/legal-notice/",
+        "checked_at": "2026-10-10T18:31:56.807227+00:00",
+        "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.salto-youth.net/tools/otlas-partner-finding/",
+        "https://www.salto-youth.net/rc/euromed/tceuromed",
+        "https://www.salto-youth.net/tools/call-for-trainers/help",
+        "https://www.salto-youth.net/rc/eeca/activitieseeca"
+      ]
+    },
+    {
+      "id": "registry-inventory-ec67d9d00e5a",
+      "registry_id": "inventory-ec67d9d00e5a",
+      "type": "source_discovery",
+      "url": "https://www.eacea.ec.europa.eu/",
+      "organization": "EACEA",
+      "allowed_hosts": [
+        "eacea.ec.europa.eu",
+        "www.eacea.ec.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.eacea.ec.europa.eu/",
+        "checked_at": "2026-10-10T18:31:57.928983+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.eacea.ec.europa.eu/"
+      ]
+    },
+    {
+      "id": "registry-inventory-728f98e8dd06",
+      "registry_id": "inventory-728f98e8dd06",
+      "type": "source_discovery",
+      "url": "https://culture.ec.europa.eu/creative-europe",
+      "organization": "Yaratıcı Avrupa",
+      "allowed_hosts": [
+        "culture.ec.europa.eu",
+        "www.culture.ec.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://culture.ec.europa.eu/creative-europe",
+        "checked_at": "2026-10-10T18:31:58.046891+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://culture.ec.europa.eu/creative-europe",
+        "https://culture.ec.europa.eu/funding/calls",
+        "https://culture.ec.europa.eu/cultural-heritage/funding-opportunities-for-cultural-heritage",
+        "https://culture.ec.europa.eu/policies/selected-themes/european-union-prizes-and-initiatives"
+      ]
+    },
+    {
+      "id": "registry-inventory-348dfa02beef",
+      "registry_id": "inventory-348dfa02beef",
+      "type": "source_discovery",
+      "url": "https://cinea.ec.europa.eu/programmes/life_en",
+      "organization": "LIFE (çevre/iklim)",
+      "allowed_hosts": [
+        "cinea.ec.europa.eu",
+        "www.cinea.ec.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://cinea.ec.europa.eu/programmes/life_en",
+        "checked_at": "2026-10-10T18:31:58.617555+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://cinea.ec.europa.eu/programmes/life_en",
+        "https://cinea.ec.europa.eu/news-events/news_en",
+        "https://cinea.ec.europa.eu/news-events/newsletters_en",
+        "https://cinea.ec.europa.eu/programmes/life/history-life/life-newsletter_en"
+      ]
+    },
+    {
+      "id": "registry-inventory-2a24e7254ece",
+      "registry_id": "inventory-2a24e7254ece",
+      "type": "source_discovery",
+      "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
+      "organization": "Marie Skłodowska-Curie",
+      "allowed_hosts": [
+        "marie-sklodowska-curie-actions.ec.europa.eu",
+        "www.marie-sklodowska-curie-actions.ec.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
+        "checked_at": "2026-10-10T18:31:59.398724+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://marie-sklodowska-curie-actions.ec.europa.eu/",
+        "https://marie-sklodowska-curie-actions.ec.europa.eu/funding",
+        "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/cofund",
+        "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/how-to-apply"
+      ]
+    },
+    {
+      "id": "registry-inventory-7b39a27994dc",
+      "registry_id": "inventory-7b39a27994dc",
+      "type": "source_discovery",
+      "url": "https://ufukavrupa.org.tr/",
+      "organization": "Ufuk Avrupa Türkiye (TÜBİTAK)",
+      "allowed_hosts": [
+        "ufukavrupa.org.tr",
+        "www.ufukavrupa.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://ufukavrupa.org.tr/",
+        "checked_at": "2026-10-10T18:31:59.637833+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://ufukavrupa.org.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-642be4969640",
+      "registry_id": "inventory-642be4969640",
+      "type": "source_discovery",
+      "url": "https://eit.europa.eu/",
+      "organization": "EIT",
+      "allowed_hosts": [
+        "eit.europa.eu",
+        "www.eit.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://eit.europa.eu/",
+        "checked_at": "2026-10-10T18:31:59.926707+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://eit.europa.eu/",
+        "https://www.eit.europa.eu/news-events/news",
+        "https://www.eit.europa.eu/news-events",
+        "https://www.eit.europa.eu/work-with-us/procurement/calls"
+      ]
+    },
+    {
+      "id": "registry-inventory-0c8ed2427e23",
+      "registry_id": "inventory-0c8ed2427e23",
+      "type": "source_discovery",
+      "url": "https://new-european-bauhaus.europa.eu/",
+      "organization": "Yeni Avrupa Bauhausu",
+      "allowed_hosts": [
+        "new-european-bauhaus.europa.eu",
+        "www.new-european-bauhaus.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://new-european-bauhaus.europa.eu/",
+        "checked_at": "2026-10-10T18:32:00.336146+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://new-european-bauhaus.europa.eu/"
+      ]
+    },
+    {
+      "id": "registry-inventory-d01437ed7b93",
+      "registry_id": "inventory-d01437ed7b93",
+      "type": "source_discovery",
+      "url": "https://climate-pact.europa.eu/",
+      "organization": "Avrupa İklim Paktı",
+      "allowed_hosts": [
+        "climate-pact.europa.eu",
+        "www.climate-pact.europa.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://climate-pact.europa.eu/",
+        "checked_at": "2026-10-10T18:32:00.423299+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://climate-pact.europa.eu/"
+      ]
+    },
+    {
+      "id": "registry-inventory-db8cfddfd511",
+      "registry_id": "inventory-db8cfddfd511",
+      "type": "source_discovery",
+      "url": "https://codeweek.eu/",
+      "organization": "EU Code Week",
+      "allowed_hosts": [
+        "codeweek.eu",
+        "www.codeweek.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://codeweek.eu/",
+        "checked_at": "2026-10-10T18:32:00.777392+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://codeweek.eu/",
+        "https://codeweek.eu/blog",
+        "https://codeweek.eu/grassroots-grants",
+        "https://codeweek.eu/training"
+      ]
+    },
+    {
+      "id": "registry-inventory-0744f161b9a2",
+      "registry_id": "inventory-0744f161b9a2",
+      "type": "source_discovery",
+      "url": "https://www.scientix.eu/",
+      "organization": "Scientix",
+      "allowed_hosts": [
+        "scientix.eu",
+        "www.scientix.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.scientix.eu/",
+        "checked_at": "2026-10-10T18:32:00.860412+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.scientix.eu/",
+        "https://www.scientix.eu/news-events/news",
+        "https://www.scientix.eu/news-events/news/newsletters",
+        "https://www.scientix.eu/news-events/news/submit-news"
+      ]
+    },
+    {
+      "id": "registry-inventory-a0175b64eb77",
+      "registry_id": "inventory-a0175b64eb77",
+      "type": "source_discovery",
+      "url": "https://www.eun.org/",
+      "organization": "European Schoolnet",
+      "allowed_hosts": [
+        "eun.org",
+        "www.eun.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.eun.org/",
+        "checked_at": "2026-10-10T18:32:00.992232+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.eun.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-d78789826d99",
+      "registry_id": "inventory-d78789826d99",
+      "type": "source_discovery",
+      "url": "https://www.coe.int/en/web/european-youth-foundation",
+      "organization": "Avrupa Konseyi Avrupa Gençlik Vakfı",
+      "allowed_hosts": [
+        "coe.int",
+        "www.coe.int"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.coe.int/en/web/european-youth-foundation",
+        "checked_at": "2026-10-10T18:32:01.560727+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.coe.int/en/web/european-youth-foundation"
+      ]
+    },
+    {
+      "id": "registry-inventory-e01390fbc19d",
+      "registry_id": "inventory-e01390fbc19d",
+      "type": "source_discovery",
+      "url": "https://www.annalindhfoundation.org/",
+      "organization": "Anna Lindh Vakfı",
+      "allowed_hosts": [
+        "annalindhfoundation.org",
+        "www.annalindhfoundation.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.annalindhfoundation.org/",
+        "checked_at": "2026-10-10T18:32:01.764813+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.annalindhfoundation.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-1f285b60f26b",
+      "registry_id": "inventory-1f285b60f26b",
+      "type": "source_discovery",
+      "url": "https://www.avrupa.info.tr/",
+      "organization": "AB Türkiye Delegasyonu",
+      "allowed_hosts": [
+        "avrupa.info.tr",
+        "www.avrupa.info.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.avrupa.info.tr/",
+        "checked_at": "2026-10-10T18:32:02.134585+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.avrupa.info.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-7a14f9f45685",
+      "registry_id": "inventory-7a14f9f45685",
+      "type": "source_discovery",
+      "url": "https://www.ab.gov.tr/",
+      "organization": "AB Başkanlığı",
+      "allowed_hosts": [
+        "ab.gov.tr",
+        "www.ab.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.ab.gov.tr/",
+        "checked_at": "2026-10-10T18:32:02.707639+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.ab.gov.tr/",
+        "https://www.ab.gov.tr/303.html",
+        "https://www.ab.gov.tr/duyurular_42.html",
+        "https://www.ab.gov.tr/42.html"
+      ]
+    },
+    {
+      "id": "registry-inventory-ed4755f4ec05",
+      "registry_id": "inventory-ed4755f4ec05",
+      "type": "source_discovery",
+      "url": "https://www.jeanmonnet.org.tr/",
+      "organization": "Jean Monnet Burs Programı",
+      "allowed_hosts": [
+        "jeanmonnet.org.tr",
+        "www.jeanmonnet.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.jeanmonnet.org.tr/",
+        "checked_at": "2026-10-10T18:32:02.826152+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [
+        "https://jeanmonnet.org.tr/feed/"
+      ],
+      "urls": [
+        "https://www.jeanmonnet.org.tr/",
+        "https://jeanmonnet.org.tr/haberler",
+        "https://jeanmonnet.org.tr/category/haberler",
+        "https://jeanmonnet.org.tr/duyurular"
+      ]
+    },
+    {
+      "id": "registry-inventory-2502923489c0",
+      "registry_id": "inventory-2502923489c0",
+      "type": "source_discovery",
+      "url": "https://www.cfcu.gov.tr/",
+      "organization": "Merkezi Finans ve İhale Birimi",
+      "allowed_hosts": [
+        "cfcu.gov.tr",
+        "www.cfcu.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.cfcu.gov.tr/",
+        "checked_at": "2026-10-10T18:32:03.111161+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.cfcu.gov.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-7e7271e11aee",
+      "registry_id": "inventory-7e7271e11aee",
+      "type": "source_discovery",
+      "url": "https://www.sivildusun.net/",
+      "organization": "Sivil Düşün",
+      "allowed_hosts": [
+        "sivildusun.net",
+        "www.sivildusun.net"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.sivildusun.net/",
+        "checked_at": "2026-10-10T18:32:03.281775+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.sivildusun.net/",
+        "https://www.sivildusun.net/destek-al/sikca-sorulan-sorular",
+        "https://www.sivildusun.net/lets-do-it-turkiye-egitim-takimina-gonullu-ariyor",
+        "https://www.sivildusun.net/destek-al/destekler"
+      ]
+    },
+    {
+      "id": "registry-inventory-757117f503c7",
+      "registry_id": "inventory-757117f503c7",
+      "type": "source_discovery",
+      "url": "https://etkiniz.eu/",
+      "organization": "Etkiniz AB",
+      "allowed_hosts": [
+        "etkiniz.eu",
+        "www.etkiniz.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://etkiniz.eu/",
+        "checked_at": "2026-10-10T18:32:03.422286+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://etkiniz.eu/",
+        "https://etkiniz.eu/blog/category/duyurular",
+        "https://etkiniz.eu/blog/category/duyurular/etkinizden-haberler",
+        "https://etkiniz.eu/destekler"
+      ]
+    },
+    {
+      "id": "registry-source-9",
+      "registry_id": "source-9",
+      "type": "source_discovery",
+      "url": "https://blacksea-cbc.net/",
+      "organization": "Interreg NEXT Karadeniz Havzası",
+      "allowed_hosts": [
+        "blacksea-cbc.net",
+        "www.blacksea-cbc.net"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://blacksea-cbc.net/",
+        "checked_at": "2026-10-10T18:32:03.626943+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://blacksea-cbc.net/",
+        "https://blacksea-cbc.net/communication/newsletters",
+        "https://blacksea-cbc.net/communication/news",
+        "https://blacksea-cbc.net/communication/news/news-2026/public-consultation-2028-2034"
+      ]
+    },
+    {
+      "id": "registry-inventory-f50d22800fe4",
+      "registry_id": "inventory-f50d22800fe4",
+      "type": "source_discovery",
+      "url": "https://bilimiz.tubitak.gov.tr/",
+      "organization": "TÜBİTAK BİLİMİZ",
+      "allowed_hosts": [
+        "bilimiz.tubitak.gov.tr",
+        "www.bilimiz.tubitak.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://bilimiz.tubitak.gov.tr/",
+        "checked_at": "2026-10-10T18:32:03.965617+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://bilimiz.tubitak.gov.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-e6396fa94d62",
+      "registry_id": "inventory-e6396fa94d62",
+      "type": "source_discovery",
+      "url": "https://ka.gov.tr/",
+      "organization": "Kalkınma Ajansları GM",
+      "allowed_hosts": [
+        "ka.gov.tr",
+        "www.ka.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://ka.gov.tr/",
+        "checked_at": "2026-10-10T18:32:04.629636+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://ka.gov.tr/",
+        "https://ka.gov.tr/haberler",
+        "https://ka.gov.tr/duyurular",
+        "https://ka.gov.tr/sayfalar/mesleki-egitim--11"
+      ]
+    },
+    {
+      "id": "registry-inventory-44ab1023b21f",
+      "registry_id": "inventory-44ab1023b21f",
+      "type": "source_discovery",
+      "url": "https://kaysuygulama.sanayi.gov.tr/",
+      "organization": "KAYS",
+      "allowed_hosts": [
+        "kaysuygulama.sanayi.gov.tr",
+        "www.kaysuygulama.sanayi.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://kaysuygulama.sanayi.gov.tr/",
+        "checked_at": "2026-10-10T18:32:05.254911+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://kaysuygulama.sanayi.gov.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-f338c92110f5",
+      "registry_id": "inventory-f338c92110f5",
+      "type": "source_discovery",
+      "url": "https://www.doka.org.tr/",
+      "organization": "DOKA",
+      "allowed_hosts": [
+        "doka.org.tr",
+        "www.doka.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.doka.org.tr/",
+        "checked_at": "2026-10-10T18:32:05.376341+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.doka.org.tr/",
+        "https://www.doka.org.tr/haberler.php",
+        "https://www.doka.org.tr/duyurular.php",
+        "https://www.doka.org.tr/destekler.php"
+      ]
+    },
+    {
+      "id": "registry-inventory-0a59a2a3ce9f",
+      "registry_id": "inventory-0a59a2a3ce9f",
+      "type": "source_discovery",
+      "url": "https://www.dokap.gov.tr/",
+      "organization": "DOKAP",
+      "allowed_hosts": [
+        "dokap.gov.tr",
+        "www.dokap.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.dokap.gov.tr/",
+        "checked_at": "2026-10-10T18:32:06.542994+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.dokap.gov.tr/",
+        "https://www.dokap.gov.tr/haberler/listele/6",
+        "https://www.dokap.gov.tr/duyurular/Listele/12",
+        "https://www.dokap.gov.tr/duyurular/listele/12"
+      ]
+    },
+    {
+      "id": "registry-inventory-0d8ed5351ba2",
+      "registry_id": "inventory-0d8ed5351ba2",
+      "type": "source_discovery",
+      "url": "https://www.gsb.gov.tr/",
+      "organization": "Gençlik ve Spor Bakanlığı",
+      "allowed_hosts": [
+        "gsb.gov.tr",
+        "www.gsb.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.gsb.gov.tr/",
+        "checked_at": "2026-10-10T18:32:06.662747+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.gsb.gov.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-d98546e4217e",
+      "registry_id": "inventory-d98546e4217e",
+      "type": "source_discovery",
+      "url": "https://www.siviltoplum.gov.tr/",
+      "organization": "İçişleri Sivil Toplumla İlişkiler GM",
+      "allowed_hosts": [
+        "siviltoplum.gov.tr",
+        "www.siviltoplum.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.siviltoplum.gov.tr/",
+        "checked_at": "2026-10-10T18:32:06.686717+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.siviltoplum.gov.tr/",
+        "https://www.siviltoplum.gov.tr/haberler",
+        "https://www.siviltoplum.gov.tr/proje-destek-sistemi-prodes",
+        "https://www.siviltoplum.gov.tr/kurumlar/siviltoplum.gov.tr/Projeler/Prodes/ProjeBasvuruEgitimi.mp4"
+      ]
+    },
+    {
+      "id": "registry-inventory-dc277d9c791c",
+      "registry_id": "inventory-dc277d9c791c",
+      "type": "source_discovery",
+      "url": "https://sifiratik.gov.tr/",
+      "organization": "Sıfır Atık",
+      "allowed_hosts": [
+        "sifiratik.gov.tr",
+        "www.sifiratik.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://sifiratik.gov.tr/",
+        "checked_at": "2026-10-10T18:32:07.035436+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://sifiratik.gov.tr/",
+        "https://sifiratik.gov.tr/kutuphane/haberler",
+        "https://sifiratik.gov.tr/kutuphane/haberler/ogretmenlere-sifir-atik-dersi",
+        "https://sifiratik.gov.tr/kutuphane/haberler/sifir-atik-danisma-kurulu-kuruldu"
+      ]
+    },
+    {
+      "id": "registry-inventory-d392158787f3",
+      "registry_id": "inventory-d392158787f3",
+      "type": "source_discovery",
+      "url": "https://www.teknofest.org/",
+      "organization": "TEKNOFEST",
+      "allowed_hosts": [
+        "teknofest.org",
+        "www.teknofest.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.teknofest.org/",
+        "checked_at": "2026-10-10T18:32:07.135843+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.teknofest.org/",
+        "https://www.teknofest.org/tr/content/announcements",
+        "https://www.teknofest.org/tr/duyurular",
+        "https://teknofest.org/tr/competitions/competition/33"
+      ]
+    },
+    {
+      "id": "registry-inventory-5dea9e03d34f",
+      "registry_id": "inventory-5dea9e03d34f",
+      "type": "source_discovery",
+      "url": "https://t3vakfi.org/",
+      "organization": "T3 Vakfı",
+      "allowed_hosts": [
+        "t3vakfi.org",
+        "www.t3vakfi.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://t3vakfi.org/",
+        "checked_at": "2026-10-10T18:32:08.054121+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://t3vakfi.org/",
+        "https://t3vakfi.org/tr/haberler",
+        "https://t3vakfi.org/tr/project/ozdemir-bayraktar-milli-teknoloji-burs-programi",
+        "https://t3vakfi.org/tr/project/teknolojinin-milli-takimlari-destek-programi"
+      ]
+    },
+    {
+      "id": "registry-inventory-1ecf1fc3b80a",
+      "registry_id": "inventory-1ecf1fc3b80a",
+      "type": "source_discovery",
+      "url": "https://www.unesco.org.tr/",
+      "organization": "UNESCO Türkiye Millî Komisyonu",
+      "allowed_hosts": [
+        "unesco.org.tr",
+        "www.unesco.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.unesco.org.tr/",
+        "checked_at": "2026-10-10T18:32:08.354717+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.unesco.org.tr/",
+        "https://www.unesco.org.tr/Home/Archive",
+        "https://www.unesco.org.tr/Pages/48/10/E%C4%9Fitim",
+        "https://www.unesco.org.tr/Pages/9/41/-E%C4%9Fitim-%C4%B0htisas-Komitesi"
+      ]
+    },
+    {
+      "id": "registry-inventory-602698fdbdb0",
+      "registry_id": "inventory-602698fdbdb0",
+      "type": "source_discovery",
+      "url": "https://www.turcev.org.tr/",
+      "organization": "TÜRÇEV",
+      "allowed_hosts": [
+        "turcev.org.tr",
+        "www.turcev.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.turcev.org.tr/",
+        "checked_at": "2026-10-10T18:32:10.192808+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.turcev.org.tr/",
+        "https://www.turcev.org.tr/V2/haberler.aspx",
+        "https://www.turcev.org.tr/V2/Default.aspx",
+        "https://www.turcev.org.tr/V2/haberDetay.aspx?haber_id=1322"
+      ]
+    },
+    {
+      "id": "registry-inventory-49c0550bfaa3",
+      "registry_id": "inventory-49c0550bfaa3",
+      "type": "source_discovery",
+      "url": "https://www.ekookullar.org.tr/",
+      "organization": "Eko-Okullar Türkiye",
+      "allowed_hosts": [
+        "ekookullar.org.tr",
+        "www.ekookullar.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.ekookullar.org.tr/",
+        "checked_at": "2026-10-10T18:32:10.669296+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.ekookullar.org.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-79d89ed336a6",
+      "registry_id": "inventory-79d89ed336a6",
+      "type": "source_discovery",
+      "url": "https://www.tr.emb-japan.go.jp/",
+      "organization": "Japonya Büyükelçiliği (GGP)",
+      "allowed_hosts": [
+        "tr.emb-japan.go.jp",
+        "www.tr.emb-japan.go.jp"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.tr.emb-japan.go.jp/",
+        "checked_at": "2026-10-10T18:32:10.730080+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.tr.emb-japan.go.jp/"
+      ]
+    },
+    {
+      "id": "registry-inventory-49342dc9dfeb",
+      "registry_id": "inventory-49342dc9dfeb",
+      "type": "source_discovery",
+      "url": "https://www.jpf.go.jp/e/",
+      "organization": "Japan Foundation",
+      "allowed_hosts": [
+        "jpf.go.jp",
+        "www.jpf.go.jp"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.jpf.go.jp/e/",
+        "checked_at": "2026-10-10T18:32:10.859417+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.jpf.go.jp/e/",
+        "https://www.jpf.go.jp/e/program/index.html",
+        "https://www.jpf.go.jp/e/program",
+        "https://www.jpf.go.jp/e/project/commendation/index.html"
+      ]
+    },
+    {
+      "id": "registry-inventory-032019933999",
+      "registry_id": "inventory-032019933999",
+      "type": "source_discovery",
+      "url": "https://tr.usembassy.gov/",
+      "organization": "ABD Büyükelçiliği",
+      "allowed_hosts": [
+        "tr.usembassy.gov",
+        "www.tr.usembassy.gov"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://tr.usembassy.gov/",
+        "checked_at": "2026-10-10T18:32:11.199024+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://tr.usembassy.gov/"
+      ]
+    },
+    {
+      "id": "registry-inventory-04a66d923635",
+      "registry_id": "inventory-04a66d923635",
+      "type": "grants_gov",
+      "url": "https://www.grants.gov/",
+      "organization": "Grants.gov",
+      "allowed_hosts": [
+        "www.grants.gov",
+        "api.grants.gov",
+        "grants.gov"
+      ],
+      "max_pages": 10,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.grants.gov/api/terms-conditions",
+        "checked_at": "2026-10-10T18:32:11.391459+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification",
+        "documented_api": "grants_gov_public"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.grants.gov/",
+        "https://www.grants.gov/search-grants",
+        "https://www.grants.gov/help/html/help/index.htm",
+        "https://www.grants.gov/learn-grants"
+      ],
+      "queries": [
+        "Turkey",
+        "school",
+        "teacher",
+        "youth"
+      ],
+      "page_size": 100,
+      "search_url": "https://api.grants.gov/v1/api/search2",
+      "detail_url": "https://api.grants.gov/v1/api/fetchOpportunity",
+      "entry_url_template": "https://www.grants.gov/search-results-detail/{entry_id}"
+    },
+    {
+      "id": "registry-inventory-a34a92b01947",
+      "registry_id": "inventory-a34a92b01947",
+      "type": "source_discovery",
+      "url": "https://fulbright.org.tr/",
+      "organization": "Fulbright Türkiye",
+      "allowed_hosts": [
+        "fulbright.org.tr",
+        "www.fulbright.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://fulbright.org.tr/",
+        "checked_at": "2026-10-10T18:32:11.921191+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://fulbright.org.tr/",
+        "https://fulbright.org.tr/data/_files/Newsletter 2026 spring dijital versiyon.pdf",
+        "https://fulbright.org.tr/newsletters",
+        "https://fulbright.org.tr/posts/238/FULBRIGHT-2026-2027-Akademik-Yılı-ABD’li-Bursiyerlerimiz-ile-Mesleki-Gelişim-Oturumları-Düzenledik"
+      ]
+    },
+    {
+      "id": "registry-inventory-b10d69b21c44",
+      "registry_id": "inventory-b10d69b21c44",
+      "type": "source_discovery",
+      "url": "https://www.yesprograms.org/",
+      "organization": "YES Programı",
+      "allowed_hosts": [
+        "www.yesprograms.org",
+        "yesprograms.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.yesprograms.org/",
+        "checked_at": "2026-10-10T18:32:12.855223+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.yesprograms.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-b1ec1a073e91",
+      "registry_id": "inventory-b1ec1a073e91",
+      "type": "source_discovery",
+      "url": "https://www.goethe.de/ins/tr/tr/index.html",
+      "organization": "Goethe-Institut Türkiye",
+      "allowed_hosts": [
+        "goethe.de",
+        "www.goethe.de"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.goethe.de/ins/tr/tr/index.html",
+        "checked_at": "2026-10-10T18:32:12.991804+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.goethe.de/ins/tr/tr/index.html"
+      ]
+    },
+    {
+      "id": "registry-inventory-12777f0725ff",
+      "registry_id": "inventory-12777f0725ff",
+      "type": "source_discovery",
+      "url": "https://www.daad-turkiye.org/",
+      "organization": "DAAD Türkiye",
+      "allowed_hosts": [
+        "daad-turkiye.org",
+        "www.daad-turkiye.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.daad-turkiye.org/",
+        "checked_at": "2026-10-10T18:32:13.043702+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.daad-turkiye.org/",
+        "https://www.daad-turkiye.org/tr/event/daad-yaz-okulu-bursu-soru-cevap-seansi-2",
+        "https://www.daad-turkiye.org/tr/event/akare-yurtdisi-egitim-fuari-23",
+        "https://www.daad-turkiye.org/tr/event/akare-yurtdisi-egitim-fuari-22"
+      ]
+    },
+    {
+      "id": "registry-inventory-7bf1682c81e4",
+      "registry_id": "inventory-7bf1682c81e4",
+      "type": "source_discovery",
+      "url": "https://tuerkei.diplo.de/",
+      "organization": "Almanya Büyükelçiliği",
+      "allowed_hosts": [
+        "tuerkei.diplo.de",
+        "www.tuerkei.diplo.de"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://tuerkei.diplo.de/",
+        "checked_at": "2026-10-10T18:32:13.735860+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://tuerkei.diplo.de/"
+      ]
+    },
+    {
+      "id": "registry-inventory-1f0ea5031aab",
+      "registry_id": "inventory-1f0ea5031aab",
+      "type": "source_discovery",
+      "url": "https://www.bosch-stiftung.de/",
+      "organization": "Robert Bosch Stiftung",
+      "allowed_hosts": [
+        "bosch-stiftung.de",
+        "www.bosch-stiftung.de"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.bosch-stiftung.de/",
+        "checked_at": "2026-10-10T18:32:14.170803+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.bosch-stiftung.de/"
+      ]
+    },
+    {
+      "id": "registry-inventory-00de13b22d83",
+      "registry_id": "inventory-00de13b22d83",
+      "type": "source_discovery",
+      "url": "https://tr.boell.org/",
+      "organization": "Heinrich Böll Stiftung Türkiye",
+      "allowed_hosts": [
+        "tr.boell.org",
+        "www.tr.boell.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://tr.boell.org/",
+        "checked_at": "2026-10-10T18:32:14.329895+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://tr.boell.org/",
+        "https://tr.boell.org/tr/bultenin",
+        "https://tr.boell.org/tr/media/dosya/hbs-proje-basvuru-formu",
+        "https://tr.boell.org/tr/burs-programlari"
+      ]
+    },
+    {
+      "id": "registry-inventory-408881bcf8a4",
+      "registry_id": "inventory-408881bcf8a4",
+      "type": "source_discovery",
+      "url": "https://turkey.fes.de/",
+      "organization": "Friedrich Ebert Stiftung Türkiye",
+      "allowed_hosts": [
+        "turkey.fes.de",
+        "www.turkey.fes.de"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://turkey.fes.de/",
+        "checked_at": "2026-10-10T18:32:14.659791+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://turkey.fes.de/",
+        "https://turkey.fes.de/etkinlikler.html",
+        "https://turkey.fes.de/hakkimizda/staj-ve-burs.html"
+      ]
+    },
+    {
+      "id": "registry-inventory-50f09a187f5d",
+      "registry_id": "inventory-50f09a187f5d",
+      "type": "source_discovery",
+      "url": "https://tr.ambafrance.org/",
+      "organization": "Fransa Büyükelçiliği",
+      "allowed_hosts": [
+        "tr.ambafrance.org",
+        "www.tr.ambafrance.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://tr.ambafrance.org/",
+        "checked_at": "2026-10-10T18:32:15.286612+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://tr.ambafrance.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-0bfcf8e1052f",
+      "registry_id": "inventory-0bfcf8e1052f",
+      "type": "source_discovery",
+      "url": "https://www.netherlandsandyou.nl/",
+      "organization": "Hollanda (MATRA / İnsan Hakları Fonu)",
+      "allowed_hosts": [
+        "netherlandsandyou.nl",
+        "www.netherlandsandyou.nl"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.netherlandsandyou.nl/",
+        "checked_at": "2026-10-10T18:32:15.760144+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.netherlandsandyou.nl/",
+        "https://www.netherlandsandyou.nl/news",
+        "https://www.netherlandsandyou.nl/news-overview",
+        "https://www.netherlandsandyou.nl/web/serbia/themes/human-rights-fund"
+      ]
+    },
+    {
+      "id": "registry-inventory-270ab3509ec0",
+      "registry_id": "inventory-270ab3509ec0",
+      "type": "source_discovery",
+      "url": "https://si.se/en/",
+      "organization": "İsveç Enstitüsü",
+      "allowed_hosts": [
+        "si.se",
+        "www.si.se"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://si.se/en/",
+        "checked_at": "2026-10-10T18:32:16.307065+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://si.se/en/"
+      ]
+    },
+    {
+      "id": "registry-inventory-6e80b76da752",
+      "registry_id": "inventory-6e80b76da752",
+      "type": "source_discovery",
+      "url": "https://finlandabroad.fi/web/tur",
+      "organization": "Finlandiya Büyükelçiliği (Yerel İşbirliği Fonu)",
+      "allowed_hosts": [
+        "finlandabroad.fi",
+        "www.finlandabroad.fi"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://finlandabroad.fi/web/tur",
+        "checked_at": "2026-10-10T18:32:16.839636+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://finlandabroad.fi/web/tur"
+      ]
+    },
+    {
+      "id": "registry-inventory-d4d8d1fe0954",
+      "registry_id": "inventory-d4d8d1fe0954",
+      "type": "source_discovery",
+      "url": "https://www.eda.admin.ch/ankara",
+      "organization": "İsviçre Büyükelçiliği",
+      "allowed_hosts": [
+        "eda.admin.ch",
+        "www.eda.admin.ch"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.eda.admin.ch/ankara",
+        "checked_at": "2026-10-10T18:32:17.335925+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.eda.admin.ch/ankara",
+        "https://www.eda.admin.ch/countries/turkey/en/home/news.html",
+        "https://www.eda.admin.ch/countries/turkey/en/home/news/news.html",
+        "https://www.eda.admin.ch/countries/turkey/en/home/news/newsletter.html"
+      ]
+    },
+    {
+      "id": "registry-inventory-bff92cd13068",
+      "registry_id": "inventory-bff92cd13068",
+      "type": "source_discovery",
+      "url": "https://www.bsec-organization.org/",
+      "organization": "KEİ (BSEC)",
+      "allowed_hosts": [
+        "bsec-organization.org",
+        "www.bsec-organization.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.bsec-organization.org/",
+        "checked_at": "2026-10-10T18:32:17.820034+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.bsec-organization.org/",
+        "https://www.bsec-organization.org/news",
+        "https://www.bsec-organization.org/news-letter",
+        "https://www.bsec-organization.org/news/76733news-from-the-black-sea-issue-no-34"
+      ]
+    },
+    {
+      "id": "registry-inventory-1c417588822b",
+      "registry_id": "inventory-1c417588822b",
+      "type": "source_discovery",
+      "url": "https://www.gmfus.org/",
+      "organization": "GMF / Black Sea Trust",
+      "allowed_hosts": [
+        "gmfus.org",
+        "www.gmfus.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.gmfus.org/",
+        "checked_at": "2026-10-10T18:32:18.771719+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.gmfus.org/",
+        "https://www.gmfus.org/programs-grants/geostrategy",
+        "https://www.gmfus.org/news/pedro-sanchez-hits-wall",
+        "https://www.gmfus.org/news/quad-back"
+      ]
+    },
+    {
+      "id": "registry-inventory-1123e39c4e2a",
+      "registry_id": "inventory-1123e39c4e2a",
+      "type": "source_discovery",
+      "url": "https://www.mfa.gov.tr/",
+      "organization": "Dışişleri Bakanlığı",
+      "allowed_hosts": [
+        "mfa.gov.tr",
+        "www.mfa.gov.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.mfa.gov.tr/",
+        "checked_at": "2026-10-10T18:32:18.896511+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [
+        "https://www.mfa.gov.tr/tr.rss.mfa?259fca5b-ebee-47d1-b850-ec53936ab32e",
+        "https://www.mfa.gov.tr/tr.rss.mfa?8a5e254e-533a-4b3d-84db-9f95be1207ff"
+      ],
+      "urls": [
+        "https://www.mfa.gov.tr/",
+        "https://www.mfa.gov.tr/sub.tr.mfa?8a5e254e-533a-4b3d-84db-9f95be1207ff=",
+        "https://www.mfa.gov.tr/sub.tr.mfa?c13a5e37-1481-4531-b02f-a27fe94763e8=",
+        "https://www.mfa.gov.tr/sub.tr.mfa?b3026181-6b8f-4fc6-9327-a5113446ce95="
+      ]
+    },
+    {
+      "id": "registry-inventory-955c945bb1e3",
+      "registry_id": "inventory-955c945bb1e3",
+      "type": "source_discovery",
+      "url": "https://www.undp.org/tr/turkiye",
+      "organization": "UNDP Türkiye",
+      "allowed_hosts": [
+        "undp.org",
+        "www.undp.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.undp.org/tr/turkiye",
+        "checked_at": "2026-10-10T18:32:18.975000+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.undp.org/tr/turkiye"
+      ]
+    },
+    {
+      "id": "registry-inventory-c905328504bf",
+      "registry_id": "inventory-c905328504bf",
+      "type": "source_discovery",
+      "url": "https://procurement-notices.undp.org/",
+      "organization": "UNDP ihale/çağrı ilanları",
+      "allowed_hosts": [
+        "procurement-notices.undp.org",
+        "www.procurement-notices.undp.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://procurement-notices.undp.org/",
+        "checked_at": "2026-10-10T18:32:19.200173+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://procurement-notices.undp.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-083b401a02f5",
+      "registry_id": "inventory-083b401a02f5",
+      "type": "source_discovery",
+      "url": "https://www.unesco.org/en/aspnet",
+      "organization": "UNESCO Associated Schools",
+      "allowed_hosts": [
+        "unesco.org",
+        "www.unesco.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.unesco.org/en/aspnet",
+        "checked_at": "2026-10-10T18:32:19.850710+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.unesco.org/en/aspnet",
+        "https://www.unesco.org/en/newsroom",
+        "https://www.unesco.org/en/prizes"
+      ]
+    },
+    {
+      "id": "registry-inventory-34a30a5aec70",
+      "registry_id": "inventory-34a30a5aec70",
+      "type": "source_discovery",
+      "url": "https://www.unesco.org/en/prizes",
+      "organization": "UNESCO ödülleri",
+      "allowed_hosts": [
+        "unesco.org",
+        "www.unesco.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.unesco.org/en/prizes",
+        "checked_at": "2026-10-10T18:32:20.078786+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.unesco.org/en/prizes",
+        "https://www.unesco.org/en/newsroom",
+        "https://www.unesco.org/es/prizes",
+        "https://www.unesco.org/fr/prizes"
+      ]
+    },
+    {
+      "id": "registry-inventory-c83064769bec",
+      "registry_id": "inventory-c83064769bec",
+      "type": "source_discovery",
+      "url": "https://www.unicef.org/turkiye/",
+      "organization": "UNICEF Türkiye",
+      "allowed_hosts": [
+        "unicef.org",
+        "www.unicef.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.unicef.org/turkiye/",
+        "checked_at": "2026-10-10T18:32:21.357730+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.unicef.org/turkiye/",
+        "https://www.unicef.org/turkiye/e%C4%9Fitim-0"
+      ]
+    },
+    {
+      "id": "registry-inventory-4ea947f59252",
+      "registry_id": "inventory-4ea947f59252",
+      "type": "source_discovery",
+      "url": "https://www.un.org/democracyfund/",
+      "organization": "BM Demokrasi Fonu",
+      "allowed_hosts": [
+        "un.org",
+        "www.un.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.un.org/democracyfund/",
+        "checked_at": "2026-10-10T18:32:21.403683+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.un.org/democracyfund/",
+        "https://www.un.org/democracyfund/en",
+        "https://www.un.org/democracyfund/en/newsletters",
+        "https://www.un.org/democracyfund/en/apply-for-funding"
+      ]
+    },
+    {
+      "id": "registry-inventory-3658dc075bb1",
+      "registry_id": "inventory-3658dc075bb1",
+      "type": "source_discovery",
+      "url": "https://www.unep.org/youngchampions/",
+      "organization": "UNEP Young Champions of the Earth",
+      "allowed_hosts": [
+        "unep.org",
+        "www.unep.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.unep.org/youngchampions/",
+        "checked_at": "2026-10-10T18:32:21.602599+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.unep.org/youngchampions/",
+        "https://www.unep.org/youngchampions/news-and-stories",
+        "https://www.unep.org/youngchampions/apply/timeline"
+      ]
+    },
+    {
+      "id": "registry-source-14",
+      "registry_id": "source-14",
+      "type": "source_discovery",
+      "url": "https://sabancivakfi.org/",
+      "organization": "Sabancı Vakfı",
+      "allowed_hosts": [
+        "sabancivakfi.org",
+        "www.sabancivakfi.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://sabancivakfi.org/",
+        "checked_at": "2026-10-10T18:32:22.909444+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://sabancivakfi.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-80e6ed168eea",
+      "registry_id": "inventory-80e6ed168eea",
+      "type": "source_discovery",
+      "url": "https://www.vkv.org.tr/",
+      "organization": "Vehbi Koç Vakfı",
+      "allowed_hosts": [
+        "vkv.org.tr",
+        "www.vkv.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.vkv.org.tr/",
+        "checked_at": "2026-10-10T18:32:23.130863+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.vkv.org.tr/",
+        "https://www.vkv.org.tr/haberler.aspx?hl=tr",
+        "https://www.vkv.org.tr/kategori_detay.aspx?hl=tr&id=1",
+        "https://www.vkv.org.tr/kategori_detay.aspx?hl=tr&id=11"
+      ]
+    },
+    {
+      "id": "registry-inventory-63048c76e181",
+      "registry_id": "inventory-63048c76e181",
+      "type": "source_discovery",
+      "url": "https://www.orav.org.tr/",
+      "organization": "Öğretmen Akademisi Vakfı",
+      "allowed_hosts": [
+        "orav.org.tr",
+        "www.orav.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.orav.org.tr/",
+        "checked_at": "2026-10-10T18:32:23.208297+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.orav.org.tr/",
+        "https://www.orav.org.tr/bizden-haberler",
+        "https://www.orav.org.tr/genclerin-iyi-olma-halini-destekleyecek-yeni-bir-proje-kendiyle-ve-hayatla-barisik-genclik",
+        "https://www.orav.org.tr/yuz-yuze-egitimlerimiz"
+      ]
+    },
+    {
+      "id": "registry-inventory-99ee9ae4d55b",
+      "registry_id": "inventory-99ee9ae4d55b",
+      "type": "source_discovery",
+      "url": "https://www.ogretmenagi.org/",
+      "organization": "Öğretmen Ağı",
+      "allowed_hosts": [
+        "ogretmenagi.org",
+        "www.ogretmenagi.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.ogretmenagi.org/",
+        "checked_at": "2026-10-10T18:32:23.875146+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.ogretmenagi.org/",
+        "https://www.ogretmenagi.org/haberler",
+        "https://www.ogretmenagi.org/civicrm/event/info?id=3979&reset=1"
+      ]
+    },
+    {
+      "id": "registry-inventory-06481c97e944",
+      "registry_id": "inventory-06481c97e944",
+      "type": "source_discovery",
+      "url": "https://www.egitimreformugirisimi.org/",
+      "organization": "Eğitim Reformu Girişimi",
+      "allowed_hosts": [
+        "egitimreformugirisimi.org",
+        "www.egitimreformugirisimi.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.egitimreformugirisimi.org/",
+        "checked_at": "2026-10-10T18:32:24.521125+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [
+        "https://egitimreformugirisimi.org/feed/"
+      ],
+      "urls": [
+        "https://www.egitimreformugirisimi.org/",
+        "https://egitimreformugirisimi.org/haberler_kategori/duyurular",
+        "https://egitimreformugirisimi.org/haberler",
+        "https://egitimreformugirisimi.org/blog-grid"
+      ]
+    },
+    {
+      "id": "registry-inventory-e0c8fa83df52",
+      "registry_id": "inventory-e0c8fa83df52",
+      "type": "source_discovery",
+      "url": "https://www.tegv.org/",
+      "organization": "TEGV",
+      "allowed_hosts": [
+        "tegv.org",
+        "www.tegv.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.tegv.org/",
+        "checked_at": "2026-10-10T18:32:24.693397+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.tegv.org/",
+        "https://tegv.org/haberler",
+        "https://tegv.org/tegvden-guzel-haberler",
+        "https://tegv.org/egitimlerimiz"
+      ]
+    },
+    {
+      "id": "registry-inventory-8aa06734dc34",
+      "registry_id": "inventory-8aa06734dc34",
+      "type": "source_discovery",
+      "url": "https://www.tema.org.tr/",
+      "organization": "TEMA Vakfı",
+      "allowed_hosts": [
+        "tema.org.tr",
+        "www.tema.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.tema.org.tr/",
+        "checked_at": "2026-10-10T18:32:25.497722+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.tema.org.tr/",
+        "https://www.tema.org.tr/basin-odasi/bizden-haberler",
+        "https://www.tema.org.tr/calismalarimiz/egitim",
+        "https://www.tema.org.tr/bagis-ve-destek/havale-eft"
+      ]
+    },
+    {
+      "id": "registry-inventory-5b52d481537d",
+      "registry_id": "inventory-5b52d481537d",
+      "type": "source_discovery",
+      "url": "https://www.wwf.org.tr/",
+      "organization": "WWF-Türkiye",
+      "allowed_hosts": [
+        "wwf.org.tr",
+        "www.wwf.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.wwf.org.tr/",
+        "checked_at": "2026-10-10T18:32:26.268232+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.wwf.org.tr/"
+      ]
+    },
+    {
+      "id": "registry-inventory-1b7909fab843",
+      "registry_id": "inventory-1b7909fab843",
+      "type": "source_discovery",
+      "url": "https://siviltoplumdestek.org/",
+      "organization": "Sivil Toplum için Destek Vakfı",
+      "allowed_hosts": [
+        "siviltoplumdestek.org",
+        "www.siviltoplumdestek.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://siviltoplumdestek.org/",
+        "checked_at": "2026-10-10T18:32:26.610381+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [
+        "https://siviltoplumdestek.org/feed/"
+      ],
+      "urls": [
+        "https://siviltoplumdestek.org/",
+        "https://siviltoplumdestek.org/haberler",
+        "https://siviltoplumdestek.org/desteklediklerimiz/2026-1",
+        "https://siviltoplumdestek.org/desteklediklerimiz/2025-2"
+      ]
+    },
+    {
+      "id": "registry-inventory-7ff6770d8d9e",
+      "registry_id": "inventory-7ff6770d8d9e",
+      "type": "source_discovery",
+      "url": "https://www.turkeymozaik.org.uk/",
+      "organization": "Turkey Mozaik Foundation",
+      "allowed_hosts": [
+        "turkeymozaik.org.uk",
+        "www.turkeymozaik.org.uk"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.turkeymozaik.org.uk/",
+        "checked_at": "2026-10-10T18:32:28.878963+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.turkeymozaik.org.uk/"
+      ]
+    },
+    {
+      "id": "registry-inventory-9599be4922ce",
+      "registry_id": "inventory-9599be4922ce",
+      "type": "source_discovery",
+      "url": "https://www.ihtiyacharitasi.org/",
+      "organization": "İhtiyaç Haritası",
+      "allowed_hosts": [
+        "ihtiyacharitasi.org",
+        "www.ihtiyacharitasi.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.ihtiyacharitasi.org/",
+        "checked_at": "2026-10-10T18:32:29.459357+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.ihtiyacharitasi.org/",
+        "https://ihtiyacharitasi.org/projeler-ve-isbirliklerimiz/afet-risk-yonetiminde-stklarin-kapasitesinin-desteklenmesi-ary-projesi"
+      ]
+    },
+    {
+      "id": "registry-inventory-5f24ee4171a5",
+      "registry_id": "inventory-5f24ee4171a5",
+      "type": "source_discovery",
+      "url": "https://www.turkkulturvakfi.org.tr/",
+      "organization": "AFS Türkiye (Türk Kültür Vakfı)",
+      "allowed_hosts": [
+        "turkkulturvakfi.org.tr",
+        "www.turkkulturvakfi.org.tr"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "permission_required",
+        "evidence_url": "https://www.turkkulturvakfi.org.tr/kullanim-kosullari-ve-politikalari/",
+        "checked_at": "2026-10-10T18:32:29.753569+00:00",
+        "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.turkkulturvakfi.org.tr/",
+        "https://www.turkkulturvakfi.org.tr/category/haberler-ve-duyurular",
+        "https://www.turkkulturvakfi.org.tr/burs-olanaklari",
+        "https://www.turkkulturvakfi.org.tr/programs/okul"
+      ]
+    },
+    {
+      "id": "registry-inventory-ea64d35ac8e8",
+      "registry_id": "inventory-ea64d35ac8e8",
+      "type": "source_discovery",
+      "url": "https://www.theearthprize.org/",
+      "organization": "The Earth Prize",
+      "allowed_hosts": [
+        "theearthprize.org",
+        "www.theearthprize.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "permission_required",
+        "evidence_url": "https://www.theearthprize.org/terms-and-conditions",
+        "checked_at": "2026-10-10T18:32:30.309487+00:00",
+        "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.theearthprize.org/",
+        "https://www.theearthprize.org/competition",
+        "https://www.theearthprize.org/course",
+        "https://www.theearthprize.org/2026"
+      ]
+    },
+    {
+      "id": "registry-inventory-bba083a53105",
+      "registry_id": "inventory-bba083a53105",
+      "type": "source_discovery",
+      "url": "https://zayedsustainabilityprize.com/",
+      "organization": "Zayed Sustainability Prize",
+      "allowed_hosts": [
+        "www.zayedsustainabilityprize.com",
+        "zayedsustainabilityprize.com"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://zayedsustainabilityprize.com/",
+        "checked_at": "2026-10-10T18:32:32.481227+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://zayedsustainabilityprize.com/",
+        "https://zayedsustainabilityprize.com/en/news",
+        "https://zayedsustainabilityprize.com/en/newsletter",
+        "https://zayedsustainabilityprize.com/en/award"
+      ]
+    },
+    {
+      "id": "registry-inventory-4c7b13e6f21b",
+      "registry_id": "inventory-4c7b13e6f21b",
+      "type": "source_discovery",
+      "url": "https://www.siwi.org/",
+      "organization": "Stockholm Junior Water Prize (SIWI)",
+      "allowed_hosts": [
+        "siwi.org",
+        "www.siwi.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.siwi.org/",
+        "checked_at": "2026-10-10T18:32:33.861112+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.siwi.org/",
+        "https://siwi.org/newsletters",
+        "https://siwi.org/news-resources-events"
+      ]
+    },
+    {
+      "id": "registry-inventory-c74800326885",
+      "registry_id": "inventory-c74800326885",
+      "type": "source_discovery",
+      "url": "https://www.globalteacherprize.org/",
+      "organization": "Global Teacher Prize",
+      "allowed_hosts": [
+        "globalteacherprize.org",
+        "www.globalteacherprize.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "permission_required",
+        "evidence_url": "https://www.globalteacherprize.org/",
+        "checked_at": "2026-10-10T18:32:35.161823+00:00",
+        "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "urls": [
+        "https://www.globalteacherprize.org/",
+        "https://globalteacherprize.org/news",
+        "https://globalteacherprize.org/news/panel/1098/LATESTNEWS1",
+        "https://globalteacherprize.org/news/community-news"
+      ]
+    },
+    {
+      "id": "registry-inventory-a08149e86076",
+      "registry_id": "inventory-a08149e86076",
+      "type": "source_discovery",
+      "url": "https://www.nationalgeographic.org/society/grants-and-investments/",
+      "organization": "National Geographic Society hibeleri",
+      "allowed_hosts": [
+        "nationalgeographic.org",
+        "www.nationalgeographic.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "permission_required",
+        "evidence_url": "https://www.nationalgeographic.org/society/grants-and-investments/",
+        "checked_at": "2026-10-10T18:32:35.287446+00:00",
+        "basis": "Observed terms restrict automated extraction or linking; collection disabled pending permission.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.nationalgeographic.org/society/grants-and-investments/",
+        "https://www.nationalgeographic.org/sign-up",
+        "https://www.nationalgeographic.org/explore/grants-investments"
+      ]
+    },
+    {
+      "id": "registry-inventory-5b5b6d9572a8",
+      "registry_id": "inventory-5b5b6d9572a8",
+      "type": "source_discovery",
+      "url": "https://thepollinationproject.org/",
+      "organization": "The Pollination Project",
+      "allowed_hosts": [
+        "thepollinationproject.org",
+        "www.thepollinationproject.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://thepollinationproject.org/",
+        "checked_at": "2026-10-10T18:32:37.114754+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://thepollinationproject.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-e2ba93e5bd65",
+      "registry_id": "inventory-e2ba93e5bd65",
+      "type": "source_discovery",
+      "url": "https://www.rufford.org/",
+      "organization": "Rufford Foundation",
+      "allowed_hosts": [
+        "rufford.org",
+        "www.rufford.org",
+        "apply.ruffordsmallgrants.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.rufford.org/",
+        "checked_at": "2026-10-10T19:57:35.110056+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification",
+        "application_url_evidence": {
+          "url": "https://www.rufford.org/",
+          "anchor_text": "Apply",
+          "href": "https://apply.ruffordsmallgrants.org"
+        }
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.rufford.org/",
+        "https://www.rufford.org/news",
+        "https://www.rufford.org/news/lost-fish-rediscovered-in-papua-new-guinea",
+        "https://www.rufford.org/news/evidence-empathy-and-coexistence-the-future-of-small-cats-conservation"
+      ],
+      "programme_pages": [
+        {
+          "url": "https://apply.ruffordsmallgrants.org/",
+          "title": "1st RSG",
+          "application_path": "1st RSG"
+        },
+        {
+          "url": "https://apply.ruffordsmallgrants.org/",
+          "title": "2nd RSG",
+          "application_path": "2nd RSG"
+        },
+        {
+          "url": "https://apply.ruffordsmallgrants.org/",
+          "title": "Booster Grant",
+          "application_path": "Booster Grant"
+        },
+        {
+          "url": "https://apply.ruffordsmallgrants.org/",
+          "title": "Completion Grant",
+          "application_path": "Completion Grant"
+        }
+      ],
+      "review_support_urls": [
+        "https://apply.ruffordsmallgrants.org/help/criteria",
+        "https://apply.ruffordsmallgrants.org/help/eligibility"
+      ]
+    },
+    {
+      "id": "registry-inventory-90686db6a269",
+      "registry_id": "inventory-90686db6a269",
+      "type": "source_discovery",
+      "url": "https://www.greengrants.org/",
+      "organization": "Global Greengrants Fund",
+      "allowed_hosts": [
+        "greengrants.org",
+        "www.greengrants.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.greengrants.org/",
+        "checked_at": "2026-10-10T18:32:38.394298+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.greengrants.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-6fdcf036901c",
+      "registry_id": "inventory-6fdcf036901c",
+      "type": "source_discovery",
+      "url": "https://www.speciesconservation.org/",
+      "organization": "Mohamed bin Zayed Tür Koruma Fonu",
+      "allowed_hosts": [
+        "speciesconservation.org",
+        "www.speciesconservation.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "permission_required",
+        "evidence_url": "https://www.speciesconservation.org/",
+        "checked_at": "2026-10-10T18:32:39.847512+00:00",
+        "basis": "Observed terms restrict automated extraction or linking; collection disabled pending permission.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [
+        "https://www.speciesconservation.org/feed/"
+      ],
+      "urls": [
+        "https://www.speciesconservation.org/",
+        "https://www.speciesconservation.org/biodiversity-nature-people/conservation-philanthropy/grants",
+        "https://www.speciesconservation.org/media-center/newsletter",
+        "https://www.speciesconservation.org/media-center/podcast"
+      ]
+    },
+    {
+      "id": "registry-inventory-7e5654adb2c2",
+      "registry_id": "inventory-7e5654adb2c2",
+      "type": "source_discovery",
+      "url": "https://www.yre.global/",
+      "organization": "Young Reporters for the Environment",
+      "allowed_hosts": [
+        "www.yre.global",
+        "yre.global"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.yre.global/",
+        "checked_at": "2026-10-10T18:32:39.951295+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.yre.global/",
+        "https://www.yre.global/news-archive",
+        "https://www.yre.global/news-1",
+        "https://www.yre.global/news"
+      ]
+    },
+    {
+      "id": "registry-inventory-83d83cda1ee9",
+      "registry_id": "inventory-83d83cda1ee9",
+      "type": "source_discovery",
+      "url": "https://www.ecoschools.global/",
+      "organization": "Eco-Schools (küresel)",
+      "allowed_hosts": [
+        "ecoschools.global",
+        "www.ecoschools.global"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.ecoschools.global/",
+        "checked_at": "2026-10-10T18:32:40.045363+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.ecoschools.global/",
+        "https://www.ecoschools.global/all-our-stories",
+        "https://www.ecoschools.global/news",
+        "https://www.ecoschools.global/stories-news"
+      ]
+    },
+    {
+      "id": "registry-inventory-d4b3d841372b",
+      "registry_id": "inventory-d4b3d841372b",
+      "type": "source_discovery",
+      "url": "https://www.globe.gov/",
+      "organization": "GLOBE Program",
+      "allowed_hosts": [
+        "globe.gov",
+        "www.globe.gov"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.globe.gov/",
+        "checked_at": "2026-10-10T18:32:41.502368+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.globe.gov/",
+        "https://www.globe.gov/news-events/globe-news",
+        "https://www.globe.gov/news-events",
+        "https://www.globe.gov/news-events/news-brief-archive"
+      ]
+    },
+    {
+      "id": "registry-inventory-069393007b65",
+      "registry_id": "inventory-069393007b65",
+      "type": "source_discovery",
+      "url": "https://culturalfoundation.eu/",
+      "organization": "European Cultural Foundation",
+      "allowed_hosts": [
+        "culturalfoundation.eu",
+        "www.culturalfoundation.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://culturalfoundation.eu/",
+        "checked_at": "2026-10-10T18:32:41.639620+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://culturalfoundation.eu/",
+        "https://culturalfoundation.eu/communities/open-calls",
+        "https://culturalfoundation.eu/open-calls/culture-helps-solidarity-%d0%ba%d1%83%d0%bb%d1%8c%d1%82%d1%83%d1%80%d0%b0-%d0%b4%d0%be%d0%bf%d0%be%d0%bc%d0%b0%d0%b3%d0%b0%d1%94-open-call-for-collaboration-grants"
+      ]
+    },
+    {
+      "id": "registry-inventory-98b1ee25c562",
+      "registry_id": "inventory-98b1ee25c562",
+      "type": "source_discovery",
+      "url": "https://allianzfoundation.org/",
+      "organization": "Allianz Foundation",
+      "allowed_hosts": [
+        "allianzfoundation.org",
+        "www.allianzfoundation.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://allianzfoundation.org/",
+        "checked_at": "2026-10-10T18:32:44.022631+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://allianzfoundation.org/",
+        "https://allianzfoundation.org/newsletter",
+        "https://allianzfoundation.org/how-we-fund",
+        "https://allianzfoundation.org/what-we-fund"
+      ]
+    },
+    {
+      "id": "registry-inventory-b23b5b28fe89",
+      "registry_id": "inventory-b23b5b28fe89",
+      "type": "source_discovery",
+      "url": "https://www.ned.org/",
+      "organization": "National Endowment for Democracy",
+      "allowed_hosts": [
+        "ned.org",
+        "www.ned.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.ned.org/",
+        "checked_at": "2026-10-10T18:32:44.456201+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.ned.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-137b708b697f",
+      "registry_id": "inventory-137b708b697f",
+      "type": "source_discovery",
+      "url": "https://www.rotary.org/en/our-programs/youth-exchanges",
+      "organization": "Rotary Gençlik Değişimi",
+      "allowed_hosts": [
+        "rotary.org",
+        "www.rotary.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.rotary.org/en/our-programs/youth-exchanges",
+        "checked_at": "2026-10-10T18:32:44.842983+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": true,
+      "aggregator": false,
+      "feed_urls": [],
+      "urls": [
+        "https://www.rotary.org/en/our-programs/youth-exchanges"
+      ]
+    },
+    {
+      "id": "registry-inventory-a6673335d9b4",
+      "registry_id": "inventory-a6673335d9b4",
+      "type": "source_discovery",
+      "url": "https://www2.fundsforngos.org/",
+      "organization": "fundsforNGOs",
+      "allowed_hosts": [
+        "www.www2.fundsforngos.org",
+        "www2.fundsforngos.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www2.fundsforngos.org/",
+        "checked_at": "2026-10-10T18:32:45.171256+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": false,
+      "aggregator": true,
+      "feed_urls": [],
+      "urls": [
+        "https://www2.fundsforngos.org/"
+      ]
+    },
+    {
+      "id": "registry-inventory-cfa03fdcd36b",
+      "registry_id": "inventory-cfa03fdcd36b",
+      "type": "source_discovery",
+      "url": "https://terravivagrants.org/",
+      "organization": "Terra Viva Grants",
+      "allowed_hosts": [
+        "terravivagrants.org",
+        "www.terravivagrants.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://terravivagrants.org/",
+        "checked_at": "2026-10-10T18:32:45.692822+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": false,
+      "aggregator": true,
+      "feed_urls": [
+        "https://www.terravivagrants.org/feed/"
+      ],
+      "urls": [
+        "https://terravivagrants.org/",
+        "https://www.terravivagrants.org/funding-news",
+        "https://terravivagrants.org/funding-news",
+        "https://www.terravivagrants.org/subscribe-to-funding-alerts"
+      ]
+    },
+    {
+      "id": "registry-inventory-1f5433d7d5c3",
+      "registry_id": "inventory-1f5433d7d5c3",
+      "type": "source_discovery",
+      "url": "https://www.mladiinfo.eu/",
+      "organization": "Mladiinfo",
+      "allowed_hosts": [
+        "mladiinfo.eu",
+        "www.mladiinfo.eu"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://www.mladiinfo.eu/",
+        "checked_at": "2026-10-10T18:32:46.861602+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": false,
+      "aggregator": true,
+      "feed_urls": [
+        "https://mladiinfo.eu/feed/",
+        "https://mladiinfo.eu/feed/"
+      ],
+      "urls": [
+        "https://www.mladiinfo.eu/",
+        "https://mladiinfo.eu/category/grants",
+        "https://mladiinfo.eu/2021/07/26/pulitzer-center-gender-equality-grants",
+        "https://mladiinfo.eu/category/trainings-conferences"
+      ]
+    },
+    {
+      "id": "registry-inventory-79a0d26178e2",
+      "registry_id": "inventory-79a0d26178e2",
+      "type": "source_discovery",
+      "url": "https://www.youthop.com/",
+      "organization": "Youth Opportunities",
+      "allowed_hosts": [
+        "www.youthop.com",
+        "youthop.com"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "unreviewed",
+        "evidence_url": "https://www.youthop.com/",
+        "checked_at": "2026-10-10T18:32:51.737812+00:00",
+        "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
+      },
+      "official_source_verified": false,
+      "aggregator": true,
+      "feed_urls": [],
+      "urls": [
+        "https://www.youthop.com/"
+      ]
+    },
+    {
+      "id": "registry-inventory-323361ddbff4",
+      "registry_id": "inventory-323361ddbff4",
+      "type": "source_discovery",
+      "url": "https://on-the-move.org/",
+      "organization": "On the Move",
+      "allowed_hosts": [
+        "on-the-move.org",
+        "www.on-the-move.org"
+      ],
+      "max_pages": 4,
+      "max_items": 100,
+      "detail": false,
+      "interval_hours": 72,
+      "access_policy": {
+        "terms_status": "allowed",
+        "evidence_url": "https://on-the-move.org/",
+        "checked_at": "2026-10-10T18:33:02.139243+00:00",
+        "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+        "scope": "factual_metadata_and_internal_verification"
+      },
+      "official_source_verified": false,
+      "aggregator": true,
+      "feed_urls": [],
+      "urls": [
+        "https://on-the-move.org/",
+        "https://on-the-move.org/news",
+        "https://on-the-move.org//news",
+        "https://on-the-move.org/newsletter"
+      ]
     }
   ],
   "baseline_source_ids": [
@@ -656,5 +3698,6 @@
     "tusev",
     "sivilsayfalar",
     "sabit-izleme"
-  ]
+  ],
+  "source_workers": 4
 }

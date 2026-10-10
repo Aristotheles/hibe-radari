@@ -976,3 +976,48 @@ Kullanıcının gerçek topluAIinceleme ve canlı yayın talebi uygulandı. Ayn�
 154 kaynak kaydı/30 çekici/24 izinli çekici,170 çalışan kaynak anlamına gelmez; tam envanter entegrasyonu açık. ESEP ilk belgeler38, normal çekici son denemesi31/0hata; bunlar yayın sayısı değildir ve görünmeyen kayıtlar silinmez. Farklı kursları yanlış birleştirme şüphesi kod incelemesinde doğrulanmadı: mevcut tekilleştirme ortak kanıtlıURL/kimlik gerektiriyor. Gerçek yönetici Google oturumu bu dilimde tekrar doğrulanmadı. TheEarthPrize tarama yasağı korunur. Gerçek fatura tutarı ölçülmedi.
 ### Sonraki adım
 Yeni commit/push uzakSHA veCIsonucunu ölç; daha geniş kaynak entegrasyonunu mevcut mimaride sürdür. Main merge yok; başka ajan/cloudgeliştirme yok.
+
+
+## 2026-10-10 22:09 — Tam envanter entegrasyonu (Codex)
+
+### Yapılanlar
+Envanterdeki 135 gerçek adresin tamamı mevcut 131 çekiciye eşlendi; 19 eski kayıt korunuyor. Yeni 68 kaynak canlı tarandı: 51 başarılı, 7 kısmi, 10 boş sonuç. İlk raporda 890 ayrı aday; Grants.gov resmî API ek doğrulaması 241 kayıt/6 istek/başarı. Bunlar uygun ilan sayısı değildir. Tam metin toplama ve gerçek Gemini Batch gönderimi devam ediyor. 281 Python ve 16 JavaScript testi geçti; API izin sınırı için ek 20 odaklı test geçti. Yeni canlı yayın henüz yapılmadı. Önceki canlı 34 kayıt korunuyor. 170 ayrı adresi gösteren liste depoda bulunmadı; adres veya çağrı uydurulmadı.
+
+### Alınan kararlar
+Kullanıcının tüm kaynakları entegre etme, gerçek AI incelemesi ve test sonrası yayın yetkisi sürüyor. Tarama yasağı olan kaynakların yasağı aşılmadı.
+
+### Açık sorular ve sorunlar
+Kısmi/boş/erişilemez kaynaklar sağlıklı ilan edilmedi; Batch sonuçları ve yeni deploy henüz doğrulanmadı.
+
+### Sonraki adım
+- [ ] Toplu inceleme sonuçlarını işleyip uygun kayıtları yayımla; yeni bulut paketlerini doğrula, commit/push/CI sonucunu ölç.
+
+
+## 2026-10-10 23:13 — Tam kaynak ve gerçek inceleme (Codex)
+
+### Yapılanlar
+135 gerçek envanter URL’si 131 mevcut çekiciye eşlendi; 19 eski kayıt korundu, kaynak yönetimi 154 kayıt. Yeni 68 kaynak canlı ölçüldü: 53 başarılı, 6 kısmi, 9 boş. Gerçek 831 genel belge ve 241 Grants.gov belgesi Batch incelemesinden geçti. MEB GençBizz yanlış Türkiye kapısı düzeltildi ve yeniden yayımlandı. Rufford ilk aşama 7.000 GBP koşullu bireysel hibe ve PDF koşullarıyla Jean Monnet bursu yayımlandı. Eksik PDF olan 40 kayıttan 15’i gerçek ek Batch’e gönderildi; 25’i erişim/belge sınırı nedeniyle başarısız, uygun veya uygunsuz ilan edilmedi. Alıntı kapısına takılan 168 kayıt ek gerçek Batch’te bekliyor. 292 Python/16 JavaScript testi geçti; son ek iki aynı resmî sayfa takma-ad testi geçti, güncel tam test sürüyor. r5 bulut sürümü canlı; sonuç işi lss89 gerçek SUCCESS33.8s. Son kod/sağlık r6 derlemeleri ve aynı resmî Jean Monnet sayfasının iki URL’sini tek gösteren doğrulama sürüyor. Tüm kaynaklar sağlıklı veya proje tamamlandı iddiası yok.
+
+### Alınan kararlar
+Kullanıcının maksimum uygun ilan ve tüm kayıtlı kaynakların mevcut mimaride entegrasyonu yetkisi uygulanıyor. Eski Codex heartbeat iptal, ürün taraması Salı/Cuma08.15 bulutta.
+
+### Açık sorular ve sorunlar
+170 ayrı gerçek URL gösteren liste depoda bulunamadı; 35 adres uydurulmadı. Erişim koşulu belirsiz veya yasak siteler otomatik etkinleştirilmedi. Gerçek Google yönetici oturumu bu dilimde yeniden denenmedi.
+
+### Sonraki adım
+- [ ] Bekleyen Batch sonuçlarını işle, son bulut sürümü ve testleri doğrula, commit/push/CI ile checkpointi tamamla.
+
+
+## 2026-10-10 23:20 — Kaynak genişletme canlı checkpoint (Codex)
+
+### Yapılanlar
+135 gerçek URL 131 çekiciye eşlendi; 154 kaynak yönetim kaydı, mevcut 19 kayıt korunur. Yeni 68 kaynak ölçümü: 53 başarılı/6 kısmi/9 boş. Canlı 39 ayrı gerçek fırsat: 32 öğretmen kursu, TÜBİTAK2204-A2027, GençBizz, Jean Monnet2027–2028, dört Rufford hibe aşaması. Gerçek 13 Batch işi terminal başarılı, bekleyen0; uygunluk ve kanıt eksikliği ayrı. 1.220 güncel inceleme kararı docs/ILAN_INCELEME_KARARLARI_20261010.md içinde. 294Python PASS38.695s, 16JS PASS144.629ms, compileall/JSsyntax/diff/sır imzası kontrolleri geçti. registry-r7 iki build SUCCESS; backend hibe-backend-00008-fm9 yüzde100 canlı, iki ürün işi r7, Hosting deploy başarılı. Son r7 gerçek sonuç işi hibe-ai-batch-results-dk2mj SUCCESS2026-10-10T20:17:51Z. Canlı API39ilan/154kaynak, anonimadmin403; tarayıcı39fırsat ve son güncelleme23.16 doğrulandı.
+
+### Alınan kararlar
+Kullanıcının maksimum uygun, mevcut mimari, gerçek Batch incelemesi ve canlı yayın yetkisi uygulandı.
+
+### Açık sorular ve sorunlar
+170 ayrı URL listesi depoda bulunmadı;35adres uydurulmadı. 31izin/erişim incelemeli ve8izinyasaklı çekici etkin değil. Yeni6kısmi/9boş ve25PDFerişim/metinsınırı hatası açık. Google yönetici oturumu yeniden test edilmedi; fatura ölçülmedi. Tüm170kaynak sağlıklı veya tümproje tamamlandı iddiası yok. Eski Codex heartbeat iptal, mainmerge yok; Salı/Cuma08.15 bulut kaynak taraması, saat05/35 yalnız AIsonuç toplama.
+
+### Sonraki adım
+- [ ] Yetkili yeni adres/erişim kanıtı geldiğinde kapalı kaynakları ayrı doğrula; bu checkpointin commit/push/CI ölçümünü devir kaydında tamamla.

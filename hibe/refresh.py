@@ -18,8 +18,9 @@ def refresh(store):
     # General news and rejected noise are not opportunities in the review queue.
     # A verified first-party teacher course catalogue is already a discovery scope.
     # Weak title keywords must not suppress new courses before full-document review.
+    discovery_ids={s['id'] for s in config['sources'] if s.get('type') in ('source_discovery','grants_gov')}
     courses=[row for group in ('general','rejected') for row in report.get(group,[])
-        if row.get('source_id')=='esep-courses']
+        if row.get('source_id')=='esep-courses' or row.get('source_id') in discovery_ids]
     candidates = dict(report, review=report.get('review',[])+courses,general=[], rejected=[])
     changed = persist_report(candidates, store)
     return {'status': report['run_status'], 'sources': len(report['sources']),

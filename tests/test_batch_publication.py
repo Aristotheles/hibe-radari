@@ -25,6 +25,37 @@ class BatchPublicationTests(unittest.TestCase):
     def test_personal_unknown_does_not_erase_verified_audience(self):
         self.assertEqual(publication_decision(self.current,self.draft,self.item,self.today),'eligible')
 
+    def test_official_school_letter_and_public_employee_path_have_real_context(self):
+        draft=copy.deepcopy(self.draft);draft['country_scope']['evidence']='T.C. Millî Eğitim Bakanlığı'
+        text=self.text+' T.C. Millî Eğitim Bakanlığı iş birliği kapsamında yürütülen program: katılmak isteyen öğretmenlerin okullara gönderilen resmî yazı üzerinden başvurması gerekir.'
+        current=dict(self.current,source_url='https://ogm.meb.gov.tr/call')
+        self.assertEqual(publication_decision(current,draft,dict(self.item,text=text),self.today),'eligible')
+        self.assertEqual(publication_decision(current,draft,dict(self.item,text=text.replace('okullara gönderilen','basında görülen')),self.today),'country_evidence_required')
+        draft['country_scope']['evidence']='Başvurusu kabul edilen Türk katılımcıların seyahat masrafları karşılanır.'
+        draft['target_scope']['evidence']='Kamu çalışanları ve özel sektör çalışanları başvurabilir.'
+        self.assertEqual(publication_decision(self.current,draft,dict(self.item,text=self.text+' '+draft['country_scope']['evidence']+' '+draft['target_scope']['evidence']),self.today),'eligible')
+
+    def test_turkish_teacher_evidence_is_recognized_without_country_guessing(self):
+        draft=copy.deepcopy(self.draft)
+        draft['target_scope']['evidence']='Lise öğretmenlerine yönelik eğitim programı.'
+        item=dict(self.item,text=self.text+' Lise öğretmenlerine yönelik eğitim programı.')
+        self.assertEqual(publication_decision(self.current,draft,item,self.today),'eligible')
+        draft['country_scope']['evidence']='T.C. Millî Eğitim Bakanlığı'
+        item['text']+=' T.C. Millî Eğitim Bakanlığı Bakanlığımıza bağlı okul ve kurumlarda görev yapan tüm öğretmenlere yönelik.'
+        current=dict(self.current,source_url='https://ogm.meb.gov.tr/www/egitim/icerik/1')
+        self.assertEqual(publication_decision(current,draft,item,self.today),'eligible')
+        self.assertEqual(publication_decision(self.current,draft,item,self.today),'country_evidence_required')
+        item['text']=item['text'].replace('Bakanlığımıza bağlı okul ve kurumlarda görev yapan tüm öğretmenlere yönelik.','')
+        self.assertEqual(publication_decision(current,draft,item,self.today),'country_evidence_required')
+
+    def test_individual_eligibility_does_not_create_school_entity_rights(self):
+        draft=copy.deepcopy(self.draft)
+        draft['target_scope']={'result':'eligible','targets':['teacher'],'evidence':'Individuals may apply for this grant.'}
+        item=dict(self.item,text=self.text+' Individuals may apply for this grant.')
+        self.assertEqual(publication_decision(self.current,draft,item,self.today),'eligible')
+        draft['target_scope']['targets']=['school']
+        self.assertEqual(publication_decision(self.current,draft,item,self.today),'audience_evidence_required')
+
     def test_aggregator_and_invented_or_unrelated_country_cannot_publish(self):
         self.assertEqual(publication_decision(dict(self.current,official_source_verified=False),self.draft,self.item,self.today),'primary_source_required')
         draft=copy.deepcopy(self.draft);draft['country_scope']['evidence']='All countries may apply.'
@@ -66,6 +97,23 @@ class BatchPublicationTests(unittest.TestCase):
         call=dict(self.current,application_schedule={'kind':'rolling'},last_verified_at='2026-09-01T00:00:00Z')
         call['approval']={'reviewed':True,'version':version(call)}
         self.assertFalse(publishable(call,self.today))
+        draft['application_schedule']={'kind':'rolling','evidence':'There are no deadlines – you can apply at any time of year.'}
+        self.assertEqual(publication_decision(self.current,draft,dict(self.item,text=self.text+' '+draft['application_schedule']['evidence']),self.today),'eligible')
+
+    def test_deadline_provenance_points_to_the_pdf_that_contains_the_quote(self):
+        store=MemoryStore();store.put('calls','c',self.current)
+        draft=copy.deepcopy(self.draft)
+        pdf_url='https://example.org/rules.pdf'
+        draft['documents'].append({'url':pdf_url,'hash':'def'})
+        item=dict(self.item,documents=draft['documents'],document_texts=[
+            {'url':'https://example.org/call','text':'Teachers in Turkey may apply. Secondary school teachers are eligible.'},
+            {'url':pdf_url,'text':'Application deadline: 30 November 2026.'}])
+        store.put('review_proposals','c',{'batch_id':'batch','base_version':version(self.current),'draft':draft})
+        store.put('ai_batch_inputs','batch-c',item)
+        job={'id':'batch','model':'gemini-3.8-flash','results':[{'id':'c','status':'evidence_review_required'}]}
+        self.assertEqual(publish_batch(store,job,self.today)[0]['status'],'published')
+        self.assertEqual(store.get('calls','c')['deadline_source_url'],pdf_url)
+        self.assertEqual(store.get('calls','c')['official_url'],'https://example.org/call')
 
     def test_platform_access_does_not_make_grants_universally_eligible(self):
         draft=copy.deepcopy(self.draft);draft['country_scope']={'result':'eligible','evidence':'This platform is free of charge for all users.'}

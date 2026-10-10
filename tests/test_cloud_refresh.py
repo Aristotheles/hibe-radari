@@ -6,6 +6,17 @@ from hibe.store import MemoryStore
 
 
 class CloudRefreshTests(unittest.TestCase):
+    def test_busy_collect_only_does_not_modify_source_or_submit_again(self):
+        from hibe.job_lease import processing_lease
+        store=MemoryStore()
+        with processing_lease(store,'ai_batch_result_processing'), \
+             patch.dict(os.environ,{'FIREBASE_PROJECT_ID':'test','AI_BATCH_COLLECT_ONLY':'true','AI_REVIEW_ENABLED':'true'}), \
+             patch('firebase_admin.initialize_app'),patch('hibe.cloud_refresh.FirestoreStore',return_value=store), \
+             patch('hibe.cloud_refresh.refresh') as scan,patch('hibe.batch_pipeline.finish_batches') as finish, \
+             patch('hibe.batch_pipeline.submit_candidates') as submit,patch('builtins.print'):
+            self.assertEqual(main(),0)
+        scan.assert_not_called();finish.assert_not_called();submit.assert_not_called()
+        self.assertEqual(store.get('automation_runs','batch_collection_latest')['status'],'processing_elsewhere')
     def execute(self, result=None, error=None):
         store = MemoryStore()
         with patch.dict(os.environ, {'FIREBASE_PROJECT_ID': 'test-project'}), \

@@ -3,6 +3,21 @@ import httpx
 from hibe.aggregator.net import Fetcher, FetchError
 
 class NetworkSafetyTests(unittest.TestCase):
+    def test_documented_public_api_permission_does_not_exempt_other_routes(self):
+        calls=[]
+        def handler(r):
+            calls.append(str(r.url))
+            return httpx.Response(403)
+        policy={'terms_status':'allowed','checked_at':'2026-10-10',
+            'evidence_url':'https://www.grants.gov/api/terms-conditions',
+            'documented_api':'grants_gov_public'}
+        f=Fetcher(['api.grants.gov'],transport=httpx.MockTransport(handler),delay=0,access_policy=policy)
+        self.addCleanup(f.close)
+        f._permission('https://api.grants.gov/v1/api/search2')
+        self.assertEqual(calls,[])
+        with self.assertRaises(FetchError):f._permission('https://api.grants.gov/private')
+        self.assertEqual(calls,['https://api.grants.gov/robots.txt'])
+
     def client(self, handler, **kwargs):
         f = Fetcher(['safe.org', 'other.org'], transport=httpx.MockTransport(handler), delay=0, **kwargs)
         self.addCleanup(f.close)
@@ -52,6 +67,17 @@ class NetworkSafetyTests(unittest.TestCase):
         self.assertEqual(f.get_text('https://safe.org/'),'old')
         self.assertEqual(requests[1].headers['if-none-match'],'"v1"')
         self.assertIn('if-modified-since',requests[1].headers)
+
+    def test_redirect_base_is_preserved_after_conditional_cache_and_restart(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            def initial(r):
+                return httpx.Response(302,headers={'Location':'/V2/default.aspx'}) if r.url.path=='/' else httpx.Response(200,text='<a href="call.aspx">Teacher grant application</a>',headers={'ETag':'"v1"'})
+            f=self.client(initial,cache_dir=tmp)
+            self.assertEqual(str(f.get('https://safe.org/').request.url),'https://safe.org/V2/default.aspx')
+            g=self.client(lambda r:httpx.Response(304),cache_dir=tmp)
+            response=g.get('https://safe.org/')
+            self.assertEqual(str(response.request.url),'https://safe.org/V2/default.aspx')
 
     def test_stream_size_limit_stops_before_whole_download(self):
         reads=[]

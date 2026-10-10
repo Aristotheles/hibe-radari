@@ -76,20 +76,24 @@
     "institution_name": null,
     "program_label": "Erasmus+ (Komisyon)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-358ffa19b0c7"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://erasmus-plus.ec.europa.eu/",
+      "checked_at": "2026-10-10T18:31:54.801212+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -97,7 +101,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:41.731726+00:00",
     "last_access_observation": {
       "source_id": "inventory-358ffa19b0c7",
@@ -140,20 +144,24 @@
     "institution_name": null,
     "program_label": "Erasmus+ Proje Sonuçları Platformu",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-a97600d2a707"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://erasmus-plus.ec.europa.eu/projects",
+      "checked_at": "2026-10-10T18:31:54.801491+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -161,7 +169,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:43.017236+00:00",
     "last_access_observation": {
       "source_id": "inventory-a97600d2a707",
@@ -192,7 +200,7 @@
     "id": "source-1",
     "name": "Türkiye Ulusal Ajansı",
     "url": "https://www.ua.gov.tr/",
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "last_checked": "2026-10-09",
     "identity_status": "candidate",
@@ -213,21 +221,25 @@
     "program_label": "Türkiye Ulusal Ajansı",
     "country": null,
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-source-1"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.ua.gov.tr/",
+      "checked_at": "2026-10-10T18:31:54.801681+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 20,
     "change_tracking": "pending",
     "interval_hours": 24,
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Homepage and /haber/ listing schema verified; footer privacy link has no usable policy URL. Automatic reuse terms not verified; manual review retained.",
+    "acceptance_reason": "Canlı tarama: 20 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-10",
     "last_access_observation": {
       "source_id": "source-1",
@@ -270,15 +282,18 @@
     "institution_name": null,
     "program_label": "Eurodesk Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-ec9ada7f2c10"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://eurodesk.ua.gov.tr/",
+      "checked_at": "2026-10-10T18:31:54.801823+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -291,7 +306,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
     "last_access_observation": {
       "source_id": "inventory-ec9ada7f2c10",
@@ -511,20 +526,24 @@
     "institution_name": null,
     "program_label": "Avrupa Gençlik Portalı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-d51ce6460b94"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://youth.europa.eu/",
+      "checked_at": "2026-10-10T18:31:54.801975+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 1,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -532,7 +551,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 1 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:44.079464+00:00",
     "last_access_observation": {
       "source_id": "inventory-d51ce6460b94",
@@ -575,20 +594,24 @@
     "institution_name": null,
     "program_label": "Avrupa Dayanışma Programı (ESC)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-c8d5b4d3a652"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://youth.europa.eu/solidarity_en",
+      "checked_at": "2026-10-10T18:31:54.802267+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 1,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -596,7 +619,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 1 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:46.388883+00:00",
     "last_access_observation": {
       "source_id": "inventory-c8d5b4d3a652",
@@ -639,15 +662,18 @@
     "institution_name": null,
     "program_label": "SALTO Avrupa Eğitim Takvimi",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-1268ef989142"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.salto-youth.net/about/legal-notice/",
+      "checked_at": "2026-10-10T18:31:55.463990+00:00",
+      "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
     },
     "operational_status": "permission_required",
     "last_success": null,
@@ -660,7 +686,7 @@
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Liste web okuyucuda açıldı. Legal Notice eğitim için atıflı dağıtımı destekliyor; ticari dağıtım önceden yazılı izne bağlı. Ücretsiz/Pro ürün için otomatik yayın kapalı.",
+    "acceptance_reason": "Observed-page adapter configured; Source permission/research remains pending.",
     "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
     "last_access_observation": {
       "source_id": "inventory-1268ef989142",
@@ -699,15 +725,18 @@
     "institution_name": null,
     "program_label": "SALTO Otlas ortak bulma",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-cc457d795387"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.salto-youth.net/about/legal-notice/",
+      "checked_at": "2026-10-10T18:31:56.807227+00:00",
+      "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
     },
     "operational_status": "permission_required",
     "last_success": null,
@@ -720,7 +749,7 @@
       "steps": "Resmî duyuru, son tarih ve başvuru koşullarını açıp doğrula; HTTP erişim ölçümü tarama izni değildir."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Aynı SALTO kullanım şartları ticari dağıtımı izne bağlıyor; otomatik yayın kapalı.",
+    "acceptance_reason": "Observed-page adapter configured; Source permission/research remains pending.",
     "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
     "last_access_observation": {
       "source_id": "inventory-cc457d795387",
@@ -759,20 +788,24 @@
     "institution_name": null,
     "program_label": "EACEA",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-ec67d9d00e5a"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.eacea.ec.europa.eu/",
+      "checked_at": "2026-10-10T18:31:57.928983+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 7,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -780,7 +813,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 7 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:45.381883+00:00",
     "last_access_observation": {
       "source_id": "inventory-ec67d9d00e5a",
@@ -814,20 +847,24 @@
     "institution_name": null,
     "program_label": "Yaratıcı Avrupa",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-728f98e8dd06"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://culture.ec.europa.eu/creative-europe",
+      "checked_at": "2026-10-10T18:31:58.046891+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -835,7 +872,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:46.759536+00:00",
     "last_access_observation": {
       "source_id": "inventory-728f98e8dd06",
@@ -878,20 +915,24 @@
     "institution_name": null,
     "program_label": "LIFE (çevre/iklim)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-348dfa02beef"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://cinea.ec.europa.eu/programmes/life_en",
+      "checked_at": "2026-10-10T18:31:58.617555+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 7,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -899,7 +940,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 7 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:47.405056+00:00",
     "last_access_observation": {
       "source_id": "inventory-348dfa02beef",
@@ -946,20 +987,24 @@
     "institution_name": null,
     "program_label": "Marie Skłodowska-Curie",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-2a24e7254ece"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://marie-sklodowska-curie-actions.ec.europa.eu/",
+      "checked_at": "2026-10-10T18:31:59.398724+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 1,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -967,7 +1012,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 1 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:47.492719+00:00",
     "last_access_observation": {
       "source_id": "inventory-2a24e7254ece",
@@ -1010,15 +1055,18 @@
     "institution_name": null,
     "program_label": "Ufuk Avrupa Türkiye (TÜBİTAK)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-7b39a27994dc"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://ufukavrupa.org.tr/",
+      "checked_at": "2026-10-10T18:31:59.637833+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -1031,7 +1079,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:58:47.763376+00:00",
     "last_access_observation": {
       "source_id": "inventory-7b39a27994dc",
@@ -1057,20 +1105,24 @@
     "institution_name": null,
     "program_label": "EIT",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-642be4969640"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://eit.europa.eu/",
+      "checked_at": "2026-10-10T18:31:59.926707+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 17,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1078,7 +1130,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 17 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:48.015412+00:00",
     "last_access_observation": {
       "source_id": "inventory-642be4969640",
@@ -1104,20 +1156,24 @@
     "institution_name": null,
     "program_label": "Yeni Avrupa Bauhausu",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-0c8ed2427e23"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://new-european-bauhaus.europa.eu/",
+      "checked_at": "2026-10-10T18:32:00.336146+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 5,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1125,7 +1181,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 5 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:48.110348+00:00",
     "last_access_observation": {
       "source_id": "inventory-0c8ed2427e23",
@@ -1159,20 +1215,24 @@
     "institution_name": null,
     "program_label": "Avrupa İklim Paktı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-d01437ed7b93"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://climate-pact.europa.eu/",
+      "checked_at": "2026-10-10T18:32:00.423299+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1180,7 +1240,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:48.418657+00:00",
     "last_access_observation": {
       "source_id": "inventory-d01437ed7b93",
@@ -1214,20 +1274,24 @@
     "institution_name": null,
     "program_label": "EU Code Week",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-db8cfddfd511"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://codeweek.eu/",
+      "checked_at": "2026-10-10T18:32:00.777392+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1235,7 +1299,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:48.748739+00:00",
     "last_access_observation": {
       "source_id": "inventory-db8cfddfd511",
@@ -1269,20 +1333,24 @@
     "institution_name": null,
     "program_label": "Scientix",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-0744f161b9a2"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.scientix.eu/",
+      "checked_at": "2026-10-10T18:32:00.860412+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 1,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1290,7 +1358,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 1 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:48.843422+00:00",
     "last_access_observation": {
       "source_id": "inventory-0744f161b9a2",
@@ -1329,15 +1397,18 @@
     "institution_name": null,
     "program_label": "European Schoolnet",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-a0175b64eb77"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.eun.org/",
+      "checked_at": "2026-10-10T18:32:00.992232+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -1350,7 +1421,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:58:50.168977+00:00",
     "last_access_observation": {
       "source_id": "inventory-a0175b64eb77",
@@ -1376,15 +1447,18 @@
     "institution_name": null,
     "program_label": "Avrupa Konseyi Avrupa Gençlik Vakfı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-d78789826d99"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.coe.int/en/web/european-youth-foundation",
+      "checked_at": "2026-10-10T18:32:01.560727+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -1397,7 +1471,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:58:50.514182+00:00",
     "last_access_observation": {
       "source_id": "inventory-d78789826d99",
@@ -1423,15 +1497,18 @@
     "institution_name": null,
     "program_label": "Anna Lindh Vakfı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-e01390fbc19d"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.annalindhfoundation.org/",
+      "checked_at": "2026-10-10T18:32:01.764813+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -1444,7 +1521,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; HTTP 503",
     "acceptance_checked_at": "2026-10-09T22:58:50.694125+00:00",
     "last_access_observation": {
       "source_id": "inventory-e01390fbc19d",
@@ -1470,15 +1547,18 @@
     "institution_name": null,
     "program_label": "AB Türkiye Delegasyonu",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-1f285b60f26b"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.avrupa.info.tr/",
+      "checked_at": "2026-10-10T18:32:02.134585+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -1491,7 +1571,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (blocked); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; İzin verilmeyen URL",
     "acceptance_checked_at": "2026-10-09T22:58:50.929436+00:00",
     "last_access_observation": {
       "source_id": "inventory-1f285b60f26b",
@@ -1517,20 +1597,24 @@
     "institution_name": null,
     "program_label": "AB Başkanlığı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-7a14f9f45685"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.ab.gov.tr/",
+      "checked_at": "2026-10-10T18:32:02.707639+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 50,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1538,7 +1622,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 50 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:50.929807+00:00",
     "last_access_observation": {
       "source_id": "inventory-7a14f9f45685",
@@ -1572,20 +1656,24 @@
     "institution_name": null,
     "program_label": "Jean Monnet Burs Programı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-ed4755f4ec05"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.jeanmonnet.org.tr/",
+      "checked_at": "2026-10-10T18:32:02.826152+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 100,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1593,7 +1681,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 100 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:51.315581+00:00",
     "last_access_observation": {
       "source_id": "inventory-ed4755f4ec05",
@@ -1619,15 +1707,18 @@
     "institution_name": null,
     "program_label": "Merkezi Finans ve İhale Birimi",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-2502923489c0"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.cfcu.gov.tr/",
+      "checked_at": "2026-10-10T18:32:03.111161+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -1640,7 +1731,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:58:52.057807+00:00",
     "last_access_observation": {
       "source_id": "inventory-2502923489c0",
@@ -1666,20 +1757,24 @@
     "institution_name": null,
     "program_label": "Sivil Düşün",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-7e7271e11aee"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.sivildusun.net/",
+      "checked_at": "2026-10-10T18:32:03.281775+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 6,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1687,7 +1782,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 6 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:52.133629+00:00",
     "last_access_observation": {
       "source_id": "inventory-7e7271e11aee",
@@ -1721,20 +1816,24 @@
     "institution_name": null,
     "program_label": "Etkiniz AB",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-757117f503c7"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://etkiniz.eu/",
+      "checked_at": "2026-10-10T18:32:03.422286+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 9,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -1742,7 +1841,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 9 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:52.326537+00:00",
     "last_access_observation": {
       "source_id": "inventory-757117f503c7",
@@ -1764,7 +1863,7 @@
     "id": "source-9",
     "name": "Interreg NEXT Karadeniz Havzası",
     "url": "https://blacksea-cbc.net/",
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "last_checked": "2026-10-09",
     "identity_status": "candidate",
@@ -1785,21 +1884,25 @@
     "program_label": "Interreg NEXT Karadeniz Havzası",
     "country": null,
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-source-9"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://blacksea-cbc.net/",
+      "checked_at": "2026-10-10T18:32:03.626943+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 4,
     "change_tracking": "pending",
     "interval_hours": 24,
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 4 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:52.310257+00:00",
     "last_access_observation": {
       "source_id": "source-9",
@@ -2015,15 +2118,18 @@
     "institution_name": null,
     "program_label": "TÜBİTAK BİLİMİZ",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-f50d22800fe4"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://bilimiz.tubitak.gov.tr/",
+      "checked_at": "2026-10-10T18:32:03.965617+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -2036,7 +2142,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:58:54.092348+00:00",
     "last_access_observation": {
       "source_id": "inventory-f50d22800fe4",
@@ -2299,20 +2405,24 @@
     "institution_name": null,
     "program_label": "Kalkınma Ajansları GM",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-e6396fa94d62"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://ka.gov.tr/",
+      "checked_at": "2026-10-10T18:32:04.629636+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2320,7 +2430,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:55.590191+00:00",
     "last_access_observation": {
       "source_id": "inventory-e6396fa94d62",
@@ -2354,20 +2464,24 @@
     "institution_name": null,
     "program_label": "KAYS",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-44ab1023b21f"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://kaysuygulama.sanayi.gov.tr/",
+      "checked_at": "2026-10-10T18:32:05.254911+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2375,7 +2489,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:55.770770+00:00",
     "last_access_observation": {
       "source_id": "inventory-44ab1023b21f",
@@ -2409,20 +2523,24 @@
     "institution_name": null,
     "program_label": "DOKA",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-f338c92110f5"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.doka.org.tr/",
+      "checked_at": "2026-10-10T18:32:05.376341+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 5,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2430,7 +2548,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 5 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:55.880491+00:00",
     "last_access_observation": {
       "source_id": "inventory-f338c92110f5",
@@ -2464,20 +2582,24 @@
     "institution_name": null,
     "program_label": "DOKAP",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-0a59a2a3ce9f"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.dokap.gov.tr/",
+      "checked_at": "2026-10-10T18:32:06.542994+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 6,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2485,7 +2607,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 6 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:56.546276+00:00",
     "last_access_observation": {
       "source_id": "inventory-0a59a2a3ce9f",
@@ -2519,15 +2641,18 @@
     "institution_name": null,
     "program_label": "Gençlik ve Spor Bakanlığı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-0d8ed5351ba2"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.gsb.gov.tr/",
+      "checked_at": "2026-10-10T18:32:06.662747+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -2540,7 +2665,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:58:57.070694+00:00",
     "last_access_observation": {
       "source_id": "inventory-0d8ed5351ba2",
@@ -2566,20 +2691,24 @@
     "institution_name": null,
     "program_label": "İçişleri Sivil Toplumla İlişkiler GM",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-d98546e4217e"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.siviltoplum.gov.tr/",
+      "checked_at": "2026-10-10T18:32:06.686717+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 5,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2587,7 +2716,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 5 kayıt; durum: partial. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:57.170365+00:00",
     "last_access_observation": {
       "source_id": "inventory-d98546e4217e",
@@ -2642,20 +2771,24 @@
     "institution_name": null,
     "program_label": "Sıfır Atık",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-dc277d9c791c"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://sifiratik.gov.tr/",
+      "checked_at": "2026-10-10T18:32:07.035436+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 15,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2663,7 +2796,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 15 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:57.962639+00:00",
     "last_access_observation": {
       "source_id": "inventory-dc277d9c791c",
@@ -2714,20 +2847,24 @@
     "institution_name": null,
     "program_label": "TEKNOFEST",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-d392158787f3"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.teknofest.org/",
+      "checked_at": "2026-10-10T18:32:07.135843+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 26,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2735,7 +2872,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 26 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:58.057321+00:00",
     "last_access_observation": {
       "source_id": "inventory-d392158787f3",
@@ -2769,20 +2906,24 @@
     "institution_name": null,
     "program_label": "T3 Vakfı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-5dea9e03d34f"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://t3vakfi.org/",
+      "checked_at": "2026-10-10T18:32:08.054121+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 100,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2790,7 +2931,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 100 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:58.596969+00:00",
     "last_access_observation": {
       "source_id": "inventory-5dea9e03d34f",
@@ -2824,20 +2965,24 @@
     "institution_name": null,
     "program_label": "UNESCO Türkiye Millî Komisyonu",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-1ecf1fc3b80a"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.unesco.org.tr/",
+      "checked_at": "2026-10-10T18:32:08.354717+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 100,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2845,7 +2990,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 100 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:58:59.769060+00:00",
     "last_access_observation": {
       "source_id": "inventory-1ecf1fc3b80a",
@@ -2884,20 +3029,24 @@
     "institution_name": null,
     "program_label": "TÜRÇEV",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-602698fdbdb0"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.turcev.org.tr/",
+      "checked_at": "2026-10-10T18:32:10.192808+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 23,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2905,7 +3054,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 23 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:01.162178+00:00",
     "last_access_observation": {
       "source_id": "inventory-602698fdbdb0",
@@ -2939,20 +3088,24 @@
     "institution_name": null,
     "program_label": "Eko-Okullar Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-49c0550bfaa3"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.ekookullar.org.tr/",
+      "checked_at": "2026-10-10T18:32:10.669296+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -2960,7 +3113,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (blocked); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:01.565521+00:00",
     "last_access_observation": {
       "source_id": "inventory-49c0550bfaa3",
@@ -3114,15 +3267,18 @@
     "institution_name": null,
     "program_label": "Japonya Büyükelçiliği (GGP)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-79d89ed336a6"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.tr.emb-japan.go.jp/",
+      "checked_at": "2026-10-10T18:32:10.730080+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -3135,7 +3291,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:03.847700+00:00",
     "last_access_observation": {
       "source_id": "inventory-79d89ed336a6",
@@ -3161,20 +3317,24 @@
     "institution_name": null,
     "program_label": "Japan Foundation",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-49342dc9dfeb"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.jpf.go.jp/e/",
+      "checked_at": "2026-10-10T18:32:10.859417+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 13,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -3182,7 +3342,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 13 kayıt; durum: partial. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:04.388384+00:00",
     "last_access_observation": {
       "source_id": "inventory-49342dc9dfeb",
@@ -3216,15 +3376,18 @@
     "institution_name": null,
     "program_label": "ABD Büyükelçiliği",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-032019933999"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://tr.usembassy.gov/",
+      "checked_at": "2026-10-10T18:32:11.199024+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -3237,7 +3400,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:04.423210+00:00",
     "last_access_observation": {
       "source_id": "inventory-032019933999",
@@ -3263,20 +3426,24 @@
     "institution_name": null,
     "program_label": "Grants.gov",
     "country": null,
-    "method": "manual",
+    "method": "grants_gov",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-04a66d923635"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.grants.gov/",
+      "checked_at": "2026-10-10T18:32:11.391459+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 241,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -3284,7 +3451,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 241 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:05.107910+00:00",
     "last_access_observation": {
       "source_id": "inventory-04a66d923635",
@@ -3318,20 +3485,24 @@
     "institution_name": null,
     "program_label": "Fulbright Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-a34a92b01947"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://fulbright.org.tr/",
+      "checked_at": "2026-10-10T18:32:11.921191+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 21,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -3339,7 +3510,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 21 kayıt; durum: partial. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:05.279076+00:00",
     "last_access_observation": {
       "source_id": "inventory-a34a92b01947",
@@ -3373,20 +3544,24 @@
     "institution_name": null,
     "program_label": "YES Programı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-b10d69b21c44"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.yesprograms.org/",
+      "checked_at": "2026-10-10T18:32:12.855223+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -3394,7 +3569,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:06.224746+00:00",
     "last_access_observation": {
       "source_id": "inventory-b10d69b21c44",
@@ -3735,15 +3910,18 @@
     "institution_name": null,
     "program_label": "Goethe-Institut Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-b1ec1a073e91"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.goethe.de/ins/tr/tr/index.html",
+      "checked_at": "2026-10-10T18:32:12.991804+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -3756,7 +3934,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; HTTP 403",
     "acceptance_checked_at": "2026-10-09T22:59:08.078554+00:00",
     "last_access_observation": {
       "source_id": "inventory-b1ec1a073e91",
@@ -3782,20 +3960,24 @@
     "institution_name": null,
     "program_label": "DAAD Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-12777f0725ff"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.daad-turkiye.org/",
+      "checked_at": "2026-10-10T18:32:13.043702+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 4,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -3803,7 +3985,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 4 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:08.766049+00:00",
     "last_access_observation": {
       "source_id": "inventory-12777f0725ff",
@@ -3837,20 +4019,24 @@
     "institution_name": null,
     "program_label": "Almanya Büyükelçiliği",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-7bf1682c81e4"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://tuerkei.diplo.de/",
+      "checked_at": "2026-10-10T18:32:13.735860+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -3858,7 +4044,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:08.953933+00:00",
     "last_access_observation": {
       "source_id": "inventory-7bf1682c81e4",
@@ -3952,15 +4138,18 @@
     "institution_name": null,
     "program_label": "Robert Bosch Stiftung",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-1f0ea5031aab"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.bosch-stiftung.de/",
+      "checked_at": "2026-10-10T18:32:14.170803+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -3973,7 +4162,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:09.437468+00:00",
     "last_access_observation": {
       "source_id": "inventory-1f0ea5031aab",
@@ -3999,20 +4188,24 @@
     "institution_name": null,
     "program_label": "Heinrich Böll Stiftung Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-00de13b22d83"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://tr.boell.org/",
+      "checked_at": "2026-10-10T18:32:14.329895+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 5,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4020,7 +4213,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 5 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:09.910141+00:00",
     "last_access_observation": {
       "source_id": "inventory-00de13b22d83",
@@ -4054,20 +4247,24 @@
     "institution_name": null,
     "program_label": "Friedrich Ebert Stiftung Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-408881bcf8a4"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://turkey.fes.de/",
+      "checked_at": "2026-10-10T18:32:14.659791+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4075,7 +4272,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:10.537268+00:00",
     "last_access_observation": {
       "source_id": "inventory-408881bcf8a4",
@@ -4234,15 +4431,18 @@
     "institution_name": null,
     "program_label": "Fransa Büyükelçiliği",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-50f09a187f5d"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://tr.ambafrance.org/",
+      "checked_at": "2026-10-10T18:32:15.286612+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -4255,7 +4455,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:12.480318+00:00",
     "last_access_observation": {
       "source_id": "inventory-50f09a187f5d",
@@ -4281,20 +4481,24 @@
     "institution_name": null,
     "program_label": "Hollanda (MATRA / İnsan Hakları Fonu)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-0bfcf8e1052f"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.netherlandsandyou.nl/",
+      "checked_at": "2026-10-10T18:32:15.760144+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 3,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4302,7 +4506,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 3 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:12.818719+00:00",
     "last_access_observation": {
       "source_id": "inventory-0bfcf8e1052f",
@@ -4336,15 +4540,18 @@
     "institution_name": null,
     "program_label": "İsveç Enstitüsü",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-270ab3509ec0"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://si.se/en/",
+      "checked_at": "2026-10-10T18:32:16.307065+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -4357,7 +4564,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:13.018510+00:00",
     "last_access_observation": {
       "source_id": "inventory-270ab3509ec0",
@@ -4383,15 +4590,18 @@
     "institution_name": null,
     "program_label": "Finlandiya Büyükelçiliği (Yerel İşbirliği Fonu)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-6e80b76da752"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://finlandabroad.fi/web/tur",
+      "checked_at": "2026-10-10T18:32:16.839636+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -4404,7 +4614,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; HTTP 403",
     "acceptance_checked_at": "2026-10-09T22:59:13.457823+00:00",
     "last_access_observation": {
       "source_id": "inventory-6e80b76da752",
@@ -4430,20 +4640,24 @@
     "institution_name": null,
     "program_label": "İsviçre Büyükelçiliği",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-d4d8d1fe0954"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.eda.admin.ch/ankara",
+      "checked_at": "2026-10-10T18:32:17.335925+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4451,7 +4665,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:13.790566+00:00",
     "last_access_observation": {
       "source_id": "inventory-d4d8d1fe0954",
@@ -4552,20 +4766,24 @@
     "institution_name": null,
     "program_label": "KEİ (BSEC)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-bff92cd13068"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.bsec-organization.org/",
+      "checked_at": "2026-10-10T18:32:17.820034+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4573,7 +4791,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:14.412971+00:00",
     "last_access_observation": {
       "source_id": "inventory-bff92cd13068",
@@ -4628,20 +4846,24 @@
     "institution_name": null,
     "program_label": "GMF / Black Sea Trust",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-1c417588822b"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.gmfus.org/",
+      "checked_at": "2026-10-10T18:32:18.771719+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 1,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4649,7 +4871,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 1 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:14.571170+00:00",
     "last_access_observation": {
       "source_id": "inventory-1c417588822b",
@@ -4683,20 +4905,24 @@
     "institution_name": null,
     "program_label": "Dışişleri Bakanlığı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-1123e39c4e2a"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.mfa.gov.tr/",
+      "checked_at": "2026-10-10T18:32:18.896511+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 24,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4704,7 +4930,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 24 kayıt; durum: partial. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:15.856028+00:00",
     "last_access_observation": {
       "source_id": "inventory-1123e39c4e2a",
@@ -4745,15 +4971,18 @@
     "institution_name": null,
     "program_label": "UNDP Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-955c945bb1e3"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.undp.org/tr/turkiye",
+      "checked_at": "2026-10-10T18:32:18.975000+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -4766,7 +4995,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:16.114429+00:00",
     "last_access_observation": {
       "source_id": "inventory-955c945bb1e3",
@@ -4855,15 +5084,18 @@
     "institution_name": null,
     "program_label": "UNDP ihale/çağrı ilanları",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-c905328504bf"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://procurement-notices.undp.org/",
+      "checked_at": "2026-10-10T18:32:19.200173+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -4876,7 +5108,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt taramayı engelliyor",
     "acceptance_checked_at": "2026-10-09T22:59:16.463904+00:00",
     "last_access_observation": {
       "source_id": "inventory-c905328504bf",
@@ -4902,20 +5134,24 @@
     "institution_name": null,
     "program_label": "UNESCO Associated Schools",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-083b401a02f5"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.unesco.org/en/aspnet",
+      "checked_at": "2026-10-10T18:32:19.850710+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 28,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4923,7 +5159,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 28 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:16.870105+00:00",
     "last_access_observation": {
       "source_id": "inventory-083b401a02f5",
@@ -4978,20 +5214,24 @@
     "institution_name": null,
     "program_label": "UNESCO ödülleri",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-34a30a5aec70"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.unesco.org/en/prizes",
+      "checked_at": "2026-10-10T18:32:20.078786+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 28,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -4999,7 +5239,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 28 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:18.092265+00:00",
     "last_access_observation": {
       "source_id": "inventory-34a30a5aec70",
@@ -5054,20 +5294,24 @@
     "institution_name": null,
     "program_label": "UNICEF Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-c83064769bec"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.unicef.org/turkiye/",
+      "checked_at": "2026-10-10T18:32:21.357730+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 3,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5075,7 +5319,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 3 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:17.144669+00:00",
     "last_access_observation": {
       "source_id": "inventory-c83064769bec",
@@ -5114,20 +5358,24 @@
     "institution_name": null,
     "program_label": "BM Demokrasi Fonu",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-4ea947f59252"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.un.org/democracyfund/",
+      "checked_at": "2026-10-10T18:32:21.403683+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 8,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5135,7 +5383,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 8 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:17.920697+00:00",
     "last_access_observation": {
       "source_id": "inventory-4ea947f59252",
@@ -5161,20 +5409,24 @@
     "institution_name": null,
     "program_label": "UNEP Young Champions of the Earth",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-3658dc075bb1"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.unep.org/youngchampions/",
+      "checked_at": "2026-10-10T18:32:21.602599+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5182,7 +5434,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:18.309474+00:00",
     "last_access_observation": {
       "source_id": "inventory-3658dc075bb1",
@@ -5209,7 +5461,7 @@
     "id": "source-14",
     "name": "Sabancı Vakfı",
     "url": "https://sabancivakfi.org/",
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "last_checked": "2026-10-09",
     "identity_status": "candidate",
@@ -5230,12 +5482,15 @@
     "program_label": "Sabancı Vakfı",
     "country": null,
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-source-14"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://sabancivakfi.org/",
+      "checked_at": "2026-10-10T18:32:22.909444+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -5244,7 +5499,7 @@
     "change_tracking": "pending",
     "interval_hours": 24,
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:18.499544+00:00",
     "last_access_observation": {
       "source_id": "source-14",
@@ -5270,20 +5525,24 @@
     "institution_name": null,
     "program_label": "Vehbi Koç Vakfı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-80e6ed168eea"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.vkv.org.tr/",
+      "checked_at": "2026-10-10T18:32:23.130863+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5291,7 +5550,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:18.512196+00:00",
     "last_access_observation": {
       "source_id": "inventory-80e6ed168eea",
@@ -5325,20 +5584,24 @@
     "institution_name": null,
     "program_label": "Öğretmen Akademisi Vakfı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-63048c76e181"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.orav.org.tr/",
+      "checked_at": "2026-10-10T18:32:23.208297+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 20,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5346,7 +5609,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 20 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:18.754498+00:00",
     "last_access_observation": {
       "source_id": "inventory-63048c76e181",
@@ -5380,20 +5643,24 @@
     "institution_name": null,
     "program_label": "Öğretmen Ağı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-99ee9ae4d55b"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.ogretmenagi.org/",
+      "checked_at": "2026-10-10T18:32:23.875146+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 1,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5401,7 +5668,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 1 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:19.089534+00:00",
     "last_access_observation": {
       "source_id": "inventory-99ee9ae4d55b",
@@ -5435,20 +5702,24 @@
     "institution_name": null,
     "program_label": "Eğitim Reformu Girişimi",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-06481c97e944"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.egitimreformugirisimi.org/",
+      "checked_at": "2026-10-10T18:32:24.521125+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 25,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5456,7 +5727,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 25 kayıt; durum: partial. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:19.825360+00:00",
     "last_access_observation": {
       "source_id": "inventory-06481c97e944",
@@ -5482,20 +5753,24 @@
     "institution_name": null,
     "program_label": "TEGV",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-e0c8fa83df52"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.tegv.org/",
+      "checked_at": "2026-10-10T18:32:24.693397+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 22,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5503,7 +5778,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 22 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:19.999709+00:00",
     "last_access_observation": {
       "source_id": "inventory-e0c8fa83df52",
@@ -5529,20 +5804,24 @@
     "institution_name": null,
     "program_label": "TEMA Vakfı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-8aa06734dc34"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.tema.org.tr/",
+      "checked_at": "2026-10-10T18:32:25.497722+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 15,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5550,7 +5829,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 15 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:20.320176+00:00",
     "last_access_observation": {
       "source_id": "inventory-8aa06734dc34",
@@ -5576,15 +5855,18 @@
     "institution_name": null,
     "program_label": "WWF-Türkiye",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-5b52d481537d"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.wwf.org.tr/",
+      "checked_at": "2026-10-10T18:32:26.268232+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -5597,7 +5879,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:20.556878+00:00",
     "last_access_observation": {
       "source_id": "inventory-5b52d481537d",
@@ -5674,20 +5956,24 @@
     "institution_name": null,
     "program_label": "Sivil Toplum için Destek Vakfı",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-1b7909fab843"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://siviltoplumdestek.org/",
+      "checked_at": "2026-10-10T18:32:26.610381+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 12,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5695,7 +5981,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 12 kayıt; durum: partial. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:20.663127+00:00",
     "last_access_observation": {
       "source_id": "inventory-1b7909fab843",
@@ -5732,15 +6018,18 @@
     "institution_name": null,
     "program_label": "Turkey Mozaik Foundation",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-7ff6770d8d9e"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.turkeymozaik.org.uk/",
+      "checked_at": "2026-10-10T18:32:28.878963+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -5753,7 +6042,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:20.770107+00:00",
     "last_access_observation": {
       "source_id": "inventory-7ff6770d8d9e",
@@ -5779,20 +6068,24 @@
     "institution_name": null,
     "program_label": "İhtiyaç Haritası",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-9599be4922ce"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.ihtiyacharitasi.org/",
+      "checked_at": "2026-10-10T18:32:29.459357+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5800,7 +6093,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:20.981690+00:00",
     "last_access_observation": {
       "source_id": "inventory-9599be4922ce",
@@ -5826,17 +6119,20 @@
     "institution_name": null,
     "program_label": "AFS Türkiye (Türk Kültür Vakfı)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-5f24ee4171a5"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.turkkulturvakfi.org.tr/kullanim-kosullari-ve-politikalari/",
+      "checked_at": "2026-10-10T18:32:29.753569+00:00",
+      "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "permission_required",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -5847,7 +6143,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Observed-page adapter configured; Source permission/research remains pending.",
     "acceptance_checked_at": "2026-10-09T22:59:21.365368+00:00",
     "last_access_observation": {
       "source_id": "inventory-5f24ee4171a5",
@@ -5886,18 +6182,20 @@
     "institution_name": null,
     "program_label": "The Earth Prize",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-ea64d35ac8e8"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "permission_required",
-      "evidence_url": "https://www.theearthprize.org/copyright-policy",
-      "checked_at": "2026-10-10T14:36:32.045389+00:00",
-      "basis": "Explicit prohibition of automated scraping without prior permission. Do not bypass."
+      "evidence_url": "https://www.theearthprize.org/terms-and-conditions",
+      "checked_at": "2026-10-10T18:32:30.309487+00:00",
+      "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "permission_required",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -5908,7 +6206,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Observed-page adapter configured; Source permission/research remains pending.",
     "acceptance_checked_at": "2026-10-09T22:59:21.388162+00:00",
     "last_access_observation": {
       "source_id": "inventory-ea64d35ac8e8",
@@ -5951,20 +6249,24 @@
     "institution_name": null,
     "program_label": "Zayed Sustainability Prize",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-bba083a53105"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://zayedsustainabilityprize.com/",
+      "checked_at": "2026-10-10T18:32:32.481227+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 1,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -5972,7 +6274,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 1 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:21.618084+00:00",
     "last_access_observation": {
       "source_id": "inventory-bba083a53105",
@@ -6011,20 +6313,24 @@
     "institution_name": null,
     "program_label": "Stockholm Junior Water Prize (SIWI)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-4c7b13e6f21b"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.siwi.org/",
+      "checked_at": "2026-10-10T18:32:33.861112+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 3,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -6032,7 +6338,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 3 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:22.922619+00:00",
     "last_access_observation": {
       "source_id": "inventory-4c7b13e6f21b",
@@ -6118,17 +6424,20 @@
     "institution_name": null,
     "program_label": "Global Teacher Prize",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-c74800326885"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.globalteacherprize.org/",
+      "checked_at": null,
+      "basis": "Observed source restrictions require permission; automated collection stays disabled. Only source status is recorded."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "permission_required",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -6139,7 +6448,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; Source permission/research remains pending.",
     "acceptance_checked_at": "2026-10-09T22:59:23.333064+00:00",
     "last_access_observation": {
       "source_id": "inventory-c74800326885",
@@ -6226,17 +6535,21 @@
     "institution_name": null,
     "program_label": "National Geographic Society hibeleri",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-a08149e86076"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.nationalgeographic.org/society/grants-and-investments/",
+      "checked_at": "2026-10-10T18:32:35.287446+00:00",
+      "basis": "Observed terms restrict automated extraction or linking; collection disabled pending permission.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "permission_required",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -6247,7 +6560,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Observed extraction/linking restriction; adapter configured but disabled pending permission.",
     "acceptance_checked_at": "2026-10-09T22:59:23.818174+00:00",
     "last_access_observation": {
       "source_id": "inventory-a08149e86076",
@@ -6286,15 +6599,18 @@
     "institution_name": null,
     "program_label": "The Pollination Project",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-5b5b6d9572a8"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://thepollinationproject.org/",
+      "checked_at": "2026-10-10T18:32:37.114754+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -6307,7 +6623,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (http); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; HTTP 403",
     "acceptance_checked_at": "2026-10-09T22:59:24.107993+00:00",
     "last_access_observation": {
       "source_id": "inventory-5b5b6d9572a8",
@@ -6333,20 +6649,24 @@
     "institution_name": null,
     "program_label": "Rufford Foundation",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-e2ba93e5bd65"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.rufford.org/",
+      "checked_at": "2026-10-10T18:32:38.390844+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 4,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -6354,7 +6674,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 4 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:24.905487+00:00",
     "last_access_observation": {
       "source_id": "inventory-e2ba93e5bd65",
@@ -6388,20 +6708,24 @@
     "institution_name": null,
     "program_label": "Global Greengrants Fund",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-90686db6a269"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.greengrants.org/",
+      "checked_at": "2026-10-10T18:32:38.394298+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "adapter_configured",
     "last_success": null,
-    "last_error": null,
-    "last_found_count": null,
+    "last_error": "Şüpheli boş sonuç; kaynak yapılandırmasında allow_empty açıkça doğrulanmalı",
+    "last_found_count": 0,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -6409,7 +6733,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 0 kayıt; durum: suspicious_empty. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:25.378217+00:00",
     "last_access_observation": {
       "source_id": "inventory-90686db6a269",
@@ -6443,17 +6767,21 @@
     "institution_name": null,
     "program_label": "Mohamed bin Zayed Tür Koruma Fonu",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-6fdcf036901c"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.speciesconservation.org/",
+      "checked_at": "2026-10-10T18:32:39.847512+00:00",
+      "basis": "Observed terms restrict automated extraction or linking; collection disabled pending permission.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "permission_required",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -6464,7 +6792,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed extraction/linking restriction; adapter configured but disabled pending permission.",
     "acceptance_checked_at": "2026-10-09T22:59:25.982586+00:00",
     "last_access_observation": {
       "source_id": "inventory-6fdcf036901c",
@@ -6490,20 +6818,24 @@
     "institution_name": null,
     "program_label": "Young Reporters for the Environment",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-7e5654adb2c2"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.yre.global/",
+      "checked_at": "2026-10-10T18:32:39.951295+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 47,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -6511,7 +6843,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 47 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:26.245939+00:00",
     "last_access_observation": {
       "source_id": "inventory-7e5654adb2c2",
@@ -6545,20 +6877,24 @@
     "institution_name": null,
     "program_label": "Eco-Schools (küresel)",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-83d83cda1ee9"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.ecoschools.global/",
+      "checked_at": "2026-10-10T18:32:40.045363+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 14,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -6566,7 +6902,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 14 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:26.647123+00:00",
     "last_access_observation": {
       "source_id": "inventory-83d83cda1ee9",
@@ -6721,20 +7057,24 @@
     "institution_name": null,
     "program_label": "GLOBE Program",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-d4b3d841372b"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.globe.gov/",
+      "checked_at": "2026-10-10T18:32:41.502368+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 9,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -6742,7 +7082,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 9 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:28.170720+00:00",
     "last_access_observation": {
       "source_id": "inventory-d4b3d841372b",
@@ -6785,20 +7125,24 @@
     "institution_name": null,
     "program_label": "European Cultural Foundation",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-069393007b65"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://culturalfoundation.eu/",
+      "checked_at": "2026-10-10T18:32:41.639620+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 9,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -6806,7 +7150,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 9 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:28.803813+00:00",
     "last_access_observation": {
       "source_id": "inventory-069393007b65",
@@ -6845,20 +7189,24 @@
     "institution_name": null,
     "program_label": "Allianz Foundation",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-98b1ee25c562"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://allianzfoundation.org/",
+      "checked_at": "2026-10-10T18:32:44.022631+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 1,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -6866,7 +7214,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 1 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:29.376745+00:00",
     "last_access_observation": {
       "source_id": "inventory-98b1ee25c562",
@@ -6909,15 +7257,18 @@
     "institution_name": null,
     "program_label": "National Endowment for Democracy",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-b23b5b28fe89"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.ned.org/",
+      "checked_at": "2026-10-10T18:32:44.456201+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -6930,7 +7281,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:30.130642+00:00",
     "last_access_observation": {
       "source_id": "inventory-b23b5b28fe89",
@@ -6956,15 +7307,18 @@
     "institution_name": null,
     "program_label": "Rotary Gençlik Değişimi",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-137b708b697f"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.rotary.org/en/our-programs/youth-exchanges",
+      "checked_at": "2026-10-10T18:32:44.842983+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -6977,7 +7331,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; HTTP 429",
     "acceptance_checked_at": "2026-10-09T22:59:30.516170+00:00",
     "last_access_observation": {
       "source_id": "inventory-137b708b697f",
@@ -7196,15 +7550,18 @@
     "institution_name": null,
     "program_label": "fundsforNGOs",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-a6673335d9b4"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www2.fundsforngos.org/",
+      "checked_at": "2026-10-10T18:32:45.171256+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -7217,7 +7574,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Observed-page adapter configured; robots.txt doğrulanamadı; manuel inceleme gerekli",
     "acceptance_checked_at": "2026-10-09T22:59:32.125612+00:00",
     "last_access_observation": {
       "source_id": "inventory-a6673335d9b4",
@@ -7243,20 +7600,24 @@
     "institution_name": null,
     "program_label": "Terra Viva Grants",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-cfa03fdcd36b"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://terravivagrants.org/",
+      "checked_at": "2026-10-10T18:32:45.692822+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 17,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -7264,7 +7625,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (permission); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 17 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:47:20.187990+00:00",
     "last_access_observation": {
       "source_id": "inventory-cfa03fdcd36b",
@@ -7290,20 +7651,24 @@
     "institution_name": null,
     "program_label": "Mladiinfo",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-1f5433d7d5c3"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://www.mladiinfo.eu/",
+      "checked_at": "2026-10-10T18:32:46.861602+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 24,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -7311,7 +7676,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Canlı erişim doğrulanamadı (rate_limit); koruma aşılmadan manuel inceleme gerekiyor.",
+    "acceptance_reason": "Canlı tarama: 24 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:32.514389+00:00",
     "last_access_observation": {
       "source_id": "inventory-1f5433d7d5c3",
@@ -7458,15 +7823,18 @@
     "institution_name": null,
     "program_label": "Youth Opportunities",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-79a0d26178e2"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
       "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "evidence_url": "https://www.youthop.com/",
+      "checked_at": "2026-10-10T18:32:51.737812+00:00",
+      "basis": "Access or robots could not be verified; adapter is configured but fetching remains blocked. No access control bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,
@@ -7479,7 +7847,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Observed-page adapter configured; timeout: ReadTimeout",
     "acceptance_checked_at": "2026-10-09T22:59:33.192663+00:00",
     "last_access_observation": {
       "source_id": "inventory-79a0d26178e2",
@@ -7591,20 +7959,24 @@
     "institution_name": null,
     "program_label": "On the Move",
     "country": null,
-    "method": "manual",
+    "method": "source_discovery",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "registry-inventory-323361ddbff4"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "evidence_url": "https://on-the-move.org/",
+      "checked_at": "2026-10-10T18:33:02.139243+00:00",
+      "basis": "Public factual opportunity metadata only (title, institution, date, source link), with attribution. robots checked by the existing HTTPS client. Observed linked policy pages reviewed for automated-access restrictions; no articles, images, logos or third-party full text republished.",
+      "scope": "factual_metadata_and_internal_verification"
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
-    "last_found_count": null,
+    "last_found_count": 2,
     "change_tracking": "pending",
     "interval_hours": 24,
     "manual_check": {
@@ -7612,7 +7984,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "Canlı tarama: 2 kayıt; durum: success. Ayrıntı ve uygunluk incelemesi ayrı yapılır.",
     "acceptance_checked_at": "2026-10-09T22:59:34.637958+00:00",
     "last_access_observation": {
       "source_id": "inventory-323361ddbff4",

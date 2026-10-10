@@ -1,7 +1,7 @@
 """Bounded document review through the existing permitted-source fetcher."""
 from datetime import date, datetime, timezone
 from io import BytesIO
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, urljoin, urldefrag
 from bs4 import BeautifulSoup
 from .aggregator.net import Fetcher
 from .auto_review import classify
@@ -57,6 +57,23 @@ def document_text(response):
     if not text.strip() or len(text) > 48000:
         raise ValueError('Tam metin yok veya model metin sınırını aşıyor')
     return text
+
+
+def linked_pdf_urls(response, allowed_hosts):
+    """Only PDFs actually linked in the call body, on permitted source hosts."""
+    if 'html' not in response.headers.get('content-type',''):return []
+    soup=BeautifulSoup(response.content,'html.parser')
+    for tag in soup(['script','style','nav','header','footer']):tag.decompose()
+    body=soup.find('main') or soup.find('article') or soup
+    found=[]
+    for anchor in body.find_all('a',href=True):
+        url=urldefrag(urljoin(str(response.request.url),anchor['href']))[0]
+        parts=urlsplit(url)
+        try:safe=parts.scheme=='https' and parts.hostname in allowed_hosts and not parts.username and not parts.password and parts.port in (None,443)
+        except ValueError:safe=False
+        if safe and parts.path.lower().endswith('.pdf') and url not in found:found.append(url)
+    if len(found)>10:raise ValueError('Bağlı PDF sınırı; eksik belge incelemesi başarılı sayılmadı')
+    return found
 
 
 def review_batch(store, config, extractor, profile, limit=30, fetcher_factory=Fetcher):

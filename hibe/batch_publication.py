@@ -2,6 +2,7 @@
 import re
 from copy import deepcopy
 from datetime import date
+from urllib.parse import urlsplit
 from .aggregator.textutil import fold, deadline_details
 from .domain import version
 from .verified_review import commit_verified_review
@@ -13,7 +14,7 @@ def quote_present(quote,text):
 def schedule_is_open(schedule,text):
     quote=schedule.get('evidence') or ''
     if not quote_present(quote,text):return False
-    if schedule.get('kind')=='rolling':return bool(re.search(r'rolling basis|rolling applications|yil boyunca|surekli basvuru',fold(quote)))
+    if schedule.get('kind')=='rolling':return bool(re.search(r'rolling basis|rolling applications|yil boyunca|surekli basvuru|basvurular surekli acik|yilin her donemi|(?:applications|apply|submit).{0,100}(?:any time|all year|throughout the year|year.round)',fold(quote)))
     if schedule.get('kind')!='self_paced':return False
     return bool(re.search(r'open for self-paced learning|self-paced and open-ended|self-paced course is already available online',fold(quote))
         or ('self-paced course is already available online' in fold(text) and re.search(r'no deadlines|own pace|self-paced',fold(quote))))
@@ -41,13 +42,25 @@ def publication_decision(current, draft, item, today):
     universal_course=(current.get('source_id')=='esep-courses' and draft.get('opportunity_type')=='training'
         and quote_present('This platform is free of charge for all users.',text)
         and 'free of charge for all users' in fold(country_quote))
+    # National teachers explicitly affiliated with MEB are country evidence, even
+    # when the model quotes the ministry's abbreviated T.C. heading.
+    host=urlsplit(current.get('source_url') or '').hostname or ''
+    national_teacher=(host=='meb.gov.tr' or host.endswith('.meb.gov.tr')) and (
+        'milli egitim bakanligi' in fold(country_quote)
+        and (bool(re.search(r'bakanligimiza bagli.{0,180}ogretmen',fold(text)))
+            or ('okullara gonderilen' in fold(text) and 'resmi yazi' in fold(text)
+                and bool(re.search(r'katilmak isteyen ogretmen',fold(text)))
+                and 'is birligi kapsaminda' in fold(text))))
     if (country.get('result')!='eligible' or not quote_present(country_quote,text)
-            or not (universal_course or re.search(r'\b(?:turkey|turkiye|all countries|any country|every country|worldwide|anywhere in the world|around the world|tum ulkeler|her ulke)\b',fold(country_quote)))):
+            or not (universal_course or national_teacher or re.search(r'\b(?:turkey|turkiye|all countries|any country|every country|worldwide|anywhere in the world|around the world|tum ulkeler|her ulke|turkish participants|turkish applicants|turkish citizens|turk katilimci\w*|turk vatandas\w*)\b',fold(country_quote)))):
         return 'country_evidence_required'
     target_quote=target.get('evidence') or ''
+    individual_teacher=(set(target.get('targets',[]))=={'teacher'}
+        and any(p.get('role')=='ogretmen_birey' for p in draft.get('paths',[]))
+        and bool(re.search(r'\b(?:individuals?|anyone|everyone|bireyler|herkes|public sector employees|public employees|kamu calisanlari|ozel sektor calisanlari|others can apply|applications from others)\b',fold(target_quote))))
     if (target.get('result')!='eligible' or not quote_present(target_quote,text)
             or not set(target.get('targets',[])) & {'school','teacher','student'}
-            or not re.search(r'lise|secondary|high school|pupil|school education|teachers?|educators?|schools',fold(target_quote))):
+            or not (individual_teacher or re.search(r'lise|secondary|high school|pupil|school education|teachers?|educators?|schools|ogretmen|okul|ogrenci|egitimci',fold(target_quote)))):
         return 'audience_evidence_required'
     if not any(p.get('role') in ('dogrudan','ortak','ogretmen_birey','ogrenci_birey') for p in draft.get('paths',[])):
         return 'application_path_required'
@@ -89,13 +102,16 @@ def publish_batch(store, job, today=None):
             for field in ('budget_max','currency'):
                 if draft.get(field) is None and current.get(field) is not None:call[field]=current[field]
             url=item['documents'][0]['url']
+            deadline_url=next((d['url'] for d in item['document_texts']
+                if quote_present(call.get('deadline_evidence'),d['text'])),url)
             call.update(official_url=url,official_url_verified=True,deadline_precision='day',
-                deadline_year_inferred=False,deadline_review_required=False,deadline_source_url=url,
+                deadline_year_inferred=False,deadline_review_required=False,deadline_source_url=deadline_url,
                 reviewed_discovery_version=current.get('discovery_version'),
                 audience_tags=[t for t in draft['target_scope']['targets'] if t in ('school','teacher','student')])
             if not call.get('deadline'):
                 call['deadline_precision']='not_applicable'
-                call['application_schedule']['source_url']=url
+                call['application_schedule']['source_url']=next((d['url'] for d in item['document_texts']
+                    if quote_present(call['application_schedule'].get('evidence'),d['text'])),url)
             call.pop('discovery_changes_pending',None)
             try:
                 commit_verified_review(store,ident,call,proposal['base_version'],

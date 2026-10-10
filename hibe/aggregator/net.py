@@ -82,19 +82,21 @@ class Fetcher:
             if path.stat().st_size > self.max_bytes * 2 + 16384: return None
             data = json.loads(path.read_text(encoding='utf-8'))
             if data.get('url') != url: return None
+            if not data.get('final_url'): return None
+            self.check(data['final_url'])
             body = base64.b64decode(data['body'], validate=True)
             if len(body) > self.max_bytes: return None
-            response = httpx.Response(200, headers=data['headers'], content=body, request=httpx.Request('GET', url))
+            response = httpx.Response(200, headers=data['headers'], content=body, request=httpx.Request('GET', data['final_url']))
             self.cache[url] = response
             return response
-        except (OSError, ValueError, KeyError, TypeError):
+        except (OSError, ValueError, KeyError, TypeError, FetchError):
             return None
 
     def _save_cache(self, url, response):
         self.cache[url] = response
         if self.cache_dir is None: return
         self.cache_dir.mkdir(parents=True, exist_ok=True)
-        payload = json.dumps({'url': url, 'headers': dict(response.headers),
+        payload = json.dumps({'url': url, 'final_url': str(response.request.url), 'headers': dict(response.headers),
             'body': base64.b64encode(response.content).decode()}, ensure_ascii=False)
         path = self.cache_dir / (hashlib.sha256(url.encode()).hexdigest() + '.json')
         fd, name = tempfile.mkstemp(dir=self.cache_dir, suffix='.tmp')
@@ -109,6 +111,13 @@ class Fetcher:
         policy = self.access_policy or {}
         if policy.get('terms_status') != 'allowed' or not policy.get('evidence_url') or not policy.get('checked_at'):
             raise FetchError('Kaynak kullanım izni incelenmemiş; manuel inceleme gerekli', 'permission')
+        # The provider explicitly documents these public API endpoints. This does
+        # not exempt website HTML, other hosts, or arbitrary endpoints from robots.
+        if (policy.get('documented_api') == 'grants_gov_public'
+                and policy.get('evidence_url') == 'https://www.grants.gov/api/terms-conditions'
+                and url in ('https://api.grants.gov/v1/api/search2',
+                            'https://api.grants.gov/v1/api/fetchOpportunity')):
+            return
         origin = 'https://' + urlsplit(url).netloc
         if origin not in self.robots:
             parser = RobotFileParser(origin + '/robots.txt')
@@ -211,7 +220,7 @@ class Fetcher:
                     if status == 304:
                         if cached is None: raise FetchError('304 için önceki veri yok', 'cache')
                         return httpx.Response(200, headers=cached.headers, content=cached.content,
-                            request=httpx.Request(method, url), extensions={'not_modified': True})
+                            request=httpx.Request(method, str(cached.request.url)), extensions={'not_modified': True})
                     if status != 200:
                         raise FetchError(f'HTTP {status}', 'rate_limit' if status == 429 else 'http')
                     try: length = int(response.headers.get('content-length', '0'))

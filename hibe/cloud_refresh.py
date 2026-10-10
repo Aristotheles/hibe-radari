@@ -1,6 +1,7 @@
 """Cloud job entry point using service identity, without web/admin credentials."""
 import json
 import os
+import time
 from datetime import datetime, timezone
 from .refresh import refresh
 from .store import FirestoreStore
@@ -16,13 +17,23 @@ def main():
     started = datetime.now(timezone.utc).isoformat()
     try:
         collect_only=os.environ.get('AI_BATCH_COLLECT_ONLY')=='true'
-        result = {'status':'batch_collection_only'} if collect_only else refresh(store)
-        if os.environ.get('AI_REVIEW_ENABLED') == 'true':
-            from .batch_pipeline import finish_batches, submit_candidates
-            from .aggregator.collector import load_config
-            result['document_review'] = finish_batches(store)
-            if not collect_only:
-                result['document_review_submission'] = submit_candidates(store,load_config())
+        from .job_lease import processing_lease
+        wait_until=time.monotonic()+600
+        while True:
+            with processing_lease(store,'ai_batch_result_processing',ttl=900 if collect_only else 4000) as owner:
+                if owner:
+                    result = {'status':'batch_collection_only'} if collect_only else refresh(store)
+                    if os.environ.get('AI_REVIEW_ENABLED') == 'true':
+                        from .batch_pipeline import finish_batches, submit_candidates
+                        from .aggregator.collector import load_config
+                        result['document_review'] = finish_batches(store,processing_owner=owner)
+                        if not collect_only:
+                            result['document_review_submission'] = submit_candidates(store,load_config())
+                    break
+            if collect_only:
+                result={'status':'processing_elsewhere'};break
+            if time.monotonic()>=wait_until:raise RuntimeError('İş sahipliği bekleme sınırı')
+            time.sleep(5)
     except Exception as exc:
         # Keep credentials, fetched content and exception messages out of logs.
         result = {'status': 'failed', 'error_kind': type(exc).__name__}

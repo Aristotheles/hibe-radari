@@ -50,8 +50,21 @@ def rank(c,p,today):
  return {'total':ROLES[p['role']]+th+tm,'urgent':days is not None and days<14,'time':tm}
 def public_calls(calls,today):
  out=[]
+ seen_pages=set()
  for c in calls:
   if publishable(c,today):
+   # AB Başkanlığı publishes numeric and titled aliases of the same page.
+   # Collapse only aliases with matching real application documents and period;
+   # preserve all stored observations and different application phases.
+   from urllib.parse import urlsplit
+   u=urlsplit(c.get('official_url') or c.get('source_url') or '')
+   page=re.fullmatch(r'/(?:[^/]+_)?(\d+)\.html',u.path) if u.hostname=='www.ab.gov.tr' and not u.query else None
+   forms=tuple(sorted((d['url'],d['hash']) for d in c['documents']
+     if d['url'].lower().endswith('.pdf') and re.search(r'application|basvuru',d['url'],re.I)))
+   if page and len(forms)>=2:
+    identity=(page[1],forms,c.get('deadline'),c.get('opportunity_type'),c.get('programme'),c.get('call_period'),c.get('application_path'))
+    if identity in seen_pages:continue
+    seen_pages.add(identity)
    d={k:c.get(k) for k in ('id','title','summary','themes','deadline','official_status','budget_max','currency','demo','source_id','source_url','organization','deadline_precision','deadline_evidence','deadline_checked_at','eligibility_assessment','audience_summary','audience_tags','application_schedule','opportunity_type','deadline_time')}
    d['last_checked']=c.get('last_verified_at') or c.get('approval',{}).get('at')
    d['version']=version(c)

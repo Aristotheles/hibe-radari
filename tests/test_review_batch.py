@@ -1,11 +1,19 @@
 import unittest
 from unittest.mock import Mock
 import httpx
-from hibe.review_batch import DailyExtractor, document_text, review_batch
+from hibe.review_batch import DailyExtractor, document_text, review_batch, linked_pdf_urls
 from hibe.store import MemoryStore
 
 
 class ReviewBatchTests(unittest.TestCase):
+    def test_pdf_links_are_observed_body_links_on_permitted_hosts_only(self):
+        response=httpx.Response(200,headers={'content-type':'text/html'},
+            text='<nav><a href="/old.pdf">old</a></nav><main><a href="conditions.pdf">Rules</a><a href="conditions.pdf">Duplicate</a><a href="https://evil.org/x.pdf">External</a><a href="https://user@example.org/y.pdf">Credentials</a></main>',
+            request=httpx.Request('GET','https://example.org/call/'))
+        self.assertEqual(linked_pdf_urls(response,['example.org']),['https://example.org/call/conditions.pdf'])
+        response=httpx.Response(200,headers={'content-type':'text/html'},
+            text='<main>'+''.join(f'<a href="/{i}.pdf">Rules</a>' for i in range(11))+'</main>',request=httpx.Request('GET','https://example.org/'))
+        with self.assertRaises(ValueError):linked_pdf_urls(response,['example.org'])
     def test_existing_feed_record_reviews_detail_without_mutating_identity(self):
         from unittest.mock import patch
         store = MemoryStore()

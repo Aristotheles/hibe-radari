@@ -34,5 +34,7 @@ class SourceAcceptanceTests(unittest.TestCase):
         by={c['source_id']:c for c in cards}
         self.assertEqual(by['inventory-1268ef989142']['status'],'permission_required')
         self.assertEqual(by['inventory-ec9ada7f2c10']['status'],'manual_pending')
-        self.assertEqual(by['inventory-cfa03fdcd36b']['status'],'manual_pending')
+        self.assertIn(by['inventory-cfa03fdcd36b']['status'],('adapter_configured','metadata_fixture_verified'))
+        self.assertEqual(by['inventory-cfa03fdcd36b']['method'],'source_discovery')
+        self.assertTrue(by['inventory-cfa03fdcd36b']['list_fixture'])
         self.assertEqual(by['source-1']['deadline_evidence']['date'],'2026-10-07')

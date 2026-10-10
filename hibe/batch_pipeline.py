@@ -8,13 +8,25 @@ from .aggregator.net import Fetcher
 from .aggregator.feeds import entry_detail_url
 from .auto_review import classify
 from .domain import version, publishable
-from .review_batch import document_text
+from .review_batch import document_text, linked_pdf_urls
 from .scan import normalized_hash
 from .gemini_batch import GeminiBatch
 from .batch_publication import publish_batch
 
 
-def finish_batches(store, api=None):
+def finish_batches(store, api=None, processing_owner=None):
+    from .job_lease import processing_lease, owns_lease
+    if processing_owner:
+        if not owns_lease(store,'ai_batch_result_processing',processing_owner):raise ValueError('Geçerli iş sahipliği gerekli')
+        return _finish_batches(store,api)
+    with processing_lease(store,'ai_batch_result_processing') as acquired:
+        if not acquired:
+            return {'status':'processing_elsewhere','batches':[],
+                'pending':sum(j.get('status') in ('submitted','submitting','submission_uncertain') for j in store.all('ai_batches'))}
+        return _finish_batches(store,api)
+
+
+def _finish_batches(store, api=None):
     api=api or GeminiBatch()
     results=[]
     for job in store.all('ai_batches'):
@@ -35,9 +47,12 @@ def submit_candidates(store, config, api=None):
     pending_jobs={j['id'] for j in store.all('ai_batches') if j.get('status') in ('submitted','submitting','submission_uncertain')}
     pending_inputs={i['id']:i for i in store.all('ai_batch_inputs') if i.get('batch_id') in pending_jobs}
     settings={s['id']:s for s in store.all('source_settings')}
+    disabled={ident for setting in settings.values() if setting.get('enabled') is False
+        for ident in setting.get('connector_ids',[])}
     clients={};locks={}
     for ident,source in sources.items():
         if (source.get('access_policy',{}).get('terms_status')=='allowed'
+                and ident not in disabled
                 and settings.get(ident,{}).get('enabled',source.get('enabled',True))):
             clients[ident]=Fetcher(source['allowed_hosts'],delay=config.get('delay_seconds',1),
                 cache_dir=ROOT/'data/aggregator/http-cache',access_policy=source['access_policy'])
@@ -45,21 +60,32 @@ def submit_candidates(store, config, api=None):
     def gather(call):
         approved=call.get('approval',{}).get('reviewed') is True and call.get('approval',{}).get('version')==version(call)
         if call.get('demo'):return None
-        if call.get('source_id')!='esep-courses' and classify(call,today)['group']!='candidate':return None
+        scoped_discovery=sources.get(call.get('source_id'),{}).get('type') in ('source_discovery','grants_gov')
+        if call.get('source_id')!='esep-courses' and not scoped_discovery and classify(call,today)['group']!='candidate':return None
         if call['source_id'] not in clients:return {'id':call['id'],'status':'permission_review_required'}
         source=sources[call['source_id']]
         url=call.get('official_url') or call.get('source_url')
         try:
-            if source.get('entry_url_template') and call.get('source_entry_id') and not call.get('official_url'):
+            if source.get('type')!='grants_gov' and source.get('entry_url_template') and call.get('source_entry_id') and not call.get('official_url'):
                 url=entry_detail_url(source,call['source_entry_id'])
-            with locks[call['source_id']]:text=document_text(clients[call['source_id']].get(url))
+            with locks[call['source_id']]:
+                pdf_urls=[]
+                if source.get('type')=='grants_gov':
+                    from .aggregator.grants_gov import detail_text
+                    text=detail_text(source,clients[call['source_id']],call['source_entry_id'])
+                else:
+                    response=clients[call['source_id']].get(url)
+                    text=document_text(response)
+                    pdf_urls=linked_pdf_urls(response,source['allowed_hosts'])
             documents=[{'url':url,'hash':normalized_hash(text)}]
             document_texts=[{'url':url,'text':text}]
-            for support_url in source.get('review_support_urls',[]):
+            for support_url in dict.fromkeys(pdf_urls+source.get('review_support_urls',[])):
+                if support_url==url:continue
                 with locks[call['source_id']]:support=document_text(clients[call['source_id']].get(support_url))
                 documents.append({'url':support_url,'hash':normalized_hash(support)})
                 document_texts.append({'url':support_url,'text':support})
             text='\n'.join(d['text'] for d in document_texts)
+            if len(text)>48000:raise ValueError('Birleşik tam belge sınırı; sessiz kırpma yapılmaz')
             if approved and call.get('documents')==documents:
                 from .verified_review import commit_verified_review
                 approval=call['approval']
