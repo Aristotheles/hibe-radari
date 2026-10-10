@@ -1,4 +1,4 @@
-import { dateValue } from './radar.mjs?v=20261010-r2';
+import { dateValue } from './radar.mjs?v=20261010-r4';
 
 export function todayISO(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
@@ -11,6 +11,7 @@ export function daysLeft(deadline, today = todayISO()) {
 }
 
 export function groupOf(call, today = todayISO()) {
+  if (call.application_schedule?.kind && ['rolling', 'self_paced'].includes(call.application_schedule.kind)) return 'Sürekli açık fırsatlar';
   const days = daysLeft(call.deadline, today);
   if (days === null) return 'Tarihi açıklanmadı';
   if (days < 0) return 'Süresi geçti';
@@ -19,6 +20,8 @@ export function groupOf(call, today = todayISO()) {
 }
 
 export function pathsFor(call, audience) {
+  const tag = audience === 'student' ? 'student' : audience === 'me' ? 'teacher' : audience === 'school' ? 'school' : null;
+  if (tag && (call.audience_tags || []).includes(tag)) return call.paths || [];
   return (call.paths || []).filter(p => audience === 'all' || (audience === 'me' ? p.role === 'ogretmen_birey' : audience === 'student' ? p.role === 'ogrenci_birey' : !['ogretmen_birey','ogrenci_birey'].includes(p.role)));
 }
 

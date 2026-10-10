@@ -4,6 +4,9 @@ class MemoryStore:
  def get(self,k,i):return json.loads(json.dumps(self.data.get((k,i))))
  def put(self,k,i,v):self.data[k,i]=json.loads(json.dumps(v))
  def all(self,k):return [json.loads(json.dumps(v)) for (kind,_),v in self.data.items() if kind==k]
+ def create(self,k,i,v):
+  if (k,i) in self.data:return False
+  self.put(k,i,v);return True
 class SQLiteStore:
  def __init__(self,path):
   self.db=sqlite3.connect(path,check_same_thread=False);self.lock=threading.RLock()
@@ -15,6 +18,9 @@ class SQLiteStore:
   with self.lock:self.db.execute('INSERT OR REPLACE INTO records VALUES(?,?,?)',(k,i,json.dumps(v)));self.db.commit()
  def all(self,k):
   with self.lock:return [json.loads(r[0]) for r in self.db.execute('SELECT value FROM records WHERE kind=?',(k,))]
+ def create(self,k,i,v):
+  with self.lock:
+   cursor=self.db.execute('INSERT OR IGNORE INTO records VALUES(?,?,?)',(k,i,json.dumps(v)));self.db.commit();return cursor.rowcount==1
 class FirestoreStore:
  def __init__(self):
   from firebase_admin import firestore
@@ -22,3 +28,7 @@ class FirestoreStore:
  def get(self,k,i):return self.db.collection(k).document(i).get().to_dict()
  def put(self,k,i,v):self.db.collection(k).document(i).set(v)
  def all(self,k):return [d.to_dict() for d in self.db.collection(k).stream()]
+ def create(self,k,i,v):
+  from google.api_core.exceptions import AlreadyExists
+  try:self.db.collection(k).document(i).create(v);return True
+  except AlreadyExists:return False

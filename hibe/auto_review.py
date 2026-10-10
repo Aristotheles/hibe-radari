@@ -54,5 +54,19 @@ def classify(call, today):
             'authority': 'automatic_triage', 'publication_approved': False}
 
 
-def review_queue(calls, today):
-    return [dict(c, auto_review=classify(c, today)) for c in calls]
+def review_queue(calls, today, decisions=None):
+    decisions={d['id']:d for d in decisions or []}
+    result=[]
+    from .domain import publishable
+    for call in calls:
+        review=classify(call,today)
+        if publishable(call,today):
+            review['group']='published';review['reasons']=['Bu sürüm doğrulanarak yayına alındı.']
+        else:
+            decision=decisions.get(call['id'])
+            if decision and decision.get('base_version')==version(call):
+                status=decision['status']
+                review['group']={'closed':'expired','out_of_scope':'out_of_scope'}.get(status,'uncertain')
+                review['reasons']=['Toplu belge incelemesi: '+status+'. İncelenen kaynak sürümü kayıtlı; yayın onayı değildir.']
+        result.append(dict(call,auto_review=review))
+    return result

@@ -1,5 +1,5 @@
-import { themes, roles, eligibilityLabels, conditionLabels, safeHttps, deadlineLabel, filterCalls } from './radar.mjs?v=20261010-r2';
-import { todayISO, daysLeft, groupOf, audienceCalls, pathsFor, fullDate, calendarCells, calendarICS } from './decision.mjs?v=20261010-r2';
+import { themes, roles, eligibilityLabels, conditionLabels, safeHttps, deadlineLabel, filterCalls } from './radar.mjs?v=20261010-r4';
+import { todayISO, daysLeft, groupOf, audienceCalls, pathsFor, fullDate, calendarCells, calendarICS } from './decision.mjs?v=20261010-r4';
 
 export function node(tag, text, cls) { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (cls) n.className = cls; return n; }
 const $ = id => document.getElementById(id);
@@ -14,13 +14,13 @@ function badge(path) { return node('span', roles[path?.role] || 'Rol belirsiz', 
 function reason(call) { return call.audience_summary || ((call.themes || []).length ? (call.themes || []).map(t => themes[t] || t).join(', ') + ' konusuyla ilgili. Başvuru koşullarını ayrıca inceleyin.' : 'İlgili başvuru yolunu ve koşulları inceleyin.'); }
 function checked(call) { return call.last_checked ? fullDate(String(call.last_checked).slice(0, 10)) : 'Bilinmiyor'; }
 function link(href, text, cls) { const a = node('a', text, cls); a.href = href; return a; }
-function countText(call) { const days = daysLeft(call.deadline); return days === null ? 'Tarih bekleniyor' : days < 0 ? 'Süresi geçti' : days === 0 ? 'Son başvuru günü' : days + ' gün kaldı'; }
+function countText(call) { const days = daysLeft(call.deadline); return call.application_schedule?.kind === 'self_paced' ? 'Kendi hızında eğitim' : call.application_schedule?.kind === 'rolling' ? 'Sürekli başvuru' : days === null ? 'Tarih bekleniyor' : days < 0 ? 'Süresi geçti' : days === 0 ? 'Son başvuru günü' : days + ' gün kaldı'; }
 
 export function renderListing(calls, filters, audience) {
   const items = filterCalls(audienceCalls(calls, audience).map(c => ({...c, paths: pathsFor(c, audience)})), filters);
   $('cards').replaceChildren(); $('result-count').textContent = `${items.length} fırsat listeleniyor`;
   $('radar-title').textContent = audience === 'all' ? 'Türkiye için proje ve eğitim fırsatları.' : audience === 'school' ? 'Okulun için bir sonraki fırsat.' : audience === 'student' ? 'Lise öğrencileri için fırsatlar.' : 'Öğretmenler için fırsatlar.';
-  for (const group of ['Acil (14 günden az)', 'Bu ay', 'Daha ileri', 'Tarihi açıklanmadı', 'Süresi geçti']) {
+  for (const group of ['Acil (14 günden az)', 'Bu ay', 'Daha ileri', 'Sürekli açık fırsatlar', 'Tarihi açıklanmadı', 'Süresi geçti']) {
     const list = items.filter(c => groupOf(c) === group); if (!list.length) continue;
     const section = node('section', undefined, 'opportunity-section'), heading = node('div', undefined, 'section-heading'), title = node('h2', group);
     title.append(node('span', String(list.length), 'group-count')); heading.append(title, node('span', group === 'Tarihi açıklanmadı' ? 'Son tarih kaydı yok.' : 'Son tarihe göre değerlendirin.')); section.append(heading);
@@ -28,13 +28,14 @@ export function renderListing(calls, filters, audience) {
     for (const c of list) {
       const paths = pathsFor(c, audience).filter(p => !filters.role || filters.role === p.role);
       const a = link('/ilan/' + encodeURIComponent(c.id) + '?audience=' + audience, undefined, 'opportunity-card');
-      const top = node('div', undefined, 'card-top'); top.append(badge(paths[0]), node('span', c.demo ? 'DEMO · Kurgusal' : c.opportunity_type === 'competition' ? 'Yarışma' : 'Yayımlanmış kayıt', 'program-label'));
+      const typeLabels={competition:'Yarışma / ödül',grant:'Hibe',scholarship:'Burs',training:'Eğitim',teacher_training:'Öğretmen eğitimi',exchange:'Değişim',project:'Proje'};
+      const top = node('div', undefined, 'card-top'); top.append(badge(paths[0]), node('span', c.demo ? 'DEMO · Kurgusal' : typeLabels[c.opportunity_type] || 'Proje fırsatı', 'program-label'));
       const row = node('div', undefined, 'card-title-row'); row.append(node('h3', c.title), icon());
-      const date = node('div', undefined, 'card-deadline'), days = daysLeft(c.deadline), time = node('time', c.deadline ? fullDate(c.deadline) : 'Son tarih bilinmiyor');
+      const date = node('div', undefined, 'card-deadline'), days = daysLeft(c.deadline), time = node('time', c.deadline ? fullDate(c.deadline) : ['rolling', 'self_paced'].includes(c.application_schedule?.kind) ? 'Sabit son başvuru tarihi yok' : 'Son tarih bilinmiyor');
       if (c.deadline) time.dateTime = c.deadline;
       date.append(node('span', countText(c), days !== null && days >= 0 && days < 14 ? 'deadline-urgent' : 'deadline-normal'), time);
       const why = node('div', undefined, 'card-reason'); why.append(icon('check'), node('span', reason(c)));
-      const pending = paths[0]?.eligibility === 'belirsiz' && paths[0]?.role === 'ogrenci_birey' ? 'Öğrenci başvurusu · kişisel koşulları kontrol edin' : eligibilityLabels[paths[0]?.eligibility] || 'Uygunluk belirsiz';
+      const pending = paths[0]?.eligibility === 'belirsiz' && ((c.audience_tags || []).length || paths[0]?.role === 'ogrenci_birey') ? 'Kişisel ve proje koşullarını kontrol edin' : eligibilityLabels[paths[0]?.eligibility] || 'Başvuru koşullarını kontrol edin';
       const bottom = node('div', undefined, 'card-bottom'); bottom.append(node('span', paths.length > 1 ? paths.length + ' başvuru yolu' : pending), node('span', 'Son kontrol: ' + checked(c)));
       a.append(top, row, date, why, bottom); grid.append(a);
     }
@@ -54,10 +55,10 @@ export function renderDetail(call, selected = 0) {
   heading.append(h1, node('p', call.demo ? 'DEMO · Kurgusal örnek; gerçek başvuruya dayanak değildir.' : call.summary), node('p', 'Son kontrol: ' + checked(call), 'verification')); article.append(heading);
   article.append(node('p', 'Kaynak: ' + (call.organization || call.source_id || 'Bilgi kaydı yok')));
   if (call.deadline_evidence) article.append(node('p', 'Son tarih kanıtı: ' + call.deadline_evidence, 'evidence'));
-  if (call.deadline_precision && call.deadline_precision !== 'day') article.append(node('p', 'Son tarih kesin değil; doğrulama gerekli.', 'verification'));
+  if (call.deadline_precision && !['day', 'not_applicable'].includes(call.deadline_precision)) article.append(node('p', 'Son tarih kesin değil; doğrulama gerekli.', 'verification'));
   const facts = node('div', undefined, 'facts-grid');
   const support = call.budget_max != null ? new Intl.NumberFormat('tr-TR').format(call.budget_max) + (call.currency ? ' ' + call.currency : ' · para birimi bilinmiyor') : 'Bilgi kaydı yok';
-  for (const [label, value, note] of [['Son başvuru', call.deadline ? fullDate(call.deadline) : 'Tarihi açıklanmadı', call.deadline_time || 'Kapanış saati bilinmiyor'], ['Destek', support, 'Yalnız mevcut veri gösterilir'], ['Eş finansman', 'Bilgi kaydı yok', 'Resmî metinden doğrulayın'], ['Ortak bilgisi', 'Bilgi kaydı yok', 'Başvuru rolü ortak gerekliliğini tek başına kanıtlamaz']]) {
+  for (const [label, value, note] of [['Son başvuru', call.deadline ? fullDate(call.deadline) : call.application_schedule ? 'Sabit son tarih yok' : 'Tarihi açıklanmadı', call.deadline_time || 'Kapanış saati bilinmiyor'], ['Destek', support, 'Yalnız mevcut veri gösterilir'], ['Eş finansman', 'Bilgi kaydı yok', 'Resmî metinden doğrulayın'], ['Ortak bilgisi', 'Bilgi kaydı yok', 'Başvuru rolü ortak gerekliliğini tek başına kanıtlamaz']]) {
     const fact = node('div'); fact.append(node('span', label), node('strong', value), node('small', note)); facts.append(fact);
   } article.append(facts);
   if (paths.length > 1) {

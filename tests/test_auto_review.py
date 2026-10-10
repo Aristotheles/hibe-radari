@@ -5,6 +5,15 @@ from hibe.auto_review import classify, review_queue
 
 
 class AutoReviewTests(unittest.TestCase):
+    def test_batch_decision_only_sorts_the_reviewed_version(self):
+        from hibe.domain import version
+        call={'id':'c','title':'Lise yarışması','deadline':None}
+        decision={'id':'c','status':'closed','base_version':version(call)}
+        self.assertEqual(review_queue([call],date(2026,10,10),[decision])[0]['auto_review']['group'],'expired')
+        changed=dict(call,title='Yeni lise yarışması')
+        self.assertEqual(review_queue([changed],date(2026,10,10),[decision])[0]['auto_review']['group'],'candidate')
+        self.assertNotIn('approval',call)
+
     def test_news_and_call_are_not_confused(self):
         self.assertEqual(classify({'title':'Okul ziyareti gerçekleştirildi'},date(2026,10,10))['group'],'news')
         self.assertEqual(classify({'title':'Öğretmen yarışması başvuruları ve önceki yıl sonuçları'},date(2026,10,10))['group'],'candidate')

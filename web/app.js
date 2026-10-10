@@ -1,7 +1,7 @@
-import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs?v=20261010-r2';
+import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs?v=20261010-r4';
 
-import { renderListing, renderDetail, renderCalendar } from '/views.mjs?v=20261010-r2';
-import { todayISO } from '/decision.mjs?v=20261010-r2';
+import { renderListing, renderDetail, renderCalendar } from '/views.mjs?v=20261010-r4';
+import { todayISO } from '/decision.mjs?v=20261010-r4';
 
 const $ = s => document.querySelector(s);
 let audience = 'all', calendarAudience = 'all', currentView = 'radar';
@@ -202,7 +202,7 @@ async function admin() {
     const triageFilters=el('div',undefined,'filter-bar');triageFilters.id='auto-review-filters';
     const selectors={};
     for(const [key,label,options] of [
-      ['group','Otomatik ayıklama',[['candidate','Fırsat adayları'],['','Tüm kayıtlar'],['news','Haberler'],['expired','Süresi geçmiş'],['out_of_scope','Türkiye uygun değil'],['uncertain','Bilgi eksik']]],
+      ['group','Otomatik ayıklama',[['candidate','Yeni fırsat adayları'],['published','Yayındakiler'],['','Tüm kayıtlar'],['news','Haberler'],['expired','Süresi geçmiş'],['out_of_scope','Hedef dışı öneriler'],['uncertain','Bilgi eksik']]],
       ['audience','Hedef kitle adayı',[['','Tümü'],['lise','Lise öğrencisi'],['ogretmen','Öğretmen'],['okul','Okul']]],
       ['type','Fırsat türü',[['','Tümü'],['grant','Hibe / fon'],['competition','Yarışma'],['scholarship','Burs'],['teacher_training','Öğretmen eğitimi'],['eu_project','AB projesi'],['partner_search','Ortak arama'],['unknown','Türü belirsiz']]],
       ['turkey','Türkiye uygunluğu',[['','Tümü'],['uygun','Kanıtla uygun'],['belirsiz','Kanıt eksik'],['uygun_degil','Uygun değil']]]]) {

@@ -5,6 +5,16 @@ from hibe.store import MemoryStore
 
 
 class RefreshTests(unittest.TestCase):
+    def test_first_party_catalogue_reaches_document_review_without_keyword_score(self):
+        config={'sources':[{'id':'esep-courses','access_policy':{'terms_status':'allowed'}}]}
+        course={'id':'course','source_id':'esep-courses','title':'Small habits, big impact'}
+        report={'run_status':'success','sources':[],'counts':{},'review':[],'general':[course,{'id':'news','source_id':'other'}],'rejected':[]}
+        with patch('hibe.refresh.load_config',return_value=config),patch('hibe.refresh.due_sources',return_value=['esep-courses']), \
+             patch('hibe.refresh.run',return_value=report),patch('hibe.refresh.write_report'),patch('hibe.refresh.persist_report',return_value=1) as persist:
+            refresh(MemoryStore())
+        self.assertEqual(persist.call_args.args[0]['review'],[course])
+        self.assertEqual(persist.call_args.args[0]['general'],[])
+
     def test_only_permitted_sources_and_review_candidates_are_persisted(self):
         config = {'sources': [
             {'id': 'allowed', 'access_policy': {'terms_status': 'allowed'}},

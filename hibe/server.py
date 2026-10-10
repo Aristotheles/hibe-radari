@@ -58,7 +58,7 @@ def handler(app):
      u=self.user();self.send(200,app.service.export_csv(u).encode('utf-8'),'text/csv; charset=utf-8');return
     if p=='/api/admin':
      from .auto_review import review_queue
-     u=self.user();app.service.require_admin(u);self.send(200,{'calls':review_queue(app.service.store.all('calls'),app.service.today()),'review_proposals':app.service.store.all('review_proposals'),'sources':app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))),'acceptance_cards':json.loads((ROOT/'config/source_acceptance.json').read_text(encoding='utf-8')),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
+     u=self.user();app.service.require_admin(u);self.send(200,{'calls':review_queue(app.service.store.all('calls'),app.service.today(),app.service.store.all('publication_decisions')),'review_proposals':app.service.store.all('review_proposals'),'sources':app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))),'acceptance_cards':json.loads((ROOT/'config/source_acceptance.json').read_text(encoding='utf-8')),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
     if p in {'/','/takvim','/nasil-calisir','/aboneligim','/yonetim'} or p.startswith('/ilan/'):
      from .presentation import page
      template=(ROOT/'web/index.html').read_text(encoding='utf-8')

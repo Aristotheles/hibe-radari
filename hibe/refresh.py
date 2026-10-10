@@ -16,7 +16,11 @@ def refresh(store):
     report['audit_scope'] = 'scheduled_permitted_sources; no approval or publication'
     write_report(report, ROOT / 'data/aggregator/refresh-attempt.json')
     # General news and rejected noise are not opportunities in the review queue.
-    candidates = dict(report, general=[], rejected=[])
+    # A verified first-party teacher course catalogue is already a discovery scope.
+    # Weak title keywords must not suppress new courses before full-document review.
+    courses=[row for group in ('general','rejected') for row in report.get(group,[])
+        if row.get('source_id')=='esep-courses']
+    candidates = dict(report, review=report.get('review',[])+courses,general=[], rejected=[])
     changed = persist_report(candidates, store)
     return {'status': report['run_status'], 'sources': len(report['sources']),
             'changed': changed, 'counts': report['counts'],

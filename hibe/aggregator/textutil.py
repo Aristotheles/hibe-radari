@@ -43,7 +43,7 @@ MONTHS = {
 _MONTH_RE = '|'.join(sorted(MONTHS, key=len, reverse=True))
 _DATE_PATTERNS = [
     # 6. Dezember 2026 · 15 Kasım 2026 · 15th November 2026
-    (re.compile(rf'(?<!\d)(\d{{1,2}})(?:st|nd|rd|th)?\.?\s+({_MONTH_RE})[a-z]*\.?,?\s+(\d{{4}})'), 'dmy'),
+    (re.compile(rf'(?<!\d)(\d{{1,2}})(?:st|nd|rd|th)?\.?(?:\s+of)?\s+({_MONTH_RE})[a-z]*\.?,?\s+(\d{{4}})'), 'dmy'),
     # November 15, 2026
     (re.compile(rf'({_MONTH_RE})[a-z]*\.?\s+(\d{{1,2}})(?:st|nd|rd|th)?,?\s+(\d{{4}})'), 'mdy'),
     (re.compile(r'(?<!\d)(\d{4})-(\d{2})-(\d{2})(?!\d)'), 'iso'),

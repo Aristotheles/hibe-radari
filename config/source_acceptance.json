@@ -306,22 +306,22 @@
     "source_id": "inventory-970a009e204e",
     "name": "European School Education Platform",
     "official_url": "https://school-education.ec.europa.eu/",
-    "status": "manual_pending",
+    "status": "metadata_fixture_verified",
     "access_policy": {
       "terms_status": "unreviewed",
       "evidence_url": null,
       "checked_at": null
     },
-    "method": "manual",
-    "list_fixture": null,
+    "method": "HTML course catalogue",
+    "list_fixture": "tests/fixtures/esep-courses-list.html",
     "detail_fixture": null,
     "sample_call": null,
     "deadline_evidence": null,
-    "duplicate_test": null,
-    "empty_error_test": null,
+    "duplicate_test": "tests/test_esep_courses.py",
+    "empty_error_test": "tests/test_esep_courses.py",
     "interval_hours": 24,
     "checked_at": "2026-10-09T22:58:42.997042+00:00",
-    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "reason": "ESEP resmî kurs katalog sayfaları canlı HTTP ve robots denetimiyle okundu; 38 benzersiz kurs URL bulundu. EU-owned öğretmen kursu üstverisi/atıflı Türkçe özet; hibe onayı veya bütün kursların açık olduğu iddiası değildir.",
     "page_observation": {
       "source_id": "inventory-970a009e204e",
       "url": "https://school-education.ec.europa.eu/",
@@ -350,7 +350,7 @@
         "structured_data": 0
       }
     },
-    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "detail_review_reason": "Tam kurs metni ve platform erişimi Batch incelemesi; eski oturum tarihleri başvuru tarihi değildir. Self-paced açık olma kanıtı ayrı denetlenir.",
     "manual_check": {
       "url": "https://school-education.ec.europa.eu/",
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."

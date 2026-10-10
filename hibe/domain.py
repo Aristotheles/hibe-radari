@@ -32,6 +32,10 @@ def validate(c):
 def calendar_status(c,today):
  return 'kapandi' if c['deadline'] and date.fromisoformat(c['deadline'])<today else 'acik' if c['deadline'] else 'bilinmiyor'
 def publishable(c,today):
+ if (c.get('application_schedule') or {}).get('kind') in ('rolling','self_paced'):
+  try:
+   if (today-date.fromisoformat(c['last_verified_at'][:10])).days>14:return False
+  except (KeyError,ValueError,TypeError):return False
  if c.get('from_aggregator'):
   from .aggregator.bridge import review_ready
   if not review_ready(c):return False
@@ -48,7 +52,7 @@ def public_calls(calls,today):
  out=[]
  for c in calls:
   if publishable(c,today):
-   d={k:c.get(k) for k in ('id','title','summary','themes','deadline','official_status','budget_max','currency','demo','source_id','source_url','organization','deadline_precision','deadline_evidence','deadline_checked_at','eligibility_assessment','audience_summary','opportunity_type','deadline_time')}
+   d={k:c.get(k) for k in ('id','title','summary','themes','deadline','official_status','budget_max','currency','demo','source_id','source_url','organization','deadline_precision','deadline_evidence','deadline_checked_at','eligibility_assessment','audience_summary','audience_tags','application_schedule','opportunity_type','deadline_time')}
    d['last_checked']=c.get('last_verified_at') or c.get('approval',{}).get('at')
    d['version']=version(c)
    d['paths']=[dict(p,eligibility=eligibility(p),ranking=rank(c,p,today)) for p in c['paths']]

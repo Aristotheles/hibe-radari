@@ -947,3 +947,32 @@ Maksimum uygun fırsat hedefi kullanıcı tarafından açıkça teyit edildi. Li
 82 aday uygun ve onaylı82ilan anlamına gelmez. Resmî koşul ve güncel dönem incelemesi sürüyor; canlı sitede yeni yayın doğrulanmadı. Kaynak envanteri entegrasyon değildir; bütün170kaynak çalışıyor denemez.
 ### Sonraki adım
 Doğru ayrıntı URL'leri üzerinden adayların resmî koşullarını incele; Türkiye/lise/öğretmen/okul uygunluğu ve güncel açık çağrı kanıtıyla yayın kapsamını artır. Eski geliştirme heartbeat silinmiş kalır.
+
+
+## 2026-10-10 17:46 — Gerçek Gemini Batch ve kanıtlı eğitim yayını
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Mevcut review_batch seri API çağrısıydı; gerçek Gemini Batch API ve kalıcı ai_batches/ai_batch_inputs, model gemini-3.8-flash eklendi. İlk115 gerçek belge tamamlandı (115/115 Google success); ikinci28 ve üçüncü10 ESEP kursu da Batch success. Tekrarlanan/şüpheli gönderim tekrar edilmez; atomik kayıt sahiplenme eklendi. Geçmiş/kapalı/ülke ve kaynak kanıtı eksik çağrılar otomatik yayımlanmadı. GençBizz2026–27 öğretmen aracılı öğrenci programı resmî MEB16Ekim2026 son tarihiyle Codex incelemesiyle yayımlandı. ESEP kaydı:38benzersiz gerçek katalog kursu; açık self-paced kurslar kanıtlı Batch incelemesinden yayımlanıyor. Hibe ve eğitim türleri ayrı; açık eğitimde uydurma son tarih yok. Sadece ilkokul/ortaokul düzeyli bir eğitim lise uygunluğu olarak yayımlanmaktan çıkarıldı, kayıt silinmedi.
+### Doğrulama kanıtları
+264Python PASS35.217s; son18ilgiliPython PASS0.184s;16JS PASS93.9ms. Sonrasında Batch pipeline kaynak değişimi/yeniden doğrulama eklendi; bu son değişiklik için tam test tekrar koşulacak. Build6bd7dfef backend SUCCESS; refresh7923a7af önceki kodla build sürüyordu, yeni son kod imajı gerekecek. Henüz bu dilim deploy/commit/push kabulü yapılmadı.
+### Alınan kararlar
+Kullanıcı gerçek toplu AI incelemesini, işi tamamlama ve canlı yayını istedi. Haftadaiki kaynak taraması korunur; ayrı sonuç-toplama modu yeni kaynak taraması yapmaz, başlamış Batch sonuçlarını tamamlar. Eski Codex heartbeat yeniden oluşturulmaz.
+### Açık sorular ve sorunlar
+154envanter kaydı ve30çekici, hepsinin çalıştığı veya170kaynak tamamlandığı anlamına gelmez. TheEarthPrize otomatik scraping yasağı resmî copyright-policy ile görüldü; permission_required, koruma aşılmaz. Gerçek canlı Google giriş kabulü henüz tekrar doğrulanmadı.
+### Sonraki adım
+Son kodun RELEASE kontrolleri, backend/refresh imajları ve sonuç-toplama bulut görevi; Hosting yayını, gerçek publicAPI ve tarayıcı kontrolü, commit/push ve uzakCI doğrulaması.
+
+
+## 2026-10-10 18:10 — Gerçek Batch ve canlı yayın kabulü
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+153 gerçek belge üç Gemini Batch işiyle tamamlandı (115+28+10); model gemini-3.8-flash. Canlı site 34 gerçek fırsat yayımlıyor: 32 ücretsiz öğretmen eğitimi, GençBizz lise girişimcilik programı ve TÜBİTAK2204-A yarışması. Öğretmen filtresi33, öğrenci2; açık tema, fırsat türü, sürekli açık eğitim ve son güncelleme gerçek tarayıcıda görüldü. Model yanıtı yayın onayı sayılmaz; kaynak alıntısı, Türkiye erişimi, lise düzeyi, rol ve açıklık kanıtıyla yayın yapılır.
+Haftalık tarama Salı/Cuma08.15 Türkiye saati. Başlamış Batch sonuçları her saatin05/35.dakikasında ayrı bulut işiyle toplanır; kaynak taramaz/yeniAIisteği başlatmaz. İki görev refresh:batch-r6-20261010 imajında. Backend hibe-backend-00003-lgw ve Hosting canlı yayımlandı. Bilgisayar gerekmez; eski Codex heartbeat silinmiş kalır.
+### Doğrulama kanıtları
+RELEASE:267Python PASS36.429s,16JS PASS97.47ms, diff check PASS. Backend build9f05a122 ve refresh build7206291e SUCCESS; gerçek sonuç toplama hibe-ai-batch-results-wtjrh Completed=True/succeededCount1. CanlıAPI34, anonimadmin403; ikiScheduler ENABLED. Ayrıntılar C:/hibe-radari/docs/RELEASE_BATCH_20261010.md. Önceki577dc3c uzakCI success ölçüldü; yeni commit/push/CI sonucu ayrıca kaydedilecek.
+### Alınan kararlar
+Kullanıcının gerçek topluAIinceleme ve canlı yayın talebi uygulandı. Aynı belge tekrar ücretlendirilmez; metadata değişiminde aynı kaynak belgesi ve eski kanıt yeniden doğrulanarak kullanılır. Kaynak değişirse onay kaldırılır, doğru alanlar silinmez. Yalnız kişisel koşulun bilinmemesi hedef kitleyi belirsiz yapmaz.
+### Açık sorular ve sorunlar
+154 kaynak kaydı/30 çekici/24 izinli çekici,170 çalışan kaynak anlamına gelmez; tam envanter entegrasyonu açık. ESEP ilk belgeler38, normal çekici son denemesi31/0hata; bunlar yayın sayısı değildir ve görünmeyen kayıtlar silinmez. Farklı kursları yanlış birleştirme şüphesi kod incelemesinde doğrulanmadı: mevcut tekilleştirme ortak kanıtlıURL/kimlik gerektiriyor. Gerçek yönetici Google oturumu bu dilimde tekrar doğrulanmadı. TheEarthPrize tarama yasağı korunur. Gerçek fatura tutarı ölçülmedi.
+### Sonraki adım
+Yeni commit/push uzakSHA veCIsonucunu ölç; daha geniş kaynak entegrasyonunu mevcut mimaride sürdür. Main merge yok; başka ajan/cloudgeliştirme yok.

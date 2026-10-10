@@ -109,3 +109,17 @@ test('ics yıl değişimini, Türkçeyi ve satır enjeksiyonunu güvenli işler'
   for(const line of text.split('\r\n')) assert.ok(Buffer.byteLength(line,'utf8')<=75);
   assert.equal(calendarICS({id:'test',deadline:null},''),null);
 });
+
+test('öğretmen aracılığıyla öğrenci katılımında gerçek başvuru rolü korunur', () => {
+ const call={audience_tags:['teacher','student','school'],paths:[{role:'ogretmen_birey'}]};
+ assert.equal(audienceCalls([call],'student').length,1);
+ assert.equal(pathsFor(call,'student')[0].role,'ogretmen_birey');
+ assert.equal(groupOf({deadline:null,application_schedule:{kind:'self_paced'}}),'Sürekli açık fırsatlar');
+});
+
+test('kanıtlı sürekli açık eğitim tarih belirsizliğiyle karıştırılmaz', () => {
+ const call={id:'course',deadline:null,official_status:'acik',application_schedule:{kind:'self_paced'},paths:[{role:'ogretmen_birey'}]};
+ assert.equal(filterCalls([call],{deadline:'open'}).length,1);
+ assert.equal(filterCalls([call],{deadline:'unknown'}).length,0);
+ assert.equal(filterCalls([{...call,application_schedule:null}],{deadline:'open'}).length,0);
+});

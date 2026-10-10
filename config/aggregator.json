@@ -608,6 +608,38 @@
         "basis": "Published public RSS metadata interface; attribution/manual approval; no full-text redistribution license."
       },
       "aggregator": true
+    },
+    {
+      "id": "esep-courses",
+      "type": "html_list",
+      "url": "https://school-education.ec.europa.eu/en/learn/courses",
+      "urls": [
+        "https://school-education.ec.europa.eu/en/learn/courses",
+        "https://school-education.ec.europa.eu/en/learn/courses?page=0%2C1",
+        "https://school-education.ec.europa.eu/en/learn/courses?page=0%2C4",
+        "https://school-education.ec.europa.eu/en/learn/courses?page=0%2C0",
+        "https://school-education.ec.europa.eu/en/learn/courses?page=0%2C2",
+        "https://school-education.ec.europa.eu/en/learn/courses?page=0%2C3"
+      ],
+      "link_pattern": "^/en/learn/courses/[^/]+$",
+      "organization": "Avrupa Komisyonu / European School Education Platform",
+      "allowed_hosts": [
+        "school-education.ec.europa.eu"
+      ],
+      "detail": false,
+      "max_items": 80,
+      "language": "en",
+      "official_source_verified": true,
+      "access_policy": {
+        "terms_status": "allowed",
+        "checked_at": "2026-10-10T14:36:32.042123+00:00",
+        "evidence_url": "https://school-education.ec.europa.eu/en/terms_conditions_of_use",
+        "reuse_notice": "https://commission.europa.eu/legal-notice_en",
+        "basis": "EU-owned Commission online course metadata only; CC BY 4.0 attribution and Turkish editorial summaries. No images, user-generated listings or endorsement. Robots enforced by Fetcher."
+      },
+      "review_support_urls": [
+        "https://school-education.ec.europa.eu/en/about/about-us"
+      ]
     }
   ],
   "baseline_source_ids": [

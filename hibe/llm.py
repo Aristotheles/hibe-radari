@@ -69,7 +69,9 @@ def validate_evidence(out,text,source):
    if not condition['evidence_url']:condition['result']='bilinmiyor'
  if out.get('official_status')=='kapandi':
   from .aggregator.html_cards import CLOSED
-  if not CLOSED.search(fold(text)):out['official_status']='bilinmiyor';out['ai_conflict']=True
+  from datetime import date
+  confirmed_expired=bool(out.get('deadline') and date.fromisoformat(out['deadline'])<date.today())
+  if not confirmed_expired and not CLOSED.search(fold(text)):out['official_status']='bilinmiyor';out['ai_conflict']=True
  return out
 
 def extract_with_fallback(extractor,text,source,profile):

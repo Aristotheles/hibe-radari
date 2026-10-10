@@ -38,3 +38,14 @@ class CloudRefreshTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 main()
         initialize.assert_not_called()
+
+    def test_collect_only_never_scans_or_submits(self):
+        store=MemoryStore()
+        with patch.dict(os.environ,{'FIREBASE_PROJECT_ID':'test','AI_BATCH_COLLECT_ONLY':'true','AI_REVIEW_ENABLED':'true'}), \
+             patch('firebase_admin.initialize_app'),patch('hibe.cloud_refresh.FirestoreStore',return_value=store), \
+             patch('hibe.cloud_refresh.refresh') as scan,patch('hibe.batch_pipeline.finish_batches',return_value={'pending':0}), \
+             patch('hibe.batch_pipeline.submit_candidates') as submit,patch('builtins.print'):
+            self.assertEqual(main(),0)
+        scan.assert_not_called();submit.assert_not_called()
+        self.assertIsNone(store.get('automation_runs','source_refresh_latest'))
+        self.assertEqual(store.get('automation_runs','batch_collection_latest')['status'],'batch_collection_only')

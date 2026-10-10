@@ -380,14 +380,18 @@
     "method": "manual",
     "status": "registry_pending",
     "enabled": true,
-    "connector_ids": [],
-    "connector_mapping": "none",
+    "connector_ids": [
+      "esep-courses"
+    ],
+    "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "allowed",
+      "checked_at": "2026-10-10T14:36:32.042123+00:00",
+      "evidence_url": "https://school-education.ec.europa.eu/en/terms_conditions_of_use",
+      "reuse_notice": "https://commission.europa.eu/legal-notice_en",
+      "basis": "EU-owned Commission online course metadata only; CC BY 4.0 attribution and Turkish editorial summaries. No images, user-generated listings or endorsement. Robots enforced by Fetcher."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "metadata_fixture_verified",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
@@ -398,7 +402,7 @@
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "acceptance_reason": "ESEP resmî kurs katalog sayfaları canlı HTTP ve robots denetimiyle okundu; 38 benzersiz kurs URL bulundu. EU-owned öğretmen kursu üstverisi/atıflı Türkçe özet; hibe onayı veya bütün kursların açık olduğu iddiası değildir.",
     "acceptance_checked_at": "2026-10-09T22:58:42.997042+00:00",
     "last_access_observation": {
       "source_id": "inventory-970a009e204e",
@@ -5888,9 +5892,10 @@
     "connector_ids": [],
     "connector_mapping": "none",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.theearthprize.org/copyright-policy",
+      "checked_at": "2026-10-10T14:36:32.045389+00:00",
+      "basis": "Explicit prohibition of automated scraping without prior permission. Do not bypass."
     },
     "operational_status": "manual_pending",
     "last_success": null,

@@ -15,18 +15,19 @@ def main():
     store = FirestoreStore()
     started = datetime.now(timezone.utc).isoformat()
     try:
-        result = refresh(store)
+        collect_only=os.environ.get('AI_BATCH_COLLECT_ONLY')=='true'
+        result = {'status':'batch_collection_only'} if collect_only else refresh(store)
         if os.environ.get('AI_REVIEW_ENABLED') == 'true':
-            from .review_batch import review_batch
-            from .llm import GeminiExtractor
-            from .aggregator.collector import load_config, ROOT
-            profile = json.loads((ROOT/'config/profile.json').read_text(encoding='utf-8'))
-            result['document_review'] = review_batch(store, load_config(), GeminiExtractor(max_calls=30), profile)
+            from .batch_pipeline import finish_batches, submit_candidates
+            from .aggregator.collector import load_config
+            result['document_review'] = finish_batches(store)
+            if not collect_only:
+                result['document_review_submission'] = submit_candidates(store,load_config())
     except Exception as exc:
         # Keep credentials, fetched content and exception messages out of logs.
         result = {'status': 'failed', 'error_kind': type(exc).__name__}
     result.update(started_at=started, finished_at=datetime.now(timezone.utc).isoformat())
-    store.put('automation_runs', 'source_refresh_latest', result)
+    store.put('automation_runs', 'batch_collection_latest' if os.environ.get('AI_BATCH_COLLECT_ONLY')=='true' else 'source_refresh_latest', result)
     print(json.dumps(result, ensure_ascii=False))
     return 1 if result.get('status') == 'failed' or result.get('unhealthy') else 0
 

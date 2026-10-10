@@ -30,8 +30,9 @@ export function filterCalls(calls, { query = '', role = '', theme = '', sort = '
   const start = dateValue(today);
   const matchesDeadline = c => {
     const end = dateValue(c.deadline);
-    if (deadline === 'unknown') return end === null;
-    if (deadline === 'open') return end !== null && start !== null && end >= start && !['kapandi','askida'].includes(c.official_status);
+    const continuous = end === null && ['rolling', 'self_paced'].includes(c.application_schedule?.kind) && c.official_status === 'acik';
+    if (deadline === 'unknown') return end === null && !continuous;
+    if (deadline === 'open') return (continuous || (end !== null && start !== null && end >= start)) && !['kapandi','askida'].includes(c.official_status);
     if (deadline === 'urgent') return end !== null && start !== null && end >= start && end < start + 14 * 86400000 && !['kapandi','askida'].includes(c.official_status);
     return true;
   };
