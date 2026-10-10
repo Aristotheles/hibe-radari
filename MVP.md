@@ -644,3 +644,18 @@ Yeni karar yok; yetkili yerel devam sürüyor.
 AŞAMA9Auth/ADC/adminUID sorusu bekler; AŞAMA10/RELEASE/deploy açık. Canlı site değiştirilmedi.
 ### Sonraki adım
 - [ ] Gençlik Köprüsü mevcut connector için resmî erişim/yeniden kullanım koşullarını incele.
+
+
+## 2026-10-10 06:20 — Gençlik Köprüsü izin ve başvuru rolü kabulü
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Resmî [Impressum](https://www.jugendbruecke.de/impressum/) başka sitelerde içerik kullanımını açıkça kısıtlıyor; mevcut source-15/jugendbruecke kayıtları permission_required olarak eşlendi. Connector silinmedi veya gizlenmedi. Otomatik tarama/aktarım yapılmadı, izin uydurulmadı.
+[2027/28 okul değişim çağrısı](https://www.jugendbruecke.de/foerderung/ausschreibung-schulaustausch-2027-28/) son tarihi6Aralık2026; başvuran Alman okul, Türk okul ortak. Kısa resmî alıntılar ve rol yorumu ayrı alanlarda kaydedildi. Türkiye lise doğrudan uygunluğu veya insan onayı ilan edilmedi.
+### Doğrulama
+FAST: source_acceptance+network16test PASS1.294s, diff-check PASS. Önceki tam205Python/son11JS kanıtı geçerli; bu yapılandırma adımından sonra tam suite yeniden koşulmadı. Canlı site/DB/onay değişmedi.
+### Alınan kararlar
+Yeni kullanıcı kararı yok; mevcut tarama koşullarına uyum kuralının resmî kanıtı kaydedildi.
+### Açık sorular ve sorunlar
+AŞAMA9 gerçek hesap/UID/ADC/backend sorusu bekler. AŞAMA10/RELEASE açık; deploy yok. British Council şartlarının sonraki bölüm okuması zaman aşımına uğradı, tam politika kabulü yapılmadı.
+### Sonraki adım
+- [ ] British Council kullanım şartlarının kalan bölümünü ve mevcut RSS erişimini doğrula; kaynak engelleri tam koşu başarısı sayılmaz.

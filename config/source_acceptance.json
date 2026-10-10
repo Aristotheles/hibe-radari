@@ -2788,22 +2788,29 @@
     "source_id": "source-15",
     "name": "Türk-Alman Gençlik Köprüsü",
     "official_url": "https://www.jugendbruecke.de/foerderung/",
-    "status": "manual_pending",
+    "status": "permission_required",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.jugendbruecke.de/impressum/",
+      "checked_at": "2026-10-10T03:20:08.042468+00:00",
+      "note": "Resmî Copyright und Haftungsausschluss, içeriklerin başka sitelerde/medyada veya ticari kullanımını açıkça kısıtlıyor. Otomatik içerik aktarımı için izin doğrulanmalı; manuel resmî bağlantı incelemesi korunur.",
+      "short_quote": "Ihre Weitergabe, Veränderung, gewerbliche Nutzung oder Verwendung in anderen Websites oder Medien ist nicht gestattet."
     },
     "method": "manual",
     "list_fixture": null,
     "detail_fixture": null,
-    "sample_call": null,
-    "deadline_evidence": null,
+    "sample_call": "https://www.jugendbruecke.de/foerderung/ausschreibung-schulaustausch-2027-28/",
+    "deadline_evidence": {
+      "date": "2026-12-06",
+      "quote": "Die Frist für die Einreichung ist der 06. Dezember 2026.",
+      "source_url": "https://www.jugendbruecke.de/foerderung/ausschreibung-schulaustausch-2027-28/",
+      "checked_at": "2026-10-10T03:20:08.042468+00:00"
+    },
     "duplicate_test": null,
     "empty_error_test": null,
     "interval_hours": 24,
-    "checked_at": "2026-10-09T22:59:06.965443+00:00",
-    "reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
+    "checked_at": "2026-10-10T03:20:08.042468+00:00",
+    "reason": "Resmî kullanım bildirimi başka sitelerde içerik kullanımını kısıtlıyor; izin gerekli. 2027/28 çağrısında başvuran Alman okul, Türkiye okulu ortak; doğrudan Türkiye başvurusu onaylanmadı.",
     "page_observation": {
       "source_id": "source-15",
       "url": "https://www.jugendbruecke.de/foerderung/",
@@ -2819,12 +2826,22 @@
         "structured_data": 1
       }
     },
-    "detail_review_reason": "Liste üstverisi dışında çağrı ayrıntısı/koşulları henüz doğrulanmadı; otomatik yayın yok.",
+    "detail_review_reason": "Alman okul başvurusu ve Türk ortak rolü ayrılır; tam koşullar/onay/erişim izni doğrulanmadan otomatik yayın yok.",
     "manual_check": {
       "url": "https://www.jugendbruecke.de/foerderung/",
       "steps": "Resmî çağrı/başvuru sayfasını, Türkiye ve lise/öğretmen/öğrenci koşullarını ve son tarihi doğrula; kaynak kanıtıyla yönetici incelemesine kaydet."
     },
-    "call_evidence_status": "not_verified"
+    "call_evidence_status": "not_verified",
+    "manual_call_evidence": {
+      "official_url": "https://www.jugendbruecke.de/foerderung/ausschreibung-schulaustausch-2027-28/",
+      "checked_at": "2026-10-10T03:20:08.042468+00:00",
+      "evidence_kind": "short_verified_text_excerpts_not_html_response",
+      "deadline_quote": "Die Frist für die Einreichung ist der 06. Dezember 2026.",
+      "deadline": "2026-12-06",
+      "applicant_quote": "Anträge von deutschen Schulen nehmen wir ab sofort an.",
+      "partner_interpretation": "Türkiye okulu ortak; doğrudan başvuran Alman okul. Tam şartlar ve insan onayı hâlâ gerekli.",
+      "publication_approved": false
+    }
   },
   {
     "source_id": "inventory-33e8e4378143",

@@ -159,10 +159,11 @@
       "max_pages": 12,
       "language": "de",
       "access_policy": {
-        "terms_status": "unreviewed",
-        "evidence_url": null,
-        "checked_at": null,
-        "note": "HTTP erişim ölçümü kullanım/tarama izni değildir; AŞAMA 7/8 incelemesi bekleniyor."
+        "terms_status": "permission_required",
+        "evidence_url": "https://www.jugendbruecke.de/impressum/",
+        "checked_at": "2026-10-10T03:20:08.042468+00:00",
+        "note": "Resmî Copyright und Haftungsausschluss, içeriklerin başka sitelerde/medyada veya ticari kullanımını açıkça kısıtlıyor. Otomatik içerik aktarımı için izin doğrulanmalı; manuel resmî bağlantı incelemesi korunur.",
+        "short_quote": "Ihre Weitergabe, Veränderung, gewerbliche Nutzung oder Verwendung in anderen Websites oder Medien ist nicht gestattet."
       }
     },
     {

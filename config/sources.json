@@ -3568,19 +3568,21 @@
     ],
     "connector_mapping": "mapped",
     "access_policy": {
-      "terms_status": "unreviewed",
-      "evidence_url": null,
-      "checked_at": null
+      "terms_status": "permission_required",
+      "evidence_url": "https://www.jugendbruecke.de/impressum/",
+      "checked_at": "2026-10-10T03:20:08.042468+00:00",
+      "note": "Resmî Copyright und Haftungsausschluss, içeriklerin başka sitelerde/medyada veya ticari kullanımını açıkça kısıtlıyor. Otomatik içerik aktarımı için izin doğrulanmalı; manuel resmî bağlantı incelemesi korunur.",
+      "short_quote": "Ihre Weitergabe, Veränderung, gewerbliche Nutzung oder Verwendung in anderen Websites oder Medien ist nicht gestattet."
     },
-    "operational_status": "manual_pending",
+    "operational_status": "permission_required",
     "last_success": null,
     "last_error": null,
     "last_found_count": null,
     "change_tracking": "pending",
     "interval_hours": 24,
     "institution_identity_status": "unverified_host_group",
-    "acceptance_reason": "Sayfa okunabildi; tarama koşulları ve çağrı ayrıntısı doğrulanmadı. Resmî URL üzerinden manuel inceleme.",
-    "acceptance_checked_at": "2026-10-09T22:59:06.965443+00:00",
+    "acceptance_reason": "Resmî kullanım bildirimi başka sitelerde içerik kullanımını kısıtlıyor; izin gerekli. 2027/28 çağrısında başvuran Alman okul, Türkiye okulu ortak; doğrudan Türkiye başvurusu onaylanmadı.",
+    "acceptance_checked_at": "2026-10-10T03:20:08.042468+00:00",
     "last_access_observation": {
       "source_id": "source-15",
       "url": "https://www.jugendbruecke.de/foerderung/",
@@ -3595,6 +3597,16 @@
         "article_count": 0,
         "structured_data": 1
       }
+    },
+    "manual_call_evidence": {
+      "official_url": "https://www.jugendbruecke.de/foerderung/ausschreibung-schulaustausch-2027-28/",
+      "checked_at": "2026-10-10T03:20:08.042468+00:00",
+      "evidence_kind": "short_verified_text_excerpts_not_html_response",
+      "deadline_quote": "Die Frist für die Einreichung ist der 06. Dezember 2026.",
+      "deadline": "2026-12-06",
+      "applicant_quote": "Anträge von deutschen Schulen nehmen wir ab sofort an.",
+      "partner_interpretation": "Türkiye okulu ortak; doğrudan başvuran Alman okul. Tam şartlar ve insan onayı hâlâ gerekli.",
+      "publication_approved": false
     }
   },
   {
