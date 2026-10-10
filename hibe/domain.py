@@ -1,7 +1,11 @@
 from datetime import date
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import hashlib,json,re
 THEMES={'engelli_kapsayicilik':3,'cevre_su':3,'bilim':2,'dil_kultur':2,'dijital':1}
 ROLES={'dogrudan':40,'ortak':25,'ogretmen_birey':40,'ogrenci_birey':40,'uygulama_yeri':15,'belirsiz':10}
+
+def today_istanbul():return datetime.now(ZoneInfo('Europe/Istanbul')).date()
 def version(c):
  return hashlib.sha256(json.dumps({k:v for k,v in c.items() if k not in {'approval','version'}},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 def eligibility(p):

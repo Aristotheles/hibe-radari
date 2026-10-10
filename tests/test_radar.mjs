@@ -123,3 +123,7 @@ test('kanıtlı sürekli açık eğitim tarih belirsizliğiyle karıştırılmaz
  assert.equal(filterCalls([call],{deadline:'unknown'}).length,0);
  assert.equal(filterCalls([{...call,application_schedule:null}],{deadline:'open'}).length,0);
 });
+
+test('doğrulama bekleyen fırsat takvime doğrulanmış tarih olarak aktarılamaz', () => {
+ assert.equal(calendarICS({id:'pending',deadline:'2026-11-30',publication_status:'verification_pending'},'/ilan/pending'),null);
+});

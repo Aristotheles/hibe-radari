@@ -1,5 +1,7 @@
 import os,json,re,urllib.request
-from .domain import validate
+from .domain import validate, today_istanbul
+from .review_decisions import add_conflict
+from .evidence_context import condition_quote
 
 def redact_contacts(text):
  """İletişim bilgisini gizlerken geçerli sayısal tarih kanıtlarını korur."""
@@ -50,7 +52,7 @@ def validate_evidence(out,text,source):
  if out.get('deadline'):
   from .aggregator.textutil import deadline_details
   from datetime import date
-  details=deadline_details(text,date.today())
+  details=deadline_details(text,today_istanbul())
   if details['year_inferred'] or not any(c['value']==out['deadline'] for c in details['candidates']):
    out['deadline']=None
    out['deadline_precision']='unknown'
@@ -59,10 +61,10 @@ def validate_evidence(out,text,source):
   for condition in path.get('conditions',[]):
    quote=condition.get('evidence') or ''
    # Bölüm adı veya uydurulmuş alıntı kanıt değildir.
-   if not isinstance(quote,str) or len(quote.strip())<12 or ' '.join(fold(quote).split()) not in normalized:
+   if not condition_quote(quote,text):
     condition['result']='bilinmiyor';condition['evidence']=None
    if condition.get('result')=='saglandi' and re.search(r'uygun degil|basvuramaz|not eligible|yalnizca universite',fold(quote)):
-    condition['result']='bilinmiyor';out['ai_conflict']=True
+    condition['result']='bilinmiyor';add_conflict(out,'personal_conditions')
    condition['checked_at']=now()
    matching=[doc['url'] for doc in source.get('document_texts',[]) if condition.get('evidence') and ' '.join(fold(quote).split()) in ' '.join(fold(doc['text']).split())]
    condition['evidence_url']=(matching[0] if matching else source['documents'][0]['url'] if len(source['documents'])==1 else None) if condition.get('evidence') else None
@@ -70,8 +72,9 @@ def validate_evidence(out,text,source):
  if out.get('official_status')=='kapandi':
   from .aggregator.html_cards import CLOSED
   from datetime import date
-  confirmed_expired=bool(out.get('deadline') and date.fromisoformat(out['deadline'])<date.today())
-  if not confirmed_expired and not CLOSED.search(fold(text)):out['official_status']='bilinmiyor';out['ai_conflict']=True
+  confirmed_expired=bool(out.get('deadline') and date.fromisoformat(out['deadline'])<today_istanbul())
+  if not confirmed_expired and not CLOSED.search(fold(text)):
+   out['official_status']='bilinmiyor';add_conflict(out,'openness')
  return out
 
 def extract_with_fallback(extractor,text,source,profile):

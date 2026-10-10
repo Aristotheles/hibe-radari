@@ -7,6 +7,14 @@ from hibe.store import MemoryStore
 
 
 class BatchPublicationTests(unittest.TestCase):
+    def test_missing_essential_attachment_cannot_be_overridden_by_cached_html(self):
+        store=MemoryStore();store.put('calls','c',self.current)
+        store.put('review_proposals','c',{'id':'c','batch_id':'b','base_version':version(self.current),'draft':self.draft})
+        store.put('ai_batch_inputs','b-c',dict(self.item,id='c',batch_id='b'))
+        store.put('review_document_errors','c',{'id':'c','documents':[{'url':'https://example.org/guidelines.pdf','role':'eligibility'}]})
+        results=publish_batch(store,{'id':'b','model':'gemini-3.8-flash','results':[{'id':'c','status':'evidence_review_required'}]},self.today)
+        self.assertEqual(results[0]['status'],'essential_document_required')
+        self.assertNotIn('approval',store.get('calls','c'))
     def setUp(self):
         self.today=date(2026,10,10)
         self.text='Teachers in Turkey may apply. Secondary school teachers are eligible. Application deadline: 30 November 2026.'
@@ -63,7 +71,7 @@ class BatchPublicationTests(unittest.TestCase):
         draft['country_scope']['evidence']='Secondary school teachers are eligible.'
         self.assertEqual(publication_decision(self.current,draft,self.item,self.today),'country_evidence_required')
         draft['country_scope']['result']='ineligible'
-        self.assertEqual(publication_decision(self.current,draft,self.item,self.today),'out_of_scope')
+        self.assertEqual(publication_decision(self.current,draft,self.item,self.today),'invalid_evidence')
 
     def test_expired_or_unquoted_deadline_does_not_publish(self):
         draft=dict(self.draft,deadline='2025-11-30')

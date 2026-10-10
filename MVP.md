@@ -1021,3 +1021,49 @@ Kullanıcının maksimum uygun, mevcut mimari, gerçek Batch incelemesi ve canl�
 
 ### Sonraki adım
 - [ ] Yetkili yeni adres/erişim kanıtı geldiğinde kapalı kaynakları ayrı doğrula; bu checkpointin commit/push/CI ölçümünü devir kaydında tamamla.
+
+
+## 2026-10-10 23:56 — Uygunluk düzeltmesi (Codex)
+
+### Yapılanlar
+Karar kategorileri ve kişisel/ülke/hedef/tarih çelişkileri ayrıldı; eski belirsiz AI çelişkileri güvenli biçimde incelemede kalıyor. Kısa Türkiye uygun ülke listesi kanıtı kabul edilirken tanıtım cümlesi kabul edilmiyor; sahte kapsam dışı karar için yalnız ilgisiz alıntı yeterli değil. PDF bağlantısı rolleri ve kalıcı teknik hata kaydı eklendi. Uzun belge bütün metni korunarak en çok altı numaralı bölüme ayrılır; eksik bölüm kapsamı model sonucunu geçersiz yapar. Ayrı bekleyen fırsat API/görünümü eklendi; varsayılan doğrulanmış, bekleyende sahte tarih veya uygunluk onayı yok. İlk tam koşu 298 Python PASS37.965s; sonradan eklenen testlerle odaklı karar26/PDF-pipeline15/bekleyen-pipeline6 ve JS16 PASS. Son tam RELEASE, gerçek veri karşılaştırması ve yayın henüz yapılmadı.
+
+
+### Alınan kararlar
+Kullanıcının başla talimatıyla altı adımlı düzeltme planı uygulanıyor.
+
+### Açık sorular ve sorunlar
+Önceki kaynak erişim eksikleri korunur; canlı yayın bu aşamada doğrulanmadı.
+
+### Sonraki adım
+- [ ] Planın kalan adımlarını sırayla test ederek tamamla.
+
+
+## 2026-10-11 00:13 — Uygunluk düzeltmesi (Codex)
+
+### Yapılanlar
+Düzeltme planı uygulanıyor: karar/alan ayrımı, kısa ve bağlamlı kaynak kanıtı, yanlış kapsam dışı karar koruması, PDF rolleri, en çok altı tam kapsamlı belge bölümü, ayrı bekleyen görünümü, politika6 için tek inceleme sınırı eklendi. 307Python PASS52.892s/17JS PASS133.2573ms; compileall ve diff-check geçti. 1339 kayıt/hash/onay/karar yedeği SHA256 ile doğrulandı. 1181 eski kararın dry-run karşılaştırmasında628kanıtsız kapsam-dışı çıktı ayrıldı;890gerçek kayıt5Batch’e vePDFyenidenkontrolünde4belgeekBatch’e gönderildi. 24yayımlanmamış PDFkaydından20erişim/metin hatası kalıyor; uygunsuz ilan edilmedi. 39eski doğrulanmış fırsat korundu. r9backend00009-g4n yüzde100 ve ikiürünişi yayımlandı; gerçekxhkss sonuçişiSUCCESS2m3.82s. Canlı APIcalls20039/pending2002/anonimadmin403. Tarayıcıda yeniHTML/eskiJS önbellek uyumsuzluğu bulundu; r10dosyasürümü ve Hosting-önce-yayın sırası düzeltmesi sürüyor. Sonuçların tamamı, tarayıcı filtre kabulü, commit/push/CI henüz kapanmadı.
+
+### Alınan kararlar
+Kullanıcının başla talimatıyla altı adımlı düzeltme planı uygulanıyor.
+
+### Açık sorular ve sorunlar
+Önceki kaynak erişim eksikleri korunur; canlı yayın bu aşamada doğrulanmadı.
+
+### Sonraki adım
+- [ ] Planın kalan adımlarını sırayla test ederek tamamla.
+
+
+## 2026-10-11 00:27 — Uygunluk düzeltmesi kabulü (Codex)
+
+### Yapılanlar
+Altı adımlı uygunluk düzeltmesi uygulandı. 310Python PASS46.796s/17JS PASS97.4059ms; compile/syntax/diff kontrolleri geçti. 890+4 gerçek belge altı yeni Gemini Batch işinde tamamlandı; yeni doğrulanmış ilan çıkmadı, 39 gerçek fırsat korundu. 628 kanıtsız eski kapsam dışı kararı belirsiz/eksik kanıt ayrımına taşındı. 20 PDF hatası açık. Canlı r13 backend hibe-backend-00012-nvv yüzde100, iki ürün işi r13, Hosting başarılı; k7p6s gerçek sonuç işi SUCCESS17.79s. API39 doğrulanmış/3 ayrı bekleyen/154kaynak, anonimadmin403. Masaüstü filtre ve bekleyen takvim kapısı doğrulandı; mobil375/375px taşma yok. Kaynak kapsamı135URL/131çekici;170tüm kaynak tamamlandı denmez. Haftalık Salı/Cuma08.15 taraması bulutta sürer. Git commit/push/CI henüz yapılmadı; sıradaki tek işlem Git checkpoint doğrulaması.
+
+### Alınan kararlar
+Kullanıcının başla talimatıyla mevcut mimaride düzeltme planı uygulandı. Eksik kanıt uygunsuzluk değildir; doğrulama bekleyen görünümü onay üretmez.
+
+### Açık sorular ve sorunlar
+170 ayrı URL depoda yok; 31 erişim/izin incelemeli ve 8 yasaklı kaynak ile 20 PDF erişim/metin hatası açık. Tüm proje tamamlandı denmez. Fatura ve yeni gerçek Google yönetici oturumu ölçülmedi.
+
+### Sonraki adım
+Kaynak erişimlerini ve eksik adres kapsamını gerçek URL/izin kanıtıyla çözmek; rutin ürün taraması Salı/Cuma08.15 bulutta sürer. Eski geliştirme heartbeat kapalı.

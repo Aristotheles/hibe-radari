@@ -38,6 +38,8 @@ def detail(call):
     out += f'<h1 id="page-title">{text(call["title"])}</h1><p>{text(call["summary"])}</p>'
     if call.get('demo'):
         out += '<p class="demo-notice">DEMO · Kurgusal örnek; gerçek başvuruya dayanak değildir.</p>'
+    if call.get('publication_status')=='verification_pending':
+        out += '<p class="verification">Doğrulama bekleyen fırsat: '+text(call.get('verification_reason'))+'. Başvuru uygunluğu henüz doğrulanmadı.</p>'
     out += f'<p>Son başvuru: {text(date_label(call.get("deadline")))} · Kapanış saati bilinmiyor</p>'
     out += f'<p>Kaynak: {text(call.get("organization") or call.get("source_id") or "Bilgi kaydı yok")}</p><p>Son kontrol: {text(date_label(str(call.get("last_checked") or "")[:10]))}</p>'
     if call.get('deadline_evidence'):

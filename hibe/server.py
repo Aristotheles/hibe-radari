@@ -51,6 +51,7 @@ def handler(app):
     p=urlsplit(self.path).path
     if p=='/api/config':self.send(200,{'demo':app.demo,'firebase':{k:os.environ.get(v,'') for k,v in {'apiKey':'FIREBASE_WEB_API_KEY','authDomain':'FIREBASE_AUTH_DOMAIN','projectId':'FIREBASE_PROJECT_ID','appId':'FIREBASE_APP_ID'}.items()}});return
     if p=='/api/calls':self.send(200,app.service.public());return
+    if p=='/api/opportunities/pending':self.send(200,app.service.pending());return
     if p=='/api/sources':self.send(200,app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))));return
     if p=='/api/me':
      u=self.user();self.send(200,{'email':u['email'],'admin':app.service.is_admin(u),'preferences':app.service.store.get('users',u['uid']),'membership':app.service.entitlements(u)});return
@@ -62,9 +63,12 @@ def handler(app):
     if p in {'/','/takvim','/nasil-calisir','/aboneligim','/yonetim'} or p.startswith('/ilan/'):
      from .presentation import page
      template=(ROOT/'web/index.html').read_text(encoding='utf-8')
-     asset_version=hashlib.sha256((ROOT/'web/app.js').read_bytes()).hexdigest()[:12]
+     # Include the shell so a newly deployed filter cannot reuse an old script URL.
+     asset_version=hashlib.sha256((ROOT/'web/app.js').read_bytes()+template.encode('utf-8')).hexdigest()[:12]
      template=template.replace('src="/app.js"','src="/app.js?v='+asset_version+'"')
-     result=page(template,p,urlsplit(self.path).query,app.service.public(),json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8')),app.demo)
+     public=app.service.public()
+     if p.startswith('/ilan/'):public+=app.service.pending()
+     result=page(template,p,urlsplit(self.path).query,public,json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8')),app.demo)
      if result:self.send(result[0],result[1],'text/html; charset=utf-8');return
     files={'/app.js':'app.js','/radar.mjs':'radar.mjs','/decision.mjs':'decision.mjs','/views.mjs':'views.mjs','/style.css':'style.css'}
     if p not in files:self.send(404,{'error':'Bulunamadı'});return

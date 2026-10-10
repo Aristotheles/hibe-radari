@@ -6,6 +6,34 @@ from hibe.domain import version
 from hibe.scan import normalized_hash
 from hibe.batch_pipeline import submit_candidates
 class BatchPipelineTests(unittest.TestCase):
+ def test_new_policy_rechecks_same_document_once(self):
+  from hibe.gemini_batch import POLICY
+  for policy,expected in [(POLICY-1,True),(POLICY,False)]:
+   store=MemoryStore();body='Applications for teacher training are open.'
+   docs=[{'url':'https://example.org/call','hash':normalized_hash(body)}]
+   c={'id':'c','title':'Teacher grant','source_id':'s','source_url':docs[0]['url']}
+   store.put('calls','c',c)
+   store.put('review_proposals','c',{'id':'c','batch_id':'b','base_version':version(c),'draft':{'documents':docs}})
+   store.put('ai_batches','b',{'id':'b','policy':policy,'status':'completed'})
+   store.put('publication_decisions','c',{'id':'c','status':'country_evidence_required'})
+   api=Mock();api.submit.return_value={'id':'new'}
+   source={'id':'s','type':'source_discovery','allowed_hosts':['example.org'],'access_policy':{'terms_status':'allowed'}}
+   response=httpx.Response(200,headers={'content-type':'text/html'},text='<main>'+body+'</main>',request=httpx.Request('GET',docs[0]['url']))
+   with patch('hibe.batch_pipeline.Fetcher') as fetcher:
+    fetcher.return_value.get.return_value=response
+    submit_candidates(store,{'sources':[source]},api)
+   self.assertEqual(api.submit.called,expected)
+ def test_failed_irrelevant_pdf_does_not_block_but_missing_guideline_does(self):
+  for label,expected in [('Privacy policy',True),('Application guidelines',False)]:
+   store=MemoryStore();store.put('calls','c',{'id':'c','source_id':'s','title':'Teacher grant','source_url':'https://example.org/call'})
+   source={'id':'s','type':'source_discovery','allowed_hosts':['example.org'],'access_policy':{'terms_status':'allowed'}}
+   api=Mock();api.submit.return_value={'id':'batch'}
+   response=httpx.Response(200,headers={'content-type':'text/html'},text='<main>Applications are open.<a href="/doc.pdf">'+label+'</a></main>',request=httpx.Request('GET','https://example.org/call'))
+   with patch('hibe.batch_pipeline.Fetcher') as fetcher:
+    fetcher.return_value.get.side_effect=[response,ValueError('PDF unavailable')]
+    result=submit_candidates(store,{'sources':[source]},api)
+   self.assertEqual(api.submit.called,expected)
+   if not expected:self.assertEqual(store.get('review_document_errors','c')['category'],'technical_document_error')
  def test_documented_grants_api_uses_numeric_detail_and_public_url(self):
   store=MemoryStore();url='https://www.grants.gov/search-results-detail/363913'
   store.put('calls','c',{'id':'c','source_id':'s','source_entry_id':'363913','title':'Teacher grant','source_url':url})

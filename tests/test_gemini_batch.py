@@ -7,6 +7,15 @@ from hibe.domain import version
 
 
 class GeminiBatchTests(unittest.TestCase):
+    def test_incomplete_section_coverage_cannot_create_review_proposal(self):
+        item=dict(self.item,text='A'*24000+' Only university graduates may apply.',sections=['A'*24000,' Only university graduates may apply.'])
+        job=self.api.submit(self.store,[item],'2026-10-10')
+        draft=dict(self.call,reviewed_sections=[1])
+        self.api.api.return_value={'state':'JOB_STATE_SUCCEEDED','dest':{'inlinedResponses':[
+            {'metadata':{'key':'c'},'response':{'candidates':[{'content':{'parts':[{'text':json.dumps(draft)}]}}]}}]}}
+        result=self.api.poll(self.store,job['id'])
+        self.assertEqual(result['results'][0]['status'],'invalid_response')
+        self.assertIsNone(self.store.get('review_proposals','c'))
     def setUp(self):
         self.store=MemoryStore()
         self.call={'id':'c','source_id':'s','title':'Lise yarışması','summary':'','documents':[],

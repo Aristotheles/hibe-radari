@@ -1,4 +1,4 @@
-import { dateValue } from './radar.mjs?v=20261010-r4';
+import { dateValue } from './radar.mjs?v=20261011-r11';
 
 export function todayISO(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
@@ -53,6 +53,7 @@ function foldLine(line) {
 }
 
 export function calendarICS(call, detailURL, now = new Date()) {
+  if(call.publication_status==='verification_pending') return null;
   const stamp = dateValue(call.deadline);
   if (stamp === null || !/^[a-zA-Z0-9_-]{1,100}$/.test(call.id)) return null;
   const end = new Date(stamp + 86400000).toISOString().slice(0, 10).replaceAll('-', '');

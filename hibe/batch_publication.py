@@ -4,19 +4,21 @@ from copy import deepcopy
 from datetime import date
 from urllib.parse import urlsplit
 from .aggregator.textutil import fold, deadline_details
-from .domain import version
+from .domain import version, today_istanbul
 from .verified_review import commit_verified_review
+from .review_decisions import critical_conflict, decision_category, personal_conditions_pending
+from .evidence_context import literal_quote, country_list_entry, country_application_clause
 
 
 def quote_present(quote,text):
-    return isinstance(quote,str) and len(quote.strip())>=12 and ' '.join(fold(quote).split()) in ' '.join(fold(text).split())
+    return literal_quote(quote,text)
 
 def schedule_is_open(schedule,text):
     quote=schedule.get('evidence') or ''
     if not quote_present(quote,text):return False
-    if schedule.get('kind')=='rolling':return bool(re.search(r'rolling basis|rolling applications|yil boyunca|surekli basvuru|basvurular surekli acik|yilin her donemi|(?:applications|apply|submit).{0,100}(?:any time|all year|throughout the year|year.round)',fold(quote)))
+    if schedule.get('kind')=='rolling':return bool(re.search(r'rolling basis|rolling applications|yil boyunca|surekli basvuru|basvurular surekli acik|yilin her donemi|(?:applications|apply|submit).{0,100}(?:any time|all year|throughout the year|year.round)|no application deadline|basvurular icin son tarih yok',fold(quote)))
     if schedule.get('kind')!='self_paced':return False
-    return bool(re.search(r'open for self-paced learning|self-paced and open-ended|self-paced course is already available online',fold(quote))
+    return bool(re.search(r'open for self-paced learning|self-paced and open-ended|self-paced course is already available online|(?:enrol|enroll|register|join).{0,80}(?:any time|own pace)|kendi hizinizda.{0,80}(?:kayit|katil)',fold(quote))
         or ('self-paced course is already available online' in fold(text) and re.search(r'no deadlines|own pace|self-paced',fold(quote))))
 
 
@@ -29,14 +31,16 @@ def publication_decision(current, draft, item, today):
     if not isinstance(country,dict) or not isinstance(target,dict):return 'invalid_evidence'
     if country.get('result')=='ineligible' or target.get('result')=='ineligible':
         rejected=country if country.get('result')=='ineligible' else target
-        return 'out_of_scope' if quote_present(rejected.get('evidence'),text) else 'invalid_evidence'
+        quote=rejected.get('evidence') or ''
+        exclusion=re.search(r'not eligible|ineligible|only.{0,80}(?:citizens|residents|universit|graduates|undergraduates)|restricted to|uygun degil|basvuramaz|yalnizca.{0,80}(?:vatandas|universite|lisans)|must.{0,60}(?:u\.s\.|united states)|(?:u\.s\.|united states).{0,60}(?:only|domestic)',fold(quote))
+        return 'out_of_scope' if quote_present(quote,text) and exclusion else 'invalid_evidence'
     if draft.get('official_status') in ('kapandi','askida'):
         return 'closed'
-    if draft.get('ai_conflict'):return 'invalid_evidence'
+    if critical_conflict(draft):return 'invalid_evidence'
     if not current.get('official_source_verified'):
         return 'primary_source_required'
     if current.get('source_id')=='esep-courses':
-        levels=re.search(r'Education levels:(.*?)Target audience type:',text,re.S|re.I)
+        levels=re.search(r'Education levels:\s*([^\n]*(?:\n(?![A-Z][\w ]{1,40}:)[^\n]*)*)',text,re.I)
         if not levels or 'upper secondary' not in fold(levels[1]):return 'audience_evidence_required'
     country_quote=country.get('evidence') or ''
     universal_course=(current.get('source_id')=='esep-courses' and draft.get('opportunity_type')=='training'
@@ -52,7 +56,8 @@ def publication_decision(current, draft, item, today):
                 and bool(re.search(r'katilmak isteyen ogretmen',fold(text)))
                 and 'is birligi kapsaminda' in fold(text))))
     if (country.get('result')!='eligible' or not quote_present(country_quote,text)
-            or not (universal_course or national_teacher or re.search(r'\b(?:turkey|turkiye|all countries|any country|every country|worldwide|anywhere in the world|around the world|tum ulkeler|her ulke|turkish participants|turkish applicants|turkish citizens|turk katilimci\w*|turk vatandas\w*)\b',fold(country_quote)))):
+            or not (universal_course or national_teacher or country_list_entry(country_quote,text) or
+                (country_application_clause(country_quote) and re.search(r'\b(?:turkey|turkiye|all countries|any country|every country|worldwide|anywhere in the world|around the world|tum ulkeler|her ulke|turkish participants|turkish applicants|turkish citizens|turk katilimci\w*|turk vatandas\w*)\b',fold(country_quote))))):
         return 'country_evidence_required'
     target_quote=target.get('evidence') or ''
     individual_teacher=(set(target.get('targets',[]))=={'teacher'}
@@ -81,7 +86,7 @@ def publication_decision(current, draft, item, today):
 
 
 def publish_batch(store, job, today=None):
-    today=today or date.today()
+    today=today or today_istanbul()
     results=[]
     for result in job.get('results',[]):
         if result['status']!='evidence_review_required':continue
@@ -97,6 +102,10 @@ def publish_batch(store, job, today=None):
             continue
         draft=proposal['draft']
         decision=publication_decision(current,draft,item,today)
+        missing=store.get('review_document_errors',ident) or {}
+        reviewed_urls={d['url'] for d in item['documents']}
+        if any(d.get('role')!='unrelated' and d.get('url') not in reviewed_urls for d in missing.get('documents',[])):
+            decision='essential_document_required'
         if decision=='eligible':
             call=deepcopy(current);call.update(deepcopy(draft))
             for field in ('budget_max','currency'):
@@ -120,6 +129,12 @@ def publish_batch(store, job, today=None):
                 decision='published'
             except ValueError:
                 decision='evidence_validation_failed'
-        record={'id':ident,'status':decision,'batch_id':job['id'],'base_version':proposal['base_version'],'checked_on':today.isoformat()}
+        record={'id':ident,'status':decision,'category':decision_category(decision),
+            'personal_conditions_pending':personal_conditions_pending(draft),
+            'conflict_fields':draft.get('ai_conflict_fields',[]),
+            'batch_id':job['id'],'base_version':proposal['base_version'],'checked_on':today.isoformat()}
+        from .pending_opportunities import pending_preview
+        preview=pending_preview(current,draft,item,decision,today)
+        if preview:record['public_preview']=preview
         store.put('publication_decisions',ident,record);results.append(record)
     return results

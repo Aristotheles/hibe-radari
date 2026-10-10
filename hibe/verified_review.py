@@ -2,7 +2,7 @@
 from copy import deepcopy
 from datetime import date
 import re
-from .domain import version, validate
+from .domain import version, validate, today_istanbul
 from .service import now
 
 
@@ -28,7 +28,7 @@ def commit_verified_review(store, ident, reviewed_call, baseline, evidence_texts
                 ):
             raise ValueError('Sürekli açık başvuru kanıtı gerekli')
     else:
-        if not call.get('deadline') or date.fromisoformat(call['deadline']) < date.today():
+        if not call.get('deadline') or date.fromisoformat(call['deadline']) < today_istanbul():
             raise ValueError('Güncel kesin son tarih gerekli')
         if call.get('deadline_precision') != 'day' or call.get('deadline_year_inferred') or not call.get('deadline_evidence'):
             raise ValueError('Tarih kanıtı gerekli')

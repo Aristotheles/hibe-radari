@@ -4,7 +4,7 @@ import json
 from .domain import *
 def now():return datetime.now(timezone.utc).isoformat()
 class Service:
- def __init__(self,store,admin_uid,today=date.today,approvals=None,demo=False):self.store=store;self.admin_uid=admin_uid;self.today=today;self.approvals=approvals;self.demo=demo
+ def __init__(self,store,admin_uid,today=today_istanbul,approvals=None,demo=False):self.store=store;self.admin_uid=admin_uid;self.today=today;self.approvals=approvals;self.demo=demo
  def is_admin(self,u):return bool(self.admin_uid and u.get('uid')==self.admin_uid and u.get('email_verified') is True)
  def require_admin(self,u):
   if not self.is_admin(u):raise PermissionError('Yönetici yetkisi gerekli')
@@ -88,5 +88,8 @@ class Service:
   for c in self.public():writer.writerow([safe(c['title']),c['deadline'] or 'Bilinmiyor',c['official_status'],safe(' | '.join(c['urls'])),'DEMO' if c.get('demo') else ''])
   return '\ufeff'+stream.getvalue()
  def public(self):return public_calls([c for c in self.store.all('calls') if self.demo or not (c.get('demo') or c.get('approval',{}).get('demo'))],self.today())
+ def pending(self):
+  from .pending_opportunities import pending_opportunities
+  return pending_opportunities(self.store,self.today())
  def metrics(self,u):
   self.require_admin(u);us=self.store.all('users');return {'registered':len(us),'subscribed':sum(x.get('subscribed',False) is True for x in us),'calls':len(self.store.all('calls')),'published':len(self.public())}

@@ -40,7 +40,7 @@ class DailyExtractor:
         return result
 
 
-def document_text(response):
+def document_text(response, max_chars=48000):
     if response.content.startswith(b'%PDF'):
         from pypdf import PdfReader
         pdf = PdfReader(BytesIO(response.content))
@@ -54,9 +54,17 @@ def document_text(response):
         text = (soup.find('main') or soup.find('article') or soup).get_text(' ', strip=True)
     else:
         raise ValueError('Çağrı belgesi HTML/PDF olmalı; liste akışı yeterli değil')
-    if not text.strip() or len(text) > 48000:
+    if not text.strip() or len(text) > max_chars:
         raise ValueError('Tam metin yok veya model metin sınırını aşıyor')
     return text
+
+
+def document_sections(text):
+    """Bounded full coverage: retain every character, including exclusions at the end."""
+    if not text.strip() or len(text)>144000:raise ValueError('Belge bölüm kapsam sınırı')
+    sections=[text[start:start+24000] for start in range(0,len(text),24000)]
+    assert ''.join(sections)==text
+    return sections
 
 
 def linked_pdf_urls(response, allowed_hosts):
@@ -74,6 +82,26 @@ def linked_pdf_urls(response, allowed_hosts):
         if safe and parts.path.lower().endswith('.pdf') and url not in found:found.append(url)
     if len(found)>10:raise ValueError('Bağlı PDF sınırı; eksik belge incelemesi başarılı sayılmadı')
     return found
+
+
+def linked_document_roles(response, allowed_hosts):
+    """Classify only real, already validated links; unknown attachments stay essential."""
+    from .aggregator.textutil import fold
+    import re
+    urls=linked_pdf_urls(response,allowed_hosts)
+    soup=BeautifulSoup(response.content,'html.parser')
+    roles={}
+    for anchor in soup.find_all('a',href=True):
+        url=urldefrag(urljoin(str(response.request.url),anchor['href']))[0]
+        if url not in urls:continue
+        label=fold(anchor.get_text(' ',strip=True)+' '+urlsplit(url).path)
+        role='unknown'
+        if re.search(r'guideline|rehber|eligibility|uygunluk|criteria|kriter|terms|sartname|conditions|kosul',label):role='eligibility'
+        elif re.search(r'deadline|calendar|takvim|son.basvuru',label):role='deadline'
+        elif re.search(r'application|basvuru|form',label):role='application_form'
+        elif re.search(r'privacy|kvkk|gizlilik|logo|poster|afis|annual.report|faaliyet.raporu',label):role='unrelated'
+        roles[url]=role
+    return roles
 
 
 def review_batch(store, config, extractor, profile, limit=30, fetcher_factory=Fetcher):

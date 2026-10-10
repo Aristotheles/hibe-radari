@@ -1,7 +1,7 @@
-import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs?v=20261010-r4';
+import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs?v=20261011-r11';
 
-import { renderListing, renderDetail, renderCalendar } from '/views.mjs?v=20261010-r4';
-import { todayISO } from '/decision.mjs?v=20261010-r4';
+import { renderListing, renderDetail, renderCalendar } from '/views.mjs?v=20261011-r11';
+import { todayISO } from '/decision.mjs?v=20261011-r11';
 
 const $ = s => document.querySelector(s);
 let audience = 'all', calendarAudience = 'all', currentView = 'radar';
@@ -9,7 +9,7 @@ const today = todayISO();
 if(['all','school','me','student'].includes(new URLSearchParams(location.search).get('audience'))) audience=new URLSearchParams(location.search).get('audience'); let calendarYear = Number(today.slice(0,4)), calendarMonth = Number(today.slice(5,7))-1;
 const managementRoute = location.pathname === '/yonetim';
 let publicSources = null;
-let token = '', auth = null, fb = null, calls = [], me = null, config = null, listState = 'loading';
+let token = '', auth = null, fb = null, calls = [], pendingCalls = [], me = null, config = null, listState = 'loading';
 
 function el(tag, text, className) {
   const n = document.createElement(tag);
@@ -84,7 +84,7 @@ function showView(view, focus = true) {
 async function route(focus = true) {
   const path = location.pathname;
   if (path.startsWith('/ilan/')) {
-    const c = calls.find(c => '/ilan/'+encodeURIComponent(c.id) === path);
+    const c = [...calls,...pendingCalls].find(c => '/ilan/'+encodeURIComponent(c.id) === path);
     const want = new URLSearchParams(location.search).get('audience') || audience;
     const index = c ? Math.max(0, (c.paths || []).findIndex(p => want === 'all' || (want === 'me' ? p.role === 'ogretmen_birey' : want === 'student' ? p.role === 'ogrenci_birey' : !['ogretmen_birey','ogrenci_birey'].includes(p.role)))) : 0;
     renderDetail(c,index); showView('detail',focus);
@@ -152,7 +152,7 @@ function sourceLink(url, text) {
 
 function draw() {
   if (listState !== 'ready') return;
-  renderListing(calls, {query:$('#search').value,role:$('#role').value,theme:$('#theme').value,sort:$('#sort').value,deadline:$('#deadline-filter').value,eligibility:$('#eligibility-filter').value},audience);
+  renderListing($('#publication-filter').value === 'pending' ? pendingCalls : calls, {query:$('#search').value,role:$('#role').value,theme:$('#theme').value,sort:$('#sort').value,deadline:$('#deadline-filter').value,eligibility:$('#eligibility-filter').value},audience);
 }
 
 async function loadCalls() {
@@ -160,6 +160,8 @@ async function loadCalls() {
   $('#result-count').textContent = 'Fırsatlar yükleniyor…'; $('#list-error').hidden = true;
   try {
     calls = await api('calls'); listState = 'ready'; draw();
+    try { pendingCalls = await api('opportunities/pending'); } catch { pendingCalls = []; }
+    draw();
     const stamps = calls.map(c => c.last_checked).filter(value => value && Number.isFinite(Date.parse(value)));
     const stamp = stamps.sort((a,b) => Date.parse(b)-Date.parse(a))[0];
     let freshness = $('#site-freshness');
@@ -324,8 +326,8 @@ $('#import-button').onclick = () => action($('#import-button'), async () => {
   await api('call', draft); message('Taslak kaydedildi; onay bekliyor.', 'success', '#import-status'); await admin();
 }, '#import-status');
 $('#search').oninput = draw;
-for (const id of ['role', 'theme', 'sort', 'deadline-filter', 'eligibility-filter']) $('#' + id).onchange = draw;
-$('#clear-filters').onclick = () => { $('#search').value = ''; $('#role').value = ''; $('#theme').value = ''; $('#deadline-filter').value = ''; $('#eligibility-filter').value = ''; $('#sort').value = 'deadline'; draw(); $('#search').focus(); };
+for (const id of ['role', 'theme', 'sort', 'deadline-filter', 'eligibility-filter', 'publication-filter']) $('#' + id).onchange = draw;
+$('#clear-filters').onclick = () => { $('#publication-filter').value = 'verified'; $('#search').value = ''; $('#role').value = ''; $('#theme').value = ''; $('#deadline-filter').value = ''; $('#eligibility-filter').value = ''; $('#sort').value = 'deadline'; draw(); $('#search').focus(); };
 $('#retry-calls').onclick = () => action($('#retry-calls'), loadCalls);
 $('#retry-admin').onclick = () => action($('#retry-admin'), admin, '#admin-status');
 
