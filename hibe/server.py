@@ -1,4 +1,4 @@
-import argparse,json,os,secrets,threading
+import argparse,hashlib,json,os,secrets,threading
 from pathlib import Path
 from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
 from urllib.parse import urlsplit
@@ -58,10 +58,13 @@ def handler(app):
      u=self.user();self.send(200,app.service.export_csv(u).encode('utf-8'),'text/csv; charset=utf-8');return
     if p=='/api/admin':
      from .auto_review import review_queue
-     u=self.user();app.service.require_admin(u);self.send(200,{'calls':review_queue(app.service.store.all('calls'),app.service.today()),'sources':app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))),'acceptance_cards':json.loads((ROOT/'config/source_acceptance.json').read_text(encoding='utf-8')),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
+     u=self.user();app.service.require_admin(u);self.send(200,{'calls':review_queue(app.service.store.all('calls'),app.service.today()),'review_proposals':app.service.store.all('review_proposals'),'sources':app.service.sources(json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8'))),'acceptance_cards':json.loads((ROOT/'config/source_acceptance.json').read_text(encoding='utf-8')),'discoveries':app.service.store.all('discoveries'),'source_health':app.service.store.all('source_health'),'metrics':app.service.metrics(u)});return
     if p in {'/','/takvim','/nasil-calisir','/aboneligim','/yonetim'} or p.startswith('/ilan/'):
      from .presentation import page
-     result=page((ROOT/'web/index.html').read_text(encoding='utf-8'),p,urlsplit(self.path).query,app.service.public(),json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8')),app.demo)
+     template=(ROOT/'web/index.html').read_text(encoding='utf-8')
+     asset_version=hashlib.sha256((ROOT/'web/app.js').read_bytes()).hexdigest()[:12]
+     template=template.replace('src="/app.js"','src="/app.js?v='+asset_version+'"')
+     result=page(template,p,urlsplit(self.path).query,app.service.public(),json.loads((ROOT/'config/sources.json').read_text(encoding='utf-8')),app.demo)
      if result:self.send(result[0],result[1],'text/html; charset=utf-8');return
     files={'/app.js':'app.js','/radar.mjs':'radar.mjs','/decision.mjs':'decision.mjs','/views.mjs':'views.mjs','/style.css':'style.css'}
     if p not in files:self.send(404,{'error':'Bulunamadı'});return
@@ -105,8 +108,8 @@ def handler(app):
  return H
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--demo',action='store_true');p.add_argument('--port',type=int,default=8000);p.add_argument('--check',action='store_true',help='Sır değerlerini göstermeden backend yapılandırmasını kontrol et');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--demo',action='store_true');p.add_argument('--port',type=int,default=int(os.environ.get('PORT','8000')));p.add_argument('--check',action='store_true',help='Sır değerlerini göstermeden backend yapılandırmasını kontrol et');a=p.parse_args()
  if a.check:
   state=configuration_status();print(json.dumps(state,ensure_ascii=False));return 0 if state['ready'] else 1
- s=ThreadingHTTPServer(('127.0.0.1',a.port),handler(App(a.demo)));print(f'http://127.0.0.1:{a.port} — '+('YEREL DEMO' if a.demo else 'Firebase'));s.serve_forever();return 0
+ host=os.environ.get('BIND_HOST','127.0.0.1');s=ThreadingHTTPServer((host,a.port),handler(App(a.demo)));print(f'http://{host}:{a.port} — '+('YEREL DEMO' if a.demo else 'Firebase'));s.serve_forever();return 0
 if __name__=='__main__':raise SystemExit(main())

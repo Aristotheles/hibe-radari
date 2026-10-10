@@ -1,12 +1,12 @@
-import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs';
+import { themes, roles, conditionLabels, safeHttps, deadlineLabel, sourceSummary } from '/radar.mjs?v=20261010-r2';
 
-import { renderListing, renderDetail, renderCalendar } from '/views.mjs';
-import { todayISO } from '/decision.mjs';
+import { renderListing, renderDetail, renderCalendar } from '/views.mjs?v=20261010-r2';
+import { todayISO } from '/decision.mjs?v=20261010-r2';
 
 const $ = s => document.querySelector(s);
-let audience = 'school', calendarAudience = 'school', currentView = 'radar';
+let audience = 'all', calendarAudience = 'all', currentView = 'radar';
 const today = todayISO();
-if(new URLSearchParams(location.search).get('audience')==='me') audience='me'; let calendarYear = Number(today.slice(0,4)), calendarMonth = Number(today.slice(5,7))-1;
+if(['all','school','me','student'].includes(new URLSearchParams(location.search).get('audience'))) audience=new URLSearchParams(location.search).get('audience'); let calendarYear = Number(today.slice(0,4)), calendarMonth = Number(today.slice(5,7))-1;
 const managementRoute = location.pathname === '/yonetim';
 let publicSources = null;
 let token = '', auth = null, fb = null, calls = [], me = null, config = null, listState = 'loading';
@@ -32,6 +32,9 @@ function friendlyError(error) {
   if (error.status === 400) return 'İşlem tamamlanamadı. Girdiğiniz bilgileri kontrol edin.';
   if (error.status >= 500) return 'Sunucu işlemi tamamlayamadı. Yeniden deneyin.';
   if (error.code === 'auth/popup-closed-by-user') return 'Giriş penceresi kapatıldı. Yeniden deneyebilirsiniz.';
+  if (error.code === 'auth/popup-blocked') return 'Tarayıcı Google giriş penceresini engelledi. Bu site için açılır pencereye izin verin.';
+  if (error.code === 'auth/unauthorized-domain') return 'Bu adres için Google girişi yapılandırılmamış. Site yöneticisine bildirin.';
+  if (error.code === 'auth/operation-not-supported-in-this-environment') return 'Bu tarayıcı Google girişini desteklemiyor. Siteyi Chrome veya Edge ile açın.';
   return 'İşlem tamamlanamadı. Yeniden deneyin.';
 }
 
@@ -58,7 +61,10 @@ async function api(path, data, responseType = 'json') {
 async function action(button, task, target = '#notice') {
   if (button.disabled) return;
   button.disabled = true;
-  try { await task(); } catch (error) { message(friendlyError(error), 'error', target); }
+  try { await task(); } catch (error) {
+    if (/^auth\/[a-z-]+$/.test(error.code || '')) console.warn('Google giriş durumu:', error.code);
+    message(friendlyError(error), 'error', target);
+  }
   finally { button.disabled = false; }
 }
 
@@ -80,7 +86,7 @@ async function route(focus = true) {
   if (path.startsWith('/ilan/')) {
     const c = calls.find(c => '/ilan/'+encodeURIComponent(c.id) === path);
     const want = new URLSearchParams(location.search).get('audience') || audience;
-    const index = c ? Math.max(0, (c.paths || []).findIndex(p => want === 'me' ? p.role === 'ogretmen_birey' : p.role !== 'ogretmen_birey')) : 0;
+    const index = c ? Math.max(0, (c.paths || []).findIndex(p => want === 'all' || (want === 'me' ? p.role === 'ogretmen_birey' : want === 'student' ? p.role === 'ogrenci_birey' : !['ogretmen_birey','ogrenci_birey'].includes(p.role)))) : 0;
     renderDetail(c,index); showView('detail',focus);
   } else if (path === '/takvim') {
     renderCalendar(calls,calendarAudience,calendarYear,calendarMonth);showView('calendar',focus);
@@ -154,7 +160,7 @@ async function loadCalls() {
   $('#result-count').textContent = 'Fırsatlar yükleniyor…'; $('#list-error').hidden = true;
   try {
     calls = await api('calls'); listState = 'ready'; draw();
-    const stamps = calls.map(c => c.approval?.at).filter(value => value && Number.isFinite(Date.parse(value)));
+    const stamps = calls.map(c => c.last_checked).filter(value => value && Number.isFinite(Date.parse(value)));
     const stamp = stamps.sort((a,b) => Date.parse(b)-Date.parse(a))[0];
     let freshness = $('#site-freshness');
     if (!freshness) { freshness = el('span'); freshness.id = 'site-freshness'; $('.site-footer').prepend(freshness); }
@@ -215,6 +221,16 @@ async function admin() {
       const approved = c.approval?.reviewed && c.approval.version === c.version;
       n.append(el('summary', c.title + (approved ? ' · Bu sürüm onaylı' : ' · İnceleme bekliyor')));
       n.append(el('p','Otomatik ayıklama: '+n._review.reasons.join(' ')));
+      const proposal=(data.review_proposals||[]).find(p=>p.id===c.id);
+      if(proposal){
+        n.append(el('h3','Yapay zekâ belge incelemesi'));
+        n.append(el('p',proposal.draft.summary));
+        n.append(el('p',proposal.base_version===c.version?'Bu sürümün belgeleri incelendi.':'Kayıt değişti; belge incelemesi yenilenmeli.','muted'));
+        for(const path of proposal.draft.paths||[])for(const condition of path.conditions||[]){
+          n.append(el('p',condition.text+' · '+(conditionLabels[condition.result]||'Belirsiz')));
+          if(condition.evidence)n.append(el('blockquote',condition.evidence));
+        }
+      }
       if (c.eligibility_assessment) {
         const labels = {school:'Okul / devlet lisesi',teacher:'Öğretmen',student_14_18:'14–18 yaş lise öğrencisi',school_partner:'Okulun proje ortaklığı',ngo_channel:'Dernek üzerinden başvuru'};
         for (const [target, result] of Object.entries(c.eligibility_assessment.targets || {})) {
@@ -350,7 +366,7 @@ try {
 
 function updateRoles() {
   const role=$('#role'),all=el('option','Tüm yollar');all.value='';role.replaceChildren(all);
-  for(const [key,label] of Object.entries(roles)) if(audience==='me'?key==='ogretmen_birey':key!=='ogretmen_birey') {const o=el('option',label);o.value=key;role.append(o);}
+  for(const [key,label] of Object.entries(roles)) if(audience==='all'||(audience==='me'?key==='ogretmen_birey':audience==='student'?key==='ogrenci_birey':!['ogretmen_birey','ogrenci_birey'].includes(key))) {const o=el('option',label);o.value=key;role.append(o);}
 }
 for(const b of document.querySelectorAll('[data-audience]')) b.onclick=()=>{audience=b.dataset.audience;for(const other of document.querySelectorAll('[data-audience]')){other.classList.toggle('selected',other===b);other.setAttribute('aria-pressed',String(other===b));}updateRoles();draw();};
 for(const b of document.querySelectorAll('[data-calendar-audience]')) b.onclick=()=>{calendarAudience=b.dataset.calendarAudience;for(const other of document.querySelectorAll('[data-calendar-audience]')){other.classList.toggle('selected',other===b);other.setAttribute('aria-pressed',String(other===b));}renderCalendar(calls,calendarAudience,calendarYear,calendarMonth);};

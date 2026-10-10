@@ -16,6 +16,12 @@ def main():
     started = datetime.now(timezone.utc).isoformat()
     try:
         result = refresh(store)
+        if os.environ.get('AI_REVIEW_ENABLED') == 'true':
+            from .review_batch import review_batch
+            from .llm import GeminiExtractor
+            from .aggregator.collector import load_config, ROOT
+            profile = json.loads((ROOT/'config/profile.json').read_text(encoding='utf-8'))
+            result['document_review'] = review_batch(store, load_config(), GeminiExtractor(max_calls=30), profile)
     except Exception as exc:
         # Keep credentials, fetched content and exception messages out of logs.
         result = {'status': 'failed', 'error_kind': type(exc).__name__}

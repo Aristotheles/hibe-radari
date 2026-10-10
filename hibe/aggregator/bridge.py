@@ -135,7 +135,7 @@ def publication_report(report, store, today):
     result = {k:copy.deepcopy(v) for k,v in report.items() if k not in GROUPS}
     result.update({g:[] for g in GROUPS})
     for call in store.all('calls'):
-        if call.get('from_aggregator') and not call.get('demo') and not call.get('approval',{}).get('demo') and review_ready(call) and publishable(call,today):
+        if not call.get('demo') and not call.get('approval',{}).get('demo') and review_ready(call) and publishable(call,today):
             targets=call.get('eligibility_assessment',{}).get('targets',{})
             statuses=[targets.get(k,{}).get('status') for k in ('school','teacher','student_14_18','school_partner')]
             group='accepted' if 'UYGUN' in statuses else 'review'

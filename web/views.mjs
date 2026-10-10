@@ -1,5 +1,5 @@
-import { themes, roles, eligibilityLabels, conditionLabels, safeHttps, deadlineLabel, filterCalls } from './radar.mjs';
-import { todayISO, daysLeft, groupOf, audienceCalls, pathsFor, fullDate, calendarCells, calendarICS } from './decision.mjs';
+import { themes, roles, eligibilityLabels, conditionLabels, safeHttps, deadlineLabel, filterCalls } from './radar.mjs?v=20261010-r2';
+import { todayISO, daysLeft, groupOf, audienceCalls, pathsFor, fullDate, calendarCells, calendarICS } from './decision.mjs?v=20261010-r2';
 
 export function node(tag, text, cls) { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (cls) n.className = cls; return n; }
 const $ = id => document.getElementById(id);
@@ -11,15 +11,15 @@ function icon(name = 'arrow') {
   path.setAttribute('d', name === 'check' ? 'm5 12 4 4 10-10' : 'M6 18 18 6M6 6h12v12'); svg.append(path); return svg;
 }
 function badge(path) { return node('span', roles[path?.role] || 'Rol belirsiz', 'role-badge ' + roleClass(path?.role)); }
-function reason(call) { return (call.themes || []).length ? (call.themes || []).map(t => themes[t] || t).join(', ') + ' konusuyla ilgili. Başvuru koşullarını ayrıca inceleyin.' : 'İlgili başvuru yolunu ve koşulları inceleyin.'; }
+function reason(call) { return call.audience_summary || ((call.themes || []).length ? (call.themes || []).map(t => themes[t] || t).join(', ') + ' konusuyla ilgili. Başvuru koşullarını ayrıca inceleyin.' : 'İlgili başvuru yolunu ve koşulları inceleyin.'); }
 function checked(call) { return call.last_checked ? fullDate(String(call.last_checked).slice(0, 10)) : 'Bilinmiyor'; }
 function link(href, text, cls) { const a = node('a', text, cls); a.href = href; return a; }
 function countText(call) { const days = daysLeft(call.deadline); return days === null ? 'Tarih bekleniyor' : days < 0 ? 'Süresi geçti' : days === 0 ? 'Son başvuru günü' : days + ' gün kaldı'; }
 
 export function renderListing(calls, filters, audience) {
   const items = filterCalls(audienceCalls(calls, audience).map(c => ({...c, paths: pathsFor(c, audience)})), filters);
-  $('cards').replaceChildren(); $('result-count').textContent = `${items.length} fırsat ${audience === 'school' ? 'okul yollarında' : 'bireysel yollarda'} listeleniyor`;
-  $('radar-title').textContent = audience === 'school' ? 'Okulun için bir sonraki fırsat.' : 'Senin için bir sonraki fırsat.';
+  $('cards').replaceChildren(); $('result-count').textContent = `${items.length} fırsat listeleniyor`;
+  $('radar-title').textContent = audience === 'all' ? 'Türkiye için proje ve eğitim fırsatları.' : audience === 'school' ? 'Okulun için bir sonraki fırsat.' : audience === 'student' ? 'Lise öğrencileri için fırsatlar.' : 'Öğretmenler için fırsatlar.';
   for (const group of ['Acil (14 günden az)', 'Bu ay', 'Daha ileri', 'Tarihi açıklanmadı', 'Süresi geçti']) {
     const list = items.filter(c => groupOf(c) === group); if (!list.length) continue;
     const section = node('section', undefined, 'opportunity-section'), heading = node('div', undefined, 'section-heading'), title = node('h2', group);
@@ -28,13 +28,14 @@ export function renderListing(calls, filters, audience) {
     for (const c of list) {
       const paths = pathsFor(c, audience).filter(p => !filters.role || filters.role === p.role);
       const a = link('/ilan/' + encodeURIComponent(c.id) + '?audience=' + audience, undefined, 'opportunity-card');
-      const top = node('div', undefined, 'card-top'); top.append(badge(paths[0]), node('span', c.demo ? 'DEMO · Kurgusal' : 'Yayımlanmış kayıt', 'program-label'));
+      const top = node('div', undefined, 'card-top'); top.append(badge(paths[0]), node('span', c.demo ? 'DEMO · Kurgusal' : c.opportunity_type === 'competition' ? 'Yarışma' : 'Yayımlanmış kayıt', 'program-label'));
       const row = node('div', undefined, 'card-title-row'); row.append(node('h3', c.title), icon());
       const date = node('div', undefined, 'card-deadline'), days = daysLeft(c.deadline), time = node('time', c.deadline ? fullDate(c.deadline) : 'Son tarih bilinmiyor');
       if (c.deadline) time.dateTime = c.deadline;
       date.append(node('span', countText(c), days !== null && days >= 0 && days < 14 ? 'deadline-urgent' : 'deadline-normal'), time);
       const why = node('div', undefined, 'card-reason'); why.append(icon('check'), node('span', reason(c)));
-      const bottom = node('div', undefined, 'card-bottom'); bottom.append(node('span', paths.length > 1 ? paths.length + ' başvuru yolu' : eligibilityLabels[paths[0]?.eligibility] || 'Uygunluk belirsiz'), node('span', 'Son kontrol: ' + checked(c)));
+      const pending = paths[0]?.eligibility === 'belirsiz' && paths[0]?.role === 'ogrenci_birey' ? 'Öğrenci başvurusu · kişisel koşulları kontrol edin' : eligibilityLabels[paths[0]?.eligibility] || 'Uygunluk belirsiz';
+      const bottom = node('div', undefined, 'card-bottom'); bottom.append(node('span', paths.length > 1 ? paths.length + ' başvuru yolu' : pending), node('span', 'Son kontrol: ' + checked(c)));
       a.append(top, row, date, why, bottom); grid.append(a);
     }
     section.append(grid); $('cards').append(section);
@@ -47,7 +48,7 @@ export function renderDetail(call, selected = 0) {
   if (!call) { const title = node('h1', 'İlan bulunamadı'); title.id = 'detail-title'; title.tabIndex = -1; target.append(title, link('/', 'İlanlara dön', 'back-link')); return; }
   const paths = call.paths || [], path = paths[selected], result = path?.eligibility || 'belirsiz';
   const back = link('/', 'Tüm ilanlar', 'back-link'), banner = node('div', undefined, 'eligibility-banner'); banner.dataset.result = result;
-  const answer = node('div'); answer.append(node('span', path?.role === 'ogretmen_birey' ? 'Bu yoldan başvurabilir misin?' : 'Okulun bu yoldan başvurabilir mi?'), node('strong', eligibilityLabels[result] || 'Uygunluk belirsiz'));
+  const answer = node('div'); answer.append(node('span', path?.role === 'ogrenci_birey' ? 'Lise öğrencisi olarak başvuru koşulları' : path?.role === 'ogretmen_birey' ? 'Bu yoldan başvurabilir misin?' : 'Okulun bu yoldan başvurabilir mi?'), node('strong', result === 'belirsiz' && path?.role === 'ogrenci_birey' ? 'Yaş, proje ve izin koşullarını kontrol edin' : eligibilityLabels[result] || 'Uygunluk belirsiz'));
   banner.append(answer, badge(path)); target.append(back, banner);
   const layout = node('div', undefined, 'detail-layout'), article = node('article'), heading = node('div', undefined, 'detail-heading'), h1 = node('h1', call.title); h1.id = 'detail-title'; h1.tabIndex = -1;
   heading.append(h1, node('p', call.demo ? 'DEMO · Kurgusal örnek; gerçek başvuruya dayanak değildir.' : call.summary), node('p', 'Son kontrol: ' + checked(call), 'verification')); article.append(heading);
@@ -56,7 +57,7 @@ export function renderDetail(call, selected = 0) {
   if (call.deadline_precision && call.deadline_precision !== 'day') article.append(node('p', 'Son tarih kesin değil; doğrulama gerekli.', 'verification'));
   const facts = node('div', undefined, 'facts-grid');
   const support = call.budget_max != null ? new Intl.NumberFormat('tr-TR').format(call.budget_max) + (call.currency ? ' ' + call.currency : ' · para birimi bilinmiyor') : 'Bilgi kaydı yok';
-  for (const [label, value, note] of [['Son başvuru', call.deadline ? fullDate(call.deadline) : 'Tarihi açıklanmadı', 'Kapanış saati bilinmiyor'], ['Destek', support, 'Yalnız mevcut veri gösterilir'], ['Eş finansman', 'Bilgi kaydı yok', 'Resmî metinden doğrulayın'], ['Ortak bilgisi', 'Bilgi kaydı yok', 'Başvuru rolü ortak gerekliliğini tek başına kanıtlamaz']]) {
+  for (const [label, value, note] of [['Son başvuru', call.deadline ? fullDate(call.deadline) : 'Tarihi açıklanmadı', call.deadline_time || 'Kapanış saati bilinmiyor'], ['Destek', support, 'Yalnız mevcut veri gösterilir'], ['Eş finansman', 'Bilgi kaydı yok', 'Resmî metinden doğrulayın'], ['Ortak bilgisi', 'Bilgi kaydı yok', 'Başvuru rolü ortak gerekliliğini tek başına kanıtlamaz']]) {
     const fact = node('div'); fact.append(node('span', label), node('strong', value), node('small', note)); facts.append(fact);
   } article.append(facts);
   if (paths.length > 1) {

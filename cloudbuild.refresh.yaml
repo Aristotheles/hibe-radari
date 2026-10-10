@@ -1,6 +1,8 @@
 steps:
   - name: gcr.io/cloud-builders/docker
-    args: ['build', '-f', 'Dockerfile.refresh', '-t', '${_IMAGE}', '.']
+    args: ['build', '-f', '${_DOCKERFILE}', '-t', '${_IMAGE}', '.']
 images: ['${_IMAGE}']
 options:
   logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _DOCKERFILE: Dockerfile.refresh

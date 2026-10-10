@@ -1,5 +1,5 @@
 export const themes = { engelli_kapsayicilik: 'Kapsayıcılık', cevre_su: 'Çevre ve su', bilim: 'Bilim', dil_kultur: 'Dil ve kültür', dijital: 'Dijital' };
-export const roles = { dogrudan: 'Doğrudan başvuru', ortak: 'Ortaklık', ogretmen_birey: 'Öğretmen bireysel', uygulama_yeri: 'Uygulama yeri', belirsiz: 'Rol belirsiz' };
+export const roles = { dogrudan: 'Doğrudan başvuru', ortak: 'Ortaklık', ogretmen_birey: 'Öğretmen bireysel', ogrenci_birey: 'Lise öğrencisi başvurusu', uygulama_yeri: 'Uygulama yeri', belirsiz: 'Rol belirsiz' };
 export const eligibilityLabels = { uygun: 'Uygun', uygun_degil: 'Uygun değil', belirsiz: 'Uygunluk belirsiz' };
 export const conditionLabels = { saglandi: 'Koşul sağlandı', saglanmadi: 'Koşul sağlanmadı', bilinmiyor: 'Koşul bilinmiyor' };
 

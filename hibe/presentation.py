@@ -7,7 +7,7 @@ from html import escape
 from urllib.parse import urlsplit, parse_qs
 
 MONTHS = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
-ROLES = {'dogrudan': 'Doğrudan başvuru', 'ortak': 'Ortaklık', 'ogretmen_birey': 'Öğretmen bireysel', 'uygulama_yeri': 'Uygulama yeri', 'belirsiz': 'Rol belirsiz'}
+ROLES = {'dogrudan': 'Doğrudan başvuru', 'ortak': 'Ortaklık', 'ogretmen_birey': 'Öğretmen bireysel', 'ogrenci_birey': 'Lise öğrencisi başvurusu', 'uygulama_yeri': 'Uygulama yeri', 'belirsiz': 'Rol belirsiz'}
 RESULTS = {'uygun': 'Uygun', 'uygun_degil': 'Uygun değil', 'belirsiz': 'Uygunluk belirsiz'}
 CONDITIONS = {'saglandi': 'Koşul sağlandı', 'saglanmadi': 'Koşul sağlanmadı', 'bilinmiyor': 'Koşul bilinmiyor'}
 
@@ -94,10 +94,10 @@ def page(template, path, query, calls, sources, demo, today=None):
     status, title = 200, 'Hibe Radarı | İlanlar'
     description = 'DEMO — Kurgusal örnekler; gerçek başvuruya dayanak değildir.' if demo else 'Başvuru yollarını ve kanıtı inceleyin.'
     if path == '/':
-        audience = parse_qs(query).get('audience', ['school'])[0]
+        audience = parse_qs(query).get('audience', ['all'])[0]
         selected = []
         for call in calls:
-            paths = [p for p in call.get('paths', []) if (p['role'] == 'ogretmen_birey' if audience == 'me' else p['role'] != 'ogretmen_birey')]
+            paths = [p for p in call.get('paths', []) if (audience == 'all' or (p['role'] == 'ogretmen_birey' if audience == 'me' else p['role'] == 'ogrenci_birey' if audience == 'student' else p['role'] not in ('ogretmen_birey','ogrenci_birey')))]
             if paths:
                 selected.append(dict(call, paths=paths))
         body = '<p><a href="/?audience=school">Okulum</a> / <a href="/?audience=me">Ben</a></p>' + listing(selected)

@@ -1,7 +1,7 @@
 from datetime import date
 import hashlib,json,re
 THEMES={'engelli_kapsayicilik':3,'cevre_su':3,'bilim':2,'dil_kultur':2,'dijital':1}
-ROLES={'dogrudan':40,'ortak':25,'ogretmen_birey':40,'uygulama_yeri':15,'belirsiz':10}
+ROLES={'dogrudan':40,'ortak':25,'ogretmen_birey':40,'ogrenci_birey':40,'uygulama_yeri':15,'belirsiz':10}
 def version(c):
  return hashlib.sha256(json.dumps({k:v for k,v in c.items() if k not in {'approval','version'}},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 def eligibility(p):
@@ -48,7 +48,7 @@ def public_calls(calls,today):
  out=[]
  for c in calls:
   if publishable(c,today):
-   d={k:c.get(k) for k in ('id','title','summary','themes','deadline','official_status','budget_max','currency','demo','source_id','source_url','organization','deadline_precision','deadline_evidence','deadline_checked_at','eligibility_assessment')}
+   d={k:c.get(k) for k in ('id','title','summary','themes','deadline','official_status','budget_max','currency','demo','source_id','source_url','organization','deadline_precision','deadline_evidence','deadline_checked_at','eligibility_assessment','audience_summary','opportunity_type','deadline_time')}
    d['last_checked']=c.get('last_verified_at') or c.get('approval',{}).get('at')
    d['version']=version(c)
    d['paths']=[dict(p,eligibility=eligibility(p),ranking=rank(c,p,today)) for p in c['paths']]

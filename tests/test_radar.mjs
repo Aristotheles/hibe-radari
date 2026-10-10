@@ -88,6 +88,14 @@ test('çok yollu çağrı okul ve bireysel görünümde ayrı yollar taşır', (
   assert.equal(audienceCalls([c,{paths:[{role:'dogrudan'}]}],'me').length,1);
 });
 
+test('lise öğrencisi başvurusu okul ve öğretmen başvurusu sayılmaz', () => {
+  const c={paths:[{role:'ogrenci_birey'}]};
+  assert.equal(pathsFor(c,'school').length,0);
+  assert.equal(pathsFor(c,'me').length,0);
+  assert.equal(pathsFor(c,'student').length,1);
+  assert.equal(pathsFor(c,'all').length,1);
+});
+
 test('ay takvimi pazartesi başlar, artık yılı ve boş hücreleri korur', () => {
   const cells=calendarCells(2028,1);assert.equal(cells.length%7,0);assert.equal(cells.filter(Boolean).length,29);
   assert.equal(cells[0],null);assert.equal(cells[1],'2028-02-01');

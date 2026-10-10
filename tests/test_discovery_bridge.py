@@ -35,6 +35,14 @@ class DiscoveryBridgeTests(unittest.TestCase):
         self.assertFalse(self.service.public());self.assertTrue(self.store.get('calls','abc')['discovery_changes_pending'])
         with self.assertRaises(ValueError):self.service.approve(ADMIN,'abc',version(self.store.get('calls','abc')))
         with self.assertRaises(ValueError):self.service.save(ADMIN,c)
+    def test_verified_manual_call_is_included_without_aggregator_flag(self):
+        persist_report(self.report,self.store)
+        c=self.reviewed()
+        c.pop('from_aggregator',None)
+        self.store.put('calls','abc',c)
+        self.service.approve(ADMIN,'abc',version(c))
+        published=publication_report(self.report,self.store,TODAY)
+        self.assertEqual([row['id'] for row in published['review']],['abc'])
     def test_missing_data_and_empty_rescan_do_not_delete(self):
         persist_report(self.report,self.store)
         r=copy.deepcopy(self.report);r['accepted'][0]['deadline']=None;r['accepted'][0]['deadline_precision']='unknown';r['accepted'][0]['deadline_evidence']=None

@@ -1,4 +1,4 @@
-import { dateValue } from './radar.mjs';
+import { dateValue } from './radar.mjs?v=20261010-r2';
 
 export function todayISO(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
@@ -19,7 +19,7 @@ export function groupOf(call, today = todayISO()) {
 }
 
 export function pathsFor(call, audience) {
-  return (call.paths || []).filter(p => audience === 'me' ? p.role === 'ogretmen_birey' : p.role !== 'ogretmen_birey');
+  return (call.paths || []).filter(p => audience === 'all' || (audience === 'me' ? p.role === 'ogretmen_birey' : audience === 'student' ? p.role === 'ogrenci_birey' : !['ogretmen_birey','ogrenci_birey'].includes(p.role)));
 }
 
 export function audienceCalls(calls, audience) { return calls.filter(c => pathsFor(c, audience).length); }

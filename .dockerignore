@@ -5,5 +5,8 @@
 !config/
 !config/**
 !Dockerfile.refresh
+!Dockerfile.backend
+!web/
+!web/**
 **/__pycache__
 **/*.pyc
