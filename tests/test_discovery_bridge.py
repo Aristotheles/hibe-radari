@@ -95,6 +95,54 @@ class DiscoveryBridgeTests(unittest.TestCase):
         call=self.store.get('calls','old-call');self.assertEqual(call['summary'],'Eski editör özeti')
         self.assertEqual(self.store.get('discoveries','abc')['call_id'],'old-call')
 
+    def test_batch_does_not_rescan_all_calls_for_every_new_record(self):
+        class CountingStore(MemoryStore):
+            scans=0
+            def all(self,kind):
+                if kind=='calls':self.scans+=1
+                return super().all(kind)
+        store=CountingStore();report=copy.deepcopy(self.report)
+        report['accepted']=[dict(self.row,id=f'new-{i}',title=f'Ayrı çağrı {i}',source_url=f'https://x.org/call/{i}') for i in range(80)]
+        persist_report(report,store)
+        self.assertEqual(store.scans,1)
+        self.assertEqual(len(store.all('discoveries')),80)
+        self.assertEqual(len(store.all('calls')),80)
+
+    def test_distinct_feed_guids_are_not_remerged_by_legacy_title_url_matching(self):
+        report=copy.deepcopy(self.report)
+        report['accepted']=[dict(self.row,id=ident,source_url='https://x.org/rss',source_entry_id=guid,identity_authority='source') for ident,guid in (('abc','guid-1'),('def','guid-2'))]
+        persist_report(report,self.store)
+        self.assertEqual(len(self.store.all('calls')),2)
+        self.assertEqual(self.store.get('discoveries','abc')['call_id'],'abc')
+        self.assertEqual(self.store.get('discoveries','def')['call_id'],'def')
+
+    def test_live_feed_same_title_url_guid_evidence_keeps_both_records(self):
+        import json
+        from hibe.aggregator.models import GrantOpportunity
+        fixture=json.loads((Path(__file__).parent/'fixtures/aggregator/duplicate_guid_live_evidence_20261010.json').read_text('utf-8'))
+        report=copy.deepcopy(self.report);report['accepted']=[]
+        for entry in fixture['entries']:
+            row=dict(entry,title=fixture['title'])
+            fields={k:v for k,v in row.items() if k!='id'}
+            self.assertEqual(GrantOpportunity(**fields).id,row['id'])
+            report['accepted'].append(row)
+        persist_report(report,self.store)
+        self.assertEqual(len(self.store.all('calls')),len(fixture['entries']))
+        for entry in fixture['entries']:
+            self.assertEqual(self.store.get('discoveries',entry['id'])['call_id'],entry['id'])
+
+    def test_legacy_alias_candidates_use_current_record_not_stale_index_copy(self):
+        old=dict(self.row,id='old-call',summary='Eski editör özeti',themes=[],paths=[],documents=[{'url':self.row['source_url'],'hash':'hash'}],official_status='bilinmiyor')
+        class UpdatingStore(MemoryStore):
+            def all(self,kind):
+                rows=super().all(kind)
+                if kind=='calls':
+                    current=self.get('calls','old-call');current['summary']='Güncel editör özeti';self.put('calls','old-call',current)
+                return rows
+        store=UpdatingStore();store.put('calls','old-call',old)
+        persist_report(self.report,store)
+        self.assertEqual(store.get('calls','old-call')['summary'],'Güncel editör özeti')
+
     def test_source_health_preserves_last_success_during_parser_failure(self):
         persist_report(self.report,self.store)
         before=self.store.get('source_health','s');self.assertEqual(before['last_found_count'],1)

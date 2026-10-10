@@ -43,6 +43,7 @@ def persist_report(report, store):
         seen_health.add(health['id'])
     changed = 0
     source_changes = {}
+    title_index = None
     for group in GROUPS:
         for raw in report.get(group, []):
             row = copy.deepcopy(raw); ident = row['id']; digest = discovery_version(row)
@@ -68,11 +69,19 @@ def persist_report(report, store):
                 from .models import canonical_url
                 from .textutil import fold
                 # Önceden elle/pipeline ile kaydedilmiş aynı çağrı yeni kimlikle çoğalmasın.
+                if title_index is None:
+                    title_index = {}
+                    for candidate in store.all('calls'):
+                        title_index.setdefault(fold(candidate.get('title','')), set()).add(candidate['id'])
                 matches=[]
-                for candidate in store.all('calls'):
+                for candidate_id in title_index.get(fold(row['title']), ()):
+                    # Aday yalnız indeks ipucudur; güncel editör kaydını tekrar oku.
+                    candidate = store.get('calls', candidate_id)
+                    if not candidate: continue
                     urls=[candidate.get('source_url')] + [d.get('url') for d in candidate.get('documents',[])]
                     if fold(candidate.get('title','')) != fold(row['title']): continue
-                    if any(row.get(k) and candidate.get(k) and row[k]!=candidate[k] for k in ('official_call_id','call_period','application_path')): continue
+                    if row.get('source_entry_id') and candidate.get('source_entry_id') and row.get('identity_authority') == candidate.get('identity_authority') and row['source_entry_id'] != candidate['source_entry_id']: continue
+                    if any(row.get(k) and candidate.get(k) and row[k]!=candidate[k] for k in ('official_call_id','identity_authority','programme','call_period','application_path')): continue
                     if any(url and canonical_url(url)==canonical_url(row['source_url']) for url in urls): matches.append(candidate)
                 if len(matches)==1: call=matches[0]
             record = {'id':ident,'version':digest,'observation':row,'group':group,
@@ -96,6 +105,8 @@ def persist_report(report, store):
                 continue
             call['version'] = version(call)
             store.put('calls',call['id'],call); changed += 1
+            if title_index is not None:
+                title_index.setdefault(fold(call.get('title','')), set()).add(call['id'])
     for health in report.get('sources',[]):
         prior=store.get('source_health',health['id']) or {}
         successful=health.get('health')=='success'

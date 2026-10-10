@@ -1,0 +1,30 @@
+{
+  "evidence_kind": "live_rss_metadata_not_application_terms",
+  "checked_at": "2026-10-10T03:37:28+00:00",
+  "title": "International Youth Conference",
+  "entries": [
+    {
+      "id": "51c40857802b33ce02b6",
+      "source_id": "eurodesk-finder",
+      "source_url": "https://programmes.eurodesk.eu/rss",
+      "source_entry_id": "https://programmes.eurodesk.eu/21015",
+      "identity_authority": "eurodesk-finder",
+      "official_call_id": null,
+      "programme": null,
+      "call_period": null,
+      "application_path": null
+    },
+    {
+      "id": "d90f173e75ab0f48a5a3",
+      "source_id": "eurodesk-finder",
+      "source_url": "https://programmes.eurodesk.eu/rss",
+      "source_entry_id": "https://programmes.eurodesk.eu/22248",
+      "identity_authority": "eurodesk-finder",
+      "official_call_id": null,
+      "programme": null,
+      "call_period": null,
+      "application_path": null
+    }
+  ],
+  "publication_approved": false
+}

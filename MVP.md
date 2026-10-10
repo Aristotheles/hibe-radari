@@ -734,3 +734,18 @@ Yeni karar yok; envanterin her kaynağına otomatik bağlantı sözü verilmez, 
 AŞAMA9Auth/ADC/adminUID/backend sorusu bekler; AŞAMA10iki29tamcanlıpilot/SMTP/zamanlayıcı/onay/RELEASE/deploy açık. Bu tek üstveri gözlemi insanonayı veya tam canlı kabul değildir.
 ### Sonraki adım
 - [ ] Aynı veri hacminde kalıcı kayıt yolunun her yeni çağrıda bütüncalls koleksiyonunu yeniden okuma maliyetini ölçmek; gerçek üretim erişimi uydurulmaz.
+
+
+## 2026-10-10 06:52 — Kalıcı kayıt tarama maliyeti ve gerçek GUID ayrımı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+hibe/aggregator/bridge.py eski çağrı eşlemesinde bütüncalls koleksiyonunu her yeni satırda okuyordu.250gerçeküstveride250tarama/31125satır/3.837s; yeni koşuiçi başlık→adayIDindeksi tekbaşlangıçtarama/0mevcutsatır/0.119s. Her eşleşen aday store.get ile güncel okunur; indeksteki eski editör özeti geri yazılmaz. Aynı koşuda oluşturulanlar indekse eklenir. Firestore canlı okuma/maliyet veya tüm eşzamanlı-yazar garantisi ölçülmedi; gerçek onay/veri koruma kuralları korunur.
+Gerçek EurodeskFinderüstverisinde aynı3kelimelikbaşlık/RSSURL/farklıGUID iki kayıt var. Collector bunları ayırırken eski bridgelegacy başlık+URLeşlemesi tekrar birleştiriyordu. Önceki HEADişleviyle geçiciMemoryStore1çağrı, yeniyle2çağrı; iki özgün keşif kimliği aynı kalır. GUID/authority/programme uyuşmazlığı legacy eşleşmeyi durdurur. Gerçek kısaüstverifixture tests/fixtures/aggregator/duplicate_guid_live_evidence_20261010.json; çağrı şartı/insan onayı değildir.
+### Doğrulama
+FEATURE: tam218Python PASS; önceki217PASS66.063s ardından gerçekörnekte17hedefliPASS0.132s; indeks+staging16PASS21.238s. İlk sentetikGUIDtesti1!=2FAIL gösterdi, aynıtestdüzeltmeilePASS. Log .agent/bridge-live-guid-tests.txt; benchmarkbefore/after ve live-guid-remerge-regression ignored.agent içinde. Önceki11JS PASS/diff-checkPASS.127public/latestSHAaynı.
+### Alınan kararlar
+Yeni karar yok; aynı çağrı tekilleştirilir, farklı GUID çağrıları hatalı birleşmez. Mevcut store/collector korunur.
+### Açık sorular ve sorunlar
+AŞAMA9gerçekAuth/ADC/adminUID/backend; AŞAMA10tamcanlıpilot/zamanlayıcı/SMTP/insanonayı/RELEASE/deploy açık. Kullanıcı sorusu tekrar sorulmadı.
+### Sonraki adım
+- [ ] Aynı23izinliarayüzde ikinci gerçekpartialüstverigözlemi; altıincelenmemişkaynağın yokluğunu tam başarı sayma. Sonra güvenli checkpoint/uzakCI kabulü ve gerçek erişim kaydından devam.
