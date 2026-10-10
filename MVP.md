@@ -675,3 +675,18 @@ Yeni karar yok; tüm aşamalara kadar yetkili yerel çalışma sürer.
 AŞAMA9 gerçek Auth/ADC/adminUID/backend erişimi; AŞAMA10 üretim SMTP/zamanlayıcı/tam canlı pilot/onay/RELEASE/deploy bekler. Kullanıcı sorusu tekrar sorulmadı.
 ### Sonraki adım
 - [ ] Kalıcı keşif ön doğrulamasında sonraki satır hatasının önceki kayda etkisini sınamak; mevcut mimari ve tek aktif ajan korunur.
+
+
+## 2026-10-10 06:28 — Keşif koşusu ön doğrulamasında veri koruma
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Regresyonlar önce ikiFAIL/tekERROR gösterdi: sonraki manuel kimlik çakışması önceki onayı silebiliyor; aynı koşuda yinelenen kimlik kabul ediliyor; kimliği eksik sağlık satırı önceki kayıtlar yazıldıktan sonra KeyError üretiyordu.
+hibe/aggregator/bridge.py bütün gözlemlerin manuel kimlik çakışmasını ve benzersizliğini, bütün sağlık satırlarının kimliklerini yazmadan önce doğrular. Manuel mevcut çağrı ve önceki onay geçersiz koşuda byte-equivalentMemoryStore verisiyle korunur. Bu tüm DBwrite/disk/Firestore arızalarına karşı atomik transaction iddiası değildir; mevcut adapterler korunur.
+### Doğrulama
+FEATURE: aynı kök hata regresyonları ve staging14PASS21.959s; tam210Python PASS67.315s,11JS PASS, diff-check PASS. Log .agent/bridge-preflight-tests.txt. hibe.server --check yeniden beş eksik ayar ve ADC DefaultCredentialsError gösterdi; gerçek erişim sağlanmadı.
+### Alınan kararlar
+Yeni karar yok; kullanıcı veri/insan onayı koruma kuralları uygulandı.
+### Açık sorular ve sorunlar
+AŞAMA9gerçekAuth/ADC/adminUID/backend; AŞAMA10canlıSMTP/tamkoşu/zamanlayıcı/onay/RELEASE/deploy açık. Kullanıcı sorusu bekler, tekrar sorulmadı.
+### Sonraki adım
+- [ ] Bülten gönderiminde DEMO ile üretim ayrımını ve gönderim öncesi onay sürümünü kontrol et.

@@ -21,12 +21,26 @@ def persist_report(report, store):
     """Başarısız/kısmi koşudaki bulunan kayıtları da saklar; yokluk silme değildir."""
     # Önce tüm gözlemleri doğrula; bozuk satır ilk kayıtları kısmen yazmasın.
     import re
+    seen = set()
     for group in GROUPS:
         for row in report.get(group, []):
-            if not isinstance(row.get('id'),str) or not re.fullmatch(r'[a-zA-Z0-9_-]{1,100}',row['id']):
+            if not isinstance(row,dict) or not isinstance(row.get('id'),str) or not re.fullmatch(r'[a-zA-Z0-9_-]{1,100}',row['id']):
                 raise ValueError('Geçersiz keşif kimliği')
+            if row['id'] in seen:
+                raise ValueError('Koşu içinde tekrarlanan keşif kimliği')
+            seen.add(row['id'])
             if not row.get('title') or not row.get('source_id') or not row.get('source_url'):
                 raise ValueError('Keşif başlık/kaynak/URL alanı eksik')
+            existing = store.get('calls', row['id'])
+            if existing and not existing.get('from_aggregator'):
+                raise ValueError('Keşif kimliği mevcut manuel çağrı ile çakışıyor')
+    seen_health = set()
+    for health in report.get('sources', []):
+        if not isinstance(health,dict) or not isinstance(health.get('id'),str) or not re.fullmatch(r'[a-zA-Z0-9_-]{1,100}',health['id']):
+            raise ValueError('Geçersiz kaynak sağlık kimliği')
+        if health['id'] in seen_health:
+            raise ValueError('Koşu içinde tekrarlanan kaynak sağlık kimliği')
+        seen_health.add(health['id'])
     changed = 0
     source_changes = {}
     for group in GROUPS:

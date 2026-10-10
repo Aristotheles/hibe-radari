@@ -69,6 +69,24 @@ class DiscoveryBridgeTests(unittest.TestCase):
         with self.assertRaises(ValueError):persist_report(r,self.store)
         self.assertFalse(self.store.all('discoveries'))
 
+    def test_later_manual_id_collision_keeps_earlier_approval_and_store_unchanged(self):
+        persist_report(self.report,self.store);c=self.reviewed();self.service.approve(ADMIN,'abc',c['version'])
+        self.store.put('calls','manual-id',{'id':'manual-id','title':'Manuel kayıt','summary':'Editör verisi'})
+        before=copy.deepcopy(self.store.data)
+        r=copy.deepcopy(self.report);r['accepted'][0]['deadline']='2026-12-01'
+        r['accepted'].append(dict(self.row,id='manual-id',source_url='https://x.org/call/2'))
+        with self.assertRaises(ValueError):persist_report(r,self.store)
+        self.assertEqual(self.store.data,before)
+        self.assertTrue(self.store.get('calls','abc')['approval'])
+
+    def test_duplicate_batch_id_and_bad_health_fail_before_any_write(self):
+        duplicate=copy.deepcopy(self.report);duplicate['accepted'].append(dict(self.row,title='Farklı çağrı'))
+        invalid_health=copy.deepcopy(self.report);invalid_health['sources']=[{'health':'failed'}]
+        for report in (duplicate,invalid_health):
+            with self.subTest(report=report):
+                with self.assertRaises(ValueError):persist_report(report,self.store)
+                self.assertEqual(self.store.data,{})
+
     def test_legacy_call_id_and_curated_fields_are_kept(self):
         old=dict(self.row,id='old-call',summary='Eski editör özeti',themes=[],paths=[],documents=[{'url':self.row['source_url'],'hash':'document-hash'}],official_status='bilinmiyor')
         self.store.put('calls','old-call',old)
