@@ -844,3 +844,12 @@ Kullanıcı deneyebilirsin dedi; yalnız kısa fixture metniyle max_calls1 bağl
 Anahtar ekledim bildirimine rağmen backend tarafından erişilebilir anahtar yok. Ücretsiz katman doğrulanmış sayılmaz. Mevcut kod/Gemini modeli değiştirilmedi.
 ### Sonraki adım
 Kullanıcı anahtarı User ortamına boş olmayan değer olarak kaydettikten sonra tek çağrıyı tekrar doğrula; toplu inceleme veya ücretli fallback başlatma.
+
+## 2026-10-10 — Gerçek Gemini bağlantısı başarılı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kullanıcı diğer projesinden Tier1 anahtarını kaydettiğini bildirerek bağlantı testi istedi. Mevcut extractor ile kısa resmî fixture alıntısı kullanıldı; gemini-3.8-flash,1çağrı,success,sonbaşvuru2026-11-05,published=false. Sonuç ignored .agent/gemini-connection-result.json. Anahtar veya ham yanıt kayıtlara yazılmadı. Bu bağlantı testi tam koşul incelemesi veya bütün kaynak kabulü değildir.
+### Yetki ve açık işler
+Tier1 ücretli olabilir; kullanıcı yalnız bu bağlantı testini istedi. Önceki ücretsiz kullanım tercihi için toplu ücretli inceleme açılmadı. Kesin ücret/usageMetadata ölçülmedi. Zamanlayıcıya Gemini bağlanmadı; yayın/deploy yok.
+### Sonraki adım
+Toplu otomatik inceleme öncesi ücretsiz katman tercihini ve günlük bütçe korumasını çöz; bağlantı çalışıyor diye ücretli toplu kullanımı başlatma.
