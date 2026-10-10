@@ -99,3 +99,17 @@ Yeni karar yok; tüm aşamalara kadar yetkili yerel çalışma sürer.
 AŞAMA9 gerçek Auth/ADC/adminUID/backend erişimi; AŞAMA10 üretim SMTP/zamanlayıcı/tam canlı pilot/onay/RELEASE/deploy bekler. Kullanıcı sorusu tekrar sorulmadı.
 ### Sonraki adım
 - [ ] Kalıcı keşif ön doğrulamasında sonraki satır hatasının önceki kayda etkisini sınamak; mevcut mimari ve tek aktif ajan korunur.
+
+
+## 2026-10-10 06:58 — Kota sonrası doğrulanmış yerel checkpoint
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+218Python PASS65.697s,11JS PASS, compileall/4JSsyntax/diff-check PASS. İki gerçek23API/RSS üstveri gözleminde23healthsuccess/951keşif; ikinciMemoryStore951ayrıkçağrı, iki farklıGUIDyenidenbirleşmez. İki raporpartial,29tamcanlıpilot veya ayrıntı/uygunluk/insanonayı değildir.127public/latestSHAaynı; eski13connector/30registryID korunur. Modelgemini-3.8-flash/backendsecret kuralı değişmedi.
+TÜBİTAKtarihkanıtları, GençlikKöprüsüresmîizinkısıtı, okunurTürkçehatalar, HTTPgövdesınırı, kimlikönkontrolü, bültenDEMO/güncelonay/HTMLoptout ve dedupe/kayıt performansı yereltestlidir. Tam218kodHEAD68c69cbed9bfef160fdd3f9e27ece6160107a8fb. Belgecheckpoint commit/push hazırlanıyor; uzakSHAveCI gerçeksonuçla ayrıca kabul edilecek. Mainmerge/deploy/gerçekSMTPyok.
+MVP'nin eski rutin dur/onay metni kullanıcı onaylı güncelkesindevamkuralıyla düzeltildi; geçmiş tarihli kayıtlar silinmedi. README ve canlıpilotraporu güncelkanıta eşlendi. Gitdiffsınırlısecretbiçim taraması eşleşmesiz; ignored.agent/env/DB/public/approvalsGit'e alınmaz.
+### Alınan kararlar
+Yeni karar yok; kullanıcı tüm aşamalara kadar yereldevam/koşullukota/commitpush/RELEASEdeploy yetkisi aynen uygulanır.
+### Açık sorular ve sorunlar
+GerçekAŞAMA9Auth/ADC/adminUID/backend erişimi hâlâ yok; sonservercheckbeşeksikenv+DefaultCredentialsError. Kullanıcıya hesap/UIDsorusu zaten gönderilmiş, rutin tekrar yok. AŞAMA10gerçekyayınonayı/üretimSMTP/zamanlayıcı/tamcanlıpilot/RELEASE/hostingrollback açık. Tamamlandı veya canlıçalışıyor denmez.
+### Sonraki adım
+- [ ] Uzakcheckpoint/UbuntuWindowsCI gerçekkabulü; ardından AŞAMA9 gerçekerişim değişimini mevcut15dktakiple kontrol etmek. Erişim yokken yeni kimlik/onay/ücretlialtyapı uydurma; anlamlı bağımsız iş varsa sürdür, aynı engelde sessizkal.

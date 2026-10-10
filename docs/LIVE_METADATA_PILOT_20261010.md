@@ -15,7 +15,9 @@ Mevcut 29 connector içinden politika kaydı `allowed` olan 23 API/RSS arayüzü
 
 Yerel kanıt: `.agent/source-audit/allowed-live-metadata.json`, `.agent/allowed-live-metadata-log.txt`. Başlangıç 06:34:26; sonuç 06:39:56 Europe/Istanbul. Bunlar ağ, tekilleştirme ve geçici kayıt doğrulamasını birlikte kapsar.
 
-Bu tek canlı üstveri gözlemidir. İki tam üretim koşusu, çağrı ayrıntısı, Türkiye/okul uygunluğu, gerçek yönetici onayı veya RELEASE kabulü sayılmaz.
+İlk ölçüm tek canlı üstveri gözlemidir. İki tam üretim koşusu, çağrı ayrıntısı, Türkiye/okul uygunluğu, gerçek yönetici onayı veya RELEASE kabulü sayılmaz.
+
+Sonraki ölçüm: ikinci gözlem 06:54:02 Europe/Istanbul tarihinde tamamlandı. Aynı 23 arayüz sağlıklı; 951 keşif ve 951 ayrı çağrı yalnız geçici MemoryStore'da korundu. Gruplar ilk ölçümle aynı, rapor yine **partial**. Önceki 127 public/latest hash değişmedi. Kanıt `.agent/source-audit/allowed-live-metadata-2.json`, `.agent/allowed-live-metadata-2-log.txt`. İki gözlem bulunması 29 kaynaklık tam pilot veya insan onayı anlamına gelmez.
 
 ## Tekilleştirme süresi
 
