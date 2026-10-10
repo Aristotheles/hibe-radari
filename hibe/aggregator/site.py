@@ -12,6 +12,7 @@ import json
 import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from urllib.parse import quote, urlsplit
 
 from .icons import ICONS
@@ -185,9 +186,13 @@ def header(active, report):
 
 
 def footer(report):
-    gen = esc(report['generated_at'][:10])
+    stamp = datetime.fromisoformat(report['generated_at'].replace('Z', '+00:00'))
+    if stamp.tzinfo is None:
+        from datetime import timezone
+        stamp = stamp.replace(tzinfo=timezone.utc)
+    gen = esc(stamp.astimezone(ZoneInfo('Europe/Istanbul')).strftime('%d.%m.%Y %H:%M'))
     return (f'<footer class="site-footer"><span>{icon("radar", 16)} Doğru fırsat, doğru zamanda.</span>'
-            f'<span>Otomatik toplanan duyurular · {gen}<span class="footer-separator"> / </span>Hesap, form ve takip çerezi yok.</span></footer>')
+            f'<span>Son güncelleme: <time datetime="{esc(report["generated_at"])}">{gen}</time> (Türkiye saati)<span class="footer-separator"> / </span>Hesap, form ve takip çerezi yok.</span></footer>')
 
 
 def page(title, description, body, active, report, path='/', extra_head=''):

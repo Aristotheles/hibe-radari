@@ -152,7 +152,16 @@ function draw() {
 async function loadCalls() {
   listState = 'loading'; $('#cards').setAttribute('aria-busy', 'true'); $('#cards').replaceChildren();
   $('#result-count').textContent = 'Fırsatlar yükleniyor…'; $('#list-error').hidden = true;
-  try { calls = await api('calls'); listState = 'ready'; draw(); }
+  try {
+    calls = await api('calls'); listState = 'ready'; draw();
+    const stamps = calls.map(c => c.approval?.at).filter(value => value && Number.isFinite(Date.parse(value)));
+    const stamp = stamps.sort((a,b) => Date.parse(b)-Date.parse(a))[0];
+    let freshness = $('#site-freshness');
+    if (!freshness) { freshness = el('span'); freshness.id = 'site-freshness'; $('.site-footer').prepend(freshness); }
+    freshness.textContent = stamp ? 'Son güncelleme: ' + new Intl.DateTimeFormat('tr-TR', {
+      timeZone:'Europe/Istanbul', dateStyle:'short', timeStyle:'short'
+    }).format(new Date(stamp)) + ' (Türkiye saati)' : 'Son güncelleme: doğrulanmış yayın tarihi yok';
+  }
   catch { listState = 'error'; $('#result-count').textContent = 'Liste yüklenemedi'; $('#list-error').hidden = false; }
   finally { $('#cards').setAttribute('aria-busy', 'false'); }
 }

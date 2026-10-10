@@ -908,3 +908,10 @@ Kaydı hazırlayan: Codex.
 Kota kalan kısa34/haftalık33. 7ee5b2e origin eşliği ölçüldü; CI henüz in_progress, önceki0b3ff73 success. hibe/document_review.py belge URL/metin hashleri, profil, model ve kanıt politikası fingerprinti ile mevcut başarılı öneriyi yeniden kullanır. Çağrı sürümü değişirse, model/profil/belge değişirse cache kullanılmaz. Başarısız çıkarım cache değildir; mevcut kayıt ve yayın onayı korunur. İlgili7test PASS0.137s, diff check PASS. Gerçek Gemini çağrısı/deploy yapılmadı; bu çekirdek henüz haftalık sunucu akışına bağlı değil.
 ### Sonraki adım
 Kalıcı çağrı/token tavanını ve izinli resmî belge getirme adımını bu çekirdeğe bağla, sınırlandırılmış gerçek inceleme yap. Yeni kod imajda henüz yok; sunucu kaynak görevi önceki doğrulanmış imajda çalışır.
+
+## 2026-10-10 — Son güncelleme tarih ve saati
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+Kullanıcı site güncellemesini görmek için tarih/saat istedi. Statik site footer mevcut rapor generated_at değerini Europe/Istanbul saatine çevirerek Son güncelleme: GG.AA.YYYY SS:DD gösterir; sayfa açılış saati kullanılmaz. web/app.js onaylı public çağrıların son approval.at değerini footer'da gösterir; onaylı veri yoksa doğrulanmış yayın tarihi yok yazar. İlgili2Python zaman dönüşümü/gün aşımı testi PASS0.017s, JS syntax/diff PASS. Gerçek localhost8021 tarayıcı footer Son güncelleme: doğrulanmış yayın tarihi yok ölçüldü. UI için mevcut Impeccable yönergeleri okundu, küçük kapsam korunarak uygulandı.
+### Açık işler ve sonraki adım
+FAST doğrulandı; canlı Hosting deploy yapılmadı. Mevcut canlı snapshot yayın kapıları nedeniyle korunur; site güncelleme göstergesi canlıya aktarılmış sayılmaz. Tam sunucu inceleme/temizlik/yayın bağlantısı açık; son güncelleme ile son tarama ayrı kavramlardır. Kullanıcı eski heartbeat otomasyonunu sildi; tekrar oluşturulmaz.
