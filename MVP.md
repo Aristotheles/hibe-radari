@@ -690,3 +690,18 @@ Yeni karar yok; kullanıcı veri/insan onayı koruma kuralları uygulandı.
 AŞAMA9gerçekAuth/ADC/adminUID/backend; AŞAMA10canlıSMTP/tamkoşu/zamanlayıcı/onay/RELEASE/deploy açık. Kullanıcı sorusu bekler, tekrar sorulmadı.
 ### Sonraki adım
 - [ ] Bülten gönderiminde DEMO ile üretim ayrımını ve gönderim öncesi onay sürümünü kontrol et.
+
+
+## 2026-10-10 06:31 — Bülten DEMO ve güncel onay sürümü kapısı
+Kaydı hazırlayan: Codex.
+### Yapılanlar
+hibe/notifications.py send_pending DEMOservice'i SMTPbağlantısından önce reddeder. prepare seçilmiş kamu çağrılarının aynı anda üretilen sürümhashlerini call_versions alanında saklar; hibe/domain.py public_calls bu hash'i aynı kayıt görüntüsünden üretir. Sonradan ayrı storeokuması eski içerik/yeni sürüm eşleşmesi yaratmaz.
+Gönderimden hemen önce her seçilmiş çağrı hâlâ yayınlanabilir/güncel/onaylı/DEMOdışı mı denetlenir. Revoked/değişmiş/yeni sürümle yeniden onaylanmış veya sürüm kanıtı olmayan eski prepared bülten stale kalır; otomatik gönderilmez. İptal edilmiş opt-in mevcut cancelled yolu korunur. İşlem gönderimi ile DBcommit arasında dağıtık transaction iddiası değildir; gerçek SMTP yok.
+### Doğrulama
+FEATURE: tam212Python PASS; hedefli20PASS ve ardından yeni sürümle yeniden onay senaryosu dahilnotifications7PASS0.540s. Önceki11JS PASS, diff-check PASS. Log .agent/newsletter-version-tests.txt. MockSMTP fresh yolunda tek gönderim, diğer yollar sıfır; DEMO SMTPconstructor bile çağrılmadı. Gerçek e-posta gönderilmedi.
+### Alınan kararlar
+Yeni karar yok; kullanıcı gerçek yayın/onay/DEMO ayrımı kuralı bültene uygulandı.
+### Açık sorular ve sorunlar
+AŞAMA9 gerçekAuth/ADC/adminUID/backend engeli sürer; AŞAMA10/RELEASE tamamlanmadı, deploy yapılmadı.
+### Sonraki adım
+- [ ] HTML bültenin abonelikten çıkış bağlantısını içerdiğini doğrula; eksikse aynı bülten hattında düzelt.

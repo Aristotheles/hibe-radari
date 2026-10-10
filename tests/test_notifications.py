@@ -34,3 +34,28 @@ class MailTests(unittest.TestCase):
   s.store.put('users','v',{'uid':'v','email':'v@example.org','themes':[],'subscribed':False});self.assertEqual(prepare(s,'https://example.org','x'*32),0)
  def test_sending_disabled(self):
   with self.assertRaises(ValueError):send_pending(Service(MemoryStore(),'admin'))
+ def test_demo_send_fails_before_smtp_connection(self):
+  from unittest.mock import patch
+  s=Service(MemoryStore(),'admin',demo=True)
+  with patch.dict(os.environ,{'NEWSLETTER_ENABLED':'true'}),patch('hibe.notifications.smtplib.SMTP') as smtp:
+   with self.assertRaisesRegex(ValueError,'DEMO'):send_pending(s)
+   smtp.assert_not_called()
+ def test_revoked_changed_and_legacy_prepared_content_is_not_sent(self):
+  from unittest.mock import patch
+  from hibe.domain import version
+  for change in ('revoked','changed','reapproved','legacy','fresh'):
+   with self.subTest(change=change):
+    s=Service(MemoryStore(),'admin')
+    call={'id':'c','title':'Resmî çağrı','summary':'Editör açıklaması','themes':[],'deadline':None,'official_status':'bilinmiyor','documents':[{'url':'https://example.org','hash':'evidence'}],'paths':[]}
+    call['approval']={'version':version(call),'reviewed':True};s.store.put('calls','c',call)
+    s.store.put('users','u',{'uid':'u','email':'u@example.org','themes':[],'subscribed':True})
+    prepare(s,'https://example.org','x'*32)
+    message=s.store.all('outbox')[0]
+    if change=='revoked':call.pop('approval');s.store.put('calls','c',call)
+    if change=='changed':call['summary']='Yeni açıklama';s.store.put('calls','c',call)
+    if change=='reapproved':call['summary']='Yeni onaylı açıklama';call['approval']={'version':version(call),'reviewed':True};s.store.put('calls','c',call)
+    if change=='legacy':message.pop('call_versions');s.store.put('outbox',message['id'],message)
+    with patch.dict(os.environ,{'NEWSLETTER_ENABLED':'true','SMTP_HOST':'smtp.example.org','SMTP_FROM':'sender@example.org'}),patch('hibe.notifications.smtplib.SMTP') as smtp:
+     self.assertEqual(send_pending(s),1 if change=='fresh' else 0)
+     self.assertEqual(smtp.return_value.__enter__.return_value.send_message.call_count,1 if change=='fresh' else 0)
+    self.assertEqual(s.store.get('outbox',message['id'])['status'],'sent' if change=='fresh' else 'stale')

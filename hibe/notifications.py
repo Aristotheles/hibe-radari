@@ -5,6 +5,7 @@ from email.message import EmailMessage
 from urllib.parse import quote
 from .export import render
 from .service import now
+from .domain import version, publishable
 
 def unsubscribe_token(uid,secret,expires=None):
  if len(secret)<32:raise ValueError('UNSUBSCRIBE_SECRET en az 32 karakter olmalı')
@@ -31,10 +32,12 @@ def prepare(service,base_url,secret):
   selected=[c for c in calls if not u['themes'] or set(c['themes'])&set(u['themes'])]
   link=base_url.rstrip('/')+'/?unsubscribe='+quote(unsubscribe_token(u['uid'],secret))
   text='Hibe Radarı · '+week+'\n\n'+'\n\n'.join(c['title']+'\n'+c['summary'] for c in selected)+'\n\nAbonelikten çık: '+link
-  service.store.put('outbox',key,{'id':key,'uid':u['uid'],'week':week,'status':'prepared','subject':'Hibe Radarı · '+week,'text':text,'html':render(selected),'unsubscribe_url':link,'created_at':now()});count+=1
+  snapshots={c['id']:c['version'] for c in selected}
+  service.store.put('outbox',key,{'id':key,'uid':u['uid'],'week':week,'status':'prepared','subject':'Hibe Radarı · '+week,'text':text,'html':render(selected),'unsubscribe_url':link,'created_at':now(),'call_versions':snapshots,'demo':service.demo});count+=1
  return count
 
 def send_pending(service):
+ if service.demo:raise ValueError('DEMO bültenler canlı gönderilemez')
  if os.environ.get('NEWSLETTER_ENABLED')!='true':raise ValueError('Canlı bülten gönderimi kapalı')
  host=os.environ['SMTP_HOST'];port=int(os.environ.get('SMTP_PORT','587'));sender=os.environ['SMTP_FROM']
  sent=0
@@ -45,6 +48,11 @@ def send_pending(service):
    if message['status']!='prepared':continue
    u=service.store.get('users',message['uid'])
    if not u or u.get('subscribed') is not True:message['status']='cancelled';service.store.put('outbox',message['id'],message);continue
+   snapshots=message.get('call_versions');current=[]
+   if isinstance(snapshots,dict):
+    current=[service.store.get('calls',ident) for ident in snapshots]
+   if message.get('demo') or not isinstance(snapshots,dict) or any(not call or call.get('demo') or call.get('approval',{}).get('demo') or snapshots[call['id']]!=version(call) or not publishable(call,service.today()) for call in current):
+    message['status']='stale';service.store.put('outbox',message['id'],message);continue
    mail=EmailMessage();mail['From']=sender;mail['To']=u['email'];mail['Subject']=message['subject'];mail['Message-ID']='<'+message['id']+'@'+sender.split('@')[-1]+'>';mail.set_content(message['text']);mail.add_alternative(message['html'],'html')
    # Gönderim öncesi işaretle: crash sonrası belirsiz kayıt otomatik tekrar gönderilmez.
    message['status']='sending';service.store.put('outbox',message['id'],message)
